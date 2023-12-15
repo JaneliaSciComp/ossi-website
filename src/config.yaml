@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: OSSI@Janelia
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
