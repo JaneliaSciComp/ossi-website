@@ -16,6 +16,9 @@ module.exports = {
         serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        'hero-pattern':"url('/src/assets/images/hero.jpg')"
+      }
     },
   },
   plugins: [require('@tailwindcss/typography')],
