@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from 'astro-icon';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Button from '~/components/ui/Button.astro';
@@ -57,7 +57,8 @@ const {
                 <li class="flex md:-mx-4">
                   <div class="pr-4 sm:pl-4 rtl:pr-0 rtl:pl-4 rtl:sm:pl-0 rtl:sm:pr-4">
                     <span class="flex w-16 h-16 mx-auto items-center justify-center text-2xl font-bold rounded-full bg-blue-100 text-primary">
-                      {icon ? <Icon name={icon} class="w-6 h-6 icon-bold" /> : index + 1}
+                      {icon ? <Icon name="grommet-icons:github"/> : index + 1}
+                      
                     </span>
                   </div>
                   <div class="pl-4 rtl:pl-0 rtl:pr-4">
@@ -72,3 +73,6 @@ const {
     </div>
   </div>
 </WidgetWrapper>
+
+<!-- Icon styling -->
+<!-- class="w-6 h-6 icon-bold" -->
