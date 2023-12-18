@@ -23,13 +23,9 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero>
-    <Fragment slot="title">
-      OSSI@Janelia
-    </Fragment>
+    <Fragment slot="title">OSSI@Janelia</Fragment>
 
-    <Fragment slot="subtitle">
-       Open Science Software Initiative at Janelia
-    </Fragment>
+    <Fragment slot="subtitle">Open Science Software Initiative at Janelia</Fragment>
   </Hero>
 
   <!-- Note Widget *******************
@@ -88,7 +84,10 @@ const metadata = {
   <Content>
     <Fragment slot="content">
       <!-- <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3> -->
-       The goal of the Open Science Software Initiative is to support scientists at Janelia to create, extend, maintain, and/or document user-friendly and developer-friendly open source software.<br><br>Explore OSSI-supported project in two ways - through individual projects or project ecosystems.
+
+      The goal of the Open Science Software Initiative is to support scientists at Janelia to create, extend, maintain,
+      and/or document user-friendly and developer-friendly open source software.<br /><br />Explore OSSI-supported
+      project in two ways - through individual projects or project ecosystems.
     </Fragment>
     <!-- <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -98,15 +97,15 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-  actions={[
-    {
-      variant: 'primary',
-      text: 'Projects',
-      href: 'https://github.com/onwidget/astrowind',
-      target: '_blank'
-    },
-    { text: 'Learn more', href: '#features' },
-  ]}
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Projects',
+        href: 'https://github.com/onwidget/astrowind',
+        target: '_blank',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
   >
     <!-- <Fragment slot="title">
       Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
@@ -351,54 +350,45 @@ const metadata = {
     ]}
   /> -->
 
-    <!-- Steps2 Widget ****************** -->
+  <!-- Steps2 Widget ****************** -->
 
-    <Steps2
+  <Steps2
     title="Recent contributors"
-    subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
     callToAction={{
-      text: 'Contact us',
+      text: 'See all contributors',
       href: '/',
     }}
     items={[
       {
-        title: 'Email us',
-        description: 'contact@support.com',
+        title: 'Contributor 1',
+        description: 'github-username',
         icon: 'grommet-icons:github',
       },
       {
-        title: 'Call us',
-        description: '+1 (234) 567-890',
+        title: 'Contributor 2',
+        description: 'github-username',
         icon: 'grommet-icons:github',
       },
       {
-        title: 'Follow us',
-        description: '@example',
+        title: 'Contributor 3',
+        description: 'github-username',
         icon: 'grommet-icons:github',
       },
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <!-- Content Widget **************** -->
 
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
+  <Content
+    callToAction={{
+      text: 'Contribute',
+      href: '/',
+    }}
   >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    <Fragment slot="content">Interested in contributing to this site? Read the documentation.</Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
+  </Content>
+  
 </Layout>
