@@ -21,17 +21,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Projects',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank'
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-  >
+  <Hero>
     <Fragment slot="title">
       OSSI@Janelia
     </Fragment>
@@ -99,11 +89,33 @@ const metadata = {
       <!-- <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3> -->
        The goal of the Open Science Software Initiative is to support scientists at Janelia to create, extend, maintain, and/or document user-friendly and developer-friendly open source software.<br><br>Explore OSSI-supported project in two ways - through individual projects or project ecosystems.
     </Fragment>
-
     <!-- <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment> -->
   </Content>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Projects',
+      href: 'https://github.com/onwidget/astrowind',
+      target: '_blank'
+    },
+    { text: 'Learn more', href: '#features' },
+  ]}
+  >
+    <!-- <Fragment slot="title">
+      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
+      waste more time! :P
+    </Fragment> -->
+  </CallToAction>
 
   <!-- Content Widget **************** -->
 
