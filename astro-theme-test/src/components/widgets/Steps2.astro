@@ -28,14 +28,14 @@ const {
         subtitle={subtitle}
         tagline={tagline}
         classes={{
-          container: 'text-center md:text-left rtl:md:text-right mb-4 md:mb-8',
+          container: 'md:text-left rtl:md:text-right mb-4 md:mb-8',
           title: 'mb-4 text-3xl lg:text-4xl font-bold font-heading',
           subtitle: 'mb-8 text-xl text-muted dark:text-slate-400',
           // ...((classes?.headline as {}) ?? {}),
         }}
       />
 
-      <div class="w-full text-center md:text-left rtl:md:text-right">
+      <div class="w-full md:text-left rtl:md:text-right">
         {
           typeof callToAction === 'string' ? (
             <Fragment set:html={callToAction} />
