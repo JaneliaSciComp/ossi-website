@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection("ecosystems");
+  return blogPosts.map((blogPost) => ({
+    params: { slug: blogPost.slug },
+    props: { blogPost },
+  }));
+}
+
+const { blogPost } = Astro.props;
+const { Content } = await blogPost.render();
+---
+
+<Content />
