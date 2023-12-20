@@ -4,13 +4,14 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 // import Note from '~/components/widgets/Note.astro';
 // import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
+// import Features2 from '~/components/widgets/Features2.astro';
+// import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
+// import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 
 const metadata = {
   title: 'OSSI@Janelia',
@@ -22,13 +23,9 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero>
-    <Fragment slot="title">
-      OSSI@Janelia
-    </Fragment>
+    <Fragment slot="title">OSSI@Janelia</Fragment>
 
-    <Fragment slot="subtitle">
-       Open Science Software Initiative at Janelia
-    </Fragment>
+    <Fragment slot="subtitle">Open Science Software Initiative at Janelia</Fragment>
   </Hero>
 
   <!-- Note Widget *******************
@@ -84,29 +81,33 @@ const metadata = {
 
   <!-- Content Widget **************** -->
 
-  <Content>
+  <!-- <Content >
     <Fragment slot="content">
-      <!-- <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3> -->
-       The goal of the Open Science Software Initiative is to support scientists at Janelia to create, extend, maintain, and/or document user-friendly and developer-friendly open source software.<br><br>Explore OSSI-supported project in two ways - through individual projects or project ecosystems.
+      The goal of the Open Science Software Initiative is to support scientists at Janelia to create, extend, maintain,
+      and/or document user-friendly and developer-friendly open source software.<br /><br />Explore OSSI-supported
+      project in two ways - through individual projects or project ecosystems.
     </Fragment>
-    <!-- <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment> -->
-  </Content>
+
+  </Content> -->
 
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-  actions={[
-    {
-      variant: 'primary',
-      text: 'Projects',
-      href: 'https://github.com/onwidget/astrowind',
-      target: '_blank'
-    },
-    { text: 'Learn more', href: '#features' },
-  ]}
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Projects',
+        href: 'https://github.com/onwidget/astrowind',
+        target: '_blank',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
   >
+  <Fragment slot="content">
+    The goal of the Open Science Software Initiative is to support scientists at Janelia to create, extend, maintain,
+    and/or document user-friendly and developer-friendly open source software.<br /><br />Explore OSSI-supported
+    project in two ways - through individual projects or project ecosystems.
+  </Fragment>
     <!-- <Fragment slot="title">
       Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
     </Fragment>
@@ -119,7 +120,7 @@ const metadata = {
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isAfterContent
     items={[
       {
@@ -152,11 +153,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     isAfterContent
     items={[
@@ -190,11 +191,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Steps Widget ****************** -->
 
-  <Steps
+  <!-- <Steps
     title="Get your dream website up and running in no time with AstroWind."
     items={[
       {
@@ -224,11 +225,11 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
       alt: 'Steps image',
     }}
-  />
+  /> -->
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <!-- <Features2
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
     tagline="Components"
@@ -288,21 +289,23 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Features2> -->
 
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
+    title="OSSI Blog"
+    information={`Read the latest updates on OSSI-supported projects.
                 `}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
+  <!-- <FAQs
     title="Frequently Asked Questions"
     subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
     tagline="FAQs"
@@ -339,39 +342,67 @@ const metadata = {
           "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
       },
     ]}
-  />
+  /> -->
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
+  <!-- <Stats
     stats={[
       { title: 'Downloads', amount: '132K' },
       { title: 'Stars', amount: '24.8K' },
       { title: 'Forks', amount: '10.3K' },
       { title: 'Users', amount: '48.4K' },
     ]}
-  />
+  /> -->
 
-  <!-- CallToAction Widget *********** -->
+  <!-- Steps2 Widget ****************** -->
 
-  <CallToAction
-    actions={[
+  <Steps2
+    title="Recent contributors"
+    callToAction={{
+      text: 'See all contributors »',
+      href: '/',
+    }}
+    items={[
       {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        title: 'Contributor 1',
+        description: 'github-username',
+        icon: 'grommet-icons:github',
+      },
+      {
+        title: 'Contributor 2',
+        description: 'github-username',
+        icon: 'grommet-icons:github',
+      },
+      {
+        title: 'Contributor 3',
+        description: 'github-username',
+        icon: 'grommet-icons:github',
       },
     ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+  />
+
+  <!-- Content Widget **************** -->
+
+   <!-- CallToAction Widget *********** -->
+
+   <CallToAction
+   actions={[
+     {
+       variant: 'primary',
+       text: 'Contribute',
+       href: '#',
+       target: '_blank',
+     }
+   ]}
+ >
+    <Fragment slot="content">
+      Interested in contributing to this site? Read the documentation.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
+ </CallToAction>
+
 </Layout>

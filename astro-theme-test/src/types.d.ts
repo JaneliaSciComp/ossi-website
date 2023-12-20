@@ -104,6 +104,7 @@ export interface Headline {
   title?: string;
   subtitle?: string;
   tagline?: string;
+  content?: string;
   classes?: Record<string, string>;
 }
 
