@@ -37,10 +37,9 @@ import { fetchPosts } from '~/utils/blog';
 //   },
 //   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
 // );
-import {getCollection} from "astro:content"
-const blogPosts = await getCollection("blog")
-const posts = await fetchPosts()
-console.log(posts)
+
+const posts = await fetchPosts("blog")
+// console.log(posts)
 ---
 
 <Layout>
