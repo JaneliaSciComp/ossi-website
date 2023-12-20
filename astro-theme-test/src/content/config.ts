@@ -45,7 +45,7 @@ const metadataDefinition = () =>
     })
     .optional();
 
-const postCollection = defineCollection({
+const blogCollection = defineCollection({
   schema: z.object({
     publishDate: z.date().optional(),
     updateDate: z.date().optional(),
@@ -64,5 +64,5 @@ const postCollection = defineCollection({
 });
 
 export const collections = {
-  post: postCollection,
+  blog: blogCollection,
 };
