@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '~/layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  
+  const blogPosts = await getCollection("projects");
+  const uniqueCategories = new Set();
+  blogPosts.map((blogPost) => {
+    typeof blogPost.data.category === 'string' && uniqueCategories.add(blogPost.data.category.toLowerCase());
+  });
+
+  return Array.from(uniqueCategories).flatMap((category: string) => (
+  {
+        params: { category: category },
+        props: { category },
+      }
+  ))
+}
+
+const { category } = Astro.props;
+---
+
+<Layout>
+ <h1>{category}</h1>
+</Layout>
