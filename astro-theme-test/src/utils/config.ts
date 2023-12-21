@@ -154,7 +154,7 @@ const getAppBlog = () => {
     },
     category: {
       isEnabled: true,
-      pathname: 'category',
+      pathname: 'blog/category',
       robots: {
         index: true,
         follow: true,
@@ -162,7 +162,7 @@ const getAppBlog = () => {
     },
     tag: {
       isEnabled: true,
-      pathname: 'tag',
+      pathname: 'blog/tag',
       robots: {
         index: false,
         follow: true,
