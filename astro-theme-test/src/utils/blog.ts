@@ -119,8 +119,6 @@ export const blogPostsPerPage = APP_BLOG?.postsPerPage;
 /** */
 export const fetchPosts = async (collectionName): Promise<Array<Post>> => {
   const items = await load(collectionName);
-
-
   return items;
 };
 
@@ -153,9 +151,9 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
 };
 
 /** */
-export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
+export const findLatestPosts = async ({ count }: { count?: number }, collectionName: string): Promise<Array<Post>> => {
   const _count = count || 4;
-  const posts = await fetchPosts();
+  const posts = await fetchPosts(collectionName);
 
   return posts ? posts.slice(0, _count) : [];
 };
