@@ -1,0 +1,167 @@
+---
+import WidgetWrapper from "../ui/WidgetWrapper.astro";
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+
+    <div class="d-flex border-bottom pb-3">
+      <div class="d-flex ms-auto align-items-center">
+        <div class="dropdown">
+          <button class="btn btn-link text-dark mb-0 dropdown-toggle" type="button" id="sortButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="sortButton">
+            <li><a class="dropdown-item" href="javascript:;">Most Popular</a></li>
+            <li><a class="dropdown-item" href="javascript:;">Best Rating</a></li>
+            <li><a class="dropdown-item" href="javascript:;">Newest</a></li>
+            <li><a class="dropdown-item" href="javascript:;">Price: Low to High</a></li>
+            <li><a class="dropdown-item" href="javascript:;">Price: High to Low</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12 col-md-4">
+        <ul class="list-unstyled ms-3">
+          <li class="mb-2"><a href="#">Man</a></li>
+          <li class="mb-2"><a href="#">Woman</a></li>
+          <li class="mb-2"><a href="#">Sales</a></li>
+          <li class="mb-2"><a href="#">Permanent Collection</a></li>
+          <li class="mb-2"><a href="#">New</a></li>
+        </ul>
+        <div class="accordion" id="accordionArrivals">
+          <div class="accordion-item">
+            <h5 class="accordion-header" id="headingThree">
+              <button class="accordion-button border-bottom border-top font-weight-bold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Designers
+                <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
+                <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
+              </button>
+            </h5>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionArrivals">
+              <div class="accordion-body text-sm opacity-8">
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck1" />
+                  <label class="custom-control-label mb-0">Marc Jacobs</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck2" />
+                  <label class="custom-control-label mb-0">Burberry</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck3" checked />
+                  <label class="custom-control-label mb-0">Coco Chanel</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck4" />
+                  <label class="custom-control-label mb-0">Tom Ford</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck5" />
+                  <label class="custom-control-label mb-0">Alexander Wang</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck6" />
+                  <label class="custom-control-label mb-0">Valentino</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h5 class="accordion-header" id="headingFour">
+              <button class="accordion-button border-bottom font-weight-bold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Material
+                <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
+                <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
+              </button>
+            </h5>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionArrivals">
+              <div class="accordion-body text-sm opacity-8">
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck7" />
+                  <label class="custom-control-label mb-0">Cotton</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck8" />
+                  <label class="custom-control-label mb-0">Leather</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck9" checked />
+                  <label class="custom-control-label mb-0">Chiffon</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck10" />
+                  <label class="custom-control-label mb-0">Crepe</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customCheck11" />
+                  <label class="custom-control-label mb-0">Denim</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h5 class="accordion-header" id="headingFifth">
+              <button class="accordion-button border-bottom font-weight-bold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifth" aria-expanded="false" aria-controls="collapseFifth">
+                Size
+                <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
+                <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
+              </button>
+            </h5>
+            <div id="collapseFifth" class="accordion-collapse collapse" aria-labelledby="headingFifth" data-bs-parent="#accordionArrivals">
+              <div class="accordion-body text-sm opacity-8">
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customSize1" />
+                  <label class="custom-control-label mb-0">XXS</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customSize2" />
+                  <label class="custom-control-label mb-0">XS</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customSize3" />
+                  <label class="custom-control-label mb-0">S</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customSize4" />
+                  <label class="custom-control-label mb-0">M</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customSize5" />
+                  <label class="custom-control-label mb-0">L</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customSize6" />
+                  <label class="custom-control-label mb-0">XL</label>
+                </div>
+                <div class="form-check justify-content-start ">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="customSize7" />
+                  <label class="custom-control-label mb-0">XXL</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="d-flex h-100">
+          <div class="row">
+            {data.products.slice(0, 3).map(product => 
+              <div class="col-md-6 col-lg-4">
+                <CardProduct 
+                  thumb_src = {product.thumb_src}
+                  thumb_alt = {product.thumb_alt}
+                  color = {product.color}
+                  colors = {product.colors}
+                  title = {product.title}
+                  description = {product.description}
+                  price = {product.price}
+                  position = "center"
+                />
+              </div>
+            )}        
+          </div>
+        </div>
+      </div>
+    </div>
+</WidgetWrapper>
