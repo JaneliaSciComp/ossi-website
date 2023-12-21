@@ -17,144 +17,156 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+const toggleOptions = (buttonId, iconPlusId, iconMinusId) => {
+  const options = document.getElementById(buttonId);
+  const iconPlus = document.getElementById(iconPlusId);
+  const iconMinus = document.getElementById(iconMinusId);
+
+  if (options && iconPlus && iconMinus) {
+    options.classList.toggle('hidden');
+    iconPlus.classList.toggle('hidden');
+    iconMinus.classList.toggle('hidden');
+  }
+};
+
+const handleFormSubmit = (event) => {
+  event.preventDefault();
+
+  // Retrieve checked options and handle the submission logic here
+  const selectedOptions = [];
+  document.querySelectorAll('input[type="checkbox"]:checked').forEach((checkbox) => {
+    selectedOptions.push(checkbox.value);
+  });
+
+  // Example: Log the selected options to the console
+  console.log('Selected Options:', selectedOptions);
+  // You can now perform further actions with the selected options
+};
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <h2 class="mb-3">Filters</h2>
+  <form onsubmit="">
+    <h2 class="mb-3">Filters</h2>
+    <div class="row mt-5">
+      <div class="col-12 col-md-4">
+        <div class="" id="Arrivals">
+          <div class="">
+            <h5 class="" id="headingThree">
+              <button
+                class="flex border-b border-t font-bold py-4"
+                type="button"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Model organism
+                <Icon name={'tabler:square-plus'} class="w-5 h-5" id="iconPlusTagCategory1" />
+                <Icon name={'tabler:square-minus'} class="w-5 h-5" id="iconMinusTagCategory1" />
+              </button>
+            </h5>
 
-  <div class="row mt-5">
-    <div class="col-12 col-md-4">
-      <div class="" id="Arrivals">
-        <div class="">
-          <h5 class="" id="headingThree">
-            <button
-              class="flex border-b border-t font-bold py-4"
-              type="button"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
-              Designers
-              <Icon name={'tabler:square-plus'} class="w-5 h-5" />
-              <Icon name={'tabler:square-minus'} class="w-5 h-5" />
-            </button>
-          </h5>
-
-          <div id="collapseThree" class="" aria-labelledby="headingThree">
-            <div class="text-sm text-opacity-10">
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck1" />
-                <label class="mb-0">Marc Jacobs</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck2" />
-                <label class="mb-0">Burberry</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck3" checked />
-                <label class="mb-0">Coco Chanel</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck4" />
-                <label class="mb-0">Tom Ford</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck5" />
-                <label class="mb-0">Alexander Wang</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck6" />
-                <label class="mb-0">Valentino</label>
+            <div id="optionsTagCategory1" class="" aria-labelledby="headingThree">
+              <div class="text-sm text-opacity-10">
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customCheck1" />
+                  <label class="mb-0">Fly</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customCheck2" />
+                  <label class="mb-0">Mouse</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customCheck3" checked />
+                  <label class="mb-0">C. Elegans</label>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="">
-          <h5 class="" id="headingFour">
-            <button
-              class="border-b border-t font-bold py-4"
-              type="button"
-              aria-expanded="false"
-              aria-controls="collapseFour"
-            >
-              Material
-              <Icon name={'tabler:square-plus'} class="w-5 h-5" />
-              <Icon name={'tabler:square-minus'} class="w-5 h-5" />
-            </button>
-          </h5>
-          <div id="collapseFour" class="" aria-labelledby="headingFour">
-            <div class="text-sm text-opacity-10">
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck7" />
-                <label class="mb-0">Cotton</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck8" />
-                <label class="mb-0">Leather</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck9" checked />
-                <label class="mb-0">Chiffon</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck10" />
-                <label class="mb-0">Crepe</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customCheck11" />
-                <label class="mb-0">Denim</label>
+          <div class="">
+            <h5 class="" id="headingFour">
+              <button
+                class="border-b border-t font-bold py-4"
+                type="button"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                Open source license
+                <Icon name={'tabler:square-plus'} class="w-5 h-5" id="iconPlusTagCategory2"/>
+                <Icon name={'tabler:square-minus'} class="w-5 h-5" id="iconMinusTagCategory2" />
+              </button>
+            </h5>
+            <div id="optionsTagCategory2" class="" aria-labelledby="headingFour">
+              <div class="text-sm text-opacity-10">
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customCheck7" />
+                  <label class="mb-0">BDS-3 Clause</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customCheck8" />
+                  <label class="mb-0">CC-by-0</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customCheck9" checked />
+                  <label class="mb-0">GPL</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customCheck10" />
+                  <label class="mb-0">MIT</label>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="">
-          <h5 class="" id="headingFifth">
-            <button
-              class="border-b border-t font-bold py-4"
-              type="button"
-              aria-expanded="false"
-              aria-controls="collapseFifth"
-            >
-              Size
-              <Icon name={'tabler:square-plus'} class="w-5 h-5" />
-              <Icon name={'tabler:square-minus'} class="w-5 h-5" />
-            </button>
-          </h5>
-          <div id="collapseFifth" class="" aria-labelledby="headingFifth">
-            <div class="text-sm text-opacity-10">
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customSize1" />
-                <label class="mb-0">XXS</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customSize2" />
-                <label class="mb-0">XS</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customSize3" />
-                <label class="mb-0">S</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customSize4" />
-                <label class="mb-0">M</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customSize5" />
-                <label class="mb-0">L</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customSize6" />
-                <label class="mb-0">XL</label>
-              </div>
-              <div class="justify-start">
-                <input class="me-2" type="checkbox" value="" id="customSize7" />
-                <label class="mb-0">XXL</label>
+          <div class="">
+            <h5 class="" id="headingFifth">
+              <button
+                class="border-b border-t font-bold py-4"
+                type="button"
+                aria-expanded="false"
+                aria-controls="collapseFifth"
+              >
+                Supported file type
+                <Icon name={'tabler:square-plus'} class="w-5 h-5" id="iconPlusTagCategory3"/>
+                <Icon name={'tabler:square-minus'} class="w-5 h-5" id="iconPlusTagCategory3"/>
+              </button>
+            </h5>
+            <div id="optionsTagCategory3" class="" aria-labelledby="headingFifth">
+              <div class="text-sm text-opacity-10">
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customSize1" />
+                  <label class="mb-0">N5</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customSize2" />
+                  <label class="mb-0">Zeiss CZI</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customSize3" />
+                  <label class="mb-0">TIFF</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customSize4" />
+                  <label class="mb-0">OME-Zarr</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customSize5" />
+                  <label class="mb-0">SWC</label>
+                </div>
+                <div class="justify-start">
+                  <input class="me-2" type="checkbox" value="" id="customSize6" />
+                  <label class="mb-0">NWB</label>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="mt-4">
+        <button type="submit" class="btn btn-primary">
+          Apply Filters
+        </button>
+      </div>
+  </form>
 </WidgetWrapper>
