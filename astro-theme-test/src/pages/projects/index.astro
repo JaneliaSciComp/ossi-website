@@ -49,9 +49,14 @@ const posts = await fetchPosts("projects")
     >
       Projects List
     </Headline>
-    <section>
-      <Filters/>
-      <List posts={posts}></List>
+    <section class="grid grid-cols-3 gap-4 border-2 border-green-700">
+      <div class="col-span-1 border-2 border-red-700">
+        <Filters/>
+      </div>
+      <div class="col-start-2 col-span-2">
+        <List posts={posts}></List>
+      </div>
+      
     </section>
   </section>
 </Layout>
