@@ -221,3 +221,37 @@ export const getStaticPathsBlogTag = async ({ paginate }) => {
     )
   );
 };
+
+/** */
+export function generateTagCombinations(tags) {
+  const tagCombinations = new Set();
+
+  // Iterate over all possible combinations
+  for (let i = 1; i <= tags.length; i++) {
+    for (let j = 0; j <= tags.length - i; j++) {
+      const combination = tags.slice(j, j + i).join('&');
+      tagCombinations.add(combination);
+    }
+  }
+
+  return tagCombinations;
+}
+
+export function filterProjectsByTagCombinations(projects, tagCombinations) {
+  // Convert the Set to an array
+  const tagCombinationsArray = Array.from(tagCombinations);
+
+  return tagCombinationsArray.map(tagCombination => {
+    
+    const tagsToMatch = tagCombination.split('&');
+
+    const filteredProjects = projects.filter(project =>
+      tagsToMatch.every(tag => project.data.tags.includes(tag))
+    );
+
+    return {
+      params: { tag: tagCombination },
+      props: { projects: filteredProjects },
+    };
+  });
+}

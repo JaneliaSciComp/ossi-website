@@ -1,6 +1,7 @@
 ---
 // import merge from 'lodash.merge';
 // import type { ImageMetadata } from 'astro';
+// import { getCollection } from "astro:content";
 import Layout from '~/layouts/PageLayout.astro';
 import Headline from '~/components/blog/Headline.astro';
 import List from '~/components/blog/List.astro';
@@ -38,7 +39,46 @@ import { fetchPosts } from '~/utils/blog';
 //   },
 //   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
 // );
+
+// function generateTagCombinations(tags) {
+//   const tagCombinations = new Set();
+
+//   // Iterate over all possible combinations
+//   for (let i = 1; i <= tags.length; i++) {
+//     for (let j = 0; j <= tags.length - i; j++) {
+//       const combination = tags.slice(j, j + i).join('&');
+//       tagCombinations.add(combination);
+//     }
+//   }
+
+//   return tagCombinations;
+// }
+
+// function filterProjectsByTagCombinations(projects, tagCombinations) {
+//   return tagCombinations.map(tagCombination => {
+//     const tagsToMatch = tagCombination.split('&');
+
+//     const filteredProjects = projects.filter(project =>
+//       tagsToMatch.every(tag => project.data.tags.includes(tag))
+//     );
+
+//     return {
+//       params: { tagCombination },
+//       props: { projects: filteredProjects },
+//     };
+//   });
+// }
+
 const posts = await fetchPosts("projects")
+// export async function getStaticPaths() {
+//   const allProjects = await getCollection("projects");
+//   const uniqueTags = [...new Set(allProjects.map((project) => project.data.tags).flat())];
+//   const uniqueTagCombinations = generateTagCombinations(uniqueTags)
+
+//   return filterProjectsByTagCombinations(allProjects, uniqueTagCombinations)
+// }
+
+
 // console.log(posts)
 ---
 

@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '~/layouts/PageLayout.astro';
+import ListItem from '~/components/blog/ListItem.astro';
+import { generateTagCombinations, filterProjectsByTagCombinations } from '~/utils/blog';
+
+
+export async function getStaticPaths() {
+  const allProjects = await getCollection("projects");
+  const uniqueTags = [...new Set(allProjects.map((project) => project.data.tags).flat())];
+  const uniqueTagCombinations = generateTagCombinations(uniqueTags)
+
+  return filterProjectsByTagCombinations(allProjects, uniqueTagCombinations)
+}
+
+
+const { tag: tagCombination } = Astro.params;
+const {projects} = Astro.props;
+---
+
+<Layout>
+ <h1>Posts tagged with {tagCombination}</h1>
+ {projects.length > 0 && (
+  <ul>
+    {projects.map((project, index) => (
+      <ListItem post={project} />
+    ))}
+  </ul>
+)}
+
+</Layout>
