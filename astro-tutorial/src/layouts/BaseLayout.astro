@@ -1,5 +1,7 @@
 ---
 import Header from "../components/Header.astro"
+
+const {pageTitle} = Astro.props
 ---
 
 <html lang="en">
@@ -12,7 +14,8 @@ import Header from "../components/Header.astro"
 	</head>
 	<body>
 		<Header/>
-		<h1>OSSI@Janelia Home</h1>
+        <h1>{pageTitle}</h1>
+        <slot></slot>
 		<script>
 			import '../scripts/header.js';
 		</script>
