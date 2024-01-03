@@ -4,12 +4,29 @@ import { getCollection } from "astro:content"
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro'
 
-const allProjects = await getCollection('projects')
+import {extractUniqueTags} from "../utils/extractUniqueTags.js"
+
 const pageTitle = "OSSI-supported projects"
+const allProjects = await getCollection('projects')
+const allProjectTags = await getCollection("tags")
+const uniqueTags = extractUniqueTags(allProjectTags)
+
 
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<p>Additional text about projects</p>
+	<p>List of project tags</p>
+    <p>
+        {Object.keys(uniqueTags).map(key => (
+            <div>
+                <h2 class="font-bold">{key}</h2>
+                <ul>
+                    {uniqueTags[key].map(value => (
+                        <li>{value}</li>
+                    ))}
+                </ul>
+            </div>
+        ))}
+    </p>
     <ul>
         {allProjects.map((project) => (
             <ProjectCard url={`/projects/${project.slug}/`} title={project.data.title}/>
