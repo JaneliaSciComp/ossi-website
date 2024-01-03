@@ -1,9 +1,9 @@
 ---
-title: 'Project 2'
+title: 'Kilosort'
 description: 'This is the information about Project 2.'
-author: 'Allison'
+author: 'Pachitariu et al.'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'The full Astro logo.'
-tags: ["C. Elegans", "BDS-3 Clause", "N5"]
+tags: project-2-tags
 ---
