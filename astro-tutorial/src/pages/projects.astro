@@ -1,15 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro'
 
-const allPosts = await Astro.glob('../pages/projects/*.md')
+const allProjects = await Astro.glob('../pages/projects/*.md')
 const pageTitle = "OSSI-supported projects"
 
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<p>Additional text about projects</p>
     <ul>
-        {allPosts.map((post) => (
-            <li><a href={post.url}>{post.frontmatter.title}</a></li>
+        {allProjects.map((project) => (
+            <ProjectCard url={project.url} title={project.frontmatter.title}/>
         ))}
        </ul>
 </BaseLayout>
