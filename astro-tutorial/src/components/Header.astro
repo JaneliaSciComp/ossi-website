@@ -19,6 +19,7 @@ const links = [
 
 <header
   class="top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out"
+  id = "header"
 >
   <div class="absolute inset-0 bg-white dark:bg-dark"></div>
   <div
@@ -31,9 +32,29 @@ const links = [
             🔬 OSSI@Janelia
         </span>
       </a>
-      <!-- <div class="flex items-center md:hidden">
-        <ToggleMenu />
-      </div> -->
+      <div class="flex items-center md:hidden">
+        <button
+          class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group"
+          aria-label='Toggle Menu'
+          data-aw-toggle-menu
+        >
+          <span class="sr-only">Toggle Menu</span>
+          <slot>
+            <span
+              aria-hidden="true"
+              class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"
+            ></span>
+            <span
+              aria-hidden="true"
+              class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"
+            ></span>
+            <span
+              aria-hidden="true"
+              class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"
+            ></span>
+          </slot>
+        </button>
+      </div>
     </div>
 
     <nav
