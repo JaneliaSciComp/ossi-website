@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownLayout.astro
 title: 'Project 2'
 description: 'This is the information about Project 2.'
 author: 'Allison'
