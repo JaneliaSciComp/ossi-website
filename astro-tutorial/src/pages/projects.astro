@@ -17,19 +17,7 @@ const uniqueTags = extractUniqueTags(allProjectTags)
 <BaseLayout pageTitle={pageTitle}>
 	<p>List of project tags</p>
     <FilterMenu uniqueTags={uniqueTags}/>
-    <!-- <p>
-        {Object.keys(uniqueTags).map(key => (
-            <div>
-                <h2 class="font-bold">{key}</h2>
-                <ul>
-                    {uniqueTags[key].map(value => (
-                        <li>{value}</li>
-                    ))}
-                </ul>
-            </div>
-        ))}
-    </p> -->
-    <div class="flex">
+    <div class="flex" id="projectCards">
         {allProjects.map((project) => (
             <ProjectCard 
                 url={`/projects/${project.slug}/`} 
@@ -43,6 +31,6 @@ const uniqueTags = extractUniqueTags(allProjectTags)
         ))}
     </div>
     <script>
-        import '../scripts/header.js';
+        import '../scripts/filterMenu.js';
     </script>
 </BaseLayout>
