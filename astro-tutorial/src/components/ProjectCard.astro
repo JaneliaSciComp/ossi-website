@@ -5,7 +5,7 @@ const {url, title, imgUrl, imgAlt, author, description, tags} = Astro.props
 
 const flatTags = getFlatTags(tags.data)
 ---
-<a href={url} class="block max-w-md mx-auto bg-white rounded-md shadow-md overflow-hidden text-black hover:shadow-lg transition duration-300 transform hover:scale-105">
+<a href={url} data-tag-names={flatTags} class="block max-w-md mx-auto bg-white rounded-md shadow-md overflow-hidden text-black hover:shadow-lg transition duration-300 transform hover:scale-105">
     <div>
         <!-- Image -->
         <img src={imgUrl} alt={imgAlt} class="w-full h-40 object-cover object-center" />
