@@ -1,0 +1,31 @@
+---
+import { toggleOptions } from "../scripts/filterMenu";
+import { handleOptionClick } from "../scripts/filterMenu";
+
+const {uniqueTags} = Astro.props
+---
+
+<div class="filter-menu flex">
+    {Object.keys(uniqueTags).map(key => (
+      <div class="mr-4">
+        <h3 
+            onclick={toggleOptions(key)} 
+            class="cursor-pointer" 
+            data-tag-category={key}
+        >
+            {key}
+        </h3>
+        <ul class="hidden">
+          {uniqueTags[key].map(individualTag => (
+            <li 
+                onclick={handleOptionClick(projectCards, individualTag)} 
+                class="cursor-pointer" 
+                data-individual-tag={individualTag}
+            >
+                {individualTag}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
