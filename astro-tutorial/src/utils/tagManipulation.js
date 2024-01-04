@@ -1,7 +1,6 @@
 export function extractUniqueTags(allProjectTags) {
     // Create an object to store unique tag categories and tags
     const uniqueTags = {};
-  
     // Iterate through each project's tags
     allProjectTags.forEach(project => {
       // Check if project data exist
@@ -28,7 +27,9 @@ export function extractUniqueTags(allProjectTags) {
         });
       }
     });
-    console.log(uniqueTags)
     return uniqueTags;
-  }
-  
+}
+
+export function getFlatTags(tagsObject) {
+  return Object.values(tagsObject).flat()
+}
