@@ -3,8 +3,9 @@ import { getCollection } from "astro:content"
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro'
+import FilterMenu from "../components/FilterMenu.astro";
 
-import {extractUniqueTags} from "../utils/extractUniqueTags.js"
+import {extractUniqueTags} from "../utils/tagManipulation.js"
 
 const pageTitle = "OSSI-supported projects"
 const allProjects = await getCollection('projects')
@@ -15,7 +16,8 @@ const uniqueTags = extractUniqueTags(allProjectTags)
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<p>List of project tags</p>
-    <p>
+    <FilterMenu uniqueTags={uniqueTags}/>
+    <!-- <p>
         {Object.keys(uniqueTags).map(key => (
             <div>
                 <h2 class="font-bold">{key}</h2>
@@ -26,10 +28,21 @@ const uniqueTags = extractUniqueTags(allProjectTags)
                 </ul>
             </div>
         ))}
-    </p>
-    <ul>
+    </p> -->
+    <div class="flex">
         {allProjects.map((project) => (
-            <ProjectCard url={`/projects/${project.slug}/`} title={project.data.title}/>
+            <ProjectCard 
+                url={`/projects/${project.slug}/`} 
+                title={project.data.title} 
+                imgUrl={project.data.image.url}
+                imgAlt={project.data.image.alt}
+                author={project.data.author}
+                description={project.data.description}
+                tags={allProjectTags.find(tag => tag.id === project.data.tags.id)}
+            />
         ))}
-       </ul>
+    </div>
+    <script>
+        import '../scripts/header.js';
+    </script>
 </BaseLayout>
