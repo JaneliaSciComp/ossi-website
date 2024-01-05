@@ -5,19 +5,20 @@
 const {uniqueTags} = Astro.props
 ---
 
-<div class="filter-menu flex">
+<div class="filter-menu flex-col p-4 border-gray-200 border-2 rounded-lg">
     {Object.keys(uniqueTags).map(key => (
-      <div class="mr-4">
+      <div class="mb-4">
         <h3 
-            class='cursor-pointer'
+            class='cursor-pointer font-bold border-b-2 flex items-center justify-between py-2'
             id={`tag-category-${key}`}
         >
             {key}
+            <span class="chevron">&#9650;</span>
         </h3>
-        <ul class="hidden">
+        <ul class="flex flex-col flex-nowrap">
           {uniqueTags[key].map(individualTag => (
             <li 
-                class='cursor-pointer'
+                class='cursor-pointer ml-2 my-1 self-start'
                 id={`tag-${individualTag}`}
             >
                 {individualTag}
@@ -26,6 +27,7 @@ const {uniqueTags} = Astro.props
         </ul>
       </div>
     ))}
+    <button id="filter-menu-btn" class="bg-blue-500 text-white px-4 py-2 rounded">Reset</button>
   </div>
 
 
