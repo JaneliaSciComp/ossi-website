@@ -1,6 +1,5 @@
 ---
-// import { toggleOptions } from "../scripts/filterMenu";
-// import { handleOptionClick } from "../scripts/filterMenu";
+import { formatClassTag } from "../utils/tagManipulation";
 
 const {uniqueTags} = Astro.props
 ---
@@ -12,18 +11,20 @@ const {uniqueTags} = Astro.props
             class='cursor-pointer font-bold border-b-2 flex items-center justify-between py-2'
             id={`tag-category-${key}`}
         >
-            {key}
+            {key.toUpperCase()}
             <span class="chevron">&#9650;</span>
         </h3>
         <ul class="flex flex-col flex-nowrap">
-          {uniqueTags[key].map(individualTag => (
+          {uniqueTags[key].map(individualTag => {
+            const formattedTag = formatClassTag(individualTag)
+            return (
             <li 
                 class='cursor-pointer ml-2 my-1 self-start'
-                id={`tag-${individualTag}`}
+                id={`tag-${formattedTag}`}
             >
                 {individualTag}
             </li>
-          ))}
+          )})}
         </ul>
       </div>
     ))}
