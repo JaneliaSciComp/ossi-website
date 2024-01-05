@@ -1,3 +1,7 @@
+export function formatClassTag(tag){
+  return tag.trim().replace(/\s+/g, '-').toLowerCase();
+}
+
 export function extractUniqueTags(allProjectTags) {
     // Create an object to store unique tag categories and tags
     const uniqueTags = {};
