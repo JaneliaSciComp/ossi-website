@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content"
+import "../styles/tailwind.css"
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro'
@@ -16,20 +17,24 @@ const uniqueTags = extractUniqueTags(allProjectTags)
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<p>List of project tags</p>
-    <FilterMenu uniqueTags={uniqueTags}/>
-    <div class="flex" id="projectCards">
-        {allProjects.map((project) => (
-            <ProjectCard 
-                url={`/projects/${project.slug}/`} 
-                title={project.data.title} 
-                imgUrl={project.data.image.url}
-                imgAlt={project.data.image.alt}
-                author={project.data.author}
-                description={project.data.description}
-                tags={allProjectTags.find(tag => tag.id === project.data.tags.id)}
-            />
-        ))}
-    </div>
+    <section class="grid grid-cols-3 gap-4">
+        <section class="col-span-1">
+            <FilterMenu uniqueTags={uniqueTags}/>
+        </section>
+        <section class="col-start-2 col-span-2 flex flex-wrap gap-4" id="projectCards">
+            {allProjects.map((project) => (
+                <ProjectCard 
+                    url={`/projects/${project.slug}/`} 
+                    title={project.data.title} 
+                    imgUrl={project.data.image.url}
+                    imgAlt={project.data.image.alt}
+                    author={project.data.author}
+                    description={project.data.description}
+                    tags={allProjectTags.find(tag => tag.id === project.data.tags.id)}
+                />
+            ))}
+        </section>
+    </section>
     <script>
         import '../scripts/filterMenu.js';
     </script>
