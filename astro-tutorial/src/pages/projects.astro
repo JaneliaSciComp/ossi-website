@@ -21,7 +21,7 @@ const uniqueTags = extractUniqueTags(allProjectTags)
         <section class="col-span-1">
             <FilterMenu uniqueTags={uniqueTags}/>
         </section>
-        <section class="col-start-2 col-span-2 flex flex-wrap gap-4" id="projectCards">
+        <section class="col-start-2 col-span-2 grid grid-cols-2 auto-rows-max gap-4" id="projectCards">
             {allProjects.map((project) => (
                 <ProjectCard 
                     url={`/projects/${project.slug}/`} 
