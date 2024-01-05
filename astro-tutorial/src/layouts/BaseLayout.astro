@@ -1,4 +1,7 @@
 ---
+import "../styles/tailwind.css"
+import CustomStyles from "../styles/CustomStyles.astro"
+
 import Header from "../components/Header.astro"
 
 const {pageTitle} = Astro.props
@@ -11,8 +14,9 @@ const {pageTitle} = Astro.props
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>OSSI@Janelia</title>
+		<CustomStyles/>
 	</head>
-	<body>
+	<body class="text-default bg-page">
 		<Header/>
         <h1>{pageTitle}</h1>
         <slot></slot>
