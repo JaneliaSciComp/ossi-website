@@ -1,6 +1,6 @@
 ---
-import { toggleOptions } from "../scripts/filterMenu";
-import { handleOptionClick } from "../scripts/filterMenu";
+// import { toggleOptions } from "../scripts/filterMenu";
+// import { handleOptionClick } from "../scripts/filterMenu";
 
 const {uniqueTags} = Astro.props
 ---
@@ -9,18 +9,14 @@ const {uniqueTags} = Astro.props
     {Object.keys(uniqueTags).map(key => (
       <div class="mr-4">
         <h3 
-            onclick={toggleOptions(key)} 
-            class="cursor-pointer" 
-            data-tag-category={key}
+            class={`tag-category-${key} cursor-pointer`} 
         >
             {key}
         </h3>
         <ul class="hidden">
           {uniqueTags[key].map(individualTag => (
             <li 
-                onclick={handleOptionClick(projectCards, individualTag)} 
-                class="cursor-pointer" 
-                data-individual-tag={individualTag}
+                class={`tag-${individualTag} cursor-pointer`} 
             >
                 {individualTag}
             </li>
@@ -29,3 +25,7 @@ const {uniqueTags} = Astro.props
       </div>
     ))}
   </div>
+
+
+  <!-- onclick={toggleOptions(key)}  -->
+  <!-- onclick={handleOptionClick(projectCards, individualTag)}  -->
