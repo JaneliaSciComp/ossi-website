@@ -1,5 +1,7 @@
 {
     "lab": ["Saalfeld", "Scientific Computing Software"],
     "domain": [],
-    "organism": []
+    "organism": [],
+    "type": ["Service"],
+    "language": ["Java"]
 }

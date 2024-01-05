@@ -1,5 +1,7 @@
 {
     "lab": ["Pachitariu"],
     "domain": ["Electrophysiology", "Neuroscience"],
-    "organism": ["Mouse"]
+    "organism": ["Mouse"],
+    "type": ["Package"],
+    "language": ["MATLAB", "Python"]
 }
