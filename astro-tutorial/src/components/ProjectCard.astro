@@ -12,12 +12,9 @@ const flatTags = getFlatTags(tags.data)
 
         <!-- Tags -->
         <div class="flex flex-wrap gap-2 p-4">
-            {flatTags.map((tag,index) => {
-                if(index < 3){
-                    return <span class="bg-blue-500 text-white px-2 py-1 rounded-md text-sm">{tag}</span>
-                } else if(index >= 3){
-                   return <span class="hidden bg-blue-500 text-white px-2 py-1 rounded-md text-sm">{tag}</span>
-                }
+            {flatTags.map((tag, index) => {
+                const tagClass = `bg-blue-500 text-white px-2 py-1 rounded-md text-sm ${index < 3 ? '' : 'hidden'}`;
+                return <span class={tagClass}>{tag}</span>;
             })}
         </div>
 
