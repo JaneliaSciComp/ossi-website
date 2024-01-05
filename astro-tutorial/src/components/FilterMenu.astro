@@ -17,7 +17,8 @@ const {uniqueTags} = Astro.props
         <ul class="hidden">
           {uniqueTags[key].map(individualTag => (
             <li 
-                class={`tag-${individualTag} cursor-pointer`} 
+                class='cursor-pointer'
+                id={`tag-${individualTag}`}
             >
                 {individualTag}
             </li>
