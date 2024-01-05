@@ -9,7 +9,8 @@ const {uniqueTags} = Astro.props
     {Object.keys(uniqueTags).map(key => (
       <div class="mr-4">
         <h3 
-            class={`tag-category-${key} cursor-pointer`} 
+            class='cursor-pointer'
+            id={`tag-category-${key}`}
         >
             {key}
         </h3>
