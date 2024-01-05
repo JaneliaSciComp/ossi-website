@@ -1,0 +1,37 @@
+Sample allProjectsTags:
+[
+  {
+    id: 'project-1-tags',
+    collection: 'tags',
+    data: { lab: [Array], domain: [Array], organism: [] }
+  },
+  {
+    id: 'project-2-tags',
+    collection: 'tags',
+    data: { lab: [Array], domain: [Array], organism: [Array] }
+  },
+  {
+    id: 'project-3-tags',
+    collection: 'tags',
+    data: { lab: [Array], domain: [], organism: [] }
+  }
+]
+
+
+Sample uniqueTags:
+{
+  lab: [
+    'Turaga',
+    'Pachitariu',
+    'Saalfeld',
+    'Scientific Computing Software'
+  ],
+  domain: [
+    'Deep learning',
+    'Biomaging',
+    'Machine learning',
+    'Neuroscience',
+    'Electrophysiology'
+  ],
+  organism: [ 'Mouse' ]
+}
