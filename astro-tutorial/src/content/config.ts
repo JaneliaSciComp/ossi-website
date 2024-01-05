@@ -20,7 +20,9 @@ const tagsCollection = defineCollection ({
     schema: z.object({
         lab: z.array(z.string()),
         domain: z.array(z.string()),
-        organism: z.array(z.string())
+        organism: z.array(z.string()),
+        type: z.array(z.string()),
+        language: z.array(z.string())
     })
 })
 
