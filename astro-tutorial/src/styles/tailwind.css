@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.selected {
+    background-color: rgba(59, 130, 246);
+    color: white; 
+    border-radius: 4px; 
+    padding: 4px 8px; 
+    margin: 0 0 0 4px;
+  }

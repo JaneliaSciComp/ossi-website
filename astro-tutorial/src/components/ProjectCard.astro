@@ -1,5 +1,30 @@
 ---
-const {url, title} = Astro.props
----
+import {getFlatTags, formatClassTag} from '../utils/tagManipulation'
 
-<li><a href={url}>{title}</a></li>
+const {url, title, imgUrl, imgAlt, author, description, tags} = Astro.props
+
+const flatTags = getFlatTags(tags.data)
+---
+<a href={url} class={`${flatTags.map(tag => `tag-${formatClassTag(tag)}`).join(' ')} col-span-1 w-full max-w-md aspect-h-mx-auto bg-white rounded-md shadow-md overflow-hidden text-black hover:shadow-lg transition duration-300 transform hover:scale-105 `}>
+    <div>
+        <!-- Image -->
+        <img src={imgUrl} alt={imgAlt} class="w-full h-40 object-cover object-center" />
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 p-4">
+            {flatTags.map((tag, index) => {
+                const tagClass = `bg-blue-500 text-white px-2 py-1 rounded-md text-sm ${index < 3 ? '' : 'hidden'}`;
+                return <span class={tagClass}>{tag}</span>;
+            })}
+        </div>
+
+        <!-- Title -->
+        <h2 class="text-xl font-semibold text-gray-800 p-4">{title}</h2>
+
+        <!-- Author -->
+        <p class="text-gray-600 text-sm px-4">{author}</p>
+
+        <!-- Description -->
+        <p class="text-gray-700 p-4">{description}</p>
+      </div>
+</a>
