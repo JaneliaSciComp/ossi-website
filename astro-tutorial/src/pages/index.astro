@@ -1,9 +1,90 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CallToAction from "../components/CallToAction.astro"
+import BlogLatestPosts from '../components/BlogLatestPosts.astro';
+import ContributorList from '../components/ContributorList.astro';
 
-const pageTitle = "OSSI@Janelia Home"
+import { siteData } from '../navigation';
 
 ---
-<BaseLayout pageTitle={pageTitle}>
-	<p>Additional home page text</p>
+<BaseLayout pageTitle={siteData.name}>
+
+	<Hero>
+		<Fragment slot="title">{siteData.name.slice(2)}</Fragment>
+		<Fragment slot="subtitle">Open Science Software Initiative at Janelia</Fragment>
+	</Hero>
+
+	<CallToAction
+		actions={[
+		{
+			variant: 'primary',
+			text: 'Projects',
+			href: '/projects',
+			target: '_blank',
+		},
+		{ text: 'Learn more', href: '/about' },
+		]}
+  >
+	<Fragment slot="content">
+		The goal of the Open Science Software Initiative is to support scientists at Janelia to create, extend, maintain,
+		and/or document user-friendly and developer-friendly open source software.<br /><br />Explore OSSI-supported
+		project in two ways - through individual projects or project ecosystems.
+	</Fragment>
+
+  </CallToAction>
+
+  <BlogLatestPosts
+    title="OSSI Blog"
+    information={`Read the latest updates on OSSI-supported projects.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+
+  <ContributorList
+    title="Recent contributors"
+    callToAction={{
+      text: 'See all contributors »',
+      href: '/',
+    }}
+    items={[
+      {
+        title: 'Contributor 1',
+        description: 'github-username',
+        icon: 'grommet-icons:github',
+      },
+      {
+        title: 'Contributor 2',
+        description: 'github-username',
+        icon: 'grommet-icons:github',
+      },
+      {
+        title: 'Contributor 3',
+        description: 'github-username',
+        icon: 'grommet-icons:github',
+      },
+    ]}
+  />
+
+  <CallToAction
+   actions={[
+     {
+       variant: 'primary',
+       text: 'Documentation',
+       href: '/documentation',
+       target: '_blank',
+     }
+   ]}
+ >
+    <Fragment slot="content">
+      Interested in contributing to this site? Read the documentation.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+
+ </CallToAction>
+
 </BaseLayout>

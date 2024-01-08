@@ -3,6 +3,7 @@ import "../styles/tailwind.css"
 import CustomStyles from "../styles/CustomStyles.astro"
 
 import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
 
 const {pageTitle} = Astro.props
 ---
@@ -18,8 +19,8 @@ const {pageTitle} = Astro.props
 	</head>
 	<body class="text-default bg-page">
 		<Header/>
-        <h1>{pageTitle}</h1>
         <slot></slot>
+		<Footer/>
 		<script>
 			import '../scripts/header.js';
 		</script>
