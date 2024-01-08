@@ -1,0 +1,50 @@
+---
+import Wrapper from './Wrapper.astro';
+import Headline from './Headline.astro';
+import Button from "./Button.astro"
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  actions = await Astro.slots.render('actions'),
+  content = await Astro.slots.render('content'),
+  id,
+  isDark = false,
+  bg = await Astro.slots.render('bg'),
+} = Astro.props
+---
+
+<Wrapper id={id} isDark={isDark} containerClass=`max-w-6xl mx-auto` bg={bg}>
+  <div
+    class="max-w-3xl py-6 rounded-md dark:border dark:border-slate-600"
+  >
+    <Headline
+      title={title}
+      subtitle={subtitle}
+      tagline={tagline}
+      content={content}
+      classes={{
+        container: 'mb-0 md:mb-0',
+        title: 'text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+        subtitle: 'text-xl text-muted dark:text-slate-400',
+        content: 'mb-12 text-lg dark:text-slate-400'
+      }}
+    />
+    {
+      actions && (
+        <div class="max-w-xs sm:max-w-md  flex flex-nowrap flex-row sm:justify-center gap-4 mt-6">
+          {Array.isArray(actions) ? (
+            actions.map((action) => (
+              <div class="flex w-full">
+                <Button {...(action || {})} class="w-full sm:mb-0" />
+              </div>
+            ))
+          ) : (
+            <Fragment set:html={actions} />
+          )}
+        </div>
+      )
+    }
+  </div>
+</Wrapper>
