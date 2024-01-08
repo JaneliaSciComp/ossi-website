@@ -3,14 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallToAction from "../components/CallToAction.astro"
 
-
-const pageTitle = "OSSI@Janelia Home"
+import { siteData } from '../navigation';
 
 ---
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={siteData.name}>
 
 	<Hero>
-		<Fragment slot="title">OSSI@Janelia</Fragment>
+		<Fragment slot="title">{siteData.name.slice(2)}</Fragment>
 		<Fragment slot="subtitle">Open Science Software Initiative at Janelia</Fragment>
 	</Hero>
 
