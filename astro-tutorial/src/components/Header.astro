@@ -1,20 +1,5 @@
 ---
-// import ToggleMenu from "~/components/common/ToggleMenu.astro";
-
-const links = [
-    {
-        text: "Home",
-        href:"/"
-    },
-    {
-        text: "Projects",
-        href: "/projects"
-    },
-    {
-        text: "About",
-        href:"/about"
-    }
-]
+import { headerData, siteData } from "../navigation";
 ---
 
 <header
@@ -27,9 +12,9 @@ const links = [
       "relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between"
   >
     <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
-      <a class="flex items-center" href="/">
+      <a class="flex items-center" href={siteData.base}>
         <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
-            🔬 OSSI@Janelia
+            {siteData.name}
         </span>
       </a>
       <div class="flex items-center md:hidden">
@@ -65,7 +50,7 @@ const links = [
         class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
       >
         {
-          links.map(({ text, href }) => (
+          headerData.links.map(({ text, href }) => (
             <li>
                 <a
                   class= "hover:text-link dark:hover:text-white px-4 py-3 flex items-centers"
