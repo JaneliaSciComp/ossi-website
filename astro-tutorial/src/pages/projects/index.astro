@@ -2,11 +2,11 @@
 import { getCollection } from "astro:content"
 import "../styles/tailwind.css"
 
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro'
-import FilterMenu from "../components/FilterMenu.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro.jsx';
+import ProjectCard from '../../components/ProjectCard.astro.jsx'
+import FilterMenu from "../../components/FilterMenu.astro.jsx";
 
-import {extractUniqueTags} from "../utils/tagManipulation.js"
+import {extractUniqueTags} from "../../utils/tagManipulation.js"
 
 const pageTitle = "OSSI-supported projects"
 const allProjects = await getCollection('projects')
