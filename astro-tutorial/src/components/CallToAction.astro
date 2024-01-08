@@ -11,11 +11,12 @@ const {
   content = await Astro.slots.render('content'),
   id,
   isDark = false,
+  classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props
 ---
 
-<Wrapper id={id} isDark={isDark} containerClass=`max-w-6xl mx-auto` bg={bg}>
+<Wrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
     class="max-w-3xl py-6 rounded-md dark:border dark:border-slate-600"
   >
