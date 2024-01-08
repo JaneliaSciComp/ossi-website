@@ -1,13 +1,36 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import CallToAction from "../components/CallToAction.astro"
+
 
 const pageTitle = "OSSI@Janelia Home"
 
 ---
 <BaseLayout pageTitle={pageTitle}>
+
 	<Hero>
 		<Fragment slot="title">OSSI@Janelia</Fragment>
 		<Fragment slot="subtitle">Open Science Software Initiative at Janelia</Fragment>
 	</Hero>
+
+	<CallToAction
+		actions={[
+		{
+			variant: 'primary',
+			text: 'Projects',
+			href: '/projects',
+			target: '_blank',
+		},
+		{ text: 'Learn more', href: '/about' },
+		]}
+  >
+	<Fragment slot="content">
+		The goal of the Open Science Software Initiative is to support scientists at Janelia to create, extend, maintain,
+		and/or document user-friendly and developer-friendly open source software.<br /><br />Explore OSSI-supported
+		project in two ways - through individual projects or project ecosystems.
+	</Fragment>
+
+  </CallToAction>
+
 </BaseLayout>
