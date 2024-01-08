@@ -24,10 +24,30 @@ const tagsCollection = defineCollection ({
         type: z.array(z.string()),
         language: z.array(z.string())
     })
+});
+
+const blogCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    publishDate: z.date().optional(),
+    updateDate: z.date().optional(),
+    draft: z.boolean().optional(),
+
+    title: z.string(),
+    excerpt: z.string().optional(),
+    image: z.object({
+      url: z.string().optional(),
+      alt: z.string().optional()
+    }),
+
+    category: z.string().optional(),
+    author: z.string().optional(),
+  }), 
 })
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   projects: projectsCollection,
-  tags: tagsCollection
+  tags: tagsCollection,
+  blog: blogCollection
 };
