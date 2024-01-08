@@ -14,6 +14,6 @@ export default {
 				'hero-pattern':"url('/src/assets/images/hero.jpg')"
 			}
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 }
 }
