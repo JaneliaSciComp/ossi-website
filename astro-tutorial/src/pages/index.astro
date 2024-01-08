@@ -1,9 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
 
 const pageTitle = "OSSI@Janelia Home"
 
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<p>Additional home page text</p>
+	<Hero>
+		<Fragment slot="title">OSSI@Janelia</Fragment>
+		<Fragment slot="subtitle">Open Science Software Initiative at Janelia</Fragment>
+	</Hero>
 </BaseLayout>
