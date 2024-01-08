@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content"
-import "../styles/tailwind.css"
+import "../../styles/tailwind.css"
 
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro'
-import FilterMenu from "../components/FilterMenu.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro'
+import FilterMenu from "../../components/FilterMenu.astro";
 
-import {extractUniqueTags} from "../utils/tagManipulation.js"
+import {extractUniqueTags} from "../../utils/tagManipulation.js"
 
 const pageTitle = "OSSI-supported projects"
 const allProjects = await getCollection('projects')
@@ -16,7 +16,6 @@ const uniqueTags = extractUniqueTags(allProjectTags)
 
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<p>List of project tags</p>
     <section class="grid grid-cols-3 gap-4">
         <section class="col-span-1">
             <FilterMenu uniqueTags={uniqueTags}/>
@@ -36,6 +35,6 @@ const uniqueTags = extractUniqueTags(allProjectTags)
         </section>
     </section>
     <script>
-        import '../scripts/filterMenu.js';
+        import '../../scripts/filterMenu.js';
     </script>
 </BaseLayout>
