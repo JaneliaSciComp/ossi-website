@@ -1,10 +1,13 @@
 ---
+import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content"
 import "../../styles/tailwind.css"
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from "../../components/Hero.astro";
 import ProjectCard from '../../components/ProjectCard.astro'
 import FilterMenu from "../../components/FilterMenu.astro";
+import Button from "../../components/Button.astro";
 
 import {extractUniqueTags} from "../../utils/tagManipulation.js"
 
@@ -13,14 +16,21 @@ const allProjects = await getCollection('projects')
 const allProjectTags = await getCollection("tags")
 const uniqueTags = extractUniqueTags(allProjectTags)
 
-
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <section class="grid grid-cols-3 gap-4">
+    <Hero>
+		<Fragment slot="title">Projects</Fragment>
+		<Fragment slot="subtitle">Tagline describing what "projects" are</Fragment>
+	</Hero>
+    <section class="md:grid grid-cols-3 gap-4">
         <section class="col-span-1">
+            <div class="flex justify-center items-center gap-4 p-2 md:hidden">
+                <p>Filter projects {displayedProjects.length}</p>
+                <Button icon="tabler:adjustments-horizontal" variant="tertiary"/>
+            </div>
             <FilterMenu uniqueTags={uniqueTags}/>
         </section>
-        <section class="col-start-2 col-span-2 grid grid-cols-2 auto-rows-max gap-4" id="projectCards">
+        <section class="col-start-2 col-span-2 md:grid grid-cols-2 auto-rows-max gap-4" id="projectCards">
             {allProjects.map((project) => (
                 <ProjectCard 
                     url={`/projects/${project.slug}/`} 
