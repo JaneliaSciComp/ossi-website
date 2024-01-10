@@ -1,4 +1,4 @@
-function normalizeTag(tag){
+export function normalizeTag(tag){
   return tag.toLowerCase().trim();
 }
 
@@ -45,6 +45,26 @@ export function extractUniqueTags(allProjects) {
 
     return uniqueTags
   }
+
+export function extractIndividualProjectTags(project){
+  const tagsObj = {}
+  Object.entries(project.data).forEach(([key, value]) => {
+    // Check if the key is NOT 'title', 'description', 'author', or 'image'
+    if (!['title', 'description', 'author', 'image'].includes(key)) {
+      if(value){
+        if (Array.isArray(value)) {
+          // If the value is an array, loop through each individual string
+          tagsObj[key] = value.map(arrayValue => normalizeTag(arrayValue));
+        } else {
+          // If the value is not an array, normalize and add it to tagsObj
+          tagsObj[key] = normalizeTag(value);
+        }
+      }
+    }
+  });
+
+  return tagsObj;
+}
 
 export function getFlatTags(tagsObject) {
   return Object.values(tagsObject).flat()
