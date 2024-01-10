@@ -1,5 +1,6 @@
 import { TbChevronUp, TbChevronDown, TbX } from "react-icons/tb";
 import {useState} from "react"
+import { normalizeTag } from "../../utils/tagManipulation";
 
 export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueTags, selectedTags, handleTagSelection, handleReset}){
   const [categoryVisibility, setCategoryVisibility] = useState(() => {
@@ -43,11 +44,11 @@ export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueT
           </h3>
           <ul className={`flex flex-col flex-nowrap ${!categoryVisibility[key] && "hidden"}`}>
             {uniqueTags[key].map(individualTag => {
-              const lowerCaseTag = individualTag.toLowerCase()
+              const normalizedTag = normalizeTag(individualTag)
               return (
               <li 
-                  className={`cursor-pointer ml-2 my-1 self-start ${selectedTags.includes(lowerCaseTag) ? 'selected' : ''}`}
-                  onClick={() => handleTagSelection(lowerCaseTag)}
+                  className={`cursor-pointer ml-2 my-1 self-start ${selectedTags.includes(normalizedTag) ? 'selected' : ''}`}
+                  onClick={() => handleTagSelection(normalizedTag)}
               >
                   {individualTag}
               </li>
