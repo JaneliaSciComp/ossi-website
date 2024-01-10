@@ -14,7 +14,7 @@ export default function ProjectCard({url, title, imgUrl, imgAlt, author, descrip
         
                 <div className="flex flex-wrap gap-2 p-4">
                     {tagValuesArray.map((tag, index) => {
-                        const tagClass = `bg-blue-500 text-white px-2 py-1 rounded-md text-sm ${index < 3 ? '' : 'hidden'}`;
+                        const tagClass = `bg-primary text-white px-2 py-1 rounded-md text-sm ${index < 3 ? '' : 'hidden'}`;
                         return <span class={tagClass}>{tag}</span>;
                     })}
                 </div>
