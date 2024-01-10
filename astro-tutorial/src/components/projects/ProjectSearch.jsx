@@ -1,21 +1,24 @@
 import {useState} from 'react'
 import {TbAdjustmentsHorizontal} from "react-icons/tb"
+
 import FilterMenu from './FilterMenu.jsx';
 import ProjectGrid from './ProjectGrid.jsx'
 
-export default function ProjectSearch({uniqueTags, allProjects, allProjectTags}){
+import { normalizeTag } from '../../utils/tagManipulation.js';
+
+export default function ProjectSearch({uniqueTags, allProjects}){
     const [selectedTags, setSelectedTags] = useState([])
-    const [filterMenuVisible, setFilterMenuVisible] = useState(window.innerWidth >= 768);
+    const [filterMenuVisible, setFilterMenuVisible] = useState(false);
 
     function handleTagSelection(tag){
         setSelectedTags(prevTags => {
-            const lowerCaseTag = tag.toLowerCase()
+            const normalizedTag = normalizeTag(tag)
             // Check if the tag is already in the array
-            const tagIndex = prevTags.indexOf(lowerCaseTag);
+            const tagIndex = prevTags.indexOf(normalizedTag);
     
             // If the tag is not in the array, add it
             if (tagIndex === -1) {
-                return [...prevTags, lowerCaseTag];
+                return [...prevTags, normalizedTag];
             } else {
                 // If the tag is already in the array, remove it
                 const newTags = [...prevTags];
@@ -58,7 +61,6 @@ export default function ProjectSearch({uniqueTags, allProjects, allProjectTags})
                     key="ProjectGrid"
                     selectedTags={selectedTags} 
                     allProjects={allProjects}
-                    allProjectTags={allProjectTags}
                 />
             
         </section>
