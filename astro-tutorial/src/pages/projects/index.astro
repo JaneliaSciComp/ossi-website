@@ -15,13 +15,15 @@ const uniqueTags = extractUniqueTags(allProjectTags)
 ---
 <BaseLayout pageTitle={pageTitle}>
     <Hero>
-		<Fragment slot="title">Projects</Fragment>
-		<Fragment slot="subtitle">Tagline describing what "projects" are</Fragment>
-	</Hero>
-    <ProjectSearch 
+        <Fragment slot="title">Projects</Fragment>
+        <Fragment slot="subtitle">Tagline describing what "projects" are</Fragment>
+    </Hero>
+    <section class="px-6 py-2 md:py-12 lg:py-20 mx-auto max-w-6xl">
+        <ProjectSearch 
         client:only 
         uniqueTags={uniqueTags}
         allProjects={allProjects}
         allProjectTags={allProjectTags}
-    />
+        />
+    </section>
 </BaseLayout>
