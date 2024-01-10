@@ -40,15 +40,14 @@ export default function ProjectSearch({uniqueTags, allProjects, allProjectTags})
             >
                 {filterMenuVisible ? 'Close Filter' : 'Show Filter'}
             </button>
-            {(filterMenuVisible || window.innerWidth < 768) && (
             <FilterMenu 
                 key="FilterMenu"
+                filterMenuVisible={filterMenuVisible}
                 uniqueTags={uniqueTags} 
                 selectedTags={selectedTags} 
                 handleTagSelection={handleTagSelection}
                 handleReset={handleReset}
             />
-            )}
             <ProjectGrid
                 key="ProjectGrid"
                 selectedTags={selectedTags} 

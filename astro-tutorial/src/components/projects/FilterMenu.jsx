@@ -1,7 +1,7 @@
 import { TbChevronUp, TbChevronDown } from "react-icons/tb";
 import {useState} from "react"
 
-export default function FilterMenu({uniqueTags, selectedTags, handleTagSelection, handleReset}){
+export default function FilterMenu({filterMenuVisible, uniqueTags, selectedTags, handleTagSelection, handleReset}){
   const [categoryVisibility, setCategoryVisibility] = useState(() => {
     const initialVisibility = {};
     Object.keys(uniqueTags).forEach((key) => {
@@ -18,7 +18,7 @@ export default function FilterMenu({uniqueTags, selectedTags, handleTagSelection
   };
 
   return (
-    <div className="col-start-1 col-span-1 flex flex-col p-4 border-gray-200 border-2 rounded-lg">
+    <div className={`${filterMenuVisible ? 'flex' : 'hidden'} col-start-1 col-span-1 md:flex flex-col p-4 border-gray-200 border-2 rounded-lg`}>
       {Object.keys(uniqueTags).map(key => (
         <div 
           className='mb-4'
