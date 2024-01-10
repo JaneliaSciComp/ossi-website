@@ -5,5 +5,9 @@ author: 'Turaga et al.'
 image:
     url: 'https://source.unsplash.com/f4pUuCc3M0g'
     alt: 'The full Astro logo.'
-tags: project-1-tags test
+associated labs and projects: turaga
+scientific domain: ["Deep learning", "Biomaging", "Machine learning", "Neuroscience"]
+model organism:
+software type: package
+programming language: python
 ---

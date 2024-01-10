@@ -5,5 +5,9 @@ author: 'Saalfeld et al.'
 image:
     url: 'https://source.unsplash.com/OqtafYT5kTw'
     alt: 'The full Astro logo.'
-tags: project-4-tags
+associated labs and projects: [saalfeld, COSEM]
+scientific domain: bioimaging
+model organism:
+software type: native application
+programming language: [java, kotlin]
 ---

@@ -5,5 +5,9 @@ author: 'Pachitariu et al.'
 image:
     url: 'https://source.unsplash.com/rmWtVQN5RzU'
     alt: 'The full Astro logo.'
-tags: project-2-tags
+associated labs and projects: Pachitariu
+scientific domain: [Electrophysiology, Neuroscience]
+model organism: mouse
+software type: package
+programming language: ["MATLAB", "Python"]
 ---
