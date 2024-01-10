@@ -7,7 +7,7 @@ export default function ProjectCard({url, title, imgUrl, imgAlt, author, descrip
     const lowercaseTagsArray = tagValuesArray.map(tag => tag.toLowerCase())
 
     return(
-        <div className={`${(selectedTags.length && !lowercaseTagsArray.some(tag => selectedTags.includes(tag))) ? "hidden" : ''} col-span-1 md:max-w-md mx-auto mb-4 bg-white rounded-md shadow-md overflow-hidden text-black hover:shadow-lg transition duration-300 transform hover:scale-105 `}>
+        <div className={`${(selectedTags.length && !lowercaseTagsArray.some(tag => selectedTags.includes(tag))) ? "hidden" : ''} col-span-1 w-full h-full mx-auto mb-4 bg-white rounded-md shadow-md overflow-hidden text-black hover:shadow-lg transition duration-300 transform hover:scale-105 `}>
             <a href={url}>
             
                 <img src={imgUrl} alt={imgAlt} class="w-full h-40 object-cover object-center" />
