@@ -34,15 +34,17 @@ export default function ProjectSearch({uniqueTags, allProjects, allProjectTags})
     }
 
     return (
-        <section className='md:grid grid-cols-3 gap-4'>
-            <div className='flex py-6'>
+        <>
+            <div className='flex py-6 md:p-0'>
                 <button
-                    className='md:hidden btn-tertiary flex gap-2'
+                    className='md:hidden btn flex gap-2'
                     onClick={toggleFilterMenu}
                 >
-                    <p>Filters</p><TbAdjustmentsHorizontal class="w-5 h-5 inline-block"/> 
+                    <p>Filters</p><TbAdjustmentsHorizontal className="w-5 h-5 inline-block"/> 
                 </button>
             </div>
+            <section className='md:grid grid-cols-3 gap-4'>
+
             <FilterMenu 
                     key="FilterMenu"
                     filterMenuVisible={filterMenuVisible}
@@ -60,5 +62,6 @@ export default function ProjectSearch({uniqueTags, allProjects, allProjectTags})
                 />
             
         </section>
+        </>
       );
 }
