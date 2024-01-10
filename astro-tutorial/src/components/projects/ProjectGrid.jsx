@@ -1,6 +1,8 @@
 import ProjectCard from "./ProjectCard"
 
-export default function ProjectGrid({selectedTags, allProjects, allProjectTags}){
+import { extractIndividualProjectTags } from "../../utils/tagManipulation"
+
+export default function ProjectGrid({selectedTags, allProjects}){
   return (
         <section className="col-start-2 col-span-2 md:grid grid-cols-2 auto-rows-max md:gap-4">
             {allProjects.map((project) => {
@@ -13,7 +15,7 @@ export default function ProjectGrid({selectedTags, allProjects, allProjectTags})
                     imgAlt={project.data.image.alt}
                     author={project.data.author}
                     description={project.data.description}
-                    tagsObj={allProjectTags.find(tag => tag.id === project.data.tags.id).data}
+                    tagsObj={extractIndividualProjectTags(project)}
                     selectedTags={selectedTags}
                 />)
               }
