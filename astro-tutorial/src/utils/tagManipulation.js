@@ -1,38 +1,50 @@
-export function formatClassTag(tag){
-  return tag.trim().replace(/\s+/g, '-').toLowerCase();
+function normalizeTag(tag){
+  return tag.toLowerCase().trim();
 }
 
-export function extractUniqueTags(allProjectTags) {
-    // Create an object to store unique tag categories and tags
+export function extractUniqueTags(allProjects) {
     const uniqueTags = {};
     // Iterate through each project's tags
-    allProjectTags.forEach(project => {
-      // Check if project data exist
-      if (project.data) {
-        // Iterate through each tag category
-        Object.keys(project.data).forEach(tagCategory => {
-          // Check if project.data[tagCategory] is a non-empty array
-              if (Array.isArray(project.data[tagCategory]) && project.data[tagCategory].length > 0) {
-                // Add the tag category as a key in uniqueTags if it doesn't exist
-                if (!uniqueTags[tagCategory]) {
-                    uniqueTags[tagCategory] = [];
+    allProjects.forEach(project => {
+      // Iterate through each key-value pair in project.data
+      Object.entries(project.data).forEach(([key, value]) => {
+        // Check if the key is NOT 'title', 'description', 'author', or 'image'
+        if (!['title', 'description', 'author', 'image'].includes(key)) {
+          if (value){
+
+            if (Array.isArray(value)) {
+              // If the value is an array, loop through each individual string
+              value.forEach(arrayValue => {
+                const normalizedArrayValue = normalizeTag(arrayValue);
+                // If the key is not present in uniqueTags, add it with the corresponding normalized value
+                if (!uniqueTags[key]) {
+                  uniqueTags[key] = [normalizedArrayValue];
+                } else {
+                  // If the key is already present, add the normalized value only if it's not already in the array
+                  if (!uniqueTags[key].includes(normalizedArrayValue)) {
+                    uniqueTags[key].push(normalizedArrayValue);
+                  }
                 }
-  
-                // Iterate through each tag in the current tag category
-                project.data[tagCategory].forEach(tag => {
-                    // Add unique tags to the uniqueTags object
-                    if (!uniqueTags[tagCategory].includes(tag)) {
-                    uniqueTags[tagCategory].push(tag);
-                    }
-                });
+              });
+            } else {
+              // If the value is not an array, normalize and process it as before
+              const normalizedValue = normalizeTag(value);
+              if (!uniqueTags[key]) {
+                uniqueTags[key] = [normalizedValue];
+              } else {
+                if (!uniqueTags[key].includes(normalizedValue)) {
+                  uniqueTags[key].push(normalizedValue);
+                }
+              }
+            }
 
-        };
-
-        });
-      }
+          }
+        }
+      });
     });
-    return uniqueTags;
-}
+
+    return uniqueTags
+  }
 
 export function getFlatTags(tagsObject) {
   return Object.values(tagsObject).flat()
