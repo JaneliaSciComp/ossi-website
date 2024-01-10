@@ -34,7 +34,7 @@
   }
 
   .btn-tertiary {
-    @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+    @apply btn shadow-none p-1 md:p-8 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
   }
 }
 
@@ -84,7 +84,7 @@
 }
 
 .selected {
-    background-color: rgba(59, 130, 246);
+    background-color: var(--color-primary);
     color: white; 
     border-radius: 4px; 
     padding: 4px 8px; 
