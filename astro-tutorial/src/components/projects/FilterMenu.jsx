@@ -65,10 +65,10 @@ export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueT
             Reset
         </button>
         <button 
-          className="btn-primary"
+          className="btn-primary md:hidden"
           onClick={()=>toggleFilterMenu()}
         >
-            Apply filters
+            View projects
         </button>
       </div>
       
