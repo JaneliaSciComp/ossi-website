@@ -1,4 +1,4 @@
-import { TbChevronUp, TbChevronDown } from "react-icons/tb";
+import { TbChevronUp, TbChevronDown, TbX } from "react-icons/tb";
 import {useState} from "react"
 
 export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueTags, selectedTags, handleTagSelection, handleReset}){
@@ -18,13 +18,14 @@ export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueT
   };
 
   return (
-    <div className={`${filterMenuVisible ? 'flex translate-x-0' : 'translate-x-full'} z-50 absolute top-0 right-0 transition-transform duration-500 col-start-1 col-span-1 w-full max-h-screen  md:flex flex-col p-4 bg-white border-gray-200 border-2 rounded-lg`}>
+    <div className={`${filterMenuVisible ? 'flex translate-x-0' : 'translate-x-full'} z-50 fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 w-full max-h-screen md:max-h-full flex-col p-4 bg-white border-gray-200 border-2 rounded-lg`}>
       <button
+        className="md:hidden self-end m-2 btn-tertiary"
         onClick={()=>toggleFilterMenu()}
       >
-        X
+        <TbX/>
       </button>
-      <div className="overflow-y-scroll"> 
+      <div className="overflow-y-scroll md:overflow-hidden p-2"> 
       {Object.keys(uniqueTags).map(key => (
         <div 
           className='mb-4'
@@ -56,18 +57,21 @@ export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueT
       ))}
       </div>
       
-      <button 
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-        onClick={()=>handleReset()}
-      >
-          Reset
-      </button>
-      <button 
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-        onClick={()=>toggleFilterMenu()}
-      >
-          Apply filters
-      </button>
+      <div className="flex self-center gap-4 py-4">
+        <button 
+          className="btn"
+          onClick={()=>handleReset()}
+        >
+            Reset
+        </button>
+        <button 
+          className="btn-primary"
+          onClick={()=>toggleFilterMenu()}
+        >
+            Apply filters
+        </button>
+      </div>
+      
     </div>
   )
   
