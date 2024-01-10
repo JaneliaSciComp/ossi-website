@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard"
 
 export default function ProjectGrid({selectedTags, allProjects, allProjectTags}){
   return (
-        <section className="col-start-2 col-span-2 md:grid grid-cols-2 auto-rows-max gap-4">
+        <section className="col-start-2 col-span-2 md:grid grid-cols-2 auto-rows-max md:gap-4">
             {allProjects.map((project) => {
               
                return (<ProjectCard
