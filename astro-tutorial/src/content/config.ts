@@ -11,18 +11,11 @@ const projectsCollection = defineCollection({
         url: z.string(),
         alt: z.string()
       }),
-      tags: reference("tags")
-    })
-});
-
-const tagsCollection = defineCollection ({
-    type: 'data',
-    schema: z.object({
-        lab: z.array(z.string()),
-        domain: z.array(z.string()),
-        organism: z.array(z.string()),
-        type: z.array(z.string()),
-        language: z.array(z.string())
+      'associated labs and projects': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+      'scientific domain': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+      'model organism': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+      'software type': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+      'programming language': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
     })
 });
 
@@ -48,6 +41,5 @@ const blogCollection = defineCollection({
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   projects: projectsCollection,
-  tags: tagsCollection,
   blog: blogCollection
 };
