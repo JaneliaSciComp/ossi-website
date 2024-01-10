@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {TbAdjustmentsHorizontal} from "react-icons/tb"
 import FilterMenu from './FilterMenu.jsx';
 import ProjectGrid from './ProjectGrid.jsx'
 
@@ -34,26 +35,30 @@ export default function ProjectSearch({uniqueTags, allProjects, allProjectTags})
 
     return (
         <section className='md:grid grid-cols-3 gap-4'>
-            <button
-                className='block md:hidden bg-blue-500 text-white px-4 py-2 rounded mb-4'
-                onClick={toggleFilterMenu}
-            >
-                {filterMenuVisible ? 'Close Filter' : 'Show Filter'}
-            </button>
+            <div className='flex py-6'>
+                <button
+                    className='md:hidden btn-tertiary flex gap-2'
+                    onClick={toggleFilterMenu}
+                >
+                    <p>Filters</p><TbAdjustmentsHorizontal class="w-5 h-5 inline-block"/> 
+                </button>
+            </div>
             <FilterMenu 
-                key="FilterMenu"
-                filterMenuVisible={filterMenuVisible}
-                uniqueTags={uniqueTags} 
-                selectedTags={selectedTags} 
-                handleTagSelection={handleTagSelection}
-                handleReset={handleReset}
-            />
-            <ProjectGrid
-                key="ProjectGrid"
-                selectedTags={selectedTags} 
-                allProjects={allProjects}
-                allProjectTags={allProjectTags}
-            />
+                    key="FilterMenu"
+                    filterMenuVisible={filterMenuVisible}
+                    toggleFilterMenu={toggleFilterMenu}
+                    uniqueTags={uniqueTags} 
+                    selectedTags={selectedTags} 
+                    handleTagSelection={handleTagSelection}
+                    handleReset={handleReset}
+                />
+                <ProjectGrid
+                    key="ProjectGrid"
+                    selectedTags={selectedTags} 
+                    allProjects={allProjects}
+                    allProjectTags={allProjectTags}
+                />
+            
         </section>
       );
 }
