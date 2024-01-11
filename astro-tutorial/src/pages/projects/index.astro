@@ -1,12 +1,16 @@
 ---
-import { getCollection } from "astro:content"
 import "../../styles/tailwind.css"
+
+import { getCollection } from "astro:content"
+import { Image } from "astro:assets";
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from "../../components/Hero.astro";
-import ProjectSearch from "../../components/projects/ProjectSearch.jsx";
+import ToggleFilterMenuBtn from '../../components/projects/ToggleFilterMenuBtn.jsx'
+import FilterMenu from "../../components/projects/FilterMenu.jsx";
+import ProjectCard from "../../components/projects/ProjectCard.jsx";
 
-import {extractUniqueTags} from "../../utils/tagManipulation.js"
+import {extractUniqueTags, extractIndividualProjectTags} from "../../utils/tagManipulation.js"
 
 const pageTitle = "OSSI-supported projects"
 const allProjects = await getCollection('projects')
@@ -18,11 +22,37 @@ const uniqueTags = extractUniqueTags(allProjects)
         <Fragment slot="subtitle">Tagline describing what "projects" are</Fragment>
     </Hero>
     <section class="px-6 py-2 md:py-12 lg:py-20 mx-auto max-w-6xl">
-        <ProjectSearch
-            client:load
-            key="ProjectSearch" 
-            uniqueTags={uniqueTags}
-            allProjects={allProjects}
-        />
+        <div class='flex py-6 md:p-0'>
+            <ToggleFilterMenuBtn client:load />
+        </div>
+        <section class='md:grid grid-cols-3 gap-4'>
+            <FilterMenu
+                client:load 
+                key="FilterMenu"
+                uniqueTags={uniqueTags} 
+            />
+            <section class="col-start-2 col-span-2 md:grid grid-cols-2 auto-rows-max md:gap-4">
+                {allProjects.map((project) => {
+                    return (
+                        <ProjectCard
+                            client:load
+                            key={project.slug} 
+                            url={`/projects/${project.slug}/`} 
+                            title={project.data.title} 
+                            author={project.data.author}
+                            description={project.data.description}
+                            tagsArray={extractIndividualProjectTags(project)}
+                        >
+                            <Image 
+                                slot="image" 
+                                src={project.data['image file']} 
+                                alt={project.data['image alt text']}
+                                class="w-full h-40 object-cover object-center"
+                                loading="eager"
+                            />
+                        </ProjectCard>
+                    )
+                })
+              }
     </section>
 </BaseLayout>

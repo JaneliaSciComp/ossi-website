@@ -1,8 +1,15 @@
+import {useState} from "react";
+import {useStore} from '@nanostores/react';
 import { TbChevronUp, TbChevronDown, TbX } from "react-icons/tb";
-import {useState} from "react"
-import { capitalizeTag } from "../../utils/tagManipulation";
 
-export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueTags, selectedTags, handleTagSelection, handleReset}){
+import { isFilterMenuVisible } from './stores/filterStore.js';
+import { selectedTags, handleTagSelection } from "./stores/tagsStore.js";
+import { capitalizeTag } from "../../utils/tagManipulation.js";
+
+export default function FilterMenu({uniqueTags}){
+  const $isFilterMenuVisible = useStore(isFilterMenuVisible)
+  const $selectedTags  = useStore(selectedTags)
+
   const [categoryVisibility, setCategoryVisibility] = useState(() => {
     const initialVisibility = {};
     Object.keys(uniqueTags).forEach((key) => {
@@ -19,10 +26,10 @@ export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueT
   };
 
   return (
-    <div className={`${filterMenuVisible ? 'flex translate-x-0' : 'translate-x-full'} z-50 fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 w-full max-h-screen md:max-h-full flex-col p-4 bg-white border-gray-200 border-2 rounded-lg`}>
+    <div className={`${$isFilterMenuVisible ? 'flex translate-x-0' : 'translate-x-full'} z-50 fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 w-full max-h-screen md:max-h-full flex-col p-4 bg-white border-gray-200 border-2 rounded-lg`}>
       <button
         className="md:hidden self-end m-2 btn-tertiary"
-        onClick={()=>toggleFilterMenu()}
+        onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
       >
         <TbX/>
       </button>
@@ -50,7 +57,7 @@ export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueT
                 return (
                 <li
                     key={individualTag}
-                    className={`cursor-pointer ml-2 my-1 self-start ${selectedTags.includes(normalizedTag) ? 'selected' : ''}`}
+                    className={`cursor-pointer ml-2 my-1 self-start ${$selectedTags.includes(normalizedTag) ? 'selected' : ''}`}
                     onClick={() => handleTagSelection(normalizedTag)}
                 >
                     {normalizedTag}
@@ -64,13 +71,13 @@ export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueT
       <div className="flex self-center gap-4 py-4">
         <button 
           className="btn"
-          onClick={()=>handleReset()}
+          onClick={()=>selectedTags.set([])}
         >
             Reset
         </button>
         <button 
           className="btn-primary md:hidden"
-          onClick={()=>toggleFilterMenu()}
+          onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
         >
             View projects
         </button>
