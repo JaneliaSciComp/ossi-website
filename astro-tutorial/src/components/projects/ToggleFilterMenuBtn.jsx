@@ -1,5 +1,5 @@
 import {useStore} from '@nanostores/react';
-import { isFilterMenuVisible } from './stores/FilterStore';
+import { isFilterMenuVisible } from './stores/filterStore';
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 
 export default function ToggleFilterMenuBtn(){
