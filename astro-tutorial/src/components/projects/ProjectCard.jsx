@@ -1,12 +1,13 @@
-import { useTagsContext } from './context/TagsContext';
+import {useStore} from '@nanostores/react';
+import { selectedTags } from "./stores/tagsStore";
 import { capitalizeTag } from "../../utils/tagManipulation";
 
 export default function ProjectCard({url, title, imgSrc, imgAlt, author, description, tagsArray}){
-    const { selectedTags } = useTagsContext();
+    const $selectedTags  = useStore(selectedTags)
 
     return(
         <div 
-            className={`${(selectedTags.length && !tagsArray.some(tag => selectedTags.includes(tag))) ? "hidden" : ''} col-span-1 w-full h-full mx-auto mb-4 bg-white rounded-md shadow-md overflow-hidden text-black hover:shadow-lg transition duration-300 transform hover:scale-105 `}
+            className={`${($selectedTags.length && !tagsArray.some(tag => $selectedTags.includes(tag))) ? "hidden" : ''} col-span-1 w-full h-full mx-auto mb-4 bg-white rounded-md shadow-md overflow-hidden text-black hover:shadow-lg transition duration-300 transform hover:scale-105 `}
         >
             <a href={url}>
             
