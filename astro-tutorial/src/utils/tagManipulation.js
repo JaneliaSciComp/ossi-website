@@ -1,34 +1,52 @@
-export function normalizeTag(tag){
-  return tag.toLowerCase().trim();
+const tagKeyNames = [
+  "associated labs and projects",
+  "scientific domain",  
+  "model organism",
+  "software type",
+  "programming language"
+]
+
+// Takes in a tag string and returns the string with the first letter of each word capitalized
+// Used to normalize the tags to allow for matching between the filter menu and individual projects
+export function capitalizeTag(tag){
+  tag = tag.trim()
+
+  let words = tag.split(' ');
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    }
+
+    let capitalizedTag = words.join(' ');
+
+    return capitalizedTag;
 }
 
+// Takes in the allProjects object and returns an object of only the unique tag keys and unique tag values within each key
+// Used to create the tag categories and tag option list in the filter menu
 export function extractUniqueTags(allProjects) {
     const uniqueTags = {};
-    // Iterate through each project's tags
+
     allProjects.forEach(project => {
-      // Iterate through each key-value pair in project.data
+      
       Object.entries(project.data).forEach(([key, value]) => {
-        // Check if the key is NOT 'title', 'description', 'author', or 'image'
-        if (!['title', 'description', 'author', 'image'].includes(key)) {
+        
+        if (tagKeyNames.includes(key)) {
           if (value){
 
             if (Array.isArray(value)) {
-              // If the value is an array, loop through each individual string
               value.forEach(arrayValue => {
-                const normalizedArrayValue = normalizeTag(arrayValue);
-                // If the key is not present in uniqueTags, add it with the corresponding normalized value
+                const normalizedArrayValue = capitalizeTag(arrayValue);
                 if (!uniqueTags[key]) {
                   uniqueTags[key] = [normalizedArrayValue];
                 } else {
-                  // If the key is already present, add the normalized value only if it's not already in the array
                   if (!uniqueTags[key].includes(normalizedArrayValue)) {
                     uniqueTags[key].push(normalizedArrayValue);
                   }
                 }
               });
             } else {
-              // If the value is not an array, normalize and process it as before
-              const normalizedValue = normalizeTag(value);
+              const normalizedValue = capitalizeTag(value);
               if (!uniqueTags[key]) {
                 uniqueTags[key] = [normalizedValue];
               } else {
@@ -46,26 +64,23 @@ export function extractUniqueTags(allProjects) {
     return uniqueTags
   }
 
+// Takes in a single project object and returns an array of that project's tag values
+// Used to populate the tags on the invididual project cards
 export function extractIndividualProjectTags(project){
   const tagsObj = {}
   Object.entries(project.data).forEach(([key, value]) => {
-    // Check if the key is NOT 'title', 'description', 'author', or 'image'
-    if (!['title', 'description', 'author', 'image'].includes(key)) {
+ 
+    if (tagKeyNames.includes(key)) {
       if(value){
         if (Array.isArray(value)) {
-          // If the value is an array, loop through each individual string
-          tagsObj[key] = value.map(arrayValue => normalizeTag(arrayValue));
+          tagsObj[key] = value.map(arrayValue => capitalizeTag(arrayValue));
         } else {
-          // If the value is not an array, normalize and add it to tagsObj
-          tagsObj[key] = normalizeTag(value);
+          tagsObj[key] = capitalizeTag(value);
         }
       }
     }
+
   });
-
-  return tagsObj;
-}
-
-export function getFlatTags(tagsObject) {
-  return Object.values(tagsObject).flat()
+  const tagValuesArray = Object.values(tagsObj).flat()
+  return tagValuesArray;
 }
