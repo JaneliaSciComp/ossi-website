@@ -4,7 +4,7 @@ import {TbAdjustmentsHorizontal} from "react-icons/tb"
 import FilterMenu from './FilterMenu.jsx';
 import ProjectGrid from './ProjectGrid.jsx'
 
-import { normalizeTag } from '../../utils/tagManipulation.js';
+import { capitalizeTag } from '../../utils/tagManipulation.js';
 
 export default function ProjectSearch({uniqueTags, allProjects}){
     const [selectedTags, setSelectedTags] = useState([])
@@ -12,7 +12,7 @@ export default function ProjectSearch({uniqueTags, allProjects}){
 
     function handleTagSelection(tag){
         setSelectedTags(prevTags => {
-            const normalizedTag = normalizeTag(tag)
+            const normalizedTag = capitalizeTag(tag)
             // Check if the tag is already in the array
             const tagIndex = prevTags.indexOf(normalizedTag);
     
