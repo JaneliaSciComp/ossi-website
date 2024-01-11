@@ -11,11 +11,11 @@ export default function ProjectGrid({selectedTags, allProjects}){
                     key={project.slug} 
                     url={`/projects/${project.slug}/`} 
                     title={project.data.title} 
-                    imgUrl={project.data.image.url}
-                    imgAlt={project.data.image.alt}
+                    imgSrc={project.data['image file']}
+                    imgAlt={project.data['image alt text']}
                     author={project.data.author}
                     description={project.data.description}
-                    tagsObj={extractIndividualProjectTags(project)}
+                    tagsArray={extractIndividualProjectTags(project)}
                     selectedTags={selectedTags}
                 />)
               }
