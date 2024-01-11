@@ -1,6 +1,6 @@
 import { TbChevronUp, TbChevronDown, TbX } from "react-icons/tb";
 import {useState} from "react"
-import { normalizeTag } from "../../utils/tagManipulation";
+import { capitalizeTag } from "../../utils/tagManipulation";
 
 export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueTags, selectedTags, handleTagSelection, handleReset}){
   const [categoryVisibility, setCategoryVisibility] = useState(() => {
@@ -27,35 +27,38 @@ export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueT
         <TbX/>
       </button>
       <div className="overflow-y-scroll md:overflow-hidden p-2"> 
-      {Object.keys(uniqueTags).map(key => (
-        <div 
-          className='mb-4'
-        >
-          <h3 
-              className='cursor-pointer font-bold border-b-2 flex items-center justify-between py-2'
-              onClick={() => toggleCategoryVisibility(key)}
+        {Object.keys(uniqueTags).map(key => (
+          <div 
+            className='mb-4'
+            key={`tagCategory-${key}`}
           >
-              {key.toUpperCase()}
-              {categoryVisibility[key] ? 
-                <TbChevronUp/> :
-                <TbChevronDown/>
-              }
-              
-          </h3>
-          <ul className={`flex flex-col flex-nowrap ${!categoryVisibility[key] && "hidden"}`}>
-            {uniqueTags[key].map(individualTag => {
-              const normalizedTag = normalizeTag(individualTag)
-              return (
-              <li 
-                  className={`cursor-pointer ml-2 my-1 self-start ${selectedTags.includes(normalizedTag) ? 'selected' : ''}`}
-                  onClick={() => handleTagSelection(normalizedTag)}
-              >
-                  {individualTag}
-              </li>
-            )})}
-          </ul>
-        </div>
-      ))}
+            <h3 
+                className='cursor-pointer font-bold border-b-2 flex items-center justify-between py-2'
+                onClick={() => toggleCategoryVisibility(key)}
+            >
+                {key.toUpperCase()}
+                {categoryVisibility[key] ? 
+                  <TbChevronUp/> :
+                  <TbChevronDown/>
+                }
+            </h3>
+            <ul 
+              className={`flex flex-col flex-nowrap ${!categoryVisibility[key] && "hidden"}`}
+            >
+              {uniqueTags[key].map(individualTag => {
+                const normalizedTag = capitalizeTag(individualTag)
+                return (
+                <li
+                    key={individualTag}
+                    className={`cursor-pointer ml-2 my-1 self-start ${selectedTags.includes(normalizedTag) ? 'selected' : ''}`}
+                    onClick={() => handleTagSelection(normalizedTag)}
+                >
+                    {normalizedTag}
+                </li>
+              )})}
+            </ul>
+          </div>
+        ))}
       </div>
       
       <div className="flex self-center gap-4 py-4">
