@@ -8,7 +8,7 @@ export default function ProjectCard({url, title, imgSrc, imgAlt, author, descrip
         >
             <a href={url}>
             
-                <img src={`/src/assets/images/${imgSrc}`} alt={imgAlt} className="w-full h-40 object-cover object-center" />
+                <img src={`/project-images/${imgSrc}`} alt={imgAlt} className="w-full h-40 object-cover object-center" />
         
                 <div className="flex flex-wrap gap-2 p-4">
                     {tagsArray.map((tag, index) => {
