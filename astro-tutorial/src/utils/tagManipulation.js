@@ -1,39 +1,86 @@
-export function formatClassTag(tag){
-  return tag.trim().replace(/\s+/g, '-').toLowerCase();
+const tagKeyNames = [
+  "associated labs and projects",
+  "scientific domain",  
+  "model organism",
+  "software type",
+  "programming language"
+]
+
+// Takes in a tag string and returns the string with the first letter of each word capitalized
+// Used to normalize the tags to allow for matching between the filter menu and individual projects
+export function capitalizeTag(tag){
+  tag = tag.trim()
+
+  let words = tag.split(' ');
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    }
+
+    let capitalizedTag = words.join(' ');
+
+    return capitalizedTag;
 }
 
-export function extractUniqueTags(allProjectTags) {
-    // Create an object to store unique tag categories and tags
+// Takes in the allProjects object and returns an object of only the unique tag keys and unique tag values within each key
+// Used to create the tag categories and tag option list in the filter menu
+export function extractUniqueTags(allProjects) {
     const uniqueTags = {};
-    // Iterate through each project's tags
-    allProjectTags.forEach(project => {
-      // Check if project data exist
-      if (project.data) {
-        // Iterate through each tag category
-        Object.keys(project.data).forEach(tagCategory => {
-          // Check if project.data[tagCategory] is a non-empty array
-              if (Array.isArray(project.data[tagCategory]) && project.data[tagCategory].length > 0) {
-                // Add the tag category as a key in uniqueTags if it doesn't exist
-                if (!uniqueTags[tagCategory]) {
-                    uniqueTags[tagCategory] = [];
+
+    allProjects.forEach(project => {
+      
+      Object.entries(project.data).forEach(([key, value]) => {
+        
+        if (tagKeyNames.includes(key)) {
+          if (value){
+
+            if (Array.isArray(value)) {
+              value.forEach(arrayValue => {
+                const normalizedArrayValue = capitalizeTag(arrayValue);
+                if (!uniqueTags[key]) {
+                  uniqueTags[key] = [normalizedArrayValue];
+                } else {
+                  if (!uniqueTags[key].includes(normalizedArrayValue)) {
+                    uniqueTags[key].push(normalizedArrayValue);
+                  }
                 }
-  
-                // Iterate through each tag in the current tag category
-                project.data[tagCategory].forEach(tag => {
-                    // Add unique tags to the uniqueTags object
-                    if (!uniqueTags[tagCategory].includes(tag)) {
-                    uniqueTags[tagCategory].push(tag);
-                    }
-                });
+              });
+            } else {
+              const normalizedValue = capitalizeTag(value);
+              if (!uniqueTags[key]) {
+                uniqueTags[key] = [normalizedValue];
+              } else {
+                if (!uniqueTags[key].includes(normalizedValue)) {
+                  uniqueTags[key].push(normalizedValue);
+                }
+              }
+            }
 
-        };
-
-        });
-      }
+          }
+        }
+      });
     });
-    return uniqueTags;
-}
 
-export function getFlatTags(tagsObject) {
-  return Object.values(tagsObject).flat()
+    return uniqueTags
+  }
+
+// Takes in a single project object and returns an array of that project's tag values
+// Used to populate the tags on the invididual project cards
+export function extractIndividualProjectTags(project){
+  const tagsObj = {}
+  Object.entries(project.data).forEach(([key, value]) => {
+ 
+    if (tagKeyNames.includes(key)) {
+      if(value){
+        if (Array.isArray(value)) {
+          tagsObj[key] = value.map(arrayValue => capitalizeTag(arrayValue));
+        } else {
+          tagsObj[key] = capitalizeTag(value);
+        }
+      }
+    }
+
+  });
+  const tagValuesArray = Object.values(tagsObj).flat()
+  return tagValuesArray;
 }

@@ -10,8 +10,7 @@ import {extractUniqueTags} from "../../utils/tagManipulation.js"
 
 const pageTitle = "OSSI-supported projects"
 const allProjects = await getCollection('projects')
-const allProjectTags = await getCollection("tags")
-const uniqueTags = extractUniqueTags(allProjectTags)
+const uniqueTags = extractUniqueTags(allProjects)
 ---
 <BaseLayout pageTitle={pageTitle}>
     <Hero>
@@ -19,11 +18,11 @@ const uniqueTags = extractUniqueTags(allProjectTags)
         <Fragment slot="subtitle">Tagline describing what "projects" are</Fragment>
     </Hero>
     <section class="px-6 py-2 md:py-12 lg:py-20 mx-auto max-w-6xl">
-        <ProjectSearch 
-        client:only 
-        uniqueTags={uniqueTags}
-        allProjects={allProjects}
-        allProjectTags={allProjectTags}
+        <ProjectSearch
+            client:load
+            key="ProjectSearch" 
+            uniqueTags={uniqueTags}
+            allProjects={allProjects}
         />
     </section>
 </BaseLayout>
