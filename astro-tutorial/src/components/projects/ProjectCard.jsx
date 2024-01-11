@@ -2,7 +2,7 @@ import {useStore} from '@nanostores/react';
 import { selectedTags } from "./stores/tagsStore";
 import { capitalizeTag } from "../../utils/tagManipulation";
 
-export default function ProjectCard({url, title, imgSrc, imgAlt, author, description, tagsArray}){
+export default function ProjectCard({url, title, author, description, tagsArray, image}){
     const $selectedTags  = useStore(selectedTags)
 
     return(
@@ -11,8 +11,12 @@ export default function ProjectCard({url, title, imgSrc, imgAlt, author, descrip
         >
             <a href={url}>
             
-                <img src={`/project-images/${imgSrc}`} alt={imgAlt} className="w-full h-40 object-cover object-center" />
-        
+                {/* <img src={`/project-images/${imgSrc}`} alt={imgAlt} className="w-full h-40 object-cover object-center" /> */}
+                <div className="w-full h-40">
+                    {image}
+                </div>
+                
+
                 <div className="flex flex-wrap gap-2 p-4">
                     {tagsArray.map((tag, index) => {
                         const tagClass = `bg-primary text-white px-2 py-1 rounded-md text-sm ${index < 3 ? '' : 'hidden'}`;

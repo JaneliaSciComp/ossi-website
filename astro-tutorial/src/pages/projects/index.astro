@@ -1,6 +1,8 @@
 ---
-import { getCollection } from "astro:content"
 import "../../styles/tailwind.css"
+
+import { getCollection } from "astro:content"
+import { Image } from "astro:assets";
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from "../../components/Hero.astro";
@@ -37,15 +39,20 @@ const uniqueTags = extractUniqueTags(allProjects)
                             key={project.slug} 
                             url={`/projects/${project.slug}/`} 
                             title={project.data.title} 
-                            imgSrc={project.data['image file']}
-                            imgAlt={project.data['image alt text']}
                             author={project.data.author}
                             description={project.data.description}
                             tagsArray={extractIndividualProjectTags(project)}
-                        />
+                        >
+                            <Image 
+                                slot="image" 
+                                src={project.data['image file']} 
+                                alt={project.data['image alt text']}
+                                class="w-full h-40 object-cover object-center"
+                                loading="eager"
+                            />
+                        </ProjectCard>
                     )
                 })
               }
-
     </section>
 </BaseLayout>
