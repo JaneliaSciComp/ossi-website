@@ -1,5 +1,6 @@
 import {useState} from 'react'
-import { TbAdjustmentsHorizontal } from "react-icons/tb";
+import pkg from "react-icons/tb/index.esm.js";
+const { TbAdjustmentsHorizontal } = pkg;
 
 import FilterMenu from './FilterMenu.jsx';
 import ProjectGrid from './ProjectGrid.jsx'
