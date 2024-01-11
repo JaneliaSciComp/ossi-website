@@ -3,11 +3,11 @@ import { z, defineCollection, reference } from "astro:content";
 // Define a `type` (content or data) and `schema` for each collection
 const projectsCollection = defineCollection({
     type: 'content',
-    schema: z.object({
+    schema: ({image}) => z.object({
       title: z.string(),
       description: z.string(),
       author: z.string(),
-      'image file': z.string().optional(),
+      'image file': image().optional(),
       'image alt text': z.string().optional(),
       'associated labs and projects': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'scientific domain': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
