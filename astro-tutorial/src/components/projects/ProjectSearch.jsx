@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { TbAdjustments } from "react-icons/tb";
+import { TbAdjustmentsHorizontal } from "react-icons/tb";
 
 import FilterMenu from './FilterMenu.jsx';
 import ProjectGrid from './ProjectGrid.jsx'
@@ -43,7 +43,7 @@ export default function ProjectSearch({uniqueTags, allProjects}){
                     className='md:hidden btn flex gap-2'
                     onClick={toggleFilterMenu}
                 >
-                    <p>Filters</p><TbAdjustments className="w-5 h-5 inline-block"/> 
+                    <p>Filters</p><TbAdjustmentsHorizontal className="w-5 h-5 inline-block"/> 
                 </button>
             </div>
             <section className='md:grid grid-cols-3 gap-4'>
