@@ -7,10 +7,8 @@ const projectsCollection = defineCollection({
       title: z.string(),
       description: z.string(),
       author: z.string(),
-      image: z.object({
-        url: z.string(),
-        alt: z.string()
-      }),
+      'image file': z.string().optional(),
+      'image alt text': z.string().optional(),
       'associated labs and projects': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'scientific domain': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'model organism': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
