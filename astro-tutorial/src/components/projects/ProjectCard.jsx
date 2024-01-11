@@ -1,6 +1,8 @@
+import { useTagsContext } from './context/TagsContext';
 import { capitalizeTag } from "../../utils/tagManipulation";
 
-export default function ProjectCard({url, title, imgSrc, imgAlt, author, description, tagsArray, selectedTags}){
+export default function ProjectCard({url, title, imgSrc, imgAlt, author, description, tagsArray}){
+    const { selectedTags } = useTagsContext();
 
     return(
         <div 

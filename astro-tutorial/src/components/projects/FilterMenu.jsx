@@ -1,8 +1,14 @@
-import { TbChevronUp, TbChevronDown, TbX } from "react-icons/tb";
 import {useState} from "react"
+import { TbChevronUp, TbChevronDown, TbX } from "react-icons/tb";
+
+import { useFilterMenuContext } from './context/FilterMenuContext';
+import { useTagsContext } from "./context/TagsContext";
 import { capitalizeTag } from "../../utils/tagManipulation";
 
-export default function FilterMenu({toggleFilterMenu, filterMenuVisible, uniqueTags, selectedTags, handleTagSelection, handleReset}){
+export default function FilterMenu({uniqueTags}){
+  const { filterMenuVisible, toggleFilterMenu } = useFilterMenuContext();
+  const { selectedTags, handleTagSelection, handleReset } = useTagsContext();
+
   const [categoryVisibility, setCategoryVisibility] = useState(() => {
     const initialVisibility = {};
     Object.keys(uniqueTags).forEach((key) => {
