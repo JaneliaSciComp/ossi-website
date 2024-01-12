@@ -1,10 +1,73 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
+import { Image } from "astro:assets";
+import Link from "../components/Link.astro";
 
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout>
-    <h1>{frontmatter.title}</h1>
-    <p>Contributor: {frontmatter.author}</p>
-    <slot />
+  <div class="mx-auto px-6 sm:px-6 max-w-3xl pt-8 md:pt-4">
+    <Link class="md:hidden" text="Projects" url="../../projects"/>
+  </div>
+  <section class="py-8 md:py-16 lg:py-20 mx-auto">
+        <article>
+          <header>
+            <h1
+              class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
+            >
+              {frontmatter.title}
+            </h1>
+            <p
+              class="max-w-3xl mx-auto mt-6 md:mt-10 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
+            >
+              {frontmatter.tagline}
+            </p>
+      
+            {
+              frontmatter['image file'] ? (
+                <div class="px-4 mt-6 md:mt-10">
+                  <Image
+                    src={frontmatter['image file']}
+                    class="max-w-full lg:max-w-[900px] mx-auto mb-6 rounded-md bg-gray-400 dark:bg-slate-700"
+                    widths={[400, 900]}
+                    sizes="(max-width: 900px) 400px, 900px"
+                    alt={frontmatter['image alt text']}
+                    loading="eager"
+                    width={900}
+                    height={506}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
+                
+              ) : (
+                <div class="max-w-3xl mx-auto px-4 sm:px-6">
+                  <div class="border-t dark:border-slate-700" />
+                </div>
+              )
+            }
+          </header>
+
+          <div class="mx-auto px-6 max-w-3xl mt-6 md:mt-10">
+              <div class="border-t-2 border-b-2 border-black">
+                <h4 class="font-bold py-2">Project details</h4>
+                <Link text="Codebase" url={frontmatter['github repository link']}/>
+                <p class="py-2">License: {frontmatter['open source license']}</p>
+                <Link text={frontmatter['originating lab name']}/>
+            </div>
+
+            <div class="prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg">
+              <h3>Project overview</h3>
+              <!-- This slot is where the content is rendered -->
+              <slot/>
+
+            </div>
+            
+          </div>
+          <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-4 flex justify-between flex-col sm:flex-row">
+            <!-- <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
+            <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" /> -->
+          </div>
+        </article>
+      </section>      
 </BaseLayout>
