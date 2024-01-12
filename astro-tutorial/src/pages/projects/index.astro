@@ -39,8 +39,8 @@ const uniqueTags = extractUniqueTags(allProjects)
                             key={project.slug} 
                             url={`/projects/${project.slug}/`} 
                             title={project.data.title} 
-                            author={project.data.author}
-                            description={project.data.description}
+                            authors={project.data['author names']}
+                            tagline={project.data.tagline}
                             tagsArray={extractIndividualProjectTags(project)}
                         >
                             <Image 
