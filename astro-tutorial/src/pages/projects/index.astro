@@ -41,7 +41,7 @@ const uniqueTags = extractUniqueTags(allProjects)
                             title={project.data.title} 
                             authors={project.data['author names']}
                             tagline={project.data.tagline}
-                            tagsArray={extractIndividualProjectTags(project)}
+                            tagsArray={extractIndividualProjectTags(project.data)}
                         >
                             <Image 
                                 slot="image" 
