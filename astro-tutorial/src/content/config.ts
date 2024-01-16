@@ -8,6 +8,8 @@ const projectsCollection = defineCollection({
       tagline: z.string(),
       'author names': z.string(),
       'github repository link': z.union([z.array(z.string()), z.string()]).optional(),
+      'publication DOI array': z.union([z.array(z.string()), z.string()]).optional(),
+      'publication text array': z.union([z.array(z.string()), z.string()]).optional(),
       'image file': image().optional(),
       'image alt text': z.string().optional(),
       'video url': z.string().optional(),
@@ -23,25 +25,20 @@ const projectsCollection = defineCollection({
       'related laboratory techniques': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'software use case': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'usage environment': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+      'related blog posts': z.union([z.array(reference('blog')), reference('blog')]).optional()
     })
 });
 
 const blogCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    publishDate: z.date().optional(),
-    updateDate: z.date().optional(),
-    draft: z.boolean().optional(),
-
+  schema: ({image}) => z.object({
     title: z.string(),
-    excerpt: z.string().optional(),
-    image: z.object({
-      url: z.string().optional(),
-      alt: z.string().optional()
-    }),
-
-    category: z.string().optional(),
-    author: z.string().optional(),
+    tagline: z.string().optional(),
+    'author names': z.string(),
+    'image file': image().optional(),
+    'image alt text': z.string().optional(),
+    'related projects':z.union([z.array(reference('projects')), reference('projects')]).optional()
+    
   }), 
 })
 
