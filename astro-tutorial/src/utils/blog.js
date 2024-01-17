@@ -1,13 +1,13 @@
-import { getCollection } from "astro:content";
+// import { getCollection } from "astro:content";
 
-export async function findLatestPosts(count) {
-    const posts = await getCollection('blog');
+// export async function findLatestPosts(count) {
+//     const posts = await getCollection('blog');
   
-    const orderedPosts = posts.sort((a, b) => b.publishDate - a.publishDate)
-      .filter((post) => !post.draft);
+//     const orderedPosts = posts.sort((a, b) => b.publishDate - a.publishDate)
+//       .filter((post) => !post.draft);
   
-    return orderedPosts.slice(0,count);
-  };
+//     return orderedPosts.slice(0,count);
+//   };
 
 export function findRelatedContent(frontmatter, content) {
     let relatedContentArray = [];

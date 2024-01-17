@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import EcosystemLayout from '../../layouts/EcosystemLayout.astro';
+
+export async function getStaticPaths() {
+  const ecosystems = await getCollection('ecosystems');
+  return ecosystems.map(ecosystem => ({
+    params: { slug: ecosystem.slug }, props: { ecosystem },
+  }));
+}
+
+const { ecosystem } = Astro.props;
+const { Content } = await ecosystem.render();
+---
+
+<EcosystemLayout frontmatter={ecosystem.data}>
+  <Content/>
+</EcosystemLayout>

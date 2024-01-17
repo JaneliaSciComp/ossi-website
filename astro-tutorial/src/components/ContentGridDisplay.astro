@@ -1,23 +1,24 @@
 ---
-import { findLatestPosts } from "../utils/blog.js"
+import { getCollection } from "astro:content";
 import Wrapper from "./Wrapper.astro";
 import Button from "./Button.astro";
-import Grid from "./blog/Grid.astro";
+import GridPage from "./Grid.astro";
 
 const {
-  title = await Astro.slots.render("title"),
-  linkText = "View all posts",
-  linkUrl = "/blog",
-  information = await Astro.slots.render("information"),
-  count = 4,
-
+  title,
+  content,
+  linkText,
+  linkUrl,
+  information,
+  subset,
+  // count = 4,s
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render("bg"),
 } = Astro.props;
 
-const posts = await findLatestPosts(count)
+const items = await getCollection(content)
 ---
 
 <Wrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
@@ -36,7 +37,10 @@ const posts = await findLatestPosts(count)
 
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
-
-      <Grid posts={posts} />
+      {subset ? (
+        <GridPage items={subset} content={content}/>
+      ) : (
+      <GridPage items={items} content={content}/>
+      )}
 </Wrapper>
 

@@ -42,8 +42,20 @@ const blogCollection = defineCollection({
   }), 
 })
 
+const ecosystemsCollection = defineCollection({
+  type: 'content',
+  schema: ({image}) => z.object({
+    title: z.string(),
+    tagline: z.string().optional(),
+    'image file': image().optional(),
+    'image alt text': z.string().optional(),
+    'related projects':z.union([z.array(reference('projects')), reference('projects')]).optional()
+  })
+})
+
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   projects: projectsCollection,
-  blog: blogCollection
+  blog: blogCollection,
+  ecosystems: ecosystemsCollection
 };

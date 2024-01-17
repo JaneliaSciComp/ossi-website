@@ -14,6 +14,14 @@ export const headerData = {
         href: "/projects"
     },
     {
+      text: "Ecosystems",
+      href: "/ecosystems"
+    },
+    {
+      text: "Blog",
+      href: "/blog"
+    },
+    {
       text: 'Documentation',
       href: '/documentation',
     },
