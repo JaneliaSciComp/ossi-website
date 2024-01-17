@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const { post } = Astro.props;
 console.log(post)
 ---
@@ -8,7 +10,18 @@ console.log(post)
     {
       post.data['image file'] && (
         <a href={`blog/${post.slug}`}>
-          <img src={post.data['image file'].src} alt={post.data['image alt text']} class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 max-w-4xl aspect-video object-cover"/>
+          <Image
+            src={post.data['image file']}
+            class="w-full md:h-full object-cover rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+            widths={[400, 900]}
+            width={400}
+            sizes="(max-width: 900px) 400px, 900px"
+            alt={post.data['image alt text']}
+            aspectRatio="16:9"
+            layout="cover"
+            loading="lazy"
+            decoding="async"
+          />
         </a>
       )
     }
