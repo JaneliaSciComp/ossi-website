@@ -1,38 +1,49 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Image } from "astro:assets";
 
 const { post } = Astro.props;
-console.log(post.image)
 ---
 
-<article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 ${post.image ? 'md:grid-cols-2' : ''}`}>
+<article class={`max-w-md mx-auto md:max-w-none flex flex-col md:grid gap-6 md:gap-8 ${post.data['image file'] ? 'md:grid-cols-2' : ''}`}>
   {
-    post.data.image && (
-      <a class="relative block group" href={post.slug}>
-        <div class="w-full">
-            <img src={post.data.image.url} class="rounded shadow-lg bg-gray-400 dark:bg-slate-700 object-cover object-center"/>
+    post.data['image file'] && (
+      <a class="relative block group" href={`/../../blog/${post.slug}` ?? 'javascript:void(0)'}>
+        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
+          {post.data['image file'] && (
+            <Image
+              src={post.data['image file']}
+              class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+              widths={[400, 900]}
+              width={900}
+              sizes="(max-width: 900px) 400px, 900px"
+              alt={post.data['image alt text']}
+              aspectRatio="16:9"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
         </div>
       </a>
     )
   }
   <div class="mt-2">
     <header>
-      <div class="mb-1">
+      <!-- <div class="mb-1">
         <span class="text-sm">
           <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.data.publishDate)} class="inline-block">{post.data.publishDate}</time>
         </span>
-      </div>
+      </div> -->
       <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
 
-            <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={post.slug}>
+            <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={`/../../blog/${post.slug}`}>
               {post.data.title}
             </a>
           
       </h2>
     </header>
 
-    {post.data.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.data.excerpt}</p>}
+    {post.data.tagline && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.data.tagline}</p>}
 
   </div>
 </article>
