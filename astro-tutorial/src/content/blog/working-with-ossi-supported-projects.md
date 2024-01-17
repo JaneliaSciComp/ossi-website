@@ -5,17 +5,6 @@ author names: Rokicki et al.
 image file: ./f4pUuCc3M0g-unsplash.jpg
 image alt text: Laptop displaying graphs of data
 related projects: [an-open-source-platform-for-single-molecule-localization, kilosort, java-packaging-tool-chain, paintera]
-associated labs and projects: turaga
-scientific domain: [Deep learning, Biomaging, Machine learning, Neuroscience]
-model organism:
-software type: package
-programming language: python
-software ecosystem: napari
-open source license: GLP-3.0
-supported file types:
-related laboratory techniques: [FISH, Single-molecule localization microscopy (SMLM)]
-software use case:
-usage environment: [local installation, Jupyter notebook, Google Colab]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
