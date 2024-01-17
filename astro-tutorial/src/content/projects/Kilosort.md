@@ -15,7 +15,7 @@ model organism: mouse
 software type: package
 programming language: ["MATLAB", "Python"]
 software ecosystem:
-open source license: GLP-2.0
+open source license: GPL-2.0
 supported file types:
 related laboratory techniques: [neural recording]
 software use case: electrophysiology data analysis

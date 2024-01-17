@@ -1,14 +1,11 @@
 ---
-import { getCollection } from "astro:content";
+import { getEntries } from "astro:content";
 import BaseLayout from "./BaseLayout.astro"
 import { Image } from "astro:assets";
 import Link from "../components/Link.astro";
 
-import {findRelatedContent} from "../utils/blog"
-
 const { frontmatter } = Astro.props;
-const projects = await getCollection('projects')
-const relatedProjects = findRelatedContent(frontmatter, projects)
+const relatedProjects = await getEntries(frontmatter['related projects'])
 ---
 <BaseLayout>
   <div class="mx-auto px-6 sm:px-6 pt-8 md:pt-4 max-w-6xl">
