@@ -1,0 +1,16 @@
+export const allLabNamesAndUrls = [
+    ["Branson Lab", "https://www.janelia.org/lab/branson-lab"],
+    ["Pachitariu Lab", "https://www.janelia.org/lab/pachitariu-lab"],
+    ["Preibisch Lab", "https://www.janelia.org/people/stephan-preibisch"],
+    ["Saalfeld Lab", "https://www.janelia.org/lab/saalfeld-lab"],
+    ["Stringer Lab", "https://www.janelia.org/lab/stringer-lab"],
+    ["Turaga Lab", "https://www.janelia.org/lab/turaga-lab"],
+    ["Spruston Lab", "https://www.janelia.org/lab/spruston-lab"],
+    ["MouseLight", "https://www.janelia.org/project-team/mouselight"],
+    ["MultiFISH", "https://github.com/JaneliaSciComp/multifish"],
+    ["FlyEM", "https://www.janelia.org/project-team/flyem"],
+    ["COSEM", "https://www.janelia.org/project-team/cosem"],
+    ["FlyLight", "https://www.janelia.org/project-team/flylight"],
+    ["MouseLight", "https://www.janelia.org/project-team/mouselight"],
+    ["Scientific Computing Software", "https://www.janelia.org/support-team/scientific-computing-software"],
+  ]

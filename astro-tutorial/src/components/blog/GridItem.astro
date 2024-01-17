@@ -1,13 +1,14 @@
 ---
 const { post } = Astro.props;
+console.log(post)
 ---
 
 <article class="mb-6 transition">
   <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6">
     {
-      post.data.image.url && (
+      post.data['image file'] && (
         <a href={`blog/${post.slug}`}>
-          <img src={post.data.image.url} class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 max-w-4xl aspect-video object-cover"/>
+          <img src={post.data['image file'].src} alt={post.data['image alt text']} class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 max-w-4xl aspect-video object-cover"/>
         </a>
       )
     }
@@ -20,5 +21,5 @@ const { post } = Astro.props;
           {post.data.title}
         </a>
   </h3>
-  <p class="text-muted dark:text-slate-400 text-lg">{post.data.excerpt}</p>
+  <p class="text-muted dark:text-slate-400 text-lg">{post.data.tagline}</p>
 </article>
