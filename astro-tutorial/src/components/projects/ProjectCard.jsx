@@ -2,7 +2,7 @@ import {useStore} from '@nanostores/react';
 import { selectedTags } from "./stores/tagsStore";
 import { capitalizeTag } from "../../utils/tagManipulation";
 
-export default function ProjectCard({url, title, author, description, tagsArray, image}){
+export default function ProjectCard({url, title, authors, tagline, tagsArray, image}){
     const $selectedTags  = useStore(selectedTags)
 
     return(
@@ -26,9 +26,9 @@ export default function ProjectCard({url, title, author, description, tagsArray,
 
                 <h2 className="text-xl font-semibold text-gray-800 p-4">{title}</h2>
 
-                <p className="text-gray-600 text-sm px-4">{author}</p>
+                <p className="text-gray-600 text-sm px-4">{authors}</p>
 
-                <p className="text-gray-700 p-4">{description}</p>
+                <p className="text-gray-700 p-4">{tagline}</p>
         
             </a>
         </div>

@@ -1,10 +1,5 @@
-const tagKeyNames = [
-  "associated labs and projects",
-  "scientific domain",  
-  "model organism",
-  "software type",
-  "programming language"
-]
+import { tagKeyNames } from "../data/tagKeyNames";
+import {allLabNamesAndUrls} from "../data/labNamesUrls"
 
 // Takes in a tag string and returns the string with the first letter of each word capitalized
 // Used to normalize the tags to allow for matching between the filter menu and individual projects
@@ -66,9 +61,9 @@ export function extractUniqueTags(allProjects) {
 
 // Takes in a single project object and returns an array of that project's tag values
 // Used to populate the tags on the invididual project cards
-export function extractIndividualProjectTags(project){
+export function extractIndividualProjectTags(projectData){
   const tagsObj = {}
-  Object.entries(project.data).forEach(([key, value]) => {
+  Object.entries(projectData).forEach(([key, value]) => {
  
     if (tagKeyNames.includes(key)) {
       if(value){
@@ -83,4 +78,46 @@ export function extractIndividualProjectTags(project){
   });
   const tagValuesArray = Object.values(tagsObj).flat()
   return tagValuesArray;
+}
+
+//Used to take the "associated labs and projects" tag and find the associated URL
+export function findLabInfo(labNames) {
+  if (!Array.isArray(labNames)) {
+    labNames = [labNames];
+  }
+
+  const labInfoArray = labNames.map((labName) => {
+    labName = labName.toLowerCase();
+    console.log(labName)
+    const labData = allLabNamesAndUrls.find(entry => entry[0].toLowerCase().includes(labName));
+    return labData ? { name: labData[0], url: labData[1] } : null;
+  });
+
+  return labInfoArray;
+}
+
+export function generatePublicationLinks(frontmatter) {
+  if (frontmatter["publication DOI array"]) {
+    const doiLinkArray = frontmatter["publication DOI array"];
+    const publicationTextArray = frontmatter["publication text array"]
+
+    if (Array.isArray(doiLinkArray) && doiLinkArray.length > 0) {
+      return doiLinkArray.map((doiLink, index) => {
+        const publicationTextArray = frontmatter["publication text array"];
+        
+        const publicationText = Array.isArray(publicationTextArray) &&
+          publicationTextArray.length > index
+          ? publicationTextArray[index]
+          : "Link";
+
+        return {
+          text: publicationText,
+          url: doiLink
+        };
+      });
+    }
+  }
+
+  // Return null if conditions are not met
+  return null;
 }
