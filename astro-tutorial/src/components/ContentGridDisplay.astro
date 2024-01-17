@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import Wrapper from "./Wrapper.astro";
 import Button from "./Button.astro";
-import GridPage from "./Grid.astro";
+import Grid from "./Grid.astro";
 
 const {
   title,
@@ -38,9 +38,9 @@ const items = await getCollection(content)
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
       {subset ? (
-        <GridPage items={subset} content={content}/>
+        <Grid items={subset} content={content}/>
       ) : (
-      <GridPage items={items} content={content}/>
+      <Grid items={items} content={content}/>
       )}
 </Wrapper>
 
