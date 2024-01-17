@@ -9,15 +9,15 @@ import { headerData, siteData } from "../navigation";
   <div class="absolute inset-0 bg-white dark:bg-dark"></div>
   <div
     class=
-      "relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between"
+      "relative text-default py-3 px-3 lg:px-6 mx-auto w-full lg:flex lg:justify-between"
   >
     <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
       <a class="flex items-center" href={siteData.base}>
-        <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+        <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
             {siteData.name}
         </span>
       </a>
-      <div class="flex items-center md:hidden">
+      <div class="flex items-center lg:hidden">
         <button
           class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group"
           aria-label='Toggle Menu'
@@ -43,11 +43,11 @@ import { headerData, siteData } from "../navigation";
     </div>
 
     <nav
-      class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
+      class="items-center w-full lg:w-auto hidden lg:flex text-default overflow-y-auto overflow-x-hidden lg:overflow-y-visible lg:overflow-x-auto lg:mx-5"
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
+        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium"
       >
         {
           headerData.links.map(({ text, href }) => (

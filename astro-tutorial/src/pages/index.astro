@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallToAction from "../components/CallToAction.astro"
-import BlogLatestPosts from '../components/BlogLatestPosts.astro';
+import ContentGridDisplay from '../components/ContentGridDisplay.astro';
 import ContributorList from '../components/ContributorList.astro';
 
 import { siteData } from '../navigation';
@@ -23,7 +23,11 @@ import { siteData } from '../navigation';
 			href: '/projects',
 			target: '_blank',
 		},
-		{ text: 'Learn more', href: '/about' },
+		{ 
+      text: 'Ecosystems', 
+      href: '/ecosystems',
+      target: '_blank' 
+    },
 		]}
   >
 	<Fragment slot="content">
@@ -34,14 +38,17 @@ import { siteData } from '../navigation';
 
   </CallToAction>
 
-  <BlogLatestPosts
+  <ContentGridDisplay
     title="OSSI Blog"
-    information={`Read the latest updates on OSSI-supported projects.`}
+    information='Read the latest updates on OSSI-supported projects.'
+    content="blog"
+    linkText="View all posts"
+    linkUrl="/blog"
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </BlogLatestPosts>
+  </ContentGridDisplay>
 
   <ContributorList
     title="Recent contributors"

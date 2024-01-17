@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import Wrapper from "./Wrapper.astro";
+import Button from "./Button.astro";
+import List from "./List.astro";
+
+const {
+  title,
+  content,
+  linkText,
+  linkUrl,
+  information,
+  subset,
+  // count = 4,s
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render("bg"),
+} = Astro.props;
+
+const items = await getCollection(content)
+---
+
+<section class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col mb-8">
+        {title && (
+          <div class="md:max-w-sm">
+            <h2
+              class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
+              set:html={title}
+            />
+            {linkText && linkUrl && (
+              <Button variant="link" href={linkUrl}> {linkText} »</Button>
+            )}
+          </div>
+        )}
+
+        {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
+      </div>
+      {subset ? (
+        <List items={subset} content={content}/>
+      ) : (
+        <List items={items} content={content}/>
+      )}
+</section>
+
