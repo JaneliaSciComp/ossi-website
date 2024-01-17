@@ -20,6 +20,7 @@ export function capitalizeTag(tag){
 // Takes in the allProjects object and returns an object of only the unique tag keys and unique tag values within each key
 // Used to create the tag categories and tag option list in the filter menu
 export function extractUniqueTags(allProjects) {
+
     const uniqueTags = {};
 
     allProjects.forEach(project => {
@@ -88,7 +89,6 @@ export function findLabInfo(labNames) {
 
   const labInfoArray = labNames.map((labName) => {
     labName = labName.toLowerCase();
-    console.log(labName)
     const labData = allLabNamesAndUrls.find(entry => entry[0].toLowerCase().includes(labName));
     return labData ? { name: labData[0], url: labData[1] } : null;
   });
