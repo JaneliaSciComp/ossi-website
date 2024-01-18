@@ -9,28 +9,19 @@ const {
   tagline = await Astro.slots.render('tagline'),
   actions = await Astro.slots.render('actions'),
   content = await Astro.slots.render('content'),
-  id,
-  isDark = false,
-  classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props
 ---
 
-<Wrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<Wrapper containerClass='max-w-5xl mx-auto' bg={bg}>
   <div
-    class="max-w-3xl py-6 rounded-md dark:border dark:border-slate-600"
+    class="max-w-3xl py-6 rounded-md"
   >
     <Headline
       title={title}
       subtitle={subtitle}
       tagline={tagline}
       content={content}
-      classes={{
-        container: 'mb-0 md:mb-0',
-        title: 'text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
-        subtitle: 'text-xl text-muted dark:text-slate-400',
-        content: 'mb-12 text-lg dark:text-slate-400'
-      }}
     />
     {
       actions && (
