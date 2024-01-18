@@ -7,7 +7,7 @@ export default function ProjectCard({url, title, authors, tagline, tagsArray, im
 
     return(
         <div 
-            className={`${($selectedTags.length && !tagsArray.some(tag => $selectedTags.includes(tag))) ? "hidden" : ''} col-span-1 w-full h-full mx-auto mb-4 bg-white rounded-md shadow-md overflow-hidden text-black hover:shadow-lg transition duration-300 transform hover:scale-105 `}
+            className={`${($selectedTags.length && !tagsArray.some(tag => $selectedTags.includes(tag))) ? "hidden" : ''} col-span-1 w-full h-full mx-auto mb-4 bg-white dark:bg-slate-900 rounded-md shadow-md overflow-hidden border-gray-200 dark:border-slate-800 border-2 hover:shadow-lg transition duration-300 transform hover:scale-105`}
         >
             <a href={url}>
             
@@ -24,11 +24,11 @@ export default function ProjectCard({url, title, authors, tagline, tagsArray, im
                     })}
                 </div>
 
-                <h2 className="text-xl font-semibold text-gray-800 p-4">{title}</h2>
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-slate-200 p-4">{title}</h2>
 
-                <p className="text-gray-600 text-sm px-4">{authors}</p>
+                <p className="text-gray-600 dark:text-slate-400 text-sm px-4">{authors}</p>
 
-                <p className="text-gray-700 p-4">{tagline}</p>
+                <p className="text-gray-700 dark:text-slate-300 p-4">{tagline}</p>
         
             </a>
         </div>
