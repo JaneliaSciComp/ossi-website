@@ -1,24 +1,17 @@
 ---
 import { headerData, siteData } from "../navigation";
+import ToggleTheme from "../components/ToggleTheme.astro"
 
-const {
-  isDark = false,
-  showToggleTheme = false,
-} = Astro.props;
 ---
 
 <header
-  class:list={[
-    {dark: isDark },
-    "sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out",
-  ]}
-   data-sticky-header=true 
-   id="header"
+  class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out"
+  data-sticky-header=true 
+  id="header"
 >
   <div class="absolute inset-0 bg-white dark:bg-dark"></div>
   <div
-    class=
-      "relative text-default py-3 px-3 lg:px-6 mx-auto w-full lg:flex lg:justify-between"
+    class= "relative text-default py-3 px-3 lg:px-6 mx-auto w-full lg:flex lg:justify-between"
   >
     <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
       <a class="flex items-center" href={siteData.base}>
@@ -72,5 +65,10 @@ const {
         }
       </ul>
     </nav>
+    <div
+      class= "hidden lg:self-center lg:flex items-center lg:mb-0 fixed w-full lg:w-auto lg:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 lg:p-0"
+    >
+      <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />
+    </div>
   </div>
 </header>
