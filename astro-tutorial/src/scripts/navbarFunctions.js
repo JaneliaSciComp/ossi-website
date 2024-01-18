@@ -6,6 +6,25 @@ function applyHeaderStylesOnLoad() {
   }
 }
 
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+}
+
+const initTheme = function () {
+  if (localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+};
+initTheme();
+
 function attachEvent(selector, event, fn) {
   const matches = document.querySelectorAll(selector)
   if (matches && matches.length) {
@@ -39,5 +58,10 @@ window.onload = function () {
     document.getElementById("header").classList.toggle("bg-page");
     document.querySelector("#header nav").classList.toggle("hidden");
     document.querySelector("#header > div > div:last-child")?.classList.toggle("hidden");
+  });
+
+  attachEvent('[data-toggle-color-scheme]', 'click', function () {
+    document.documentElement.classList.toggle('dark');
+    localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
   });
 };
