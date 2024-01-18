@@ -26,7 +26,7 @@ export default function FilterMenu({uniqueTags}){
   };
 
   return (
-    <div className={`${$isFilterMenuVisible ? 'flex translate-x-0' : 'translate-x-full'} z-50 fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 w-full max-h-screen md:max-h-full flex-col p-4 bg-white border-gray-200 border-2 rounded-lg`}>
+    <div className={`${$isFilterMenuVisible ? 'flex translate-x-0' : 'translate-x-full'} z-50 md:z-auto fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 w-full max-h-screen md:max-h-full flex-col p-4 bg-white border-gray-200 border-2 rounded-lg`}>
       <button
         className="md:hidden self-end m-2 btn-tertiary"
         onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
@@ -69,18 +69,19 @@ export default function FilterMenu({uniqueTags}){
       </div>
       
       <div className="flex self-center gap-4 py-4">
-        <button 
-          className="btn"
-          onClick={()=>selectedTags.set([])}
-        >
-            Reset
-        </button>
-        <button 
+      <button 
           className="btn-primary md:hidden"
           onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
         >
             View projects
         </button>
+        <button 
+          className="btn"
+          onClick={()=>selectedTags.set([])}
+        >
+             Reset filters
+        </button>
+        
       </div>
       
     </div>
