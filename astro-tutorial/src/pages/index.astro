@@ -4,16 +4,19 @@ import Hero from '../components/Hero.astro';
 import CallToAction from "../components/CallToAction.astro"
 import ContentGridDisplay from '../components/ContentGridDisplay.astro';
 import ContributorList from '../components/ContributorList.astro';
-
-import { siteData } from '../navigation';
+import TextBlock from '../components/TextBlock.astro';
 
 ---
-<BaseLayout pageTitle={siteData.name}>
+<BaseLayout>
 
 	<Hero>
-		<Fragment slot="title">{siteData.name.slice(2)}</Fragment>
+		<Fragment slot="title">OSSI@Janelia</Fragment>
 		<Fragment slot="subtitle">Open Science Software Initiative at Janelia</Fragment>
 	</Hero>
+
+  <TextBlock>
+    
+  </TextBlock>
 
 	<CallToAction
 		actions={[
