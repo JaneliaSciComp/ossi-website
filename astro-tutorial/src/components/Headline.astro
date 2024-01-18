@@ -6,7 +6,6 @@ const {
   subtitle = await Astro.slots.render("subtitle"),
   content = await Astro.slots.render("content"),
   tagline,
-  classes = {},
 } = Astro.props
 
 const {
@@ -46,7 +45,7 @@ const {
 
       {content && (
         <p
-          class='mb-12 text-lg dark:text-slate-400'
+          class='mb-12 text-lg dark:text-slate-200'
           set:html={content}
         />
       )}
