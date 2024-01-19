@@ -6,5 +6,6 @@ Each folder in this repository contains a test website for OSSI built with a dif
 
 ## Folder links and brief descriptions
 
-1. [**astro-tutorial**](https://github.com/allison-truhlar/ossi-website-framework-tests/tree/main/astro-tutorial): **This is the current working site** Astro SSG, utilizing components from the Astrowind template.
-1. [**astro-theme-test**](https://github.com/allison-truhlar/ossi-website-framework-tests/tree/main/astro-theme-test): Astro SSG; attempt to build site starting from the Astrowind template
+1. [**astro-tutorial**](https://github.com/allison-truhlar/ossi-website-framework-tests/tree/main/astro-tutorial): **This is the current working site.** Astro SSG, utilizing components from the [Astrowind](https://github.com/onwidget/astrowind/tree/main) template.
+
+1. [**astro-theme-test**](https://github.com/allison-truhlar/ossi-website-framework-tests/tree/main/astro-theme-test): Astro SSG; attempt to build site starting from the [Astrowind](https://github.com/onwidget/astrowind/tree/main) template.
