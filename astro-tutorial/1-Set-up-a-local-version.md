@@ -11,4 +11,4 @@ If you don't have one or more of the above, please refer to the provided links f
 1. Navigate to the [OSSI Website Framework Tests repository](https://github.com/allison-truhlar/ossi-website-framework-tests) on Github.
 
 1. In the top right corner, click **Fork**.
-![fork button in top right corner of the screen](/src/assets/readme-images/fork-repository.png)
+![fork button in top right corner of the screen](astro-tutorial/src/assets/readme-images/fork-repository.png)
