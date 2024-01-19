@@ -21,17 +21,30 @@ Below, two options for contributing to the site are outlined. Option 1 involves 
 This creates a copy of the OSSI Website Framework Tests repository in your online Github account.
 
 1. Navigate to the [OSSI Website Framework Tests repository](https://github.com/allison-truhlar/ossi-website-framework-tests) on Github.
-1. In the top right corner, click **Fork**.
-
+<br/>
+1. In the top right corner of the screen, click **Fork**.
 ![fork-repository](/assets/fork-repository.png)
-
+<br/>
 3. On the page that appears, keep the default settings. They should be:
-    - Your Github username as the "owner" of the fork
-    - Copy the main branch only is selected
-    - Optionally, you can change the name and description of your forked repository to whatever is meaningful to you
+    - Your Github username as the "owner" of the fork.
+    - Copy the main branch only is selected.
+    - Optionally, you can change the name and description of your forked repository to whatever is meaningful to you.
+<br/>  
+4. In your newly forked repository, navigate to the `astro-tutorial` folder. Here is some key folders and files you'll find inside `astro-tutorial`:
+```text
+/
+├── public/
+└── src/
+    └── how-to-contribute/
+        └── project-template.md
+    └── content/
+        └── projects/
+```
 
 ### Option 1 - Make additions/edits on Github
-1. [Fork and (optionally) clone the site repository.](how-to-contribute/1-Fork-and-clone-the-site.md) This creates your own copy of the site code where you can make your desired additions/edits.
+
+
+
 
 - [Run a local version of the site](#run-a-local-version-of-the-site): Do this before adding or editing your project if you would like to preview what your changes will look like on the site.
 
