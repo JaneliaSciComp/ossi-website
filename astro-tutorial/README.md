@@ -8,8 +8,9 @@ This version of the OSSI site is built with [Astro](https://github.com/withastro
 
 ## What would you like to do?
 
+- [Run a local version of the site](#run-a-local-version): Do this before adding or editing your project if you would like to preview what your changes will look like on the site.
+
 - [Add or edit a project](#add-or-edit-a-project)
-- [Run a local version of the site](#run-a-local-version)
 
 ## Run a local version
 
