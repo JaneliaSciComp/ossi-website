@@ -4,15 +4,15 @@
 
 This version of the OSSI site is built with [Astro](https://github.com/withastro/astro), following the [Astro "Build a blog" tutorial](https://docs.astro.build/en/tutorial/0-introduction/) and then integrating components from the [Astrowind](https://github.com/onwidget/astrowind/tree/main) template.
 
-**[View the current deployment](https://earnest-banoffee-0c0dc1.netlify.app/)
+[**View the current deployment**](https://earnest-banoffee-0c0dc1.netlify.app/)
 
 ## What would you like to do?
 
-- [Run a local version of the site](#run-a-local-version): Do this before adding or editing your project if you would like to preview what your changes will look like on the site.
+- [Run a local version of the site](#run-a-local-version-of-the-site): Do this before adding or editing your project if you would like to preview what your changes will look like on the site.
 
 - [Add or edit a project](#add-or-edit-a-project)
 
-## Run a local version
+## Run a local version of the site
 
 To get this version of the OSSI site up and running on your local machine:
 
@@ -35,31 +35,28 @@ Ensure you have all the necessary dependencies by running:
 ```
 
 4. **Start the Server:**
-Launch the server with the command:
+Launch the local dev server at localhost:4321 with the command:
 ```
     npm run dev
 ```
 
+## Add or edit a project
 
+### File structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+Inside the astro-tutorial folder, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   └── content/
+│       └── projects/
+└── project-template.md
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+### Tasks
+1. [Create a new project file from the project template.](astro-tutorial/1-Create-a-new-project-file.md)
 
 ## 🧞 Commands
 
