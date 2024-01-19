@@ -7,9 +7,31 @@ This version of the OSSI site is built with [Astro](https://github.com/withastro
 [**View the current deployment**](https://earnest-banoffee-0c0dc1.netlify.app/)
 
 ## How to contribute to the site
+Below, two options for contributing to the site are outlined. Option 1 involves using the online Github editor. Option 2 involves creating a local copy of the code and using a code editor installed on your local machine.
 
-### Tasks
-1. [Set up a local version of the site.](1-Set-up-a-local-version.md)
+### Prerequisites
+1. A [Github account](https://docs.github.com/en/get-started/quickstart/creating-an-account-on-github)
+1. A fork of the site repository ([instructions below](#fork-the-site-repository))
+
+**Additional prerequisites for Option 2**
+1. A code editor, e.g., [Visual Studio Code](https://code.visualstudio.com/download)
+1. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed on your computer
+
+### Fork the site repository
+This creates a copy of the OSSI Website Framework Tests repository in your online Github account.
+
+1. Navigate to the [OSSI Website Framework Tests repository](https://github.com/allison-truhlar/ossi-website-framework-tests) on Github.
+1. In the top right corner, click **Fork**.
+
+![fork-repository](/assets/fork-repository.png)
+
+3. On the page that appears, keep the default settings. They should be:
+    - Your Github username as the "owner" of the fork
+    - Copy the main branch only is selected
+    - Optionally, you can change the name and description of your forked repository to whatever is meaningful to you
+
+### Option 1 - Make additions/edits on Github
+1. [Fork and (optionally) clone the site repository.](how-to-contribute/1-Fork-and-clone-the-site.md) This creates your own copy of the site code where you can make your desired additions/edits.
 
 - [Run a local version of the site](#run-a-local-version-of-the-site): Do this before adding or editing your project if you would like to preview what your changes will look like on the site.
 
