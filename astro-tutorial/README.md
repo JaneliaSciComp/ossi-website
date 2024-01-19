@@ -1,14 +1,45 @@
-# Astro Starter Kit: Minimal
+# Astro OSSI site
 
-```sh
-npm create astro@latest -- --template minimal
+## Overview
+
+This version of the OSSI site is built with [Astro](https://github.com/withastro/astro), following the [Astro "Build a blog" tutorial](https://docs.astro.build/en/tutorial/0-introduction/) and then integrating components from the [Astrowind](https://github.com/onwidget/astrowind/tree/main) template.
+
+**[View the current deployment](https://earnest-banoffee-0c0dc1.netlify.app/)
+
+## What would you like to do?
+
+- [Add or edit a project](#add-or-edit-a-project)
+- [Run a local version of the site](#run-a-local-version)
+
+## Run a local version
+
+To get this version of the OSSI site up and running on your local machine:
+
+1. **Clone the OSSI Website Frameworks Tests Repository:**
+Open your terminal and run the following command to clone the repository to your local machine:
+``` 
+    gh repo clone allison-truhlar/ossi-website-framework-tests
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+2. **Navigate to Project Directory:**
+Move into the project directory using the following command:
+```
+    cd astro-tutorial
+```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+3. **Install Dependencies:**
+Ensure you have all the necessary dependencies by running:
+```
+    npm install
+```
+
+4. **Start the Server:**
+Launch the server with the command:
+```
+    npm run dev
+```
+
+
 
 ## 🚀 Project Structure
 
