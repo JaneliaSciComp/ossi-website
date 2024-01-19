@@ -6,7 +6,10 @@ This version of the OSSI site is built with [Astro](https://github.com/withastro
 
 [**View the current deployment**](https://earnest-banoffee-0c0dc1.netlify.app/)
 
-## What would you like to do?
+## How to contribute to the site
+
+### Tasks
+1. [Set up a local version of the site.](astro-tutorial/1-Set-up-a-local-version.md)
 
 - [Run a local version of the site](#run-a-local-version-of-the-site): Do this before adding or editing your project if you would like to preview what your changes will look like on the site.
 
@@ -55,8 +58,7 @@ Inside the astro-tutorial folder, you'll see the following folders and files:
 └── project-template.md
 ```
 
-### Tasks
-1. [Create a new project file from the project template.](astro-tutorial/1-Create-a-new-project-file.md)
+
 
 ## 🧞 Commands
 
