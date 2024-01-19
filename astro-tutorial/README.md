@@ -9,7 +9,7 @@ This version of the OSSI site is built with [Astro](https://github.com/withastro
 ## How to contribute to the site
 
 ### Tasks
-1. [Set up a local version of the site.](astro-tutorial/1-Set-up-a-local-version.md)
+1. [Set up a local version of the site.](1-Set-up-a-local-version.md)
 
 - [Run a local version of the site](#run-a-local-version-of-the-site): Do this before adding or editing your project if you would like to preview what your changes will look like on the site.
 
