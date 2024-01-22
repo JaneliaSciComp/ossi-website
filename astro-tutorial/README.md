@@ -42,7 +42,7 @@ npm run dev
         └── projects/
 ```
 
-## Edit the project file
+### Edit the project file
 
 1. Open your copy of the `project-template.md` file. At the top of the file are data sandwiched between triple-dashes (---). These data are used by the Static Site Generator to create the webpage for your project. **Follow the guidance in the table below to edit the data for your project.**
 
@@ -83,15 +83,15 @@ npm run dev
 | `usage environment`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Cloud, Google Colab, HPC cluster, Jupyter notebook, Local installation, Web browser  |
 | `related blog posts`        | Optional  | If your project has an associated blog post file, provide the file name here, without the .md extenstion (e.g., my-related-blog-post-file). If there is more than one related blog posts, list the file names in square brackets, separated by commas.  |
 
-## Optional - Adding an image
+### Optional - Adding an image
 1. Add your desired image to `/src/content/projects`, using a filenmae without spaces.
 2. Edit your project file to include a value for `image file` as outlined in [Edit the project file](#edit-the-project-file).
 
-## Preview and commit your changes
+### Preview and commit your changes
 1. Preview your changes on the local dev server at `localhost:4321`.
 2. When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.
 
-## Open a pull request
+### Open a pull request
 1. Go to your repository on GitHub - on the banner indicating your branch is one commit ahead, click **Contribute** and then **Open a pull request**. 
 2. Title your pull request "Add a project - [Project Name]". Include in the description any helpful notes or specific requests.
 3. Create your pull request - your request will be reviewed by the mainters of the OSSI site. You may receive requests for changes before your request is approved.
