@@ -7,6 +7,13 @@ This version of the OSSI site is built with [Astro](https://GitHub.com/withastro
 [**View the current deployment**](https://earnest-banoffee-0c0dc1.netlify.app/)
 
 ## How to contribute to the site
+###Table of Contents
+- [Prerequesites](#prerequisites)
+- [Set-up](#set-up)
+- [Edit the project file](#edit-the-project-file)
+- [Optional - add an image](#optional---adding-an-image)
+- [Preview and commit your changes](#preview-and-commit-your-changes)
+- [Open a pull request](#open-a-pull-request)
 
 ### Prerequisites
 1. A [GitHub account](https://docs.GitHub.com/en/get-started/quickstart/creating-an-account-on-GitHub)
@@ -41,9 +48,9 @@ npm run dev
 
 2. **The first item to edit is the `title`, and use this value to name your project file.** For example, if your project title is `my awesome project`, name your project file `my-awesome-project.md`, with dashes connecting each word.
 
-3. If you'd like to add a picture for your project, follow the optional step adding a picture. 
+3. If you'd like to add an image for your project, follow the optional step [adding an image](#adding-an-image). 
 
-####Notes:
+**Notes:**
 - For each *required* variable, delete the placeholder text to the right of the colon in the template file and use the table guidance to provide your own value.
 
 - For each *optional* variable, if you do not wish to provide a value, delete the entire entry.
@@ -61,7 +68,7 @@ npm run dev
 | `tagline`                 | Required                  |One or two sentences describing your project.    |
 | `author names`            | Required                  |The names of the project authors, written however you want them to appear on the webpage.      |
 | `GitHub repository link`         | Optional                  |The link to the project GitHub repository, e.g., https://GitHub.com/allison-truhlar/ossi-website-framework-tests     |
-| `image file`       |Optional                  | Format as: ./[your-image-file-name-with-dashes-between-words].[your image file extension]<br/> Then see [Adding an image](#adding-an-image) for more information about uploading an image. |
+| `image file`       |Optional                  | Format as: ./[your-image-file-name-with-dashes-between-words].[your image file extension]<br/> Then see [Adding an image](#optional---adding-an-image) for more information about uploading an image. |
 | `image alt text` | Optional;<br/> Required if you add an image file                 |A brief description of the image    |
 | `associated labs and projects`    | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Branson, Pachitariu, Preibisch, Saalfeld,Spruston, Stringer, Turaga, COSEM, FlyEM, FlyLight, MouseLight, MultiFISH, Scientific Computing Software  |
 | `scientific domain`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Animal behavior, Bioimaging, Deep learning, Electrophysiology, Machine learning, Neuroscience, Spatial transcriptomics  |
@@ -76,7 +83,7 @@ npm run dev
 | `usage environment`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Cloud, Google Colab, HPC cluster, Jupyter notebook, Local installation, Web browser  |
 | `related blog posts`        | Optional  | If your project has an associated blog post file, provide the file name here, without the .md extenstion (e.g., my-related-blog-post-file). If there is more than one related blog posts, list the file names in square brackets, separated by commas.  |
 
-## Adding an image
+## Optional - Adding an image
 1. Add your desired image to `/src/content/projects`, using a filenmae without spaces.
 2. Edit your project file to include a value for `image file` as outlined in [Edit the project file](#edit-the-project-file).
 
