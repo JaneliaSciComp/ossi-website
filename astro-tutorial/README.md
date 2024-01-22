@@ -15,10 +15,8 @@ This version of the OSSI site is built with [Astro](https://GitHub.com/withastro
 ### Set-up
 **Note:* These instructions assume you are familiar with the GitHub [pull request flow](https://docs.GitHub.com/en/get-started/exploring-projects-on-GitHub/contributing-to-a-project) for contributing to projects.
 1. Fork and clone the [OSSI Website Framework Tests repository](https://GitHub.com/allison-truhlar/ossi-website-framework-tests).
-<br/>
 
 1. Open the respository in your local code editor and use the terminal to change the directory to the `astro-tutorial` folder. 
-<br/>
 
 1. Install dependencies and start the local dev server at `localhost:4321`.
 ```
@@ -40,15 +38,16 @@ npm run dev
 ## Edit the project file
 
 1. Open your copy of the `project-template.md` file. At the top of the file are data sandwiched between triple-dashes (---). These data are used by the Static Site Generator to create the webpage for your project. **Follow the guidance in the table below to edit the data for your project.**
-<br/>
+
 2. **The first item to edit is the `title`, and use this value to name your project file.** For example, if your project title is `my awesome project`, name your project file `my-awesome-project.md`, with dashes connecting each word.
+
 3. If you'd like to add a picture for your project, follow the optional step adding a picture. 
 
 ####Notes:
 - For each *required* variable, delete the placeholder text to the right of the colon in the template file and use the table guidance to provide your own value.
-<br/>
+
 - For each *optional* variable, if you do not wish to provide a value, delete the entire entry.
-<br/>
+
 - **For "tag" variables:**
     - Tags are used to allow website visitors to filter displayed projects. The current tag categories and options are provided in the project template.
     - Delete any tags provided in the project template that don't apply to your project. Keep relevant tags inside the square brackets, separated by commas. 
@@ -79,7 +78,6 @@ npm run dev
 
 ## Adding an image
 1. Add your desired image to `/src/content/projects`, using a filenmae without spaces.
-<br/>
 2. Edit your project file to include a value for `image file` as outlined in [Edit the project file](#edit-the-project-file).
 
 ## Preview and commit your changes
@@ -88,7 +86,5 @@ npm run dev
 
 ## Open a pull request
 1. Go to your repository on GitHub - on the banner indicating your branch is one commit ahead, click **Contribute** and then **Open a pull request**. 
-<br/>
 2. Title your pull request "Add a project - [Project Name]". Include in the description any helpful notes or specific requests.
-<br/>
 3. Create your pull request - your request will be reviewed by the mainters of the OSSI site. You may receive requests for changes before your request is approved.
