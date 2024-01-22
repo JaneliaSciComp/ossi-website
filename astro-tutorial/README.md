@@ -7,7 +7,7 @@ This version of the OSSI site is built with [Astro](https://GitHub.com/withastro
 [**View the current deployment**](https://earnest-banoffee-0c0dc1.netlify.app/)
 
 ## How to contribute to the site
-###Table of Contents
+### Table of Contents
 - [Prerequesites](#prerequisites)
 - [Set-up](#set-up)
 - [Edit the project file](#edit-the-project-file)
