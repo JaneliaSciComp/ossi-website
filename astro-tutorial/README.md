@@ -2,112 +2,93 @@
 
 ## Overview
 
-This version of the OSSI site is built with [Astro](https://github.com/withastro/astro), following the [Astro "Build a blog" tutorial](https://docs.astro.build/en/tutorial/0-introduction/) and then integrating components from the [Astrowind](https://github.com/onwidget/astrowind/tree/main) template.
+This version of the OSSI site is built with [Astro](https://GitHub.com/withastro/astro), following the [Astro "Build a blog" tutorial](https://docs.astro.build/en/tutorial/0-introduction/) and then integrating components from the [Astrowind](https://GitHub.com/onwidget/astrowind/tree/main) template.
 
 [**View the current deployment**](https://earnest-banoffee-0c0dc1.netlify.app/)
 
 ## How to contribute to the site
-Below, two options for contributing to the site are outlined. Option 1 involves using the online Github editor. Option 2 involves creating a local copy of the code and using a code editor installed on your local machine.
 
 ### Prerequisites
-1. A [Github account](https://docs.github.com/en/get-started/quickstart/creating-an-account-on-github)
-1. A fork of the site repository ([instructions below](#fork-the-site-repository))
+1. A [GitHub account](https://docs.GitHub.com/en/get-started/quickstart/creating-an-account-on-GitHub)
+1. A code editor (e.g., [Visual Studio Code](https://code.visualstudio.com/download)), [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed on your local computer
 
-**Additional prerequisites for Option 2**
-1. A code editor, e.g., [Visual Studio Code](https://code.visualstudio.com/download)
-1. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed on your computer
-
-### Fork the site repository
-This creates a copy of the OSSI Website Framework Tests repository in your online Github account.
-
-1. Navigate to the [OSSI Website Framework Tests repository](https://github.com/allison-truhlar/ossi-website-framework-tests) on Github.
+### Set-up
+**Note:* These instructions assume you are familiar with the GitHub [pull request flow](https://docs.GitHub.com/en/get-started/exploring-projects-on-GitHub/contributing-to-a-project) for contributing to projects.
+1. Fork and clone the [OSSI Website Framework Tests repository](https://GitHub.com/allison-truhlar/ossi-website-framework-tests).
 <br/>
-1. In the top right corner of the screen, click **Fork**.
-![fork-repository](/assets/fork-repository.png)
+
+1. Open the respository in your local code editor and use the terminal to change the directory to the `astro-tutorial` folder. 
 <br/>
-3. On the page that appears, keep the default settings. They should be:
-    - Your Github username as the "owner" of the fork.
-    - Copy the main branch only is selected.
-    - Optionally, you can change the name and description of your forked repository to whatever is meaningful to you.
-<br/>  
-4. In your newly forked repository, navigate to the `astro-tutorial` folder. Here is some key folders and files you'll find inside `astro-tutorial`:
+
+1. Install dependencies and start the local dev server at `localhost:4321`.
+```
+npm install
+npm run dev
+```
+
+4. Copy `project-template.md` and paste it into `/src/content/projects`.
+<br/>Key folders and files inside `astro-tutorial`:
 ```text
 /
 ├── public/
 └── src/
-    └── how-to-contribute/
-        └── project-template.md
+    └── project-template.md
     └── content/
         └── projects/
 ```
 
-### Option 1 - Make additions/edits on Github
+## Edit the project file
+
+1. Open your copy of the `project-template.md` file. At the top of the file are data sandwiched between triple-dashes (---). These data are used by the Static Site Generator to create the webpage for your project. **Follow the guidance in the table below to edit the data for your project.**
+<br/>
+2. **The first item to edit is the `title`, and use this value to name your project file.** For example, if your project title is `my awesome project`, name your project file `my-awesome-project.md`, with dashes connecting each word.
+3. If you'd like to add a picture for your project, follow the optional step adding a picture. 
+
+####Notes:
+- For each *required* variable, delete the placeholder text to the right of the colon in the template file and use the table guidance to provide your own value.
+<br/>
+- For each *optional* variable, if you do not wish to provide a value, delete the entire entry.
+<br/>
+- **For "tag" variables:**
+    - Tags are used to allow website visitors to filter displayed projects. The current tag categories and options are provided in the project template.
+    - Delete any tags provided in the project template that don't apply to your project. Keep relevant tags inside the square brackets, separated by commas. 
+    - If you feel there is an additional tag category (the variable name to the left of the colon) or an individual tag option within an existing category (the values in the square brackets to the right of the colon) required to describe your project, please feel free to add it - this will be considered as part of your submitted pull request.
+<br/>
 
 
+| Variable name             | Required or optional      |How to complete                                  |
+| :------------------------ | :-------------------------|:----------------------------------------------- |
+| `title`                   | Required                  |Your project title.                              |
+| `tagline`                 | Required                  |One or two sentences describing your project.    |
+| `author names`            | Required                  |The names of the project authors, written however you want them to appear on the webpage.      |
+| `GitHub repository link`         | Optional                  |The link to the project GitHub repository, e.g., https://GitHub.com/allison-truhlar/ossi-website-framework-tests     |
+| `image file`       |Optional                  | Format as: ./[your-image-file-name-with-dashes-between-words].[your image file extension]<br/> Then see [Adding an image](#adding-an-image) for more information about uploading an image. |
+| `image alt text` | Optional;<br/> Required if you add an image file                 |A brief description of the image    |
+| `associated labs and projects`    | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Branson, Pachitariu, Preibisch, Saalfeld,Spruston, Stringer, Turaga, COSEM, FlyEM, FlyLight, MouseLight, MultiFISH, Scientific Computing Software  |
+| `scientific domain`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Animal behavior, Bioimaging, Deep learning, Electrophysiology, Machine learning, Neuroscience, Spatial transcriptomics  |
+| `model organism`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - C. Elegans, Fly, Mouse  |
+| `software type`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Command line application, Framework, Native application, Package, Service, Web application, Website  |
+| `programming language`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - C++, Java, Julia, Kotlin, MATLAB, Nextflow, Python  |
+| `software ecosystem`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - BigDataViewer, Fiji, ImgLib2, Janelia Workstation, Java Virtual Machine, Napari  |
+| `open source license`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - BDS-3 Clause, CC-by-0, GPL, MIT  |
+| `supported file types`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI  |
+| `related laboratory techniques`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Calcium imaging, Confocal light microscopy (LM), Correlative light EM (CLEM), EASI-FISH, Electron microscopy (EM), Expansion microscopy (ExM), FISH, Lightsheet fluorescence microscopy (LFSM), MERFISH, Neural recording, Single-molecule localization microscopy (SMLM), SlideSeq, Two-photon imaging  |
+| `software use case`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Annotation, Electrophysiology analysis, Image analysis, Image registration, Sequence analysis, Tool packaging/distribution, Video analysis  |
+| `usage environment`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Cloud, Google Colab, HPC cluster, Jupyter notebook, Local installation, Web browser  |
+| `related blog posts`        | Optional  | If your project has an associated blog post file, provide the file name here, without the .md extenstion (e.g., my-related-blog-post-file). If there is more than one related blog posts, list the file names in square brackets, separated by commas.  |
 
+## Adding an image
+1. Add your desired image to `/src/content/projects`, using a filenmae without spaces.
+<br/>
+2. Edit your project file to include a value for `image file` as outlined in [Edit the project file](#edit-the-project-file).
 
-- [Run a local version of the site](#run-a-local-version-of-the-site): Do this before adding or editing your project if you would like to preview what your changes will look like on the site.
+## Preview and commit your changes
+1. Preview your changes on the local dev server at `localhost:4321`.
+2. When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.
 
-- [Add or edit a project](#add-or-edit-a-project)
-
-## Run a local version of the site
-
-To get this version of the OSSI site up and running on your local machine:
-
-1. **Clone the OSSI Website Frameworks Tests Repository:**
-Open your terminal and run the following command to clone the repository to your local machine:
-``` 
-    gh repo clone allison-truhlar/ossi-website-framework-tests
-```
-
-2. **Navigate to Project Directory:**
-Move into the project directory using the following command:
-```
-    cd astro-tutorial
-```
-
-3. **Install Dependencies:**
-Ensure you have all the necessary dependencies by running:
-```
-    npm install
-```
-
-4. **Start the Server:**
-Launch the local dev server at localhost:4321 with the command:
-```
-    npm run dev
-```
-
-## Add or edit a project
-
-### File structure
-
-Inside the astro-tutorial folder, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── content/
-│       └── projects/
-└── project-template.md
-```
-
-
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Open a pull request
+1. Go to your repository on GitHub - on the banner indicating your branch is one commit ahead, click **Contribute** and then **Open a pull request**. 
+<br/>
+2. Title your pull request "Add a project - [Project Name]". Include in the description any helpful notes or specific requests.
+<br/>
+3. Create your pull request - your request will be reviewed by the mainters of the OSSI site. You may receive requests for changes before your request is approved.
