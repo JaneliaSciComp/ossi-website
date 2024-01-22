@@ -20,7 +20,7 @@ This version of the OSSI site is built with [Astro](https://GitHub.com/withastro
 1. A code editor (e.g., [Visual Studio Code](https://code.visualstudio.com/download)), [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed on your local computer
 
 ### Set-up
-**Note:* These instructions assume you are familiar with the GitHub [pull request flow](https://docs.GitHub.com/en/get-started/exploring-projects-on-GitHub/contributing-to-a-project) for contributing to projects.
+**Note:** These instructions assume you are familiar with the GitHub [pull request flow](https://docs.GitHub.com/en/get-started/exploring-projects-on-GitHub/contributing-to-a-project) for contributing to projects.
 1. Fork and clone the [OSSI Website Framework Tests repository](https://GitHub.com/allison-truhlar/ossi-website-framework-tests).
 
 1. Open the respository in your local code editor and use the terminal to change the directory to the `astro-tutorial` folder. 
