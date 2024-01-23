@@ -1,7 +1,7 @@
 ---
 title: Your project title
 tagline: Your project tagline
-author names: List of author names
+author names: List of author names, as a string (no square brackets)
 github repository link: Optional URL to the project Github repository
 image file: ./optional-file-path.jpg
 image alt text: Alt text is required if you upload an image file
@@ -16,7 +16,7 @@ supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI]
 related laboratory techniques: [Calcium imaging, Confocal light microscopy (LM), Correlative light EM (CLEM), EASI-FISH, Electron microscopy (EM), Expansion microscopy (ExM), FISH, Lightsheet fluorescence microscopy (LFSM), MERFISH, Neural recording, Single-molecule localization microscopy (SMLM), SlideSeq, Two-photon imaging]
 software use case: [Annotation, Electrophysiology analysis, Image analysis, Image registration, Sequence analysis, Tool packaging/distribution, Video analysis]
 usage environment: [Cloud, Google Colab, HPC cluster, Jupyter notebook, Local installation, Web browser]
-related blog posts: Optional-file-name
+related blog posts: [Optional-file-name]
 ---
 
 Replace this text with 1-2 paragraphs describing your project.<br/>
