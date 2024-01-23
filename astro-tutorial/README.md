@@ -56,7 +56,7 @@ npm run dev
 - For each *optional* variable, if you do not wish to provide a value, delete the entire entry.
 
 - **For "tag" variables:**
-    - Tags are used to allow website visitors to filter displayed projects. The current tag categories and options are provided in the project template.
+    - Tags are used to allow website visitors to filter displayed projects. The current tag categories and example options are provided in the project template.
     - Delete any tags provided in the project template that don't apply to your project. Keep relevant tags inside the square brackets, separated by commas. 
     - If you feel there is an additional tag category (the variable name to the left of the colon) or an individual tag option within an existing category (the values in the square brackets to the right of the colon) required to describe your project, please feel free to add it - this will be considered as part of your submitted pull request.
 <br/>
@@ -66,7 +66,7 @@ npm run dev
 | :------------------------ | :-------------------------|:----------------------------------------------- |
 | `title`                   | Required                  |Your project title.                              |
 | `tagline`                 | Required                  |One or two sentences describing your project.    |
-| `author names`            | Required                  |The names of the project authors, written in a string, however you want them to appear on the webpage.      |
+| `author names`            | Required                  |The names of the project authors, written exactly as you want them to appear on the webpage. For example, do not include square brackets with author names separated by commas for a list, as with some of the other variables below - instead, write out how you would like the author list to appear.      |
 | `GitHub repository link`         | Optional                  |The link to the project GitHub repository, e.g., https://GitHub.com/allison-truhlar/ossi-website-framework-tests     |
 | `image file`       |Optional                  | Format as: ./[your-image-file-name-with-dashes-between-words].[your image file extension]<br/> Then see [Adding an image](#optional---adding-an-image) for more information about uploading an image. |
 | `image alt text` | Optional;<br/> Required if you add an image file                 |A brief description of the image    |
@@ -86,6 +86,8 @@ npm run dev
 ### Optional - Adding an image
 1. Add your desired image to `/src/content/projects`, using a filenmae without spaces.
 2. Edit your project file to include a value for `image file` as outlined in [Edit the project file](#edit-the-project-file).
+
+*Note:* If, after adding your image, you get an error when trying to view your project page on the local dev server, try manually installing the Sharp package by running `npm install sharp`, and restarting your local server. Sharp is the image service used by `astro:assets`, and it requires a manual install when using strict package managers. Read more in the [Astro docs](https://docs.astro.build/en/reference/errors/missing-sharp/).
 
 ### Preview and commit your changes
 1. Preview your changes on the local dev server at `localhost:4321`.
