@@ -1,7 +1,7 @@
 ---
 title: Your project title
 tagline: Your project tagline
-author names: List of author names, as a string (no square brackets)
+author names: List of author names written out exactly how you want the list to appear on the page (i.e., do not provide an array of names in square brackets)
 github repository link: Optional URL to the project Github repository
 image file: ./optional-file-path.jpg
 image alt text: Alt text is required if you upload an image file
