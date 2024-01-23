@@ -19,6 +19,6 @@ usage environment: [Cloud, Google Colab, HPC cluster, Jupyter notebook, Local in
 related blog posts: Optional-file-name
 ---
 
-Optionally provide 1-2 paragraphs of description for your project.<br/>
+Replace this text with 1-2 paragraphs describing your project.<br/>
 If desired, use [Markdown syntax](https://www.markdownguide.org/basic-syntax/) to add hyperlinks, layout/text effects (e.g., headings, lists, **bold** or *italic* text), etc.<br/>
 Note - styling will be added to anything you write here to make it look pretty 😊. 
