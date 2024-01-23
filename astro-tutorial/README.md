@@ -66,7 +66,7 @@ npm run dev
 | :------------------------ | :-------------------------|:----------------------------------------------- |
 | `title`                   | Required                  |Your project title.                              |
 | `tagline`                 | Required                  |One or two sentences describing your project.    |
-| `author names`            | Required                  |The names of the project authors, written however you want them to appear on the webpage.      |
+| `author names`            | Required                  |The names of the project authors, written in a string, however you want them to appear on the webpage.      |
 | `GitHub repository link`         | Optional                  |The link to the project GitHub repository, e.g., https://GitHub.com/allison-truhlar/ossi-website-framework-tests     |
 | `image file`       |Optional                  | Format as: ./[your-image-file-name-with-dashes-between-words].[your image file extension]<br/> Then see [Adding an image](#optional---adding-an-image) for more information about uploading an image. |
 | `image alt text` | Optional;<br/> Required if you add an image file                 |A brief description of the image    |
@@ -81,7 +81,7 @@ npm run dev
 | `related laboratory techniques`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - Calcium imaging, Confocal light microscopy (LM), Correlative light EM (CLEM), EASI-FISH, Electron microscopy (EM), Expansion microscopy (ExM), FISH, Lightsheet fluorescence microscopy (LFSM), MERFISH, Neural recording, Single-molecule localization microscopy (SMLM), SlideSeq, Two-photon imaging  |
 | `software use case`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - Annotation, Electrophysiology analysis, Image analysis, Image registration, Sequence analysis, Tool packaging/distribution, Video analysis  |
 | `usage environment`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - Cloud, Google Colab, HPC cluster, Jupyter notebook, Local installation, Web browser  |
-| `related blog posts`        | Optional  | If your project has an associated blog post file, provide the file name here, without the .md extenstion (e.g., my-related-blog-post-file). If there is more than one related blog posts, list the file names in square brackets, separated by commas.  |
+| `related blog posts`        | Optional  | If your project has an associated blog post file, provide the file name here in square brackets, without the .md extenstion (e.g., `[my-related-blog-post-file]`). If there is more than one related blog posts separate the file names by commas.  |
 
 ### Optional - Adding an image
 1. Add your desired image to `/src/content/projects`, using a filenmae without spaces.
