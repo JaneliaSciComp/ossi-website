@@ -23,7 +23,7 @@ Video is captured in a wide variety of biology applications, including cell and 
 analysis of these data requires machine learning, used in problems such as cell or animal tracking and pose
 recognition, cell division detection, and behavior classification. As good training data is essential to the
 success of practical applications of machine learning, we need efficient methods for data annotation and
-visualization. We’ve been developing such applications for over about [15 years](http://kristinbranson.github.io/APT/) , and, for each new
+visualization. We’ve been developing such applications for over about [15 years](http://kristinbranson.github.io/APT/), and, for each new
 application we have worked on, we have had to write new, from-scratch interfaces. While each application
 has had differences, there are many commonalities that a well-designed library could exploit. Even more
 problematic is the fact that, throughout computer vision, we often artificially constrain ourselves to inference
