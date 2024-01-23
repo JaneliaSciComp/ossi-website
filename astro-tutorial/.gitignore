@@ -19,3 +19,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# reference files
+src/sampleBlogPosts.txt
+src/sampleProjectTags.txt

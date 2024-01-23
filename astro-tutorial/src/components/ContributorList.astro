@@ -4,6 +4,10 @@ import Wrapper from './Wrapper.astro';
 import TextBlock from './TextBlock.astro';
 import Button from './Button.astro';
 
+import {Octokit} from "@octokit/rest"
+import {authTokenFn} from "../utils/envHelper"
+const authToken = authTokenFn()
+
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
@@ -12,6 +16,28 @@ const {
   items,
   bg = await Astro.slots.render('bg'),
 } = Astro.props
+
+const octokit = new Octokit({
+  baseUrl:'https://api.github.com', 
+  auth:{authToken},
+  log: {
+    debug: () => {},
+    info: () => {},
+    warn: console.warn,
+    error: console.error
+  },
+})
+async function getRepositoryEvents(){
+  return await octokit.rest.repos.listActivities({
+    owner:"allison-truhlar", 
+    repo:"ossi-website-framework-tests",
+    ref:"main",
+    activity_type:"pr_merge"
+  })
+}
+
+const {data} = await getRepositoryEvents()
+console.log(data)
 ---
 
 <Wrapper containerClass='max-w-5xl mx-auto' bg={bg}>
