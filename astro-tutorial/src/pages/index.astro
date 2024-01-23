@@ -24,12 +24,10 @@ import TextBlock from '../components/TextBlock.astro';
 			variant: 'primary',
 			text: 'Projects',
 			href: '/projects',
-			target: '_blank',
 		},
 		{ 
       text: 'Ecosystems', 
       href: '/ecosystems',
-      target: '_blank' 
     },
 		]}
   >
@@ -53,6 +51,7 @@ import TextBlock from '../components/TextBlock.astro';
     </Fragment>
   </ContentGridDisplay>
 
+  <!-- The "see all contributors" link should ultimately open a new tab with the Contributors list on the public Github repository -->
   <ContributorList
     title="Recent contributors"
     callToAction={{
@@ -84,12 +83,11 @@ import TextBlock from '../components/TextBlock.astro';
        variant: 'primary',
        text: 'Documentation',
        href: '/documentation',
-       target: '_blank',
      }
    ]}
  >
     <Fragment slot="content">
-      Interested in contributing to this site? Read the documentation.
+      Learn more about contributing to this site.    
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>

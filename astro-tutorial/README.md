@@ -30,8 +30,6 @@ This version of the OSSI site is built with [Astro](https://GitHub.com/withastro
 npm install
 npm run dev
 ```
-
-4. Copy `project-template.md` and paste it into `/src/content/projects`.
 <br/>Key folders and files inside `astro-tutorial`:
 ```text
 /
@@ -41,12 +39,14 @@ npm run dev
     └── content/
         └── projects/
 ```
+4. Copy `project-template.md` and paste it into `/src/content/projects`. Rename the template with your project's title, e.g., `my-awesome-project.md`, with dashes connecting each word.
+
 
 ### Edit the project file
 
 1. Open your copy of the `project-template.md` file. At the top of the file are data sandwiched between triple-dashes (---). These data are used by the Static Site Generator to create the webpage for your project. **Follow the guidance in the table below to edit the data for your project.**
 
-2. **The first item to edit is the `title`, and use this value to name your project file.** For example, if your project title is `my awesome project`, name your project file `my-awesome-project.md`, with dashes connecting each word.
+2. **The first item to edit is the `title`- this should match the name of your project file, without the dashes.** For example, if your project file is named `my-awesome-project.md`, your project title should be `my awesome project`.
 
 3. If you'd like to add an image for your project, follow the optional step [adding an image](#adding-an-image). 
 
@@ -66,22 +66,22 @@ npm run dev
 | :------------------------ | :-------------------------|:----------------------------------------------- |
 | `title`                   | Required                  |Your project title.                              |
 | `tagline`                 | Required                  |One or two sentences describing your project.    |
-| `author names`            | Required                  |The names of the project authors, written however you want them to appear on the webpage.      |
+| `author names`            | Required                  |The names of the project authors, written in a string, however you want them to appear on the webpage.      |
 | `GitHub repository link`         | Optional                  |The link to the project GitHub repository, e.g., https://GitHub.com/allison-truhlar/ossi-website-framework-tests     |
 | `image file`       |Optional                  | Format as: ./[your-image-file-name-with-dashes-between-words].[your image file extension]<br/> Then see [Adding an image](#optional---adding-an-image) for more information about uploading an image. |
 | `image alt text` | Optional;<br/> Required if you add an image file                 |A brief description of the image    |
-| `associated labs and projects`    | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Branson, Pachitariu, Preibisch, Saalfeld,Spruston, Stringer, Turaga, COSEM, FlyEM, FlyLight, MouseLight, MultiFISH, Scientific Computing Software  |
-| `scientific domain`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Animal behavior, Bioimaging, Deep learning, Electrophysiology, Machine learning, Neuroscience, Spatial transcriptomics  |
-| `model organism`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - C. Elegans, Fly, Mouse  |
-| `software type`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Command line application, Framework, Native application, Package, Service, Web application, Website  |
-| `programming language`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - C++, Java, Julia, Kotlin, MATLAB, Nextflow, Python  |
-| `software ecosystem`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - BigDataViewer, Fiji, ImgLib2, Janelia Workstation, Java Virtual Machine, Napari  |
-| `open source license`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - BDS-3 Clause, CC-by-0, GPL, MIT  |
-| `supported file types`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI  |
-| `related laboratory techniques`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Calcium imaging, Confocal light microscopy (LM), Correlative light EM (CLEM), EASI-FISH, Electron microscopy (EM), Expansion microscopy (ExM), FISH, Lightsheet fluorescence microscopy (LFSM), MERFISH, Neural recording, Single-molecule localization microscopy (SMLM), SlideSeq, Two-photon imaging  |
-| `software use case`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Annotation, Electrophysiology analysis, Image analysis, Image registration, Sequence analysis, Tool packaging/distribution, Video analysis  |
-| `usage environment`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Current options* - Cloud, Google Colab, HPC cluster, Jupyter notebook, Local installation, Web browser  |
-| `related blog posts`        | Optional  | If your project has an associated blog post file, provide the file name here, without the .md extenstion (e.g., my-related-blog-post-file). If there is more than one related blog posts, list the file names in square brackets, separated by commas.  |
+| `associated labs and projects`    | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - Branson, Pachitariu, Preibisch, Saalfeld,Spruston, Stringer, Turaga, COSEM, FlyEM, FlyLight, MouseLight, MultiFISH, Scientific Computing Software  |
+| `scientific domain`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - Animal behavior, Bioimaging, Deep learning, Electrophysiology, Machine learning, Neuroscience, Spatial transcriptomics  |
+| `model organism`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - C. Elegans, Fly, Mouse  |
+| `software type`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - Command line application, Framework, Native application, Package, Service, Web application, Website  |
+| `programming language`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - C++, Java, Julia, Kotlin, MATLAB, Nextflow, Python  |
+| `software ecosystem`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - BigDataViewer, Fiji, ImgLib2, Janelia Workstation, Java Virtual Machine, Napari  |
+| `open source license`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - BDS-3 Clause, CC-by-0, GPL, MIT  |
+| `supported file types`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI  |
+| `related laboratory techniques`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - Calcium imaging, Confocal light microscopy (LM), Correlative light EM (CLEM), EASI-FISH, Electron microscopy (EM), Expansion microscopy (ExM), FISH, Lightsheet fluorescence microscopy (LFSM), MERFISH, Neural recording, Single-molecule localization microscopy (SMLM), SlideSeq, Two-photon imaging  |
+| `software use case`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - Annotation, Electrophysiology analysis, Image analysis, Image registration, Sequence analysis, Tool packaging/distribution, Video analysis  |
+| `usage environment`        | Optional  | Tags - see information [above](#notes) for tag variables. <br/> *Examples:* - Cloud, Google Colab, HPC cluster, Jupyter notebook, Local installation, Web browser  |
+| `related blog posts`        | Optional  | If your project has an associated blog post file, provide the file name here in square brackets, without the .md extenstion (e.g., `[my-related-blog-post-file]`). If there is more than one related blog posts separate the file names by commas.  |
 
 ### Optional - Adding an image
 1. Add your desired image to `/src/content/projects`, using a filenmae without spaces.

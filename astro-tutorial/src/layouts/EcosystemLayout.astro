@@ -3,13 +3,10 @@ import { getEntries } from "astro:content";
 import BaseLayout from "./BaseLayout.astro"
 import { Image } from "astro:assets";
 import Link from "../components/Link.astro";
-import List from "../components/blog/List.astro"
-
-import {findRelatedContent} from "../utils/blog"
 import ContentListDisplay from "../components/ContentListDisplay.astro";
 
 const { frontmatter } = Astro.props;
-const relatedProjects = await getEntries(frontmatter['related projects'])
+const relatedProjects = frontmatter['related projects'] ? await getEntries(frontmatter['related projects']) : null;
 ---
 <BaseLayout>
   <div class="mx-auto px-6 sm:px-6 pt-8 md:pt-4 max-w-6xl">
@@ -61,7 +58,10 @@ const relatedProjects = await getEntries(frontmatter['related projects'])
 
     </div>
 
-    <div class="md:col-start-5 md:col-span-2">
+    <div class="mt-10 md:mt-0 md:col-start-5 md:col-span-2">
+      <div class="max-w-3xl mx-auto px-6 my-6 md:hidden">
+        <div class="border-t dark:border-slate-700" />
+      </div>
       
         {relatedProjects && (
         <ContentListDisplay
