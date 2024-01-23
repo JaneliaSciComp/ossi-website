@@ -1,5 +1,4 @@
 import { atom } from 'nanostores'
-import {useStore} from '@nanostores/react'
 import { capitalizeTag } from '../../../utils/tagManipulation';
 
 export const selectedTags = atom([])
@@ -12,6 +11,7 @@ export function handleTagSelection(tag) {
     if (tagIndex === -1) {
       selectedTags.set([...prevTags, normalizedTag]);
     } else {
-      selectedTags.set(prevTags.splice(tagIndex, 1));
+      const updatedTags = prevTags.filter((t, index) => index !== tagIndex);      
+      selectedTags.set(updatedTags);
     }
 };
