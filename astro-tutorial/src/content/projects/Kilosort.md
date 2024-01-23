@@ -20,7 +20,7 @@ supported file types:
 related laboratory techniques: [neural recording]
 software use case: electrophysiology data analysis
 usage environment: [local installation]
-related blog posts: working-with-ossi-supported-projects
+related blog posts: [working-with-ossi-supported-projects]
 ---
 
 Neuropixels electrodes, developed at Janelia, have single-handedly transformed the field of electrophysiology. Almost overnight, our community went from mostly using single-channel electrodes to mostly using 384-channel Neuropixel electrodes. Instead of painstakingly recording one neuron at a time like before, researchers can now record hundreds or thousands of neurons simultaneously. We are already witnessing the acceleration in research provided by Neuropixels, with Janelia at the forefront of its science as well.
