@@ -108,7 +108,7 @@ const pubInfoArray = generatePublicationLinks(frontmatter)
             <div class="flex flex-wrap gap-2 mb-2">
               <p class="font-bold pr-2">Related blog posts:</p>
               {relatedBlogPosts.map(blog => (
-                <Link text={blog.data.title} url={`../../blog/${blog.slug}`} />
+                <Link text={blog?.data?.title} url={`../../blog/${blog?.slug}`} />
               ))}
             </div>
           )}
