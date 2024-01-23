@@ -43,13 +43,14 @@ const uniqueTags = extractUniqueTags(allProjects)
                             tagline={project.data.tagline}
                             tagsArray={extractIndividualProjectTags(project.data)}
                         >
-                            <Image 
+                            {project?.data['image file'] ? (
+                              <Image 
                                 slot="image" 
                                 src={project.data['image file']} 
                                 alt={project.data['image alt text']}
                                 class="w-full h-40 object-cover object-center"
                                 loading="eager"
-                            />
+                            />) : ''}
                         </ProjectCard>
                     )
                 })
