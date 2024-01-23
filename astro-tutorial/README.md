@@ -4,7 +4,7 @@
 
 This version of the OSSI site is built with [Astro](https://GitHub.com/withastro/astro), following the [Astro "Build a blog" tutorial](https://docs.astro.build/en/tutorial/0-introduction/) and then integrating components from the [Astrowind](https://GitHub.com/onwidget/astrowind/tree/main) template.
 
-[**View the current deployment**](https://earnest-banoffee-0c0dc1.netlify.app/)
+[**View the current deployment on the 'main' branch**](https://vocal-crepe-66f9af.netlify.app/)
 
 ## How to contribute to the site
 ### Table of Contents
