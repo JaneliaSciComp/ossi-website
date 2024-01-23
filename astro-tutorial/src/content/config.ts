@@ -25,7 +25,7 @@ const projectsCollection = defineCollection({
       'related laboratory techniques': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'software use case': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'usage environment': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
-      'related blog posts': z.union([z.array(reference('blog')), reference('blog')]).optional()
+      'related blog posts': z.union([z.array(reference('blog')), reference('blog'), z.undefined(), z.null()])
     })
 });
 
@@ -37,7 +37,7 @@ const blogCollection = defineCollection({
     'author names': z.string(),
     'image file': image().optional(),
     'image alt text': z.string().optional(),
-    'related projects':z.union([z.array(reference('projects')), reference('projects')]).optional()
+    'related projects':z.union([z.array(reference('projects')), reference('projects'), z.undefined(), z.null()])
     
   }), 
 })
