@@ -30,8 +30,6 @@ This version of the OSSI site is built with [Astro](https://GitHub.com/withastro
 npm install
 npm run dev
 ```
-
-4. Copy `project-template.md` and paste it into `/src/content/projects`.
 <br/>Key folders and files inside `astro-tutorial`:
 ```text
 /
@@ -41,12 +39,14 @@ npm run dev
     └── content/
         └── projects/
 ```
+4. Copy `project-template.md` and paste it into `/src/content/projects`. Rename the template with your project's title, e.g., `my-awesome-project.md`, with dashes connecting each word.
+
 
 ### Edit the project file
 
 1. Open your copy of the `project-template.md` file. At the top of the file are data sandwiched between triple-dashes (---). These data are used by the Static Site Generator to create the webpage for your project. **Follow the guidance in the table below to edit the data for your project.**
 
-2. **The first item to edit is the `title`, and use this value to name your project file.** For example, if your project title is `my awesome project`, name your project file `my-awesome-project.md`, with dashes connecting each word.
+2. **The first item to edit is the `title`- this should match the name of your project file, without the dashes.** For example, if your project file is named `my-awesome-project.md`, your project title should be `my awesome project`.
 
 3. If you'd like to add an image for your project, follow the optional step [adding an image](#adding-an-image). 
 
