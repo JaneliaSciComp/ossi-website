@@ -6,10 +6,9 @@ import ContentGridDisplay from '../components/ContentGridDisplay.astro';
 import ContributorList from '../components/ContributorList.astro';
 import TextBlock from '../components/TextBlock.astro';
 
-import {getContributorStats, getMostRecentContributionWeekByAuthor} from "../utils/githubApiHelper"
+import {getMostRecentContributors} from "../utils/githubApiHelper"
 const numberOfRecentContributors = 3;
-const {data} = await getContributorStats()
-const contributors = getMostRecentContributionWeekByAuthor(data, numberOfRecentContributors)
+const contributors = await getMostRecentContributors(numberOfRecentContributors)
 ---
 <BaseLayout>
 
