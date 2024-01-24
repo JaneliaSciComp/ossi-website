@@ -6,6 +6,10 @@ import ContentGridDisplay from '../components/ContentGridDisplay.astro';
 import ContributorList from '../components/ContributorList.astro';
 import TextBlock from '../components/TextBlock.astro';
 
+import {getContributorStats, getMostRecentContributionWeekByAuthor} from "../utils/githubApiHelper"
+const numberOfRecentContributors = 3;
+const {data} = await getContributorStats()
+const contributors = getMostRecentContributionWeekByAuthor(data, numberOfRecentContributors)
 ---
 <BaseLayout>
 
@@ -58,23 +62,14 @@ import TextBlock from '../components/TextBlock.astro';
       text: 'See all contributors »',
       href: '/',
     }}
-    items={[
-      {
-        title: 'Contributor 1',
-        description: 'github-username',
-        icon: 'grommet-icons:github',
-      },
-      {
-        title: 'Contributor 2',
-        description: 'github-username',
-        icon: 'grommet-icons:github',
-      },
-      {
-        title: 'Contributor 3',
-        description: 'github-username',
-        icon: 'grommet-icons:github',
-      },
-    ]}
+    items={contributors.map(contributor => {
+      return {
+        description: contributor.authorInfo.login,
+        icon: contributor.authorInfo.avatar_url,
+        url: contributor.authorInfo.html_url
+      }
+    }
+    )}
   />
 
   <CallToAction
