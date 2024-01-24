@@ -4,6 +4,12 @@ import Hero from '../components/Hero.astro';
 import TextBlock from '../components/TextBlock.astro';
 import ContributorList from '../components/ContributorList.astro';
 import Wrapper from '../components/Wrapper.astro';
+
+import {getContributorStats, getMostRecentContributionWeekByAuthor} from "../utils/githubApiHelper"
+const numberOfRecentContributors = 3;
+const {data} = await getContributorStats()
+const contributors = getMostRecentContributionWeekByAuthor(data, numberOfRecentContributors)
+
 ---
 <BaseLayout>
 
@@ -55,23 +61,14 @@ import Wrapper from '../components/Wrapper.astro';
       text: 'See all contributors »',
       href: '/',
     }}
-    items={[
-      {
-        title: 'Contributor 1',
-        description: 'github-username',
-        icon: 'grommet-icons:github',
-      },
-      {
-        title: 'Contributor 2',
-        description: 'github-username',
-        icon: 'grommet-icons:github',
-      },
-      {
-        title: 'Contributor 3',
-        description: 'github-username',
-        icon: 'grommet-icons:github',
-      },
-    ]}
+    items={contributors.map(contributor => {
+		return {
+		  description: contributor.authorInfo.login,
+		  icon: contributor.authorInfo.avatar_url,
+		  url: contributor.authorInfo.html_url
+		}
+	  }
+	  )}
   >
   	<Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
