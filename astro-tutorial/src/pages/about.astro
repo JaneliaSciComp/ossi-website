@@ -5,14 +5,9 @@ import TextBlock from '../components/TextBlock.astro';
 import ContributorList from '../components/ContributorList.astro';
 import Wrapper from '../components/Wrapper.astro';
 
-import {octokit, getMostRecentContributors} from "../utils/githubApiHelper"
-const {data} = await octokit.rest.repos.getContributorsStats({
-  owner:"allison-truhlar", 
-  repo:"ossi-website-framework-tests",
-}) 
+import {getContributors} from "../utils/githubApiHelper"
 const numberOfRecentContributors = 3;
-const contributors = getMostRecentContributors(data, numberOfRecentContributors)
-
+const contributors = await getContributors(numberOfRecentContributors)
 ---
 <BaseLayout>
 
