@@ -28,7 +28,7 @@ This version of the OSSI site is built with [Astro](https://GitHub.com/withastro
 cd astro-tutorial
 ```
 
-1. Install dependencies and start the local dev server at `localhost:4321`.
+3. Install dependencies and start the local dev server at `localhost:4321`.
 ```
 npm install
 npm run dev
