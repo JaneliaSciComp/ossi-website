@@ -1,21 +1,23 @@
 import {Octokit} from "@octokit/rest"
 const authToken = import.meta.env.OSSI_SITE_TOKEN
+const octokit = new Octokit({
+    baseUrl:'https://api.github.com', 
+    auth: authToken,
+  })
 
-async function getContributorStats(){
-    const octokit = new Octokit({
-        baseUrl:'https://api.github.com', 
-        auth: authToken,
-      })
-
-    return await octokit.rest.repos.getContributorsStats({
-      owner:"allison-truhlar", 
-      repo:"ossi-website-framework-tests",
-    })
+export async function getContributors(numAuthors){
+    
+    const {data} = await octokit.rest.repos.getContributorsStats({
+        owner:"allison-truhlar", 
+        repo:"ossi-website-framework-tests",
+      }) 
+    
+    return getMostRecentContributors(data, numAuthors)
 }
 
-export async function getMostRecentContributors(numAuthors) {
+export function getMostRecentContributors(data, numAuthors) {
     const mostRecentContributionWeekByAuthor = new Map();
-    const {data} = await getContributorStats()
+    
    
     data.forEach(entry => {
         const authorInfo = {
