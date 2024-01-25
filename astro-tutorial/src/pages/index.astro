@@ -6,9 +6,13 @@ import ContentGridDisplay from '../components/ContentGridDisplay.astro';
 import ContributorList from '../components/ContributorList.astro';
 import TextBlock from '../components/TextBlock.astro';
 
-import {getMostRecentContributors} from "../utils/githubApiHelper"
+import {octokit, getMostRecentContributors} from "../utils/githubApiHelper"
+const {data} = await octokit.rest.repos.getContributorsStats({
+  owner:"allison-truhlar", 
+  repo:"ossi-website-framework-tests",
+}) 
 const numberOfRecentContributors = 3;
-const contributors = await getMostRecentContributors(numberOfRecentContributors)
+const contributors = getMostRecentContributors(data, numberOfRecentContributors)
 ---
 <BaseLayout>
 
