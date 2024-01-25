@@ -23,7 +23,10 @@ This version of the OSSI site is built with [Astro](https://GitHub.com/withastro
 **Note:** These instructions assume you are familiar with the GitHub [pull request flow](https://docs.GitHub.com/en/get-started/exploring-projects-on-GitHub/contributing-to-a-project) for contributing to projects.
 1. Fork and clone the [OSSI Website Framework Tests repository](https://GitHub.com/allison-truhlar/ossi-website-framework-tests).
 
-1. Open the respository in your local code editor and use the terminal to change the directory to the `astro-tutorial` folder. 
+1. Open the respository in your local code editor and use the terminal to change the directory to the `astro-tutorial` folder.
+```
+cd astro-tutorial
+```
 
 1. Install dependencies and start the local dev server at `localhost:4321`.
 ```
