@@ -14,9 +14,9 @@ async function getContributorStats(){
 }
 
 export async function getMostRecentContributors(numAuthors) {
-    const {data} = await getContributorStats()
-
     const mostRecentContributionWeekByAuthor = new Map();
+    const {data} = await getContributorStats()
+   
     data.forEach(entry => {
         const authorInfo = {
             login: entry.author.login,
