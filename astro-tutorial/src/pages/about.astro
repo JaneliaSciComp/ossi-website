@@ -5,9 +5,15 @@ import TextBlock from '../components/TextBlock.astro';
 import ContributorList from '../components/ContributorList.astro';
 import Wrapper from '../components/Wrapper.astro';
 
-import {getContributors} from "../utils/githubApiHelper"
+import {getContributors, getMostRecentContributors} from "../utils/githubApiHelper"
 const numberOfRecentContributors = 3;
-const contributors = await getContributors(numberOfRecentContributors)
+let contributors = []
+try{
+  const data = await getContributors(numberOfRecentContributors)
+  contributors = getMostRecentContributors(data, numberOfRecentContributors)
+} catch(error){
+  console.error('error in main process: ', error)
+}
 ---
 <BaseLayout>
 
