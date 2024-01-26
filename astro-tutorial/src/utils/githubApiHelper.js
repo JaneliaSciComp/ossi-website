@@ -1,7 +1,8 @@
 import {Octokit} from "@octokit/rest"
 const authToken = import.meta.env.OSSI_SITE_TOKEN
 const octokit = new Octokit({
-    auth: authToken
+    auth: authToken,
+    log: console
 })
 
 export function getMostRecentContributors(data, numAuthors) {
