@@ -12,7 +12,7 @@ try{
   const {data} = await getContributors()
   contributors = getMostRecentContributors(data, numberOfRecentContributors)
 } catch(error){
-  console.error('error in main process: ', error)
+	console.error("Error - contributor widget on about page: ", error)
 }
 ---
 <BaseLayout>
@@ -63,7 +63,8 @@ try{
     title="Recent contributors"
     callToAction={{
       text: 'See all contributors »',
-      href: '/',
+      href: 'https://github.com/allison-truhlar/ossi-website-framework-tests',
+	  target: "_blank"
     }}
     items={contributors.map(contributor => {
 		return {

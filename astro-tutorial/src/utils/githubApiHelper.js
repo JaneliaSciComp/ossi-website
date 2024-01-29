@@ -1,14 +1,12 @@
 import {Octokit} from "@octokit/rest"
-const authToken = import.meta.env.OSSI_SITE_TOKEN ? import.meta.OSSI_SITE_TOKEN : process.env.OSSI_SITE_TOKEN;
-console.log('auth token: ', authToken)
+
+const authToken = import.meta.env.OSSI_SITE_TOKEN
 const octokit = new Octokit({
     auth: authToken,
-    log: console
+    // log: console
 })
 
 export function getMostRecentContributors(data, numAuthors) {
-    console.log('called getMostRecentContributors')
-    console.log('data in getMostRecentContributors: ', data)
     const mostRecentContributionWeekByAuthor = new Map();
 
     data.forEach(entry => {
@@ -43,7 +41,6 @@ export function getMostRecentContributors(data, numAuthors) {
       
 
 export async function getContributors(){
-    console.log('called getContributors')
     try{
         let data = await octokit.rest.repos.getContributorsStats({
             owner:"allison-truhlar", 
@@ -53,7 +50,6 @@ export async function getContributors(){
          // Check if the status is 202 (request accepted but not yet completed)
          // This call to the GitHub API requires compiling of statistics and takes some time to resolve
          while (data.status === 202) {
-            console.log('Status is 202. Waiting for 150ms before retrying...');
             await new Promise(resolve => setTimeout(resolve, 150));
 
             // Retry the function call
@@ -63,7 +59,6 @@ export async function getContributors(){
             });
 
             if (data.status === 200) {
-                console.log('Status is now 200. Exiting the loop.');
                 break;
             }
         }
@@ -72,10 +67,8 @@ export async function getContributors(){
         if (data.status !== 200) {
             throw new Error('Unexpected status: ' + data.status);
         }
-        console.log('Returning data.');
         return data;
     } catch (error) {
-        console.error('Error in getContributors: ', error);
         throw error;
     }
 }
