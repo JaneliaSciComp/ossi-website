@@ -1,5 +1,6 @@
 import {Octokit} from "@octokit/rest"
 const authToken = import.meta.env.OSSI_SITE_TOKEN || process.env.OSSI_SITE_TOKEN;
+console.log(authToken)
 const octokit = new Octokit({
     auth: authToken,
     log: console
