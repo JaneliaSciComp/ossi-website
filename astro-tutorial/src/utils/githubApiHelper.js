@@ -41,20 +41,40 @@ export function getMostRecentContributors(data, numAuthors) {
 }  
       
 
-export async function getContributors(numAuthors){
+export async function getContributors(){
     console.log('called getContributors')
     try{
-        const {data} = await octokit.rest.repos.getContributorsStats({
+        let data = await octokit.rest.repos.getContributorsStats({
             owner:"allison-truhlar", 
             repo:"ossi-website-framework-tests",
          }) 
-         console.log('data going to getMostRecentContributors: ', data)
-        return data
 
-    } catch(error){
-        console.error('error in getContributors: ', error)
-        throw error
+         // Check if the status is 202 (request accepted but not yet completed)
+         // This call to the GitHub API requires compiling of statistics and takes some time to resolve
+         while (data.status === 202) {
+            console.log('Status is 202. Waiting for 150ms before retrying...');
+            await new Promise(resolve => setTimeout(resolve, 150));
+
+            // Retry the function call
+            data = await octokit.rest.repos.getContributorsStats({
+                owner: "allison-truhlar",
+                repo: "ossi-website-framework-tests",
+            });
+
+            if (data.status === 200) {
+                console.log('Status is now 200. Exiting the loop.');
+                break;
+            }
+        }
+
+        // Handle errors after the while loop
+        if (data.status !== 200) {
+            throw new Error('Unexpected status: ' + data.status);
+        }
+        console.log('Returning data.');
+        return data;
+    } catch (error) {
+        console.error('Error in getContributors: ', error);
+        throw error;
     }
-    
-    
 }
