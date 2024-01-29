@@ -1,15 +1,6 @@
 import {Octokit} from "@octokit/rest"
-import "dotenv/config"
 
-function getEnvVar() {
-    return process.env.OSSI_SITE_TOKEN ?? import.meta.env.OSSI_SITE_TOKEN;
-}
-
-console.log('import.meta.env: ', import.meta.env.OSSI_SITE_TOKEN)
-console.log(process.env)
-console.log('process.env: ', process.env.OSSI_SITE_TOKEN)
-const authToken = getEnvVar()
-console.log('auth token: ', authToken)
+const authToken = import.meta.env.OSSI_SITE_TOKEN
 const octokit = new Octokit({
     auth: authToken,
     log: console
