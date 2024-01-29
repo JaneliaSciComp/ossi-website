@@ -9,7 +9,7 @@ import {getContributors, getMostRecentContributors} from "../utils/githubApiHelp
 const numberOfRecentContributors = 3;
 let contributors = []
 try{
-  const data = await getContributors(numberOfRecentContributors)
+  const {data} = await getContributors()
   contributors = getMostRecentContributors(data, numberOfRecentContributors)
 } catch(error){
   console.error('error in main process: ', error)
