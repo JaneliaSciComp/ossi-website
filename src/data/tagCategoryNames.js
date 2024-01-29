@@ -9,5 +9,5 @@ export const tagKeyNames = [
     "supported file types",
     "related laboratory techniques",
     "software use case",
-    "usage environment"
+    "usage environment",
   ]
