@@ -1,4 +1,5 @@
 import {Octokit} from "@octokit/rest"
+import "dotenv/config"
 
 console.log('import.meta.env: ', import.meta.env.OSSI_SITE_TOKEN)
 console.log('process.env: ', process.env.OSSI_SITE_TOKEN)
