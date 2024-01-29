@@ -1,6 +1,6 @@
 ---
 title: HortaCloud
-tagline: Lage volume volumetric rendering and collaborative neuron annotation in the cloud
+tagline: Large volume volumetric rendering and collaborative neuron annotation in the cloud
 author names: Rokicki et al.
 github repository link: https://github.com/JaneliaSciComp/hortacloud
 image file: ./HortaCloud.png
