@@ -15,9 +15,13 @@ import ToggleTheme from "../components/ToggleTheme.astro"
   >
     <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
       <a class="flex items-center" href={siteData.base}>
-        <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+        <span class="min-[600px]:hidden self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
             {siteData.name}
         </span>
+        <span class="hidden min-[600px]:block self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+          🔬 Janelia Open Science Software Initiative
+        </span>
+
       </a>
       <div class="flex items-center lg:hidden">
         <button
