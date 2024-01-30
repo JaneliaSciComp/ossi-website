@@ -18,13 +18,14 @@ import janeliaLogoWhite from "../assets/images/HHMI_Janelia_Logo-White.png"
         <div class="mb-2">
           <a class="inline-block font-bold text-xl" href={siteData.base}>{siteData.name}</a>
         </div>
-        <div class="text-sm text-muted">
+        <div class="flex flex-col gap-2 text-sm text-muted">
           {
             footerData.secondaryLinks.map(({ text, href }) => (
               <a
                 class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2"
                 href={href}
                 set:html={text}
+                target="_blank"
               />
             ))
           }
@@ -42,6 +43,23 @@ import janeliaLogoWhite from "../assets/images/HHMI_Janelia_Logo-White.png"
           class="hidden dark:block"
         />
       </div>   
+    </div>
+    <div>
+      {footerData.links && footerData.links.length > 0 && (
+        <ul class="text-sm">
+          {footerData.links.map(({ text, href, ariaLabel }) => (
+            <li class="mb-2">
+              <a
+                class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                href={href}
+                aria-label={ariaLabel}
+              >
+                <Fragment set:html={text} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
     
     <div class="md:flex md:items-center md:justify-between pb-6">

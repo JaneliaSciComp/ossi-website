@@ -6,35 +6,35 @@ export const siteData = {
 export const headerData = {
   links: [
     {
-        text: "Home",
-        href:"/"
+      text: "Home",
+      href: "/",
     },
     {
-        text: "Projects",
-        href: "/projects"
+      text: "Projects",
+      href: "/projects",
     },
     {
       text: "Ecosystems",
-      href: "/ecosystems"
+      href: "/ecosystems",
     },
     {
       text: "Blog",
-      href: "/blog"
+      href: "/blog",
     },
     {
-      text: 'Documentation',
-      href: '/documentation',
+      text: "About",
+      href: "/about",
     },
-    {
-        text: "About",
-        href:"/about"
-    }
-  ]
+  ],
 };
 
 export const footerData = {
+  links: [
+  ],
   secondaryLinks: [
     { text: 'Privacy Policy & Cookie Notice', href: 'https://www.hhmi.org/privacy-policy' },
+    { text: 'This site is open source! Contribute on GitHub.', href: 'https://github.com/JaneliaSciComp/ossi-website'},
+
   ],
   socialLinks: [
     { ariaLabel: 'Email', icon: 'tabler:mail', href: '#' },

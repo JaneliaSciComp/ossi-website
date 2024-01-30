@@ -1,4 +1,4 @@
-import { tagKeyNames } from "../data/tagKeyNames";
+import { tagKeyNames } from "../data/tagCategoryNames";
 import {allLabNamesAndUrls} from "../data/labNamesUrls"
 
 // Takes in a tag string and returns the string with the first letter of each word capitalized
