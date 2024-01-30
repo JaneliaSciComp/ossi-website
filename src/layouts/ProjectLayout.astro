@@ -73,8 +73,9 @@ const pubInfoArray = generatePublicationLinks(frontmatter)
       <div class="mx-auto px-6 max-w-3xl my-6 md:mt-16 "> 
         <div class="flex flex-col gap-2 border-t-2 border-black md:border-none">
           
-          <h4 class="text-lg font-bold mt-6">Project details</h4>                
+          <h4 class="text-lg font-bold mt-6">Project details</h4>
           
+                   
           {frontmatter['github repository link'] && (
             <div class="flex flex-wrap">
               <p class="font-bold pr-2">Codebase:</p>
@@ -111,6 +112,13 @@ const pubInfoArray = generatePublicationLinks(frontmatter)
                 <Link text={blog?.data?.title} url={`../../blog/${blog?.slug}`} />
               ))}
             </div>
+          )}
+
+          {frontmatter['project homepage link'] && (
+          <div class="flex flex-wrap">
+            <p class="font-bold pr-2">Additional information:</p>
+            <Link text="Project website" url={frontmatter['project homepage link']}/>
+          </div>
           )}
 
         </div>

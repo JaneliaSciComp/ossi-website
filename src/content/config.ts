@@ -8,6 +8,7 @@ const projectsCollection = defineCollection({
       tagline: z.string(),
       'author names': z.string(),
       'github repository link': z.union([z.array(z.string()), z.string()]).optional(),
+      'project homepage link': z.union([z.array(z.string()), z.string()]).optional(),
       'publication DOI array': z.union([z.array(z.string()), z.string()]).optional(),
       'publication text array': z.union([z.array(z.string()), z.string()]).optional(),
       'image file': image().optional(),
