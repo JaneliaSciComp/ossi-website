@@ -12,6 +12,7 @@ import ProjectCard from "../../components/projects/ProjectCard.jsx";
 
 import {extractUniqueTags, extractIndividualProjectTags} from "../../utils/tagManipulation.js"
 
+const baseUrl = import.meta.env.BASE_URL
 const pageTitle = "OSSI-supported projects"
 const allProjects = await getCollection('projects')
 const uniqueTags = extractUniqueTags(allProjects)
@@ -37,7 +38,7 @@ const uniqueTags = extractUniqueTags(allProjects)
                         <ProjectCard
                             client:load
                             key={project.slug} 
-                            url={`/projects/${project.slug}/`} 
+                            url={`${baseUrl}/projects/${project.slug}/`} 
                             title={project.data.title} 
                             authors={project.data['author names']}
                             tagline={project.data.tagline}
