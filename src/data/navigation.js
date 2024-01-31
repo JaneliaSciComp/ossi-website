@@ -1,29 +1,26 @@
-export const siteData = {
-  name: '🔬 OSSI@Janelia',
-  base: '/'
-}
+const base = import.meta.env.BASE_URL
 
 export const headerData = {
   links: [
     {
       text: "Home",
-      href: "/",
+      href: {base},
     },
     {
       text: "Projects",
-      href: "/projects",
+      href: `${base}/projects`,
     },
     {
       text: "Ecosystems",
-      href: "/ecosystems",
+      href: `${base}/ecosystems`,
     },
     {
       text: "Blog",
-      href: "/blog",
+      href: `${base}/blog`,
     },
     {
       text: "About",
-      href: "/about",
+      href: `${base}/about`,
     },
   ],
 };
