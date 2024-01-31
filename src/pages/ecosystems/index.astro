@@ -12,6 +12,8 @@ import ProjectCard from "../../components/projects/ProjectCard.jsx";
 
 import {extractUniqueTags, extractIndividualProjectTags} from "../../utils/tagManipulation.js"
 
+const baseUrl = import.meta.env.BASE_URL
+
 const pageTitle = "OSSI-supported projects"
 const allEcosystems = await getCollection('ecosystems')
 const allRelatedProjects = await Promise.all(allEcosystems.flatMap(async (ecosystem) => {
@@ -44,7 +46,7 @@ const uniqueTags = extractUniqueTags(flattenedRelatedProjects)
                         <ProjectCard
                             client:load
                             key={ecosystem.slug} 
-                            url={`/ecosystems/${ecosystem.slug}/`} 
+                            url={`${baseUrl}/ecosystems/${ecosystem.slug}/`} 
                             title={ecosystem.data.title} 
                             authors={ecosystem.data['author names']}
                             tagline={ecosystem.data.tagline}
