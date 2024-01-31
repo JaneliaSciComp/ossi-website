@@ -1,7 +1,8 @@
 ---
-import { headerData, siteData } from "../data/navigation";
+import { headerData } from "../data/navigation";
 import ToggleTheme from "../components/ToggleTheme.astro"
 
+const baseUrl = import.meta.env.BASE_URL
 ---
 
 <header
@@ -14,9 +15,9 @@ import ToggleTheme from "../components/ToggleTheme.astro"
     class= "relative text-default py-3 px-3 lg:px-6 mx-auto w-full lg:flex lg:justify-between"
   >
     <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
-      <a class="flex items-center" href={siteData.base}>
+      <a class="flex items-center" href={baseUrl}>
         <span class="min-[600px]:hidden self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
-            {siteData.name}
+            🔬 OSSI@Janelia
         </span>
         <span class="hidden min-[600px]:block self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
           🔬 Janelia Open Science Software Initiative

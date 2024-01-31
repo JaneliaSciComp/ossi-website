@@ -1,9 +1,10 @@
 ---
-import { siteData, footerData } from "../data/navigation";
+import { footerData } from "../data/navigation";
 import { Icon } from "astro-icon/components"
-import { Image } from "astro:assets";
 import janeliaLogoBlack from "../assets/images/HHMI_Janelia_Logo-Black.png"
 import janeliaLogoWhite from "../assets/images/HHMI_Janelia_Logo-White.png"
+
+const baseUrl = import.meta.env.BASE_URL
 
 ---
 
@@ -16,7 +17,7 @@ import janeliaLogoWhite from "../assets/images/HHMI_Janelia_Logo-White.png"
       
       <div>
         <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={siteData.base}>{siteData.name}</a>
+          <a class="inline-block font-bold text-xl" href={baseUrl}>🔬 OSSI@Janelia</a>
         </div>
         <div class="flex flex-col gap-2 text-sm text-muted">
           {
