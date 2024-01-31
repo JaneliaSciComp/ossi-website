@@ -2,12 +2,13 @@
 import { Image } from "astro:assets";
 
 const { post } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL
 ---
 
 <article class={`max-w-md mx-auto md:max-w-none flex flex-col md:grid gap-6 md:gap-8 ${post.data['image file'] ? 'md:grid-cols-2' : ''} dark:bg-slate-900`}>
   {
     post.data['image file'] && (
-      <a class="relative block group" href={`/../../blog/${post.slug}` ?? 'javascript:void(0)'}>
+      <a class="relative block group" href={`${baseUrl}/blog/${post.slug}` ?? 'javascript:void(0)'}>
         <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
           {post.data['image file'] && (
             <Image
@@ -36,7 +37,7 @@ const { post } = Astro.props;
       </div> -->
       <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
 
-            <a class="hover:text-primary dark:hover:text-primary transition ease-in duration-200" href={`/../../blog/${post.slug}`}>
+            <a class="hover:text-primary dark:hover:text-primary transition ease-in duration-200" href={`${baseUrl}/${post.slug}`}>
               {post.data.title}
             </a>
           

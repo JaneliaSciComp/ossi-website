@@ -11,6 +11,7 @@ const {
   content = await Astro.slots.render('content'),
   bg = await Astro.slots.render('bg'),
 } = Astro.props
+// console.log(actions)
 ---
 
 <Wrapper containerClass='max-w-5xl mx-auto' bg={bg}>

@@ -7,6 +7,7 @@ import ContributorList from '../components/ContributorList.astro';
 import TextBlock from '../components/TextBlock.astro';
 
 import {getContributors, getMostRecentContributors} from "../utils/githubApiHelper"
+
 const numberOfRecentContributors = 3;
 let contributors = []
 try{
@@ -15,6 +16,9 @@ try{
 } catch(error){
   console.error("Error - contributor widget on homepage: ", error)
 }
+
+const baseUrl = import.meta.env.BASE_URL;
+// console.log(baseUrl)
 ---
 <BaseLayout>
 
@@ -32,11 +36,11 @@ try{
 		{
 			variant: 'primary',
 			text: 'Projects',
-			href: '/projects',
+			href: `${baseUrl}/projects`,
 		},
 		{ 
       text: 'Ecosystems', 
-      href: '/ecosystems',
+      href: `${baseUrl}/ecosystems`,
     },
 		]}
   >
@@ -53,7 +57,7 @@ try{
     information='Read the latest updates on OSSI-supported projects.'
     content="blog"
     linkText="View all posts"
-    linkUrl="/blog"
+    linkUrl={`${baseUrl}/blog`}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>

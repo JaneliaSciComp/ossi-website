@@ -6,10 +6,11 @@ import Link from "../components/Link.astro";
 
 const { frontmatter } = Astro.props;
 const relatedProjects = frontmatter['related projects'] ? await getEntries(frontmatter['related projects']) : null;
+const baseUrl = import.meta.env.BASE_URL
 ---
 <BaseLayout>
   <div class="mx-auto px-6 sm:px-6 pt-8 md:pt-4 max-w-6xl">
-    <Link class="md:hidden" text="Blog" url="../../blog"/>
+    <Link class="md:hidden" text="Blog" url={`${baseUrl}/blog`}/>
   </div>
   <article class="py-8 md:py-16 lg:py-20 mx-auto max-w-6xl md:grid md:grid-cols-6">
     <div class="md:col-span-4">
@@ -72,7 +73,7 @@ const relatedProjects = frontmatter['related projects'] ? await getEntries(front
             <div class="flex flex-wrap gap-2 mb-2">
               <p class="font-bold pr-2">Related projects:</p>
               {relatedProjects.map(project => (
-                <Link text={project.data.title} url={`../../projects/${project.slug}`} />
+                <Link text={project.data.title} url={`${baseUrl}/projects/${project.slug}`} />
               ))}
             </div>
           )}
