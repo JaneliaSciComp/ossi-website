@@ -1,6 +1,7 @@
-// Import utilities from `astro:content`
 import { z, defineCollection, reference } from "astro:content";
-// Define a `type` (content or data) and `schema` for each collection
+
+
+// Projects frontmatter
 const projectsCollection = defineCollection({
     type: 'content',
     schema: ({image}) => z.object({
@@ -11,6 +12,7 @@ const projectsCollection = defineCollection({
       'project homepage link': z.union([z.array(z.string()), z.string()]).optional(),
       'publication DOI array': z.union([z.array(z.string()), z.string()]).optional(),
       'publication text array': z.union([z.array(z.string()), z.string()]).optional(),
+      'related blog posts': z.union([z.array(reference('blog')), reference('blog'), z.undefined(), z.null()]),
       'image file': image().optional(),
       'image alt text': z.string().optional(),
       'video url': z.string().optional(),
@@ -26,10 +28,11 @@ const projectsCollection = defineCollection({
       'related laboratory techniques': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'software use case': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'usage environment': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
-      'related blog posts': z.union([z.array(reference('blog')), reference('blog'), z.undefined(), z.null()])
     })
 });
 
+
+// Blogs frontmatter
 const blogCollection = defineCollection({
   type: 'content',
   schema: ({image}) => z.object({
@@ -43,6 +46,8 @@ const blogCollection = defineCollection({
   }), 
 })
 
+
+//Ecosystems frontmatter
 const ecosystemsCollection = defineCollection({
   type: 'content',
   schema: ({image}) => z.object({
@@ -54,7 +59,7 @@ const ecosystemsCollection = defineCollection({
   })
 })
 
-// Export a single `collections` object to register your collection(s)
+// Export all content frontmatter configurations
 export const collections = {
   projects: projectsCollection,
   blog: blogCollection,
