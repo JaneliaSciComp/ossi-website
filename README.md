@@ -111,7 +111,27 @@ export const tagKeyNames = [
     "second new tag category",
   ]
 ```
-5. Save your changes and [preview your changes on the dev server](#preview-and-commit-your-changes). If your tag categories are successfully added, you will see them displayed in the filter menu on the `/projects` page.
+5. Open `/src/content/config.ts`
+6. In the `Projects Frontmatter` section, type your new tag category names. Each cateogry name should be followed by a colon and wrapped in single quotes if the category names consist of more than one word. After each colon, paste this code, which allows the tag to be input as an array of strings, a single string, or completely omitted:
+```
+z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+```
+For example:
+```
+// Projects frontmatter
+const projectsCollection = defineCollection({
+    type: 'content',
+    schema: ({image}) => z.object({
+      title: z.string(),
+      ...
+      'usage environment': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+      'new tag category': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+      'second new tag category': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+    })
+});
+```
+
+6. Save your changes and [preview your changes on the dev server](#preview-and-commit-your-changes). If your tag categories are successfully added, you will see them displayed in the filter menu on the `/projects` page.
 
 **Case 2 - Add new tag option**
 1. In your project file, simply add the tag option you would like in the array of options for the tag category. For example:
