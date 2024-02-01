@@ -34,7 +34,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      OSSI_SITE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
