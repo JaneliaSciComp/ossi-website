@@ -1,4 +1,6 @@
-# Open Source Science Initative (OSSI) at HHMI Janelia website
+# Janelia Open Source Science Initative (OSSI) website
+
+[**View the current deploy**](https://janeliascicomp.github.io/ossi-website/)
 
 ## Overview
 - The source code for the Open Source Science Initative (OSSI) at HHMI Janelia website. The site showcases OSSI-supported projects.
