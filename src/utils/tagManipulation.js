@@ -57,7 +57,15 @@ export function extractUniqueTags(allProjects) {
       });
     });
 
-    return uniqueTags
+    let keys = Object.keys(uniqueTags)
+    keys.sort()
+
+    let alphabeticalUniqueTags = {}
+    keys.forEach(key => {
+      alphabeticalUniqueTags[key] = uniqueTags[key]
+    })
+
+    return alphabeticalUniqueTags
   }
 
 // Takes in a single project object and returns an array of that project's tag values
