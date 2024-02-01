@@ -5,7 +5,7 @@ author names: List of author names written out exactly how you want the list to 
 github repository link: Optional URL to the project Github repository
 project homepage link: Optional URL to a homepage for the project (not a GitHub repository)
 publication DOI array: [https://doi.org/10.DOI.1, https://doi.org/10.DOI.2, https://doi.org/10.DOI.n]
-publication text array: [text you want to appear for each DOI link, 'Suggested format: Author et al. (year)', 'if text has colons: or commas followed by a space, use quotes']
+publication text array: [text you want to appear for each DOI link, 'Suggested format: Author et al. (YYYY)', 'if text has colons: or commas followed by a space, use quotes']
 related blog posts: [Optional-file-name]
 image file: ./optional-file-path.jpg
 image alt text: Alt text is required if you upload an image file

@@ -70,6 +70,9 @@ npm run dev
 | `author names`            | Required                  |The names of the project authors, written exactly as you want them to appear on the webpage. For example, do not include square brackets with author names separated by commas for a list, as with some of the other variables below - instead, write out how you would like the author list to appear.      |
 | `github repository link`         | Optional                  |The link to the project GitHub repository, e.g., https://github.com/JaneliaSciComp/ossi-website     |
 | `project homepage link`         | Optional                  |If your project has it's own website, other than a GitHub repository, provide it here. For example, the HortaCloud project's [documentation site](https://hortacloud.janelia.org/).     |
+| `publication DOI array`         | Optional                  |If you would like your project page to feature related publications, provide the DOIs in square brackets, separated by commas. Each DOI should start with https://doi.org/    |
+| `publication text array`         | Optional                  |If you provided DOI links, provide the corresponding text you would like to display for each link (again in square brackets, separated by commas). The suggested text for each link is: Author et al. (YYYY)    |
+| `related blog posts`        | Optional  | If your project has an associated blog post file, provide the file name here in square brackets, without the .md extenstion (e.g., `[my-related-blog-post-file]`). If there is more than one related blog posts separate the file names by commas.  |
 | `image file`       |Optional                  | Format as: ./[your-image-file-name-with-dashes-between-words].[your image file extension]<br/> Then see [Adding an image](#optional---adding-an-image) for more information about uploading an image. |
 | `image alt text` | Optional;<br/> Required if you add an image file                 |A brief description of the image    |
 | `associated labs and projects`    | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* Branson, Pachitariu, Preibisch, Saalfeld, Spruston, Stringer, Turaga, COSEM, FlyEM, FlyLight, MouseLight, MultiFISH, Scientific Computing Software <br/> *Important:* Additional steps are required if adding a new lab or project name option - please see [Case 2 under Adding new tag categories or options](#optional---adding-new-tag-categories-or-options)  |
@@ -78,12 +81,11 @@ npm run dev
 | `software type`        | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* Command line application, Framework, Native application, Package, Service, Web application, Website  |
 | `programming language`        | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* C++, Java, Julia, Kotlin, MATLAB, Nextflow, Python  |
 | `software ecosystem`        | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* BigDataViewer, Fiji, ImgLib2, Janelia Workstation, Java Virtual Machine, Napari  |
-| `open source license`        | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* BDS-3 Clause, CC-by-0, GPL, MIT  |
+| `open source license`        | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* BDS-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT  |
 | `supported file types`        | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI  |
 | `related laboratory techniques`        | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* Calcium imaging, Confocal light microscopy (LM), Correlative light EM (CLEM), EASI-FISH, Electron microscopy (EM), Expansion microscopy (ExM), FISH, Lightsheet fluorescence microscopy (LFSM), MERFISH, Neural recording, Single-molecule localization microscopy (SMLM), SlideSeq, Two-photon imaging  |
 | `software use case`        | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* Annotation, Electrophysiology analysis, Image analysis, Image registration, Sequence analysis, Tool packaging/distribution, Video analysis  |
 | `usage environment`        | Optional  | [Tag variable - see guidance](#edit-the-project-file) <br/> *Examples:* Cloud, Google Colab, HPC cluster, Jupyter notebook, Local installation, Web browser  |
-| `related blog posts`        | Optional  | If your project has an associated blog post file, provide the file name here in square brackets, without the .md extenstion (e.g., `[my-related-blog-post-file]`). If there is more than one related blog posts separate the file names by commas.  |
 
 ### Optional - Adding an image
 1. Add your desired image to `/src/content/projects`, using a filenmae without spaces.
@@ -139,14 +141,16 @@ const projectsCollection = defineCollection({
 model organism: [C. Elegans, Fly, Mouse, Your New Option]
 ```
 2. **Exception:** If you add a new tag option to `associated labs and projects`, please also add the lab or project name and a corresponding URL to the `/src/data/labNamesUrl.js` file.
-3. Please note in your pull request that you added a new tag option.
-
 
 ### Preview and commit your changes
 1. Preview your changes on the local dev server at `localhost:4321`.
 2. When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.
 
-### Open a pull request
+### Open a pull request (PR)
 1. Go to your repository on GitHub - on the banner indicating your branch is one commit ahead, click **Contribute** and then **Open a pull request**. 
 2. Title your pull request "Add a project - [Project Name]". Include in the description any helpful notes or specific requests.
-3. Create your pull request - your request will be reviewed by the mainters of the OSSI site. You may receive requests for changes before your request is approved.
+3. In the panel on the right side of the screen, click the gear icon next to "Labels." Select the following labels, as appropriate:
+    - New Project Page
+    - Edit Project Page
+    - New tags added
+4. When you're finsihed, click "Create pull request" - your PR will be reviewed by the maintainers of the OSSI site. You may receive requests for changes before your PR is approved.
