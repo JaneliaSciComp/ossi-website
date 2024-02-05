@@ -4,14 +4,14 @@ tagline: Your project tagline
 author names: List of author names written out exactly how you want the list to appear on the page (i.e., do not provide an array of names in square brackets)
 github repository link array:
   [
-    Optional URL to the project Github repository,
-    Option to provide more than one Github repo link,
+    Optional URL to the project GitHub repository,
+    Option to provide more than one GitHub repo link,
   ]
 github repository text array:
   [
-    Text for Github link 1,
-    Text for Github link 2,
-    Required if more than one Github link,
+    Text for GitHub link 1,
+    Text for GitHub link 2,
+    Required if more than one GitHub link,
   ]
 project homepage link array:
   [
