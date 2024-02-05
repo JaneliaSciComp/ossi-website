@@ -1,29 +1,34 @@
 ---
-import { getEntries } from "astro:content"
-import BaseLayout from "./BaseLayout.astro"
+import { getEntries } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
 import { Image } from "astro:assets";
 import Link from "../components/Link.astro";
 
 import { extractIndividualProjectTags } from "../utils/tagManipulation";
-import {findLabInfo} from "../utils/tagManipulation"
-import {generatePublicationLinks} from "../utils/tagManipulation"
+import { findLabInfo } from "../utils/tagManipulation";
+import { generatePublicationLinks } from "../utils/tagManipulation";
 
 const { frontmatter } = Astro.props;
-const relatedBlogPosts = frontmatter['related blog posts'] ? await getEntries(frontmatter['related blog posts']) : null;
+const relatedBlogPosts = frontmatter["related blog posts"]
+  ? await getEntries(frontmatter["related blog posts"])
+  : null;
 
-const tagsArray = extractIndividualProjectTags(frontmatter)
-const labInfoArray = findLabInfo(frontmatter['associated labs and projects'])
-const pubInfoArray = generatePublicationLinks(frontmatter)
+const tagsArray = extractIndividualProjectTags(frontmatter);
+const labInfoArray = findLabInfo(frontmatter["associated labs and projects"]);
+const pubInfoArray = generatePublicationLinks(frontmatter);
 
-const baseUrl = import.meta.env.BASE_URL
+const baseUrl = import.meta.env.BASE_URL;
 ---
+
 <BaseLayout>
   <div class="mx-auto px-6 sm:px-6 pt-8 md:pt-4 max-w-6xl">
-    <Link class="md:hidden" text="Projects" url={`${baseUrl}/projects`}/>
+    <Link class="md:hidden" text="Projects" url={`${baseUrl}/projects`} />
   </div>
-  <article class="py-8 md:py-16 lg:py-20 mx-auto max-w-6xl md:grid md:grid-cols-6">
+  <article
+    class="py-8 md:py-16 lg:py-20 mx-auto max-w-6xl md:grid md:grid-cols-6"
+  >
     <div class="md:col-span-4">
-      <section >
+      <section>
         <h1
           class="px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
         >
@@ -36,14 +41,14 @@ const baseUrl = import.meta.env.BASE_URL
         </p>
 
         {
-          frontmatter['image file'] ? (
+          frontmatter["image file"] ? (
             <div class="px-4 mt-6 md:mt-10">
               <Image
-                src={frontmatter['image file']}
+                src={frontmatter["image file"]}
                 class="max-w-full mx-auto mb-6 rounded-md bg-gray-400 dark:bg-slate-700"
                 widths={[400, 900]}
                 sizes="(max-width: 900px) 400px, 900px"
-                alt={frontmatter['image alt text']}
+                alt={frontmatter["image alt text"]}
                 loading="eager"
                 width={900}
                 height={506}
@@ -51,7 +56,6 @@ const baseUrl = import.meta.env.BASE_URL
                 decoding="async"
               />
             </div>
-            
           ) : (
             <div class="max-w-3xl mx-auto px-4 mt-6 md:mt-10 sm:px-6">
               <div class="border-t dark:border-slate-700" />
@@ -60,78 +64,138 @@ const baseUrl = import.meta.env.BASE_URL
         }
       </section>
 
-      <section class="mx-auto px-6 max-w-3xl my-6 md:my-10 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg">
-          <h3>Project overview</h3>
-          <!-- This slot is where the content is rendered -->
-          <slot/>
-
+      <section
+        class="mx-auto px-6 max-w-3xl my-6 md:my-10 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"
+      >
+        <h3>Project overview</h3>
+        <!-- This slot is where the content is rendered -->
+        <slot />
       </section>
-
     </div>
 
     <div class="md:col-start-5 md:col-span-2">
-      
-      <div class="mx-auto px-6 max-w-3xl my-6 md:mt-16 "> 
+      <div class="mx-auto px-6 max-w-3xl my-6 md:mt-16">
         <div class="flex flex-col gap-2 border-t-2 border-black md:border-none">
-          
           <h4 class="text-lg font-bold mt-6">Project details</h4>
-          
-                   
-          {frontmatter['github repository link'] && (
-            <div class="flex flex-wrap">
-              <p class="font-bold pr-2">Codebase:</p>
-              <Link text="GitHub" url={frontmatter['github repository link']}/>
-              {frontmatter['open source license'] && `, ${frontmatter['open source license']} license`}
-            </div>
-          )}
-          
-          {labInfoArray && (
-            <div class="flex flex-wrap gap-2">
-              <p class="font-bold">Labs and Project Teams: </p>
-              {(labInfoArray.map(labInfo => {
-                if (labInfo) {
-                  const { name, url } = labInfo;
-                  return (<Link text={name} url={url}/>);
-                }
-              }))}                  
-            </div>
-          )}
 
-          {pubInfoArray && (
-            <div class="flex flex-wrap gap-2 mb-2">
-              <p class="font-bold">Publications:</p>
-              {pubInfoArray.map(pubInfo => (
-                <Link text={pubInfo.text} url={pubInfo.url} />
-              ))}
-            </div>
-          )}
+          {
+            frontmatter["github repository link array"] && (
+              <div class="flex flex-wrap">
+                <p class="font-bold pr-2">Codebase:</p>
 
-          {relatedBlogPosts && (
-            <div class="flex flex-wrap gap-2 mb-2">
-              <p class="font-bold pr-2">Related blog posts:</p>
-              {relatedBlogPosts.map(blog => (
-                <Link text={blog?.data?.title} url={`${baseUrl}/blog/${blog?.slug}`} />
-              ))}
-            </div>
-          )}
+                {frontmatter["github repository link array"].length === 1 ? (
+                  <Fragment>
+                    <Link
+                      text="Github"
+                      url={frontmatter["github repository link array"]}
+                    />
+                    {frontmatter["open source license"] &&
+                      `, ${frontmatter["open source license"]} license`}
+                  </Fragment>
+                ) : (
+                  frontmatter["github repository link array"].map(
+                    (link, index) => (
+                      <Fragment>
+                        <Link
+                          text={
+                            frontmatter["github repository text array"][index]
+                          }
+                          url={link}
+                        />
+                        {index <
+                          frontmatter["github repository link array"].length -
+                            1 && <span class="pr-1">, </span>}
+                      </Fragment>
+                    )
+                  )
+                )}
+              </div>
+            )
+          }
 
-          {frontmatter['project homepage link'] && (
-          <div class="flex flex-wrap">
-            <p class="font-bold pr-2">Additional information:</p>
-            <Link text="Project website" url={frontmatter['project homepage link']}/>
-          </div>
-          )}
+          {
+            labInfoArray && (
+              <div class="flex flex-wrap gap-2">
+                <p class="font-bold">Labs and Project Teams: </p>
+                {labInfoArray.map((labInfo) => {
+                  if (labInfo) {
+                    const { name, url } = labInfo;
+                    return <Link text={name} url={url} />;
+                  }
+                })}
+              </div>
+            )
+          }
 
+          {
+            pubInfoArray && (
+              <div class="flex flex-wrap gap-2 mb-2">
+                <p class="font-bold">Publications:</p>
+                {pubInfoArray.map((pubInfo) => (
+                  <Link text={pubInfo.text} url={pubInfo.url} />
+                ))}
+              </div>
+            )
+          }
+
+          {
+            relatedBlogPosts && (
+              <div class="flex flex-wrap gap-2 mb-2">
+                <p class="font-bold pr-2">Related blog posts:</p>
+                {relatedBlogPosts.map((blog) => (
+                  <Link
+                    text={blog?.data?.title}
+                    url={`${baseUrl}/blog/${blog?.slug}`}
+                  />
+                ))}
+              </div>
+            )
+          }
+
+          {
+            frontmatter["project homepage link array"] && (
+              <div class="flex flex-wrap">
+                <p class="font-bold pr-2">Additional information:</p>
+
+                {frontmatter["project homepage link array"].length === 1 ? (
+                  <Link
+                    text="Project website"
+                    url={frontmatter["project homepage link array"]}
+                  />
+                ) : (
+                  frontmatter["project homepage link array"].map(
+                    (link, index) => (
+                      <Fragment>
+                        <Link
+                          text={
+                            frontmatter["project homepage text array"][index]
+                          }
+                          url={link}
+                        />
+                        {index <
+                          frontmatter["project homepage link array"].length -
+                            1 && <span class="pr-1">, </span>}
+                      </Fragment>
+                    )
+                  )
+                )}
+              </div>
+            )
+          }
         </div>
       </div>
-        
+
       <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-4 flex flex-wrap gap-2">
-        {tagsArray.map(tag => {
-          return <span class="bg-primary text-white px-2 py-1 rounded-md text-sm">{tag}</span>
-        })}
+        {
+          tagsArray.map((tag) => {
+            return (
+              <span class="bg-primary text-white px-2 py-1 rounded-md text-sm">
+                {tag}
+              </span>
+            );
+          })
+        }
       </div>
-
     </div>
-
   </article>
 </BaseLayout>
