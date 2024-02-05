@@ -2,11 +2,12 @@
 title: HortaCloud
 tagline: Large volume volumetric rendering and collaborative neuron annotation in the cloud
 author names: Rokicki et al.
-github repository link: https://github.com/JaneliaSciComp/hortacloud
-project homepage link: https://hortacloud.janelia.org
+github repository link array: [https://github.com/JaneliaSciComp/hortacloud]
+project homepage link array: [https://hortacloud.janelia.org]
 image file: ./HortaCloud.png
 image alt text: A screenshot of HortaCloud running in a web browser
-associated labs and projects: [MouseLight, Spruston Lab, Dudman Lab, Scientific Computing Software]
+associated labs and projects:
+  [MouseLight, Spruston Lab, Dudman Lab, Scientific Computing Software]
 scientific domain: [Bioimaging, Neuroscience]
 model organism: [Mouse]
 software type: [Native application, Service, Web application, Website]
@@ -14,7 +15,12 @@ programming language: [Java, Typescript]
 software ecosystem: [Janelia Workstation, Java Virtual Machine]
 open source license: [BDS-3 Clause]
 supported file types: [OME-Zarr, SWC]
-related laboratory techniques: [Expansion microscopy (ExM), Lightsheet fluorescence microscopy (LFSM), Two-photon imaging]
+related laboratory techniques:
+  [
+    Expansion microscopy (ExM),
+    Lightsheet fluorescence microscopy (LFSM),
+    Two-photon imaging,
+  ]
 software use case: [Annotation, Image analysis]
 usage environment: [Cloud, Web browser]
 #related blog posts: [Optional-file-name]

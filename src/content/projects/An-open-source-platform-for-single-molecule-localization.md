@@ -2,7 +2,7 @@
 title: An open-source platform for single-molecule localization
 tagline: Develop a user-friendly (napari) deep learning-based single-molecule detection software.
 author names: Turaga et al.
-github repository link: https://github.com/TuragaLab/DECODE
+github repository link array: [https://github.com/TuragaLab/DECODE]
 image file: ./f4pUuCc3M0g-unsplash.jpg
 image alt text: Laptop displaying graphs of data
 associated labs and projects: turaga
@@ -13,7 +13,8 @@ programming language: python
 software ecosystem: napari
 open source license: GLP-3.0
 supported file types:
-related laboratory techniques: [FISH, Single-molecule localization microscopy (SMLM)]
+related laboratory techniques:
+  [FISH, Single-molecule localization microscopy (SMLM)]
 software use case:
 usage environment: [local installation, Jupyter notebook, Google Colab]
 related blog posts: [working-with-ossi-supported-projects]

@@ -2,13 +2,13 @@
 title: BigWarp
 tagline: Maintain and extend BigWarp (3D non-rigid registration for very large volumes).
 author names: Bogovic & Saalfeld
-github repository link: https://github.com/saalfeldlab/bigwarp
-project homepage link: https://imagej.net/plugins/bigwarp
+github repository link array: [https://github.com/saalfeldlab/bigwarp]
+project homepage link array: [https://imagej.net/plugins/bigwarp]
 publication DOI array: [https://doi.org/10.1109/ISBI.2016.7493463]
-publication text array: ['Bogovic et al. 2016']
+publication text array: ["Bogovic et al. 2016"]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [ FlyEM, FlyLight]
+associated labs and projects: [FlyEM, FlyLight]
 scientific domain: [Bioimaging]
 # model organism: [C. Elegans, Fly, Mouse]
 software type: [Native application]
@@ -16,8 +16,14 @@ programming language: [Java]
 # software ecosystem: [BigDataViewer, Fiji, ImgLib2, Janelia Workstation, Java Virtual Machine, Napari]
 open source license: [GPL-2.0]
 supported file types: [N5]
-related laboratory techniques: [ Confocal light microscopy (LM), Correlative light EM (CLEM), Electron microscopy (EM), Expansion microscopy (ExM)]
-software use case: [ Image analysis, Image registration]
+related laboratory techniques:
+  [
+    Confocal light microscopy (LM),
+    Correlative light EM (CLEM),
+    Electron microscopy (EM),
+    Expansion microscopy (ExM),
+  ]
+software use case: [Image analysis, Image registration]
 usage environment: [Local installation]
 # related blog posts: [Optional-file-name]
 ---

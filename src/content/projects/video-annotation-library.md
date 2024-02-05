@@ -2,7 +2,8 @@
 title: Video Annotation Library
 tagline: A usable and extensible library for video annotation for machine learning.
 author names: Xi Peng, Kristin Branson
-github repository link: https://github.com/JaneliaSciComp/videoAnnotation
+github repository link array:
+  [https://github.com/JaneliaSciComp/videoAnnotation]
 image file: ./jacob-miller-ot5kWZkH97s-unsplash.jpg
 image alt text: Image that look like video annotation timeline
 associated labs and projects: [Branson, Scientific Computing Software]
@@ -16,7 +17,7 @@ supported file types: [mpeg, avi]
 related laboratory techniques: []
 software use case: [Annotation, Image analysis, Video analysis]
 usage environment: [Cloud, Local installation, Web browser]
-# related blog posts: 
+# related blog posts:
 ---
 
 Video is captured in a wide variety of biology applications, including cell and animal behavior. Modern
@@ -33,6 +34,7 @@ We have developed a **general-purpose, extensible library for visualizing and an
 It enables new machine learning applications to biology time series data, as it allows developers
 to efficiently collect annotations. One can quickly and easily incorporate this library
 into a new application, and tailor it to the details of the application, allowing for efficient labeling.
+
 <hr/>
 <p>A test to see if html is rendered correctly and tailwind is applied</p>
 <div class="flex flex-row">
@@ -46,4 +48,3 @@ into a new application, and tailor it to the details of the application, allowin
   03
   </div>
 </div>
-
