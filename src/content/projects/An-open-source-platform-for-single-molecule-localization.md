@@ -11,7 +11,7 @@ model organism:
 software type: package
 programming language: python
 software ecosystem: napari
-open source license: GLP-3.0
+open source license: GPL-3.0
 supported file types:
 related laboratory techniques:
   [FISH, Single-molecule localization microscopy (SMLM)]
