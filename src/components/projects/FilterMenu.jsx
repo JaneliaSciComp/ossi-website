@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useStore } from "@nanostores/react";
-import { TbChevronUp, TbChevronDown, TbX } from "react-icons/tb";
+import { TbMinus, TbPlus, TbX } from "react-icons/tb";
 
 import { isFilterMenuVisible } from "./stores/filterStore.js";
 import { selectedTags, handleTagSelection } from "./stores/tagsStore.js";
@@ -13,7 +13,7 @@ export default function FilterMenu({ uniqueTags }) {
   const [categoryVisibility, setCategoryVisibility] = useState(() => {
     const initialVisibility = {};
     Object.keys(uniqueTags).forEach((key) => {
-      initialVisibility[key] = true;
+      initialVisibility[key] = false;
     });
     return initialVisibility;
   });
@@ -29,7 +29,7 @@ export default function FilterMenu({ uniqueTags }) {
     <div
       className={`${
         $isFilterMenuVisible ? "flex translate-x-0" : "translate-x-full"
-      } z-50 md:z-auto fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 w-full h-[100dvh] md:max-h-full flex-col p-4 bg-white dark:bg-slate-900 border-gray-200 dark:border-slate-800 border-2 rounded-lg`}
+      } z-50 md:z-auto fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 bg-white dark:bg-slate-900`}
     >
       <button
         className="md:hidden self-end m-2 btn-tertiary"
@@ -37,7 +37,7 @@ export default function FilterMenu({ uniqueTags }) {
       >
         <TbX />
       </button>
-      <div className="overflow-y-scroll md:overflow-hidden p-2">
+      <div className="overflow-y-scroll md:overflow-hidden px-2">
         {Object.keys(uniqueTags).map((key) => (
           <div className="mb-4" key={`tagCategory-${key}`}>
             <h3
@@ -45,7 +45,7 @@ export default function FilterMenu({ uniqueTags }) {
               onClick={() => toggleCategoryVisibility(key)}
             >
               {key.toUpperCase()}
-              {categoryVisibility[key] ? <TbChevronUp /> : <TbChevronDown />}
+              {categoryVisibility[key] ? <TbMinus /> : <TbPlus />}
             </h3>
             <ul
               className={`flex flex-col flex-nowrap ${
