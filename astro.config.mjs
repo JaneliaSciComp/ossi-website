@@ -16,7 +16,7 @@ export default defineConfig({
   ],
   vite: {
     ssr: {
-      noExternal: ["react-icons", "@mui/base"],
+      noExternal: ["react-icons", "@mui"],
     },
   },
 });
