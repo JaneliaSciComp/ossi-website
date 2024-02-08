@@ -45,17 +45,10 @@ const baseUrl = import.meta.env.BASE_URL;
         {
           frontmatter["image file"] ? (
             <div class="px-4 mt-6 md:mt-10">
-              <Image
-                src={frontmatter["image file"]}
+              <img
+                src={`/src/assets/images/${frontmatter["image file"]}`}
                 class="max-w-full mx-auto mb-6 rounded-md bg-gray-400 dark:bg-slate-700"
-                widths={[400, 900]}
-                sizes="(max-width: 900px) 400px, 900px"
-                alt={frontmatter["image alt text"]}
                 loading="eager"
-                width={900}
-                height={506}
-                loading="eager"
-                decoding="async"
               />
             </div>
           ) : (
