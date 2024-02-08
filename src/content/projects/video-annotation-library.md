@@ -4,7 +4,7 @@ tagline: A usable and extensible library for video annotation for machine learni
 author names: Xi Peng, Kristin Branson
 github repository link array:
   [https://github.com/JaneliaSciComp/videoAnnotation]
-image file: ./jacob-miller-ot5kWZkH97s-unsplash.jpg
+image file: jacob-miller-ot5kWZkH97s-unsplash.jpg
 image alt text: Image that look like video annotation timeline
 associated labs and projects: [Branson, Scientific Computing Software]
 scientific domain: [Animal behavior, Machine learning, Neuroscience]

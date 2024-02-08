@@ -1,9 +1,7 @@
 ---
-title: 'Paintera'
+title: "Paintera"
 tagline: Maintain and extend Paintera (3D annotation software for very large volumes).
-author names: 'Saalfeld et al.'
-image file: ./OqtafYT5kTw-unsplash.jpg
-image alt text: Monitor showing Java programming
+author names: "Saalfeld et al."
 associated labs and projects: [saalfeld, COSEM]
 scientific domain: bioimaging
 software type: native application
