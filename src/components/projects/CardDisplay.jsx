@@ -35,8 +35,8 @@ export default function CardDisplay({ allContent, baseUrl, contentType }) {
       {allContent.map((content) => {
         return (
           <ContentCard
-            client:load
             key={content.slug}
+            baseUrl={baseUrl}
             url={`${baseUrl}/${contentType}/${content.slug}/`}
             title={content.data.title}
             authors={content.data["author names"]}

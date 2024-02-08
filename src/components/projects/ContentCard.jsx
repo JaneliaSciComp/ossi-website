@@ -11,6 +11,7 @@ function getRandomImage() {
 }
 
 export default function ContentCard({
+  baseUrl,
   url,
   title,
   authors,
@@ -36,7 +37,7 @@ export default function ContentCard({
         <div className="w-full h-40">
           {imageSrc ? (
             <img
-              src={`/src/assets/images/${imageSrc}`}
+              src={`${baseUrl}/project-images/${imageSrc}`}
               className="w-full h-40 object-cover object-center"
               loading="lazy"
             />
