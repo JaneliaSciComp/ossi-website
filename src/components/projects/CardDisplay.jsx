@@ -7,13 +7,17 @@ import { extractIndividualProjectTags } from "../../utils/tagManipulation.js";
 export default function CardDisplay({ allContent, baseUrl, contentType }) {
   const $selectedTags = useStore(selectedTags);
   const [shownCardCount, setShownCardCount] = useState(allContent.length);
-  console.log($selectedTags);
 
+  // Calculate the count of shown contentCard components to display if selectedTags changes
   useEffect(() => {
-    // Calculate the count of hidden contentCard components
     if ($selectedTags.length) {
       const count = allContent.reduce((acc, content) => {
-        const tagsArray = extractIndividualcontentTags(content.data);
+        let tagsArray = [];
+        if (contentType === "projects") {
+          tagsArray = extractIndividualProjectTags(content.data);
+        } else if (contentType === "ecosystems") {
+          tagsArray = content.data.tagsArray;
+        }
         const isShown = tagsArray.some((tag) => $selectedTags.includes(tag));
         return isShown ? acc + 1 : acc;
       }, 0);
@@ -37,7 +41,11 @@ export default function CardDisplay({ allContent, baseUrl, contentType }) {
             title={content.data.title}
             authors={content.data["author names"]}
             tagline={content.data.tagline}
-            tagsArray={extractIndividualProjectTags(content.data)}
+            tagsArray={
+              contentType === "projects"
+                ? extractIndividualProjectTags(content.data)
+                : content.data.tagsArray
+            }
             imageSrc={content.data["image file"]}
             imageAlt={content.data["image alt text"]}
           />
