@@ -24,7 +24,7 @@ export default function CardDisplay({ allProjects, baseUrl }) {
   return (
     <section className="col-start-2 col-span-2 md:grid grid-cols-2 auto-rows-max md:gap-4">
       <div className="col-start-1 col-span-2">
-        <p className="font-semibold">
+        <p className="font-semibold pb-4 md:pb-0">
           Showing {shownCardCount} of {allProjects.length} projects
         </p>
       </div>
