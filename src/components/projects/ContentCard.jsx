@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/tagsStore";
 import { capitalizeTag } from "../../utils/tagManipulation";
@@ -18,6 +19,10 @@ export default function ContentCard({
   imageSrc,
 }) {
   const $selectedTags = useStore(selectedTags);
+  const [randomImage, setRandomImage] = useState(
+    !imageSrc ? getRandomImage() : ""
+  );
+
   return (
     <div
       className={`${
@@ -37,7 +42,7 @@ export default function ContentCard({
             />
           ) : (
             <img
-              src={`https://source.unsplash.com/${getRandomImage()}`}
+              src={`https://source.unsplash.com/${randomImage}`}
               className="w-full h-40 object-cover object-center"
               loading="lazy"
             />
