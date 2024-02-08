@@ -4,10 +4,7 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
-import ToggleFilterMenuBtn from "../../components/projects/ToggleFilterMenuBtn.jsx";
-import FilterMenu from "../../components/projects/FilterMenu.jsx";
-
-import CardDisplay from "../../components/projects/CardDisplay.jsx";
+import CardsAndFilters from "../../components/projects/CardsAndFilters.jsx";
 
 import { extractUniqueTags } from "../../utils/tagManipulation.js";
 
@@ -22,20 +19,11 @@ const uniqueTags = extractUniqueTags(allProjects);
     <Fragment slot="title">Projects</Fragment>
     <Fragment slot="subtitle">Tagline describing what "projects" are</Fragment>
   </Hero>
-
-  <section class="px-6 md:py-12 lg:py-20 mx-auto max-w-6xl">
-    <div class="flex py-6 md:p-0">
-      <ToggleFilterMenuBtn client:load />
-    </div>
-    <section class="md:grid grid-cols-3 gap-4">
-      <FilterMenu client:load key="FilterMenu" uniqueTags={uniqueTags} />
-      <CardDisplay
-        client:load
-        key="CardDisplay"
-        allContent={allProjects}
-        baseUrl={baseUrl}
-        contentType="projects"
-      />
-    </section>
-  </section>
+  <CardsAndFilters
+    client:load
+    uniqueTags={uniqueTags}
+    allContent={allProjects}
+    baseUrl={baseUrl}
+    contentType="projects"
+  />
 </BaseLayout>
