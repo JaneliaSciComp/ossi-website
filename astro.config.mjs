@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { cjsInterop } from "vite-plugin-cjs-interop";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import react from "@astrojs/react";
@@ -15,8 +16,13 @@ export default defineConfig({
     react(),
   ],
   vite: {
+    plugins: [
+      cjsInterop({
+        dependencies: ["@mui/utils/generateUtilityClass"],
+      }),
+    ],
     ssr: {
-      noExternal: ["react-icons", "@mui"],
+      noExternal: ["react-icons"],
     },
   },
 });
