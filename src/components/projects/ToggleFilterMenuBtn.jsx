@@ -19,7 +19,7 @@ export default function ToggleFilterMenuBtn() {
         badge: {
           className: `${
             numFilters === 0 && "hidden"
-          } z-auto absolute top-0 right-0 font-sans w-8 h-8 leading-8 text-white font-xs rounded-full bg-accent text-center translate-x-1/3 -translate-y-1/3 drop-shadow-lg origin-right`,
+          } md:hidden z-auto absolute top-0 right-0 font-sans w-8 h-8 leading-8 text-white font-xs rounded-full bg-accent text-center translate-x-1/3 -translate-y-1/3 drop-shadow-lg origin-right`,
         },
       }}
     >
