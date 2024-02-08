@@ -18,7 +18,7 @@ export default defineConfig({
   vite: {
     plugins: [
       cjsInterop({
-        dependencies: ["@mui/utils/generateUtilityClass"],
+        dependencies: ["@mui/utils"],
       }),
     ],
     ssr: {
