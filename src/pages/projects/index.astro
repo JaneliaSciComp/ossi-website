@@ -22,18 +22,19 @@ const uniqueTags = extractUniqueTags(allProjects);
     <Fragment slot="title">Projects</Fragment>
     <Fragment slot="subtitle">Tagline describing what "projects" are</Fragment>
   </Hero>
+
   <section class="px-6 md:py-12 lg:py-20 mx-auto max-w-6xl">
     <div class="flex py-6 md:p-0">
       <ToggleFilterMenuBtn client:load />
     </div>
-
     <section class="md:grid grid-cols-3 gap-4">
       <FilterMenu client:load key="FilterMenu" uniqueTags={uniqueTags} />
       <CardDisplay
         client:load
         key="CardDisplay"
-        allProjects={allProjects}
+        allContent={allProjects}
         baseUrl={baseUrl}
+        contentType="projects"
       />
     </section>
   </section>
