@@ -9,7 +9,7 @@ function getRandomImage() {
   return defaultImageIds[randomIndex];
 }
 
-export default function ProjectCard({
+export default function ContentCard({
   url,
   title,
   authors,
