@@ -4,7 +4,7 @@ import { z, defineCollection, reference } from "astro:content";
 // Projects frontmatter
 const projectsCollection = defineCollection({
     type: 'content',
-    schema: ({image}) => z.object({
+    schema: z.object({
       title: z.string(),
       tagline: z.string(),
       'author names': z.string(),
@@ -15,7 +15,7 @@ const projectsCollection = defineCollection({
       'publication DOI array': z.array(z.string()).optional(),
       'publication text array': z.array(z.string()).optional(),
       'related blog posts': z.union([z.array(reference('blog')), reference('blog'), z.undefined(), z.null()]),
-      'image file': image().optional(),
+      'image file': z.string().optional(),
       'image alt text': z.string().optional(),
       'video url': z.string().optional(),
       'video alt text': z.string().optional(),

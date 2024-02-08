@@ -5,7 +5,7 @@ author names: Pachitariu et al.
 github repository link array: [https://github.com/MouseLand/Kilosort]
 publication DOI array: [https://doi.org/10.1101/061481]
 publication text array: [Pachitariu et al. (2016)]
-image file: ./rmWtVQN5RzU-unsplash.jpg
+image file: rmWtVQN5RzU-unsplash.jpg
 image alt text: Transparent skull model
 video url: https://www.youtube.com/watch?v=9cjKYnC89OI
 video alt text: A description of KiloSort by Marius Pachitariu, which is supported by the Open Science Software Initiative.

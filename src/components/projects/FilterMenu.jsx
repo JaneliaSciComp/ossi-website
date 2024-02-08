@@ -29,7 +29,7 @@ export default function FilterMenu({ uniqueTags }) {
     <div
       className={`${
         $isFilterMenuVisible ? "flex translate-x-0" : "translate-x-full"
-      } z-50 md:z-auto fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 bg-white dark:bg-slate-900`}
+      } z-50 md:z-auto fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 md:row-start-1 row-span-2 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 bg-white dark:bg-slate-900`}
     >
       <button
         className="md:hidden self-end m-2 btn-tertiary"

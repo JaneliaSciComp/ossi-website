@@ -3,8 +3,6 @@ title: An open-source platform for single-molecule localization
 tagline: Develop a user-friendly (napari) deep learning-based single-molecule detection software.
 author names: Turaga et al.
 github repository link array: [https://github.com/TuragaLab/DECODE]
-image file: ./f4pUuCc3M0g-unsplash.jpg
-image alt text: Laptop displaying graphs of data
 associated labs and projects: turaga
 scientific domain: [Deep learning, Biomaging, Machine learning, Neuroscience]
 model organism:

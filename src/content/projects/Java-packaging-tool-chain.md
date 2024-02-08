@@ -2,15 +2,13 @@
 title: Java packaging tool chain
 tagline: Develop an easy-to-use packaging system for Java applications.
 author names: Saalfeld et al.
-image file: ./Bg0Geue-cY8-unsplash.jpg
-image alt text: Device controlling agricultural robot
 associated labs and projects: [saalfeld, scientific computing software]
 scientific domain:
 model organism:
 software type: service
 programming language: java
 software ecosystem: [ImgLib2, Java Virtual Machine]
-open source license: 
+open source license:
 supported file types: N5
 related laboratory techniques:
 software use case: tool packaging/distribution
