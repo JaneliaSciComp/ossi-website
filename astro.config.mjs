@@ -16,13 +16,8 @@ export default defineConfig({
     react(),
   ],
   vite: {
-    plugins: [
-      cjsInterop({
-        dependencies: ["@mui/utils"],
-      }),
-    ],
     ssr: {
-      noExternal: ["react-icons"],
+      noExternal: ["react-icons", "@mui/utils"],
     },
   },
 });
