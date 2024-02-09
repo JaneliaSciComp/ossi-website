@@ -23,3 +23,7 @@ pnpm-debug.log*
 # reference files
 src/sampleBlogPosts.txt
 src/sampleProjectTags.txt
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
