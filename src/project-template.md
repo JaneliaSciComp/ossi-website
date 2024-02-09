@@ -44,7 +44,7 @@ associated labs and projects:
     Spruston,
     Stringer,
     Turaga,
-    COSEM,
+    CellMap,
     FlyEM,
     FlyLight,
     MouseLight,
@@ -59,7 +59,6 @@ scientific domain:
     Electrophysiology,
     Machine learning,
     Neuroscience,
-    Spatial transcriptomics,
   ]
 model organism: [C. Elegans, Fly, Mouse]
 software type:
@@ -85,21 +84,17 @@ software ecosystem:
   ]
 open source license: [BDS-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT]
 supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-related laboratory techniques:
+experimental techniques:
   [
     Calcium imaging,
     Confocal light microscopy (LM),
     Correlative light EM (CLEM),
-    EASI-FISH,
     Electron microscopy (EM),
     Expansion microscopy (ExM),
-    FISH,
     Lightsheet fluorescence microscopy (LFSM),
-    MERFISH,
     Neural recording,
     Single-molecule localization microscopy (SMLM),
-    SlideSeq,
-    Two-photon imaging,
+    Spatial transcriptomics,
   ]
 software use case:
   [
