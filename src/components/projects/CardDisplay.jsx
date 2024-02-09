@@ -28,6 +28,11 @@ export default function CardDisplay({ allContent, baseUrl, contentType }) {
   return (
     <section className="col-start-2 col-span-2 md:grid grid-cols-2 auto-rows-max md:gap-4">
       <div className="col-start-1 col-span-2">
+        <div className="flex justify-between pb-4">
+          <button className="btn">Current OSSI projects</button>
+          <button className="btn">Previous OSSI projects</button>
+          <button className="btn">Other projects</button>
+        </div>
         <p className="font-semibold pb-4 md:pb-0">
           Showing {shownCardCount} of {allContent.length} {contentType}
         </p>
