@@ -44,6 +44,7 @@ npm run dev
 ```text
 /
 ├── public/
+│   └── project-images/
 └── src/
     └── project-template.md
     └── content/
@@ -81,7 +82,7 @@ npm run dev
 | `publication DOI array`         | Optional                                   | If you would like your project page to feature related publications, provide the DOIs in square brackets, separated by commas. Each DOI should start with `https://doi.org/`                                                                                                                                                                                                                                                              |
 | `publication text array`        | Optional                                   | If you provided DOI links, provide the corresponding text you would like to display for each link (again in square brackets, separated by commas). The suggested text for each link is: `Author et al. (YYYY)`                                                                                                                                                                                                                            |
 | `related blog posts`            | Optional                                   | If your project has an associated blog post file, provide the file name here in square brackets, without the .md extenstion (e.g., `[my-related-blog-post-file]`). If there is more than one related blog posts separate the file names by commas.                                                                                                                                                                                        |
-| `image file`                    | Optional                                   | Format as: `./[your-image-file-name-with-dashes-between-words].[your image file extension]`<br/> Then see [Adding an image](#optional---adding-an-image) for more information about uploading an image.                                                                                                                                                                                                                                   |
+| `image file`                    | Optional                                   | Format as: `image-file-name-with-no-spaces.fileExtension`<br/> Then see [Adding an image](#optional---adding-an-image) for more information about uploading an image.                                                                                                                                                                                                                                                                     |
 | `image alt text`                | Required if you add an image file          | A brief description of the image                                                                                                                                                                                                                                                                                                                                                                                                          |
 | `associated labs and projects`  | Optional                                   | [Tag variable - see guidance](#edit-the-project-file) <br/> _Examples:_ Branson, Pachitariu, Preibisch, Saalfeld, Spruston, Stringer, Turaga, COSEM, FlyEM, FlyLight, MouseLight, MultiFISH, Scientific Computing Software <br/> _Important:_ Additional steps are required if adding a new lab or project name option - please see [Case 2 under Adding new tag categories or options](#optional---adding-new-tag-categories-or-options) |
 | `scientific domain`             | Optional                                   | [Tag variable - see guidance](#edit-the-project-file) <br/> _Examples:_ Animal behavior, Bioimaging, Deep learning, Electrophysiology, Machine learning, Neuroscience, Spatial transcriptomics                                                                                                                                                                                                                                            |
@@ -97,10 +98,8 @@ npm run dev
 
 ### Optional - Adding an image
 
-1. Add your desired image to `/src/content/projects`, using a filenmae without spaces.
+1. Add your desired image to `/public/project-images`, using a filename without spaces.
 2. Edit your project file to include a value for `image file` as outlined in [Edit the project file](#edit-the-project-file).
-
-_Note:_ If, after adding your image, you get an error when trying to view your project page on the local dev server, try manually installing the Sharp package by running `npm install sharp`, and restarting your local server. Sharp is the image service used by `astro:assets`, and it requires a manual install when using strict package managers. Read more in the [Astro docs](https://docs.astro.build/en/reference/errors/missing-sharp/).
 
 ### Optional - Adding new tag categories or options
 
@@ -158,7 +157,7 @@ const projectsCollection = defineCollection({
 1. In your project file, simply add the tag option you would like in the array of options for the tag category. For example:
 
 ```
-model organism: [C. Elegans, Fly, Mouse, Your New Option]
+programming language: [C++, Java, ..., Your New Option]
 ```
 
 2. **Exception:** If you add a new tag option to `associated labs and projects`, please also add the lab or project name and a corresponding URL to the `/src/data/labNamesUrl.js` file.
