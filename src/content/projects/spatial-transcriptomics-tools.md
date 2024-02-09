@@ -2,6 +2,7 @@
 title: Spatial transcriptomics tools
 tagline: Maintain and extend RS-FISH (smFISH spot localization) and STIM (handling spatial transcriptomics data).
 author names: Preibisch et al.
+project type: [OSSI - current]
 github repository link array:
   [
     https://github.com/PreibischLab/RS-FISH,
