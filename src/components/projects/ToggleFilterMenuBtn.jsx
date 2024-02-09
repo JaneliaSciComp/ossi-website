@@ -13,7 +13,6 @@ export default function ToggleFilterMenuBtn() {
   return (
     <Badge
       className="relative"
-      slots={{ root: "button" }}
       badgeContent={numFilters}
       slotProps={{
         badge: {
