@@ -12,7 +12,7 @@ test("find broken images", async ({ page }) => {
     const images = Array.from(document.querySelectorAll("img"));
     const brokenImagesList = [];
     for (let image of images) {
-      const response = await fetch(image.src, { method: "HEAD" }).catch(
+      const response = await fetch(image.src, { method: "GET" }).catch(
         () => null
       );
       if (!response || response.status !== 200) {
