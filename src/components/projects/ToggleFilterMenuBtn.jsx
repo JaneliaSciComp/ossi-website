@@ -1,7 +1,7 @@
 import { Badge } from "@mui/base/Badge";
 import { useStore } from "@nanostores/react";
-import { selectedTags } from "./stores/tagsStore";
-import { isFilterMenuVisible } from "./stores/filterStore";
+import { selectedTags } from "./stores/selectedTagsStore";
+import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 
 export default function ToggleFilterMenuBtn() {
@@ -26,7 +26,7 @@ export default function ToggleFilterMenuBtn() {
         className="md:hidden btn flex gap-2"
         onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
       >
-        <p>Filters</p>
+        <p>More filters</p>
         <TbAdjustmentsHorizontal className="w-5 h-5 inline-block" />
       </button>
     </Badge>
