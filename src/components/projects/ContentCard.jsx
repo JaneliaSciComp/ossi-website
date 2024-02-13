@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
-import { selectedTags } from "./stores/tagsStore";
+import { selectedTags } from "./stores/selectedTagsStore";
+import { selectedProjectType } from "./stores/selectedProjectTypeStore";
 import { capitalizeTag } from "../../utils/tagManipulation";
 
 const defaultImageIds = ["Bg0Geue-cY8", "f4pUuCc3M0g", "OqtafYT5kTw"];
@@ -18,19 +19,26 @@ export default function ContentCard({
   tagline,
   tagsArray,
   imageSrc,
+  projectType,
 }) {
   const $selectedTags = useStore(selectedTags);
-  const [randomImage, setRandomImage] = useState(
-    !imageSrc ? getRandomImage() : ""
-  );
+  const $selectedProjectType = useStore(selectedProjectType);
+  const [randomImage, setRandomImage] = useState("");
 
+  useEffect(() => {
+    !imageSrc && setRandomImage(getRandomImage());
+  }, []);
+  console.log($selectedProjectType, projectType);
   return (
     <div
       className={`${
-        $selectedTags.length &&
-        !tagsArray.some((tag) => $selectedTags.includes(tag))
-          ? "hidden"
-          : ""
+        ($selectedTags.length === 0 ||
+          tagsArray.some((tag) => $selectedTags.includes(tag))) &&
+        ($selectedProjectType === null ||
+          $selectedProjectType === "All" ||
+          $selectedProjectType === projectType)
+          ? ""
+          : "hidden"
       } col-span-1 w-full h-full mx-auto mb-4 bg-white dark:bg-slate-900 rounded-md shadow-md overflow-hidden border-gray-200 dark:border-slate-800 border-2 hover:shadow-lg transition duration-300 transform hover:scale-105`}
     >
       <a href={url}>
