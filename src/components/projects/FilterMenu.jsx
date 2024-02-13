@@ -2,8 +2,11 @@ import { useState } from "react";
 import { useStore } from "@nanostores/react";
 import { TbMinus, TbPlus, TbX } from "react-icons/tb";
 
-import { isFilterMenuVisible } from "./stores/filterStore.js";
-import { selectedTags, handleTagSelection } from "./stores/tagsStore.js";
+import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore.js";
+import {
+  selectedTags,
+  handleTagSelection,
+} from "./stores/selectedTagsStore.js";
 import { capitalizeTag } from "../../utils/tagManipulation.js";
 
 export default function FilterMenu({ uniqueTags }) {
@@ -29,15 +32,15 @@ export default function FilterMenu({ uniqueTags }) {
     <div
       className={`${
         $isFilterMenuVisible ? "flex translate-x-0" : "translate-x-full"
-      } z-50 md:z-auto fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 md:row-start-1 row-span-2 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 bg-white dark:bg-slate-900`}
+      } z-50 md:z-auto fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 md:pl-0 bg-white dark:bg-slate-900`}
     >
       <button
-        className="md:hidden self-end m-2 btn-tertiary"
+        className="md:hidden self-end m-2 btn-secondary rounded-full"
         onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
       >
         <TbX />
       </button>
-      <div className="overflow-y-scroll md:overflow-hidden px-2">
+      <div className="overflow-y-scroll md:overflow-hidden">
         {Object.keys(uniqueTags).map((key) => (
           <div className="mb-4" key={`tagCategory-${key}`}>
             <h3
