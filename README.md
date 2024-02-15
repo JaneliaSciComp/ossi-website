@@ -7,14 +7,16 @@
 - The source code for the Open Source Science Initative (OSSI) at HHMI Janelia website. The site showcases OSSI-supported projects.
 - Built with the static-site-generator [Astro](https://GitHub.com/withastro/astro), using components and styling from the [Astrowind](https://GitHub.com/onwidget/astrowind/tree/main) template.
 
-## How to add/edit your OSSI-supported project
+## How to add/edit your software project
 
 ### Table of Contents
 
 - [Prerequesites](#prerequisites)
 - [Set-up](#set-up)
-- [Edit the project file](#edit-the-project-file)
-- [Optional - add an image](#optional---adding-an-image)
+- [Add a new project](#add-a-new-project)
+- [Edit a project](#edit-a-project)
+- [Optional - add an image](#optional---add-an-image)
+- [Optional - add new tag categories or options](#optional---add-new-tag-categories-or-options)
 - [Preview and commit your changes](#preview-and-commit-your-changes)
 - [Open a pull request](#open-a-pull-request)
 
@@ -39,7 +41,8 @@ npm install
 npm run dev
 ```
 
-4. Copy `project-template.md` and paste it into `/src/content/projects` (see key folders and files below). Rename the template with your project's title, e.g., `my-awesome-project.md`, with dashes connecting each word.
+### Add a new project
+If a Markdown file for your project already exists under `src/content/projects` - skip to [Edit a project](#edit-a-project)
 
 ```text
 /
@@ -51,13 +54,19 @@ npm run dev
         └── projects/
 ```
 
-### Edit the project file
+1. Copy `/src/project-template.md` and paste it into `/src/content/projects` (see key folders and files above). Rename the template with your project's title, e.g., `my-awesome-project.md`, with dashes connecting each word.
 
-1. Open your newly-created project file. At the top of the file are data sandwiched between triple-dashes (---). These data are used by the Static Site Generator to create the webpage for your project. **Follow the guidance in the table below to edit the data for your project.**
+2. Open your project file. At the top of the file are data sandwiched between triple-dashes (---). These data are used by the Static Site Generator to create the webpage for your project.
+   
+3. **Edit the `title`- this should match the name of your project file, without the dashes.** For example, if your project file is named `my-awesome-project.md`, your project title should be `my awesome project`.
 
-2. **The first item to edit is the `title`- this should match the name of your project file, without the dashes.** For example, if your project file is named `my-awesome-project.md`, your project title should be `my awesome project`.
+### Edit a project
 
-3. If you'd like to add an image for your project, follow the optional step [adding an image](#adding-an-image).
+At the top of the file are data sandwiched between triple-dashes (---). These data are used by the Static Site Generator to create the webpage for your project. 
+
+Follow the guidance in the below table to edit your project's data and change the appearance of your project's associated webpage.
+
+You can also refer to `/src/project-template.md` for further guidance and examples for each data variable.
 
 **Notes:**
 
@@ -83,9 +92,9 @@ npm run dev
 | `publication DOI array`         | Optional                                   | If you would like your project page to feature related publications, provide the DOIs in square brackets, separated by commas. Each DOI should start with `https://doi.org/`                                                                                                                                                                                                                                                              |
 | `publication text array`        | Optional                                   | If you provided DOI links, provide the corresponding text you would like to display for each link (again in square brackets, separated by commas). The suggested text for each link is: `Author et al. (YYYY)`                                                                                                                                                                                                                            |
 | `related blog posts`            | Optional                                   | If your project has an associated blog post file, provide the file name here in square brackets, without the .md extenstion (e.g., `[my-related-blog-post-file]`). If there is more than one related blog posts separate the file names by commas.                                                                                                                                                                                        |
-| `image file`                    | Optional                                   | Format as: `image-file-name-with-no-spaces.fileExtension`<br/> Then see [Adding an image](#optional---adding-an-image) for more information about uploading an image.                                                                                                                                                                                                                                                                     |
+| `image file`                    | Optional                                   | Format as: `image-file-name-with-no-spaces.fileExtension`<br/> Then see [Adding an image](#optional---add-an-image) for more information about uploading an image.                                                                                                                                                                                                                                                                     |
 | `image alt text`                | Required if you add an image file          | A brief description of the image                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `associated labs and projects`  | Optional                                   | [Tag variable - see guidance](#edit-the-project-file) <br/> _Examples:_ Branson, Pachitariu, Preibisch, Saalfeld, Spruston, Stringer, Turaga, COSEM, FlyEM, FlyLight, MouseLight, MultiFISH, Scientific Computing Software <br/> _Important:_ Additional steps are required if adding a new lab or project name option - please see [Case 2 under Adding new tag categories or options](#optional---adding-new-tag-categories-or-options) |
+| `associated labs and projects`  | Optional                                   | [Tag variable - see guidance](#edit-the-project-file) <br/> _Examples:_ Branson, Pachitariu, Preibisch, Saalfeld, Spruston, Stringer, Turaga, COSEM, FlyEM, FlyLight, MouseLight, MultiFISH, Scientific Computing Software <br/> _Important:_ Additional steps are required if adding a new lab or project name option - please see [Case 2 under Add new tag categories or options](#optional---add-new-tag-categories-or-options) |
 | `scientific domain`             | Optional                                   | [Tag variable - see guidance](#edit-the-project-file) <br/> _Examples:_ Animal behavior, Bioimaging, Deep learning, Electrophysiology, Machine learning, Neuroscience, Spatial transcriptomics                                                                                                                                                                                                                                            |
 | `model organism`                | Optional                                   | [Tag variable - see guidance](#edit-the-project-file) <br/> _Examples:_ C. Elegans, Fly, Mouse                                                                                                                                                                                                                                                                                                                                            |
 | `software type`                 | Optional                                   | [Tag variable - see guidance](#edit-the-project-file) <br/> _Examples:_ Command line application, Framework, Native application, Package, Service, Web application, Website                                                                                                                                                                                                                                                               |
@@ -97,12 +106,12 @@ npm run dev
 | `software use case`             | Optional                                   | [Tag variable - see guidance](#edit-the-project-file) <br/> _Examples:_ Annotation, Electrophysiology analysis, Image analysis, Image registration, Sequence analysis, Tool packaging/distribution, Video analysis                                                                                                                                                                                                                        |
 | `usage environment`             | Optional                                   | [Tag variable - see guidance](#edit-the-project-file) <br/> _Examples:_ Cloud, Google Colab, HPC cluster, Jupyter notebook, Local installation, Web browser                                                                                                                                                                                                                                                                               |
 
-### Optional - Adding an image
+### Optional - Add an image
 
 1. Add your desired image to `/public/project-images`, using a filename without spaces.
 2. Edit your project file to include a value for `image file` as outlined in [Edit the project file](#edit-the-project-file).
 
-### Optional - Adding new tag categories or options
+### Optional - Add new tag categories or options
 
 _Tag categories are the the variable name to the left of the colon in the project Markdown file._
 _Tag options are the values in the square brackets to the right of the colon._
@@ -168,7 +177,7 @@ programming language: [C++, Java, ..., Your New Option]
 1. Preview your changes on the local dev server at `localhost:4321`.
 2. When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.
 
-### Open a pull request (PR)
+### Open a pull request
 
 1. Go to your repository on GitHub - on the banner indicating your branch is one commit ahead, click **Contribute** and then **Open a pull request**.
 2. Title your pull request "Add a project - [Project Name]". Include in the description any helpful notes or specific requests.
