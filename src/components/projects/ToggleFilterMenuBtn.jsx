@@ -1,19 +1,17 @@
 import { Badge } from "@mui/base/Badge";
 import { useStore } from "@nanostores/react";
-import { selectedTags } from "./stores/tagsStore";
-import { isFilterMenuVisible } from "./stores/filterStore";
+import { selectedTags } from "./stores/selectedTagsStore";
+import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 
 export default function ToggleFilterMenuBtn() {
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
   const $selectedTags = useStore(selectedTags);
-
   const numFilters = $selectedTags.length;
 
   return (
     <Badge
       className="relative"
-      slots={{ root: "button" }}
       badgeContent={numFilters}
       slotProps={{
         badge: {
@@ -24,10 +22,10 @@ export default function ToggleFilterMenuBtn() {
       }}
     >
       <button
-        className="md:hidden btn flex gap-2"
+        className="md:hidden btn-secondary flex gap-2 py-2 px-3"
         onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
       >
-        <p>Filters</p>
+        <p className="text-sm">Filter by tag</p>
         <TbAdjustmentsHorizontal className="w-5 h-5 inline-block" />
       </button>
     </Badge>

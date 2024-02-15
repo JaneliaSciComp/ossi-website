@@ -2,6 +2,7 @@
 title: neuVid
 tagline: Make the neuVid 3D visualization software more accessible to the community.
 author names: Hubbard
+project type: [OSSI - current]
 github repository link array: [https://github.com/connectome-neuprint/neuVid]
 # github repository text array:
 #   [
