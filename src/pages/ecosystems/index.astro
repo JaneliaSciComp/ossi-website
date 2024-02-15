@@ -5,36 +5,45 @@ import { getCollection, getEntries } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
-import CardsAndFilters from "../../components/projects/CardsAndFilters.jsx";
+import CardsAndFiltersIsland from "../../components/projects/CardsAndFiltersIsland.jsx";
 
-import { extractUniqueTags } from "../../utils/tagManipulation.js";
+import { extractUniqueTagsObjectFromContentCollection } from "../../utils/tagManipulation.js";
 
 const baseUrl = import.meta.env.BASE_URL;
 
-const pageTitle = "OSSI-supported projects";
 const allEcosystems = await getCollection("ecosystems");
+//For each ecosystem, return an array of all the related projects to the object allRelatedProjects.
+//This will be used to create the list of tags for the ecosystem filter menu.
 const allRelatedProjects = await Promise.all(
   allEcosystems.map(async (ecosystem) => {
     const relatedProjects = await getEntries(
       ecosystem.data["related projects"]
     );
+    //Also for each ecosystem, add a property ecosystem.data.tagsArray that consists of the unique tags
+    //extracted from the relatedProjects subset of the project content collection.
+    //This will be used to create the tags on each individual ecosystem card.
     ecosystem.data.tagsArray = Object.values(
-      extractUniqueTags(relatedProjects)
+      extractUniqueTagsObjectFromContentCollection(relatedProjects)
     ).flat();
+
     return relatedProjects;
   })
 );
-const uniqueTags = extractUniqueTags(allRelatedProjects[0]);
+console.log(allRelatedProjects);
+//needed to add the [0] because allRelatedProjects is wrapped in an extra set of square brackets. This just removes them.
+const uniqueTags = extractUniqueTagsObjectFromContentCollection(
+  allRelatedProjects[0]
+);
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout>
   <Hero>
     <Fragment slot="title">Ecosystems</Fragment>
     <Fragment slot="subtitle">
       Tagline describing what "ecosystems" are
     </Fragment>
   </Hero>
-  <CardsAndFilters
+  <CardsAndFiltersIsland
     client:load
     uniqueTags={uniqueTags}
     allContent={allEcosystems}

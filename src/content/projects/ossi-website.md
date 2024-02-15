@@ -2,6 +2,7 @@
 title: OSSI Website
 tagline: A portfolio for Open Science Software Iniative-supported projects
 author names: Ferreira and Rokicki
+project type: [OSSI - current]
 github repository link array: [https://github.com/JaneliaSciComp/ossi-website]
 # github repository text array:
 #   [

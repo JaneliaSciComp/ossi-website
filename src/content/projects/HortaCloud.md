@@ -2,6 +2,7 @@
 title: HortaCloud
 tagline: Large volume volumetric rendering and collaborative neuron annotation in the cloud
 author names: Rokicki et al.
+project type: [OSSI - current]
 github repository link array: [https://github.com/JaneliaSciComp/hortacloud]
 project homepage link array: [https://hortacloud.janelia.org]
 image file: HortaCloud.png

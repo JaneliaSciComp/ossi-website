@@ -4,14 +4,17 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
-import CardsAndFilters from "../../components/projects/CardsAndFilters.jsx";
+import CardsAndFiltersIsland from "../../components/projects/CardsAndFiltersIsland.jsx";
 
-import { extractUniqueTags } from "../../utils/tagManipulation.js";
+import { extractUniqueTagsObjectFromContentCollection } from "../../utils/tagManipulation.js";
 
 const baseUrl = import.meta.env.BASE_URL;
 const pageTitle = "OSSI-supported projects";
 const allProjects = await getCollection("projects");
-const uniqueTags = extractUniqueTags(allProjects);
+
+// uniqueTags is an object where keys = unique tag categories, values = unique tags within a category, both across allProjects. All lowercase.
+// used to populate the filter menu
+const uniqueTags = extractUniqueTagsObjectFromContentCollection(allProjects);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -19,7 +22,7 @@ const uniqueTags = extractUniqueTags(allProjects);
     <Fragment slot="title">Projects</Fragment>
     <Fragment slot="subtitle">Tagline describing what "projects" are</Fragment>
   </Hero>
-  <CardsAndFilters
+  <CardsAndFiltersIsland
     client:load
     uniqueTags={uniqueTags}
     allContent={allProjects}

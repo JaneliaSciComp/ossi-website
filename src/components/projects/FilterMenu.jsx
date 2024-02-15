@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { useStore } from "@nanostores/react";
 import { TbMinus, TbPlus, TbX } from "react-icons/tb";
-
-import { isFilterMenuVisible } from "./stores/filterStore.js";
-import { selectedTags, handleTagSelection } from "./stores/tagsStore.js";
-import { capitalizeTag } from "../../utils/tagManipulation.js";
+import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore.js";
+import {
+  selectedTags,
+  handleTagSelection,
+} from "./stores/selectedTagsStore.js";
+import {
+  extractUniqueTagValueArrayByProject,
+  capitalizeTag,
+} from "../../utils/tagManipulation.js";
 
 export default function FilterMenu({ uniqueTags }) {
-  const $isFilterMenuVisible = useStore(isFilterMenuVisible);
   const $selectedTags = useStore(selectedTags);
 
+  //used to manage state for the close ("x") button on the small screen filter menu
+  const $isFilterMenuVisible = useStore(isFilterMenuVisible);
+
+  //used to manage state for each tag category's visibility on the filter menu
   const [categoryVisibility, setCategoryVisibility] = useState(() => {
     const initialVisibility = {};
     Object.keys(uniqueTags).forEach((key) => {
@@ -17,7 +25,6 @@ export default function FilterMenu({ uniqueTags }) {
     });
     return initialVisibility;
   });
-
   const toggleCategoryVisibility = (categoryKey) => {
     setCategoryVisibility((prevVisibility) => ({
       ...prevVisibility,
@@ -29,10 +36,10 @@ export default function FilterMenu({ uniqueTags }) {
     <div
       className={`${
         $isFilterMenuVisible ? "flex translate-x-0" : "translate-x-full"
-      } z-50 md:z-auto fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 md:col-start-1 col-span-1 md:row-start-1 row-span-2 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 bg-white dark:bg-slate-900`}
+      }  z-40 md:z-auto fixed md:static  md:translate-x-0 top-0 right-0  transition-transform duration-500 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 md:pl-0 bg-white dark:bg-slate-900`}
     >
       <button
-        className="md:hidden self-end m-2 btn-tertiary"
+        className="md:hidden self-end m-2 btn-secondary rounded-full"
         onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
       >
         <TbX />
@@ -53,16 +60,15 @@ export default function FilterMenu({ uniqueTags }) {
               }`}
             >
               {uniqueTags[key].map((individualTag) => {
-                const normalizedTag = capitalizeTag(individualTag);
                 return (
                   <li
                     key={individualTag}
                     className={`cursor-pointer ml-2 my-1 self-start ${
-                      $selectedTags.includes(normalizedTag) ? "selected" : ""
+                      $selectedTags.includes(individualTag) ? "selected" : ""
                     }`}
-                    onClick={() => handleTagSelection(normalizedTag)}
+                    onClick={() => handleTagSelection(individualTag)}
                   >
-                    {normalizedTag}
+                    {capitalizeTag(individualTag)}
                   </li>
                 );
               })}

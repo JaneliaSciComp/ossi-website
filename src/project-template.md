@@ -2,6 +2,7 @@
 title: Your project title
 tagline: Your project tagline
 author names: List of author names written out exactly how you want the list to appear on the page (i.e., do not provide an array of names in square brackets)
+project type: [OSSI - current, OSSI - alumni, Other]
 github repository link array:
   [
     Optional URL to the project GitHub repository,
