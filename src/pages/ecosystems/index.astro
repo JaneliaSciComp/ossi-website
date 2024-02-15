@@ -29,7 +29,6 @@ const allRelatedProjects = await Promise.all(
     return relatedProjects;
   })
 );
-console.log(allRelatedProjects);
 //needed to add the [0] because allRelatedProjects is wrapped in an extra set of square brackets. This just removes them.
 const uniqueTags = extractUniqueTagsObjectFromContentCollection(
   allRelatedProjects[0]
@@ -37,7 +36,7 @@ const uniqueTags = extractUniqueTagsObjectFromContentCollection(
 ---
 
 <BaseLayout>
-  <Hero>
+  <Hero backgroundPath="/src/assets/images/neuVid.png">
     <Fragment slot="title">Ecosystems</Fragment>
     <Fragment slot="subtitle">
       Tagline describing what "ecosystems" are
