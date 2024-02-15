@@ -1,4 +1,4 @@
-const base = import.meta.env.BASE_URL
+const base = import.meta.env.BASE_URL;
 
 export const headerData = {
   links: [
@@ -18,25 +18,29 @@ export const headerData = {
       text: "Blog",
       href: `${base}/blog`,
     },
-    {
-      text: "About",
-      href: `${base}/about`,
-    },
   ],
 };
 
 export const footerData = {
-  links: [
-  ],
+  links: [],
   secondaryLinks: [
-    { text: 'Privacy Policy & Cookie Notice', href: 'https://www.hhmi.org/privacy-policy' },
-    { text: 'This site is open source! Contribute on GitHub.', href: 'https://github.com/JaneliaSciComp/ossi-website'},
-
+    {
+      text: "Privacy Policy & Cookie Notice",
+      href: "https://www.hhmi.org/privacy-policy",
+    },
+    {
+      text: "This site is open source! Contribute on GitHub.",
+      href: "https://github.com/JaneliaSciComp/ossi-website",
+    },
   ],
   socialLinks: [
-    { ariaLabel: 'Email', icon: 'tabler:mail', href: '#' },
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/JaneliaSciComp' },
+    { ariaLabel: "Email", icon: "tabler:mail", href: "#" },
+    { ariaLabel: "X", icon: "tabler:brand-x", href: "#" },
+    {
+      ariaLabel: "Github",
+      icon: "tabler:brand-github",
+      href: "https://github.com/JaneliaSciComp",
+    },
   ],
-  footNote:'© 2024 Howard Hughes Medical Institute',
+  footNote: "© 2024 Howard Hughes Medical Institute",
 };
