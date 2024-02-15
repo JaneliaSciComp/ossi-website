@@ -1,23 +1,21 @@
 ---
-import Wrapper from './Wrapper.astro';
-import TextBlock from './TextBlock.astro';
-import Button from "./Button.astro"
+import Wrapper from "./Wrapper.astro";
+import TextBlock from "./TextBlock.astro";
+import Button from "./Button.astro";
 
 const {
-  title = await Astro.slots.render('title'),
-  subtitle = await Astro.slots.render('subtitle'),
-  tagline = await Astro.slots.render('tagline'),
-  actions = await Astro.slots.render('actions'),
-  content = await Astro.slots.render('content'),
-  bg = await Astro.slots.render('bg'),
-} = Astro.props
+  title = await Astro.slots.render("title"),
+  subtitle = await Astro.slots.render("subtitle"),
+  tagline = await Astro.slots.render("tagline"),
+  actions = await Astro.slots.render("actions"),
+  content = await Astro.slots.render("content"),
+  bg = await Astro.slots.render("bg"),
+} = Astro.props;
 // console.log(actions)
 ---
 
-<Wrapper containerClass='max-w-5xl mx-auto' bg={bg}>
-  <div
-    class="max-w-3xl py-6 rounded-md"
-  >
+<Wrapper containerClass="max-w-5xl mx-auto" bg={bg}>
+  <div class="max-w-3xl py-6 rounded-md">
     <TextBlock
       title={title}
       subtitle={subtitle}
@@ -30,7 +28,7 @@ const {
           {Array.isArray(actions) ? (
             actions.map((action) => (
               <div class="flex w-full">
-                <Button {...(action || {})} class="w-full sm:mb-0" />
+                <Button {...(action || {})} class="btn w-full sm:mb-0" />
               </div>
             ))
           ) : (
