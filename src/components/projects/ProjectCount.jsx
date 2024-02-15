@@ -18,17 +18,19 @@ export default function ProjectCount({ allContent, contentType }) {
       if (contentType === "projects") {
         tagsArray = extractUniqueTagValueArrayByProject(entry.data);
       } else if (contentType === "ecosystems") {
-        tagsArray = content.data.tagsArray;
+        tagsArray = entry.data.tagsArray;
       }
       //we are only interested in projects/ecosystems with both matching tags to selectedTags (or if there are no selectedTags)
-      //AND a matching project type to projectType (or if projectType is "All")
+      //AND (in the case of projects only, ie., contentType === ecosystems will always be true)
+      //a matching project type to projectType (or if projectType is "All" or has not been selected yet, ie., "null")
       const hasMatchingTags =
         $selectedTags.length === 0 ||
         tagsArray.some((tag) => $selectedTags.includes(tag));
       const matchesProjectType =
-        $selectedProjectType === null ||
+        contentType === "ecosystems" ||
+        entry.data["project type"][0] === $selectedProjectType ||
         $selectedProjectType === "All" ||
-        entry.data["project type"][0] === $selectedProjectType;
+        $selectedProjectType === null;
 
       return hasMatchingTags && matchesProjectType;
     }).length;
@@ -37,7 +39,11 @@ export default function ProjectCount({ allContent, contentType }) {
   }, [$selectedTags, $selectedProjectType, allContent, contentType]);
 
   return (
-    <p className="font-semibold py-4 md:pt-0">
+    <p
+      className={`font-semibold py-4 ${
+        contentType === "ecosystems" && "md:pt-0"
+      }`}
+    >
       Showing {shownCardCount} of {allContent.length} {contentType}
     </p>
   );

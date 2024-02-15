@@ -1,8 +1,8 @@
 import { selectedProjectType } from "./stores/selectedProjectTypeStore.js";
 
-export default function ProjectTypeSelector() {
+export default function ProjectTypeSelector({ contentType }) {
   return (
-    <div className="pb-6">
+    <div className={`${contentType === "ecosystems" && "hidden"} "pb-6"`}>
       <div className="hidden md:flex gap-4 ">
         <button
           className="flex-1 btn-secondary px-2"

@@ -19,9 +19,9 @@ export default function CardsAndFiltersIsland({
       </div>
 
       <div className="col-start-2 col-span-2 ">
-        <ProjectTypeBtns />
+        <ProjectTypeBtns contentType={contentType} />
         <div className="md:hidden flex items-end justify-between pb-8">
-          <div className="w-1/2">
+          <div className={`${contentType === "ecosystems" && "hidden"} w-1/2`}>
             <h3 className="cursor-pointer font-bold flex items-center justify-between py-2">
               Project type
             </h3>
@@ -49,7 +49,11 @@ export default function CardsAndFiltersIsland({
                 }
                 imageSrc={content.data["image file"]}
                 imageAlt={content.data["image alt text"]}
-                projectType={content.data["project type"][0]}
+                projectType={
+                  contentType === "projects"
+                    ? content.data["project type"][0]
+                    : null
+                }
               />
             );
           })}
