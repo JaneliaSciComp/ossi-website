@@ -1,17 +1,22 @@
-import { atom } from 'nanostores'
-import { capitalizeTag } from '../../../utils/tagManipulation';
+import { map } from "nanostores";
+export const selectedTags = map({});
 
-export const selectedTags = atom([])
+export function handleTagSelection(tagCategory, tagArray) {
+  // console.log("tagCategory in handleTagSelection: ", tagCategory);
+  // console.log("tagArray in handleTagSelection: ", tagArray);
+  const existingKey = selectedTags.get()[tagCategory];
+  if (existingKey) {
+    // If the key exists, replace its value with tagArray
+    selectedTags.setKey(tagCategory, tagArray);
+  } else {
+    // If the key does not exist, add the key and set its value as tagArray
+    selectedTags.setKey(tagCategory, tagArray);
+  }
+}
 
-export function handleTagSelection(tag) {
-  const prevTags = selectedTags.get(selectedTags)
-  const normalizedTag = capitalizeTag(tag);
-  const tagIndex = prevTags.indexOf(normalizedTag);
-
-    if (tagIndex === -1) {
-      selectedTags.set([...prevTags, normalizedTag]);
-    } else {
-      const updatedTags = prevTags.filter((t, index) => index !== tagIndex);      
-      selectedTags.set(updatedTags);
-    }
-};
+export function resetAllTags() {
+  const keys = Object.keys(selectedTags.get());
+  keys.forEach((key) => {
+    selectedTags.setKey(key, "");
+  });
+}

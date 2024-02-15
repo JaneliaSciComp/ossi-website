@@ -3,12 +3,16 @@ import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
+import { extractUniqueTagValueArrayByProject } from "../../utils/tagManipulation";
 
 export default function ToggleFilterMenuBtn() {
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
   const $selectedTags = useStore(selectedTags);
+  //$selectedTags is an object with keys = tag category values and values = tag values. Since the project cards only have tag values,
+  //we need to extract only the tag value array from all the selectedTags.
+  const selectedTagsArray = extractUniqueTagValueArrayByProject($selectedTags);
 
-  const numFilters = $selectedTags.length;
+  const numFilters = selectedTagsArray.length;
 
   return (
     <Badge
@@ -23,10 +27,10 @@ export default function ToggleFilterMenuBtn() {
       }}
     >
       <button
-        className="md:hidden btn flex gap-2"
+        className="md:hidden btn-secondary flex gap-2 py-2 px-3"
         onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
       >
-        <p>More filters</p>
+        <p className="text-sm">Filter by tag</p>
         <TbAdjustmentsHorizontal className="w-5 h-5 inline-block" />
       </button>
     </Badge>

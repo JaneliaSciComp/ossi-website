@@ -1,38 +1,18 @@
-import { useState } from "react";
 import { useStore } from "@nanostores/react";
-import { TbMinus, TbPlus, TbX } from "react-icons/tb";
+import { TbX } from "react-icons/tb";
+import FilterDropdowns from "./FilterDropdowns.jsx";
 
 import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore.js";
-import {
-  selectedTags,
-  handleTagSelection,
-} from "./stores/selectedTagsStore.js";
-import { capitalizeTag } from "../../utils/tagManipulation.js";
+import { resetAllTags } from "./stores/selectedTagsStore.js";
 
 export default function FilterMenu({ uniqueTags }) {
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
-  const $selectedTags = useStore(selectedTags);
-
-  const [categoryVisibility, setCategoryVisibility] = useState(() => {
-    const initialVisibility = {};
-    Object.keys(uniqueTags).forEach((key) => {
-      initialVisibility[key] = false;
-    });
-    return initialVisibility;
-  });
-
-  const toggleCategoryVisibility = (categoryKey) => {
-    setCategoryVisibility((prevVisibility) => ({
-      ...prevVisibility,
-      [categoryKey]: !prevVisibility[categoryKey],
-    }));
-  };
 
   return (
     <div
       className={`${
         $isFilterMenuVisible ? "flex translate-x-0" : "translate-x-full"
-      } z-50 md:z-auto fixed md:static top-0 right-0 md:translate-x-0 transition-transform duration-500 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 md:pl-0 bg-white dark:bg-slate-900`}
+      }  z-40 md:z-auto fixed md:static  md:translate-x-0 top-0 right-0  transition-transform duration-500 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 md:pl-0 bg-white dark:bg-slate-900`}
     >
       <button
         className="md:hidden self-end m-2 btn-secondary rounded-full"
@@ -43,33 +23,10 @@ export default function FilterMenu({ uniqueTags }) {
       <div className="overflow-y-scroll md:overflow-hidden">
         {Object.keys(uniqueTags).map((key) => (
           <div className="mb-4" key={`tagCategory-${key}`}>
-            <h3
-              className="cursor-pointer font-bold border-b-2 flex items-center justify-between py-2"
-              onClick={() => toggleCategoryVisibility(key)}
-            >
+            <h3 className="cursor-pointer font-bold flex items-center justify-between py-2">
               {key.toUpperCase()}
-              {categoryVisibility[key] ? <TbMinus /> : <TbPlus />}
             </h3>
-            <ul
-              className={`flex flex-col flex-nowrap ${
-                !categoryVisibility[key] && "hidden"
-              }`}
-            >
-              {uniqueTags[key].map((individualTag) => {
-                const normalizedTag = capitalizeTag(individualTag);
-                return (
-                  <li
-                    key={individualTag}
-                    className={`cursor-pointer ml-2 my-1 self-start ${
-                      $selectedTags.includes(normalizedTag) ? "selected" : ""
-                    }`}
-                    onClick={() => handleTagSelection(normalizedTag)}
-                  >
-                    {normalizedTag}
-                  </li>
-                );
-              })}
-            </ul>
+            <FilterDropdowns tagCategory={key} tags={uniqueTags[key]} />
           </div>
         ))}
       </div>
@@ -81,7 +38,7 @@ export default function FilterMenu({ uniqueTags }) {
         >
           View projects
         </button>
-        <button className="btn" onClick={() => selectedTags.set([])}>
+        <button className="btn" onClick={() => resetAllTags()}>
           Reset filters
         </button>
       </div>
