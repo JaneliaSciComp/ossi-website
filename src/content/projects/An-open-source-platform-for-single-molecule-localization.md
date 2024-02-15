@@ -12,7 +12,7 @@ programming language: python
 software ecosystem: napari
 open source license: GPL-3.0
 supported file types:
-related laboratory techniques:
+related experimental techniques:
   [FISH, Single-molecule localization microscopy (SMLM)]
 software use case:
 usage environment: [local installation, Jupyter notebook, Google Colab]

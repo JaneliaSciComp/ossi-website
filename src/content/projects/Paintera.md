@@ -10,7 +10,7 @@ programming language: [java, kotlin]
 software ecosystem: [ImgLib2, BigDataViewer]
 open source license: GPL-2.0
 supported file types: N5
-related laboratory techniques: electron microscopy (EM)
+related experimental techniques: electron microscopy (EM)
 software use case: [annotation, image analysis]
 usage environment: [local installation]
 related blog posts: [working-with-ossi-supported-projects]

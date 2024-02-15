@@ -73,7 +73,7 @@ software type:
     Website,
   ]
 programming language:
-  [C++, Java, Julia, Kotlin, MATLAB, Nextflow, Python, Javascript]
+  [C++, Go, Java, Julia, Kotlin, MATLAB, Nextflow, Python, Javascript]
 software ecosystem:
   [
     BigDataViewer,
@@ -85,7 +85,7 @@ software ecosystem:
   ]
 open source license: [BDS-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT]
 supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-experimental techniques:
+related experimental techniques:
   [
     Calcium imaging,
     Confocal light microscopy (LM),
@@ -100,6 +100,7 @@ experimental techniques:
 software use case:
   [
     Annotation,
+    Containerization,
     Electrophysiology analysis,
     Image analysis,
     Image registration,

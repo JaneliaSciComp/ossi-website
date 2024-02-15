@@ -28,7 +28,7 @@ const projectsCollection = defineCollection({
       'software ecosystem': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'open source license': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'supported file types': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
-      'related laboratory techniques': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
+      'related experimental techniques': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'software use case': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'usage environment': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
     })

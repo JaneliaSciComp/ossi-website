@@ -16,7 +16,7 @@ programming language: [Java, Typescript]
 software ecosystem: [Janelia Workstation, Java Virtual Machine]
 open source license: [BDS-3 Clause]
 supported file types: [OME-Zarr, SWC]
-related laboratory techniques:
+related experimental techniques:
   [
     Expansion microscopy (ExM),
     Lightsheet fluorescence microscopy (LFSM),

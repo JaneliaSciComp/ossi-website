@@ -15,7 +15,7 @@ programming language: [Python, Javascript]
 software ecosystem: []
 open source license: [BDS-3 Clause]
 supported file types: [mpeg, avi]
-related laboratory techniques: []
+related experimental techniques: []
 software use case: [Annotation, Image analysis, Video analysis]
 usage environment: [Cloud, Local installation, Web browser]
 # related blog posts:

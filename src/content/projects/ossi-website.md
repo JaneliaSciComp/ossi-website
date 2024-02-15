@@ -54,7 +54,7 @@ software type: [Website]
 #   ]
 open source license: [BDS-3 Clause]
 # supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-# related laboratory techniques:
+# related experimental techniques:
 #   [
 #     Calcium imaging,
 #     Confocal light microscopy (LM),

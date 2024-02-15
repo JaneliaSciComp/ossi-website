@@ -23,7 +23,7 @@ programming language: [Python]
 software ecosystem: [Napari]
 open source license: [BDS-3 Clause, GPL-2.0]
 # supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-related laboratory techniques:
+related experimental techniques:
   [
     Calcium imaging,
     Confocal light microscopy (LM),

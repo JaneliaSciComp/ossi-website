@@ -18,7 +18,7 @@ programming language: ["MATLAB", "Python"]
 software ecosystem:
 open source license: GPL-2.0
 supported file types:
-related laboratory techniques: [neural recording]
+related experimental techniques: [neural recording]
 software use case: electrophysiology data analysis
 usage environment: [local installation]
 related blog posts: [working-with-ossi-supported-projects]

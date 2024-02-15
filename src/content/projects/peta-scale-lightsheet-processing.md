@@ -40,7 +40,7 @@ programming language: [Java, Nextflow]
 software ecosystem: [BigDataViewer, ImgLib2]
 open source license: [BDS-3 Clause]
 supported file types: [N5, TIFF, Zeiss CZI]
-related laboratory techniques:
+related experimental techniques:
   [
     EASI-FISH,
     Expansion microscopy (ExM),
