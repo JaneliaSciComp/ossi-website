@@ -49,7 +49,7 @@ programming language: [Python]
 #   ]
 open source license: [BDS-3 Clause]
 # supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-related laboratory techniques: [Electron microscopy (EM)]
+related experimental techniques: [Electron microscopy (EM)]
 # software use case:
 #   [
 #     Annotation,

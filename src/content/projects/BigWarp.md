@@ -17,7 +17,7 @@ programming language: [Java]
 # software ecosystem: [BigDataViewer, Fiji, ImgLib2, Janelia Workstation, Java Virtual Machine, Napari]
 open source license: [GPL-2.0]
 supported file types: [N5]
-related laboratory techniques:
+related experimental techniques:
   [
     Confocal light microscopy (LM),
     Correlative light EM (CLEM),

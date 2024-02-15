@@ -48,7 +48,7 @@ programming language: [C++]
 #   ]
 open source license: [BDS-3 Clause]
 supported file types: [N5, SWC, TIFF, Zeiss CZI]
-related laboratory techniques:
+related experimental techniques:
   [
     Confocal light microscopy (LM),
     Electron microscopy (EM),

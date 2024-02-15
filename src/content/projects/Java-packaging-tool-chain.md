@@ -11,7 +11,7 @@ programming language: java
 software ecosystem: [ImgLib2, Java Virtual Machine]
 open source license:
 supported file types: N5
-related laboratory techniques:
+related experimental techniques:
 software use case: tool packaging/distribution
 usage environment: [local installation]
 ---

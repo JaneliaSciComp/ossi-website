@@ -37,7 +37,7 @@ programming language: [Java]
 software ecosystem: [BigDataViewer, Fiji]
 open source license: [GPL-2.0, GPL-3.0]
 supported file types: [N5]
-related laboratory techniques: [EASI-FISH, FISH, MERFISH, SlideSeq]
+related experimental techniques: [EASI-FISH, FISH, MERFISH, SlideSeq]
 software use case: [Image analysis, Sequence analysis]
 usage environment: [HPC cluster, Local installation]
 ---
