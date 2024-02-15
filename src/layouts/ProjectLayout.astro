@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import Link from "../components/Link.astro";
 
 import {
-  extractIndividualProjectTags,
+  extractUniqueTagValueArrayByProject,
   findLabInfo,
   generatePublicationLinks,
 } from "../utils/tagManipulation";
@@ -15,7 +15,7 @@ const relatedBlogPosts = frontmatter["related blog posts"]
   ? await getEntries(frontmatter["related blog posts"])
   : null;
 
-const tagsArray = extractIndividualProjectTags(frontmatter);
+const tagsArray = extractUniqueTagValueArrayByProject(frontmatter);
 const labInfoArray = findLabInfo(frontmatter["associated labs and projects"]);
 const pubInfoArray = generatePublicationLinks(frontmatter);
 
