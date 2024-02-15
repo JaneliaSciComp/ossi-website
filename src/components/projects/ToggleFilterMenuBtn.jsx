@@ -3,16 +3,11 @@ import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
-import { extractUniqueTagValueArrayByProject } from "../../utils/tagManipulation";
 
 export default function ToggleFilterMenuBtn() {
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
   const $selectedTags = useStore(selectedTags);
-  //$selectedTags is an object with keys = tag category values and values = tag values. Since the project cards only have tag values,
-  //we need to extract only the tag value array from all the selectedTags.
-  const selectedTagsArray = extractUniqueTagValueArrayByProject($selectedTags);
-
-  const numFilters = selectedTagsArray.length;
+  const numFilters = $selectedTags.length;
 
   return (
     <Badge

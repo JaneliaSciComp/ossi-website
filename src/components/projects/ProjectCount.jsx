@@ -6,10 +6,6 @@ import { extractUniqueTagValueArrayByProject } from "../../utils/tagManipulation
 
 export default function ProjectCount({ allContent, contentType }) {
   const $selectedTags = useStore(selectedTags);
-  //$selectedTags is an object with keys = tag category values and values = tag values. Since the project cards only have tag values,
-  //we need to extract only the tag value array from all the selectedTags.
-  const selectedTagsArray = extractUniqueTagValueArrayByProject($selectedTags);
-
   const $selectedProjectType = useStore(selectedProjectType);
   const [shownCardCount, setShownCardCount] = useState(allContent.length);
 
@@ -27,8 +23,8 @@ export default function ProjectCount({ allContent, contentType }) {
       //we are only interested in projects/ecosystems with both matching tags to selectedTags (or if there are no selectedTags)
       //AND a matching project type to projectType (or if projectType is "All")
       const hasMatchingTags =
-        selectedTagsArray.length === 0 ||
-        tagsArray.some((tag) => selectedTagsArray.includes(tag));
+        $selectedTags.length === 0 ||
+        tagsArray.some((tag) => $selectedTags.includes(tag));
       const matchesProjectType =
         $selectedProjectType === null ||
         $selectedProjectType === "All" ||

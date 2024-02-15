@@ -1,12 +1,36 @@
+import { useState } from "react";
 import { useStore } from "@nanostores/react";
-import { TbX } from "react-icons/tb";
-import FilterDropdowns from "./FilterDropdowns.jsx";
-
+import { TbMinus, TbPlus, TbX } from "react-icons/tb";
 import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore.js";
-import { resetAllTags } from "./stores/selectedTagsStore.js";
+import {
+  selectedTags,
+  handleTagSelection,
+} from "./stores/selectedTagsStore.js";
+import {
+  extractUniqueTagValueArrayByProject,
+  capitalizeTag,
+} from "../../utils/tagManipulation.js";
 
 export default function FilterMenu({ uniqueTags }) {
+  const $selectedTags = useStore(selectedTags);
+
+  //used to manage state for the close ("x") button on the small screen filter menu
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
+
+  //used to manage state for each tag category's visibility on the filter menu
+  const [categoryVisibility, setCategoryVisibility] = useState(() => {
+    const initialVisibility = {};
+    Object.keys(uniqueTags).forEach((key) => {
+      initialVisibility[key] = false;
+    });
+    return initialVisibility;
+  });
+  const toggleCategoryVisibility = (categoryKey) => {
+    setCategoryVisibility((prevVisibility) => ({
+      ...prevVisibility,
+      [categoryKey]: !prevVisibility[categoryKey],
+    }));
+  };
 
   return (
     <div
@@ -20,13 +44,35 @@ export default function FilterMenu({ uniqueTags }) {
       >
         <TbX />
       </button>
-      <div className="overflow-y-scroll md:overflow-hidden">
+      <div className="overflow-y-scroll md:overflow-hidden px-2">
         {Object.keys(uniqueTags).map((key) => (
           <div className="mb-4" key={`tagCategory-${key}`}>
-            <h3 className="cursor-pointer font-bold flex items-center justify-between py-2">
+            <h3
+              className="cursor-pointer font-bold border-b-2 flex items-center justify-between py-2"
+              onClick={() => toggleCategoryVisibility(key)}
+            >
               {key.toUpperCase()}
+              {categoryVisibility[key] ? <TbMinus /> : <TbPlus />}
             </h3>
-            <FilterDropdowns tagCategory={key} tags={uniqueTags[key]} />
+            <ul
+              className={`flex flex-col flex-nowrap ${
+                !categoryVisibility[key] && "hidden"
+              }`}
+            >
+              {uniqueTags[key].map((individualTag) => {
+                return (
+                  <li
+                    key={individualTag}
+                    className={`cursor-pointer ml-2 my-1 self-start ${
+                      $selectedTags.includes(individualTag) ? "selected" : ""
+                    }`}
+                    onClick={() => handleTagSelection(individualTag)}
+                  >
+                    {capitalizeTag(individualTag)}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         ))}
       </div>
@@ -38,7 +84,7 @@ export default function FilterMenu({ uniqueTags }) {
         >
           View projects
         </button>
-        <button className="btn" onClick={() => resetAllTags()}>
+        <button className="btn" onClick={() => selectedTags.set([])}>
           Reset filters
         </button>
       </div>

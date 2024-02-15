@@ -1,22 +1,15 @@
-import { map } from "nanostores";
-export const selectedTags = map({});
+import { atom } from "nanostores";
 
-export function handleTagSelection(tagCategory, tagArray) {
-  // console.log("tagCategory in handleTagSelection: ", tagCategory);
-  // console.log("tagArray in handleTagSelection: ", tagArray);
-  const existingKey = selectedTags.get()[tagCategory];
-  if (existingKey) {
-    // If the key exists, replace its value with tagArray
-    selectedTags.setKey(tagCategory, tagArray);
+export const selectedTags = atom([]);
+
+export function handleTagSelection(tag) {
+  const prevTags = selectedTags.get(selectedTags);
+  const tagIndex = prevTags.indexOf(tag);
+
+  if (tagIndex === -1) {
+    selectedTags.set([...prevTags, tag]);
   } else {
-    // If the key does not exist, add the key and set its value as tagArray
-    selectedTags.setKey(tagCategory, tagArray);
+    const updatedTags = prevTags.filter((t, index) => index !== tagIndex);
+    selectedTags.set(updatedTags);
   }
-}
-
-export function resetAllTags() {
-  const keys = Object.keys(selectedTags.get());
-  keys.forEach((key) => {
-    selectedTags.setKey(key, "");
-  });
 }
