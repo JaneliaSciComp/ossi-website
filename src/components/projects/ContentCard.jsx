@@ -28,17 +28,17 @@ export default function ContentCard({
   useEffect(() => {
     !imageSrc && setRandomImage(getRandomImage());
   }, []);
-  console.log($selectedProjectType, projectType);
+
   return (
     <div
       className={`${
-        ($selectedTags.length === 0 ||
-          tagsArray.some((tag) => $selectedTags.includes(tag))) &&
-        ($selectedProjectType === null ||
-          $selectedProjectType === "All" ||
-          $selectedProjectType === projectType)
-          ? ""
-          : "hidden"
+        ($selectedTags.length &&
+          !tagsArray.some((tag) => $selectedTags.includes(tag))) ||
+        ($selectedProjectType &&
+          $selectedProjectType != "All" &&
+          $selectedProjectType != projectType)
+          ? "hidden"
+          : ""
       } col-span-1 w-full h-full mx-auto mb-4 bg-white dark:bg-slate-900 rounded-md shadow-md overflow-hidden border-gray-200 dark:border-slate-800 border-2 hover:shadow-lg transition duration-300 transform hover:scale-105`}
     >
       <a href={url}>

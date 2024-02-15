@@ -1,17 +1,15 @@
-import { atom } from 'nanostores'
-import { capitalizeTag } from '../../../utils/tagManipulation';
+import { atom } from "nanostores";
 
-export const selectedTags = atom([])
+export const selectedTags = atom([]);
 
 export function handleTagSelection(tag) {
-  const prevTags = selectedTags.get(selectedTags)
-  const normalizedTag = capitalizeTag(tag);
-  const tagIndex = prevTags.indexOf(normalizedTag);
+  const prevTags = selectedTags.get(selectedTags);
+  const tagIndex = prevTags.indexOf(tag);
 
-    if (tagIndex === -1) {
-      selectedTags.set([...prevTags, normalizedTag]);
-    } else {
-      const updatedTags = prevTags.filter((t, index) => index !== tagIndex);      
-      selectedTags.set(updatedTags);
-    }
-};
+  if (tagIndex === -1) {
+    selectedTags.set([...prevTags, tag]);
+  } else {
+    const updatedTags = prevTags.filter((t, index) => index !== tagIndex);
+    selectedTags.set(updatedTags);
+  }
+}
