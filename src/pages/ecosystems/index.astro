@@ -36,12 +36,12 @@ const uniqueTags = extractUniqueTagsObjectFromContentCollection(
 ---
 
 <BaseLayout>
-  <Hero backgroundPath="/src/assets/images/neuVid.png">
-    <Fragment slot="title">Ecosystems</Fragment>
-    <Fragment slot="subtitle">
-      Tagline describing what "ecosystems" are
-    </Fragment>
-  </Hero>
+  <Hero
+    client:load
+    baseUrl={baseUrl}
+    title="Ecosystems"
+    subtitle='Tagline describing what "ecosystems" are'
+  />
   <CardsAndFiltersIsland
     client:load
     uniqueTags={uniqueTags}
