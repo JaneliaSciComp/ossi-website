@@ -3,13 +3,9 @@ import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore";
 import { capitalizeTag } from "../../utils/tagManipulation";
+import { getRandomImage } from "../../utils/getRandomImage";
 
-const defaultImageIds = ["Bg0Geue-cY8", "f4pUuCc3M0g", "OqtafYT5kTw"];
-
-function getRandomImage() {
-  const randomIndex = Math.floor(Math.random() * defaultImageIds.length);
-  return defaultImageIds[randomIndex];
-}
+const placeholderProjectImages = ["Bg0Geue-cY8", "f4pUuCc3M0g", "OqtafYT5kTw"];
 
 export default function ContentCard({
   baseUrl,
@@ -26,7 +22,7 @@ export default function ContentCard({
   const [randomImage, setRandomImage] = useState("");
 
   useEffect(() => {
-    !imageSrc && setRandomImage(getRandomImage());
+    !imageSrc && setRandomImage(getRandomImage(placeholderProjectImages));
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
+import Hero from "../components/Hero";
 import CallToAction from "../components/CallToAction.astro";
 import ContentGridDisplay from "../components/ContentGridDisplay.astro";
 import ContributorList from "../components/ContributorList.astro";
@@ -25,12 +25,12 @@ const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout>
-  <Hero backgroundPath="/src/assets/images/ExM-data-VVD-Viewer-2.png">
-    <Fragment slot="title">Janelia Open Science Software Initiative</Fragment>
-    <Fragment slot="subtitle">
-      Tagline about the Janelia Open Science Software Initiative
-    </Fragment>
-  </Hero>
+  <Hero
+    client:load
+    baseUrl={baseUrl}
+    title="Janelia Open Science Software Initiative"
+    subtitle="Tagline about the Janelia Open Science Software Initiative"
+  />
 
   <CallToAction
     actions={[

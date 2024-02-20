@@ -3,7 +3,7 @@ import "../../styles/tailwind.css";
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Hero from "../../components/Hero.astro";
+import Hero from "../../components/Hero.jsx";
 import CardsAndFiltersIsland from "../../components/projects/CardsAndFiltersIsland.jsx";
 
 import { extractUniqueTagsObjectFromContentCollection } from "../../utils/tagManipulation.js";
@@ -18,10 +18,12 @@ const uniqueTags = extractUniqueTagsObjectFromContentCollection(allProjects);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <Hero backgroundPath="/src/assets/images/Mouse-brain-neuVid.png">
-    <Fragment slot="title">Projects</Fragment>
-    <Fragment slot="subtitle">Tagline describing what "projects" are</Fragment>
-  </Hero>
+  <Hero
+    client:load
+    baseUrl={baseUrl}
+    title="Projects"
+    subtitle='Tagline describing what "Projects" are'
+  />
   <CardsAndFiltersIsland
     client:load
     uniqueTags={uniqueTags}
