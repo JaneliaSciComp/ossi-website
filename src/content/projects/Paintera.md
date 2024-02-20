@@ -3,9 +3,7 @@ title: "Paintera"
 tagline: Maintain and extend Paintera (3D annotation software for very large volumes).
 author names: "Saalfeld et al."
 project type: [OSSI - current]
-associated labs and projects: [saalfeld, COSEM]
-scientific domain: bioimaging
-software type: native application
+associated labs and projects: [saalfeld lab, CellMap project team]
 programming language: [java, kotlin]
 software ecosystem: [ImgLib2, BigDataViewer]
 open source license: GPL-2.0

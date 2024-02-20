@@ -45,18 +45,8 @@ associated labs and projects: [
     # FlyLight,
     # MouseLight,
     # MultiFISH,
-    Scientific Computing Software,
+    Scientific Computing Software Support Team,
   ]
-# scientific domain:
-#   [
-#     Animal behavior,
-#     Bioimaging,
-#     Deep learning,
-#     Electrophysiology,
-#     Machine learning,
-#     Neuroscience,
-#   ]
-# model organism: [C. Elegans, Fly, Mouse]
 # software type:
 #   [
 #     Command line application,

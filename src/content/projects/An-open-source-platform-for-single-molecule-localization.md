@@ -4,9 +4,7 @@ tagline: Develop a user-friendly (napari) deep learning-based single-molecule de
 author names: Turaga et al.
 project type: [OSSI - current]
 github repository link array: [https://github.com/TuragaLab/DECODE]
-associated labs and projects: turaga
-scientific domain: [Deep learning, Biomaging, Machine learning, Neuroscience]
-model organism:
+associated labs and projects: turaga lab
 software type: package
 programming language: python
 software ecosystem: napari

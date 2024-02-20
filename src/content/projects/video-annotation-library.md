@@ -7,9 +7,8 @@ github repository link array:
   [https://github.com/JaneliaSciComp/videoAnnotation]
 image file: jacob-miller-ot5kWZkH97s-unsplash.jpg
 image alt text: Image that look like video annotation timeline
-associated labs and projects: [Branson, Scientific Computing Software]
-scientific domain: [Animal behavior, Machine learning, Neuroscience]
-model organism: [Fly, Mouse]
+associated labs and projects:
+  [Branson Lab, Scientific Computing Software Support Team]
 software type: [Framework, Package, Web application]
 programming language: [Python, Javascript]
 software ecosystem: []
