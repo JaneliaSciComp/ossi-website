@@ -8,9 +8,12 @@ project homepage link array: [https://hortacloud.janelia.org]
 image file: HortaCloud.png
 image alt text: A screenshot of HortaCloud running in a web browser
 associated labs and projects:
-  [MouseLight, Spruston Lab, Dudman Lab, Scientific Computing Software]
-scientific domain: [Bioimaging, Neuroscience]
-model organism: [Mouse]
+  [
+    MouseLight Project Team,
+    Spruston Lab,
+    Dudman Lab,
+    Scientific Computing Software Support Team,
+  ]
 software type: [Native application, Service, Web application, Website]
 programming language: [Java, Typescript]
 software ecosystem: [Janelia Workstation, Java Virtual Machine]

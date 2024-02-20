@@ -9,9 +9,7 @@ publication DOI array: [https://doi.org/10.1109/ISBI.2016.7493463]
 publication text array: ["Bogovic et al. 2016"]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [FlyEM, FlyLight]
-scientific domain: [Bioimaging]
-# model organism: [C. Elegans, Fly, Mouse]
+associated labs and projects: [FlyEM Project Team, FlyLight Project Team]
 software type: [Native application]
 programming language: [Java]
 # software ecosystem: [BigDataViewer, Fiji, ImgLib2, Janelia Workstation, Java Virtual Machine, Napari]

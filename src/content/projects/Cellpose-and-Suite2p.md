@@ -15,9 +15,7 @@ publication text array: [Stringer et al. 2021, Pachitariu et al. (2017)]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [Pachitariu, Stringer]
-scientific domain: [Bioimaging, Deep learning, Neuroscience]
-# model organism: [C. Elegans, Fly, Mouse]
+associated labs and projects: [Pachitariu Lab, Stringer Lab]
 software type: [Package]
 programming language: [Python]
 software ecosystem: [Napari]

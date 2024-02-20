@@ -29,9 +29,8 @@ publication text array: [Bahry et al. (2021), Preibisch et al. (2021)]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [Preibisch, Scientific Computing Software]
-scientific domain: [Bioimaging, Spatial transcriptomics]
-# model organism: [C. Elegans, Fly, Mouse]
+associated labs and projects:
+  [Preibisch Lab, Scientific Computing Software Support Team]
 software type: [Command line application, Framework, Native application]
 programming language: [Java]
 software ecosystem: [BigDataViewer, Fiji]

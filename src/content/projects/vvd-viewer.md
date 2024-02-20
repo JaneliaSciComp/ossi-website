@@ -32,9 +32,8 @@ github repository link array: [https://github.com/JaneliaSciComp/VVDViewer]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [FlyLight, Scientific Computing Software]
-scientific domain: [Bioimaging, Neuroscience]
-model organism: [Fly]
+associated labs and projects:
+  [FlyLight Project Team, Scientific Computing Software Support Team]
 software type: [Native application]
 programming language: [C++]
 # software ecosystem:

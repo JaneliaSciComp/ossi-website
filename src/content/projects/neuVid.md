@@ -33,9 +33,12 @@ github repository link array: [https://github.com/connectome-neuprint/neuVid]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
 associated labs and projects:
-  [COSEM, FlyEM, FlyLight, Scientific Computing Software]
-scientific domain: [Neuroscience]
-model organism: [Fly]
+  [
+    CellMap Project Team,
+    FlyEM Project Team,
+    FlyLight Project Team,
+    Scientific Computing Software Support Team,
+  ]
 software type: [Command line application]
 programming language: [Python]
 # software ecosystem:

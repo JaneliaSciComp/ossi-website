@@ -28,18 +28,7 @@ project homepage link array: [https://janeliascicomp.github.io/ossi-website/]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [Scientific Computing Software]
-# scientific domain:
-#   [
-#     Animal behavior,
-#     Bioimaging,
-#     Deep learning,
-#     Electrophysiology,
-#     Machine learning,
-#     Neuroscience,
-#     Spatial transcriptomics,
-#   ]
-# model organism: [C. Elegans, Fly, Mouse]
+associated labs and projects: [Scientific Computing Software Support Team]
 software type: [Website]
 # programming language:
 #   [C++, Java, Julia, Kotlin, MATLAB, Nextflow, Python, Javascript]

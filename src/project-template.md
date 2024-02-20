@@ -38,30 +38,20 @@ image file: ./optional-file-path.jpg
 image alt text: Alt text is required if you upload an image file
 associated labs and projects:
   [
-    Branson,
-    Pachitariu,
-    Preibisch,
-    Saalfeld,
-    Spruston,
-    Stringer,
-    Turaga,
-    CellMap,
-    FlyEM,
-    FlyLight,
-    MouseLight,
-    MultiFISH,
-    Scientific Computing Software,
+    Branson Lab,
+    Pachitariu Lab,
+    Preibisch Lab,
+    Saalfeld Lab,
+    Spruston Lab,
+    Stringer Lab,
+    Turaga Lab,
+    CellMap Project Team,
+    FlyEM Project Team,
+    FlyLight Project Team,
+    MouseLight Project Team,
+    MultiFISH Project Team,
+    Scientific Computing Software Support Team,
   ]
-scientific domain:
-  [
-    Animal behavior,
-    Bioimaging,
-    Deep learning,
-    Electrophysiology,
-    Machine learning,
-    Neuroscience,
-  ]
-model organism: [C. Elegans, Fly, Mouse]
 software type:
   [
     Command line application,

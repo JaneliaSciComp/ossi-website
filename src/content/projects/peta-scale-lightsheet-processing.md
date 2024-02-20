@@ -32,9 +32,12 @@ github repository text array: [GitHub BigStitcher, GitHub Stitching-Spark]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
 associated labs and projects:
-  [Preibisch, Saalfeld, MultiFISH, Scientific Computing Software]
-scientific domain: [Bioimaging, Spatial transcriptomics]
-# model organism: [C. Elegans, Fly, Mouse]
+  [
+    Preibisch Lab,
+    Saalfeld Lab,
+    MultiFISH Project Team,
+    Scientific Computing Software Support Team,
+  ]
 software type: [Package]
 programming language: [Java, Nextflow]
 software ecosystem: [BigDataViewer, ImgLib2]

@@ -21,8 +21,6 @@ const projectsCollection = defineCollection({
       'video url': z.string().optional(),
       'video alt text': z.string().optional(),
       'associated labs and projects': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
-      'scientific domain': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
-      'model organism': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'software type': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'programming language': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
       'software ecosystem': z.union([z.array(z.string()), z.string(), z.undefined(), z.null()]),
