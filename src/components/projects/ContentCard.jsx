@@ -3,6 +3,7 @@ import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore";
 import { capitalizeTag } from "../../utils/tagManipulation";
+import { getRandomImage } from "../../utils/getRandomImage";
 
 const placeholderProjectImages = ["Bg0Geue-cY8", "f4pUuCc3M0g", "OqtafYT5kTw"];
 
