@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import { getRandomImage } from "../utils/getRandomImage";
-
-const heroImages = [
-  "ExM-data-VVD-Viewer-1.png",
-  "ExM-data-VVD-Viewer-2.png",
-  "manc-dorsal-neuVid.png",
-  "Mouse-brain-neuVid.png",
-  "neuVid.png",
-];
+import { heroImageFiles } from "../data/heroImageFiles.js";
+console.log("hero image files:", heroImageFiles);
 
 export default function Hero({ baseUrl, title, subtitle }) {
   const [backgroundImg, setBackgroundImg] = useState("");
   useEffect(() => {
-    backgroundImg === "" && setBackgroundImg(getRandomImage(heroImages));
+    if (backgroundImg === "") {
+      const randomImageData = getRandomImage(heroImageFiles);
+      setBackgroundImg(randomImageData);
+    }
   }, []);
   console.log(backgroundImg);
 
@@ -20,7 +17,7 @@ export default function Hero({ baseUrl, title, subtitle }) {
     <section
       className="bg-cover bg-no-repeat relative md:-mt-[76px] not-prose"
       style={{
-        backgroundImage: `url('${baseUrl}/hero-images/${backgroundImg}')`,
+        backgroundImage: `url('${baseUrl}/hero-images/${backgroundImg.file}')`,
       }}
     >
       <div
@@ -46,6 +43,9 @@ export default function Hero({ baseUrl, title, subtitle }) {
           </div>
         </div>
       </div>
+      <p className="text-xs text-white mb-6 dark:text-slate-300 absolute right-6 -bottom-6">
+        {backgroundImg.alt}
+      </p>
     </section>
   );
 }
