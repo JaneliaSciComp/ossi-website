@@ -37,4 +37,3 @@ export const tagKeyNames = [
 // Additional colors to use
 // #39939b
 // #ab3f32
-// #6ebebd
