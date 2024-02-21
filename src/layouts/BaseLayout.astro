@@ -1,26 +1,28 @@
 ---
-import "../styles/tailwind.css"
-import CustomStyles from "../styles/CustomStyles.astro"
+import "../styles/tailwind.css";
+import CustomStyles from "../styles/CustomStyles.astro";
 
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>OSSI@Janelia</title>
-		<CustomStyles/>
-	</head>
-	<body class="text-default bg-page">
-		<Header/>
-        <slot></slot>
-		<Footer/>
-		<script>
-			import '../scripts/navbarFunctions.js';
-		</script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.ico`} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>OSSI@Janelia</title>
+    <CustomStyles />
+  </head>
+  <body class="text-default bg-page">
+    <Header />
+    <slot />
+    <Footer />
+    <script>
+      import "../scripts/navbarFunctions.js";
+    </script>
+  </body>
 </html>
