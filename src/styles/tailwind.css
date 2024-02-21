@@ -34,7 +34,6 @@
   }
 
   .btn-tertiary {
-    
   }
 }
 
@@ -80,10 +79,10 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
+/* Style for "selected" tags */
 .selected {
-    background-color: var(--color-primary);
-    color: white; 
-    border-radius: 4px; 
-    padding: 4px 8px; 
-    margin: 0 0 0 4px;
-  }
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 0 0 0 4px;
+}

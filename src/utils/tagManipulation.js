@@ -1,21 +1,11 @@
-import { tagKeyNames } from "../data/tagCategoryNames";
+import { tagKeyNames } from "../content/tagCategoryNames";
 import { allLabNamesAndUrls } from "../data/labNamesUrls";
 
-// Alphabetize uniqueTags object by both the keys and the value within each key
-// function alphabetizeObj(uniqueTags) {
-//   let keys = Object.keys(uniqueTags);
-//   keys.sort();
-
-//   let alphabeticalUniqueTags = {};
-//   keys.forEach((key) => {
-//     // Alphabetically sort the values within each key
-//     uniqueTags[key].sort();
-//     // Then assign each alphabetized key to the new object alphabeticalUniqueTags
-//     alphabeticalUniqueTags[key] = uniqueTags[key];
-//   });
-
-//   return alphabeticalUniqueTags;
-// }
+// Used for assigning tag background colors in the filter menu
+export function getBackgroundColor(key) {
+  const keyAndColorObj = tagKeyNames.find((tag) => tag.key === key);
+  return keyAndColorObj ? keyAndColorObj.color : "#6ebebd";
+}
 
 // Takes in a string and returns a string with the first letter of each word capitalized
 // Used for displaying the tags in the filter menu
@@ -29,30 +19,26 @@ export function capitalizeTag(tag) {
   return capitalizedTag;
 }
 
-// function capitalizeKeys(tagsObj) {
-//   const capitalizedUniqueTags = {};
-//   Object.keys(tagsObj).forEach((key) => {
-//     const capitalizedKey = capitalizeTag(key);
-//     capitalizedUniqueTags[capitalizedKey] = tagsObj[key];
-//   });
-//   return capitalizedUniqueTags;
-// }
-
 // Takes in a content collection object (e.g., projects or ecosystems) and returns an object of only the unique tag keys and unique tag values within each key
 // All returned keys and tags are lowercase
 // Used to create the tag categories and tag option list in the filter menu
-export function extractUniqueTagsObjectFromContentCollection(
-  contentCollectionObj
-) {
+export function extractUniqueTagsObject(contentCollectionObj) {
   const uniqueTags = {};
+  //Ensure contentCollectionObj is always treated as an array, to handle cases where the length is 1
+  const normalizedCollection = Array.isArray(contentCollectionObj)
+    ? contentCollectionObj
+    : [contentCollectionObj];
 
-  contentCollectionObj.forEach((contentItem) => {
+  // console.log("contentCollectionObject:", contentCollectionObj);
+  normalizedCollection.forEach((contentItem) => {
     Object.entries(contentItem.data).forEach(([key, value]) => {
-      // tagKeyNames imported at top of file from data/tagCategoryNames - includes list of keys in projectData to consider "tags"
-      // If the current key is included in tagKeyNames, we want to check if the key exists in uniqueTags
-      if (tagKeyNames.includes(key)) {
+      // tagKeyNames imported at top of file from data/tagCategoryNames - an array of objects. Each obj has a category and a color
+      // If the current key is a value of "key" in an object in tagCategoryNames, we want to check if the key exists in uniqueTags
+      const isTagKey = tagKeyNames.some((tagKeyName) => tagKeyName.key === key);
+      if (isTagKey) {
+        //only process if the key has a value. User could have left it blank.
         if (value) {
-          // process for if the value of key is an array
+          // process for if the value of key is an array (can also be a string - see else statement below)
           if (Array.isArray(value)) {
             value.forEach((tagValue) => {
               const lowercaseTagValue = tagValue.toLowerCase();
@@ -87,11 +73,12 @@ export function extractUniqueTagsObjectFromContentCollection(
 
 // Takes in a single project object and returns an array of that project's tag values
 // Used to populate the tags on the invididual project cards
-export function extractUniqueTagValueArrayByProject(projectData) {
+export function extractUniqueTagValueArray(projectData) {
   const tagsObj = {};
   Object.entries(projectData).forEach(([key, value]) => {
-    // console.log("projectData: ", projectData);
-    if (tagKeyNames.includes(key)) {
+    // If the current key is a value of "key" in an object in tagCategoryNames, we want to check if the key exists in uniqueTags
+    const isTagKey = tagKeyNames.some((tagKeyName) => tagKeyName.key === key);
+    if (isTagKey) {
       if (value) {
         if (Array.isArray(value)) {
           tagsObj[key] = value.map((arrayValue) => arrayValue.toLowerCase());
@@ -110,7 +97,6 @@ export function findLabInfo(labNames) {
   if (!Array.isArray(labNames)) {
     labNames = [labNames];
   }
-
   const labInfoArray = labNames.map((labName) => {
     labName = labName.toLowerCase();
     const labData = allLabNamesAndUrls.find((entry) =>
@@ -118,7 +104,6 @@ export function findLabInfo(labNames) {
     );
     return labData ? { name: labData[0], url: labData[1] } : null;
   });
-
   return labInfoArray;
 }
 
@@ -148,3 +133,28 @@ export function generatePublicationLinks(frontmatter) {
   // Return null if conditions are not met
   return null;
 }
+
+// Alphabetize uniqueTags object by both the keys and the value within each key
+// function alphabetizeObj(uniqueTags) {
+//   let keys = Object.keys(uniqueTags);
+//   keys.sort();
+
+//   let alphabeticalUniqueTags = {};
+//   keys.forEach((key) => {
+//     // Alphabetically sort the values within each key
+//     uniqueTags[key].sort();
+//     // Then assign each alphabetized key to the new object alphabeticalUniqueTags
+//     alphabeticalUniqueTags[key] = uniqueTags[key];
+//   });
+
+//   return alphabeticalUniqueTags;
+// }
+
+// function capitalizeKeys(tagsObj) {
+//   const capitalizedUniqueTags = {};
+//   Object.keys(tagsObj).forEach((key) => {
+//     const capitalizedKey = capitalizeTag(key);
+//     capitalizedUniqueTags[capitalizedKey] = tagsObj[key];
+//   });
+//   return capitalizedUniqueTags;
+// }
