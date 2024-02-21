@@ -18,7 +18,7 @@ export default function ProjectCount({ allContent, contentType }) {
       if (contentType === "projects") {
         tagsArray = extractUniqueTagValueArray(entry.data);
       } else if (contentType === "ecosystems") {
-        tagsArray = entry.data.tagsArray;
+        tagsArray = extractUniqueTagValueArray(entry.data.tagsObj);
       }
       //we are only interested in projects/ecosystems with both matching tags to selectedTags (or if there are no selectedTags)
       //AND (in the case of projects only, ie., contentType === ecosystems will always be true)
