@@ -1,44 +1,50 @@
 ---
-import "@fontsource-variable/inter"; 
+import "@fontsource-variable/inter";
 ---
 
 <style is:inline is:global>
-    :root {
-      --font-sans: 'Inter Variable';
-      --font-serif: var(--font-sans);
-      --font-heading: var(--font-sans);
-  
-      /* --color-primary: rgb(30 64 175); */
-      --color-primary: rgb(5 141 150);
-      /* --color-secondary: rgb(30 58 138); */
-      --color-secondary: rgb(0 164 80);
-      /* --color-accent: rgb(109 40 217); */
-      --color-accent: rgb(63 194 205);
-  
-      --color-text-heading: rgb(0 0 0); 
-      --color-text-default: rgb(16 16 16);
-      --color-text-muted: rgb(16 16 16 / 66%);
+  :root {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
 
-      --color-bg-page: rgb(255 255 255);
-      --color-bg-page-dark: rgb(3 6 32);
-    }
-  
-    .dark {
-      --font-sans: 'Inter Variable';
-      --font-serif: var(--font-sans);
-      --font-heading: var(--font-sans);
-  
-      /* --color-primary: rgb(30 64 175); */
-      --color-primary: rgb(5 141 150);
-      /* --color-secondary: rgb(30 58 138); */
-      --color-secondary: rgb(0 164 80);
-      /* --color-accent: rgb(109 40 217); */
-      --color-accent: rgb(63 194 205);
-  
-      --color-text-heading: rgb(0 0 0); 
-      --color-text-default: rgb(229 236 246);
-      --color-text-muted: rgb(229 236 246 / 66%);
-      
-      --color-bg-page: var(--color-bg-page-dark);
-    }
-  </style>
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(16 16 16);
+    --color-text-muted: rgb(16 16 16 / 66%);
+
+    --color-bg-page: rgb(255 255 255);
+    --color-bg-page-dark: rgb(3 6 32);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+
+  .dark {
+    --font-sans: "Inter Variable";
+    --font-serif: var(--font-sans);
+    --font-heading: var(--font-sans);
+
+    /* --color-primary: rgb(30 64 175); */
+    --color-primary: rgb(5 141 150);
+    /* --color-secondary: rgb(30 58 138); */
+    --color-secondary: rgb(0 164 80);
+    /* --color-accent: rgb(109 40 217); */
+    --color-accent: rgb(63 194 205);
+
+    --color-text-heading: rgb(0 0 0);
+    --color-text-default: rgb(229 236 246);
+    --color-text-muted: rgb(229 236 246 / 66%);
+
+    --color-bg-page: var(--color-bg-page-dark);
+
+    /* default color - this is dynamically updated by handleTagSelection */
+    --color-bg-selected-tag: var(--color-primary);
+  }
+</style>
