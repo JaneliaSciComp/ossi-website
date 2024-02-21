@@ -1,7 +1,10 @@
 import FilterMenu from "./FilterMenu.jsx";
 import ProjectCount from "./ProjectCount.jsx";
 import ContentCard from "./ContentCard.jsx";
-import { extractUniqueTagValueArrayByProject } from "../../utils/tagManipulation.js";
+import {
+  extractUniqueTagValueArray,
+  extractUniqueTagsObject,
+} from "../../utils/tagManipulation.js";
 import ProjectTypeBtns from "./ProjectTypeBtns.jsx";
 import ToggleFilterMenuBtn from "./ToggleFilterMenuBtn.jsx";
 import ProjectTypeDropdown from "./ProjectTypeDropdown.jsx";
@@ -42,11 +45,7 @@ export default function CardsAndFiltersIsland({
                 title={content.data.title}
                 authors={content.data["author names"]}
                 tagline={content.data.tagline}
-                tagsArray={
-                  contentType === "projects"
-                    ? extractUniqueTagValueArrayByProject(content.data)
-                    : content.data.tagsArray
-                }
+                tagsObj={extractUniqueTagsObject(content)}
                 imageSrc={content.data["image file"]}
                 imageAlt={content.data["image alt text"]}
                 projectType={
