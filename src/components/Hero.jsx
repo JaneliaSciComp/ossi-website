@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getRandomImage } from "../utils/getRandomImage";
-import { heroImageFiles } from "../data/heroImageFiles.js";
-console.log("hero image files:", heroImageFiles);
+import { heroImageFiles } from "../../public/hero-images/heroImageFiles.js";
 
 export default function Hero({ baseUrl, title, subtitle }) {
   const [backgroundImg, setBackgroundImg] = useState("");
@@ -11,7 +10,6 @@ export default function Hero({ baseUrl, title, subtitle }) {
       setBackgroundImg(randomImageData);
     }
   }, []);
-  console.log(backgroundImg);
 
   return (
     <section
