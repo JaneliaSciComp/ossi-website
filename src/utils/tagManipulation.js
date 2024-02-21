@@ -7,18 +7,6 @@ export function getBackgroundColor(key) {
   return keyAndColorObj ? keyAndColorObj.color : "#6ebebd";
 }
 
-// Takes in a string and returns a string with the first letter of each word capitalized
-// Used for displaying the tags in the filter menu
-export function capitalizeTag(tag) {
-  tag = tag.trim();
-  let words = tag.split(" ");
-  for (let i = 0; i < words.length; i++) {
-    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
-  }
-  const capitalizedTag = words.join(" ");
-  return capitalizedTag;
-}
-
 // Takes in a content collection object (e.g., projects or ecosystems) and returns an object of only the unique tag keys and unique tag values within each key
 // All returned keys and tags are lowercase
 // Used to create the tag categories and tag option list in the filter menu
@@ -157,4 +145,16 @@ export function generatePublicationLinks(frontmatter) {
 //     capitalizedUniqueTags[capitalizedKey] = tagsObj[key];
 //   });
 //   return capitalizedUniqueTags;
+// }
+
+// // Takes in a string and returns a string with the first letter of each word capitalized
+// // Used for displaying the tags in the filter menu
+// export function capitalizeTag(tag) {
+//   tag = tag.trim();
+//   let words = tag.split(" ");
+//   for (let i = 0; i < words.length; i++) {
+//     words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+//   }
+//   const capitalizedTag = words.join(" ");
+//   return capitalizedTag;
 // }
