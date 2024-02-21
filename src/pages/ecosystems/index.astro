@@ -23,15 +23,16 @@ const allRelatedProjects = await Promise.all(
     //extracted from the relatedProjects subset of the project content collection.
     //This will be used to create the tags on each individual ecosystem card.
     ecosystem.data.tagsObj = extractUniqueTagsObject(relatedProjects);
-    // console.log("indiv ecosystem: ", ecosystem.data.tagsObj);
 
     return relatedProjects;
   })
 );
 //needed to add the [0] because allRelatedProjects is wrapped in an extra set of square brackets. This just removes them.
-// console.log(allRelatedProjects[0]);
-const uniqueTags = extractUniqueTagsObject(allRelatedProjects[0]);
-// console.log("unique tags", uniqueTags);
+const flattenedRelatedProjects = allRelatedProjects.reduce(
+  (acc, currentArray) => acc.concat(currentArray),
+  []
+);
+const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
 ---
 
 <BaseLayout>
