@@ -4,8 +4,6 @@ import { Select as BaseSelect } from "@mui/base/Select";
 import { Option as BaseOption } from "@mui/base/Option";
 import clsx from "clsx";
 import { TbSelector } from "react-icons/tb";
-import { handleTagSelection } from "./stores/selectedTagsStore.js";
-import { capitalizeTag } from "../../utils/tagManipulation.js";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore.js";
 
 const getOptionColorClasses = ({ selected, highlighted, disabled }) => {

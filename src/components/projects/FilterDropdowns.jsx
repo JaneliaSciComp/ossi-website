@@ -5,7 +5,6 @@ import { Option as BaseOption } from "@mui/base/Option";
 import clsx from "clsx";
 import { TbSelector } from "react-icons/tb";
 import { handleTagSelection } from "./stores/selectedTagsStore.js";
-import { capitalizeTag } from "../../utils/tagManipulation.js";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore.js";
 
@@ -80,7 +79,7 @@ export default function FilterDropdowns({ tagCategory, tags }) {
             value={individualTag}
             className={`cursor-pointer my-1`}
           >
-            {capitalizeTag(individualTag)}
+            {individualTag.toUppercase()}
           </Option>
         );
       })}

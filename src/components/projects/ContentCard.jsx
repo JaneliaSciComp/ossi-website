@@ -3,7 +3,6 @@ import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore";
 import {
-  capitalizeTag,
   extractUniqueTagValueArray,
   getBackgroundColor,
 } from "../../utils/tagManipulation";
