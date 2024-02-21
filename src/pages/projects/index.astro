@@ -6,7 +6,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.jsx";
 import CardsAndFiltersIsland from "../../components/projects/CardsAndFiltersIsland.jsx";
 
-import { extractUniqueTagsObjectFromContentCollection } from "../../utils/tagManipulation.js";
+import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
 
 const baseUrl = import.meta.env.BASE_URL;
 const pageTitle = "OSSI-supported projects";
@@ -14,7 +14,7 @@ const allProjects = await getCollection("projects");
 
 // uniqueTags is an object where keys = unique tag categories, values = unique tags within a category, both across allProjects. All lowercase.
 // used to populate the filter menu
-const uniqueTags = extractUniqueTagsObjectFromContentCollection(allProjects);
+const uniqueTags = extractUniqueTagsObject(allProjects);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
