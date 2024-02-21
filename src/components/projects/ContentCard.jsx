@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore";
-import { capitalizeTag } from "../../utils/tagManipulation";
+import {
+  capitalizeTag,
+  extractUniqueTagValueArray,
+  getBackgroundColor,
+} from "../../utils/tagManipulation";
 import { getRandomImage } from "../../utils/getRandomImage";
 
 const placeholderProjectImages = ["Bg0Geue-cY8", "f4pUuCc3M0g", "OqtafYT5kTw"];
@@ -13,13 +17,14 @@ export default function ContentCard({
   title,
   authors,
   tagline,
-  tagsArray,
+  tagsObj,
   imageSrc,
   projectType,
 }) {
   const $selectedTags = useStore(selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
   const [randomImage, setRandomImage] = useState("");
+  const tagsArray = extractUniqueTagValueArray(tagsObj);
 
   useEffect(() => {
     !imageSrc && setRandomImage(getRandomImage(placeholderProjectImages));
@@ -55,15 +60,21 @@ export default function ContentCard({
         </div>
 
         <div className="flex flex-wrap gap-2 p-4">
-          {tagsArray.map((tag, index) => {
-            const tagClass = `bg-primary text-white px-2 py-1 rounded-md text-sm ${
-              index < 3 ? "" : "hidden"
-            }`;
-            return (
-              <span key={`${title} ${tag}`} className={tagClass}>
-                {capitalizeTag(tag)}
-              </span>
-            );
+          {Object.entries(tagsObj).map(([key, tags]) => {
+            return tags.map((tag, index) => {
+              const tagClass = `bg-primary text-white px-2 py-1 rounded-md text-sm ${
+                index < 3 ? "" : "hidden"
+              }`;
+              return (
+                <span
+                  key={`${title} ${tag}`}
+                  className={tagClass}
+                  style={{ backgroundColor: getBackgroundColor(key) }}
+                >
+                  {tag}
+                </span>
+              );
+            });
           })}
         </div>
 
