@@ -6,11 +6,7 @@ import {
   selectedTags,
   handleTagSelection,
 } from "./stores/selectedTagsStore.js";
-import { tagKeyNames } from "../../content/tagCategoryNames.js";
-import {
-  capitalizeTag,
-  getBackgroundColor,
-} from "../../utils/tagManipulation.js";
+import { getBackgroundColor } from "../../utils/tagManipulation.js";
 
 export default function FilterMenu({ uniqueTags }) {
   const $selectedTags = useStore(selectedTags);
