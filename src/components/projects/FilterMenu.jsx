@@ -6,9 +6,10 @@ import {
   selectedTags,
   handleTagSelection,
 } from "./stores/selectedTagsStore.js";
+import { tagKeyNames } from "../../content/tagCategoryNames.js";
 import {
-  extractUniqueTagValueArrayByProject,
   capitalizeTag,
+  getBackgroundColor,
 } from "../../utils/tagManipulation.js";
 
 export default function FilterMenu({ uniqueTags }) {
@@ -67,8 +68,13 @@ export default function FilterMenu({ uniqueTags }) {
                       $selectedTags.includes(individualTag) ? "selected" : ""
                     }`}
                     onClick={() => handleTagSelection(individualTag)}
+                    style={{
+                      ...($selectedTags.includes(individualTag) && {
+                        backgroundColor: getBackgroundColor(key),
+                      }),
+                    }}
                   >
-                    {capitalizeTag(individualTag)}
+                    {individualTag.toUpperCase()}
                   </li>
                 );
               })}
