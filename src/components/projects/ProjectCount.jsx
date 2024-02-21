@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore.js";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore.js";
-import { extractUniqueTagValueArrayByProject } from "../../utils/tagManipulation.js";
+import { extractUniqueTagValueArray } from "../../utils/tagManipulation.js";
 
 export default function ProjectCount({ allContent, contentType }) {
   const $selectedTags = useStore(selectedTags);
@@ -16,7 +16,7 @@ export default function ProjectCount({ allContent, contentType }) {
       //methods to create the tagsArray. Only do this step if there are any selectedTags
       let tagsArray = [];
       if (contentType === "projects") {
-        tagsArray = extractUniqueTagValueArrayByProject(entry.data);
+        tagsArray = extractUniqueTagValueArray(entry.data);
       } else if (contentType === "ecosystems") {
         tagsArray = entry.data.tagsArray;
       }
