@@ -3,6 +3,7 @@ title: Your project title
 tagline: Your project tagline
 author names: List of author names written out exactly how you want the list to appear on the page (i.e., do not provide an array of names in square brackets)
 project type: [OSSI - current, OSSI - alumni, Other]
+OSSI proposal link: Link to OSSI proposal - only include if project is OSSI-supported
 github repository link array:
   [
     Optional URL to the project GitHub repository,
@@ -52,16 +53,6 @@ associated labs and projects:
     MultiFISH Project Team,
     Scientific Computing Software Support Team,
   ]
-software type:
-  [
-    Command line application,
-    Framework,
-    Native application,
-    Package,
-    Service,
-    Web application,
-    Website,
-  ]
 programming language:
   [C++, Go, Java, Julia, Kotlin, MATLAB, Nextflow, Python, Javascript]
 software ecosystem:
@@ -73,8 +64,6 @@ software ecosystem:
     Java Virtual Machine,
     Napari,
   ]
-open source license: [BDS-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT]
-supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
 related experimental techniques:
   [
     Calcium imaging,
@@ -86,6 +75,18 @@ related experimental techniques:
     Neural recording,
     Single-molecule localization microscopy (SMLM),
     Spatial transcriptomics,
+  ]
+supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
+open source license: [BDS-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT]
+software type:
+  [
+    Command line application,
+    Framework,
+    Native application,
+    Package,
+    Service,
+    Web application,
+    Website,
   ]
 software use case:
   [
