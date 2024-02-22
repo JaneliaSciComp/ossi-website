@@ -3,6 +3,7 @@ title: Peta-scale lightsheet processing
 tagline: Developer-friendly & user-friendly software for processing peta-byte scale lightsheet datasets.
 author names: Preibisch & Saalfeld
 project type: [OSSI - current]
+OSSI proposal link: https://drive.google.com/file/d/17m9LCBOg_YXQj0Q_LOsGYDOnSd_88ONJ/view
 github repository link array:
   [
     https://github.com/preibischlab/bigstitcher/,

@@ -3,6 +3,7 @@ title: Cellpose and Suite2p
 tagline: Maintain, extend, adapt and document Suite2p and Cellpose.
 author names: Stringer et al.
 project type: [OSSI - current]
+OSSI proposal link: https://drive.google.com/file/d/1-KLHwZ3g6A1F8AWYge7llfEHViaHWsoc/view
 github repository link array:
   [https://github.com/MouseLand/cellpose, https://github.com/MouseLand/suite2p]
 github repository text array: [Github Cellpose, Github Suite2p]

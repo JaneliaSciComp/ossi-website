@@ -3,6 +3,7 @@ title: Kilosort
 tagline: Maintain and develop python version of Kilosort (electrophysiology data).
 author names: Pachitariu et al.
 project type: [OSSI - current]
+OSSI proposal link: https://drive.google.com/file/d/1YrH-O3F2BQGOQkHDQIyRyKKGHHiqZLag/view
 github repository link array: [https://github.com/MouseLand/Kilosort]
 publication DOI array: [https://doi.org/10.1101/061481]
 publication text array: [Pachitariu et al. (2016)]

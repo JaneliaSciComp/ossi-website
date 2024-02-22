@@ -3,6 +3,7 @@ title: VVD Viewer
 tagline: Develop documentation for the interactive VVD 3D viewer/renderer for very large image volumes.
 author names: Kawase et al.
 project type: [OSSI - current]
+OSSI proposal link: https://drive.google.com/file/d/1Mn_V_82wzQGgKOTy245qk7sATF9yp2vb/view
 github repository link array: [https://github.com/JaneliaSciComp/VVDViewer]
 # github repository text array:
 #   [

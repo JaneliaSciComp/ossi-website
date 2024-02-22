@@ -3,6 +3,7 @@ title: An open-source platform for single-molecule localization
 tagline: Develop a user-friendly (napari) deep learning-based single-molecule detection software.
 author names: Turaga et al.
 project type: [OSSI - current]
+OSSI proposal link: https://drive.google.com/file/d/14kZdz066bwxKvpUAV8-Vg41kp6KgVqxr/view
 github repository link array: [https://github.com/TuragaLab/DECODE]
 associated labs and projects: turaga lab
 software type: package

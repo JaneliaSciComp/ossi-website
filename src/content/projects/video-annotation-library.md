@@ -3,6 +3,7 @@ title: Video Annotation Library
 tagline: A usable and extensible library for video annotation for machine learning.
 author names: Xi Peng, Kristin Branson
 project type: [OSSI - current]
+OSSI proposal link: https://drive.google.com/file/d/1iS6GLiDBlSOt-wdNMNLIpL-qIO7h4DOp/view
 github repository link array:
   [https://github.com/JaneliaSciComp/videoAnnotation]
 image file: jacob-miller-ot5kWZkH97s-unsplash.jpg

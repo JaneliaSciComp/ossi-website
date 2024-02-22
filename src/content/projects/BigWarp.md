@@ -3,6 +3,7 @@ title: BigWarp
 tagline: Maintain and extend BigWarp (3D non-rigid registration for very large volumes).
 author names: Bogovic & Saalfeld
 project type: [OSSI - current]
+OSSI proposal link: https://drive.google.com/file/d/1jwba3zCZcSDjPUGKq1APkwVA20TIeJUY/view
 github repository link array: [https://github.com/saalfeldlab/bigwarp]
 project homepage link array: [https://imagej.net/plugins/bigwarp]
 publication DOI array: [https://doi.org/10.1109/ISBI.2016.7493463]
