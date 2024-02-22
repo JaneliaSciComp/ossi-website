@@ -8,6 +8,7 @@ const projectsCollection = defineCollection({
     tagline: z.string(),
     "author names": z.string(),
     "project type": z.array(z.string()),
+    "OSSI proposal link": z.string().optional(),
     "github repository link array": z.array(z.string()).optional(),
     "github repository text array": z.array(z.string()).optional(),
     "project homepage link array": z.array(z.string()).optional(),

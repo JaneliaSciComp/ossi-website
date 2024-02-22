@@ -150,32 +150,40 @@ const baseUrl = import.meta.env.BASE_URL;
           }
 
           {
-            frontmatter["project homepage link array"] && (
-              <div class="flex flex-wrap">
+            (frontmatter["project homepage link array"] ||
+              frontmatter["OSSI proposal link"]) && (
+              <div>
                 <p class="font-bold pr-2">Additional information:</p>
 
-                {frontmatter["project homepage link array"].length === 1 ? (
-                  <Link
-                    text="Project website"
-                    url={frontmatter["project homepage link array"]}
-                  />
-                ) : (
-                  frontmatter["project homepage link array"].map(
-                    (link, index) => (
-                      <Fragment>
-                        <Link
-                          text={
-                            frontmatter["project homepage text array"][index]
-                          }
-                          url={link}
-                        />
-                        {index <
-                          frontmatter["project homepage link array"].length -
-                            1 && <span class="pr-1">, </span>}
-                      </Fragment>
-                    )
-                  )
+                {frontmatter["OSSI proposal link"] && (
+                  <div class="mb-1">
+                    <Link
+                      text="OSSI funding proposal"
+                      url={frontmatter["OSSI proposal link"]}
+                    />
+                  </div>
                 )}
+
+                {frontmatter["project homepage link array"] &&
+                  (frontmatter["project homepage link array"].length === 1 ? (
+                    <Link
+                      text="Project website"
+                      url={frontmatter["project homepage link array"]}
+                    />
+                  ) : (
+                    frontmatter["project homepage link array"].map(
+                      (link, index) => (
+                        <div class="mb-1">
+                          <Link
+                            text={
+                              frontmatter["project homepage text array"][index]
+                            }
+                            url={link}
+                          />
+                        </div>
+                      )
+                    )
+                  ))}
               </div>
             )
           }

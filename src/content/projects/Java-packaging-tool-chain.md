@@ -3,6 +3,7 @@ title: Java packaging tool chain
 tagline: Develop an easy-to-use packaging system for Java applications.
 author names: Saalfeld et al.
 project type: [OSSI - current]
+OSSI proposal link: https://drive.google.com/file/d/1ig0xMeHcsLe-BF-kaHLthUfQrtnwQyi2/view
 associated labs and projects:
   [saalfeld lab, scientific computing software support team]
 software type: service
