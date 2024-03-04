@@ -23,3 +23,5 @@ pnpm-debug.log*
 # reference files
 src/sampleBlogPosts.txt
 src/sampleProjectTags.txt
+src/sampleAllProjectsOrEcosystemsUniqueTags.txt
+src/sampleDataSentToIndividualCard.txt
