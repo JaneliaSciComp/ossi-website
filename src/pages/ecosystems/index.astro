@@ -27,7 +27,7 @@ const allRelatedProjects = await Promise.all(
     return relatedProjects;
   })
 );
-//needed to add the [0] because allRelatedProjects is wrapped in an extra set of square brackets. This just removes them.
+//allRelatedProjects is wrapped in an extra set of square brackets. This just removes them.
 const flattenedRelatedProjects = allRelatedProjects.reduce(
   (acc, currentArray) => acc.concat(currentArray),
   []
