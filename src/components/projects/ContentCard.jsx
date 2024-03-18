@@ -61,7 +61,7 @@ export default function ContentCard({
         <div className="flex flex-wrap gap-2 p-4">
           {Object.entries(tagsObj).map(([key, tags]) => {
             return tags.map((tag, index) => {
-              const tagClass = `bg-primary text-white px-2 py-1 rounded-md text-sm ${
+              const tagClass = `bg-primary text-white px-1.5 py-1 rounded-md text-xs ${
                 index < 3 ? "" : "hidden"
               }`;
               return (
