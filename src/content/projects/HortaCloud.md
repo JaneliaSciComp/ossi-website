@@ -17,7 +17,7 @@ associated labs and projects:
 software type: [Native application, Service, Web application, Website]
 programming language: [Java, Typescript]
 software ecosystem: [Janelia Workstation, Java Virtual Machine]
-open source license: [BDS-3 Clause]
+open source license: [BSD-3 Clause]
 supported file types: [OME-Zarr, SWC]
 related experimental techniques:
   [

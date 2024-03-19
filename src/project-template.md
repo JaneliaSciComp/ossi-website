@@ -77,7 +77,7 @@ related experimental techniques:
     Spatial transcriptomics,
   ]
 supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-open source license: [BDS-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT]
+open source license: [BSD-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT]
 software type:
   [
     Command line application,
