@@ -22,8 +22,8 @@ export default function CardsAndFiltersIsland({
         <ProjectTypeBtns contentType={contentType} />
         <div className="md:hidden flex items-end justify-between pb-8">
           <div className={`${contentType === "ecosystems" && "hidden"} w-1/2`}>
-            <h3 className="cursor-pointer font-bold flex items-center justify-between py-2">
-              Project type
+            <h3 className="font-bold flex items-center justify-between py-2">
+              Filter by OSSI funding status
             </h3>
             <ProjectTypeDropdown />
           </div>

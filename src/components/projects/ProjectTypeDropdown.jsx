@@ -11,17 +11,14 @@ const getOptionColorClasses = ({ selected, highlighted, disabled }) => {
   if (disabled) {
     classes += " text-slate-400 dark:text-slate-700";
   } else {
-    if (selected) {
-      classes +=
-        " bg-purple-100 dark:bg-purple-950 text-purple-950 dark:text-purple-50";
-    } else if (highlighted) {
-      classes +=
-        " bg-slate-100 dark:bg-neutral-800 text-slate-900 dark:text-slate-300";
+    if (selected || highlighted) {
+      classes += " bg-primary text-white dark:text-slate-100";
+      // } else if (highlighted) {
+      //   classes +=
+      //     " bg-slate-100 dark:bg-neutral-800 text-slate-900 dark:text-slate-300";
     }
     classes +=
       "hover:dark:bg-neutral-800 hover:bg-slate-100 hover:dark:text-slate-300 hover:text-slate-900";
-    classes +=
-      "focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 focus-visible:dark:outline-purple-300";
   }
   return classes;
 };

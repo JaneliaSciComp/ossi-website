@@ -22,7 +22,7 @@ export default function ToggleFilterMenuBtn() {
       }}
     >
       <button
-        className="md:hidden btn-secondary flex gap-2 py-2 px-3"
+        className="md:hidden btn-filter flex gap-2 py-2 px-3"
         onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
       >
         <p className="text-sm">Filter by tag</p>
