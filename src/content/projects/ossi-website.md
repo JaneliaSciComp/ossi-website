@@ -41,7 +41,7 @@ software type: [Website]
 #     Java Virtual Machine,
 #     Napari,
 #   ]
-open source license: [BDS-3 Clause]
+open source license: [BSD-3 Clause]
 # supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
 # related experimental techniques:
 #   [

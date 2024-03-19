@@ -42,7 +42,7 @@ associated labs and projects:
 software type: [Package]
 programming language: [Java, Nextflow]
 software ecosystem: [BigDataViewer, ImgLib2]
-open source license: [BDS-3 Clause]
+open source license: [BSD-3 Clause]
 supported file types: [N5, TIFF, Zeiss CZI]
 related experimental techniques:
   [
