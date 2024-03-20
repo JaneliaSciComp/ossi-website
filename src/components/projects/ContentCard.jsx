@@ -56,9 +56,29 @@ export default function ContentCard({
               loading="lazy"
             />
           )}
+          {projectType === "OSSI - current" && (
+            <span className="absolute top-0 right-0 bg-secondary text-white px-2 py-1 text-sm rounded-bl-md">
+              {projectType}
+            </span>
+          )}
+          {projectType === "OSSI - previous" && (
+            <span className="absolute top-0 right-0 bg-primary text-white px-2 py-1 text-sm rounded-bl-md">
+              {projectType}
+            </span>
+          )}
         </div>
 
-        <div className="flex flex-wrap gap-2 p-4">
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-slate-200 p-4">
+          {title}
+        </h2>
+
+        <p className="text-gray-600 dark:text-slate-400 text-sm px-4">
+          {authors}
+        </p>
+
+        <p className="text-gray-700 dark:text-slate-300 p-4">{tagline}</p>
+
+        <div className="flex flex-wrap gap-2 px-4 py-2">
           {Object.entries(tagsObj).map(([key, tags]) => {
             return tags.map((tag, index) => {
               const tagClass = `bg-primary text-white px-1.5 py-1 rounded-md text-xs ${
@@ -76,16 +96,6 @@ export default function ContentCard({
             });
           })}
         </div>
-
-        <h2 className="text-xl font-semibold text-gray-800 dark:text-slate-200 p-4">
-          {title}
-        </h2>
-
-        <p className="text-gray-600 dark:text-slate-400 text-sm px-4">
-          {authors}
-        </p>
-
-        <p className="text-gray-700 dark:text-slate-300 p-4">{tagline}</p>
       </a>
     </div>
   );
