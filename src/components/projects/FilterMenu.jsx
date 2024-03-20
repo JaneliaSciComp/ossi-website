@@ -42,6 +42,9 @@ export default function FilterMenu({ uniqueTags }) {
         <TbX />
       </button>
       <div className="overflow-y-scroll md:overflow-hidden px-2">
+        <h3 className="hidden md:flex items-center justify-between py-2 font-bold ">
+          Filter by tag
+        </h3>
         {Object.keys(uniqueTags).map((key) => (
           <div className="mb-4" key={`tagCategory-${key}`}>
             <h3
