@@ -9,6 +9,16 @@ export const headerData = {
     {
       text: "Projects",
       href: `${base}/projects`,
+      links: [
+        {
+          text: "Explore all projects",
+          href: `${base}/projects`,
+        },
+        {
+          text: "About OSSI and OSSI-supported projects",
+          href: `${base}/ossi`,
+        },
+      ],
     },
     {
       text: "Ecosystems",
