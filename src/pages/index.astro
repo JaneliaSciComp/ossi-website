@@ -42,17 +42,36 @@ const baseUrl = import.meta.env.BASE_URL;
     </Fragment>
   </CallToAction>
 
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "Learn more about OSSI",
+        href: `${baseUrl}/ossi`,
+        target: "_blank",
+      },
+    ]}
+  >
+    <Fragment slot="title"
+      >Janelia Open Science Software Intiative (OSSI)</Fragment
+    >
+    <Fragment slot="content">
+      An important source of support for scientific software development and
+      maintenance at Janelia is the Open Source Science Software Initative
+      (OSSI).
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
+    </Fragment>
+  </CallToAction>
+
   <ContentGridDisplay
     title="Janelia Software Blog"
     information="The latest updates on Janelia software projects."
     content="blog"
     linkText="View all posts"
     linkUrl={`${baseUrl}/blog`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
-    </Fragment>
-  </ContentGridDisplay>
+  />
 
   <!-- <Wrapper containerClass="max-w-5xl mx-auto">
     <div class="max-w-3xl pt-6 rounded-md">
@@ -72,25 +91,6 @@ const baseUrl = import.meta.env.BASE_URL;
       </TextBlock>
     </div>
   </Wrapper> -->
-
-  <CallToAction
-    actions={[
-      {
-        text: "Learn more about OSSI and OSSI-supported projects",
-        href: `${baseUrl}/ossi`,
-        target: "_blank",
-      },
-    ]}
-  >
-    <Fragment slot="title"
-      >Janelia Open Science Software Intiative (OSSI)</Fragment
-    >
-    <Fragment slot="content">
-      An important source of support for scientific software development and
-      maintenance at Janelia is the Open Source Science Software Initative
-      (OSSI).
-    </Fragment>
-  </CallToAction>
 
   <CallToAction
     actions={[
