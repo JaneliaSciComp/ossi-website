@@ -53,9 +53,13 @@ export default function FilterMenu({ uniqueTags }) {
         <TbX />
       </button>
       <div className="overflow-y-scroll md:overflow-hidden px-2">
-        <h3 className="hidden md:flex items-center justify-between py-2 font-bold ">
-          Filter by tag
-        </h3>
+        <div className="flex items-center justify-between pt-2 pb-4">
+          <h3 className="hidden md:flex text-lg font-bold ">Filter by tag</h3>
+          <button className="btn-reset" onClick={() => selectedTags.set([])}>
+            Reset
+          </button>
+        </div>
+
         {Object.keys(uniqueTags).map((key) => (
           <div className="mb-4" key={`tagCategory-${key}`}>
             <h3
@@ -100,8 +104,8 @@ export default function FilterMenu({ uniqueTags }) {
         >
           View projects
         </button>
-        <button className="btn" onClick={() => selectedTags.set([])}>
-          Reset filters
+        <button className="btn md:hidden" onClick={() => selectedTags.set([])}>
+          Reset
         </button>
       </div>
     </div>

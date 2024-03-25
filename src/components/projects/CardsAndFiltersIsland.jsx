@@ -16,8 +16,8 @@ export default function CardsAndFiltersIsland({
   baseUrl,
   contentType,
 }) {
-  // const $selectedTags = useStore(selectedTags);
-  // const $selectedProjectType = useStore(selectedProjectType);
+  const $selectedTags = useStore(selectedTags);
+  const $selectedProjectType = useStore(selectedProjectType);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);

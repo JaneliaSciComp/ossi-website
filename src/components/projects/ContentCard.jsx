@@ -34,9 +34,8 @@ export default function ContentCard({
       className={`${
         ($selectedTags.length &&
           !tagsArray.some((tag) => $selectedTags.includes(tag))) ||
-        ($selectedProjectType &&
-          $selectedProjectType != "All" &&
-          $selectedProjectType != projectType)
+        ($selectedProjectType.length &&
+          !$selectedProjectType.includes(projectType))
           ? "hidden"
           : ""
       } col-span-1 w-full h-full mx-auto mb-4 bg-white dark:bg-slate-900 rounded-md shadow-md overflow-hidden border-gray-200 dark:border-slate-800 border-2 hover:shadow-lg transition duration-300 transform hover:scale-105`}
@@ -80,14 +79,11 @@ export default function ContentCard({
 
         <div className="flex flex-wrap gap-2 px-4 py-2">
           {Object.entries(tagsObj).map(([key, tags]) => {
-            return tags.map((tag, index) => {
-              const tagClass = `bg-primary text-white px-1.5 py-1 rounded-md text-xs ${
-                index < 3 ? "" : "hidden"
-              }`;
+            return tags.map((tag) => {
               return (
                 <span
                   key={`${title} ${tag}`}
-                  className={tagClass}
+                  className="bg-primary text-white px-1.5 py-1 rounded-md text-xs"
                   style={{ backgroundColor: getBackgroundColor(key) }}
                 >
                   {tag}
