@@ -22,10 +22,10 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
     client:load
     baseUrl={baseUrl}
     title="Software Projects"
-    subtitle='Software developed at Janelia, including OSSI-funded projects'
+    subtitle="Software developed at Janelia, including OSSI-funded projects"
   />
   <CardsAndFiltersIsland
-    client:load
+    client:only
     uniqueTags={uniqueTags}
     allContent={allProjects}
     baseUrl={baseUrl}

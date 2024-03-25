@@ -5,6 +5,10 @@ import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
 import ProjectTypeBtns from "./ProjectTypeBtns.jsx";
 import ToggleFilterMenuBtn from "./ToggleFilterMenuBtn.jsx";
 import ProjectTypeDropdown from "./ProjectTypeDropdown.jsx";
+import { useState, useEffect } from "react";
+import { useStore } from "@nanostores/react";
+import { selectedTags } from "./stores/selectedTagsStore.js";
+import { selectedProjectType } from "./stores/selectedProjectTypeStore.js";
 
 export default function CardsAndFiltersIsland({
   uniqueTags,
@@ -12,6 +16,25 @@ export default function CardsAndFiltersIsland({
   baseUrl,
   contentType,
 }) {
+  // const $selectedTags = useStore(selectedTags);
+  // const $selectedProjectType = useStore(selectedProjectType);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    // Check for 'tags' in the query string and update the selectedTags store
+    const tags = searchParams.getAll("tags");
+    if (tags.length) {
+      selectedTags.set(tags);
+    }
+
+    // Check for 'projectType' in the query string and update the selectedProjectType store
+    const projectType = searchParams.getAll("projectType"); // Gets the first 'projectType' value - need to
+    if (projectType.length) {
+      selectedProjectType.set(projectType);
+    }
+  }, []);
+
   return (
     <section className="px-6 py-6 md:py-12 lg:py-20 mx-auto max-w-6xl md:grid grid-cols-3 gap-4 ">
       <div className="col-start-1 col-span-1 ">

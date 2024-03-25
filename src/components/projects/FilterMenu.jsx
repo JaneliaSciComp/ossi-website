@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { TbMinus, TbPlus, TbX } from "react-icons/tb";
 import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore.js";
@@ -10,7 +10,6 @@ import { getBackgroundColor } from "../../utils/tagManipulation.js";
 
 export default function FilterMenu({ uniqueTags }) {
   const $selectedTags = useStore(selectedTags);
-
   //used to manage state for the close ("x") button on the small screen filter menu
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
 
@@ -22,6 +21,18 @@ export default function FilterMenu({ uniqueTags }) {
     });
     return initialVisibility;
   });
+
+  // Effect to update categoryVisibility when $selectedTags changes
+  useEffect(() => {
+    const newVisibility = {};
+    Object.keys(uniqueTags).forEach((key) => {
+      newVisibility[key] = uniqueTags[key].some((tag) =>
+        $selectedTags.includes(tag)
+      );
+    });
+    setCategoryVisibility(newVisibility);
+  }, [$selectedTags]);
+
   const toggleCategoryVisibility = (categoryKey) => {
     setCategoryVisibility((prevVisibility) => ({
       ...prevVisibility,
