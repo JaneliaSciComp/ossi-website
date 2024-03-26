@@ -23,7 +23,7 @@ export default function CardsAndFiltersIsland({
     const searchParams = new URLSearchParams(window.location.search);
 
     // Check for 'tags' in the query string and update the selectedTags store
-    const tags = searchParams.getAll("tags");
+    const tags = searchParams.getAll("tag");
     if (tags.length) {
       selectedTags.set(tags);
     }
@@ -58,7 +58,7 @@ export default function CardsAndFiltersIsland({
             </button>
             <ProjectTypeDropdown />
           </div>
-          <ToggleFilterMenuBtn uniqueTags />
+          <ToggleFilterMenuBtn uniqueTags={uniqueTags} />
         </div>
 
         <ProjectCount allContent={allContent} contentType={contentType} />

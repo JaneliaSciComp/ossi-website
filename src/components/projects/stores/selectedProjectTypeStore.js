@@ -10,7 +10,6 @@ function updateProjectTypeSearchParams(updatedProjectType) {
 
     searchParams.delete("projectType");
 
-    // Add each tag as a separate 'tags' parameter
     updatedProjectType.forEach((projectType) =>
       searchParams.append("projectType", projectType)
     );
@@ -21,7 +20,6 @@ function updateProjectTypeSearchParams(updatedProjectType) {
 }
 
 export function handleProjectTypeButton(type, e) {
-  console.log("type passed to project type store: ", type);
   const prevProjectType = selectedProjectType.get();
   let updatedProjectType = [];
 
@@ -41,7 +39,6 @@ export function handleProjectTypeButton(type, e) {
 }
 
 export function handleProjectTypeDropdown(type) {
-  console.log("type passed to project type store: ", type);
   selectedProjectType.set(type);
   updateProjectTypeSearchParams(type);
 }

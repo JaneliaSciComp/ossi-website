@@ -53,9 +53,13 @@ export default function FilterMenu({ uniqueTags }) {
         <TbX />
       </button>
       <div className="overflow-y-scroll md:overflow-hidden px-2">
-        <div className="flex items-center justify-between pt-2 pb-4">
-          <h3 className="hidden md:flex text-lg font-bold ">Filter by tag</h3>
-          <button className="btn-reset" onClick={() => selectedTags.set([])}>
+        {/* This h3 and button are visible only on medium and larger screen sizes */}
+        <div className="hidden md:flex items-center justify-between pt-2 pb-4">
+          <h3 className="text-lg font-bold ">Filter by tag</h3>
+          <button
+            className="btn-reset"
+            onClick={() => handleTagSelection(null)}
+          >
             Reset
           </button>
         </div>
@@ -104,7 +108,11 @@ export default function FilterMenu({ uniqueTags }) {
         >
           View projects
         </button>
-        <button className="btn md:hidden" onClick={() => selectedTags.set([])}>
+        {/* This reset button is visible on small screens */}
+        <button
+          className="btn md:hidden"
+          onClick={() => handleTagSelection(null)}
+        >
           Reset
         </button>
       </div>

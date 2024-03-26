@@ -65,7 +65,6 @@ Button.propTypes = {
 //Here is the customization of the component ------------------------------------
 export default function ProjectTypeDropdown() {
   const $selectedProjectType = useStore(selectedProjectType);
-  console.log("selected project type in dropdown: ", $selectedProjectType);
   const handleChange = (_, selectedArray) => {
     handleProjectTypeDropdown(selectedArray); // Update your store based on the new value
   };
