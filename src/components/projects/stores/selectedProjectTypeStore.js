@@ -2,7 +2,26 @@ import { atom } from "nanostores";
 
 export const selectedProjectType = atom([]);
 
-export function handleProjectTypeSelection(type, e) {
+function updateProjectTypeSearchParams(updatedProjectType) {
+  // update URL search params
+  if (typeof window !== "undefined") {
+    const currentUrl = new URL(window.location);
+    const searchParams = new URLSearchParams(currentUrl.search);
+
+    searchParams.delete("projectType");
+
+    // Add each tag as a separate 'tags' parameter
+    updatedProjectType.forEach((projectType) =>
+      searchParams.append("projectType", projectType)
+    );
+
+    // Use history.pushState to update the URL without reloading the page
+    window.history.pushState({}, "", `${currentUrl.pathname}?${searchParams}`);
+  }
+}
+
+export function handleProjectTypeButton(type, e) {
+  console.log("type passed to project type store: ", type);
   const prevProjectType = selectedProjectType.get();
   let updatedProjectType = [];
 
@@ -18,25 +37,13 @@ export function handleProjectTypeSelection(type, e) {
     e.currentTarget.blur();
   }
 
-  // update URL search params
-  if (typeof window !== "undefined") {
-    const currentUrl = new URL(window.location);
-    const searchParams = new URLSearchParams(currentUrl.search);
-
-    searchParams.delete("projectType");
-
-    // Add each tag as a separate 'tags' parameter
-    if (type != null) {
-      updatedProjectType.forEach((projectType) =>
-        searchParams.append("projectType", projectType)
-      );
-
-      // Use history.pushState to update the URL without reloading the page
-      window.history.pushState(
-        {},
-        "",
-        `${currentUrl.pathname}?${searchParams}`
-      );
-    }
+  if (type != null) {
+    updateProjectTypeSearchParams(updatedProjectType);
   }
+}
+
+export function handleProjectTypeDropdown(type) {
+  console.log("type passed to project type store: ", type);
+  selectedProjectType.set(type);
+  updateProjectTypeSearchParams(type);
 }

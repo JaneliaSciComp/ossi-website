@@ -4,21 +4,26 @@ import { Select as BaseSelect } from "@mui/base/Select";
 import { Option as BaseOption } from "@mui/base/Option";
 import clsx from "clsx";
 import { TbSelector } from "react-icons/tb";
-import { selectedProjectType } from "./stores/selectedProjectTypeStore.js";
+import {
+  selectedProjectType,
+  handleProjectTypeDropdown,
+} from "./stores/selectedProjectTypeStore.js";
+import { useStore } from "@nanostores/react";
 
 const getOptionColorClasses = ({ selected, highlighted, disabled }) => {
   let classes = "";
   if (disabled) {
     classes += " text-slate-400 dark:text-slate-700";
   } else {
-    if (selected || highlighted) {
-      classes += " bg-primary text-white dark:text-slate-100";
+    classes +=
+      "hover:dark:bg-neutral-800 hover:bg-slate-100 hover:dark:text-slate-300 hover:text-slate-900";
+    if (selected) {
+      classes +=
+        "bg-primary dark:bg-primary hover:bg-primary hover:dark:bg-primary text-white dark:text-slate-100";
       // } else if (highlighted) {
       //   classes +=
       //     " bg-slate-100 dark:bg-neutral-800 text-slate-900 dark:text-slate-300";
     }
-    classes +=
-      "hover:dark:bg-neutral-800 hover:bg-slate-100 hover:dark:text-slate-300 hover:text-slate-900";
   }
   return classes;
 };
@@ -54,12 +59,16 @@ Button.propTypes = {
   ownerState: PropTypes.object.isRequired,
 };
 
+//Here is the customization of the component ------------------------------------
 export default function ProjectTypeDropdown() {
+  const $selectedProjectType = useStore(selectedProjectType);
+  console.log("selected project type in dropdown: ", $selectedProjectType);
+  const handleChange = (_, selectedArray) => {
+    handleProjectTypeDropdown(selectedArray); // Update your store based on the new value
+  };
+
   return (
-    <Select
-      defaultValue="OSSI - current"
-      onChange={(event, newValue) => selectedProjectType.set(newValue)}
-    >
+    <Select multiple value={$selectedProjectType} onChange={handleChange}>
       <Option
         key="OSSI - current"
         value="OSSI - current"
@@ -77,20 +86,16 @@ export default function ProjectTypeDropdown() {
       <Option key="Other" value="Other" className="cursor-pointer my-1">
         Other
       </Option>
-      <Option key="All" value="All" className="cursor-pointer my-1">
-        All
-      </Option>
     </Select>
   );
 }
+// -----------------------------------------------------------------
 
 const resolveSlotProps = (fn, args) =>
   typeof fn === "function" ? fn(args) : fn;
 
+// I added the prop "multiple" to allow for multiple selections
 const Select = React.forwardRef(function CustomSelect(props, ref) {
-  // Replace this with your app logic for determining dark modes
-  //   const isDarkMode = useIsDarkMode();
-
   return (
     <BaseSelect
       ref={ref}

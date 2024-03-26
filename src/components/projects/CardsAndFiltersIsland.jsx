@@ -8,7 +8,10 @@ import ProjectTypeDropdown from "./ProjectTypeDropdown.jsx";
 import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore.js";
-import { selectedProjectType } from "./stores/selectedProjectTypeStore.js";
+import {
+  selectedProjectType,
+  handleProjectTypeDropdown,
+} from "./stores/selectedProjectTypeStore.js";
 
 export default function CardsAndFiltersIsland({
   uniqueTags,
@@ -16,9 +19,6 @@ export default function CardsAndFiltersIsland({
   baseUrl,
   contentType,
 }) {
-  const $selectedTags = useStore(selectedTags);
-  const $selectedProjectType = useStore(selectedProjectType);
-
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
 
@@ -43,13 +43,22 @@ export default function CardsAndFiltersIsland({
 
       <div className="col-start-2 col-span-2 ">
         <ProjectTypeBtns contentType={contentType} />
-        <div className="md:hidden flex items-end justify-between pb-8">
-          <div className={`${contentType === "ecosystems" && "hidden"} w-1/2`}>
-            <h3 className="font-bold flex items-center justify-between py-2">
-              Filter by OSSI funding status
-            </h3>
+        <div
+          className={`md:hidden ${
+            contentType === "ecosystems" ? "hidden" : "flex"
+          } flex-col gap-6 items-end min-w-full`}
+        >
+          <div className="flex gap-2 w-full">
+            <h3 className="font-bold">Filter by OSSI funding status</h3>
+            <button
+              className="btn-reset text-xs "
+              onClick={() => handleProjectTypeDropdown([])}
+            >
+              Reset
+            </button>
             <ProjectTypeDropdown />
           </div>
+
           <ToggleFilterMenuBtn />
         </div>
 
