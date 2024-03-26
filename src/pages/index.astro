@@ -8,14 +8,13 @@ import TextBlock from "../components/TextBlock.astro";
 import Wrapper from "../components/Wrapper.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
-// console.log(baseUrl)
 ---
 
 <BaseLayout>
   <Hero
     client:load
     baseUrl={baseUrl}
-    title="Janelia Open Science Software Initiative"
+    title="Janelia Software"
     subtitle="Making scientific software user-friendly and developer-friendly"
   />
 
@@ -33,84 +32,65 @@ const baseUrl = import.meta.env.BASE_URL;
     ]}
   >
     <Fragment slot="content">
-      The goal of the Open Science Software Initiative is to support scientists
-      at Janelia to create, extend, maintain, and/or document user-friendly and
-      developer-friendly open source software.
+      General statement about the importance, prevalence, and quality of
+      scientific software at Janelia. General statement about the importance,
+      prevalence, and quality of scientific software at Janelia.
       <br /><br />
-      This website aims to catalogue software projects developed at Janelia. 
-      You can explore our software in two ways - through individual projects or via project ecosystems.
+      This website aims to catalogue software projects developed at Janelia. You
+      can explore our software in two ways - through individual projects or via project
+      ecosystems.
+    </Fragment>
+  </CallToAction>
+
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "Learn more about OSSI",
+        href: `${baseUrl}/ossi`,
+        target: "_blank",
+      },
+    ]}
+  >
+    <Fragment slot="title"
+      >Janelia Open Science Software Intiative (OSSI)</Fragment
+    >
+    <Fragment slot="content">
+      An important source of support for scientific software development and
+      maintenance at Janelia is the Open Source Science Software Initative
+      (OSSI).
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
     </Fragment>
   </CallToAction>
 
   <ContentGridDisplay
-    title="Janelia Open Science Software Initiative Blog"
-    information="Read the latest updates on OSSI-supported projects."
+    title="Janelia Software Blog"
+    information="The latest updates on Janelia software projects."
     content="blog"
     linkText="View all posts"
     linkUrl={`${baseUrl}/blog`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
-    </Fragment>
-  </ContentGridDisplay>
+  />
 
-  <Wrapper containerClass="max-w-5xl mx-auto">
+  <!-- <Wrapper containerClass="max-w-5xl mx-auto">
     <div class="max-w-3xl pt-6 rounded-md">
       <TextBlock>
         <Fragment slot="title">
-          About the Janelia Open Science Software Initiative
-        </Fragment>
-        <Fragment slot="content">
-          Open-source code and software are immensely important to progress in
-          all areas of science. Sharing code allows the same analyses to be
-          performed across labs, facilitates wide-spread use of computational
-          tools that are increasingly important in biology, and enables for
-          different groups to build on top of others’ achievements.
-          Additionally, the transparency that open-source code provides creates
-          trust in results produced by scientific software.
-          <br /><br />
-          The challenge at Janelia is not to convince researchers that they should
-          share their code but to help them do this as efficiently and productively
-          as possible. Importantly, sharing code successfully requires more than
-          just releasing it as-is under an open license. Only well-designed and well-
-          documented code is easy to reuse or modify for new applications by other
-          developers (developer-friendly), which usually constitutes significant
-          efforts. Similarly hard is the design of intuitive user interfaces that
-          allow scientists without expert knowledge of the underlying algorithms
-          to use the software (user-friendly). Additionally, sustained long-term
-          effort is often required to support such code and software over its lifetime
-          -- providing user support, fixing bugs, and maintaining the code. These
-          efforts are not yet reliably recognized as part of scientists’ career-related
-          work, particularly outside of Janelia, although they can easily take the
-          majority of time spent on any project involving software. This forces many
-          scientists to carefully balance between creating widely useful code/software
-          and moving on to the next project. Therefore, the <a
-            href="https://www.janelia.org/node/65124"
-            target="_blank"
-            style={"color: var(--color-primary)"}>Computation & Theory (C&T)</a
-          > research area and <a
-            href="https://www.janelia.org/node/45241"
-            target="_blank"
-            style={"color: var(--color-primary)"}
-            >Scientific Computing Software (SciComp)</a
-          > created the <span style={"font-weight: bold"}
-            >Open Science Software Initiative (OSSI)</span
-          > to support Janelia researchers in their efforts to create impactful open
-          source software.
+          Scientific software development at Janelia
         </Fragment>
       </TextBlock>
       <TextBlock>
-        <Fragment slot="subtitle">Call for projects</Fragment>
-        <Fragment slot="content">
-          In regular intervals we are inviting proposals for Open-Source
-          Software projects from scientists at Janelia. The aim of a proposal
-          should generally be to develop, maintain and/or document
-          developer-friendly, user-friendly code that promises to have a
-          significant impact on the community.
-        </Fragment>
+        <Fragment slot="content"> </Fragment>
+      </TextBlock>
+      <TextBlock>
+        <Fragment slot="subtitle"
+          >Janelia Open Science Software Initiative (OSSI)</Fragment
+        >
+        <Fragment slot="content"> </Fragment>
       </TextBlock>
     </div>
-  </Wrapper>
+  </Wrapper> -->
 
   <CallToAction
     actions={[
@@ -125,17 +105,20 @@ const baseUrl = import.meta.env.BASE_URL;
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
     </Fragment>
-    <Fragment slot="title">Janelians: add your software to this website!</Fragment>
+    <Fragment slot="title"
+      >Janelians: add your software to this website!</Fragment
+    >
     <Fragment slot="content">
       Statement about the goals of the Open Source Science Initiative as related
       to ability to contribute to this site. Statement about the goals of OSSI
       as related to ability to contribute to this site.
       <br /><br />
       We welcome contributions, including project information and blog posts, from
-      current and former Janelians. Read the documentation on the site's GitHub 
-      repository to get started.
+      current and former Janelians. Read the documentation on the site's GitHub repository
+      to get started.
     </Fragment>
   </CallToAction>
+
   <ContributorList
     title="Recent website contributors"
     callToAction={{

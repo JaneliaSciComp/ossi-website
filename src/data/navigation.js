@@ -15,6 +15,10 @@ export const headerData = {
       href: `${base}/ecosystems`,
     },
     {
+      text: "OSSI",
+      href: `${base}/ossi`,
+    },
+    {
       text: "Blog",
       href: `${base}/blog`,
     },
