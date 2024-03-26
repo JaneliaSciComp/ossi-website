@@ -3,6 +3,7 @@ import { atom } from "nanostores";
 export const selectedTags = atom([]);
 
 export function handleTagSelection(tag) {
+  console.log("tag passed to tag store: ", tag);
   // access and update tags store
   const prevTags = selectedTags.get();
   const tagIndex = prevTags.indexOf(tag);
@@ -14,6 +15,7 @@ export function handleTagSelection(tag) {
   } else {
     updatedTags = prevTags.filter((t, index) => index !== tagIndex);
   }
+  console.log("updated tags: ", updatedTags);
   selectedTags.set(updatedTags);
 
   // update URL search params
@@ -24,8 +26,10 @@ export function handleTagSelection(tag) {
     // Remove all current 'tags' entries
     searchParams.delete("tags");
 
-    // Add each tag as a separate 'tags' parameter
-    updatedTags.forEach((tag) => searchParams.append("tags", tag));
+    if (updatedTags.length != 0) {
+      // Add each tag as a separate 'tags' parameter
+      updatedTags.forEach((tag) => searchParams.append("tags", tag));
+    }
 
     // Use history.pushState to update the URL without reloading the page
     window.history.pushState({}, "", `${currentUrl.pathname}?${searchParams}`);

@@ -41,7 +41,7 @@ export default function CardsAndFiltersIsland({
         <FilterMenu uniqueTags={uniqueTags} />
       </div>
 
-      <div className="col-start-2 col-span-2 ">
+      <div className="col-start-2 col-span-2">
         <ProjectTypeBtns contentType={contentType} />
         <div
           className={`md:hidden ${
@@ -58,8 +58,7 @@ export default function CardsAndFiltersIsland({
             </button>
             <ProjectTypeDropdown />
           </div>
-
-          <ToggleFilterMenuBtn />
+          <ToggleFilterMenuBtn uniqueTags />
         </div>
 
         <ProjectCount allContent={allContent} contentType={contentType} />

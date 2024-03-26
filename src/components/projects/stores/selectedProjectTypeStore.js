@@ -37,9 +37,7 @@ export function handleProjectTypeButton(type, e) {
     e.currentTarget.blur();
   }
 
-  if (type != null) {
-    updateProjectTypeSearchParams(updatedProjectType);
-  }
+  updateProjectTypeSearchParams(updatedProjectType);
 }
 
 export function handleProjectTypeDropdown(type) {

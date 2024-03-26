@@ -13,18 +13,21 @@ import { useStore } from "@nanostores/react";
 const getOptionColorClasses = ({ selected, highlighted, disabled }) => {
   let classes = "";
   if (disabled) {
+    // Note - the space at the beginning of each of these class segments is important. If removed, classes will
+    // smush together and then the beginning/ending class of each line won't be implemented
     classes += " text-slate-400 dark:text-slate-700";
   } else {
     classes +=
-      "hover:dark:bg-neutral-800 hover:bg-slate-100 hover:dark:text-slate-300 hover:text-slate-900";
-    if (selected) {
-      classes +=
-        "bg-primary dark:bg-primary hover:bg-primary hover:dark:bg-primary text-white dark:text-slate-100";
-      // } else if (highlighted) {
-      //   classes +=
-      //     " bg-slate-100 dark:bg-neutral-800 text-slate-900 dark:text-slate-300";
-    }
+      " hover:dark:bg-neutral-800 hover:bg-slate-100 hover:dark:text-slate-300 hover:text-slate-900";
   }
+  if (selected) {
+    classes +=
+      " bg-primary dark:bg-primary hover:bg-primary hover:dark:bg-primary text-white dark:text-slate-100";
+    // } else if (highlighted) {
+    //   classes +=
+    //     " bg-slate-100 dark:bg-neutral-800 text-slate-900 dark:text-slate-300";
+  }
+
   return classes;
 };
 

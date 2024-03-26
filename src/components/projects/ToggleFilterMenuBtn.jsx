@@ -4,10 +4,19 @@ import { selectedTags } from "./stores/selectedTagsStore";
 import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 
-export default function ToggleFilterMenuBtn() {
+export default function ToggleFilterMenuBtn({ uniqueTags }) {
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
   const $selectedTags = useStore(selectedTags);
-  const numFilters = $selectedTags.length;
+  const filteredTags = $selectedTags.filter(
+    (tag) =>
+      // Check if tag is a value in any of the arrays in uniqueTags
+      Object.values(uniqueTags).some((uniqueTagsArray) =>
+        uniqueTagsArray.includes(tag)
+      ) || tag === ""
+  );
+
+  // Set numFilters to the length of the filteredTags array
+  const numFilters = filteredTags.length;
 
   return (
     <Badge
