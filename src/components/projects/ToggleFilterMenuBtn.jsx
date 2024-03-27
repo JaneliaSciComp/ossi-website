@@ -4,7 +4,8 @@ import { selectedTags } from "./stores/selectedTagsStore";
 import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 
-export default function ToggleFilterMenuBtn() {
+export default function ToggleFilterMenuBtn({ uniqueTags }) {
+  // console.log("unique tags:", uniqueTags);
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
   const $selectedTags = useStore(selectedTags);
   const numFilters = $selectedTags.length;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { TbMinus, TbPlus, TbX } from "react-icons/tb";
 import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore.js";
@@ -10,7 +10,6 @@ import { getBackgroundColor } from "../../utils/tagManipulation.js";
 
 export default function FilterMenu({ uniqueTags }) {
   const $selectedTags = useStore(selectedTags);
-
   //used to manage state for the close ("x") button on the small screen filter menu
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
 
@@ -22,6 +21,18 @@ export default function FilterMenu({ uniqueTags }) {
     });
     return initialVisibility;
   });
+
+  // Effect to update categoryVisibility when $selectedTags changes
+  useEffect(() => {
+    const newVisibility = {};
+    Object.keys(uniqueTags).forEach((key) => {
+      newVisibility[key] = uniqueTags[key].some((tag) =>
+        $selectedTags.includes(tag)
+      );
+    });
+    setCategoryVisibility(newVisibility);
+  }, [$selectedTags]);
+
   const toggleCategoryVisibility = (categoryKey) => {
     setCategoryVisibility((prevVisibility) => ({
       ...prevVisibility,
@@ -42,9 +53,17 @@ export default function FilterMenu({ uniqueTags }) {
         <TbX />
       </button>
       <div className="overflow-y-scroll md:overflow-hidden px-2">
-        <h3 className="hidden md:flex items-center justify-between py-2 font-bold ">
-          Filter by tag
-        </h3>
+        {/* This h3 and button are visible only on medium and larger screen sizes */}
+        <div className="hidden md:flex items-center justify-between pt-2 pb-4">
+          <h3 className="text-lg font-bold ">Filter by tag</h3>
+          <button
+            className="btn-reset"
+            onClick={() => handleTagSelection(null)}
+          >
+            Reset
+          </button>
+        </div>
+
         {Object.keys(uniqueTags).map((key) => (
           <div className="mb-4" key={`tagCategory-${key}`}>
             <h3
@@ -89,8 +108,12 @@ export default function FilterMenu({ uniqueTags }) {
         >
           View projects
         </button>
-        <button className="btn" onClick={() => selectedTags.set([])}>
-          Reset filters
+        {/* This reset button is visible on small screens */}
+        <button
+          className="btn md:hidden"
+          onClick={() => handleTagSelection(null)}
+        >
+          Reset
         </button>
       </div>
     </div>

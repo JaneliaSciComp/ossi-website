@@ -25,7 +25,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
     subtitle="Software developed at Janelia, including Open Science Software Intiative (OSSI) supported projects"
   />
   <CardsAndFiltersIsland
-    client:load
+    client:only
     uniqueTags={uniqueTags}
     allContent={allProjects}
     baseUrl={baseUrl}

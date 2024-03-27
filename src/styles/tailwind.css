@@ -33,8 +33,12 @@
     @apply btn rounded-md shadow-none p-1 md:py-4 md:px-8 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
   }
 
+  .btn-reset {
+    @apply btn border border-slate-300 py-0 px-2 rounded-md gap-1 hover:border-slate-300 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700;
+  }
+
   .btn-filter {
-    @apply btn rounded-md shadow-none p-1 md:py-4 md:px-8 border-2 dark:border-slate-400 hover:bg-primary hover:border-primary dark:hover:bg-primary focus:bg-primary focus:border-primary;
+    @apply btn-reset p-1 md:py-4 md:px-8;
   }
 }
 
