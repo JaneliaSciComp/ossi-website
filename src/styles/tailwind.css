@@ -88,6 +88,6 @@
 .selected {
   color: white;
   border-radius: 4px;
-  padding: 4px 8px;
-  margin: 0 0 0 4px;
+  padding: 2px 6px;
+  margin: 2px;
 }
