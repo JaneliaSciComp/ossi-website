@@ -1,5 +1,4 @@
 ---
-import Wrapper from "./Wrapper.astro";
 import TextBlock from "./TextBlock.astro";
 import Button from "./Button.astro";
 
@@ -27,56 +26,54 @@ try {
 }
 ---
 
-<Wrapper containerClass="max-w-5xl mx-auto" bg={bg}>
-  <div class="flex flex-col gap-8 md:gap-12 md:flex-row">
-    <div class="w-full lg:w-1/2 gap-8 md:gap-12">
-      <TextBlock title={title} subtitle={subtitle} tagline={tagline} />
+<div class="flex flex-col gap-8 md:gap-12 md:flex-row">
+  <div class="w-full lg:w-1/2 gap-8 md:gap-12">
+    <TextBlock title={title} subtitle={subtitle} tagline={tagline} />
 
-      <div class="w-full md:text-left rtl:md:text-right">
-        {
-          typeof callToAction === "string" ? (
-            <Fragment set:html={callToAction} />
-          ) : (
-            callToAction &&
-            callToAction.text &&
-            callToAction.href && (
-              <Button variant="link" {...callToAction} class="mb-12 w-auto" />
-            )
+    <div class="w-full md:text-left rtl:md:text-right">
+      {
+        typeof callToAction === "string" ? (
+          <Fragment set:html={callToAction} />
+        ) : (
+          callToAction &&
+          callToAction.text &&
+          callToAction.href && (
+            <Button variant="link" {...callToAction} class="mb-12 w-auto" />
           )
-        }
-      </div>
-    </div>
-
-    <div class="w-full lg:w-1/2 px-0">
-      <ul class="grid grid-cols-4 grid-rows-3 gap-2">
-        {
-          Array.from({ length: numberOfRecentContributors }).map((_, index) => {
-            const contributor =
-              contributors.length > index ? contributors[index] : null;
-            return (
-              <li key={`contributor-${index}`}>
-                <div class="w-16 h-16 rounded-full bg-gray-400 flex items-center justify-center">
-                  {contributor ? (
-                    <a
-                      href={contributor.authorInfo.html_url}
-                      class="flex items-center justify-center"
-                    >
-                      <img
-                        src={contributor.authorInfo.avatar_url}
-                        alt={`GitHub avatar for user ${contributor.authorInfo.login}`}
-                        class="rounded-full object-cover object-center w-16 h-16"
-                        loading="eager"
-                      />
-                    </a>
-                  ) : (
-                    <div class="w-16 h-16 rounded-full" />
-                  )}
-                </div>
-              </li>
-            );
-          })
-        }
-      </ul>
+        )
+      }
     </div>
   </div>
-</Wrapper>
+
+  <div class="w-full lg:w-1/2 px-0">
+    <ul class="grid grid-cols-4 grid-rows-3 gap-2">
+      {
+        Array.from({ length: numberOfRecentContributors }).map((_, index) => {
+          const contributor =
+            contributors.length > index ? contributors[index] : null;
+          return (
+            <li key={`contributor-${index}`}>
+              <div class="w-16 h-16 rounded-full bg-gray-400 flex items-center justify-center">
+                {contributor ? (
+                  <a
+                    href={contributor.authorInfo.html_url}
+                    class="flex items-center justify-center"
+                  >
+                    <img
+                      src={contributor.authorInfo.avatar_url}
+                      alt={`GitHub avatar for user ${contributor.authorInfo.login}`}
+                      class="rounded-full object-cover object-center w-16 h-16"
+                      loading="eager"
+                    />
+                  </a>
+                ) : (
+                  <div class="w-16 h-16 rounded-full" />
+                )}
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</div>

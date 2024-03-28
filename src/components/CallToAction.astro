@@ -16,31 +16,29 @@ const {
 // console.log(actions)
 ---
 
-<Wrapper containerClass="max-w-5xl" bg={bg}>
-  <div class={twMerge("max-w-3xl rounded-md", textColor)}>
-    <TextBlock
-      title={title}
-      subtitle={subtitle}
-      tagline={tagline}
-      content={content}
-    />
-    {
-      actions && (
-        <div class="max-w-xs sm:max-w-md flex flex-nowrap flex-row sm:justify-center gap-4 ">
-          {Array.isArray(actions) ? (
-            actions.map((action) => (
-              <div class="flex w-full">
-                <Button
-                  {...(action || {})}
-                  class="btn w-full sm:mb-0 md:text-lg"
-                />
-              </div>
-            ))
-          ) : (
-            <Fragment set:html={actions} />
-          )}
-        </div>
-      )
-    }
-  </div>
-</Wrapper>
+<>
+  <TextBlock
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    content={content}
+  />
+  {
+    actions && (
+      <div class="max-w-xs sm:max-w-md flex flex-nowrap flex-row sm:justify-center gap-4 ">
+        {Array.isArray(actions) ? (
+          actions.map((action) => (
+            <div class="flex w-full">
+              <Button
+                {...(action || {})}
+                class="btn w-full sm:mb-0 md:text-lg"
+              />
+            </div>
+          ))
+        ) : (
+          <Fragment set:html={actions} />
+        )}
+      </div>
+    )
+  }
+</>
