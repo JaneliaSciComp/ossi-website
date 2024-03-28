@@ -6,10 +6,11 @@ export default function Hero({
   baseUrl,
   title,
   subtitle,
-  customClasses,
+  heightClasses,
   children,
 }) {
   const [backgroundImg, setBackgroundImg] = useState("");
+
   useEffect(() => {
     if (backgroundImg === "") {
       const randomImageData = getRandomImage(heroImageFiles);
@@ -17,12 +18,18 @@ export default function Hero({
     }
   }, []);
 
+  const style = {
+    backgroundImage:
+      backgroundImg === ""
+        ? "none"
+        : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${baseUrl}/hero-images/${backgroundImg.file}')`,
+    backgroundColor: backgroundImg === "" ? "#000" : "transparent",
+  };
+
   return (
     <section
-      className={`${customClasses} bg-cover bg-no-repeat bg-center relative flex flex-col justify-end 2xl:items-center 2xl:justify-center  not-prose`}
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${baseUrl}/hero-images/${backgroundImg.file}')`,
-      }}
+      className={`${heightClasses} bg-cover bg-no-repeat bg-center relative flex flex-col justify-end 2xl:items-center 2xl:justify-center  not-prose`}
+      style={style}
     >
       <div className="flex flex-col 2xl:flex-row justify-between md:justify-around 2xl:items-center h-3/4 md:h-5/6 2xl:h-auto 2xl:w-11/12">
         <div className="h-auto max-w-5xl px-4 md:px-12 lg:px-20 xl:px-32 2xl:pl-32 2xl:pr-0 2xl:self-start">
