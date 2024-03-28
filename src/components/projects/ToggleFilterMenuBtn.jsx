@@ -4,7 +4,8 @@ import { selectedTags } from "./stores/selectedTagsStore";
 import { isFilterMenuVisible } from "./stores/isFilterMenuVisibleStore";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 
-export default function ToggleFilterMenuBtn() {
+export default function ToggleFilterMenuBtn({ uniqueTags }) {
+  // console.log("unique tags:", uniqueTags);
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
   const $selectedTags = useStore(selectedTags);
   const numFilters = $selectedTags.length;
@@ -22,7 +23,7 @@ export default function ToggleFilterMenuBtn() {
       }}
     >
       <button
-        className="md:hidden btn-secondary flex gap-2 py-2 px-3"
+        className="md:hidden btn-filter flex gap-2 py-2 px-3"
         onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
       >
         <p className="text-sm">Filter by tag</p>

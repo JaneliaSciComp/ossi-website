@@ -13,7 +13,7 @@ associated labs and projects:
 software type: [Framework, Package, Web application]
 programming language: [Python, Javascript]
 software ecosystem: []
-open source license: [BDS-3 Clause]
+open source license: [BSD-3 Clause]
 supported file types: [mpeg, avi]
 related experimental techniques: []
 software use case: [Annotation, Image analysis, Video analysis]

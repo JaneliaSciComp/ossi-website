@@ -1,7 +1,9 @@
 ---
 import { headerData } from "../data/navigation";
 import ToggleTheme from "../components/ToggleTheme.astro";
+import ToggleTheme from "../components/ToggleTheme.astro";
 
+const baseUrl = import.meta.env.BASE_URL;
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
@@ -28,55 +30,102 @@ const baseUrl = import.meta.env.BASE_URL;
         </span>
       </a>
       <div class="flex items-center lg:hidden">
-        <button
-          class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group"
-          aria-label="Toggle Menu"
-          data-aw-toggle-menu
+        <div
+          class="relative text-default p-3 md:px-6 w-full flex justify-between"
         >
-          <span class="sr-only">Toggle Menu</span>
-          <slot>
+          <a class="flex items-center" href={baseUrl}>
             <span
-              aria-hidden="true"
-              class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"
-            ></span>
-            <span
-              aria-hidden="true"
-              class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"
-            ></span>
-            <span
-              aria-hidden="true"
-              class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"
-            ></span>
-          </slot>
-        </button>
-      </div>
-    </div>
+              class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              🔬 Janelia Software
+            </span>
+          </a>
 
-    <nav
-      class="items-center w-full lg:w-auto hidden lg:flex text-default overflow-y-auto overflow-x-hidden lg:overflow-y-visible lg:overflow-x-auto lg:mx-5"
-      aria-label="Main navigation"
-    >
-      <ul
-        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium"
-      >
-        {
-          headerData.links.map(({ text, href }) => (
-            <li>
-              <a
-                class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers"
-                href={href}
+          <div class="flex">
+            <div class="flex items-center md:hidden order-2">
+              <button
+                class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group"
+                aria-label="Toggle Menu"
+                aria-label="Toggle Menu"
+                data-aw-toggle-menu
               >
-                {text}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-    <div
-      class="hidden lg:self-center lg:flex items-center lg:mb-0 fixed w-full lg:w-auto lg:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 lg:p-0"
-    >
-      <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />
+                <span class="sr-only">Toggle Menu</span>
+                <slot>
+                  <span
+                    aria-hidden="true"
+                    class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"
+                  ></span>
+                  <span
+                    aria-hidden="true"
+                    class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"
+                  ></span>
+                  <span
+                    aria-hidden="true"
+                    class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"
+                  ></span>
+                </slot>
+              </button>
+            </div>
+
+            <nav
+              class="items-center w-full hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto"
+              aria-label="Main navigation"
+            >
+              <ul
+                class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
+              >
+                {
+                  headerData.links.map(({ text, href, links }) => (
+                    <li class={links?.length ? "dropdown" : ""}>
+                      {links?.length ? (
+                        <>
+                          <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center">
+                            <a href={href}>{text}</a>
+                          </button>
+                          <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                            {links.map(({ text: text2, href: href2 }) => (
+                              <li>
+                                <a
+                                  class:list={[
+                                    "first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap",
+                                  ]}
+                                  href={href2}
+                                >
+                                  {text2}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      ) : (
+                        <a
+                          class:list={[
+                            "hover:text-link dark:hover:text-white px-4 py-3 flex items-centers",
+                          ]}
+                          href={href}
+                        >
+                          {text}
+                        </a>
+                      )}
+                    </li>
+                  ))
+                }
+              </ul>
+            </nav>
+            <div
+              id="toggle-theme"
+              class="self-center flex items-center w-auto static justify-end"
+            >
+              <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 inline-block" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <Icon
+                        name="tabler:chevron-down"
+                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
+                      /> -->
     </div>
   </div>
 </header>

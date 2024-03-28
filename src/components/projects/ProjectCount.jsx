@@ -27,9 +27,9 @@ export default function ProjectCount({ allContent, contentType }) {
         $selectedTags.length === 0 ||
         tagsArray.some((tag) => $selectedTags.includes(tag));
       const matchesProjectType =
+        $selectedProjectType.length === 0 ||
         contentType === "ecosystems" ||
-        entry.data["project type"][0] === $selectedProjectType ||
-        $selectedProjectType === "All" ||
+        $selectedProjectType.includes(entry.data["project type"][0]) ||
         $selectedProjectType === null;
 
       return hasMatchingTags && matchesProjectType;
@@ -40,7 +40,7 @@ export default function ProjectCount({ allContent, contentType }) {
 
   return (
     <p
-      className={`font-semibold py-4 ${
+      className={`font-semibold text-lg py-4 ${
         contentType === "ecosystems" && "md:pt-0"
       }`}
     >

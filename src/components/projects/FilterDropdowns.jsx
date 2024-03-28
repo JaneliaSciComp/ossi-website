@@ -66,7 +66,7 @@ Button.propTypes = {
 
 export default function FilterDropdowns({ tagCategory, tags }) {
   const $selectedTags = useStore(selectedTags);
-  console.log("$selectedTags[tagCategory]: ", $selectedTags[tagCategory]);
+  // console.log("$selectedTags[tagCategory]: ", $selectedTags[tagCategory]);
   return (
     <Select
       defaultValue={$selectedTags[tagCategory]}

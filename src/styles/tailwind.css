@@ -22,7 +22,7 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-200 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+    @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-100 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
   }
 
   .btn-primary {
@@ -33,7 +33,12 @@
     @apply btn rounded-md shadow-none p-1 md:py-4 md:px-8 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
   }
 
-  .btn-tertiary {
+  .btn-reset {
+    @apply btn border border-slate-300 py-0 px-2 rounded-md gap-1 hover:border-slate-300 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700;
+  }
+
+  .btn-filter {
+    @apply btn-reset p-1 md:py-4 md:px-8;
   }
 }
 

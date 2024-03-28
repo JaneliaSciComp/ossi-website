@@ -1,11 +1,13 @@
 ---
 import { twMerge } from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 
 const {
   title = await Astro.slots.render("title"),
   subtitle = await Astro.slots.render("subtitle"),
   content = await Astro.slots.render("content"),
   tagline,
+} = Astro.props;
 } = Astro.props;
 
 const containerClass = "max-w-3xl md:text-left rtl:md:text-right";

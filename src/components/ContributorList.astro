@@ -16,13 +16,20 @@ import {
   getMostRecentContributors,
 } from "../utils/githubApiHelper";
 
+const authToken = import.meta.env.OSSI_SITE_TOKEN;
 const numberOfRecentContributors = 12;
-let contributors = [];
-try {
-  const { data } = await getContributors();
-  contributors = getMostRecentContributors(data, numberOfRecentContributors);
-} catch (error) {
-  console.error("Error - contributor widget on homepage: ", error);
+let contributors;
+
+// make call to GitHub API only if authToken present
+if (authToken) {
+  try {
+    const { data } = await getContributors();
+    contributors = getMostRecentContributors(data, numberOfRecentContributors);
+  } catch (error) {
+    console.error("Error - contributor widget on homepage: ", error);
+  }
+} else {
+  contributors = null;
 }
 ---
 
@@ -50,9 +57,9 @@ try {
       {
         Array.from({ length: numberOfRecentContributors }).map((_, index) => {
           const contributor =
-            contributors.length > index ? contributors[index] : null;
+            contributors?.length > index ? contributors[index] : null;
           return (
-            <li key={`contributor-${index}`}>
+            <li>
               <div class="w-16 h-16 rounded-full bg-gray-400 flex items-center justify-center">
                 {contributor ? (
                   <a
