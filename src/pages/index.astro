@@ -15,30 +15,35 @@ const baseUrl = import.meta.env.BASE_URL;
   <Hero
     client:load
     baseUrl={baseUrl}
-    title="Janelia Open Science Software Initiative"
-    subtitle="Tagline about the Janelia Open Science Software Initiative"
-  />
-
-  <CallToAction
-    actions={[
-      {
-        variant: "primary",
-        text: "Projects",
-        href: `${baseUrl}/projects`,
-      },
-      {
-        text: "Ecosystems",
-        href: `${baseUrl}/ecosystems`,
-      },
-    ]}
+    title="Janelia Software"
+    subtitle="Making scientific software user-friendly and developer-friendly"
+    customClasses="h-screen max-h-screen"
   >
-    <Fragment slot="content">
-      The goal of the Open Science Software Initiative is to support scientists
-      at Janelia to create, extend, maintain, and/or document user-friendly and
-      developer-friendly open source software.<br /><br />Explore OSSI-supported
-      project in two ways - through individual projects or project ecosystems.
-    </Fragment>
-  </CallToAction>
+    <CallToAction
+      textColor="text-white"
+      padding="py-0"
+      actions={[
+        {
+          variant: "primary",
+          text: "Janelia Software Projects",
+          href: `${baseUrl}/projects`,
+        },
+        {
+          text: "Software Ecosystems",
+          href: `${baseUrl}/ecosystems`,
+        },
+      ]}
+    >
+      <Fragment slot="content">
+        This website aims to catalogue software projects developed at Janelia.
+        You can explore our software in two ways - through individual projects
+        or via project ecosystems.
+      </Fragment>
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
+      </Fragment>
+    </CallToAction>
+  </Hero>
 
   <ContentGridDisplay
     title="Janelia Open Science Software Initiative Blog"

@@ -2,8 +2,10 @@
 import Wrapper from "./Wrapper.astro";
 import TextBlock from "./TextBlock.astro";
 import Button from "./Button.astro";
+import { twMerge } from "tailwind-merge";
 
 const {
+  textColor,
   title = await Astro.slots.render("title"),
   subtitle = await Astro.slots.render("subtitle"),
   tagline = await Astro.slots.render("tagline"),
@@ -14,8 +16,8 @@ const {
 // console.log(actions)
 ---
 
-<Wrapper containerClass="max-w-5xl mx-auto" bg={bg}>
-  <div class="max-w-3xl py-6 rounded-md">
+<Wrapper containerClass="max-w-5xl" bg={bg}>
+  <div class={twMerge("max-w-3xl rounded-md", textColor)}>
     <TextBlock
       title={title}
       subtitle={subtitle}
@@ -24,11 +26,14 @@ const {
     />
     {
       actions && (
-        <div class="max-w-xs sm:max-w-md  flex flex-nowrap flex-row sm:justify-center gap-4 mt-6">
+        <div class="max-w-xs sm:max-w-md flex flex-nowrap flex-row sm:justify-center gap-4 ">
           {Array.isArray(actions) ? (
             actions.map((action) => (
               <div class="flex w-full">
-                <Button {...(action || {})} class="btn w-full sm:mb-0" />
+                <Button
+                  {...(action || {})}
+                  class="btn w-full sm:mb-0 md:text-lg"
+                />
               </div>
             ))
           ) : (
