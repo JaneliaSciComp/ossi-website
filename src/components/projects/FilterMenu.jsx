@@ -81,18 +81,22 @@ export default function FilterMenu({ uniqueTags }) {
               {uniqueTags[key].map((individualTag) => {
                 return (
                   <li
-                    key={individualTag}
-                    className={`cursor-pointer ml-2 my-1 self-start ${
-                      $selectedTags.includes(individualTag) ? "selected" : ""
-                    }`}
+                    className="w-full flex cursor-pointer "
                     onClick={() => handleTagSelection(individualTag)}
-                    style={{
-                      ...($selectedTags.includes(individualTag) && {
-                        backgroundColor: getBackgroundColor(key),
-                      }),
-                    }}
                   >
-                    {individualTag.toUpperCase()}
+                    <div
+                      key={individualTag}
+                      className={`ml-2 self-start my-1 ${
+                        $selectedTags.includes(individualTag) ? "selected" : ""
+                      }`}
+                      style={{
+                        ...($selectedTags.includes(individualTag) && {
+                          backgroundColor: getBackgroundColor(key),
+                        }),
+                      }}
+                    >
+                      {individualTag.toUpperCase()}
+                    </div>
                   </li>
                 );
               })}
