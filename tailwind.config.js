@@ -16,6 +16,10 @@ module.exports = {
         serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
         heading: ["var(--font-heading)", ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        "3xl": "1900px",
+        "4xl": "2300px",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
