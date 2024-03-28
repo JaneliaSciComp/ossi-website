@@ -46,6 +46,31 @@ const baseUrl = import.meta.env.BASE_URL;
     </Wrapper>
   </Hero>
 
+  <Wrapper containerClass="pt-16 pb-8 md:py-16">
+    <CallToAction
+      actions={[
+        {
+          variant: "primary",
+          text: "Learn more about OSSI",
+          href: `${baseUrl}/ossi`,
+          target: "_blank",
+        },
+      ]}
+    >
+      <Fragment slot="title"
+        >Janelia Open Science Software Intiative (OSSI)</Fragment
+      >
+      <Fragment slot="content">
+        An important source of support for scientific software development and
+        maintenance at Janelia is the Open Source Science Software Initative
+        (OSSI).
+      </Fragment>
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
+      </Fragment>
+    </CallToAction>
+  </Wrapper>
+
   <Wrapper containerClass="py-8 md:py-16">
     <ContentGridDisplay
       title="Janelia Software Blog"
@@ -59,25 +84,6 @@ const baseUrl = import.meta.env.BASE_URL;
       <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
     </Fragment>
   </Wrapper>
-
-  <!-- <Wrapper containerClass="max-w-5xl mx-auto">
-    <div class="max-w-3xl pt-6 rounded-md">
-      <TextBlock>
-        <Fragment slot="title">
-          Scientific software development at Janelia
-        </Fragment>
-      </TextBlock>
-      <TextBlock>
-        <Fragment slot="content"> </Fragment>
-      </TextBlock>
-      <TextBlock>
-        <Fragment slot="subtitle"
-          >Janelia Open Science Software Initiative (OSSI)</Fragment
-        >
-        <Fragment slot="content"> </Fragment>
-      </TextBlock>
-    </div>
-  </Wrapper> -->
 
   <Wrapper containerClass="py-8 md:py-16">
     <CallToAction
@@ -106,17 +112,19 @@ const baseUrl = import.meta.env.BASE_URL;
         repository to get started.
       </Fragment>
     </CallToAction>
+  </Wrapper>
+
+  <Wrapper containerClass="py-8 md:py-16">
+    <ContributorList
+      title="Recent website contributors"
+      callToAction={{
+        text: "See all contributors »",
+        href: "https://github.com/JaneliaSciComp/ossi-website",
+        target: "_blank",
+      }}
+    />
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
     </Fragment>
   </Wrapper>
-
-  <ContributorList
-    title="Recent website contributors"
-    callToAction={{
-      text: "See all contributors »",
-      href: "https://github.com/JaneliaSciComp/ossi-website",
-      target: "_blank",
-    }}
-  />
 </BaseLayout>

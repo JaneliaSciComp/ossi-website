@@ -13,74 +13,74 @@ const baseUrl = import.meta.env.BASE_URL;
     baseUrl={baseUrl}
     title="Janelia Open Science Software Initiative"
     subtitle="The goal of OSSI is to support scientists at Janelia to create, extend, maintain and/or document user-friendly and developer-friendly open source software"
+    heightClasses="h-80 lg:h-96 py-20 2xl:pt-32"
+    alignmentClasses="2xl:justify-start 2xl:w-full"
   />
-  <Wrapper containerClass="max-w-5xl mx-auto">
-    <div class="max-w-3xl pt-6 rounded-md">
-      <TextBlock>
-        <Fragment slot="subtitle"
-          >About the Janelia Open Science Software Iniative (OSSI)</Fragment
-        >
-        <Fragment slot="content">
-          Open-source code and software are immensely important to progress in
-          all areas of science. Sharing code allows the same analyses to be
-          performed across labs, facilitates wide-spread use of computational
-          tools that are increasingly important in biology, and enables for
-          different groups to build on top of others’ achievements.
-          Additionally, the transparency that open-source code provides creates
-          trust in results produced by scientific software.
-          <br /><br />
-          The challenge at Janelia is not to convince researchers that they should
-          share their code but to help them do this as efficiently and productively
-          as possible. Importantly, sharing code successfully requires more than
-          just releasing it as-is under an open license. Only well-designed and well-
-          documented code is easy to reuse or modify for new applications by other
-          developers (developer-friendly), which usually constitutes significant
-          efforts. Similarly hard is the design of intuitive user interfaces that
-          allow scientists without expert knowledge of the underlying algorithms
-          to use the software (user-friendly). Additionally, sustained long-term
-          effort is often required to support such code and software over its lifetime
-          -- providing user support, fixing bugs, and maintaining the code. These
-          efforts are not yet reliably recognized as part of scientists’ career-related
-          work, particularly outside of Janelia, although they can easily take the
-          majority of time spent on any project involving software. This forces many
-          scientists to carefully balance between creating widely useful code/software
-          and moving on to the next project. Therefore, the <a
-            href="https://www.janelia.org/node/65124"
-            target="_blank"
-            style={"color: var(--color-primary)"}>Computation & Theory (C&T)</a
-          > research area and <a
-            href="https://www.janelia.org/node/45241"
-            target="_blank"
-            style={"color: var(--color-primary)"}
-            >Scientific Computing Software (SciComp)</a
-          > created the <span style={"font-weight: bold"}
-            >Open Science Software Initiative (OSSI)</span
-          > to support Janelia researchers in their efforts to create impactful open
-          source software.
-        </Fragment>
-      </TextBlock>
-      <TextBlock>
-        <Fragment slot="subtitle">Call for projects</Fragment>
-        <Fragment slot="content">
-          In regular intervals we are inviting proposals for Open-Source
-          Software projects from scientists at Janelia. The aim of a proposal
-          should generally be to develop, maintain and/or document
-          developer-friendly, user-friendly code that promises to have a
-          significant impact on the community.
-        </Fragment>
-      </TextBlock>
-      <TextBlock>
-        <Fragment slot="subtitle">Details</Fragment>
-        <Fragment slot="content">
-          The creation of OSSI was encouraged by the strong open science
-          community at Janelia. The specifics were finalized by Kristin Branson,
-          Reed George, Wyatt Korff, Stephan Preibisch, Konrad Rokicki, Stephan
-          Saalfeld, and Ron Vale. OSSI is funded through the Technology and Open
-          Science Center fund (SciComp internal funding) with strong support
-          from Wyatt Korff (project teams), Reed George (Scientific Operations),
-          the Saalfeld lab, and the executive director of Janelia (Ron Vale).
-        </Fragment>
-      </TextBlock>
-    </div>
+  <Wrapper containerClass="py-8 md:py-16">
+    <TextBlock>
+      <Fragment slot="title"
+        >About the Janelia Open Science Software Iniative (OSSI)</Fragment
+      >
+      <Fragment slot="content">
+        Open-source code and software are immensely important to progress in all
+        areas of science. Sharing code allows the same analyses to be performed
+        across labs, facilitates wide-spread use of computational tools that are
+        increasingly important in biology, and enables for different groups to
+        build on top of others’ achievements. Additionally, the transparency
+        that open-source code provides creates trust in results produced by
+        scientific software.
+        <br /><br />
+        The challenge at Janelia is not to convince researchers that they should
+        share their code but to help them do this as efficiently and productively
+        as possible. Importantly, sharing code successfully requires more than just
+        releasing it as-is under an open license. Only well-designed and well- documented
+        code is easy to reuse or modify for new applications by other developers
+        (developer-friendly), which usually constitutes significant efforts. Similarly
+        hard is the design of intuitive user interfaces that allow scientists without
+        expert knowledge of the underlying algorithms to use the software (user-friendly).
+        Additionally, sustained long-term effort is often required to support such
+        code and software over its lifetime -- providing user support, fixing bugs,
+        and maintaining the code. These efforts are not yet reliably recognized as
+        part of scientists’ career-related work, particularly outside of Janelia,
+        although they can easily take the majority of time spent on any project involving
+        software. This forces many scientists to carefully balance between creating
+        widely useful code/software and moving on to the next project. Therefore,
+        the <a
+          href="https://www.janelia.org/node/65124"
+          target="_blank"
+          style={"color: var(--color-primary)"}>Computation & Theory (C&T)</a
+        > research area and <a
+          href="https://www.janelia.org/node/45241"
+          target="_blank"
+          style={"color: var(--color-primary)"}
+          >Scientific Computing Software (SciComp)</a
+        > created the <span style={"font-weight: bold"}
+          >Open Science Software Initiative (OSSI)</span
+        > to support Janelia researchers in their efforts to create impactful open
+        source software.
+      </Fragment>
+    </TextBlock>
+    <TextBlock>
+      <Fragment slot="subtitle">Call for projects</Fragment>
+      <Fragment slot="content">
+        In regular intervals we are inviting proposals for Open-Source Software
+        projects from scientists at Janelia. The aim of a proposal should
+        generally be to develop, maintain and/or document developer-friendly,
+        user-friendly code that promises to have a significant impact on the
+        community.
+      </Fragment>
+    </TextBlock>
+    <TextBlock>
+      <Fragment slot="subtitle">Details</Fragment>
+      <Fragment slot="content">
+        The creation of OSSI was encouraged by the strong open science community
+        at Janelia. The specifics were finalized by Kristin Branson, Reed
+        George, Wyatt Korff, Stephan Preibisch, Konrad Rokicki, Stephan
+        Saalfeld, and Ron Vale. OSSI is funded through the Technology and Open
+        Science Center fund (SciComp internal funding) with strong support from
+        Wyatt Korff (project teams), Reed George (Scientific Operations), the
+        Saalfeld lab, and the executive director of Janelia (Ron Vale).
+      </Fragment>
+    </TextBlock>
   </Wrapper>
 </BaseLayout>

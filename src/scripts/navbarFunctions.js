@@ -9,8 +9,6 @@
 function applyTheme(theme) {
   if (theme === "dark") {
     document.documentElement.classList.add("dark");
-  if (theme === "dark") {
-    document.documentElement.classList.add("dark");
   } else {
     document.documentElement.classList.remove("dark");
     document.documentElement.classList.remove("dark");
@@ -18,10 +16,6 @@ function applyTheme(theme) {
 }
 
 const initTheme = function () {
-  if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
   if (
     localStorage.theme === "dark" ||
     (!("theme" in localStorage) &&
@@ -76,7 +70,6 @@ window.onload = function () {
   });
 
   attachEvent("[data-aw-toggle-menu]", "click", function (_, elem) {
-  attachEvent("[data-aw-toggle-menu]", "click", function (_, elem) {
     elem.classList.toggle("expanded");
     document.body.classList.toggle("overflow-hidden");
     document.getElementById("header").classList.toggle("h-screen");
@@ -91,11 +84,5 @@ window.onload = function () {
     localStorage.theme = document.documentElement.classList.contains("dark")
       ? "dark"
       : "light";
-  attachEvent("[data-toggle-color-scheme]", "click", function () {
-    document.documentElement.classList.toggle("dark");
-    localStorage.theme = document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
   });
 };
-
