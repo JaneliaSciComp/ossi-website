@@ -1,5 +1,6 @@
 ---
 import { twMerge } from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 
 const {
   title = await Astro.slots.render("title"),
@@ -8,14 +9,14 @@ const {
   tagline,
 } = Astro.props;
 
-const containerClass = "max-w-3xl md:text-left rtl:md:text-right mb-4 md:mb-8";
+const containerClass = "max-w-3xl";
 const titleClass = "mb-4 text-3xl lg:text-4xl font-bold font-heading";
 const subtitleClass = "mb-8 text-xl text-muted dark:text-slate-400";
 ---
 
 {
   (title || subtitle || tagline || content) && (
-    <div class={twMerge("mb-8 md:mx-auto md:mb-12", containerClass)}>
+    <div class={containerClass}>
       {tagline && (
         <p
           class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
@@ -25,7 +26,7 @@ const subtitleClass = "mb-8 text-xl text-muted dark:text-slate-400";
       {title && (
         <h2
           class={twMerge(
-            "font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl",
+            "font-bold leading-normal tracking-tighter font-heading text-heading text-3xl md:pb-8",
             titleClass
           )}
           set:html={title}
@@ -34,13 +35,16 @@ const subtitleClass = "mb-8 text-xl text-muted dark:text-slate-400";
 
       {subtitle && (
         <p
-          class={twMerge("mt-4 text-muted", subtitleClass)}
+          class={twMerge("mt-4 text-muted 2xl:text-3xl", subtitleClass)}
           set:html={subtitle}
         />
       )}
 
       {content && (
-        <p class="mb-12 text-lg dark:text-slate-200" set:html={content} />
+        <p
+          class="md:leading-normal 2xl:leading-relaxed pb-8 text-lg md:text-xl 2xl:text-2xl  dark:text-slate-200"
+          set:html={content}
+        />
       )}
     </div>
   )

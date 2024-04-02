@@ -36,12 +36,12 @@ export default function CardsAndFiltersIsland({
   }, []);
 
   return (
-    <section className="px-6 py-6 md:py-12 lg:py-20 mx-auto max-w-6xl md:grid grid-cols-3 gap-4 ">
+    <section className="px-6 lg:px-20 xl:px-32 py-6 md:py-12 lg:py-20 mx-auto max-w-6xl lg:max-w-none 2xl:w-11/12 md:grid grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-5 gap-4 ">
       <div className="col-start-1 col-span-1 ">
         <FilterMenu uniqueTags={uniqueTags} />
       </div>
 
-      <div className="col-start-2 col-span-2">
+      <div className="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
         <ProjectTypeBtns contentType={contentType} />
         <div
           className={`md:hidden ${
@@ -63,7 +63,7 @@ export default function CardsAndFiltersIsland({
 
         <ProjectCount allContent={allContent} contentType={contentType} />
 
-        <div className=" md:grid grid-cols-2 auto-rows-max gap-4">
+        <div className=" lg:grid grid-cols-2 3xl:grid-cols-3 4xl:grid-cols-4 auto-rows-max gap-4">
           {allContent.map((content) => {
             return (
               <ContentCard

@@ -1,15 +1,16 @@
-function applyHeaderStylesOnLoad() {
-  if (window.scrollY > 60) {
-    header.classList.add("scroll");
-  } else {
-    header.classList.remove("scroll");
-  }
-}
+// function applyHeaderStylesOnLoad() {
+//   if (window.scrollY > 60) {
+//     header.classList.add('scroll');
+//   } else {
+//     header.classList.remove('scroll');
+//   }
+// }
 
 function applyTheme(theme) {
   if (theme === "dark") {
     document.documentElement.classList.add("dark");
   } else {
+    document.documentElement.classList.remove("dark");
     document.documentElement.classList.remove("dark");
   }
 }
@@ -21,7 +22,9 @@ const initTheme = function () {
       window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
     applyTheme("dark");
+    applyTheme("dark");
   } else {
+    applyTheme("light");
     applyTheme("light");
   }
 };
@@ -50,14 +53,10 @@ function attachEvent(selector, event, fn) {
 }
 
 window.onload = function () {
-  const header = document.querySelector("#header[data-sticky-header]");
-  applyHeaderStylesOnLoad();
-  window.addEventListener("scroll", applyHeaderStylesOnLoad);
+  // const header = document.querySelector('#header[data-sticky-header]');
+  // applyHeaderStylesOnLoad();
+  // window.addEventListener('scroll', applyHeaderStylesOnLoad);
 
-  // // Event listener for the menu toggle button
-  // document
-  //   .querySelector("[data-aw-toggle-menu]")
-  //   .addEventListener("click", toggleMenuVisibility);
   attachEvent("#header nav", "click", function () {
     document
       .querySelector("[data-aw-toggle-menu]")

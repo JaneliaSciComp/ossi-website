@@ -1,12 +1,13 @@
 ---
 import { headerData } from "../data/navigation";
 import ToggleTheme from "../components/ToggleTheme.astro";
+import ToggleTheme from "../components/ToggleTheme.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <header
-  class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out"
+  class="scroll fixed top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out"
   data-sticky-header="true"
   id="header"
 >
@@ -100,8 +101,3 @@ const baseUrl = import.meta.env.BASE_URL;
     </div>
   </div>
 </header>
-
-<!-- <Icon
-                        name="tabler:chevron-down"
-                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
-                      /> -->
