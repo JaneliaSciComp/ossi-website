@@ -24,11 +24,12 @@ export default function FilterMenu({ uniqueTags }) {
 
   // Effect to update categoryVisibility when $selectedTags changes
   useEffect(() => {
+    const prevVisibility = categoryVisibility;
     const newVisibility = {};
     Object.keys(uniqueTags).forEach((key) => {
-      newVisibility[key] = uniqueTags[key].some((tag) =>
-        $selectedTags.includes(tag)
-      );
+      newVisibility[key] =
+        prevVisibility[key] ||
+        uniqueTags[key].some((tag) => $selectedTags.includes(tag));
     });
     setCategoryVisibility(newVisibility);
   }, [$selectedTags]);
