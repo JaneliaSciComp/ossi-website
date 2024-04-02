@@ -16,7 +16,7 @@ const {
 // console.log(actions)
 ---
 
-<>
+<div class="flex flex-col">
   <TextBlock
     title={title}
     subtitle={subtitle}
@@ -25,7 +25,7 @@ const {
   />
   {
     actions && (
-      <div class="max-w-xs sm:max-w-md flex flex-nowrap flex-row sm:justify-center gap-4 ">
+      <div class="flex flex-nowrap flex-row justify-center gap-4 ">
         {Array.isArray(actions) ? (
           actions.map((action) => (
             <div class="flex w-full">
@@ -41,4 +41,4 @@ const {
       </div>
     )
   }
-</>
+</div>
