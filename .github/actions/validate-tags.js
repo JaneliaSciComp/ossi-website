@@ -2,7 +2,7 @@ import matter from "gray-matter";
 import { promises as fs } from "fs";
 import { validTagsList } from "./validTagsList";
 
-console.log(process.cwd());
+console.log("current working directory: ", process.cwd());
 const changedFiles = process.env.CHANGED_FILES.split(" ");
 
 let invalidFrontmatterFiles = [];
