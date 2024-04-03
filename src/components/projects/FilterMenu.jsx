@@ -27,6 +27,10 @@ export default function FilterMenu({ uniqueTags }) {
     const prevVisibility = categoryVisibility;
     const newVisibility = {};
     Object.keys(uniqueTags).forEach((key) => {
+      //want the categoryVisibility to be true IF either it was previously true
+      //(which means the user manually selected a tag in that category)
+      //OR IF $selectedTags includes any of the tags associated with that category
+      //(which could be user selected, or provided in the URL search params)
       newVisibility[key] =
         prevVisibility[key] ||
         uniqueTags[key].some((tag) => $selectedTags.includes(tag));

@@ -35,7 +35,6 @@ github repository link array: [https://github.com/JaneliaSciComp/maru]
 associated labs and projects: [
     # Branson,
     # Pachitariu,
-    # Preibisch,
     # Saalfeld,
     # Spruston,
     # Stringer,

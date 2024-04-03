@@ -3,7 +3,6 @@ associated labs and projects:
   [
     Branson Lab,
     Pachitariu Lab,
-    Preibisch Lab,
     Saalfeld Lab,
     Spruston Lab,
     Stringer Lab,
