@@ -1,8 +1,8 @@
 import matter from "gray-matter";
-const fs = require("fs");
-const path = require("path");
+import { promises as fs } from "fs";
 import { validTagsList } from "./validTagsList";
 
+console.log(process.cwd());
 const changedFiles = process.env.CHANGED_FILES.split(" ");
 
 let invalidFrontmatterFiles = [];
@@ -17,8 +17,8 @@ function validateFile(filePath) {
     // Frontmatter is invalid or empty
     invalidFrontmatterFiles.push(filePath);
   } else {
-    let fileInvalidTags = [];
-    for (const [key, acceptedValues] of Object.entries(acceptedTags)) {
+    let invalidTags = [];
+    for (const [key, acceptedValues] of Object.entries(validTagsList)) {
       if (parsed.data.hasOwnProperty(key)) {
         const value = parsed.data[key];
         // Check if the value(s) are within the accepted values
@@ -28,14 +28,14 @@ function validateFile(filePath) {
         );
 
         if (invalidValues.length > 0) {
-          fileInvalidTags.push(`${key}: ${invalidValues.join(", ")}`);
+          invalidTags.push(`${key}: ${invalidValues.join(", ")}`);
         }
       }
     }
 
-    if (fileInvalidTags.length > 0) {
+    if (invalidTags.length > 0) {
       // If there are invalid tags, save them with the filename
-      invalidTagsFiles[filePath] = fileInvalidTags;
+      invalidTagsFiles[filePath] = invalidTags;
     }
   }
 }
@@ -54,7 +54,7 @@ if (invalidFrontmatterFiles.length > 0) {
   )}\n\n`;
 }
 
-if (Object.keys(filesWithInvalidTags).length > 0) {
+if (Object.keys(invalidTagFiles).length > 0) {
   reportContent += `## ⚠️ Invalid tags!\n\n**One or more of your committed Markdown files have invalid tag values!**\n\nThe following files had invalid tags:\n`;
   for (const [file, tags] of Object.entries(filesWithInvalidTags)) {
     reportContent += `- ${file} with invalid tags: ${tags.join("; ")}\n`;

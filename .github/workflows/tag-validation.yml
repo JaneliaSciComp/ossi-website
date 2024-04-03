@@ -56,4 +56,3 @@ jobs:
         with:
           filePath: validation-report.md
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
