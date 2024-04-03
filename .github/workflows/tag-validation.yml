@@ -1,0 +1,32 @@
+# Modeled after solana-labs/ecosystem file-lint.yaml workflow
+# See https://github.com/solana-labs/ecosystem/blob/master/.github/workflows/file-lint.yaml
+
+name: Validate tag values in project MD files
+
+# This workflow is triggered on PRs to main branch on the repository
+on:
+  pull_request_target:
+    branches: [main, test]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  validate-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        if: ${{ github.event.pull_request.number }}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+
+      # Lint MD frontmatter in PR
+      - name: Lint Current PR
+        id: lint
+        uses: atruhlar/Flinter
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALID_DIRECTORY: |
+            src/content
+            public/project-images

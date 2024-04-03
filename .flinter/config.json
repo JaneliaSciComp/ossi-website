@@ -1,0 +1,63 @@
+{
+  "defaults": {
+    "markdownFileExtensions": ["md", "mdx"],
+    "frontmatter": [
+      {
+        "field": "title",
+        "required": true
+      },
+      {
+        "field": "tagline",
+        "required": true
+      },
+      {
+        "field": "author names",
+        "required": true
+      },
+      {
+        "field": "project type",
+        "required": true
+      }
+    ]
+  },
+  "rules": {
+    "frontmatter": [
+      {
+        "field": "associated labs and projects",
+        "rule": "validTags.js"
+      },
+      {
+        "field": "programming language",
+        "rule": "validTags.js"
+      },
+      {
+        "field": "software ecosystem",
+        "rule": "validTags.js"
+      },
+      {
+        "field": "supported file types",
+        "rule": "validTags.js"
+      },
+      {
+        "field": "related experimental techniques",
+        "rule": "validTags.js"
+      },
+      {
+        "field": "open source license",
+        "rule": "validTags.js"
+      },
+      {
+        "field": "software type",
+        "rule": "validTags.js"
+      },
+      {
+        "field": "software use case",
+        "rule": "validTags.js"
+      },
+      {
+        "field": "usage environment",
+        "rule": "validTags.js"
+      }
+    ]
+  }
+}
