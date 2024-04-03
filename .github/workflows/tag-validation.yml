@@ -13,6 +13,7 @@ on:
 jobs:
   validate-content:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout PR
         if: ${{ github.event.pull_request.number }}
@@ -21,12 +22,37 @@ jobs:
           fetch-depth: 0
           ref: refs/pull/${{ github.event.pull_request.number }}/merge
 
-      # Lint MD frontmatter in PR
-      - name: Lint Current PR
-        id: lint
-        uses: allison-truhlar/Flinter@main
+      - name: Get all changed markdown files
+        id: changed-markdown-files
+        uses: tj-actions/changed-files@v44
         with:
+          files: |
+            **.md
+            **.mdx
+          files_ignore: |
+            project-template.md
+            tagsList.md
+            README.md
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install npm dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: .github/actions
+
+      - name: Lint MD frontmatter for changed files
+        env:
+          CHANGED_FILES: ${{ steps.changed-markdown-files.outputs.all_changed_files }}
+        uses: ./.github/actions/validate-tags.js
+
+      - name: Comment PR with validation report
+        if: steps.changed-markdown-files == 'true'
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          filePath: validation-report.md
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALID_DIRECTORY: |
-            src/content
-            public/project-images
