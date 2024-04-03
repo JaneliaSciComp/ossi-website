@@ -2,7 +2,6 @@ export const allLabNamesAndUrls = [
   ["Branson Lab", "https://www.janelia.org/lab/branson-lab"],
   ["Dudman Lab", "https://www.janelia.org/lab/dudman-lab"],
   ["Pachitariu Lab", "https://www.janelia.org/lab/pachitariu-lab"],
-  ["Preibisch Lab", "https://www.janelia.org/people/stephan-preibisch"],
   ["Saalfeld Lab", "https://www.janelia.org/lab/saalfeld-lab"],
   ["Stringer Lab", "https://www.janelia.org/lab/stringer-lab"],
   ["Turaga Lab", "https://www.janelia.org/lab/turaga-lab"],

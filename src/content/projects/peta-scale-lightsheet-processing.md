@@ -34,7 +34,6 @@ github repository text array: [GitHub BigStitcher, GitHub Stitching-Spark]
 # image alt text: Alt text is required if you upload an image file
 associated labs and projects:
   [
-    Preibisch Lab,
     Saalfeld Lab,
     MultiFISH Project Team,
     Scientific Computing Software Support Team,
