@@ -24,7 +24,7 @@ jobs:
       # Lint MD frontmatter in PR
       - name: Lint Current PR
         id: lint
-        uses: atruhlar/Flinter@main
+        uses: allison-truhlar/Flinter@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALID_DIRECTORY: |
