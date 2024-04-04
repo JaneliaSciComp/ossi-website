@@ -2,7 +2,7 @@ console.log(process.cwd());
 
 import matter from "gray-matter";
 import { readFileSync, writeFileSync } from "fs";
-import validTagsList from "validTagsList.json";
+import validTagsList from "../../.github/actions/validTagsList.json";
 
 console.log(process.cwd());
 const changedFiles = process.env.CHANGED_FILES.split(" ");
