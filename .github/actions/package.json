@@ -1,6 +1,7 @@
 {
   "name": "actions",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "validate-tags.js",
   "scripts": {
