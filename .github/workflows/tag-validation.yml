@@ -19,9 +19,6 @@ jobs:
       - name: Checkout PR
         if: ${{ github.event.pull_request.number }}
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: refs/pull/${{ github.event.pull_request.number }}/merge
 
       - name: Get all changed markdown files
         id: changed-markdown-files
