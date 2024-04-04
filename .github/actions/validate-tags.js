@@ -2,7 +2,7 @@ console.log(process.cwd());
 
 import matter from "gray-matter";
 import { readFileSync, writeFileSync } from "fs";
-import validTagsList from "../../.github/actions/validTagsList.json";
+import validTagsList from "../../.github/actions/validTagsList.json" assert { type: "json" };
 
 console.log(process.cwd());
 const changedFiles = process.env.CHANGED_FILES.split(" ");
@@ -56,9 +56,9 @@ if (invalidFrontmatterFiles.length > 0) {
   )}\n\n`;
 }
 
-if (Object.keys(invalidTagFiles).length > 0) {
+if (Object.keys(invalidTagsFiles).length > 0) {
   reportContent += `## ⚠️ Invalid tags!\n\n**One or more of your committed Markdown files have invalid tag values!**\n\nThe following files had invalid tags:\n`;
-  for (const [file, tags] of Object.entries(filesWithInvalidTags)) {
+  for (const [file, tags] of Object.entries(invalidTagsFiles)) {
     reportContent += `- ${file} with invalid tags: ${tags.join("; ")}\n`;
   }
 }
