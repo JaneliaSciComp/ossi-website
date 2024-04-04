@@ -5,6 +5,7 @@ name: Validate tag values in project MD files
 
 # This workflow is triggered on PRs to main branch on the repository
 on:
+  pull_request:
   pull_request_target:
     branches: [main, test]
   # Allows you to run this workflow manually from the Actions tab
