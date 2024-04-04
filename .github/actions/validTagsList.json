@@ -1,4 +1,4 @@
-export const validTagsList = {
+{
   "associated labs and projects": [
     "Branson Lab",
     "Pachitariu Lab",
@@ -88,4 +88,4 @@ export const validTagsList = {
     "Local installation",
     "Web browser",
   ],
-};
+}

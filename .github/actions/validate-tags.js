@@ -1,6 +1,6 @@
 import matter from "gray-matter";
-import { promises as fs } from "fs";
-import { validTagsList } from "validTagsList.js";
+import { readFileSync, writeFileSync } from "fs";
+import validTagsList from "validTagsList.json";
 
 console.log(process.cwd());
 const changedFiles = process.env.CHANGED_FILES.split(" ");
@@ -10,7 +10,7 @@ let invalidTagsFiles = {};
 
 // Check if frontmatter is valid and if tags are correct
 function validateFile(filePath) {
-  const content = fs.readFileSync(filePath, "utf8");
+  const content = readFileSync(filePath, "utf8");
   const parsed = matter(content);
 
   if (!parsed.data || Object.keys(parsed.data).length === 0) {
@@ -62,7 +62,7 @@ if (Object.keys(invalidTagFiles).length > 0) {
 }
 
 if (invalidFrontmatterFiles.length > 0 || invalidTagsFiles.length > 0) {
-  fs.writeFileSync("validation-report.md", reportContent);
+  writeFileSync("validation-report.md", reportContent);
   console.log("Validation report generated.");
 } else {
   console.log("No validation issues found.");
