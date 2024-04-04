@@ -36,12 +36,14 @@ jobs:
             README.md
 
       - name: Setup node
+        if: steps.changed-markdown-files == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "npm"
 
       - name: Install npm dependencies
+        if: steps.changed-markdown-files == 'true'
         uses: bahmutov/npm-install@v1
         with:
           working-directory: .github/actions
