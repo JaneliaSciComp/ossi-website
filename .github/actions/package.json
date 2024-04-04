@@ -1,0 +1,15 @@
+{
+  "name": "actions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "validate-tags.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
