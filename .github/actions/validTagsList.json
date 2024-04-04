@@ -12,7 +12,7 @@
     "FlyLight Project Team",
     "MouseLight Project Team",
     "MultiFISH Project Team",
-    "Scientific Computing Software Support Team",
+    "Scientific Computing Software Support Team"
   ],
   "programming language": [
     "C++",
@@ -23,7 +23,7 @@
     "MATLAB",
     "Nextflow",
     "Python",
-    "Javascript",
+    "Javascript"
   ],
   "software ecosystem": [
     "BigDataViewer",
@@ -31,7 +31,7 @@
     "ImgLib2",
     "Janelia Workstation",
     "Java Virtual Machine",
-    "Napari",
+    "Napari"
   ],
   "related experimental techniques": [
     "Calcium imaging",
@@ -42,7 +42,7 @@
     "Lightsheet fluorescence microscopy (LFSM)",
     "Neural recording",
     "Single-molecule localization microscopy (SMLM)",
-    "Spatial transcriptomics",
+    "Spatial transcriptomics"
   ],
   "supported file types": [
     "N5",
@@ -52,14 +52,14 @@
     "TIFF",
     "Zeiss CZI",
     "mpeg",
-    "avi",
+    "avi"
   ],
   "open source license": [
     "BSD-3 Clause",
     "CC-by-0",
     "GPL-2.0",
     "GPL-3.0",
-    "MIT",
+    "MIT"
   ],
   "software type": [
     "Command line application",
@@ -68,7 +68,7 @@
     "Package",
     "Service",
     "Web application",
-    "Website",
+    "Website"
   ],
   "software use case": [
     "Annotation",
@@ -78,7 +78,7 @@
     "Image registration",
     "Sequence analysis",
     "Tool packaging/distribution",
-    "Video analysis",
+    "Video analysis"
   ],
   "usage environment": [
     "Cloud",
@@ -86,6 +86,6 @@
     "HPC cluster",
     "Jupyter notebook",
     "Local installation",
-    "Web browser",
-  ],
+    "Web browser"
+  ]
 }
