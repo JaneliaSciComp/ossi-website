@@ -1,3 +1,5 @@
+console.log(process.cwd());
+
 import matter from "gray-matter";
 import { readFileSync, writeFileSync } from "fs";
 import validTagsList from "validTagsList.json";
