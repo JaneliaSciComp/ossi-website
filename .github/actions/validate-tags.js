@@ -1,6 +1,6 @@
 import matter from "gray-matter";
 import { promises as fs } from "fs";
-import { validTagsList } from "./validTagsList";
+import { validTagsList } from "validTagsList.js";
 
 console.log(process.cwd());
 const changedFiles = process.env.CHANGED_FILES.split(" ");
