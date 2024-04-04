@@ -47,6 +47,7 @@ jobs:
           working-directory: .github/actions
 
       - name: Lint MD frontmatter for changed files
+        if: steps.changed-markdown-files == 'true'
         env:
           CHANGED_FILES: ${{ steps.changed-markdown-files.outputs.all_changed_files }}
         run: node .github/actions/validate-tags.js
