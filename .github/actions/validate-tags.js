@@ -8,9 +8,13 @@ let invalidFrontmatterFiles = [];
 let invalidTagsFiles = {};
 
 function validateFile(filePath) {
+  let parsed = {};
   const markdownData = readFileSync(filePath, "utf8"); // Read markdown content from the file.
-  console.log(markdownData);
-  const parsed = yaml.parse(markdownData, { strict: false });
+  try {
+    parsed = yaml.parse(markdownData, { strict: false });
+  } catch (error) {
+    console.log("ERROR: ", error);
+  }
   console.log("parsed result: ", parsed);
 
   if (!parsed.data || Object.keys(parsed.data).length === 0) {
