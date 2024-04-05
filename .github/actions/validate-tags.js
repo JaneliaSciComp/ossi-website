@@ -8,8 +8,9 @@ let invalidFrontmatterFiles = [];
 let invalidTagsFiles = {};
 
 function validateFile(filePath) {
-  const content = readFileSync(filePath, "utf8");
-  const parsed = matter(content);
+  // const content = readFileSync(filePath, "utf8");
+  console.log(filePath);
+  const parsed = matter.read(filePath);
 
   if (!parsed.data || Object.keys(parsed.data).length === 0) {
     // Frontmatter is invalid or empty
