@@ -13,34 +13,31 @@ function validateFile(filePath) {
   try {
     parsed = yaml.parse(markdownData, { strict: false });
   } catch (error) {
-    console.log("ERROR: ", error);
+    console.error("Error processing file:", filePath, error);
+    invalidFrontmatterFiles.push(filePath);
+    return; //skip to next filePath in changedFiles
   }
   console.log("parsed result: ", parsed);
 
-  if (!parsed.data || Object.keys(parsed.data).length === 0) {
-    // Frontmatter is invalid or empty
-    invalidFrontmatterFiles.push(filePath);
-  } else {
-    let invalidTags = [];
-    for (const [key, acceptedValues] of Object.entries(validTagsList)) {
-      if (parsed.data.hasOwnProperty(key)) {
-        const value = parsed.data[key];
-        // Check if the value(s) are within the accepted values
-        const valuesToCheck = Array.isArray(value) ? value : [value];
-        const invalidValues = valuesToCheck.filter(
-          (val) => !acceptedValues.includes(val)
-        );
+  let invalidTags = [];
+  for (const [key, acceptedValues] of Object.entries(validTagsList)) {
+    if (parsed.data.hasOwnProperty(key)) {
+      const value = parsed.data[key];
+      // Check if the value(s) are within the accepted values
+      const valuesToCheck = Array.isArray(value) ? value : [value];
+      const invalidValues = valuesToCheck.filter(
+        (val) => !acceptedValues.includes(val)
+      );
 
-        if (invalidValues.length > 0) {
-          invalidTags.push(`${key}: ${invalidValues.join(", ")}`);
-        }
+      if (invalidValues.length > 0) {
+        invalidTags.push(`${key}: ${invalidValues.join(", ")}`);
       }
     }
+  }
 
-    if (invalidTags.length > 0) {
-      // If there are invalid tags, save them with the filename
-      invalidTagsFiles[filePath] = invalidTags;
-    }
+  if (invalidTags.length > 0) {
+    // If there are invalid tags, save them with the filename
+    invalidTagsFiles[filePath] = invalidTags;
   }
 }
 
@@ -48,9 +45,9 @@ if (!changedFiles.length) {
   console.log("No MD files changed.");
 } else {
   // Main function
-  changedFiles.forEach((file) => {
+  for (const file of changedFiles) {
     validateFile(file);
-  });
+  }
 }
 
 // Generate markdown report
