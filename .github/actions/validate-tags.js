@@ -1,10 +1,9 @@
-console.log(process.cwd());
-
 import matter from "gray-matter";
 import { readFileSync, writeFileSync } from "fs";
 import validTagsList from "../../.github/actions/validTagsList.json" assert { type: "json" };
 
 const changedFiles = process.env.CHANGED_FILES.split(" ");
+console.log("changed files: ", changedFiles);
 let invalidFrontmatterFiles = [];
 let invalidTagsFiles = {};
 
