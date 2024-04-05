@@ -79,3 +79,12 @@ jobs:
         with:
           filePath: validation-report.md
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fail if validation report exists
+        run: |
+          if [ -f validation-report.md ]; then
+            echo "Validation report found, indicating issues. Failing the check..."
+            exit 1
+          else
+            echo "No validation report found. Proceeding..."
+          fi
