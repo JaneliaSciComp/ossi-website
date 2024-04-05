@@ -10,6 +10,6 @@
   "author": "allison-truhlar",
   "license": "ISC",
   "dependencies": {
-    "gray-matter": "^4.0.3"
+    "yaml": "^2.4.1"
   }
 }
