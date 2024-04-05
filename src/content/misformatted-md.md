@@ -20,10 +20,10 @@ open source license: GpL-3.0
 
 # GpL-3.0 should be GPL-3.0
 
-supported file types:
-related experimental techniques:
+supported file types: []
+related experimental techniques: []
 [FISH, Single-molecule localization microscopy (SMLM)]
-software use case:
+software use case: []
 usage environment: [local installation, Jupyter notebook, Google Colab]
 related blog posts: [working-with-ossi-supported-projects]
 
