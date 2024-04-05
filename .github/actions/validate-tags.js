@@ -8,7 +8,7 @@ let invalidFrontmatterFiles = [];
 let invalidTagsFiles = {};
 
 function validateFile(filePath) {
-  const markdownData = fs.readFileSync(filePath, "utf8"); // Read markdown content from the file.
+  const markdownData = readFileSync(filePath, "utf8"); // Read markdown content from the file.
   console.log(markdownData);
   const parsed = matter(markdownData);
 
