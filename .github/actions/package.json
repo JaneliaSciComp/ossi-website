@@ -1,0 +1,14 @@
+{
+  "name": "validate-tags",
+  "version": "1.0.0",
+  "description": "Packages required to run the validate-tags action",
+  "main": "validate-tags.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "allison-truhlar",
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
