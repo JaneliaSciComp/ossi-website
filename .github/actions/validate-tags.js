@@ -8,9 +8,9 @@ let invalidFrontmatterFiles = [];
 let invalidTagsFiles = {};
 
 function validateFile(filePath) {
-  // const content = readFileSync(filePath, "utf8");
-  console.log(filePath);
-  const parsed = matter.read(filePath);
+  const markdownData = fs.readFileSync(filePath, "utf8"); // Read markdown content from the file.
+  console.log(markdownData);
+  const parsed = matter(markdownData);
 
   if (!parsed.data || Object.keys(parsed.data).length === 0) {
     // Frontmatter is invalid or empty
