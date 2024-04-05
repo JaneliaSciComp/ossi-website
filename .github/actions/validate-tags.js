@@ -1,6 +1,7 @@
 import yaml from "yaml";
 import { readFileSync, writeFileSync } from "fs";
 import validTagsList from "../../.github/actions/validTagsList.json" assert { type: "json" };
+import { report } from "process";
 
 const changedFiles = process.env.CHANGED_FILES.split(" ");
 console.log("changed files: ", changedFiles);
@@ -66,7 +67,7 @@ if (Object.keys(invalidTagsFiles).length > 0) {
   }
 }
 
-if (invalidFrontmatterFiles.length > 0 || invalidTagsFiles.length > 0) {
+if (reportContent) {
   writeFileSync("validation-report.md", reportContent);
   console.log("Validation report generated.");
 } else {
