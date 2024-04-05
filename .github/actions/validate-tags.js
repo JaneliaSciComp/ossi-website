@@ -64,8 +64,7 @@ if (Object.keys(invalidTagFiles).length > 0) {
 }
 
 if (invalidFrontmatterFiles.length > 0 || invalidTagsFiles.length > 0) {
-  writeFileSync("validation-report.md", reportContent);
-  console.log("Validation report generated.");
+  return reportContent;
 } else {
   console.log("No validation issues found.");
 }

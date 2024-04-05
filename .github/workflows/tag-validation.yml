@@ -36,18 +36,20 @@ jobs:
             README.md
 
       - name: Setup node
+        if: steps.changed-markdown-files.outputs.any_changed == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "npm"
 
       - name: Install npm dependencies
+        if: steps.changed-markdown-files.outputs.any_changed == 'true'
         uses: bahmutov/npm-install@v1
         with:
           working-directory: .github/actions
 
       - name: Lint MD frontmatter for changed files
-        id: lint-md
+        if: steps.changed-markdown-files.outputs.any_changed == 'true'
         env:
           CHANGED_FILES: ${{ steps.changed-markdown-files.outputs.all_changed_files }}
         run:
@@ -55,12 +57,13 @@ jobs:
 
           # Create an artifact with the message
       - name: Create artifact
+        if: steps.changed-markdown-files.outputs.any_changed == 'true'
         run: |
           mkdir -p artifact
           echo ${{ steps.lint-md.outputs.result }} > .github/artifact/validation-report.md
 
       - name: Comment PR with validation report
-        if: steps.changed-markdown-files == 'true'
+        if: steps.changed-markdown-files.outputs.any_changed == 'true'
         uses: thollander/actions-comment-pull-request@v2
         with:
           filePath: validation-report.md
