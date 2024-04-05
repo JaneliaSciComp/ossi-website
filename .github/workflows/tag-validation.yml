@@ -62,18 +62,19 @@ jobs:
         if: steps.changed-markdown-files.outputs.any_changed == 'true'
         env:
           CHANGED_FILES: ${{ steps.changed-markdown-files.outputs.all_changed_files }}
-        run:
-          node .github/actions/validate-tags.js
+        run: node .github/actions/validate-tags.js
 
-          # Create an artifact with the message
-      - name: Create artifact
-        if: steps.changed-markdown-files.outputs.any_changed == 'true'
+      - name: Check if validation report exists
+        id: check-report
         run: |
-          mkdir -p artifact
-          echo ${{ steps.lint-md.outputs.result }} > .github/artifact/validation-report.md
+          if [ -f validation-report.md ]; then
+            echo "report-exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "report-exists=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Comment PR with validation report
-        if: steps.changed-markdown-files.outputs.any_changed == 'true'
+        if: steps.check-report.outputs.report-exists == 'true'
         uses: thollander/actions-comment-pull-request@v2
         with:
           filePath: validation-report.md
