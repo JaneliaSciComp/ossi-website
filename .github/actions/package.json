@@ -1,5 +1,6 @@
 {
   "name": "validate-tags",
+  "type": "module",
   "version": "1.0.0",
   "description": "Packages required to run the validate-tags action",
   "main": "validate-tags.js",
