@@ -52,9 +52,8 @@ jobs:
 
       - name: Install npm dependencies
         if: steps.changed-markdown-files.outputs.any_changed == 'true'
-        uses: bahmutov/npm-install@v1
-        with:
-          working-directory: .github/actions
+        run: npm ci
+        working-directory: .github/actions
 
       - name: Lint MD frontmatter for changed files
         id: lint-md
@@ -93,5 +92,5 @@ jobs:
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
-            :tada: Thank you for your contribution! The website maintainers will review your PR soon.
+            ## :tada: Thank you for your contribution!\n\n The website maintainers will review your PR soon.
           comment_tag: success
