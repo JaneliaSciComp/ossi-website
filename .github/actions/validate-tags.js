@@ -51,7 +51,7 @@ function validateFile(filePath) {
     } else {
       // No front matter found, log error
       console.error(`No frontmatter found in ${filePath}`);
-      invalidFrontmatterFiles.push(`**${filePath}`);
+      invalidFrontmatterFiles.push(`**${filePath}**`);
     }
   } catch (error) {
     // Handle file read or other errors
