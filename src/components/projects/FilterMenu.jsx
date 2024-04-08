@@ -75,7 +75,8 @@ export default function FilterMenu({ uniqueTags }) {
               className="cursor-pointer font-bold border-b-2 flex items-center justify-between py-2"
               onClick={() => toggleCategoryVisibility(key)}
             >
-              {key}
+              {/* Capitalize the first letter for display purposes*/}
+              {key.charAt(0).toUpperCase() + key.slice(1)}{" "}
               {categoryVisibility[key] ? <TbMinus /> : <TbPlus />}
             </h3>
             <ul
