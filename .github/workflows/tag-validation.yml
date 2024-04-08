@@ -5,12 +5,14 @@ name: Validate tag values in project MD files
 
 # This workflow is triggered on PRs to main branch on the repository
 on:
-  pull_request:
+  pull_request_target:
     branches: main
 
 jobs:
   validate-content:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
 
     steps:
       - name: Checkout PR
