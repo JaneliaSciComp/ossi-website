@@ -1,6 +1,7 @@
 import yaml from "yaml";
 import { readFileSync, writeFileSync } from "fs";
 import validTagsList from "../../.github/actions/validTagsList.json" assert { type: "json" };
+import { parse } from "path";
 // import { report } from "process";
 
 const changedFiles = process.env.CHANGED_FILES.split(" ");
@@ -24,6 +25,7 @@ function validateFile(filePath) {
 
     if (frontMatterString) {
       const parsedFrontMatter = yaml.parse(frontMatterString);
+      console.log(parsedFrontMatter);
 
       // step 2 - if valid frontmatter, validate tags
       let invalidTags = [];
