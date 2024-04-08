@@ -80,13 +80,6 @@ jobs:
           filePath: validation-report.md
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: If no validation report, leave thank you
-        if: steps.check-report.outputs.report-exists == 'false'
-        uses: thollander/actions-comment-pull-request@v2
-        with:
-          message: |
-            :tada: Thank you for your contribution! The website maintainers will review your PR soon.
-
       - name: Fail if validation report exists
         run: |
           if [ -f validation-report.md ]; then
@@ -95,3 +88,10 @@ jobs:
           else
             echo "No validation report found. Proceeding..."
           fi
+
+      - name: If no validation report, leave thank you
+        if: steps.check-report.outputs.report-exists == 'false'
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            :tada: Thank you for your contribution! The website maintainers will review your PR soon.
