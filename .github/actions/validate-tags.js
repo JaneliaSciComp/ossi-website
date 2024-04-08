@@ -1,47 +1,64 @@
 import yaml from "yaml";
 import { readFileSync, writeFileSync } from "fs";
 import validTagsList from "../../.github/actions/validTagsList.json" assert { type: "json" };
-import { report } from "process";
+// import { report } from "process";
 
 const changedFiles = process.env.CHANGED_FILES.split(" ");
 console.log("changed files: ", changedFiles);
 let invalidFrontmatterFiles = [];
 let invalidTagsFiles = {};
 
+// function to extract only frontmatter from MD content
+// relies on frontmatter being sandwiched between ---
+function extractFrontMatter(content) {
+  const match = content.match(/^---\n([\s\S]+?)\n---/);
+  return match ? match[1] : null;
+}
+
+// function to process MD file and validate tag values
 function validateFile(filePath) {
-  let parsed = {};
-  const markdownData = readFileSync(filePath, "utf8"); // Read markdown content from the file.
+  // step 1 - check for valid frontmatter
   try {
-    parsed = yaml.parse(markdownData, { strict: false });
-  } catch (error) {
-    console.error("Error processing file:", filePath, error);
-    invalidFrontmatterFiles.push(filePath);
-    return; //skip to next filePath in changedFiles
-  }
-  console.log("parsed result: ", parsed);
+    const markdownContent = readFileSync(filePath, "utf8");
+    const frontMatterString = extractFrontMatter(markdownContent);
 
-  let invalidTags = [];
-  for (const [key, acceptedValues] of Object.entries(validTagsList)) {
-    if (parsed.data.hasOwnProperty(key)) {
-      const value = parsed.data[key];
-      // Check if the value(s) are within the accepted values
-      const valuesToCheck = Array.isArray(value) ? value : [value];
-      const invalidValues = valuesToCheck.filter(
-        (val) => !acceptedValues.includes(val)
-      );
+    if (frontMatterString) {
+      const parsedFrontMatter = yaml.parse(frontMatterString);
 
-      if (invalidValues.length > 0) {
-        invalidTags.push(`${key}: ${invalidValues.join(", ")}`);
+      // step 2 - if valid frontmatter, validate tags
+      let invalidTags = [];
+      for (const [key, acceptedValues] of Object.entries(validTagsList)) {
+        if (parsedFrontMatter.data.hasOwnProperty(key)) {
+          const value = parsedFrontMatter.data[key];
+          // Check if the value(s) are within the accepted values
+          const valuesToCheck = Array.isArray(value) ? value : [value];
+          const invalidValues = valuesToCheck.filter(
+            (val) => !acceptedValues.includes(val)
+          );
+
+          if (invalidValues.length > 0) {
+            invalidTags.push(`${key}: ${invalidValues.join(", ")}`);
+          }
+        }
       }
-    }
-  }
 
-  if (invalidTags.length > 0) {
-    // If there are invalid tags, save them with the filename
-    invalidTagsFiles[filePath] = invalidTags;
+      if (invalidTags.length > 0) {
+        // If there are invalid tags, save them with the filename
+        invalidTagsFiles[filePath] = invalidTags;
+      }
+    } else {
+      // No front matter found, log error
+      console.error(`No frontmatter found in ${filePath}`);
+      invalidFrontmatterFiles.push(filePath);
+    }
+  } catch (error) {
+    // Handle file read or other errors
+    console.error(`An error occurred processing ${filePath}: ${error.message}`);
+    invalidFrontmatterFiles.push(filePath);
   }
 }
 
+// Entrypoint to this script
 if (!changedFiles.length) {
   console.log("No MD files changed.");
 } else {
