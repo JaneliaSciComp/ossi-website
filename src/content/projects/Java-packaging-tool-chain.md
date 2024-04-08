@@ -4,13 +4,13 @@ tagline: Develop an easy-to-use packaging system for Java applications.
 author names: Saalfeld et al.
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1ig0xMeHcsLe-BF-kaHLthUfQrtnwQyi2/view
-associated labs and projects: [Saalfeld lab, Scientific Computing Software]
+associated labs and projects: [Saalfeld Lab, Scientific Computing Software]
 software type: Service
 programming language: Java
 software ecosystem: [ImgLib2, Java Virtual Machine]
-open source license:
+open source license: []
 supported file types: N5
-related experimental techniques:
+related experimental techniques: []
 software use case: Tool packaging/distribution
 usage environment: [Local installation]
 ---

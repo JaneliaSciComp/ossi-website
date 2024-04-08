@@ -41,10 +41,9 @@ open source license: [BSD-3 Clause]
 supported file types: [N5, TIFF, Zeiss CZI]
 related experimental techniques:
   [
-    EASI-FISH,
     Expansion microscopy (ExM),
-    FISH,
     Lightsheet fluorescence microscopy (LFSM),
+    Spatial transcriptomics,
   ]
 software use case: [Image analysis, Image registration]
 usage environment: [Cloud, HPC cluster, Local installation]

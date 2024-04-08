@@ -4,7 +4,7 @@ tagline: Maintain and extend Paintera (3D annotation software for very large vol
 author names: "Saalfeld et al."
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1pcrKTbzkNczkoDETg8og-y5XzCdauVJ3/view
-associated labs and projects: [Saalfeld lab, CellMap Project Team]
+associated labs and projects: [Saalfeld Lab, CellMap Project Team]
 programming language: [Java, Kotlin]
 software ecosystem: [ImgLib2, BigDataViewer]
 open source license: GPL-2.0

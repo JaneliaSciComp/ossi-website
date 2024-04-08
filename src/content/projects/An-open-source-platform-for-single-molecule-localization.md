@@ -10,10 +10,10 @@ software type: Package
 programming language: Python
 software ecosystem: Napari
 open source license: GPL-3.0
-supported file types:
+supported file types: []
 related experimental techniques:
   [Spatial transcriptomics, Single-molecule localization microscopy (SMLM)]
-software use case:
+software use case: []
 usage environment: [Local installation, Jupyter notebook, Google Colab]
 related blog posts: [working-with-ossi-supported-projects]
 ---
