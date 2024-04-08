@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "allison-truhlar",
-  "license": "ISC",
+  "license": "BSD-3 Clause",
   "dependencies": {
     "yaml": "^2.4.1"
   }
