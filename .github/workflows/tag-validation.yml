@@ -1,6 +1,3 @@
-# Modeled after solana-labs/ecosystem file-lint.yaml workflow
-# See https://github.com/solana-labs/ecosystem/blob/master/.github/workflows/file-lint.yaml
-
 name: Validate tag values in project MD files
 
 # This workflow is triggered on PRs to main branch on the repository
