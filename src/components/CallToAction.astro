@@ -1,11 +1,9 @@
 ---
-import Wrapper from "./Wrapper.astro";
 import TextBlock from "./TextBlock.astro";
 import Button from "./Button.astro";
-import { twMerge } from "tailwind-merge";
 
 const {
-  textColor,
+  btnContainerClasses,
   title = await Astro.slots.render("title"),
   subtitle = await Astro.slots.render("subtitle"),
   tagline = await Astro.slots.render("tagline"),
@@ -25,7 +23,9 @@ const {
   />
   {
     actions && (
-      <div class="flex flex-nowrap flex-row justify-center gap-4 ">
+      <div
+        class={`flex flex-nowrap flex-row justify-center gap-4 max-w-xs sm:max-w-md ${btnContainerClasses}`}
+      >
         {Array.isArray(actions) ? (
           actions.map((action) => (
             <div class="flex w-full">
