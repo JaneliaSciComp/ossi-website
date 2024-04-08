@@ -6,25 +6,16 @@ author names: Turaga et al.
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/14kZdz066bwxKvpUAV8-Vg41kp6KgVqxr/view
 github repository link array: [https://github.com/TuragaLab/DECODE]
-associated labs and projects: turaga
-
-# turaga should be turaga lab
-
-software type: package
+associated labs and projects: Turaga Lab
+software type: Package
 programming language: Python
-
-# Python should be python
-
-software ecosystem: napari
-open source license: GpL-3.0
-
-# GpL-3.0 should be GPL-3.0
-
+software ecosystem: Napari
+open source license: GPL-3.0
 supported file types: []
 related experimental techniques:
-[FISH, Single-molecule localization microscopy (SMLM)]
-software use case:
-usage environment: [local installation, Jupyter notebook, Google Colab]
+[Single-molecule localization microscopy (SMLM)]
+software use case: 
+usage environment: [Local installation, Jupyter notebook, Google Colab]
 related blog posts: [working-with-ossi-supported-projects]
 ---
 

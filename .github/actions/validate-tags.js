@@ -74,13 +74,13 @@ if (!changedFiles.length) {
 let reportContent = "";
 
 if (invalidFrontmatterFiles.length > 0) {
-  reportContent += `## ⚠️ Invalid Frontmatter!\n\n**One or more of your committed Markdown files are missing frontmatter or have an invalid structure!**\n\nThe following files have invalid frontmatter:\n- ${invalidFrontmatterFiles.join(
+  reportContent += `## :warning: Invalid Frontmatter!\n\n**One or more of your committed Markdown files are missing frontmatter or have an invalid structure!**\n\nThe following files have invalid frontmatter:\n- ${invalidFrontmatterFiles.join(
     "\n- "
   )}\n\n`;
 }
 
 if (Object.keys(invalidTagsFiles).length > 0) {
-  reportContent += `## :warning: Invalid tags!\n\n**One or more of your committed Markdown files have invalid tag values!**\n\nAll tags must match the options [here](https://github.com/JaneliaSciComp/ossi-website/tree/main/.github/actions/validTagsList.json), including exact capitalization and spelling. If any tag categories are empty, you must comment out or delete the line in the frontmatter.\n\nThe following files have invalid tags:\n`;
+  reportContent += `## Invalid tags!\n\n**One or more of your committed Markdown files have invalid tag values!**\n\nAll tags must match the options [here](https://github.com/JaneliaSciComp/ossi-website/tree/main/.github/actions/validTagsList.json), including exact capitalization and spelling. If any tag categories are empty, you must either leave a space and empty square brackets following the colon, (e.g., \`category: []\`), or comment out or delete the line in the frontmatter.\n\nThe following files have invalid tags:\n`;
   for (const [file, tags] of Object.entries(invalidTagsFiles)) {
     reportContent += `\n**${file}:**\n`;
     for (const tag of tags) {
@@ -91,7 +91,7 @@ if (Object.keys(invalidTagsFiles).length > 0) {
 }
 
 if (reportContent) {
-  reportContent += `\n\n**Add your corrections by pushing to the branch from which you originated your pull request.**`;
+  reportContent += `\n\n**Add your corrections by pushing them to the branch from which you originated this pull request.**`;
   writeFileSync("validation-report.md", reportContent);
   console.log("Validation report generated.");
 } else {
