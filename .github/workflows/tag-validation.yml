@@ -79,7 +79,6 @@ jobs:
         with:
           filePath: validation-report.md
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          comment_tag: invalid_files
 
       - name: Fail if validation report exists
         run: |
@@ -96,4 +95,3 @@ jobs:
         with:
           message: |
             :tada: Thank you for your contribution! The website maintainers will review your PR soon.
-          comment_tag: success

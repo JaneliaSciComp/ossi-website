@@ -10,7 +10,6 @@ software type: Package
 programming language: Python
 software ecosystem: Napari
 open source license: GPL-3.0
-supported file types:
 related experimental techniques:
   [Single-molecule localization microscopy (SMLM)]
 usage environment: [Local installation, Jupyter notebook, Google Colab]
