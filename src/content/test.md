@@ -14,7 +14,7 @@ supported file types: []
 related experimental techniques:
   [Single-molecule localization microscopy (SMLM)]
 software use case: []
-usage environment: [local installation, Jupyter notebook, Google Colab]
+usage environment: [Local installation, Jupyter notebook, Google Colab]
 related blog posts: [working-with-ossi-supported-projects]
 ---
 
