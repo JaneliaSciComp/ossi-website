@@ -1,4 +1,3 @@
-console.log("current working directory: ", process.cwd());
 import yaml from "yaml";
 import { readFileSync, writeFileSync } from "fs";
 import validTagsList from "./validTagsList.json" assert { type: "json" };
