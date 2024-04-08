@@ -39,7 +39,7 @@ function validateFile(filePath) {
           );
 
           if (invalidValues.length > 0) {
-            invalidTags.push(`${key}: ${invalidValues.join(", ")}`);
+            invalidTags.push(`**${key}**: ${invalidValues.join(", ")}`);
           }
         }
       }
@@ -74,19 +74,24 @@ if (!changedFiles.length) {
 let reportContent = "";
 
 if (invalidFrontmatterFiles.length > 0) {
-  reportContent += `## ⚠️ Invalid Frontmatter!\n\n**One or more Markdown files are missing frontmatter or have an invalid structure!**\n\nBe sure to check for & fix them!\n\nThe following files had invalid frontmatter:\n- ${invalidFrontmatterFiles.join(
+  reportContent += `## ⚠️ Invalid Frontmatter!\n\n**One or more of your committed Markdown files are missing frontmatter or have an invalid structure!**\n\nThe following files have invalid frontmatter:\n- ${invalidFrontmatterFiles.join(
     "\n- "
   )}\n\n`;
 }
 
 if (Object.keys(invalidTagsFiles).length > 0) {
-  reportContent += `## ⚠️ Invalid tags!\n\n**One or more of your committed Markdown files have invalid tag values!**\n\nThe following files had invalid tags:\n`;
+  reportContent += `## ⚠️ Invalid tags!\n\n**One or more of your committed Markdown files have invalid tag values!**\n\nAll tags must match the options [here](.github/actions/validTagsList.json), including exact capitalization and spelling.\n\nThe following files have invalid tags:\n`;
   for (const [file, tags] of Object.entries(invalidTagsFiles)) {
-    reportContent += `- ${file} with invalid tags: ${tags.join("; ")}\n`;
+    reportContent += `**${file}**:\n`;
+    for (const tag of tags) {
+      reportContent += `- ${tag}\n`;
+    }
   }
+  reportContent += `If this is a pull request to add a new tag value, please ensure your PR includes the "new tags" label and disregard this comment.`;
 }
 
 if (reportContent) {
+  reportContent += `\n\nAdd your corrections by pushing to the branch from which you originated your pull request.`;
   writeFileSync("validation-report.md", reportContent);
   console.log("Validation report generated.");
 } else {
