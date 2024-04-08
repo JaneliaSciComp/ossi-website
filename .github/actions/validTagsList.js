@@ -1,4 +1,4 @@
-export const validTagsList = {
+{
   "associated labs and projects": [
     "Branson Lab",
     "Pachitariu Lab",
@@ -12,7 +12,7 @@ export const validTagsList = {
     "FlyLight Project Team",
     "MouseLight Project Team",
     "MultiFISH Project Team",
-    "Scientific Computing Software Support Team",
+    "Scientific Computing Software Support Team"
   ],
   "programming language": [
     "C++",
@@ -23,7 +23,7 @@ export const validTagsList = {
     "MATLAB",
     "Nextflow",
     "Python",
-    "Javascript",
+    "Javascript"
   ],
   "software ecosystem": [
     "BigDataViewer",
@@ -31,7 +31,7 @@ export const validTagsList = {
     "ImgLib2",
     "Janelia Workstation",
     "Java Virtual Machine",
-    "Napari",
+    "Napari"
   ],
   "related experimental techniques": [
     "Calcium imaging",
@@ -42,7 +42,7 @@ export const validTagsList = {
     "Lightsheet fluorescence microscopy (LFSM)",
     "Neural recording",
     "Single-molecule localization microscopy (SMLM)",
-    "Spatial transcriptomics",
+    "Spatial transcriptomics"
   ],
   "supported file types": [
     "N5",
@@ -52,14 +52,14 @@ export const validTagsList = {
     "TIFF",
     "Zeiss CZI",
     "mpeg",
-    "avi",
+    "avi"
   ],
   "open source license": [
     "BSD-3 Clause",
     "CC-by-0",
     "GPL-2.0",
     "GPL-3.0",
-    "MIT",
+    "MIT"
   ],
   "software type": [
     "Command line application",
@@ -68,7 +68,7 @@ export const validTagsList = {
     "Package",
     "Service",
     "Web application",
-    "Website",
+    "Website"
   ],
   "software use case": [
     "Annotation",
@@ -78,7 +78,7 @@ export const validTagsList = {
     "Image registration",
     "Sequence analysis",
     "Tool packaging/distribution",
-    "Video analysis",
+    "Video analysis"
   ],
   "usage environment": [
     "Cloud",
@@ -86,6 +86,6 @@ export const validTagsList = {
     "HPC cluster",
     "Jupyter notebook",
     "Local installation",
-    "Web browser",
-  ],
-};
+    "Web browser"
+  ]
+}
