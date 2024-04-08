@@ -37,7 +37,7 @@ associated labs and projects:
     CellMap Project Team,
     FlyEM Project Team,
     FlyLight Project Team,
-    Scientific Computing Software Support Team,
+    Scientific Computing Software,
   ]
 software type: [Command line application]
 programming language: [Python]

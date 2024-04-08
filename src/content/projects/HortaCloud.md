@@ -12,7 +12,7 @@ associated labs and projects:
     MouseLight Project Team,
     Spruston Lab,
     Dudman Lab,
-    Scientific Computing Software Support Team,
+    Scientific Computing Software,
   ]
 software type: [Native application, Service, Web application, Website]
 programming language: [Java, Typescript]

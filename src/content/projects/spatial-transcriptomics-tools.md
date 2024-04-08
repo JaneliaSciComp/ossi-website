@@ -30,13 +30,13 @@ publication text array: [Bahry et al. (2021), Preibisch et al. (2021)]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [Scientific Computing Software Support Team]
+associated labs and projects: [Scientific Computing Software]
 software type: [Command line application, Framework, Native application]
 programming language: [Java]
 software ecosystem: [BigDataViewer, Fiji]
 open source license: [GPL-2.0, GPL-3.0]
 supported file types: [N5]
-related experimental techniques: [EASI-FISH, FISH, MERFISH, SlideSeq]
+related experimental techniques: [Spatial transcriptomics]
 software use case: [Image analysis, Sequence analysis]
 usage environment: [HPC cluster, Local installation]
 ---
