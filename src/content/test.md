@@ -12,7 +12,7 @@ software ecosystem: napari
 open source license: GPL-3.0
 supported file types:
 related experimental techniques:
-  [FISH, Single-molecule localization microscopy (SMLM)]
+  [Single-molecule localization microscopy (SMLM)]
 software use case:
 usage environment: [local installation, Jupyter notebook, Google Colab]
 related blog posts: [working-with-ossi-supported-projects]
