@@ -30,8 +30,8 @@ function validateFile(filePath) {
       // step 2 - if valid frontmatter, validate tags
       let invalidTags = [];
       for (const [key, acceptedValues] of Object.entries(validTagsList)) {
-        if (parsedFrontMatter.data.hasOwnProperty(key)) {
-          const value = parsedFrontMatter.data[key];
+        if (parsedFrontMatter.hasOwnProperty(key)) {
+          const value = parsedFrontMatter[key];
           // Check if the value(s) are within the accepted values
           const valuesToCheck = Array.isArray(value) ? value : [value];
           const invalidValues = valuesToCheck.filter(
