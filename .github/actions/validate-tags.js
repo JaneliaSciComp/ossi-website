@@ -1,8 +1,6 @@
 import yaml from "yaml";
 import { readFileSync, writeFileSync } from "fs";
-import validTagsList from "../../.github/actions/validTagsList.json" assert { type: "json" };
-import { parse } from "path";
-// import { report } from "process";
+import validTagsList from "./validTagsList.json" assert { type: "json" };
 
 const changedFiles = process.env.CHANGED_FILES.split(" ");
 console.log("changed files: ", changedFiles);
