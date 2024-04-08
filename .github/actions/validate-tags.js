@@ -82,12 +82,12 @@ if (invalidFrontmatterFiles.length > 0) {
 if (Object.keys(invalidTagsFiles).length > 0) {
   reportContent += `## ⚠️ Invalid tags!\n\n**One or more of your committed Markdown files have invalid tag values!**\n\nAll tags must match the options [here](https://github.com/JaneliaSciComp/ossi-website/tree/main/.github/actions/validTagsList.json), including exact capitalization and spelling. If any tag categories are empty, you must comment out or delete the line in the frontmatter.\n\nThe following files have invalid tags:\n\n`;
   for (const [file, tags] of Object.entries(invalidTagsFiles)) {
-    reportContent += `**${file}**:\n`;
+    reportContent += `${file}:\n`;
     for (const tag of tags) {
-      reportContent += `- ${tag}\n\n`;
+      reportContent += `- ${tag}\n`;
     }
   }
-  reportContent += `If this is a pull request to add a new tag category or value, please ensure your PR includes the "new tags" label and disregard this comment.`;
+  reportContent += `\nIf this is a pull request to add a new tag category or value, please ensure your PR includes the "new tags" label and disregard this comment.`;
 }
 
 if (reportContent) {
