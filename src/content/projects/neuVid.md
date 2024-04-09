@@ -32,37 +32,17 @@ github repository link array: [https://github.com/connectome-neuprint/neuVid]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects:
+development team:
   [
     CellMap Project Team,
     FlyEM Project Team,
     FlyLight Project Team,
     Scientific Computing Software,
   ]
-software type: [Command line application]
 programming language: [Python]
-# software ecosystem:
-#   [
-#     BigDataViewer,
-#     Fiji,
-#     ImgLib2,
-#     Janelia Workstation,
-#     Java Virtual Machine,
-#     Napari,
-#   ]
 open source license: [BSD-3 Clause]
-# supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-related experimental techniques: [Electron microscopy (EM)]
-# software use case:
-#   [
-#     Annotation,
-#     Electrophysiology analysis,
-#     Image analysis,
-#     Image registration,
-#     Sequence analysis,
-#     Tool packaging/distribution,
-#     Video analysis,
-#   ]
+software type: [Command line application]
+use case: [Electron microscopy (EM)]
 usage environment: [HPC cluster, Local installation]
 ---
 

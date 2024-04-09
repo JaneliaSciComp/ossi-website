@@ -7,23 +7,26 @@ github repository link array: [https://github.com/JaneliaSciComp/hortacloud]
 project homepage link array: [https://hortacloud.janelia.org]
 image file: HortaCloud.png
 image alt text: A screenshot of HortaCloud running in a web browser
-associated labs and projects:
+development team:
   [
     MouseLight Project Team,
     Spruston Lab,
     Dudman Lab,
     Scientific Computing Software,
   ]
-software type: [Native application, Service, Web application, Website]
 programming language: [Java, Typescript]
-software ecosystem: [Janelia Workstation, Java Virtual Machine]
 open source license: [BSD-3 Clause]
-supported file types: [OME-Zarr, SWC]
-related experimental techniques:
-  [Expansion microscopy (ExM), Lightsheet fluorescence microscopy (LFSM)]
-software use case: [Annotation, Image analysis]
+software type: [Native application, Service, Web application, Website]
+use case:
+  [
+    Expansion microscopy (ExM),
+    Lightsheet fluorescence microscopy (LFSM),
+    Annotation,
+    Image analysis,
+  ]
 usage environment: [Cloud, Web browser]
-#related blog posts: [Optional-file-name]
+software ecosystem: [Janelia Workstation, Java Virtual Machine]
+supported file types: [OME-Zarr, SWC]
 ---
 
 [HortaCloud](https://hortacloud.janelia.org) is a collaborative neuron annotation environment that was originally built for the [MouseLight Team Project](https://www.janelia.org/project-team/mouselight). You can read more about HortaCloud on its [home page](https://hortacloud.janelia.org), which includes a complete deployment guide and user manual.

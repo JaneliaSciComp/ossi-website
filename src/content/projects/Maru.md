@@ -32,64 +32,10 @@ github repository link array: [https://github.com/JaneliaSciComp/maru]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [
-    # Branson,
-    # Pachitariu,
-    # Saalfeld,
-    # Spruston,
-    # Stringer,
-    # Turaga,
-    # CellMap,
-    # FlyEM,
-    # FlyLight,
-    # MouseLight,
-    # MultiFISH,
-    Scientific Computing Software,
-  ]
-# software type:
-#   [
-#     Command line application,
-#     Framework,
-#     Native application,
-#     Package,
-#     Service,
-#     Web application,
-#     Website,
-#   ]
+development team: [Scientific Computing Software]
 programming language: [Go]
-# software ecosystem:
-#   [
-#     BigDataViewer,
-#     Fiji,
-#     ImgLib2,
-#     Janelia Workstation,
-#     Java Virtual Machine,
-#     Napari,
-#   ]
 open source license: [BSD-3 Clause]
-# supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-# related experimental techniques:
-#   [
-#     Calcium imaging,
-#     Confocal light microscopy (LM),
-#     Correlative light EM (CLEM),
-#     Electron microscopy (EM),
-#     Expansion microscopy (ExM),
-#     Lightsheet fluorescence microscopy (LFSM),
-#     Neural recording,
-#     Single-molecule localization microscopy (SMLM),
-#     Spatial transcriptomics,
-#   ]
-software use case: [Containerization]
-# usage environment:
-#   [
-#     Cloud,
-#     Google Colab,
-#     HPC cluster,
-#     Jupyter notebook,
-#     Local installation,
-#     Web browser,
-#   ]
+use case: [Containerization]
 ---
 
 Maru is an opinionated command-line interface for quickly and easily containerizing scientific applications, enabling reproducible results and low-friction collaboration.

@@ -33,29 +33,20 @@ github repository link array: [https://github.com/JaneliaSciComp/VVDViewer]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects:
-  [FlyLight Project Team, Scientific Computing Software]
-software type: [Native application]
+development team: [FlyLight Project Team, Scientific Computing Software]
 programming language: [C++]
-# software ecosystem:
-#   [
-#     BigDataViewer,
-#     Fiji,
-#     ImgLib2,
-#     Janelia Workstation,
-#     Java Virtual Machine,
-#     Napari,
-#   ]
 open source license: [BSD-3 Clause]
-supported file types: [N5, SWC, TIFF, Zeiss CZI]
-related experimental techniques:
+software type: [Native application]
+use case:
   [
     Confocal light microscopy (LM),
     Electron microscopy (EM),
     Expansion microscopy (ExM),
+    Annotation,
+    Image analysis,
   ]
-software use case: [Annotation, Image analysis]
 usage environment: [Local installation]
+supported file types: [N5, SWC, TIFF, Zeiss CZI]
 ---
 
 VVD Viewer is an open source volumetric visualization application comparable feature-wise to commercial software such as Imaris and Amira. It supports multi-channel 3D and 4D volume data and polygon meshes, larger-than-memory imagery, arbitrary clipping planes, and many visualization adjustments.

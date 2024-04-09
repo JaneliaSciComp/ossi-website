@@ -10,21 +10,21 @@ publication DOI array: [https://doi.org/10.1109/ISBI.2016.7493463]
 publication text array: ["Bogovic et al. 2016"]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [FlyEM Project Team, FlyLight Project Team]
-software type: [Native application]
+development team: [FlyEM Project Team, FlyLight Project Team]
 programming language: [Java]
-# software ecosystem: [BigDataViewer, Fiji, ImgLib2, Janelia Workstation, Java Virtual Machine, Napari]
 open source license: [GPL-2.0]
-supported file types: [N5]
-related experimental techniques:
+software type: [Native application]
+use case:
   [
     Confocal light microscopy (LM),
     Correlative light EM (CLEM),
     Electron microscopy (EM),
     Expansion microscopy (ExM),
+    Image analysis,
+    Image registration,
   ]
-software use case: [Image analysis, Image registration]
 usage environment: [Local installation]
+supported file types: [N5]
 # related blog posts: [Optional-file-name]
 ---
 

@@ -32,21 +32,22 @@ github repository text array: [GitHub BigStitcher, GitHub Stitching-Spark]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects:
+development team:
   [Saalfeld Lab, MultiFISH Project Team, Scientific Computing Software]
-software type: [Package]
 programming language: [Java, Nextflow]
-software ecosystem: [BigDataViewer, ImgLib2]
 open source license: [BSD-3 Clause]
-supported file types: [N5, TIFF, Zeiss CZI]
-related experimental techniques:
+software type: [Package]
+use case:
   [
     Expansion microscopy (ExM),
     Lightsheet fluorescence microscopy (LFSM),
     Spatial transcriptomics,
+    Image analysis,
+    Image registration,
   ]
-software use case: [Image analysis, Image registration]
 usage environment: [Cloud, HPC cluster, Local installation]
+software ecosystem: [BigDataViewer, ImgLib2]
+supported file types: [N5, TIFF, Zeiss CZI]
 ---
 
 Lightsheet fluorescence microscopy (LFSM) is an emerging technology that creates a thin sheet of light to illuminate the sample. Emitted light is collected in an orthogonal direction to the lightsheet, which enables optical sectioning with high resolution, low photobleaching and high speed. While LSFM has initially been used to image developing organisms with high spatial and temporal resolution, it has recently gained a lot of attention for imaging large fixed and expanded samples (e.g. [EASI-FISH project](https://doi.org/10.1101/2021.03.08.434304)).
