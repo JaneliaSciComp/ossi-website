@@ -1,10 +1,15 @@
-import { tagKeyNames } from "../content/tagCategoryNames";
+import validTagsList from "../../.github/actions/validTagsList.json";
+import possibleTagColors from "./tagColors.json";
 import { allLabNamesAndUrls } from "../data/labNamesUrls";
+
+const tagKeyNames = Object.keys(validTagsList);
 
 // Used for assigning tag background colors in the filter menu
 export function getBackgroundColor(key) {
-  const keyAndColorObj = tagKeyNames.find((tag) => tag.key === key);
-  return keyAndColorObj ? keyAndColorObj.color : "#6ebebd";
+  const index = tagKeyNames.indexOf(key);
+  // Use the index to return the color at the same index in possibleTagColors
+  // If the index is not found (-1), return a default color
+  return index >= 0 ? possibleTagColors[index] : "#6ebebd";
 }
 
 // Takes in a content collection object (e.g., projects or ecosystems) and returns an object of only the unique tag keys and unique tag values within each key
@@ -17,12 +22,11 @@ export function extractUniqueTagsObject(contentCollectionObj) {
     ? contentCollectionObj
     : [contentCollectionObj];
 
-  // console.log("contentCollectionObject:", contentCollectionObj);
   normalizedCollection.forEach((contentItem) => {
     Object.entries(contentItem.data).forEach(([key, value]) => {
-      // tagKeyNames imported at top of file from data/tagCategoryNames - an array of objects. Each obj has a category and a color
-      // If the current key is a value of "key" in an object in tagCategoryNames, we want to check if the key exists in uniqueTags
-      const isTagKey = tagKeyNames.some((tagKeyName) => tagKeyName.key === key);
+      // tagKeyNames are the keys of validTagsList, imported at the top of the file
+      // If the current key is a value in tagKeyNames, we want to check if the key exists in uniqueTags
+      const isTagKey = tagKeyNames.some((tagKeyName) => tagKeyName === key);
       if (isTagKey) {
         //only process if the key has a value. User could have left it blank.
         if (value) {
@@ -63,8 +67,8 @@ export function extractUniqueTagValueArray(projectData) {
   const uniqueTagsObj = {};
 
   Object.entries(projectData).forEach(([key, value]) => {
-    // If the current projectData key is a value of "key" in the tagKeyNames object, and the key has some associated value, add to uniqueTagsObj
-    const isTagKey = tagKeyNames.some((tagKeyName) => tagKeyName.key === key);
+    // If the current projectData key is a value in the tagKeyNames array, and the key has some associated value, add to uniqueTagsObj
+    const isTagKey = tagKeyNames.some((tagKeyName) => tagKeyName === key);
     if (isTagKey) {
       if (value) {
         uniqueTagsObj[key] = value;
