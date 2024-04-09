@@ -45,6 +45,7 @@
     "Spatial transcriptomics"
   ],
   "supported file types": [
+    "H5J",
     "N5",
     "NWB",
     "OME-Zarr",

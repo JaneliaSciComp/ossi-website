@@ -47,7 +47,7 @@ programming language: [C++]
 #     Napari,
 #   ]
 open source license: [BSD-3 Clause]
-supported file types: [N5, SWC, TIFF, Zeiss CZI]
+supported file types: [H5J, N5, SWC, TIFF, Zeiss CZI]
 related experimental techniques:
   [
     Confocal light microscopy (LM),
