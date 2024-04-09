@@ -4,14 +4,14 @@ tagline: Maintain and extend Paintera (3D annotation software for very large vol
 author names: "Saalfeld et al."
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1pcrKTbzkNczkoDETg8og-y5XzCdauVJ3/view
-associated labs and projects: [saalfeld lab, CellMap project team]
-programming language: [java, kotlin]
+associated labs and projects: [Saalfeld Lab, CellMap Project Team]
+programming language: [Java, Kotlin]
 software ecosystem: [ImgLib2, BigDataViewer]
 open source license: GPL-2.0
 supported file types: N5
-related experimental techniques: electron microscopy (EM)
-software use case: [annotation, image analysis]
-usage environment: [local installation]
+related experimental techniques: Electron microscopy (EM)
+software use case: [Annotation, Image analysis]
+usage environment: [Local installation]
 related blog posts: [working-with-ossi-supported-projects]
 ---
 

@@ -44,7 +44,7 @@ associated labs and projects: [
     # FlyLight,
     # MouseLight,
     # MultiFISH,
-    Scientific Computing Software Support Team,
+    Scientific Computing Software,
   ]
 # software type:
 #   [

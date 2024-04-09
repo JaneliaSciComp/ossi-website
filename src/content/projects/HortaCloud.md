@@ -12,7 +12,7 @@ associated labs and projects:
     MouseLight Project Team,
     Spruston Lab,
     Dudman Lab,
-    Scientific Computing Software Support Team,
+    Scientific Computing Software,
   ]
 software type: [Native application, Service, Web application, Website]
 programming language: [Java, Typescript]
@@ -20,11 +20,7 @@ software ecosystem: [Janelia Workstation, Java Virtual Machine]
 open source license: [BSD-3 Clause]
 supported file types: [OME-Zarr, SWC]
 related experimental techniques:
-  [
-    Expansion microscopy (ExM),
-    Lightsheet fluorescence microscopy (LFSM),
-    Two-photon imaging,
-  ]
+  [Expansion microscopy (ExM), Lightsheet fluorescence microscopy (LFSM)]
 software use case: [Annotation, Image analysis]
 usage environment: [Cloud, Web browser]
 #related blog posts: [Optional-file-name]

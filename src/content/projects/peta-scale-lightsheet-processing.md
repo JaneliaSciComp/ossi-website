@@ -33,11 +33,7 @@ github repository text array: [GitHub BigStitcher, GitHub Stitching-Spark]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
 associated labs and projects:
-  [
-    Saalfeld Lab,
-    MultiFISH Project Team,
-    Scientific Computing Software Support Team,
-  ]
+  [Saalfeld Lab, MultiFISH Project Team, Scientific Computing Software]
 software type: [Package]
 programming language: [Java, Nextflow]
 software ecosystem: [BigDataViewer, ImgLib2]
@@ -45,10 +41,9 @@ open source license: [BSD-3 Clause]
 supported file types: [N5, TIFF, Zeiss CZI]
 related experimental techniques:
   [
-    EASI-FISH,
     Expansion microscopy (ExM),
-    FISH,
     Lightsheet fluorescence microscopy (LFSM),
+    Spatial transcriptomics,
   ]
 software use case: [Image analysis, Image registration]
 usage environment: [Cloud, HPC cluster, Local installation]

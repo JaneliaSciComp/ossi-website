@@ -28,10 +28,10 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
   />
 
   <CardsAndFiltersIsland
-    client:only
     uniqueTags={uniqueTags}
     allContent={allProjects}
     baseUrl={baseUrl}
     contentType="projects"
+    client:load
   />
 </BaseLayout>

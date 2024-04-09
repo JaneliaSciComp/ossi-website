@@ -1,6 +1,7 @@
 {
   "associated labs and projects": [
     "Branson Lab",
+    "Dudman Lab",
     "Pachitariu Lab",
     "Preibisch Lab",
     "Saalfeld Lab",
@@ -23,7 +24,8 @@
     "MATLAB",
     "Nextflow",
     "Python",
-    "Javascript"
+    "Javascript",
+    "Typescript"
   ],
   "software ecosystem": [
     "BigDataViewer",
