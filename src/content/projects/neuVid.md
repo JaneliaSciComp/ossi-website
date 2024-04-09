@@ -32,13 +32,7 @@ github repository link array: [https://github.com/connectome-neuprint/neuVid]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-development team:
-  [
-    CellMap Project Team,
-    FlyEM Project Team,
-    FlyLight Project Team,
-    Scientific Computing Software,
-  ]
+development team: [CellMap, FlyEM, FlyLight, Scientific Computing Software]
 programming language: [Python]
 open source license: [BSD-3 Clause]
 software type: [Command line application]

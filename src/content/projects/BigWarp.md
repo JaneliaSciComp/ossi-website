@@ -10,7 +10,7 @@ publication DOI array: [https://doi.org/10.1109/ISBI.2016.7493463]
 publication text array: ["Bogovic et al. 2016"]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-development team: [FlyEM Project Team, FlyLight Project Team]
+development team: [FlyEM, FlyLight]
 programming language: [Java]
 open source license: [GPL-2.0]
 software type: [Native application]
@@ -20,7 +20,6 @@ use case:
     Correlative light EM (CLEM),
     Electron microscopy (EM),
     Expansion microscopy (ExM),
-    Image analysis,
     Image registration,
   ]
 usage environment: [Local installation]

@@ -26,8 +26,6 @@ use case:
     Confocal light microscopy (LM),
     Electron microscopy (EM),
     Expansion microscopy (ExM),
-    Two-photon imaging,
-    Image analysis,
   ]
 usage environment: [Google Colab, Local installation]
 software ecosystem: [Napari]

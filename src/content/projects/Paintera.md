@@ -7,7 +7,7 @@ OSSI proposal link: https://drive.google.com/file/d/1pcrKTbzkNczkoDETg8og-y5XzCd
 development team: [Saalfeld Lab]
 programming language: [Java, Kotlin]
 open source license: GPL-2.0
-use case: [Electron microscopy (EM), Annotation, Image analysis]
+use case: [Electron microscopy (EM), Annotation]
 usage environment: [Local installation]
 software ecosystem: [ImgLib2, BigDataViewer]
 supported file types: N5

@@ -15,7 +15,7 @@ development team: Pachitariu Lab
 programming language: ["MATLAB", "Python"]
 open source license: GPL-2.0
 software type: Package
-use case: [Neural recording, Electrophysiology analysis]
+use case: [Neural recording, Electrophysiology]
 usage environment: [Local installation]
 software ecosystem: []
 supported file types: []

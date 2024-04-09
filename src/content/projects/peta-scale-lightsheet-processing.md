@@ -32,8 +32,7 @@ github repository text array: [GitHub BigStitcher, GitHub Stitching-Spark]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-development team:
-  [Saalfeld Lab, MultiFISH Project Team, Scientific Computing Software]
+development team: [Saalfeld Lab, MultiFISH, Scientific Computing Software]
 programming language: [Java, Nextflow]
 open source license: [BSD-3 Clause]
 software type: [Package]
@@ -42,7 +41,6 @@ use case:
     Expansion microscopy (ExM),
     Lightsheet fluorescence microscopy (LFSM),
     Spatial transcriptomics,
-    Image analysis,
     Image registration,
   ]
 usage environment: [Cloud, HPC cluster, Local installation]

@@ -33,7 +33,7 @@ github repository link array: [https://github.com/JaneliaSciComp/VVDViewer]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-development team: [FlyLight Project Team, Scientific Computing Software]
+development team: [FlyLight, Scientific Computing Software]
 programming language: [C++]
 open source license: [BSD-3 Clause]
 software type: [Native application]
@@ -43,7 +43,6 @@ use case:
     Electron microscopy (EM),
     Expansion microscopy (ExM),
     Annotation,
-    Image analysis,
   ]
 usage environment: [Local installation]
 supported file types: [N5, SWC, TIFF, Zeiss CZI]

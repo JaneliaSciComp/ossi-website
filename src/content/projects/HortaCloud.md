@@ -7,13 +7,7 @@ github repository link array: [https://github.com/JaneliaSciComp/hortacloud]
 project homepage link array: [https://hortacloud.janelia.org]
 image file: HortaCloud.png
 image alt text: A screenshot of HortaCloud running in a web browser
-development team:
-  [
-    MouseLight Project Team,
-    Spruston Lab,
-    Dudman Lab,
-    Scientific Computing Software,
-  ]
+development team: [MouseLight, Dudman Lab, Scientific Computing Software]
 programming language: [Java, Typescript]
 open source license: [BSD-3 Clause]
 software type: [Native application, Service, Web application, Website]
@@ -22,7 +16,6 @@ use case:
     Expansion microscopy (ExM),
     Lightsheet fluorescence microscopy (LFSM),
     Annotation,
-    Image analysis,
   ]
 usage environment: [Cloud, Web browser]
 software ecosystem: [Janelia Workstation, Java Virtual Machine]
