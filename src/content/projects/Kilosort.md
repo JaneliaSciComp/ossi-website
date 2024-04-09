@@ -11,15 +11,14 @@ image file: rmWtVQN5RzU-unsplash.jpg
 image alt text: Transparent skull model
 video url: https://www.youtube.com/watch?v=9cjKYnC89OI
 video alt text: A description of KiloSort by Marius Pachitariu, which is supported by the Open Science Software Initiative.
-associated labs and projects: Pachitariu Lab
-software type: Package
+development team: Pachitariu Lab
 programming language: ["MATLAB", "Python"]
-software ecosystem: []
 open source license: GPL-2.0
-supported file types: []
-related experimental techniques: [Neural recording]
-software use case: Electrophysiology analysis
+software type: Package
+use case: [Neural recording, Electrophysiology]
 usage environment: [Local installation]
+software ecosystem: []
+supported file types: []
 related blog posts: [working-with-ossi-supported-projects]
 ---
 

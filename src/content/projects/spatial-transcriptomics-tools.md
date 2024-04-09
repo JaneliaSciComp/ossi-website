@@ -30,15 +30,14 @@ publication text array: [Bahry et al. (2021), Preibisch et al. (2021)]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [Scientific Computing Software]
-software type: [Command line application, Framework, Native application]
+development team: [Scientific Computing Software]
 programming language: [Java]
-software ecosystem: [BigDataViewer, Fiji]
 open source license: [GPL-2.0, GPL-3.0]
-supported file types: [N5]
-related experimental techniques: [Spatial transcriptomics]
-software use case: [Image analysis, Sequence analysis]
+software type: [Command line application, Framework, Native application]
+use case: [Spatial transcriptomics, Sequence analysis]
 usage environment: [HPC cluster, Local installation]
+software ecosystem: [BigDataViewer, Fiji]
+supported file types: [N5]
 ---
 
 Spatially resolved transcriptomics is the description for a range of methods that can identify mRNA readouts for many genes at many locations inside a cell, potentially on a tissue level. The field is currently growing at an immense pace and is transforming biological sciences. Methods for spatial transcriptomics can generally be divided into imaging-based methods such as MERFISH and sequencing-based methods such as SlideSeq. Excitingly, this development leads to a merge of the fields of image and sequence analysis.

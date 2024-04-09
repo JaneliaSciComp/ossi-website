@@ -28,56 +28,10 @@ project homepage link array: [https://janeliascicomp.github.io/ossi-website/]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [Scientific Computing Software]
+development team: [Scientific Computing Software]
 software type: [Website]
-# programming language:
-#   [C++, Java, Julia, Kotlin, MATLAB, Nextflow, Python, Javascript]
-# software ecosystem:
-#   [
-#     BigDataViewer,
-#     Fiji,
-#     ImgLib2,
-#     Janelia Workstation,
-#     Java Virtual Machine,
-#     Napari,
-#   ]
+programming language: [Javascript]
 open source license: [BSD-3 Clause]
-# supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-# related experimental techniques:
-#   [
-#     Calcium imaging,
-#     Confocal light microscopy (LM),
-#     Correlative light EM (CLEM),
-#     EASI-FISH,
-#     Electron microscopy (EM),
-#     Expansion microscopy (ExM),
-#     FISH,
-#     Lightsheet fluorescence microscopy (LFSM),
-#     MERFISH,
-#     Neural recording,
-#     Single-molecule localization microscopy (SMLM),
-#     SlideSeq,
-#     Two-photon imaging,
-#   ]
-# software use case:
-#   [
-#     Annotation,
-#     Electrophysiology analysis,
-#     Image analysis,
-#     Image registration,
-#     Sequence analysis,
-#     Tool packaging/distribution,
-#     Video analysis,
-#   ]
-# usage environment:
-#   [
-#     Cloud,
-#     Google Colab,
-#     HPC cluster,
-#     Jupyter notebook,
-#     Local installation,
-#     Web browser,
-#   ]
 ---
 
 A portfolio of actively maintained open source software at Janelia, todisseminate and celebrate Janelia’s commitment to [Open Science Software](https://www.janelia.org/node/67970).

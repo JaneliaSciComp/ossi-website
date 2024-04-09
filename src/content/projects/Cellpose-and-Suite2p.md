@@ -16,22 +16,19 @@ publication text array: [Stringer et al. 2021, Pachitariu et al. (2017)]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [Pachitariu Lab, Stringer Lab]
-software type: [Package]
+development team: [Pachitariu Lab, Stringer Lab]
 programming language: [Python]
-software ecosystem: [Napari]
 open source license: [BSD-3 Clause, GPL-2.0]
-# supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-related experimental techniques:
+software type: [Package]
+use case:
   [
     Calcium imaging,
     Confocal light microscopy (LM),
     Electron microscopy (EM),
     Expansion microscopy (ExM),
-    Two-photon imaging,
   ]
-software use case: [Image analysis]
 usage environment: [Google Colab, Local installation]
+software ecosystem: [Napari]
 ---
 
 Many biological applications require the segmentation of cell bodies, membranes and nuclei from microscopy images. Computational methods are essential to process these large imaging datasets. We have developed two widely adopted imaging processing pipelines: Suite2p and Cellpose. This project will maintain and further develop these packages for Janelia and the scientific community.

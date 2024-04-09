@@ -25,31 +25,13 @@ const projectsCollection = defineCollection({
     "image alt text": z.string().optional(),
     "video url": z.string().optional(),
     "video alt text": z.string().optional(),
-    "associated labs and projects": z.union([
+    "development team": z.union([
       z.array(z.string()),
       z.string(),
       z.undefined(),
       z.null(),
     ]),
     "programming language": z.union([
-      z.array(z.string()),
-      z.string(),
-      z.undefined(),
-      z.null(),
-    ]),
-    "software ecosystem": z.union([
-      z.array(z.string()),
-      z.string(),
-      z.undefined(),
-      z.null(),
-    ]),
-    "related experimental techniques": z.union([
-      z.array(z.string()),
-      z.string(),
-      z.undefined(),
-      z.null(),
-    ]),
-    "supported file types": z.union([
       z.array(z.string()),
       z.string(),
       z.undefined(),
@@ -67,13 +49,25 @@ const projectsCollection = defineCollection({
       z.undefined(),
       z.null(),
     ]),
-    "software use case": z.union([
+    "use case": z.union([
       z.array(z.string()),
       z.string(),
       z.undefined(),
       z.null(),
     ]),
     "usage environment": z.union([
+      z.array(z.string()),
+      z.string(),
+      z.undefined(),
+      z.null(),
+    ]),
+    "software ecosystem": z.union([
+      z.array(z.string()),
+      z.string(),
+      z.undefined(),
+      z.null(),
+    ]),
+    "supported file types": z.union([
       z.array(z.string()),
       z.string(),
       z.undefined(),

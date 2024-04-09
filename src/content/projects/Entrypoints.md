@@ -32,73 +32,10 @@ github repository link array: [https://github.com/JaneliaSciComp/entrypoints]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-associated labs and projects: [
-    # Branson,
-    # Pachitariu,
-    # Saalfeld,
-    # Spruston,
-    # Stringer,
-    # Turaga,
-    # CellMap,
-    # FlyEM,
-    # FlyLight,
-    # MouseLight,
-    # MultiFISH,
-    Scientific Computing Software,
-  ]
-# software type:
-#   [
-#     Command line application,
-#     Framework,
-#     Native application,
-#     Package,
-#     Service,
-#     Web application,
-#     Website,
-#   ]
+development team: [Scientific Computing Software]
 programming language: [Go]
-# software ecosystem:
-#   [
-#     BigDataViewer,
-#     Fiji,
-#     ImgLib2,
-#     Janelia Workstation,
-#     Java Virtual Machine,
-#     Napari,
-#   ]
 open source license: [BSD-3 Clause]
-# supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
-# experimental techniques:
-#   [
-#     Calcium imaging,
-#     Confocal light microscopy (LM),
-#     Correlative light EM (CLEM),
-#     Electron microscopy (EM),
-#     Expansion microscopy (ExM),
-#     Lightsheet fluorescence microscopy (LFSM),
-#     Neural recording,
-#     Single-molecule localization microscopy (SMLM),
-#     Spatial transcriptomics,
-#   ]
-software use case: [
-    # Annotation,
-    # Electrophysiology analysis,
-    # Image analysis,
-    # Image registration,
-    # Sequence analysis,
-    # Tool packaging/distribution,
-    # Video analysis,
-    Containerization,
-  ]
-# usage environment:
-#   [
-#     Cloud,
-#     Google Colab,
-#     HPC cluster,
-#     Jupyter notebook,
-#     Local installation,
-#     Web browser,
-#   ]
+use case: [Containerization]
 ---
 
 Simple support for multiple entrypoint scripts in an OCI container. Just install this tiny binary as your ENTRYPOINT and put all of your entrypoint shell scripts in one directory. The binary takes care of providing a listing of valid "apps" and lets the user invoke them without knowing the internals of the container filesystem.
