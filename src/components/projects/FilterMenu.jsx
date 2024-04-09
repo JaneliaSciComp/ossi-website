@@ -87,6 +87,7 @@ export default function FilterMenu({ uniqueTags }) {
               {uniqueTags[key].map((individualTag) => {
                 return (
                   <li
+                    key={`${key}-${individualTag}`}
                     className="w-full flex cursor-pointer "
                     onClick={() => handleTagSelection(individualTag)}
                   >
