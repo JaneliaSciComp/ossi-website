@@ -1,37 +1,15 @@
 ---
-title: Peta-scale lightsheet processing
-tagline: Developer-friendly & user-friendly software for processing peta-byte scale lightsheet datasets.
-author names: Preibisch & Saalfeld
+title: Stitching-Spark
+tagline: Reconstructing large microscopy images from overlapping image tiles on a high-performance Spark cluster.
+maintainer: Saalfeld
+maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/17m9LCBOg_YXQj0Q_LOsGYDOnSd_88ONJ/view
-github repository link array:
-  [
-    https://github.com/preibischlab/bigstitcher/,
-    https://github.com/saalfeldlab/stitching-spark,
-  ]
-github repository text array: [GitHub BigStitcher, GitHub Stitching-Spark]
-# project homepage link array:
-#   [
-#     Optional URL to a homepage for the project (not a GitHub repository),
-#     Can provide more than one link,
-#   ]
-# project homepage text array:
-#   [
-#     Text to appear for homepage link 1,
-#     Text to appear for homepage link 2,
-#     Required only if more than one homepage,
-#   ]
-# publication DOI array:
-#   [https://doi.org/10.DOI.1, https://doi.org/10.DOI.2, https://doi.org/10.DOI.n]
-# publication text array:
-#   [
-#     text you want to appear for each DOI link,
-#     "Suggested format: Author et al. (YYYY)",
-#     "if text has colons: or commas followed by a space, use quotes",
-#   ]
-# related blog posts: [Optional-file-name]
-# image file: ./optional-file-path.jpg
-# image alt text: Alt text is required if you upload an image file
+source code link: https://github.com/saalfeldlab/stitching-spark
+documentation link: https://github.com/saalfeldlab/stitching-spark
+installation instructions link: https://github.com/saalfeldlab/stitching-spark?tab=readme-ov-file#usage
+how to cite link: https://doi.org/10.1126/science.aau8302
+how to cite text: Gao, R., Asano, S. M., Upadhyayula, S., Pisarev, I., Milkie, D. E., Liu, T. L., Singh, V., Graves, A., Huynh, G. H., Zhao, Y., Bogovic, J., Colonell, J., Ott, C. M., Zugates, C., Tappan, S., Rodriguez, A., Mosaliganti, K. R., Sheu, S. H., Pasolli, H. A., ... Betzig, E. (2019). Cortical column and whole-brain imaging with molecular contrast and nanoscale resolution. Science, 363(6424), Article eaau8302. https://doi.org/10.1126/science.aau8302
 development team: [Saalfeld Lab, MultiFISH, Scientific Computing Software]
 programming language: [Java, Nextflow]
 open source license: [BSD-3 Clause]

@@ -1,35 +1,15 @@
 ---
 title: VVD Viewer
 tagline: Develop documentation for the interactive VVD 3D viewer/renderer for very large image volumes.
-author names: Kawase et al.
+maintainer: Kawase et al.
+maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1Mn_V_82wzQGgKOTy245qk7sATF9yp2vb/view
-github repository link array: [https://github.com/JaneliaSciComp/VVDViewer]
-# github repository text array:
-#   [
-#     Text for GitHub link 1,
-#     Text for GitHub link 2,
-#     Required if more than one GitHub link,
-#   ]
-# project homepage link array:
-#   [
-#     Optional URL to a homepage for the project (not a GitHub repository),
-#     Can provide more than one link,
-#   ]
-# project homepage text array:
-#   [
-#     Text to appear for homepage link 1,
-#     Text to appear for homepage link 2,
-#     Required only if more than one homepage,
-#   ]
-# publication DOI array:
-#   [https://doi.org/10.DOI.1, https://doi.org/10.DOI.2, https://doi.org/10.DOI.n]
-# publication text array:
-#   [
-#     text you want to appear for each DOI link,
-#     "Suggested format: Author et al. (YYYY)",
-#     "if text has colons: or commas followed by a space, use quotes",
-#   ]
+source code link: https://github.com/JaneliaSciComp/VVDViewer
+documentation link: https://github.com/JaneliaSciComp/VVDViewer/wiki
+installation instructions link: https://github.com/JaneliaSciComp/VVDViewer?tab=readme-ov-file#building-vvdviewer
+how to cite link: https://github.com/JaneliaSciComp/VVDViewer
+how to cite text: Cite the software on GitHub
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file

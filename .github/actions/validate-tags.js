@@ -4,7 +4,7 @@ import validTagsList from "./validTagsList.json" assert { type: "json" };
 
 const changedFiles = process.env.CHANGED_FILES.split(" ");
 console.log("changed files: ", changedFiles);
-let invalidFrontmatterFiles = [];
+let invalidFrontmatterFiles = {};
 let invalidTagsFiles = {};
 
 // function to extract only frontmatter from MD content
@@ -47,14 +47,14 @@ function validateFile(filePath) {
         invalidTagsFiles[filePath] = invalidTags;
       }
     } else {
-      // No front matter found, log error
-      console.error(`No frontmatter found in ${filePath}`);
-      invalidFrontmatterFiles.push(`**${filePath}**`);
+      // Logically valid situation where no frontmatter is found, but we want to save it as an error for linting
+      invalidFrontmatterFiles[filePath] =
+        "Error: No frontmatter found or it is in an invalid format.";
     }
   } catch (error) {
-    // Handle file read or other errors
+    // Exception handling for file read errors or YAML parsing errors
     console.error(`An error occurred processing ${filePath}: ${error.message}`);
-    invalidFrontmatterFiles.push(filePath);
+    invalidFrontmatterFiles[filePath] = `Error: ${error.message}`;
   }
 }
 
@@ -71,10 +71,11 @@ if (!changedFiles.length) {
 // Generate markdown report
 let reportContent = "";
 
-if (invalidFrontmatterFiles.length > 0) {
-  reportContent += `## :warning: Invalid Frontmatter!\n\n**One or more of your committed Markdown files are missing frontmatter or have an invalid structure!**\n\nThe following files have invalid frontmatter:\n- ${invalidFrontmatterFiles.join(
-    "\n- "
-  )}\n\n`;
+if (Object.keys(invalidFrontmatterFiles).length > 0) {
+  reportContent += `## :warning: Invalid Frontmatter!\n\n**One or more of your committed Markdown files are missing frontmatter or have an invalid structure!**\n\n`;
+  for (const [file, message] of Object.entries(invalidFrontmatterFiles)) {
+    reportContent += `- **${file}**: ${message}\n`;
+  }
 }
 
 if (Object.keys(invalidTagsFiles).length > 0) {

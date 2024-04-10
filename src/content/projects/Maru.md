@@ -1,37 +1,14 @@
 ---
 title: Maru
 tagline: Maru is an opinionated command-line interface for quickly and easily containerizing scientific applications.
-author names: Rokicki
+maintainer: Rokicki
+maintainer contact info: placeholder@gmail.com
 project type: [Other]
-github repository link array: [https://github.com/JaneliaSciComp/maru]
-# github repository text array:
-#   [
-#     Text for GitHub link 1,
-#     Text for GitHub link 2,
-#     Required if more than one GitHub link,
-#   ]
-# project homepage link array:
-#   [
-#     Optional URL to a homepage for the project (not a GitHub repository),
-#     Can provide more than one link,
-#   ]
-# project homepage text array:
-#   [
-#     Text to appear for homepage link 1,
-#     Text to appear for homepage link 2,
-#     Required only if more than one homepage,
-#   ]
-# publication DOI array:
-#   [https://doi.org/10.DOI.1, https://doi.org/10.DOI.2, https://doi.org/10.DOI.n]
-# publication text array:
-#   [
-#     text you want to appear for each DOI link,
-#     "Suggested format: Author et al. (YYYY)",
-#     "if text has colons: or commas followed by a space, use quotes",
-#   ]
-# related blog posts: [Optional-file-name]
-# image file: ./optional-file-path.jpg
-# image alt text: Alt text is required if you upload an image file
+source code link: https://github.com/JaneliaSciComp/maru
+documentation link: https://github.com/JaneliaSciComp/maru
+installation instructions link: https://github.com/JaneliaSciComp/maru?tab=readme-ov-file#get-maru
+how to cite link: https://github.com/JaneliaSciComp/maru
+how to cite text: Cite the software on GitHub
 development team: [Scientific Computing Software]
 programming language: [Go]
 open source license: [BSD-3 Clause]
