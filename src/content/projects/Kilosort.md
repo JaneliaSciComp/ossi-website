@@ -1,12 +1,15 @@
 ---
 title: Kilosort
 tagline: Maintain and develop python version of Kilosort (electrophysiology data).
-author names: Pachitariu et al.
+maintainer: Pachitariu et al.
+maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1YrH-O3F2BQGOQkHDQIyRyKKGHHiqZLag/view
-github repository link array: [https://github.com/MouseLand/Kilosort]
-publication DOI array: [https://doi.org/10.1101/061481]
-publication text array: [Pachitariu et al. (2016)]
+source code link: https://github.com/MouseLand/Kilosort
+documentation link: https://kilosort.readthedocs.io/en/latest/
+installation instructions link: https://github.com/MouseLand/Kilosort?tab=readme-ov-file#installation
+how to cite link: https://doi.org/10.1101/061481
+how to cite text: Pachitariu, M., Sridhar, S., Pennington, J., & Stringer, C. (2024). Spike sorting with Kilosort4.
 image file: rmWtVQN5RzU-unsplash.jpg
 image alt text: Transparent skull model
 video url: https://www.youtube.com/watch?v=9cjKYnC89OI

@@ -1,10 +1,14 @@
 ---
 title: HortaCloud
 tagline: Large volume volumetric rendering and collaborative neuron annotation in the cloud
-author names: Rokicki et al.
+maintainer: Rokicki et al.
+maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
-github repository link array: [https://github.com/JaneliaSciComp/hortacloud]
-project homepage link array: [https://hortacloud.janelia.org]
+source code link: https://github.com/JaneliaSciComp/hortacloud
+documentation link: https://hortacloud.janelia.org/docs/
+installation instructions link: https://hortacloud.janelia.org/docs/administration/aws/
+how to cite link: https://github.com/JaneliaSciComp/hortacloud
+how to cite text: Cite the software on GitHub
 image file: HortaCloud.png
 image alt text: A screenshot of HortaCloud running in a web browser
 development team: [MouseLight, Dudman Lab, Scientific Computing Software]

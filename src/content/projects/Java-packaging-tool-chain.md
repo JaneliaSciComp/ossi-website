@@ -1,9 +1,15 @@
 ---
 title: Java packaging tool chain
 tagline: Develop an easy-to-use packaging system for Java applications.
-author names: Saalfeld et al.
+maintainer: Saalfeld et al.
+maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1ig0xMeHcsLe-BF-kaHLthUfQrtnwQyi2/view
+source code link: "#"
+documentation link: "#"
+installation instructions link: "#"
+# how to cite link:
+how to cite text: Software under development
 development team: [Saalfeld Lab, Scientific Computing Software]
 programming language: Java
 open source license: []
