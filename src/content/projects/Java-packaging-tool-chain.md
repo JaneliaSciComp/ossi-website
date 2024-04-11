@@ -5,7 +5,7 @@ maintainer: Saalfeld et al.
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1ig0xMeHcsLe-BF-kaHLthUfQrtnwQyi2/view
-source code link: "#"
+github link: "#"
 documentation link: "#"
 installation instructions link: "#"
 # how to cite link:

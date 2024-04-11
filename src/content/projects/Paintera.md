@@ -5,7 +5,7 @@ maintainer: "Saalfeld et al."
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1pcrKTbzkNczkoDETg8og-y5XzCdauVJ3/view
-source code link: https://github.com/saalfeldlab/paintera
+github link: https://github.com/saalfeldlab/paintera
 documentation link: https://github.com/saalfeldlab/paintera
 installation instructions link: https://github.com/saalfeldlab/paintera?tab=readme-ov-file#installation-and-usage
 how to cite link: https://github.com/saalfeldlab/paintera

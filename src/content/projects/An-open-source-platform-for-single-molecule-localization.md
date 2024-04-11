@@ -5,7 +5,7 @@ maintainer: Turaga et al.
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/14kZdz066bwxKvpUAV8-Vg41kp6KgVqxr/view
-source code link: https://github.com/TuragaLab/DECODE
+github link: https://github.com/TuragaLab/DECODE
 documentation link: https://decode.readthedocs.io/en/release-0.10/index.html
 installation instructions link: https://decode.readthedocs.io/en/release-0.10/installation.html
 how to cite link: https://doi.org/10.1038/s41592-021-01236-x

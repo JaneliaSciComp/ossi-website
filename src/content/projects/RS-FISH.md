@@ -5,7 +5,7 @@ maintainer: Preibisch et al.
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1Bjtqz49JdwpXg9rA_Xk_0qjQuV7fwKvu/view
-source code link: https://github.com/PreibischLab/RS-FISH
+github link: https://github.com/PreibischLab/RS-FISH
 documentation link: https://github.com/PreibischLab/RS-FISH
 installation instructions link: https://github.com/PreibischLab/RS-FISH?tab=readme-ov-file#download
 how to cite link: https://doi.org/10.1038/s41592-022-01669-y

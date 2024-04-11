@@ -4,7 +4,7 @@ tagline: Maru is an opinionated command-line interface for quickly and easily co
 maintainer: Rokicki
 maintainer contact info: placeholder@gmail.com
 project type: [Other]
-source code link: https://github.com/JaneliaSciComp/maru
+github link: https://github.com/JaneliaSciComp/maru
 documentation link: https://github.com/JaneliaSciComp/maru
 installation instructions link: https://github.com/JaneliaSciComp/maru?tab=readme-ov-file#get-maru
 how to cite link: https://github.com/JaneliaSciComp/maru

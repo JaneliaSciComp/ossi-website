@@ -5,7 +5,7 @@ maintainer: Xi Peng, Kristin Branson
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1iS6GLiDBlSOt-wdNMNLIpL-qIO7h4DOp/view
-source code link: https://github.com/JaneliaSciComp/videoAnnotation
+github link: https://github.com/JaneliaSciComp/videoAnnotation
 documentation link: https://github.com/JaneliaSciComp/videoAnnotation
 installation instructions link: https://github.com/JaneliaSciComp/videoAnnotation
 how to cite link: https://github.com/JaneliaSciComp/videoAnnotation
