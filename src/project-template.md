@@ -1,81 +1,66 @@
 ---
 title: Your project title
 tagline: Your project tagline
-author names: List of author names written out exactly how you want the list to appear on the page (i.e., do not provide an array of names in square brackets)
+maintainer: Maintainer of the project page on this site. This should be the name of one point-of-contact.
+maintainer contact info: The preferred contact method for the maintainer - this should either an email address or a link to a contact method such as X, Instagram, LinkedIn, or Facebook.
 project type: [OSSI - current, OSSI - alumni, Other]
 OSSI proposal link: Link to OSSI proposal - only include if project is OSSI-supported
-github repository link array:
+github link: Link to GitHub repository
+documentation link: Link to documentation - can be the same as the GitHub repo if the README is the documentation
+installation instructions link: Link to installation instructions - can be the same as the GitHub repo
+how to cite text: "The citation for your software - wrap in quotes to ensure colons are interpreted correctly. If your software doesn't have an associated published paper or DOI, leave this blank."
+how to cite link: "A DOI. Wrap in quotes if a colon is used. If a DOI is not available, leave this blank - your GitHub repo will be used as the default."
+additional links array:
   [
-    Optional URL to the project GitHub repository,
-    Option to provide more than one GitHub repo link,
+    Optional additional external links,
+    For example - to a project hompage,
+    External blog posts,
+    Additional related publications,
+    Etc.,
   ]
-github repository text array:
+additional links text array:
   [
-    Text for GitHub link 1,
-    Text for GitHub link 2,
-    Required if more than one GitHub link,
+    The display text you wish to appear for each link provided above,
+    Display text for link 2,
+    Display text for link 3,
+    Display text for link 4,
+    Etc.,
   ]
-project homepage link array:
-  [
-    Optional URL to a homepage for the project (not a GitHub repository),
-    Can provide more than one link,
-  ]
-project homepage text array:
-  [
-    Text to appear for homepage link 1,
-    Text to appear for homepage link 2,
-    Required only if more than one homepage,
-  ]
-publication DOI array:
-  [https://doi.org/10.DOI.1, https://doi.org/10.DOI.2, https://doi.org/10.DOI.n]
-publication text array:
-  [
-    text you want to appear for each DOI link,
-    "Suggested format: Author et al. (YYYY)",
-    "if text has colons: or commas followed by a space, use quotes",
-  ]
-related blog posts: [Optional-file-name]
+related blog posts:
+  [Optional-file-name, Only-for-blog-posts-hosted-on-this-site]
 image file: ./optional-file-path.jpg
-image alt text: Alt text is required if you upload an image file
-associated labs and projects:
+image alt text: Alt text is required if you upload an image file - this will dislay on the site
+video url: https://optional-video-url.com
+video alt text: Alt text is required if you provide a video url - this will display on the site
+development team:
   [
     Branson Lab,
+    Dudman Lab,
     Pachitariu Lab,
+    Preibisch Lab,
     Saalfeld Lab,
-    Spruston Lab,
     Stringer Lab,
     Turaga Lab,
-    CellMap Project Team,
-    FlyEM Project Team,
-    FlyLight Project Team,
-    MouseLight Project Team,
-    MultiFISH Project Team,
-    Scientific Computing Software Support Team,
+    CellMap,
+    FlyEM,
+    FlyLight,
+    MouseLight,
+    MultiFISH,
+    Scientific Computing Software,
   ]
 programming language:
-  [C++, Go, Java, Julia, Kotlin, MATLAB, Nextflow, Python, Javascript]
-software ecosystem:
   [
-    BigDataViewer,
-    Fiji,
-    ImgLib2,
-    Janelia Workstation,
-    Java Virtual Machine,
-    Napari,
+    C++,
+    Go,
+    Java,
+    Julia,
+    Kotlin,
+    MATLAB,
+    Nextflow,
+    Python,
+    Javascript,
+    Typescript,
   ]
-related experimental techniques:
-  [
-    Calcium imaging,
-    Confocal light microscopy (LM),
-    Correlative light EM (CLEM),
-    Electron microscopy (EM),
-    Expansion microscopy (ExM),
-    Lightsheet fluorescence microscopy (LFSM),
-    Neural recording,
-    Single-molecule localization microscopy (SMLM),
-    Spatial transcriptomics,
-  ]
-supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
 open source license: [BSD-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT]
 software type:
   [
@@ -87,16 +72,23 @@ software type:
     Web application,
     Website,
   ]
-software use case:
+use case:
   [
     Annotation,
+    Calcium imaging,
+    Confocal light microscopy (LM),
     Containerization,
-    Electrophysiology analysis,
-    Image analysis,
+    Correlative light EM (CLEM),
+    Electron microscopy (EM),
+    Electrophysiology,
+    Expansion microscopy (ExM),
     Image registration,
+    Lightsheet fluorescence microscopy (LFSM),
+    Neural recording,
     Sequence analysis,
+    Single-molecule localization microscopy (SMLM),
+    Spatial transcriptomics,
     Tool packaging/distribution,
-    Video analysis,
   ]
 usage environment:
   [
@@ -107,10 +99,18 @@ usage environment:
     Local installation,
     Web browser,
   ]
+software ecosystem:
+  [
+    BigDataViewer,
+    Fiji,
+    ImgLib2,
+    Janelia Workstation,
+    Java Virtual Machine,
+    Napari,
+  ]
+supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
 ---
 
-Replace this text with a few short paragraphs describing your project.
+Delete this text below the triple dash (---) to use your project's GitHub README as your project's description. Note - your GitHub repo must be public for this to work. This option is strongly encouraged - it will minimize the effort required on your part to keep your software information up to date on this site.
 
-Separate each paragraph with a blank line. If desired, use [Markdown syntax](https://www.markdownguide.org/basic-syntax/) to add hyperlinks, layout/text effects (e.g., headings, lists, **bold** or _italic_ text), etc.
-
-Note - styling will be added to anything you write here to make it look pretty 😊.
+If you wish to provide an alternative description, you can write it here. Separate each paragraph with a blank line. If desired, use [Markdown syntax](https://www.markdownguide.org/basic-syntax/) to add hyperlinks, layout/text effects (e.g., headings, lists, **bold** or _italic_ text), etc.
