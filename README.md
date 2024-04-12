@@ -7,18 +7,21 @@
 - The source code for the Open Source Science Initative (OSSI) at HHMI Janelia website. The site showcases OSSI-supported projects.
 - Built with the static-site-generator [Astro](https://GitHub.com/withastro/astro), using components and styling from the [Astrowind](https://GitHub.com/onwidget/astrowind/tree/main) template.
 
+## Table of Contents
+
+- [How to add/edit your software project](#how-to-addedit-your-software-project)
+  - [Prerequesites](#prerequisites)
+  - [Set-up](#set-up)
+  - [Add a new project](#add-a-new-project)
+  - [Edit a project](#edit-a-project)
+    - [Edit the frontmatter](#edit-the-frontmatter)
+    - [Optional - edit the project description](#optional---edit-the-project-description)
+    - [Optional - add an image](#optional---add-an-image)
+    - [Optional - add new tag categories or options](#optional---add-new-tag-categories-or-options)
+  - [Preview and commit your changes](#preview-and-commit-your-changes)
+  - [Open a pull request](#open-a-pull-request)
+
 ## How to add/edit your software project
-
-### Table of Contents
-
-- [Prerequesites](#prerequisites)
-- [Set-up](#set-up)
-- [Add a new project](#add-a-new-project)
-- [Edit a project](#edit-a-project)
-- [Optional - add an image](#optional---add-an-image)
-- [Optional - add new tag categories or options](#optional---add-new-tag-categories-or-options)
-- [Preview and commit your changes](#preview-and-commit-your-changes)
-- [Open a pull request](#open-a-pull-request)
 
 ### Prerequisites
 
@@ -61,6 +64,8 @@ If a Markdown file for your project already exists under `src/content/projects` 
 3. **Edit the `title`- this should match the name of your project file, without the dashes.** For example, if your project file is named `my-awesome-project.md`, your project title should be `my awesome project`.
 
 ### Edit a project
+
+#### Edit the frontmatter
 
 At the top of the file are data sandwiched between triple-dashes (---). These data are used by Astro to create the webpage for your project.
 
@@ -108,12 +113,23 @@ You can also refer to `/src/project-template.md` for further guidance and exampl
 | `software ecosystem`             | Optional                                                           | [Tag variable - see guidance](#edit-a-project)                                                                                                                                                                                                                          |
 | `supported file types`           | Optional                                                           | [Tag variable - see guidance](#edit-a-project)                                                                                                                                                                                                                          |
 
-### Optional - Add an image
+#### Optional - Edit the project description
+
+You are strongly encouraged to use your software project's GitHub README as it's description. This will minimize the amount of work required by the maintainer to keep the project description and details up-to-date.
+
+To use your project's GitHub README as the project description:
+
+1. Ensure your project is public on GitHub
+2. Delete all the text in your project's Markdown file following the closing triple dashes (---) on the frontmatter.
+
+If you would rather provide a custom project description, you can do so by typing it below the closing triple dashes on the frontmatter. You can use [Markdown syntax](https://www.markdownguide.org/basic-syntax/) to add hyperlinks, layout/text effects (e.g., headings, lists, **bold** or _italic_ text), etc.
+
+#### Optional - Add an image
 
 1. Add your desired image to `/public/project-images`, using a filename without spaces.
 2. Edit your project file to include a value for `image file` as outlined in [Edit a project](#edit-a-project).
 
-### Optional - Requesting new tag categories or options
+#### Optional - Requesting new tag categories or options
 
 - _Tag categories are the the variable name to the left of the colon in the project Markdown file._
 - _Tag options are the values in the square brackets to the right of the colon._
@@ -129,8 +145,8 @@ _Do not add the new tag category or option to your project's template._ Open a s
 
 1. Go to your repository on GitHub - on the banner indicating your branch is one commit ahead, click **Contribute** and then **Open a pull request**.
 2. Title your pull request "Add a project - [Project Name]". Include in the description any helpful notes or specific requests.
-3. In the panel on the right side of the screen, click the gear icon next to "Labels." Select the following labels, as appropriate:
+3. In the panel on the right side of the screen, click the gear icon next to "Labels." Select relevant labels, e.g.,:
    - New Project Page
    - Edit Project Page
    - New tags
-4. When you're finsihed, click "Create pull request" - your PR will be reviewed by the maintainers of the OSSI site. You may receive requests for changes before your PR is approved.
+4. When you're finished, click "Create pull request" - your PR will be reviewed by the maintainers of the OSSI site. You may receive requests for changes before your PR is approved.

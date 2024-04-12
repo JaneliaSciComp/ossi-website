@@ -1,15 +1,15 @@
 ---
 title: Your project title
 tagline: Your project tagline
-maintainer: Maintainer of the project page on this site. This should be the name of one point-of-contact.
-maintainer contact info: The preferred contact method for the maintainer - this should either an email address or a link to a contact method such as X, Instagram, LinkedIn, or Facebook.
+maintainer: Name of the person responsible for maintaining this project page.
+maintainer contact info: example@email.com
 project type: [OSSI - current, OSSI - alumni, Other]
 OSSI proposal link: Link to OSSI proposal - only include if project is OSSI-supported
 github link: Link to GitHub repository
 documentation link: Link to documentation - can be the same as the GitHub repo if the README is the documentation
 installation instructions link: Link to installation instructions - can be the same as the GitHub repo
 how to cite text: "The citation for your software - wrap in quotes to ensure colons are interpreted correctly. If your software doesn't have an associated published paper or DOI, leave this blank."
-how to cite link: "A DOI. Wrap in quotes if a colon is used. If a DOI is not available, leave this blank - your GitHub repo will be used as the default."
+how to cite link: "https://doi.org/example - wrap entire link in quotes. If a DOI is not available, leave this blank - your GitHub repo will be used as the default."
 additional links array:
   [
     Optional additional external links,
@@ -29,9 +29,9 @@ additional links text array:
 related blog posts:
   [Optional-file-name, Only-for-blog-posts-hosted-on-this-site]
 image file: ./optional-file-path.jpg
-image alt text: Alt text is required if you upload an image file - this will dislay on the site
+image caption: Required if you upload an image file - this will dislay on the site
 video url: https://optional-video-url.com
-video alt text: Alt text is required if you provide a video url - this will display on the site
+video caption: Required if you provide a video url - this will display on the site
 development team:
   [
     Branson Lab,

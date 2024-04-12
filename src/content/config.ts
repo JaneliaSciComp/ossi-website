@@ -24,9 +24,9 @@ const projectsCollection = defineCollection({
       z.null(),
     ]),
     "image file": z.string().optional(),
-    "image alt text": z.string().optional(),
+    "image caption": z.string().optional(),
     "video url": z.string().optional(),
-    "video alt text": z.string().optional(),
+    "video caption": z.string().optional(),
     "development team": z.union([
       z.array(z.string()),
       z.string(),
