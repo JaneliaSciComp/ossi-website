@@ -24,7 +24,7 @@ const pubInfoArray = generatePublicationLinks(frontmatter);
 
 const baseUrl = import.meta.env.BASE_URL;
 const githubIssueUrl_obj = new URL("/issues", frontmatter["github link"]);
-console.log(githubIssueUrl_obj);
+// console.log(githubIssueUrl_obj);
 const githubIssueUrl_str = githubIssueUrl_obj.href;
 ---
 
@@ -104,7 +104,10 @@ const githubIssueUrl_str = githubIssueUrl_obj.href;
           <h3 class="font-bold">Get help</h3>
           {
             frontmatter["github link"] && (
-              <a class="self-start btn-filter" href={githubIssueUrl_str}>
+              <a
+                class="self-start btn-filter"
+                href={frontmatter["github link"]}
+              >
                 Open an issue on GitHub
               </a>
             )
