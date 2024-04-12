@@ -1,0 +1,100 @@
+---
+import Citation from "./Citation.astro";
+import { Icon } from "astro-icon/components";
+const { frontmatter } = Astro.props;
+
+const githubIssueUrl_obj = new URL("/issues", frontmatter["github link"]);
+const githubIssueUrl_str = githubIssueUrl_obj.href;
+---
+
+<div
+  class="px-6 py-12 lg:p-0 lg:pl-12 row-start-1 row-span-2 col-start-5 col-span-2 bg-primary lg:bg-page dark:bg-slate-900"
+>
+  <div class="p-6 rounded-md shadow-sm lg:shadow-none bg-page">
+    <h2 class="text-xl font-bold mb-6">Quick links</h2>
+    <div class="flex flex-row flex-wrap gap-6 mx-auto">
+      <div class="flex flex-col gap-1 mr-8">
+        <h3 class="font-bold mb-1">Get started</h3>
+        {
+          frontmatter["github link"] && (
+            <a
+              class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer"
+              href={frontmatter["github link"]}
+            >
+              <Icon
+                name="tabler:square-chevron-right"
+                class="w-5 h-5  inline-block"
+              />
+              Source code
+            </a>
+          )
+        }
+
+        {
+          frontmatter["documentation link"] && (
+            <a
+              class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer"
+              href={frontmatter["documentation link"]}
+            >
+              <Icon
+                name="tabler:square-chevron-right"
+                class="w-5 h-5  inline-block"
+              />
+              Documentation
+            </a>
+          )
+        }
+
+        {
+          frontmatter["installation instructions link"] && (
+            <a
+              class="self-start flex items-center gap-1 transition ease-in duration-200 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer"
+              href={frontmatter["installation instructions link"]}
+            >
+              <Icon
+                name="tabler:square-chevron-right"
+                class="w-5 h-5  inline-block"
+              />
+              How to install
+            </a>
+          )
+        }
+      </div>
+      <div class="flex flex-col gap-1 mr-8 md:mr-12">
+        <h3 class="font-bold mb-1">Get help</h3>
+        {
+          frontmatter["github link"] && (
+            <a
+              class="self-start btn rounded-md p-2 font-normal"
+              href={githubIssueUrl_str}
+            >
+              Open an issue on GitHub
+            </a>
+          )
+        }
+        {
+          frontmatter["maintainer"] && (
+            <a
+              class="self-start btn rounded-md p-2 font-normal"
+              href={frontmatter["maintainer contact info"]}
+            >
+              Reach out with a question
+            </a>
+          )
+        }
+      </div>
+      <div class="flex flex-col gap-1">
+        <h3 class="font-bold mb-1">Cite this software</h3>
+        <Citation
+          citationText={frontmatter["how to cite text"]
+            ? frontmatter["how to cite text"]
+            : null}
+          citationLink={frontmatter["how to cite link"]
+            ? frontmatter["how to cite link"]
+            : null}
+          githubLink={frontmatter["github link"]}
+        />
+      </div>
+    </div>
+  </div>
+</div>
