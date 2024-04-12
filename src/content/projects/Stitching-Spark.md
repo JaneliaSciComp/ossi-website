@@ -5,7 +5,7 @@ maintainer: Saalfeld
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/17m9LCBOg_YXQj0Q_LOsGYDOnSd_88ONJ/view
-source code link: https://github.com/saalfeldlab/stitching-spark
+github link: https://github.com/saalfeldlab/stitching-spark
 documentation link: https://github.com/saalfeldlab/stitching-spark
 installation instructions link: https://github.com/saalfeldlab/stitching-spark?tab=readme-ov-file#usage
 how to cite link: https://doi.org/10.1126/science.aau8302

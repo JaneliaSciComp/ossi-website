@@ -5,7 +5,7 @@ maintainer: Kawase et al.
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1Mn_V_82wzQGgKOTy245qk7sATF9yp2vb/view
-source code link: https://github.com/JaneliaSciComp/VVDViewer
+github link: https://github.com/JaneliaSciComp/VVDViewer
 documentation link: https://github.com/JaneliaSciComp/VVDViewer/wiki
 installation instructions link: https://github.com/JaneliaSciComp/VVDViewer?tab=readme-ov-file#building-vvdviewer
 how to cite link: https://github.com/JaneliaSciComp/VVDViewer

@@ -4,7 +4,7 @@ tagline: Support multiple entrypoint scripts in a container for use in container
 maintainer: Rokicki
 maintainer contact info: placeholder@gmail.com
 project type: [Other]
-source code link: https://github.com/JaneliaSciComp/entrypoints
+github link: https://github.com/JaneliaSciComp/entrypoints
 documentation link: https://github.com/JaneliaSciComp/entrypoints
 installation instructions link: https://github.com/JaneliaSciComp/entrypoints?tab=readme-ov-file#installation
 how to cite link: https://github.com/JaneliaSciComp/entrypoints

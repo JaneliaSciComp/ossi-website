@@ -88,7 +88,7 @@ export function findLabInfo(labNames) {
     const labData = allLabNamesAndUrls.find((entry) =>
       entry[0].includes(labName)
     );
-    return labData ? { name: labData[0], url: labData[1] } : null;
+    return labData ? { name: labName, url: labData[1] } : null;
   });
   return labInfoArray;
 }

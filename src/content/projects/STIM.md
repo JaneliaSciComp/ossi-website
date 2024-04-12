@@ -5,7 +5,7 @@ maintainer: Preibisch et al.
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1Bjtqz49JdwpXg9rA_Xk_0qjQuV7fwKvu/view
-source code link: https://github.com/PreibischLab/STIM
+github link: https://github.com/PreibischLab/STIM
 documentation link: https://github.com/PreibischLab/STIM/wiki
 how to cite link: https://doi.org/10.1101/2021.12.07.471629
 how to cite text: "S. Preibisch, N. Karaiskos, N.Rajewsky, Image-based representation of massive spatial transcriptomics datasets, bioRxiv 2021.12.07.471629 (2021)."

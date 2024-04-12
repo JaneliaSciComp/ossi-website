@@ -5,7 +5,7 @@ maintainer: Stringer et al.
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1-KLHwZ3g6A1F8AWYge7llfEHViaHWsoc/view
-source code link: https://github.com/MouseLand/cellpose
+github link: https://github.com/MouseLand/cellpose
 documentation link: https://cellpose.readthedocs.io/en/latest/
 installation instructions link: https://github.com/MouseLand/cellpose?tab=readme-ov-file#installation
 how to cite link: https://doi.org/10.1038/s41592-020-01018-x

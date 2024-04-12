@@ -5,7 +5,7 @@ maintainer: Preibisch
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/17m9LCBOg_YXQj0Q_LOsGYDOnSd_88ONJ/view
-source code link: https://github.com/preibischlab/bigstitcher/
+github link: https://github.com/preibischlab/bigstitcher/
 documentation link: https://imagej.net/plugins/bigstitcher/
 installation instructions link: https://imagej.net/plugins/bigstitcher/#download
 how to cite link: https://doi.org/10.1038/s41592-019-0501-0

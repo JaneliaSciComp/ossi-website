@@ -4,7 +4,7 @@ tagline: A portfolio for Open Science Software Iniative-supported projects
 maintainer: Ferreira and Rokicki
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
-source code link: https://github.com/JaneliaSciComp/ossi-website
+github link: https://github.com/JaneliaSciComp/ossi-website
 documentation link: https://github.com/JaneliaSciComp/ossi-website
 installation instructions link: https://github.com/JaneliaSciComp/ossi-website?tab=readme-ov-file#how-to-addedit-your-software-project
 how to cite text: Cite the current deployment
