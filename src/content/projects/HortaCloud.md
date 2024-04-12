@@ -8,7 +8,7 @@ github link: https://github.com/JaneliaSciComp/hortacloud
 documentation link: https://hortacloud.janelia.org/docs/
 installation instructions link: https://hortacloud.janelia.org/docs/administration/aws/
 how to cite link: https://github.com/JaneliaSciComp/hortacloud
-how to cite text: Cite the software on GitHub
+# how to cite text:
 image file: HortaCloud.png
 image alt text: A screenshot of HortaCloud running in a web browser
 development team: [MouseLight, Dudman Lab, Scientific Computing Software]
