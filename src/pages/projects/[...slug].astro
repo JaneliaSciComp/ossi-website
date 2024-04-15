@@ -6,6 +6,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Link from "../../components/Link.astro";
 import QuickLinks from "../../components/projects/individual-project/QuickLinks.astro";
 import ExternalLinks from "../../components/projects/individual-project/ExternalLinks.astro";
+import Media from "../../components/projects/individual-project/Media.astro";
 
 import {
   extractUniqueTagsObject,
@@ -64,17 +65,7 @@ const baseUrl = import.meta.env.BASE_URL;
       <QuickLinks frontmatter={frontmatter} />
 
       <div class="col-start-1 col-span-4">
-        {
-          frontmatter["image file"] && (
-            <img
-              src={`${baseUrl}/project-images/${frontmatter["image file"]}`}
-              class="w-full lg:mx-6 bg-gray-400 dark:bg-slate-700"
-              loading="eager"
-              alt={frontmatter["image alt text"]}
-              title={frontmatter["image alt text"]}
-            />
-          )
-        }
+        <Media frontmatter={frontmatter} />
 
         <div class="mx-6 my-6 flex flex-col gap-1">
           {
