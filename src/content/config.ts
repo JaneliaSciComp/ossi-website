@@ -13,8 +13,8 @@ const projectsCollection = defineCollection({
     "github link": z.string(),
     "documentation link": z.string(),
     "installation instructions link": z.string().optional(),
-    "how to cite text": z.string(),
-    "how to cite link": z.string().optional(),
+    "how to cite text": z.union([z.string(), z.undefined(), z.null()]),
+    "how to cite link": z.union([z.string(), z.undefined(), z.null()]),
     "additional links array": z.array(z.string()).optional(),
     "additional links text array": z.array(z.string()).optional(),
     "related blog posts": z.union([
