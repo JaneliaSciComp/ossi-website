@@ -30,8 +30,8 @@ related blog posts:
   [Optional-file-name, Only-for-blog-posts-hosted-on-this-site]
 image file: ./optional-file-path.jpg
 image caption: Required if you upload an image file - this will dislay on the site
-video url: https://optional-video-url.com
-video caption: Required if you provide a video url - this will display on the site
+youtube url: https://optional-youtube-url.com
+youtube caption: Required if you provide a youtube url - this will display on the site
 development team:
   [
     Branson Lab,
