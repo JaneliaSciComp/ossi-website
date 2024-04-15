@@ -7,6 +7,36 @@ const octokit = new Octokit({
   auth: authToken,
 });
 
+export async function getReadme(githubUrl) {
+  const url = new URL(githubUrl);
+  const parts = url.pathname.split("/").filter((part) => part !== "");
+  let owner = "";
+  let repo = "";
+
+  if (parts.length >= 2) {
+    owner = parts[0];
+    repo = parts[1];
+  } else {
+    console.error("The URL does not contain enough parts.");
+    return;
+  }
+
+  try {
+    const readme = await octokit.rest.repos.getReadme({
+      owner,
+      repo,
+      mediaType: {
+        format: "html", // This will internally set Accept header to application/vnd.github.html+json
+      },
+    });
+    console.log(owner, repo, readme);
+    return readme.data; // It's often useful to return the data for further processing
+  } catch (error) {
+    console.error("Failed to fetch README:", error);
+    return null; // Return null or appropriate error response
+  }
+}
+
 export function getMostRecentContributors(data, numAuthors) {
   const mostRecentContributionWeekByAuthor = new Map();
 
