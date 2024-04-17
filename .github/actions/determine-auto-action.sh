@@ -1,4 +1,4 @@
-# from https://github.com/rossjrw/pr-preview-action/blob/main/lib/determine-auto-action.sh
+# Script copied from https://github.com/rossjrw/pr-preview-action/blob/main/lib/determine-auto-action.sh
 
 case $GITHUB_EVENT_NAME in
   "pull_request" | "pull_request_target")
