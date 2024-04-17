@@ -47,11 +47,11 @@ jobs:
           echo "emptydir=$(mktemp -d)" >> $GITHUB_ENV
           echo "datetime=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
-      - name: Determine auto action
-        run: .github/actions/determine-auto-action.sh
-
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Determine auto action
+        run: .github/actions/determine-auto-action.sh
 
       - name: Setup Node
         uses: actions/setup-node@v4
