@@ -1,0 +1,22 @@
+name: Deploy preview
+
+on:
+  pull_request:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy
+        uses: shlinkio/deploy-preview-action@v1.0.1
+        with:
+          branch: main # The branch from where the GitHub Pages are served (defaults to preview-env)
+          folder: build # The folder where the artifacts to publish are (defaults to the project root)
+
