@@ -52,7 +52,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Determine auto action
-        run: .github/actions/determine-auto-action.sh
+        run: bash .github/actions/determine-auto-action.sh
 
       - name: Setup Node
         uses: actions/setup-node@v4
