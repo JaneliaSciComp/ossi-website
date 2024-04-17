@@ -43,7 +43,7 @@ jobs:
             pagesurl=$(echo "${{env.deployrepo}}" | sed 's/\//.github.io\//')
           fi
           echo "pagesurl=$pagesurl" >> $GITHUB_ENV
-          echo "targetdir=${{PREVIEW_PATH}}/pr-$pr" >> $GITHUB_ENV
+          echo "targetdir=${{env.PREVIEW_PATH}}/pr-$pr" >> $GITHUB_ENV
           echo "emptydir=$(mktemp -d)" >> $GITHUB_ENV
           echo "datetime=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
 
