@@ -21,5 +21,3 @@ usage environment: [HPC cluster, Local installation]
 software ecosystem: [BigDataViewer, Fiji]
 supported file types: [N5]
 ---
-
-[STIM](https://github.com/PreibischLab/STIM) is a framework for storing, exploring, visualizing, and processing high-throughput spatial sequencing datasets and can for example be used for robust alignment for slices of SlideSeq and Visium datasets. It is based on ImgLib2, BigDataViewer, and the N5 file format. STIM is not yet used at Janelia, but the community started to adapt it for the handling of sequencing-based spatially resolved datasets, as it is able to transfer image processing concepts such as spatial filtering to irregularly-spaced sequencing datasets.

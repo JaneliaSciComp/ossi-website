@@ -29,5 +29,3 @@ use case:
 usage environment: [Google Colab, Local installation]
 software ecosystem: [Napari]
 ---
-
-Suite2p is a fast, accurate and complete pipeline written in Python that registers raw movies, detects active cells, extracts their calcium traces and infers their spike times. Suite2p runs on standard workstations, operates faster than real time, and recovers ~2 times more cells than the previous state-of-the-art methods. Its low computational load allows routine detection of ~25,000 cells simultaneously from recordings taken with standard two-photon resonant-scanning microscopes. In addition to its ability to detect cell somas, the detection algorithm can detect axonal segments, boutons, dendrites, and spines. Suite2p has an extensive graphical user interface (GUI) which allows the user to explore their data, and is currently the only fully-functional pythonic GUI for calcium imaging data. Software developers have integrated Suite2p into their packages, such as those for multi-day cell alignment and photostimulation experiments.

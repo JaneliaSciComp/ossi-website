@@ -16,5 +16,3 @@ software type: [Command line application]
 use case: [Electron microscopy (EM)]
 usage environment: [HPC cluster, Local installation]
 ---
-
-The FlyEM project used the [neuVid system](https://github.com/connectome-neuprint/neuVid) to create videos that increased the impact of publications and other publicity. This proposal outlines how that approach could be extended in a new system, CellVid, that could benefit projects within Janelia, like COSEM/CellMap, as well as external projects.

@@ -22,7 +22,7 @@ const frontmatter = project.data;
 const body = project.body;
 const { Content } = await project.render();
 let readmeHtml = {};
-console.log(body.length, body.includes("provide an alternative description"));
+// console.log(body.length, body.includes("provide an alternative description"));
 
 if (body.length === 0 || body.includes("provide an alternative description")) {
   readmeHtml = await getReadme(frontmatter["github link"]);

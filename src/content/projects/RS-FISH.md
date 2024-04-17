@@ -22,5 +22,3 @@ usage environment: [HPC cluster, Local installation]
 software ecosystem: [BigDataViewer, Fiji]
 supported file types: [N5]
 ---
-
-[Radial Symmetry-FISH (RS-FISH)](https://github.com/PreibischLab/RS-FISH) accurately, robustly, and quickly detects single-molecule spots in 2D & 3D, making it applicable to several key assays, including single-molecule FISH (smFISH), spatial transcriptomics, and spatial genomics. It scales from small to very large images using workstations, clusters or the cloud, allows interactive parameter tuning and provides spot visualization of even very large datasets. It is based on ImgLib2, BigDataViewer, the N5 file format and Apache Spark. Currently, it is the only generic tool that can handle very large images. It is already used in the community and at Janelia, for example by the EASI-FISH project, the Sternson lab, or in the sequencing facility.
