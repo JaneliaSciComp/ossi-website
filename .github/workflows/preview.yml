@@ -71,26 +71,18 @@ jobs:
             --site "https://${{ env.pagesurl }}" \
             --base "${{ env.PREVIEW_PATH }}"
         working-directory: ${{ env.INPUT_PATH}}
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy preview directory
+        if: env.action == 'deploy'
+        uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e # v4.5.0
         with:
-          path: ${{ env.PREVIEW_PATH }}/dist
+          repository-name: ${{ env.deployrepo }}
+          branch: ${{ env.preview-branch }}
+          folder: dist
+          target-folder: ${{ env.targetdir }}
+          commit-message: Deploy preview for PR ${{ env.pr }} 🛫
+          force: false
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  comment:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
       - name: Expose deployment URL
         id: url
         run: echo "url=https://${{ env.pagesurl }}/${{ env.targetdir }}/"  >> $GITHUB_OUTPUT
