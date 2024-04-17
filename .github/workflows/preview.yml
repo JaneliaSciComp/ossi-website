@@ -1,0 +1,111 @@
+name: Deploy PR previews
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  pull-requests: write
+
+concurrency: preview-${{ github.ref }}
+
+env:
+  INPUT_PATH: "."
+  PREVIEW_PATH: pr-preview # subfolder
+  OSSI_SITE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  action: auto
+  preview-branch: main
+  pr: ${{ github.event.number }}
+  actionref: ${{ github.action_ref }}
+  actionrepo: ${{ github.action_repository }}
+  deployrepo: ${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Store environment variables
+        run: |
+          org=$(echo "${{env.deployrepo}}" | cut -d "/" -f 1)
+          thirdleveldomain=$(echo "${{env.deployrepo}}" | cut -d "/" -f 2)
+
+          if [ "${org}.github.io" == "$thirdleveldomain" ]; then
+            pagesurl="${org}.github.io"
+          else
+            pagesurl=$(echo "${{env.deployrepo}}" | sed 's/\//.github.io\//')
+          fi
+          echo "pagesurl=$pagesurl" >> $GITHUB_ENV
+          echo "targetdir=${{env.PREVIEW_PATH}}/pr-$pr" >> $GITHUB_ENV
+          echo "emptydir=$(mktemp -d)" >> $GITHUB_ENV
+          echo "datetime=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine auto action
+        run: bash .github/actions/determine-auto-action.sh
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: ${{ env.INPUT_PATH }}/package-lock.json
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ${{ env.INPUT_PATH }}
+      - name: Build with Astro
+        run: |
+          npx --no-install astro build \
+            --site "https://${{ env.pagesurl }}" \
+            --base "${{ env.PREVIEW_PATH }}"
+        working-directory: ${{ env.INPUT_PATH}}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.INPUT_PATH }}/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Expose deployment URL
+        id: url
+        run: echo "url=https://${{ env.pagesurl }}/${{ env.targetdir }}/"  >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Leave a comment after deployment
+        uses: marocchino/sticky-pull-request-comment@331f8f5b4215f0445d3c07b4967662a32a2d3e31 # v2.9.0
+        with:
+          header: pr-preview
+          message: "
+            :rocket: Deployed preview to
+            https://${{ env.pagesurl }}/${{ env.targetdir }}/
+
+            on branch [`${{ env.preview-branch }}`](\
+            ${{ github.server_url }}/${{ env.deployrepo }}\
+            /tree/${{ env.preview-branch }})
+            at ${{ env.datetime }}
+            "
