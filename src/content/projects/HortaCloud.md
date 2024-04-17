@@ -27,7 +27,3 @@ usage environment: [Cloud, Web browser]
 software ecosystem: [Janelia Workstation, Java Virtual Machine]
 supported file types: [OME-Zarr, SWC]
 ---
-
-[HortaCloud](https://hortacloud.janelia.org) is a collaborative neuron annotation environment that was originally built for the [MouseLight Team Project](https://www.janelia.org/project-team/mouselight). You can read more about HortaCloud on its [home page](https://hortacloud.janelia.org), which includes a complete deployment guide and user manual.
-
-To find out more about the software architecture that enables HortaCloud to run in a web browser, check out the article [Collaborative Neuron Tracing on AWS](https://aws.amazon.com/blogs/desktop-and-application-streaming/collaborative-neuron-tracing-on-aws/).

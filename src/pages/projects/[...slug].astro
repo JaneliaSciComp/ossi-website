@@ -15,9 +15,18 @@ import {
   getBackgroundColor,
 } from "../../utils/tagManipulation";
 
+import { getReadme } from "../../utils/githubApiHelper";
+
 const { project } = Astro.props;
 const frontmatter = project.data;
+const body = project.body;
 const { Content } = await project.render();
+let readmeHtml = {};
+// console.log(body.length, body.includes("provide an alternative description"));
+
+if (body.length === 0 || body.includes("provide an alternative description")) {
+  readmeHtml = await getReadme(frontmatter["github link"]);
+}
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -106,7 +115,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
           <ExternalLinks frontmatter={frontmatter} />
 
-          <div class="mx-auto pt-6 flex flex-wrap gap-2">
+          <div class="pt-6 flex flex-wrap gap-2">
             {
               Object.entries(tagsObj).map(([key, tags]) => {
                 return tags.map((tag) => {
@@ -125,14 +134,21 @@ const baseUrl = import.meta.env.BASE_URL;
         </div>
 
         <section
-          class="col-span-4 row-start-3 ml-6 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"
+          class="col-span-4 row-start-3 ml-6 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"
         >
-          <div class="mt-6 md:mt-10">
+          <div class="my-6 md:mt-10">
             <div class="border-t dark:border-slate-700"></div>
           </div>
 
           <!-- This is where any custom description of the project gets rendered -->
-          <Content />
+          {
+            body.length === 0 ||
+            body.includes("provide an alternative description") ? (
+              <div set:html={readmeHtml} />
+            ) : (
+              <Content />
+            )
+          }
           <!-- If no custom description in the Markdown file, the project's GitHub README file is used-->
         </section>
       </div>

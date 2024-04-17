@@ -17,5 +17,3 @@ software type: [Website]
 programming language: [Javascript]
 open source license: [BSD-3 Clause]
 ---
-
-A portfolio of actively maintained open source software at Janelia, todisseminate and celebrate Janelia’s commitment to [Open Science Software](https://www.janelia.org/node/67970).

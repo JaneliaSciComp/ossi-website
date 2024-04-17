@@ -164,3 +164,29 @@
   padding: 2px 6px;
   margin: 2px;
 }
+
+/* Mimic GitHub README appearance - hide heading links by default */
+.markdown-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.markdown-heading h1,
+.markdown-heading h2,
+.markdown-heading h3,
+.markdown-heading h4,
+.markdown-heading h5,
+.markdown-heading h6 {
+  flex: 0 1 auto;
+  margin-right: 0.5em; /* Customizable based on spacing preference */
+}
+
+.markdown-heading .anchor {
+  display: none;
+  flex: 0 0 auto;
+}
+
+.markdown-heading:hover .anchor {
+  display: inline-block;
+}

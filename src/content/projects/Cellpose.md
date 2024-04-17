@@ -27,5 +27,3 @@ use case:
 usage environment: [Google Colab, Local installation]
 software ecosystem: [Napari]
 ---
-
-Cellpose is a generalist, deep learning-based segmentation algorithm written in Python, which can precisely segment cells from a wide range of image types and does not require model retraining or parameter adjustments. Cellpose can be applied to 2D and 3D imaging data without requiring 3D-labelled data. To support community contributions to the training data, we developed GUI software for manual labeling and for curation of the automated results. We have retrained the model on community-contributed data to ensure the continual improvement of Cellpose. Software developers have integrated Cellpose into their own image processing software, such as CellProfiler, ImagePy, ImJoy, and aPeer. We also developed a Napari plugin for Cellpose [(cellpose-napari)](https://cellpose-napari.readthedocs.io/en/latest/).
