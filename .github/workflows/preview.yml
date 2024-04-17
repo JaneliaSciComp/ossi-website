@@ -1,24 +1,29 @@
-name: Deploy preview
+name: Deploy PR previews
 
 on:
   pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
 
 jobs:
-  build-and-deploy:
+  deploy-preview:
     runs-on: ubuntu-20.04
-    permissions:
-      pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
       - name: Install and Build
+        if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
         run: |
           npm install
           npm run build
 
-      - name: Deploy
-        uses: shlinkio/deploy-preview-action@v1.0.1
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          branch: main # The branch from where the GitHub Pages are served (defaults to preview-env)
-          folder: dist # The folder where the artifacts to publish are (defaults to the project root)
-
+          source-dir: ./dist/
