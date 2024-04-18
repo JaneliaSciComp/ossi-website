@@ -1,4 +1,7 @@
 const base = import.meta.env.BASE_URL;
+const previewPath = import.meta.env.PREVIEW_PATH
+  ? import.meta.env.PREVIEW_PATH
+  : "";
 
 export const headerData = {
   links: [
@@ -8,19 +11,19 @@ export const headerData = {
     },
     {
       text: "Projects",
-      href: `${base}/projects`,
+      href: `${base}${previewPath}/projects`,
     },
     {
       text: "Ecosystems",
-      href: `${base}/ecosystems`,
+      href: `${base}${previewPath}/ecosystems`,
     },
     {
       text: "OSSI",
-      href: `${base}/ossi`,
+      href: `${base}${previewPath}/ossi`,
     },
     {
       text: "Blog",
-      href: `${base}/blog`,
+      href: `${base}${previewPath}/blog`,
     },
   ],
 };

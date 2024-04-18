@@ -7,6 +7,9 @@ import ContributorList from "../components/ContributorList.astro";
 import Wrapper from "../components/Wrapper.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
+const previewPath = import.meta.env.PREVIEW_PATH
+  ? import.meta.env.PREVIEW_PATH
+  : "";
 ---
 
 <BaseLayout>
@@ -25,11 +28,11 @@ const baseUrl = import.meta.env.BASE_URL;
             {
               variant: "primary",
               text: "Janelia Software Projects",
-              href: `${baseUrl}/projects`,
+              href: `${baseUrl}${previewPath}/projects`,
             },
             {
               text: "Software Ecosystems",
-              href: `${baseUrl}/ecosystems`,
+              href: `${baseUrl}${previewPath}/ecosystems`,
             },
           ]}
         >
@@ -52,7 +55,7 @@ const baseUrl = import.meta.env.BASE_URL;
         {
           variant: "primary",
           text: "Learn more about OSSI",
-          href: `${baseUrl}/ossi`,
+          href: `${baseUrl}${previewPath}/ossi`,
           target: "_blank",
         },
       ]}
@@ -77,7 +80,7 @@ const baseUrl = import.meta.env.BASE_URL;
       information="The latest updates on Janelia software projects."
       content="blog"
       linkText="View all posts"
-      linkUrl={`${baseUrl}/blog`}
+      linkUrl={`${baseUrl}${previewPath}/blog`}
     />
 
     <Fragment slot="bg">
