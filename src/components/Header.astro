@@ -19,6 +19,17 @@ const baseUrl = import.meta.env.BASE_URL;
       <span
         class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
       >
+      </span>
+      <span
+        class="min-[600px]:hidden self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+      >
+        {siteConfig.icon}
+        {" "}
+        {siteConfig.shortName}
+      </span>
+      <span
+        class="hidden min-[600px]:block self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl lg:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+      >
         {siteConfig.icon}
         {" "}
         {siteConfig.name}
@@ -26,7 +37,7 @@ const baseUrl = import.meta.env.BASE_URL;
     </a>
 
     <div class="flex">
-      <div class="flex items-center md:hidden order-2">
+      <div class="flex items-center lg:hidden order-2">
         <button
           class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group"
           aria-label="Toggle Menu"
@@ -51,7 +62,7 @@ const baseUrl = import.meta.env.BASE_URL;
       </div>
 
       <nav
-        class="items-center w-full hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto"
+        class="items-center w-full lg:w-auto hidden lg:flex text-default overflow-y-auto overflow-x-hidden lg:overflow-y-visible lg:overflow-x-auto lg:mx-5"
         aria-label="Main navigation"
       >
         <ul
