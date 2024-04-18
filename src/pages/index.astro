@@ -1,4 +1,5 @@
 ---
+import { siteConfig } from "../siteConfig";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero";
 import CallToAction from "../components/CallToAction.astro";
@@ -13,7 +14,7 @@ const baseUrl = import.meta.env.BASE_URL;
   <Hero
     client:load
     baseUrl={baseUrl}
-    title="Janelia Software"
+    title={siteConfig.name}
     subtitle="Making scientific software user-friendly and developer-friendly"
     heightClasses="h-screen max-h-screen"
   >
@@ -24,29 +25,31 @@ const baseUrl = import.meta.env.BASE_URL;
           actions={[
             {
               variant: "primary",
-              text: "Janelia Software Projects",
+              text: `${siteConfig.shortName} Software Projects`,
               href: `${baseUrl}/projects`,
             },
             {
+              variant: "",
               text: "Software Ecosystems",
               href: `${baseUrl}/ecosystems`,
             },
           ]}
         >
           <Fragment slot="content">
-            This website aims to catalogue software projects developed at
-            Janelia. You can explore our software in two ways - through
-            individual projects or via project ecosystems.
+            This website aims to catalogue software projects developed through
+            the Janelia Open Source Science Intiative (OSSI). You can explore
+            our software in two ways - through individual projects or via
+            project ecosystems.
           </Fragment>
-          <Fragment slot="bg">
-            <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
+          <Fragment slot="btn">
+            <a class="btn my-6 w-full self-center">Learn more about OSSI</a>
           </Fragment>
         </CallToAction>
       </div>
     </Wrapper>
   </Hero>
 
-  <Wrapper containerClass="pt-16 pb-8 md:py-16">
+  <!-- <Wrapper containerClass="pt-16 pb-8 md:py-16">
     <CallToAction
       actions={[
         {
@@ -57,8 +60,8 @@ const baseUrl = import.meta.env.BASE_URL;
         },
       ]}
     >
-      <Fragment slot="title"
-        >Janelia Open Science Software Intiative (OSSI)</Fragment
+      <Fragment slot="title">
+        Janelia Open Science Software Intiative (OSSI)</Fragment
       >
       <Fragment slot="content">
         An important source of support for scientific software development and
@@ -69,12 +72,12 @@ const baseUrl = import.meta.env.BASE_URL;
         <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
       </Fragment>
     </CallToAction>
-  </Wrapper>
+  </Wrapper> -->
 
   <Wrapper containerClass="py-8 md:py-16">
     <ContentGridDisplay
-      title="Janelia Software Blog"
-      information="The latest updates on Janelia software projects."
+      title=`${siteConfig.shortName} Software Blog`
+      information=`The latest updates on ${siteConfig.shortName} software projects`
       content="blog"
       linkText="View all posts"
       linkUrl={`${baseUrl}/blog`}
