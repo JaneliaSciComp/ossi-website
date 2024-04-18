@@ -31,7 +31,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: composite
 
     steps:
       - name: Store environment variables
@@ -48,6 +48,7 @@ jobs:
           echo "PREVIEW_PATH=${{env.PREVIEW_FOLDER}}/pr-${{env.pr}}" >> $GITHUB_ENV
           echo "emptydir=$(mktemp -d)" >> $GITHUB_ENV
           echo "datetime=$(date '+%Y-%m-%d %H:%M %Z')" >> $GITHUB_ENV
+        shell: bash
 
       - name: Checkout
         uses: actions/checkout@v4
