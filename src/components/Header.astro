@@ -1,5 +1,6 @@
 ---
 import { headerData } from "../data/navigation";
+import { siteConfig } from "../siteConfig";
 import ToggleTheme from "../components/ToggleTheme.astro";
 import ToggleTheme from "../components/ToggleTheme.astro";
 
@@ -18,7 +19,9 @@ const baseUrl = import.meta.env.BASE_URL;
       <span
         class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
       >
-        🔬 Janelia Software
+        {siteConfig.icon}
+        {" "}
+        {siteConfig.name}
       </span>
     </a>
 

@@ -1,4 +1,5 @@
 ---
+import { siteConfig } from "../siteConfig";
 import { footerData } from "../data/navigation";
 import { Icon } from "astro-icon/components";
 import janeliaLogoBlack from "../assets/images/HHMI_Janelia_Logo-Black.png";
@@ -21,7 +22,9 @@ const baseUrl = import.meta.env.BASE_URL;
       <div>
         <div class="mb-2">
           <a class="inline-block font-bold text-xl" href={baseUrl}
-            >🔬 Janelia Software</a
+            >{siteConfig.icon}
+            {" "}
+            {siteConfig.name}</a
           >
         </div>
         <div class="flex flex-col gap-2 text-sm text-muted">
