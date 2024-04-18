@@ -8,6 +8,7 @@ export default function Hero({
   subtitle,
   heightClasses,
   alignmentClasses,
+  paddingClasses,
   children,
 }) {
   const [backgroundImg, setBackgroundImg] = useState("");
@@ -29,13 +30,15 @@ export default function Hero({
 
   return (
     <section
-      className={`bg-cover bg-no-repeat bg-center relative flex flex-col justify-end 2xl:items-center 2xl:justify-center  not-prose ${heightClasses}`}
+      className={`bg-cover bg-no-repeat bg-center relative flex flex-col justify-end 2xl:justify-center not-prose ${heightClasses}`}
       style={style}
     >
       <div
         className={`flex flex-col 2xl:flex-row justify-between md:justify-around 2xl:items-center h-3/4 md:h-5/6 2xl:h-auto  2xl:w-11/12 ${alignmentClasses}`}
       >
-        <div className="h-auto max-w-5xl px-4 md:px-12 lg:px-20 xl:px-32 2xl:pl-32 2xl:pr-0 2xl:self-start">
+        <div
+          className={`h-auto max-w-5xl px-4 md:px-12 lg:px-20 xl:px-32 2xl:pl-32 2xl:pr-0 2xl:self-start ${paddingClasses}`}
+        >
           {title && (
             <h1 className="text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-200">
               {title}
