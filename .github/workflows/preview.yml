@@ -54,7 +54,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Determine auto action
-        run: bash .github/actions/determine-auto-action.sh
+        run: .github/actions/determine-auto-action.sh
+        shell: bash
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -76,12 +77,14 @@ jobs:
           npx --no-install astro build \
             --site "https://${{ env.pagesurl }}" \
             --base "${{ env.PREVIEW_PATH }}"
+            --outdir "${{env.PREVIEW_PATH}}/dist"
+            --cachedir "${{env.PREVIEW_PATH}}/node_modules/.astro"
         working-directory: ${{ env.INPUT_PATH}}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.INPUT_PATH }}/dist
+          path: $${{env.PREVIEW_PATH}}/dist
 
   deploy:
     environment:
