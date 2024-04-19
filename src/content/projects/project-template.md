@@ -32,35 +32,8 @@ image file: ./optional-file-path.jpg
 image caption: Required if you upload an image file - this will dislay on the site
 youtube url: https://optional-youtube-url.com
 youtube caption: Required if you provide a youtube url - this will display on the site
-development team:
-  [
-    Branson Lab,
-    Dudman Lab,
-    Pachitariu Lab,
-    Preibisch Lab,
-    Saalfeld Lab,
-    Stringer Lab,
-    Turaga Lab,
-    CellMap,
-    FlyEM,
-    FlyLight,
-    MouseLight,
-    MultiFISH,
-    Scientific Computing Software,
-  ]
-programming language:
-  [
-    C++,
-    Go,
-    Java,
-    Julia,
-    Kotlin,
-    MATLAB,
-    Nextflow,
-    Python,
-    Javascript,
-    Typescript,
-  ]
+development team: [Scientific Computing Softwar]
+programming language: []
 open source license: [BSD-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT]
 software type:
   [
