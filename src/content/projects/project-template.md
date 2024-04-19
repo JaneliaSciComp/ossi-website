@@ -32,7 +32,7 @@ image file: ./optional-file-path.jpg
 image caption: Required if you upload an image file - this will dislay on the site
 youtube url: https://optional-youtube-url.com
 youtube caption: Required if you provide a youtube url - this will display on the site
-development team: [Scientific Computing Softwar]
+development team: [Scientific Computing Software]
 programming language: []
 open source license: [BSD-3 Clause, CC-by-0, GPL-2.0, GPL-3.0, MIT]
 software type:
