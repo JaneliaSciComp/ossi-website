@@ -27,7 +27,7 @@ jobs:
             **.md
             **.mdx
           files_ignore: |
-            project-template.md
+            _project-template.md
             tagsList.md
             README.md
             CONTRIBUTING.md
