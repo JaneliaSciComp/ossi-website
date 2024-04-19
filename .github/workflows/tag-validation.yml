@@ -27,9 +27,12 @@ jobs:
             **.md
             **.mdx
           files_ignore: |
-            project-template.md
+            _project-template.md
             tagsList.md
             README.md
+            CONTRIBUTING.md
+            LICENSE-3-clause-BSD.md
+            LICENSE-MIT.md
 
       - name: List all changed files markdown files
         if: steps.changed-markdown-files.outputs.any_changed == 'true'
