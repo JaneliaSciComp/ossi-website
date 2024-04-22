@@ -79,7 +79,7 @@ git clone git@github.com:YOUR-USERNAME/YOUR-REPO-NAME.git
 cd YOUR-REPOSITORY-NAME
 ```
 
-2.  Type the below two commands in the terminal - the first command installs dependencies and the second starts the local server and opens it automatically in your default web browswer.
+2.  Type the below two commands in the terminal - the first command directs npm to install dependencies specific to the repo and the second starts the local server and opens it automatically in your default web browswer.
 
 ```
 npm install
