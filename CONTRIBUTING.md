@@ -104,15 +104,17 @@ npm run dev
             └── _project-template.md
 ```
 
-3. Copy `/src/content/projects/_project-template.md` and paste a duplicate of the file into the same folder (`/src/content/projects/`). Rename the template file with your software project's title with dashes connecting each word. For example, if your software is called "Awesome Software", you would rename the file as `Awesome-Software.md`.
+3. Copy `/src/content/projects/_project-template.md` and paste a duplicate of the file into the same folder (`/src/content/projects/`). Rename the template file with your software project's title in **lowercase** with dashes connecting each word. For example, if your software is called "Awesome Software", you would rename the file as `awesome-software.md`.
 
 Open your project file to view its contents. At the top of the file are data sandwiched between triple-dashes (---). These data are collectively called **frontmatter** and are used by Astro to populate the webpage content for a project.
 
-4. **Start by editing the `title` value - this must match the name of your project file, without the dashes.** For example, if your project file is named `Awesome-Project.md`, your `title` entry should appear as:
+4. **Start by editing the `title` field. The title value must match the name of your project file name with each dash converted to a space, but it can have whatever casing you desire.** For example, if your project file is named `awesome-software.md`, your `title` entry can appear as:
 
-```
-title: Awesome Software
-```
+`title: Awesome Software` or
+`title: AWESOME SOFTWARE` or
+`title: AWEsome Software` etc...
+
+But the title cannot be `title: AwesomeSoftware`. This is equiavlent to a file name of `awesomesoftware.md`.
 
 ## Edit a project
 
