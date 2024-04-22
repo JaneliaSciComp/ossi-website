@@ -104,15 +104,18 @@ npm run dev
             └── _project-template.md
 ```
 
-3. Copy `/src/content/projects/_project-template.md` and paste a duplicate of the file into the same folder (`/src/content/projects/`). Rename the template file with your software project's title with dashes connecting each word. For example, if your software is called "Awesome Software", you would rename the file as `Awesome-Software.md`.
+3. Copy `/src/content/projects/_project-template.md` and paste a duplicate of the file into the same folder (`/src/content/projects/`). Rename the template file with your software project's title in **lowercase**, with dashes replacing spaces.
+   - For example, if your software is called "Awesome Software", you would rename the file as `awesome-software.md`.
+   - If your software is called "AwesomeSoftware", the file name would be `awesomesoftware.md`
 
 Open your project file to view its contents. At the top of the file are data sandwiched between triple-dashes (---). These data are collectively called **frontmatter** and are used by Astro to populate the webpage content for a project.
 
-4. **Start by editing the `title` value - this must match the name of your project file, without the dashes.** For example, if your project file is named `Awesome-Project.md`, your `title` entry should appear as:
-
-```
-title: Awesome Software
-```
+4. **Start by editing the `title` field. The title value must match the name of your project file name with each dash converted to a space**, but it can have whatever casing you desire.
+   - For example, if your project file is named `awesome-software.md`, your `title` entry can appear as:
+     `title: Awesome Software` or
+     `title: AWESOME SOFTWARE` or
+     `title: AWEsome Software` etc...
+     But the title cannot be `title: AwesomeSoftware` - this is equiavlent to a file name of `awesomesoftware.md`.
 
 ## Edit a project
 
@@ -122,40 +125,37 @@ At the top of your project file are data sandwiched between triple-dashes (---).
 
 - Follow the guidance in the table below to fill out your project file's frontmatter. You can also refer to `/src/projects/_project-template.md` for further guidance and examples for each data variable.
 
-- For all variables, only edit the values to the right of the colon in the project template (e.g., for `title:`, delete and replace "Your project title" circled in red below). Editing values to the left of the colon may result in errors being thrown by the local server.
-  ![The top of the project template file, showing some sample frontmatter](./public/readme-images/frontmatter.png)
-
 - For each **required** variable, you must provide a value or an error will be thrown when you try to view your project page on the local server.
 
 - For each **optional** variable, **if you do not wish to provide a value you must comment out or delete the entire entry.**
 
-| Variable name                    | Required or optional                                               | How to complete                                                                                                                                                                                                                                                         |
-| :------------------------------- | :----------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`                          | Required                                                           | Your project title.                                                                                                                                                                                                                                                     |
-| `tagline`                        | Required                                                           | One or two sentences describing your project.                                                                                                                                                                                                                           |
-| `maintainer`                     | Required                                                           | The maintainer of the project page on this website. This should be the name of one primary point-of-contact.                                                                                                                                                            |
-| `maintainer contact info`        | Required                                                           | The preferred contact method for the maintainer - this should either an email address or a link to a contact method such as X, Instagram, LinkedIn, or Facebook.                                                                                                        |
-| `project type`                   | Required                                                           | Pick **one** of the three options provided in the template based on whether your software project is currently or was ever supported by OSSI: `[OSSI - current, OSSI - previous, Other]`. Delete the other two options, leaving the square brackets around your choice. |
-| `OSSI proposal link`             | Required for current and previous OSSI-funded projects             | Link to the OSSI proposal, written as a string (no square brackets).                                                                                                                                                                                                    |
-| `github link`                    | Required                                                           | Link to the software project's GitHub repository.                                                                                                                                                                                                                       |
-| `documentation link`             | Required                                                           | Link to software documentation - can be the same as the GitHub repo if the README is the documentation                                                                                                                                                                  |
-| `installation instructions link` | Required                                                           | Link to software installation instructions - can be the same as the GitHub repo                                                                                                                                                                                         |
-| `how to cite text`               | Required if your software has an associated published paper or DOI | The citation for your software - wrap in quotes to ensure colons are interpreted correctly. If your software doesn't have an associated published paper or DOI, leave this blank.                                                                                       |
-| `how to cite link`               | Optional                                                           | A DOI. Wrap in quotes to ensure the colon is interpreted correctly. If a DOI is not available, leave this blank - your GitHub repo will be used as the default. Each DOI should start with `https://doi.org/`                                                           |
-| `additional links array`         | Optional                                                           | Optional external links formatted in a comma-separated array. If there is a colon in a link, wrap the entire link in quotations. For example, you could provide links to a project homepage, an externally-hosted blog post, additional publications, etc.              |
-| `additional links text array`    | Optional                                                           | If your project has an associated blog post file, provide the file name here in square brackets, without the .md extenstion (e.g., `[my-related-blog-post-file]`). If there is more than one related blog posts separate the file names by commas.                      |
-| `image file`                     | Optional                                                           | Format as: `image-file-name-with-no-spaces.fileExtension`<br/> Then see [Adding an image](#optional---add-an-image) for more information about uploading an image.                                                                                                      |
-| `image caption`                  | Required if you add an image file                                  | A brief description of the image - this will be displayed on the site                                                                                                                                                                                                   |
-| `youtube url`                    | Optional                                                           | Link to a YouTube-hosted video demoing your software.                                                                                                                                                                                                                   |
-| `youtube caption`                | Required if you add a video link                                   | A brief description of the video - this will be displayed on the site                                                                                                                                                                                                   |
-| `development team`               | Optional                                                           | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
-| `programming language`           | Optional                                                           | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
-| `open source license`            | Optional                                                           | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
-| `software type`                  | Optional                                                           | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
-| `use case`                       | Optional                                                           | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
-| `usage environment`              | Optional                                                           | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
-| `software ecosystem`             | Optional                                                           | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
-| `supported file types`           | Optional                                                           | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
+| Variable name                    | Required or optional                                                                                      | How to complete                                                                                                                                                                                                                                                         |
+| :------------------------------- | :-------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`                          | Required                                                                                                  | Your project title.                                                                                                                                                                                                                                                     |
+| `tagline`                        | Required                                                                                                  | One or two sentences describing your project.                                                                                                                                                                                                                           |
+| `maintainer`                     | Required                                                                                                  | The maintainer of the project page on this website. This should be the name of one primary point-of-contact.                                                                                                                                                            |
+| `maintainer contact info`        | Required                                                                                                  | The preferred contact method for the maintainer - this should either an email address or a link to a contact method such as X, Instagram, LinkedIn, or Facebook.                                                                                                        |
+| `project type`                   | Required                                                                                                  | Pick **one** of the three options provided in the template based on whether your software project is currently or was ever supported by OSSI: `[OSSI - current, OSSI - previous, Other]`. Delete the other two options, leaving the square brackets around your choice. |
+| `OSSI proposal link`             | Required for current and previous OSSI-funded projects                                                    | Link to the OSSI proposal, written as a string (no square brackets).                                                                                                                                                                                                    |
+| `github link`                    | Required                                                                                                  | Link to the software project's GitHub repository.                                                                                                                                                                                                                       |
+| `documentation link`             | Required                                                                                                  | Link to software documentation - can be the same as the GitHub repo if the README is the documentation                                                                                                                                                                  |
+| `installation instructions link` | Required                                                                                                  | Link to software installation instructions - can be the same as the GitHub repo                                                                                                                                                                                         |
+| `how to cite text`               | Required if your software has an associated published paper or DOI                                        | The citation for your software - wrap in quotes to ensure colons are interpreted correctly. If your software doesn't have an associated published paper or DOI, leave this blank.                                                                                       |
+| `how to cite link`               | Optional. </br> _Reminder - comment out or delete optional fields you do not wish to provide a value for_ | A DOI. Wrap in quotes to ensure the colon is interpreted correctly. If a DOI is not available, leave this blank - your GitHub repo will be used as the default. Each DOI should start with `https://doi.org/`                                                           |
+| `additional links array`         | Optional                                                                                                  | Optional external links formatted in a comma-separated array. If there is a colon in a link, wrap the entire link in quotations. For example, you could provide links to a project homepage, an externally-hosted blog post, additional publications, etc.              |
+| `additional links text array`    | Optional                                                                                                  | If your project has an associated blog post file, provide the file name here in square brackets, without the .md extenstion (e.g., `[my-related-blog-post-file]`). If there is more than one related blog posts separate the file names by commas.                      |
+| `image file`                     | Optional                                                                                                  | Format as: `image-file-name-with-no-spaces.fileExtension`<br/> Then see [Adding an image](#optional---add-an-image) for more information about uploading an image. Note - only one image file is supported at this time.                                                |
+| `image caption`                  | Required if you add an image file                                                                         | A brief description of the image - this will be displayed on the site                                                                                                                                                                                                   |
+| `youtube url`                    | Optional                                                                                                  | Link to a YouTube-hosted video demoing your software.                                                                                                                                                                                                                   |
+| `youtube caption`                | Required if you add a video link                                                                          | A brief description of the video - this will be displayed on the site                                                                                                                                                                                                   |
+| `development team`               | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
+| `programming language`           | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
+| `open source license`            | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
+| `software type`                  | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
+| `use case`                       | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
+| `usage environment`              | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
+| `software ecosystem`             | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
+| `supported file types`           | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                              |
 
 ### Guidance for "tag" variables
 
@@ -166,7 +166,15 @@ Tags are used to allow website visitors to filter displayed projects.
 - If an entire tag category is not relevant to your project, delete or comment out the entire category and associated options.
   ![Sample tag categories and options from the project template](./public/readme-images/tags.png)
 - We strive to keep the tag categories and example options up-to-date in the project template, but the final reference for the currently-allowed tag categories and options can always be found [here](https://github.com/JaneliaSciComp/ossi-website/blob/main/.github/actions/validTagsList.json).
-- If you feel there is an additional tag category or option required to describe your project - read the guidance on [Requesting new tag categories or options](#requesting-new-tag-categories-or-options).
+
+#### If you feel there is an additional tag **option** required to describe your project
+
+- Go ahead and add the option(s) to your project file. In your pull request, please note you added the option and provide a brief explanation why. When you open your pull request, these new options will throw a warning for the website maintainer for review.
+
+#### If you feel there is an additional tag **category** required to describe your project
+
+- _Do not add the new tag category to your project's template - this will prevent your project page from displaying in your local server._
+- Open a separate [pull request](#open-a-pull-request) listing the new tag category(ies) with a brief explanation of why you feel the addition is necessary.
 
 ### Optional - Edit the project description
 
@@ -184,14 +192,6 @@ If you would rather provide a custom project description, you can do so by typin
 1. Add your desired image to `/public/project-images/`, using a filename without spaces.
 2. Edit your project file to include a value for `image file` as outlined in the [table above](#edit-the-frontmatter).
 
-### Requesting new tag categories or options
-
-- _Tag categories are the the variable name to the left of the colon in the project Markdown file._
-- _Tag options are the values in the square brackets to the right of the colon._
-  ![Sample tag categories and options from the project template](./public/readme-images/tags.png)
-
-_Do not add the new tag category or option to your project's template._ Open a separate [pull request](#open-a-pull-request) listing the new tag category(ies) and/or tag options(s) you wish to add. Make sure to select the "new tags added" label.
-
 ## Preview your project page and push your changes to GitHub
 
 #### Preview your project page on the local dev server.
@@ -203,16 +203,18 @@ _Do not add the new tag category or option to your project's template._ Open a s
 3.  Navigate in your web browser to:
 
 ```
-localhost:4321/ossi-webiste/projects/YOUR-PROJECT-NAME
+localhost:4321/ossi-website/projects/<your-project-name>
 ```
 
 #### When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.
 
-1.  Commit your project file locally by typing the following in your code editor's terminal. Modify the message on the commit (wrapped in double quotes) to indicate whether you are adding or editing your project.
+1.  Commit your project file locally by typing the following in your code editor's terminal. Modify the message on the commit (wrapped in double quotes) to indicate whether you are **adding** or **editing** your project.
+
+- Note: If you added an image file, you will also need to `git add public/project-images/YOUR-PROJECT-IMAGE-FILE`
 
 ```
 git add src/content/projects/YOUR-PROJECT-NAME.md
-git commit -m "Add/edit YOUR PROJECT NAME"
+git commit -m "Add YOUR PROJECT NAME"
 ```
 
 2.  Push your changes to your online GitHub repository by entering the following in your code editor's terminal. Note - this code snippet assumes you are working on the default "main" branch. If you created a branch in your GitHub repo for this specific change, edit "main" to your branch name below.
@@ -246,15 +248,9 @@ A page title **Comparing changes** will open. In the dropdown menus:
 
 The **Open pull request** page will open.
 
-5. Add a title in the format of "Add/edit YOUR PROJECT NAME", if needed. If you only made one commit, the **Add a title** text box should autopopulate as from your commit message. Optionally, you can add specific requests or explanations to the **Add a description** text box.
+5. Add a title in the format of "Add YOUR PROJECT NAME" or "Edit YOUR PROJECT NAME", if needed. If you only made one commit, the **Add a title** text box should autopopulate as from your commit message. Optionally, you can add specific requests or explanations to the **Add a description** text box.
 
-6. In the panel on the right side of the screen, (2) select **Labels**. In the dropdown, select the relevant labels for your pull request, e.g.,:
-
-   - New Project Page
-   - Edit Project Page
-   - New Tags
-
-7. Click the green **Create pull request** button to submit your pull request. **Note**: leave the option **Allow edits by maintainers** checked. This will allow the website maintainers to help edit your project file before completing the pull request, if needed.
+6. Click the green **Create pull request** button to submit your pull request. **Note**: leave the option **Allow edits by maintainers** checked. This will allow the website maintainers to help edit your project file before completing the pull request, if needed.
    ![GitHub.com interface to set the title, description, and other details about a pull request. Also includes the button to submit the pull request](./public/readme-images/open-pr-3.png)
 
 After you submit your pull request, an automated check will run to ensure your tag categories and options are valid. If the check fails, a comment will publish to your pull request, indicating where the problem is.
@@ -267,4 +263,4 @@ To fix the error, return to your code editor and make the required changes to th
 
 Your PR will be reviewed by the maintainers of the OSSI site. You may receive requests for changes before your PR is approved.
 
-## Thank you for your contribution!
+### Thank you for your contribution!
