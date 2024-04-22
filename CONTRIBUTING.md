@@ -33,7 +33,7 @@ npm -v
 
 ## Set-up
 
-**Fork the OSSI website repository to create your own copy of the repository on your GitHub account.**
+#### Fork the OSSI website repository to create your own copy of the repository on your GitHub account.
 
 1.  On GitHub.com, naviagate to the [JaneliaSciComp/ossi-website](https://github.com/JaneliaSciComp/ossi-website) repository page.
 
@@ -42,7 +42,7 @@ npm -v
 
 3.  On the next page, you can keep the defaults and click **Create Fork** in the lower right. Or, optionally, you can change the repository name or description to be different than ossi-website, to further distinguish your copy from the original repository.
 
-**Clone your forked repository, to make it available on your local computer.**
+#### Clone your forked repository, to make it available on your local computer.
 
 1.  On the [JaneliaSciComp/ossi-website](https://github.com/JaneliaSciComp/ossi-website) repository page, above the list of files, click the green **Code** button.
 
@@ -71,7 +71,7 @@ git clone git@github.com:YOUR-USERNAME/YOUR-REPO-NAME.git
 7.  Hit enter to clone the repo onto your local computer. You should see output in the terminal like the below.
     ![Sample terminal output after using the command to clone a GitHub repo](./public/readme-images/clone-2.png)
 
-**Install the repository dependencies and start the local dev server to preview a local copy of the website.**
+#### Install the repository dependencies and start the local dev server to preview a local copy of the website.
 
 1.  In the terminal of the code editor, navigate to the directory you just created by typing `cd` and the name you gave your repository copy. For example, in the above image, the repository name is `copy-ossi-website`.
 
@@ -194,7 +194,7 @@ _Do not add the new tag category or option to your project's template._ Open a s
 
 ## Preview your project page and push your changes to GitHub
 
-**Preview your project page on the local dev server.**
+#### Preview your project page on the local dev server.
 
 1.  Make sure you've saved all your changes on your local computer.
 
@@ -206,7 +206,7 @@ _Do not add the new tag category or option to your project's template._ Open a s
 localhost:4321/ossi-webiste/projects/YOUR-PROJECT-NAME
 ```
 
-**When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.**
+#### When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.
 
 1.  Commit your project file locally by typing the following in your code editor's terminal. Modify the message on the commit (wrapped in double quotes) to indicate whether you are adding or editing your project.
 
@@ -233,28 +233,28 @@ Navigate to your copy of the ossi-website repository on GitHub.com. Along the to
 
 A page title **Comparing changes** will open. In the dropdown menus:
 
-1.  Check that your pull request is originating from the correct place (your repo and branch) and going to the correct place (the original Janelia/ossi-website repo) - see the exact settings written out below.
+3.  Check that your pull request is originating from the correct place (your repo and branch) and going to the correct place (the original Janelia/ossi-website repo) - see the exact settings written out below.
 
 - **Base repository** is set to **JaneliaSciComp/ossi-website**
 - **Base** is set to **main**
 - **Head** repository is set to **YOUR-USERNAME/YOUR-REPO-NAME**
 - **Compare** is set to **main** (unless you opened a specific branch to add/edit your project on)
 
-2.  Then click the green **New pull request** button.
+4.  Then click the green **New pull request** button.
 
 ![GitHub.com interface to set the base and head of a pull request](./public/readme-images/open-pr-2.png)
 
 The **Open pull request** page will open.
 
-1. Add a title in the format of "Add/edit YOUR PROJECT NAME", if needed. If you only made one commit, the **Add a title** text box should autopopulate as from your commit message. Optionally, you can add specific requests or explanations to the **Add a description** text box.
+5. Add a title in the format of "Add/edit YOUR PROJECT NAME", if needed. If you only made one commit, the **Add a title** text box should autopopulate as from your commit message. Optionally, you can add specific requests or explanations to the **Add a description** text box.
 
-2. In the panel on the right side of the screen, (2) select **Labels**. In the dropdown, select the relevant labels for your pull request, e.g.,:
+6. In the panel on the right side of the screen, (2) select **Labels**. In the dropdown, select the relevant labels for your pull request, e.g.,:
 
    - New Project Page
    - Edit Project Page
    - New Tags
 
-3. Click the green **Create pull request** button to submit your pull request. **Note**: leave the option **Allow edits by maintainers** checked. This will allow the website maintainers to help edit your project file before completing the pull request, if needed.
+7. Click the green **Create pull request** button to submit your pull request. **Note**: leave the option **Allow edits by maintainers** checked. This will allow the website maintainers to help edit your project file before completing the pull request, if needed.
    ![GitHub.com interface to set the title, description, and other details about a pull request. Also includes the button to submit the pull request](./public/readme-images/open-pr-3.png)
 
 After you submit your pull request, an automated check will run to ensure your tag categories and options are valid. If the check fails, a comment will publish to your pull request, indicating where the problem is.
