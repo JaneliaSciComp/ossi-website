@@ -12,14 +12,13 @@ how to cite text: Wang Y, Eddison M, Fleishman G, Weigert M, Xu S, Wang T, Rokic
 #related blog posts: [Optional-file-name]
 image file: EASI-FISH.png
 image alt text: Data processed by the EASI-FISH pipeline
-development team: [MultiFISH Project Team, Scientific Computing Software]
+development team: [MultiFISH, Scientific Computing Software]
 programming language: [Nextflow, Python, Java, MATLAB]
 open source license: [BSD-3 Clause]
 software type: [Command line application]
 supported file types: [Zeiss CZI, N5]
 use case:
   [
-    Image analysis,
     Spatial transcriptomics,
     Expansion microscopy (ExM)
   ]

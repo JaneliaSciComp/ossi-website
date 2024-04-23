@@ -19,7 +19,6 @@ software type: [Service, Web application, Website]
 supported file types: [H5J, SWC]
 use case:
   [
-    Image analysis,
     Confocal light microscopy (LM),
     Electron microscopy (EM),
   ]
