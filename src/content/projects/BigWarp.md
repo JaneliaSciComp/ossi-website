@@ -4,7 +4,7 @@ tagline: Maintain and extend BigWarp (3D non-rigid registration for very large v
 maintainer: Bogovic & Saalfeld
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
-OSSI proposal link: https://drive.google.com/file/d/1jwba3zCZcSDjPUGKq1APkwVA20TIeJUY/view
+OSSI proposal link: ../../proposals/bigwarp.pdf
 github link: https://github.com/saalfeldlab/bigwarp
 documentation link: https://imagej.net/plugins/bigwarp
 installation instructions link: https://imagej.net/plugins/bigwarp#installation
