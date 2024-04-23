@@ -9,7 +9,7 @@ const {
   tagline = await Astro.slots.render("tagline"),
   actions = await Astro.slots.render("actions"),
   content = await Astro.slots.render("content"),
-  bg = await Astro.slots.render("bg"),
+  btn = await Astro.slots.render("btn"),
 } = Astro.props;
 // console.log(actions)
 ---
@@ -23,17 +23,10 @@ const {
   />
   {
     actions && (
-      <div
-        class={`flex flex-nowrap flex-row justify-center gap-4 max-w-xs sm:max-w-md ${btnContainerClasses}`}
-      >
+      <div class={`grid grid-cols-2 gap-4 w-full ${btnContainerClasses}`}>
         {Array.isArray(actions) ? (
           actions.map((action) => (
-            <div class="flex w-full">
-              <Button
-                {...(action || {})}
-                class="btn w-full sm:mb-0 md:text-lg"
-              />
-            </div>
+            <Button {...(action || {})} class="btn w-full sm:mb-0 md:text-lg" />
           ))
         ) : (
           <Fragment set:html={actions} />
@@ -41,4 +34,5 @@ const {
       </div>
     )
   }
+  {btn && <slot name="btn" set:html={btn} />}
 </div>

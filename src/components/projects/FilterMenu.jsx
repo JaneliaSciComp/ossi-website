@@ -8,6 +8,8 @@ import {
 } from "./stores/selectedTagsStore.js";
 import { getBackgroundColor } from "../../utils/tagManipulation.js";
 
+const OMIT_TAG_CATEGORIES = ["software ecosystem", "supported file types"];
+
 export default function FilterMenu({ uniqueTags }) {
   const $selectedTags = useStore(selectedTags);
   //used to manage state for the close ("x") button on the small screen filter menu
@@ -69,45 +71,51 @@ export default function FilterMenu({ uniqueTags }) {
           </button>
         </div>
 
-        {Object.keys(uniqueTags).map((key) => (
-          <div className="mb-4" key={`tagCategory-${key}`}>
-            <h3
-              className="cursor-pointer font-bold border-b-2 flex items-center justify-between py-2"
-              onClick={() => toggleCategoryVisibility(key)}
-            >
-              {key.toUpperCase()}
-              {categoryVisibility[key] ? <TbMinus /> : <TbPlus />}
-            </h3>
-            <ul
-              className={`flex flex-col flex-nowrap ${
-                !categoryVisibility[key] && "hidden"
-              }`}
-            >
-              {uniqueTags[key].map((individualTag) => {
-                return (
-                  <li
-                    className="w-full flex cursor-pointer "
-                    onClick={() => handleTagSelection(individualTag)}
-                  >
-                    <div
-                      key={individualTag}
-                      className={`ml-2 self-start my-1 ${
-                        $selectedTags.includes(individualTag) ? "selected" : ""
-                      }`}
-                      style={{
-                        ...($selectedTags.includes(individualTag) && {
-                          backgroundColor: getBackgroundColor(key),
-                        }),
-                      }}
+        {Object.keys(uniqueTags).map((key) =>
+          OMIT_TAG_CATEGORIES.includes(key) ? null : (
+            <div className="mb-4" key={`tagCategory-${key}`}>
+              <h3
+                className="cursor-pointer font-bold border-b-2 flex items-center justify-between py-2"
+                onClick={() => toggleCategoryVisibility(key)}
+              >
+                {/* Capitalize the first letter for display purposes*/}
+                {key.charAt(0).toUpperCase() + key.slice(1)}{" "}
+                {categoryVisibility[key] ? <TbMinus /> : <TbPlus />}
+              </h3>
+              <ul
+                className={`flex flex-col flex-nowrap ${
+                  !categoryVisibility[key] && "hidden"
+                }`}
+              >
+                {uniqueTags[key].map((individualTag) => {
+                  return (
+                    <li
+                      key={`${key}-${individualTag}`}
+                      className="w-full flex cursor-pointer "
+                      onClick={() => handleTagSelection(individualTag)}
                     >
-                      {individualTag.toUpperCase()}
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        ))}
+                      <div
+                        key={individualTag}
+                        className={`ml-2 self-start my-1 ${
+                          $selectedTags.includes(individualTag)
+                            ? "selected"
+                            : ""
+                        }`}
+                        style={{
+                          ...($selectedTags.includes(individualTag) && {
+                            backgroundColor: getBackgroundColor(key),
+                          }),
+                        }}
+                      >
+                        {individualTag}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )
+        )}
       </div>
 
       <div className="flex self-center gap-4 py-4">

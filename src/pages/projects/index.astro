@@ -1,5 +1,6 @@
 ---
 import "../../styles/tailwind.css";
+import { siteConfig } from "../../siteConfig";
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -21,17 +22,17 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
   <Hero
     client:load
     baseUrl={baseUrl}
-    title="Software Projects"
-    subtitle="Software developed at Janelia, including Open Science Software Intiative (OSSI) supported projects"
-    heightClasses="h-80 py-20 2xl:pt-32"
+    title=`${siteConfig.shortName} Software Projects`
+    subtitle=`${siteConfig.name} (${siteConfig.acronymOnly}) supported software projects and other software developed at Janelia`
+    heightClasses="h-96 py-20 2xl:pt-36"
     alignmentClasses="2xl:flex-col 2xl:items-start"
   />
 
   <CardsAndFiltersIsland
-    client:only
     uniqueTags={uniqueTags}
     allContent={allProjects}
     baseUrl={baseUrl}
     contentType="projects"
+    client:load
   />
 </BaseLayout>

@@ -1,23 +1,24 @@
 ---
 title: Video Annotation Library
 tagline: A usable and extensible library for video annotation for machine learning.
-author names: Xi Peng, Kristin Branson
+maintainer: Xi Peng, Kristin Branson
+maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
 OSSI proposal link: https://drive.google.com/file/d/1iS6GLiDBlSOt-wdNMNLIpL-qIO7h4DOp/view
-github repository link array:
-  [https://github.com/JaneliaSciComp/videoAnnotation]
+github link: https://github.com/JaneliaSciComp/videoAnnotation
+documentation link: https://github.com/JaneliaSciComp/videoAnnotation
+installation instructions link: https://github.com/JaneliaSciComp/videoAnnotation
+how to cite link: https://github.com/JaneliaSciComp/videoAnnotation
+how to cite text: Cite the software on GitHub
 image file: jacob-miller-ot5kWZkH97s-unsplash.jpg
 image alt text: Image that look like video annotation timeline
-associated labs and projects:
-  [Branson Lab, Scientific Computing Software Support Team]
-software type: [Framework, Package, Web application]
+development team: [Branson Lab, Scientific Computing Software]
 programming language: [Python, Javascript]
-software ecosystem: []
 open source license: [BSD-3 Clause]
-supported file types: [mpeg, avi]
-related experimental techniques: []
-software use case: [Annotation, Image analysis, Video analysis]
+software type: [Framework, Package, Web application]
+use case: [Annotation]
 usage environment: [Cloud, Local installation, Web browser]
+supported file types: [mpeg, avi]
 # related blog posts:
 ---
 
