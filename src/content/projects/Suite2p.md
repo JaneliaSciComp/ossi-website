@@ -4,7 +4,7 @@ tagline: Pipeline for processing two-photon calcium imaging data.
 maintainer: Stringer et al.
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
-OSSI proposal link: https://drive.google.com/file/d/1-KLHwZ3g6A1F8AWYge7llfEHViaHWsoc/view
+OSSI proposal link: ../../proposals/suite2p_and_cellpose.pdf
 github link: https://github.com/MouseLand/suite2p
 documentation link: https://suite2p.readthedocs.io/en/latest/
 installation instructions link: https://github.com/MouseLand/suite2p?tab=readme-ov-file#local-installation

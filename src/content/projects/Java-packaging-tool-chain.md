@@ -4,7 +4,7 @@ tagline: Develop an easy-to-use packaging system for Java applications.
 maintainer: Saalfeld et al.
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
-OSSI proposal link: https://drive.google.com/file/d/1ig0xMeHcsLe-BF-kaHLthUfQrtnwQyi2/view
+OSSI proposal link: ../../proposals/jvm_tool_deployment.pdf
 github link: "#"
 documentation link: "#"
 installation instructions link: "#"

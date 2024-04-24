@@ -4,7 +4,7 @@ tagline: A generalist algorithm for cell and nucleus segmentation (v1.0) that ca
 maintainer: Stringer et al.
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]
-OSSI proposal link: https://drive.google.com/file/d/1-KLHwZ3g6A1F8AWYge7llfEHViaHWsoc/view
+OSSI proposal link: ../../proposals/suite2p_and_cellpose.pdf
 github link: https://github.com/MouseLand/cellpose
 documentation link: https://cellpose.readthedocs.io/en/latest/
 installation instructions link: https://github.com/MouseLand/cellpose?tab=readme-ov-file#installation

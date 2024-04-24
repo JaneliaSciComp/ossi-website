@@ -1,10 +1,10 @@
 ---
 title: Video Annotation Library
-tagline: A usable and extensible library for video annotation for machine learning.
+tagline: A usable and extensible video annotation library for machine learning
 maintainer: Xi Peng, Kristin Branson
-maintainer contact info: placeholder@gmail.com
+maintainer contact info: bransonk@janelia.hhmi.org
 project type: [OSSI - current]
-OSSI proposal link: https://drive.google.com/file/d/1iS6GLiDBlSOt-wdNMNLIpL-qIO7h4DOp/view
+OSSI proposal link: ../../proposals/video_annotation_library.pdf
 github link: https://github.com/JaneliaSciComp/videoAnnotation
 documentation link: https://github.com/JaneliaSciComp/videoAnnotation
 installation instructions link: https://github.com/JaneliaSciComp/videoAnnotation
