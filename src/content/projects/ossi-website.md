@@ -1,6 +1,6 @@
 ---
 title: OSSI Website
-tagline: A portfolio for Open Science Software Iniative-supported projects
+tagline: A portfolio for Open Science Software Initiative-supported projects
 maintainer: Ferreira and Rokicki
 maintainer contact info: placeholder@gmail.com
 project type: [OSSI - current]

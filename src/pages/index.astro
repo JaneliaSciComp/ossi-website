@@ -25,24 +25,19 @@ const baseUrl = import.meta.env.BASE_URL;
           actions={[
             {
               variant: "primary",
-              text: `${siteConfig.shortName} Software Projects`,
+              text: `Explore software projects`,
               href: `${baseUrl}/projects`,
             },
             {
               variant: "",
-              text: "Software Ecosystems",
-              href: `${baseUrl}/ecosystems`,
+              text: "Learn more about the OSSI",
+              href: `${baseUrl}/ossi`,
             },
           ]}
         >
           <Fragment slot="content">
-            This website aims to catalogue software projects developed through
-            the Janelia Open Source Science Intiative (OSSI). You can explore
-            our software in two ways - through individual projects or via
-            project ecosystems.
-          </Fragment>
-          <Fragment slot="btn">
-            <a class="btn my-6 w-full self-center">Learn more about OSSI</a>
+            This website aims to catalogue software projects developed through the <b>Janelia Open Science Software Initiative</b> (OSSI), 
+            as well as other software developed by teams at Janelia Research Campus. 
           </Fragment>
         </CallToAction>
       </div>
@@ -61,11 +56,11 @@ const baseUrl = import.meta.env.BASE_URL;
       ]}
     >
       <Fragment slot="title">
-        Janelia Open Science Software Intiative (OSSI)</Fragment
-      >
+        Janelia Open Science Software Initiative (OSSI)
+      </Fragment>
       <Fragment slot="content">
         An important source of support for scientific software development and
-        maintenance at Janelia is the Open Source Science Software Initative
+        maintenance at Janelia is the Open Science Software Initiative
         (OSSI).
       </Fragment>
       <Fragment slot="bg">
@@ -106,13 +101,10 @@ const baseUrl = import.meta.env.BASE_URL;
         >Janelians: add your software to this website!</Fragment
       >
       <Fragment slot="content">
-        Statement about the goals of the Open Source Science Initiative as
-        related to ability to contribute to this site. Statement about the goals
-        of OSSI as related to ability to contribute to this site.
-        <br /><br />
-        We welcome contributions, including project information and blog posts, from
-        current and former Janelians. Read the documentation on the site's GitHub
-        repository to get started.
+        We welcome contributions from current and former Janelians. You can add a page about your 
+        software project or write a blog post. 
+        Any software developed at Janelia (OSSI-funded or not) may be added to this website. 
+        Read the documentation on the site's GitHub repository to get started.
       </Fragment>
     </CallToAction>
   </Wrapper>
@@ -122,7 +114,7 @@ const baseUrl = import.meta.env.BASE_URL;
       title="Recent website contributors"
       callToAction={{
         text: "See all contributors »",
-        href: "https://github.com/JaneliaSciComp/ossi-website",
+        href: "https://github.com/JaneliaSciComp/ossi-website/graphs/contributors",
         target: "_blank",
       }}
     />
