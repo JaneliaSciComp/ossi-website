@@ -1,6 +1,6 @@
 ---
 title: ImgLib2 ecosystem
-tagline: A sample ecosystem consisting of OSSI-supported projects that use ImgLib2
+tagline: Janelia Open Science Software Initiative (OSSI) supported software that use ImgLib2
 related projects: [java-packaging-tool-chain, paintera]
 ---
 

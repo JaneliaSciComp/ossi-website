@@ -1,13 +1,13 @@
-# Janelia Open Source Science Initative (OSSI) website
+# Janelia Open Science Software Initiative (OSSI) website
 
 ## Overview
 
 [**View the current deploy**](https://janeliascicomp.github.io/ossi-website/)
 
-- The source code for the Janelia Open Source Science Initative (OSSI) website. The site showcases OSSI-supported software projects and other software developed at Janelia.
+- The source code for the Janelia Open Science Software Initiative (OSSI) website. The site showcases OSSI-supported software projects and other software developed at Janelia.
 - Built with the static-site-generator [Astro](https://GitHub.com/withastro/astro).
 
-## Janelians: add your software to this website!
+## Janelians: add your software to this website
 
 We welcome contributions, including project information and blog posts, from current and former Janelians. Refer to the [contributing guidelines](CONTRIBUTING.md) to get started.
 

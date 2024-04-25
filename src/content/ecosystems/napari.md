@@ -1,6 +1,6 @@
 ---
 title: Napari ecosystem
-tagline: A sample ecosystem consisting of OSSI-supported projects that have a napari plug-in
+tagline: Janelia Open Science Software Initiative (OSSI) supported software that offer a napari plug-in
 related projects:
   [an-open-source-platform-for-single-molecule-localization, cellpose, suite2p]
 ---
