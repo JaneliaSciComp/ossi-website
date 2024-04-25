@@ -2,7 +2,7 @@
 title: OSSI Website
 tagline: A portfolio for projects supported by Open Science Software Initiative, and other software projects at Janelia
 maintainer: Allison Truhlar
-maintainer contact info: mailto:truhlara@janelia.hhmi.org
+maintainer contact info: https://github.com/JaneliaSciComp/ossi-website/issues
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/ossi_website.pdf
 github link: https://github.com/JaneliaSciComp/ossi-website

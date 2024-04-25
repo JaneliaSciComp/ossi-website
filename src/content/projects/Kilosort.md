@@ -2,7 +2,7 @@
 title: Kilosort
 tagline: Maintain and develop python version of Kilosort (electrophysiology data).
 maintainer: Pachitariu et al.
-maintainer contact info: placeholder@gmail.com
+maintainer contact info: https://github.com/MouseLand/Kilosort/issues
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/kilosort.pdf
 github link: https://github.com/MouseLand/Kilosort

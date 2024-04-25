@@ -2,7 +2,7 @@
 title: Cellpose
 tagline: A generalist algorithm for cell and nucleus segmentation (v1.0) that can be optimized for your own data (v2.0) and perform image restoration (v3.0).
 maintainer: Stringer et al.
-maintainer contact info: placeholder@gmail.com
+maintainer contact info: https://github.com/MouseLand/cellpose/issues
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/suite2p_and_cellpose.pdf
 github link: https://github.com/MouseLand/cellpose

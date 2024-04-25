@@ -9,7 +9,7 @@ github link: https://github.com/JaneliaSciComp/multifish
 documentation link: https://janeliascicomp.github.io/multifish/
 installation instructions link: https://janeliascicomp.github.io/multifish/QuickStart.html
 how to cite link: https://doi.org/10.1016/j.cell.2021.11.024
-how to cite text: Wang Y, Eddison M, Fleishman G, Weigert M, Xu S, Wang T, Rokicki K, Goina C, Henry FE, Lemire AL, Schmidt U, Yang H, Svoboda K, Myers EW, Saalfeld S, Korff W, Sternson SM, Tillberg PW. EASI-FISH for thick tissue defines lateral hypothalamus spatio-molecular organization. Cell. 2021 Dec 22;184(26):6361-6377.e24. 
+how to cite text: Wang Y, Eddison M, Fleishman G, Weigert M, Xu S, Wang T, Rokicki K, Goina C, Henry FE, Lemire AL, Schmidt U, Yang H, Svoboda K, Myers EW, Saalfeld S, Korff W, Sternson SM, Tillberg PW. EASI-FISH for thick tissue defines lateral hypothalamus spatio-molecular organization. Cell. 2021 Dec 22;184(26):6361-6377.e24.
 #related blog posts: [Optional-file-name]
 image file: EASI-FISH.png
 image alt text: Data processed by the EASI-FISH pipeline
@@ -18,11 +18,7 @@ programming language: [Nextflow, Python, Java, MATLAB]
 open source license: [BSD-3 Clause]
 software type: [Command line application]
 supported file types: [Zeiss CZI, N5]
-use case:
-  [
-    Spatial transcriptomics,
-    Expansion microscopy (ExM)
-  ]
+use case: [Spatial transcriptomics, Expansion microscopy (ExM)]
 usage environment: [Cloud, HPC cluster, Local installation]
 software ecosystem: [BigDataViewer]
 ---

@@ -2,7 +2,7 @@
 title: Maru
 tagline: Maru is an opinionated command-line interface for quickly and easily containerizing scientific applications.
 maintainer: Rokicki
-maintainer contact info: placeholder@gmail.com
+maintainer contact info: https://github.com/JaneliaSciComp/maru/issues
 project type: [Other]
 github link: https://github.com/JaneliaSciComp/maru
 documentation link: https://github.com/JaneliaSciComp/maru

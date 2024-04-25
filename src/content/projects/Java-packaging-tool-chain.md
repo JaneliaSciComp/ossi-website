@@ -2,7 +2,7 @@
 title: Java packaging tool chain
 tagline: Develop an easy-to-use packaging system for Java applications.
 maintainer: Saalfeld et al.
-maintainer contact info: placeholder@gmail.com
+maintainer contact info: mailto:saalfelds@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/jvm_tool_deployment.pdf
 github link: "#"
