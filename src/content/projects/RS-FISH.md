@@ -2,9 +2,9 @@
 title: RS-FISH
 tagline: Precise, interactive, fast, and scalable FISH spot detection
 maintainer: Preibisch et al.
-maintainer contact info: placeholder@gmail.com
+maintainer contact info: https://github.com/PreibischLab/RS-FISH/issues
 project type: [OSSI - current]
-OSSI proposal link: https://drive.google.com/file/d/1Bjtqz49JdwpXg9rA_Xk_0qjQuV7fwKvu/view
+OSSI proposal link: ../../proposals/spatial_transcriptomics_tools.pdf
 github link: https://github.com/PreibischLab/RS-FISH
 documentation link: https://github.com/PreibischLab/RS-FISH
 installation instructions link: https://github.com/PreibischLab/RS-FISH?tab=readme-ov-file#download
