@@ -6,10 +6,20 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.jsx";
 import CardsAndFiltersIsland from "../../components/projects/CardsAndFiltersIsland.jsx";
+import CardContainer from "../../components/projects/CardContainer";
+import CardContent from "../../components/projects/CardContent.astro";
+import CardImage from "../../components/projects/CardImage";
+import FilterMenu from "../../components/projects/FilterMenu";
+import ProjectCount from "../../components/projects/ProjectCount";
+import ProjectTypeBtns from "../../components/projects/ProjectTypeBtns";
+import ProjectTypeDropdown from "../../components/projects/ProjectTypeDropdown";
+import Tag from "../../components/projects/Tag.astro";
+import ToggleFilterMenuBtn from "../../components/projects/ToggleFilterMenuBtn";
 
 import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
 
 const baseUrl = import.meta.env.BASE_URL;
+
 const pageTitle = "OSSI-supported projects";
 const allProjects = await getCollection("projects");
 
@@ -28,11 +38,70 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
     alignmentClasses="2xl:flex-col 2xl:items-start"
   />
 
-  <CardsAndFiltersIsland
-    uniqueTags={uniqueTags}
-    allContent={allProjects}
-    baseUrl={baseUrl}
-    contentType="projects"
-    client:load
-  />
+  <CardsAndFiltersIsland contentType="projects" client:load>
+    <FilterMenu uniqueTags={uniqueTags} slot="filterMenu" client:visible />
+    <ProjectTypeBtns
+      contentType="projects"
+      slot="projectTypeBtns"
+      client:visible
+    />
+    <ProjectTypeDropdown slot="projectTypeDropdown" client:visible />
+    <ToggleFilterMenuBtn
+      uniqueTags={uniqueTags}
+      slot="toggleFilterMenuBtn"
+      client:visible
+    />
+    <ProjectCount
+      allContent={allProjects}
+      contentType="projects"
+      slot="projectCount"
+      client:load
+    />
+
+    <Fragment slot="contentCards">
+      {
+        allProjects.map((content) => {
+          const tagsObj = extractUniqueTagsObject(content);
+          // console.log("tagsObj", tagsObj);
+          return (
+            <CardContainer
+              key={content.slug}
+              baseUrl={baseUrl}
+              url={`${baseUrl}/projects/${content.slug}/`}
+              title={content.data.title}
+              authors={content.data["author names"]}
+              tagline={content.data.tagline}
+              imageSrc={content.data["image file"]}
+              imageAlt={content.data["image alt text"]}
+              tagsObj={tagsObj}
+              projectType={content.data["project type"][0]}
+              client:load
+            >
+              <CardImage
+                baseUrl={baseUrl}
+                imageSrc={content.data["image file"]}
+                slot="contentCardImage"
+                client:visible
+              />
+              <CardContent
+                title={content.data.title}
+                authors={content.data["author names"]}
+                tagline={content.data.tagline}
+                tagsObj={tagsObj}
+                slot="cardContent"
+              />
+              <Fragment slot="tags">
+                {Object.entries(tagsObj).map(([tagCat, tags]) => {
+                  // console.log(tags);
+                  return tags.map((tag) => {
+                    return <Tag tagCat={tagCat} tag={tag} />;
+                  });
+                })}
+              </Fragment>
+            </CardContainer>
+          );
+        })
+      }
+    </Fragment>
+  </CardsAndFiltersIsland>
 </BaseLayout>
