@@ -1,0 +1,14 @@
+---
+import Tag from "./Tag.astro";
+const { title, tagline, authors, tagsObj } = Astro.props;
+---
+
+<>
+  <h2 class="text-xl font-semibold text-gray-800 dark:text-slate-200 p-4">
+    {title}
+  </h2>
+  <p class="text-gray-600 dark:text-slate-400 text-sm px-4">
+    {authors}
+  </p>
+  <p class="text-gray-700 dark:text-slate-300 p-4">{tagline}</p>
+</>
