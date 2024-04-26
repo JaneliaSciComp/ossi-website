@@ -12,16 +12,16 @@ export default function CardContainer({
   cardContent,
 }) {
   const $selectedTags = useStore(selectedTags);
-  console.log("card:", $selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
   const tagsArray = extractUniqueTagValueArray(tagsObj);
+
+  //determine whether card is visible or not based on tag & project type selections
   const visible =
     ($selectedTags.length &&
       !tagsArray.some((tag) => $selectedTags.includes(tag))) ||
     ($selectedProjectType.length && !$selectedProjectType.includes(projectType))
       ? "hidden"
       : "relative";
-  console.log("visible: ", visible);
 
   return (
     <div

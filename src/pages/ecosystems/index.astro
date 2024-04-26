@@ -61,7 +61,7 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
     </div>
     <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
       <div class="md:hidden flex flex-col gap-6 items-end min-w-full">
-        <ToggleFilterMenuBtn uniqueTags={uniqueTags} client:visible />
+        <ToggleFilterMenuBtn uniqueTags={uniqueTags} client:only="react" />
       </div>
       <ProjectCount
         allContent={allEcosystems}

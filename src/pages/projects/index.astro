@@ -4,7 +4,6 @@ import { siteConfig } from "../../siteConfig";
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import CardsAndFiltersIsland from "../../components/projects/CardsAndFiltersIsland";
 import Hero from "../../components/Hero.jsx";
 import CardContainer from "../../components/projects/CardContainer";
 import CardContent from "../../components/projects/CardContent.astro";
@@ -59,7 +58,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
         <ToggleFilterMenuBtn
           slot="toggleFilterMenuBtn"
           uniqueTags={uniqueTags}
-          client:visible
+          client:only="react"
         />
       </div>
 

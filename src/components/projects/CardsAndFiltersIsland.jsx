@@ -51,28 +51,6 @@ export default function CardsAndFiltersIsland({
 
         <div className="lg:grid grid-cols-2 3xl:grid-cols-3 4xl:grid-cols-4 auto-rows-max gap-4">
           {contentCards}
-          {/* {allContent.map((content) => {
-            
-            // console.log("tagsObj", tagsObj);
-            return (
-              <ContentCard
-                key={content.slug}
-                baseUrl={baseUrl}
-                url={`${baseUrl}/${contentType}/${content.slug}/`}
-                title={content.data.title}
-                authors={content.data["author names"]}
-                tagline={content.data.tagline}
-                imageSrc={content.data["image file"]}
-                imageAlt={content.data["image alt text"]}
-                tagsObj={tagsObj}
-                projectType={
-                  contentType === "projects"
-                    ? content.data["project type"][0]
-                    : null
-                }
-              />
-            );
-          })} */}
         </div>
       </div>
     </section>

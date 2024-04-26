@@ -12,7 +12,6 @@ const OMIT_TAG_CATEGORIES = ["software ecosystem", "supported file types"];
 
 export default function FilterMenu({ uniqueTags }) {
   const $selectedTags = useStore(selectedTags);
-  console.log("filter menu: ", $selectedTags);
   //used to manage state for the close ("x") button on the small screen filter menu
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
 
