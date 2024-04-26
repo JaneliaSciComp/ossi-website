@@ -38,77 +38,91 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
     heightClasses="h-96 py-20 2xl:pt-36"
     alignmentClasses="2xl:flex-col 2xl:items-start"
   />
-  <CardsAndFiltersIsland contentType="projects" client:load>
-    <FilterMenu uniqueTags={uniqueTags} slot="filterMenu" client:only />
+  <section
+    class="px-6 lg:px-20 xl:px-32 py-6 md:py-12 lg:py-20 mx-auto max-w-6xl lg:max-w-none 2xl:w-11/12 md:grid grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-5 gap-4"
+  >
+    <div class="col-start-1 col-span-1">
+      <FilterMenu
+        uniqueTags={uniqueTags}
+        slot="filterMenu"
+        client:only="react"
+      />
+    </div>
+    <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
+      <ProjectTypeBtns slot="projectTypeBtns" client:visible />
+      <div class="md:hidden flex flex-col gap-6 items-end min-w-full">
+        <div class="flex gap-2 w-full">
+          <h3 class="font-bold">Filter by OSSI funding status</h3>
+          <ResetProjectTypeBtn slot="resetProjectTypeBtn" client:load />
+          <ProjectTypeDropdown slot="projecTypeDropdown" client:visible />
+        </div>
+        <ToggleFilterMenuBtn
+          slot="toggleFilterMenuBtn"
+          uniqueTags={uniqueTags}
+          client:visible
+        />
+      </div>
 
-    <ProjectTypeBtns slot="projectTypeBtns" client:visible />
-
-    <ResetProjectTypeBtn slot="resetProjectTypeBtn" client:load />
-    <ProjectTypeDropdown slot="projecTypeDropdown" client:visible />
-
-    <ToggleFilterMenuBtn
-      slot="toggleFilterMenuBtn"
-      uniqueTags={uniqueTags}
-      client:visible
-    />
-
-    <ProjectCount
-      slot="projectCount"
-      allContent={allProjects}
-      contentType="projects"
-      client:load
-    />
-    <Fragment slot="contentCards">
-      {
-        allProjects.map((content) => {
-          const tagsObj = extractUniqueTagsObject(content);
-          // console.log("tagsObj", tagsObj);
-          return (
-            <CardContainer
-              key={content.slug}
-              baseUrl={baseUrl}
-              url={`${baseUrl}/projects/${content.slug}/`}
-              title={content.data.title}
-              authors={content.data["author names"]}
-              tagline={content.data.tagline}
-              imageSrc={content.data["image file"]}
-              imageAlt={content.data["image alt text"]}
-              tagsObj={tagsObj}
-              projectType={content.data["project type"][0]}
-              client:only
-            >
-              {content.data["image file"] ? (
-                <img
-                  src={`${baseUrl}/project-images/${content.data["image file"]}`}
-                  class="w-full h-40 object-cover object-center"
-                  loading="lazy"
-                  slot="cardImage"
-                />
-              ) : (
-                <CardImage slot="cardImage" client:load />
-              )}
-
-              <CardContent
+      <ProjectCount
+        slot="projectCount"
+        allContent={allProjects}
+        contentType="projects"
+        client:load
+      />
+      <div
+        class="lg:grid grid-cols-2 3xl:grid-cols-3 4xl:grid-cols-4 auto-rows-max gap-4"
+      >
+        {
+          allProjects.map((content) => {
+            const tagsObj = extractUniqueTagsObject(content);
+            // console.log("tagsObj", tagsObj);
+            return (
+              <CardContainer
+                key={content.slug}
+                baseUrl={baseUrl}
+                url={`${baseUrl}/projects/${content.slug}/`}
                 title={content.data.title}
                 authors={content.data["author names"]}
                 tagline={content.data.tagline}
+                imageSrc={content.data["image file"]}
+                imageAlt={content.data["image alt text"]}
                 tagsObj={tagsObj}
-                slot="cardContent"
-              />
-              <Fragment slot="tags">
-                {Object.entries(tagsObj).map(([tagCat, tags]) => {
-                  // console.log(tags);
-                  return tags.map((tag) => {
-                    return (
-                      <Tag tagCat={tagCat} tag={tag} contentType="projects" />
-                    );
-                  });
-                })}
-              </Fragment>
-            </CardContainer>
-          );
-        })
-      }
-    </Fragment>
-  </CardsAndFiltersIsland></BaseLayout
->
+                projectType={content.data["project type"][0]}
+                client:only="react"
+              >
+                {content.data["image file"] ? (
+                  <img
+                    src={`${baseUrl}/project-images/${content.data["image file"]}`}
+                    class="w-full h-40 object-cover object-center"
+                    loading="lazy"
+                    slot="cardImage"
+                  />
+                ) : (
+                  <CardImage slot="cardImage" client:load />
+                )}
+
+                <CardContent
+                  title={content.data.title}
+                  authors={content.data["author names"]}
+                  tagline={content.data.tagline}
+                  tagsObj={tagsObj}
+                  slot="cardContent"
+                />
+                <Fragment slot="tags">
+                  {Object.entries(tagsObj).map(([tagCat, tags]) => {
+                    // console.log(tags);
+                    return tags.map((tag) => {
+                      return (
+                        <Tag tagCat={tagCat} tag={tag} contentType="projects" />
+                      );
+                    });
+                  })}
+                </Fragment>
+              </CardContainer>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

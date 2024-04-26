@@ -3,17 +3,17 @@ import { updateSearchParamUrl } from "../../../utils/tagManipulation";
 
 export const selectedTags = atom([]);
 
-// onMount(selectedTags, () => {
-//   const currentTags = selectedTags.get();
-//   let urlTags = [];
-//   if (typeof window !== "undefined") {
-//     const searchParams = new URLSearchParams(window.location.search);
-//     urlTags = searchParams.getAll("tag");
-//   }
-//   if ((currentTags.length === 0) & (urlTags.length > 0)) {
-//     selectedTags.set(urlTags);
-//   }
-// });
+onMount(selectedTags, () => {
+  const currentTags = selectedTags.get();
+  let urlTags = [];
+  if (typeof window !== "undefined") {
+    const searchParams = new URLSearchParams(window.location.search);
+    urlTags = searchParams.getAll("tag");
+  }
+  if ((currentTags.length === 0) & (urlTags.length > 0)) {
+    selectedTags.set(urlTags);
+  }
+});
 
 export function handleTagSelection(tag) {
   const prevTags = selectedTags.get();
