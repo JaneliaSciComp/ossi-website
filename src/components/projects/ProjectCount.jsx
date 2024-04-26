@@ -6,6 +6,7 @@ import { extractUniqueTagValueArray } from "../../utils/tagManipulation.js";
 
 export default function ProjectCount({ allContent, contentType }) {
   const $selectedTags = useStore(selectedTags);
+  console.log("project count: ", $selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
   const [shownCardCount, setShownCardCount] = useState(allContent.length);
 

@@ -12,36 +12,20 @@ export default function CardContainer({
   cardContent,
 }) {
   const $selectedTags = useStore(selectedTags);
-  if ($selectedTags.length === 0 && typeof window !== "undefined") {
-    const searchParams = new URLSearchParams(window.location.search);
-    // Check for 'tags' in the query string and update the selectedTags store
-    const tags = searchParams.getAll("tag");
-    if (tags.length) {
-      selectedTags.set(tags);
-    }
-  }
-  console.log("$selectedTags:", $selectedTags);
+  console.log("card:", $selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
   const tagsArray = extractUniqueTagValueArray(tagsObj);
-
-  console.log(
-    ($selectedTags.length === 0 && $selectedProjectType.length === 0) ||
-      tagsArray.some((tag) => $selectedTags.includes(tag)) ||
-      $selectedProjectType.includes(projectType)
-      ? "relative"
-      : "hidden"
-  );
+  const visible =
+    ($selectedTags.length &&
+      !tagsArray.some((tag) => $selectedTags.includes(tag))) ||
+    ($selectedProjectType.length && !$selectedProjectType.includes(projectType))
+      ? "hidden"
+      : "relative";
+  console.log("visible: ", visible);
 
   return (
     <div
-      className={`${
-        ($selectedTags.length &&
-          !tagsArray.some((tag) => $selectedTags.includes(tag))) ||
-        ($selectedProjectType.length &&
-          !$selectedProjectType.includes(projectType))
-          ? "hidden"
-          : "relative"
-      } col-span-1 w-full h-full mx-auto mb-4 bg-white dark:bg-slate-900 rounded-md shadow-md overflow-hidden border-gray-200 dark:border-slate-800 border-2 hover:shadow-lg transition duration-300 transform hover:scale-105`}
+      className={`${visible} col-span-1 w-full h-full mx-auto mb-4 bg-white dark:bg-slate-900 rounded-md shadow-md overflow-hidden border-gray-200 dark:border-slate-800 border-2 hover:shadow-lg transition duration-300 transform hover:scale-105`}
     >
       <a href={url} className="absolute top-0 left-0 bottom-0 right-0"></a>
       <div className="w-full h-40">
