@@ -2,9 +2,9 @@
 title: Your project title
 tagline: Your project tagline
 maintainer: Name of the person responsible for maintaining this project page.
-maintainer contact info: example@email.com
+maintainer contact info: Either a URL (e.g., GitHub repo issues link) or email in the format of mailto:email@example.com
 project type: [OSSI - current, OSSI - alumni, Other]
-OSSI proposal link: Link to OSSI proposal - only include if project is OSSI-supported
+OSSI proposal link: Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `./../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
 github link: Link to GitHub repository
 documentation link: Link to documentation - can be the same as the GitHub repo if the README is the documentation
 installation instructions link: Link to installation instructions - can be the same as the GitHub repo
@@ -111,6 +111,6 @@ software ecosystem:
 supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
 ---
 
-Delete this text below the triple dash (---) to use your project's GitHub README as your project's description. Note - your GitHub repo must be public for this to work. This option is strongly encouraged - it will minimize the effort required on your part to keep your software information up to date on this site.
+To use your project's GitHub README as your project's description - delete all text below the triple dash (---) . Note - your GitHub repo must be public for this to work. This option is strongly encouraged - it will minimize the effort required on your part to keep your software information up to date on this site.
 
 If you wish to provide an alternative description, you can write it here. Separate each paragraph with a blank line. If desired, use [Markdown syntax](https://www.markdownguide.org/basic-syntax/) to add hyperlinks, layout/text effects (e.g., headings, lists, **bold** or _italic_ text), etc.

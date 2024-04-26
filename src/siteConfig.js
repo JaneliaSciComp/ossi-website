@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Janelia Open Source Science Initiative",
+  name: "Janelia Open Science Software Initiative",
   shortName: "Janelia OSSI",
   acronymOnly: "OSSI",
   icon: "🔬",

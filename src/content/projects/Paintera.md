@@ -1,10 +1,10 @@
 ---
-title: "Paintera"
+title: Paintera
 tagline: Maintain and extend Paintera (3D annotation software for very large volumes).
-maintainer: "Saalfeld et al."
-maintainer contact info: placeholder@gmail.com
+maintainer: Caleb Hulbert 
+maintainer contact info: mailto:hulbertc@janelia.hhmi.org
 project type: [OSSI - current]
-OSSI proposal link: https://drive.google.com/file/d/1pcrKTbzkNczkoDETg8og-y5XzCdauVJ3/view
+OSSI proposal link: ../../proposals/paintera.pdf
 github link: https://github.com/saalfeldlab/paintera
 documentation link: https://github.com/saalfeldlab/paintera
 installation instructions link: https://github.com/saalfeldlab/paintera?tab=readme-ov-file#installation-and-usage

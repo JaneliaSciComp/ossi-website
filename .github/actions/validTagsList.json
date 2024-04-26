@@ -58,7 +58,8 @@
     "Sequence analysis",
     "Single-molecule localization microscopy (SMLM)",
     "Spatial transcriptomics",
-    "Tool packaging/distribution"
+    "Tool packaging/distribution",
+    "Visualization"
   ],
   "usage environment": [
     "Cloud",
@@ -70,6 +71,7 @@
   ],
   "software ecosystem": [
     "BigDataViewer",
+    "Blender",
     "Fiji",
     "ImgLib2",
     "Janelia Workstation",
@@ -79,6 +81,7 @@
   "supported file types": [
     "N5",
     "NWB",
+    "OBJ",
     "OME-Zarr",
     "SWC",
     "H5J",

@@ -1,9 +1,10 @@
 ---
 title: OSSI Website
-tagline: A portfolio for Open Science Software Iniative-supported projects
-maintainer: Ferreira and Rokicki
-maintainer contact info: placeholder@gmail.com
+tagline: A portfolio for projects supported by Open Science Software Initiative, and other software projects at Janelia
+maintainer: Allison Truhlar
+maintainer contact info: https://github.com/JaneliaSciComp/ossi-website/issues
 project type: [OSSI - current]
+OSSI proposal link: ../../proposals/ossi_website.pdf
 github link: https://github.com/JaneliaSciComp/ossi-website
 documentation link: https://github.com/JaneliaSciComp/ossi-website
 installation instructions link: https://github.com/JaneliaSciComp/ossi-website?tab=readme-ov-file#how-to-addedit-your-software-project
