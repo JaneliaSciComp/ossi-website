@@ -18,7 +18,7 @@ export default function CardContainer({
   imageSrc,
   projectType,
   tags,
-  contentCardImage,
+  cardImage,
   cardContent,
 }) {
   const $selectedTags = useStore(selectedTags);
@@ -38,7 +38,7 @@ export default function CardContainer({
     >
       <a href={url} className="absolute top-0 left-0 bottom-0 right-0"></a>
       <div className="w-full h-40">
-        {contentCardImage}
+        {cardImage}
         {projectType === "OSSI - current" && (
           <span className="absolute top-0 right-0 bg-secondary text-white px-2 py-1 text-sm rounded-bl-md">
             {projectType}

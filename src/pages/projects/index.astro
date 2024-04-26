@@ -5,7 +5,6 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.jsx";
-import CardsAndFiltersContainer from "../../components/projects/CardsAndFiltersContainer.astro";
 import CardContainer from "../../components/projects/CardContainer";
 import CardContent from "../../components/projects/CardContent.astro";
 import CardImage from "../../components/projects/CardImage";
@@ -43,31 +42,22 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
     class="px-6 lg:px-20 xl:px-32 py-6 md:py-12 lg:py-20 mx-auto max-w-6xl lg:max-w-none 2xl:w-11/12 md:grid grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-5 gap-4"
   >
     <div class="col-start-1 col-span-1">
-      <FilterMenu uniqueTags={uniqueTags} slot="filterMenu" client:visible />
+      <FilterMenu uniqueTags={uniqueTags} client:visible />
     </div>
 
     <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
-      <ProjectTypeBtns
-        contentType="projects"
-        slot="projectTypeBtns"
-        client:visible
-      />
+      <ProjectTypeBtns contentType="projects" client:visible />
       <div class="md:hidden flex flex-col gap-6 items-end min-w-full">
         <div class="flex gap-2 w-full">
           <h3 class="font-bold">Filter by OSSI funding status</h3>
-          <ResetProjectTypeBtn slot="resetProjectTypeBtn" client:load />
-          <ProjectTypeDropdown slot="projectTypeDropdown" client:visible />
+          <ResetProjectTypeBtn client:load />
+          <ProjectTypeDropdown client:visible />
         </div>
-        <ToggleFilterMenuBtn
-          uniqueTags={uniqueTags}
-          slot="toggleFilterMenuBtn"
-          client:visible
-        />
+        <ToggleFilterMenuBtn uniqueTags={uniqueTags} client:visible />
       </div>
       <ProjectCount
         allContent={allProjects}
         contentType="projects"
-        slot="projectCount"
         client:load
       />
       <div
@@ -92,12 +82,17 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
                   projectType={content.data["project type"][0]}
                   client:load
                 >
-                  <CardImage
-                    baseUrl={baseUrl}
-                    imageSrc={content.data["image file"]}
-                    slot="contentCardImage"
-                    client:visible
-                  />
+                  {content.data["image file"] ? (
+                    <img
+                      src={`${baseUrl}/project-images/${content.data["image file"]}`}
+                      class="w-full h-40 object-cover object-center"
+                      loading="lazy"
+                      slot="cardImage"
+                    />
+                  ) : (
+                    <CardImage slot="cardImage" client:visible />
+                  )}
+
                   <CardContent
                     title={content.data.title}
                     authors={content.data["author names"]}
