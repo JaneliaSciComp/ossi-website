@@ -121,7 +121,7 @@ const baseUrl = import.meta.env.BASE_URL;
               Object.entries(tagsObj).map(([tagCat, tags]) => {
                 return tags.map((tag) => {
                   return (
-                    <Tag title={frontmatter.title} tagCat={tagCat} tag={tag} />
+                    <Tag tagCat={tagCat} tag={tag} contentType="projects" />
                   );
                 });
               })

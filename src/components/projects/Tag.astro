@@ -2,14 +2,14 @@
 import { getBackgroundColor } from "../../utils/tagManipulation";
 import { updateSearchParamUrl } from "../../utils/tagManipulation";
 
-const { tagCat, tag } = Astro.props;
+const { tagCat, tag, contentType } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL;
-const projectsUrl = new URL(`..${baseUrl}/projects`, Astro.url);
+const contentUrl = new URL(`..${baseUrl}/${contentType}`, Astro.url.origin);
+const updatedUrl = updateSearchParamUrl(contentUrl.href, tag);
 
 const backgroundColor = getBackgroundColor(tagCat);
 const style = { backgroundColor: backgroundColor };
-const updatedUrl = updateSearchParamUrl(projectsUrl.href, tag);
 ---
 
 <a

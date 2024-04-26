@@ -1,29 +1,36 @@
-import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore";
 import { extractUniqueTagValueArray } from "../../utils/tagManipulation";
-import { getRandomImage } from "../../utils/getRandomImage";
-import Tag from "./Tag.astro";
-
-const placeholderProjectImages = ["Bg0Geue-cY8", "f4pUuCc3M0g", "OqtafYT5kTw"];
 
 export default function CardContainer({
-  baseUrl,
   url,
-  title,
-  authors,
-  tagline,
   tagsObj,
-  imageSrc,
   projectType,
   tags,
   cardImage,
   cardContent,
 }) {
   const $selectedTags = useStore(selectedTags);
+  if ($selectedTags.length === 0 && typeof window !== "undefined") {
+    const searchParams = new URLSearchParams(window.location.search);
+    // Check for 'tags' in the query string and update the selectedTags store
+    const tags = searchParams.getAll("tag");
+    if (tags.length) {
+      selectedTags.set(tags);
+    }
+  }
+  console.log("$selectedTags:", $selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
   const tagsArray = extractUniqueTagValueArray(tagsObj);
+
+  console.log(
+    ($selectedTags.length === 0 && $selectedProjectType.length === 0) ||
+      tagsArray.some((tag) => $selectedTags.includes(tag)) ||
+      $selectedProjectType.includes(projectType)
+      ? "relative"
+      : "hidden"
+  );
 
   return (
     <div

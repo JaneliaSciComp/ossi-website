@@ -46,7 +46,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
     </div>
 
     <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
-      <ProjectTypeBtns contentType="projects" client:visible />
+      <ProjectTypeBtns client:visible />
       <div class="md:hidden flex flex-col gap-6 items-end min-w-full">
         <div class="flex gap-2 w-full">
           <h3 class="font-bold">Filter by OSSI funding status</h3>
@@ -80,7 +80,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
                   imageAlt={content.data["image alt text"]}
                   tagsObj={tagsObj}
                   projectType={content.data["project type"][0]}
-                  client:load
+                  client:visible
                 >
                   {content.data["image file"] ? (
                     <img
@@ -104,7 +104,13 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
                     {Object.entries(tagsObj).map(([tagCat, tags]) => {
                       // console.log(tags);
                       return tags.map((tag) => {
-                        return <Tag tagCat={tagCat} tag={tag} />;
+                        return (
+                          <Tag
+                            tagCat={tagCat}
+                            tag={tag}
+                            contentType="projects"
+                          />
+                        );
                       });
                     })}
                   </Fragment>
