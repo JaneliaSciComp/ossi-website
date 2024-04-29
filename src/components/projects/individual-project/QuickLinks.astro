@@ -3,11 +3,16 @@ import Citation from "./Citation.astro";
 import { Icon } from "astro-icon/components";
 const { frontmatter } = Astro.props;
 
-const githubIssueUrl_obj = new URL(
-  `${frontmatter["github link"]}/issues`,
-  frontmatter["github link"]
-);
-const githubIssueUrl_str = githubIssueUrl_obj.href;
+let githubIssueLink = "";
+try {
+  const githubIssueUrl_obj = new URL(
+    `${frontmatter["github link"]}/issues`,
+    frontmatter["github link"]
+  );
+  githubIssueLink = githubIssueUrl_obj.href;
+} catch {
+  githubIssueLink = "";
+}
 ---
 
 <div
@@ -66,10 +71,10 @@ const githubIssueUrl_str = githubIssueUrl_obj.href;
       <div class="flex flex-col gap-1 mr-8 md:mr-12">
         <h3 class="font-bold mb-1">Get help</h3>
         {
-          frontmatter["github link"] && (
+          githubIssueLink && (
             <a
               class="self-start btn rounded-md p-2 font-normal"
-              href={githubIssueUrl_str}
+              href={githubIssueLink}
             >
               Open an issue on GitHub
             </a>
