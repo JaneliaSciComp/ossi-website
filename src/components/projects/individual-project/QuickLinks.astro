@@ -3,8 +3,11 @@ import Citation from "./Citation.astro";
 import { Icon } from "astro-icon/components";
 const { frontmatter } = Astro.props;
 
-// const githubIssueUrl_obj = new URL("/issues", frontmatter["github link"]);
-// const githubIssueUrl_str = githubIssueUrl_obj.href;
+const githubIssueUrl_obj = new URL(
+  `${frontmatter["github link"]}/issues`,
+  frontmatter["github link"]
+);
+const githubIssueUrl_str = githubIssueUrl_obj.href;
 ---
 
 <div
@@ -66,7 +69,7 @@ const { frontmatter } = Astro.props;
           frontmatter["github link"] && (
             <a
               class="self-start btn rounded-md p-2 font-normal"
-              href={frontmatter["github link"]}
+              href={githubIssueUrl_str}
             >
               Open an issue on GitHub
             </a>
