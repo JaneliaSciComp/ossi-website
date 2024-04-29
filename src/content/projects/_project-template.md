@@ -1,10 +1,10 @@
 ---
 title: Your project title
-tagline: Your project tagline
+tagline: "Project tagline. An aside: if you use a colon in this or any other field value, you must wrap the entire phrase in quotes. Otherwise, quotes are not required."
 maintainer: Name of the person responsible for maintaining this project page.
 maintainer contact info: Either a URL (e.g., GitHub repo issues link) or email in the format of mailto:email@example.com
 project type: [OSSI - current, OSSI - alumni, Other]
-OSSI proposal link: Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `./../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
+OSSI proposal link: Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `../../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
 github link: Link to GitHub repository
 documentation link: Link to documentation - can be the same as the GitHub repo if the README is the documentation
 installation instructions link: Link to installation instructions - can be the same as the GitHub repo

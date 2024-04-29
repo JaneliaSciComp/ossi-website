@@ -123,13 +123,15 @@ At the top of your project file are data sandwiched between triple-dashes (---).
 
 ### Edit the frontmatter
 
-- Follow the guidance in the table below to fill out your project file's frontmatter. You can also refer to `/src/projects/_project-template.md` for further guidance and examples for each data variable.
+- Follow the guidance in the table below to fill out your project file's frontmatter. You can also refer to `/src/projects/_project-template.md` for further guidance and examples for each data field.
 
-- For each **required** variable, you must provide a value or an error will be thrown when you try to view your project page on the local server.
+- For each **required** field, you must provide a value or an error will be thrown when you try to view your project page on the local server.
 
-- For each **optional** variable, **if you do not wish to provide a value you must comment out or delete the entire entry.**
+- For each **optional** field, **if you do not wish to provide a value you must comment out or delete the entire entry.**
 
-| Variable name                    | Required or optional                                                                                      | How to complete                                                                                                                                                                                                                                                                                                              |
+- A formatting note for all fields - if you use a colon in your provided value, you must wrap the entire phrase in quotes. Similarly, if you need to use quotation marks in the value, use single quotes and then wrap the entire phrase in double quotes. Otherwise, quotes are optional.
+
+| Field name                       | Required or optional                                                                                      | How to complete                                                                                                                                                                                                                                                                                                              |
 | :------------------------------- | :-------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `title`                          | Required                                                                                                  | Your project title.                                                                                                                                                                                                                                                                                                          |
 | `tagline`                        | Required                                                                                                  | One or two sentences describing your project.                                                                                                                                                                                                                                                                                |
