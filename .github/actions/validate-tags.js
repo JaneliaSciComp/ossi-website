@@ -72,25 +72,24 @@ if (!changedFiles.length) {
 let reportContent = "";
 
 if (Object.keys(invalidFrontmatterFiles).length > 0) {
-  reportContent += `## :warning: Invalid Frontmatter!\n\n**One or more of your committed Markdown files are missing frontmatter or have an invalid structure!**\n\n`;
+  reportContent += `## :triangular_flag_on_post: Potential issue - invalid frontmatter\n\n**One or more of your committed Markdown files might be missing frontmatter or have an invalid structure.**\n\nIf your PR is to add or edit a project file, please double-check your frontmatter is wrapped in triple dashes (---).\n\n`;
   for (const [file, message] of Object.entries(invalidFrontmatterFiles)) {
     reportContent += `- **${file}**: ${message}\n`;
   }
 }
 
 if (Object.keys(invalidTagsFiles).length > 0) {
-  reportContent += `## :warning: Invalid tags!\n\n**One or more of your committed Markdown files have invalid tag values!**\n\nAll tags must match the options [here](https://github.com/JaneliaSciComp/ossi-website/tree/main/.github/actions/validTagsList.json), including exact capitalization and spelling. If any tag categories are empty, you must either leave a space and empty square brackets following the colon, (e.g., \`category name: []\`), or comment out or delete the line in the frontmatter.\n\nThe following files have invalid tags:\n`;
+  reportContent += `## :triangular_flag_on_post: Potential issue - invalid tags\n\n**One or more of your committed Markdown files might have invalid tag values.**\n\nThis comment indicates that the below files contain tags that do not match the options [here](https://github.com/JaneliaSciComp/ossi-website/tree/main/.github/actions/validTagsList.json).\n`;
   for (const [file, tags] of Object.entries(invalidTagsFiles)) {
     reportContent += `\n**${file}:**\n`;
     for (const tag of tags) {
       reportContent += `- ${tag}\n`;
     }
   }
-  reportContent += `\nIf this is a pull request to add a new tag category or value, please ensure your PR includes the "new tags" label and disregard this comment.`;
+  reportContent += `\nIf your PR is adding new tag categories or options, you can disregard this warning. The repo maintainer will be in touch if they have any questions or concerns about your additions. \n\nIf you did not intend to add new tag categories or options, please carefully review your file(s) for the following common issues:\n- Capitalization or spelling errors\n- For empty tag categories, ensure that you either leave a space and empty square brackets following the colon, (e.g., \`category name: []\`), or comment out or delete the line in the frontmatter.\n\n**Add any corrections by pushing them to the branch from which you originated this pull request.**`;
 }
 
 if (reportContent) {
-  reportContent += `\n\n**Add your corrections by pushing them to the branch from which you originated this pull request.**`;
   writeFileSync("validation-report.md", reportContent);
   console.log("Validation report generated.");
 } else {
