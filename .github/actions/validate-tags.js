@@ -79,14 +79,14 @@ if (Object.keys(invalidFrontmatterFiles).length > 0) {
 }
 
 if (Object.keys(invalidTagsFiles).length > 0) {
-  reportContent += `## :triangular_flag_on_post: Potential issue - invalid tags\n\n**One or more of your committed Markdown files might have invalid tag values.**\n\nThis comment indicates that the below files contain tags that do not match the options [here](https://github.com/JaneliaSciComp/ossi-website/tree/main/.github/actions/validTagsList.json).\n`;
+  reportContent += `## :triangular_flag_on_post: Potential issue - invalid tags\n\n**One or more of your committed Markdown files might have invalid tag values.** The below files contain tags that do not match the options [here](https://github.com/JaneliaSciComp/ossi-website/tree/main/.github/actions/validTagsList.json).\n`;
   for (const [file, tags] of Object.entries(invalidTagsFiles)) {
     reportContent += `\n**${file}:**\n`;
     for (const tag of tags) {
       reportContent += `- ${tag}\n`;
     }
   }
-  reportContent += `\nIf your PR is adding new tag categories or options, you can disregard this warning. The repo maintainer will be in touch if they have any questions or concerns about your additions. \n\nIf you did not intend to add new tag categories or options, please carefully review your file(s) for the following common issues:\n- Capitalization or spelling errors\n- For empty tag categories, ensure that you either leave a space and empty square brackets following the colon, (e.g., \`category name: []\`), or comment out or delete the line in the frontmatter.\n\n**Add any corrections by pushing them to the branch from which you originated this pull request.**`;
+  reportContent += `\nIf your PR is adding new tag categories or options, you can disregard this warning. The repo maintainer will be in touch if they have any questions or concerns about your additions. \n\nIf you did **not** intend to add new tag categories or options, please carefully review your file(s) for the following common issues:\n- Capitalization or spelling errors\n- For empty tag categories, ensure that you either leave a space and empty square brackets following the colon, (e.g., \`category name: []\`), or comment out or delete the line in the frontmatter.\n\n**Add any corrections by pushing them to the branch from which you originated this pull request.**`;
 }
 
 if (reportContent) {
