@@ -2,6 +2,11 @@
 import { getCollection } from "astro:content";
 import { getEntries } from "astro:content";
 
+import { Tabs } from "@mui/base/Tabs";
+import { TabsList } from "@mui/base/TabsList";
+import { TabPanel } from "@mui/base/TabPanel";
+import { Tab } from "@mui/base/Tab";
+
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Link from "../../components/Link.astro";
 import QuickLinks from "../../components/projects/individual-project/QuickLinks.astro";
@@ -9,6 +14,7 @@ import ExternalLinks from "../../components/projects/individual-project/External
 import Media from "../../components/projects/individual-project/Media.astro";
 import Tag from "../../components/projects/Tag.astro";
 import Readme from "../../components/projects/individual-project/Readme";
+import ProjectPageTabs from "../../components/projects/individual-project/Tabs";
 
 import {
   extractUniqueTagsObject,
@@ -143,6 +149,7 @@ const baseUrl = import.meta.env.BASE_URL;
           </div>
 
           <!-- This is where any custom description of the project gets rendered -->
+          <ProjectPageTabs client:load />
           {
             body.length === 0 ||
             body.includes("provide an alternative description") ? (
