@@ -1,0 +1,21 @@
+---
+import { getBackgroundColor } from "../../utils/tagManipulation";
+import { updateSearchParamUrl } from "../../utils/tagManipulation";
+
+const { tagCat, tag, contentType } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
+const contentUrl = new URL(`..${baseUrl}/${contentType}`, Astro.url.origin);
+const updatedUrl = updateSearchParamUrl(contentUrl.href, tag);
+
+const backgroundColor = getBackgroundColor(tagCat);
+const style = { backgroundColor: backgroundColor };
+---
+
+<a
+  class="relative pointer-events-auto bg-primary text-white px-1.5 py-1 rounded-md text-xs hover:opacity-70 transition duration-300 transform"
+  style={style}
+  href={updatedUrl}
+>
+  {tag}
+</a>
