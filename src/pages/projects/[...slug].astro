@@ -12,8 +12,6 @@ import Tag from "../../components/projects/Tag.astro";
 import {
   extractUniqueTagsObject,
   findLabInfo,
-  generatePublicationLinks,
-  getBackgroundColor,
 } from "../../utils/tagManipulation";
 
 import { getReadme } from "../../utils/githubApiHelper";
@@ -45,7 +43,6 @@ const relatedBlogPosts = frontmatter["related blog posts"]
 //And frontmatter = data
 const tagsObj = extractUniqueTagsObject({ data: frontmatter });
 const labInfoArray = findLabInfo(frontmatter["development team"]);
-const pubInfoArray = generatePublicationLinks(frontmatter);
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
