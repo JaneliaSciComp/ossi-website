@@ -29,8 +29,7 @@ export async function getReadme(githubUrl) {
         format: "html", // This will internally set Accept header to application/vnd.github.html+json
       },
     });
-    // console.log(owner, repo, readme);
-    return readme.data; // It's often useful to return the data for further processing
+    return readme.data;
   } catch (error) {
     console.error("Failed to fetch README:", error);
     return null; // Return null or appropriate error response
