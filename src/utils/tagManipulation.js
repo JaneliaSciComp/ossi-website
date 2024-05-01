@@ -109,29 +109,3 @@ export function findLabInfo(labNames) {
   });
   return labInfoArray;
 }
-
-export function generatePublicationLinks(frontmatter) {
-  if (frontmatter["publication DOI array"]) {
-    const doiLinkArray = frontmatter["publication DOI array"];
-
-    if (Array.isArray(doiLinkArray) && doiLinkArray.length > 0) {
-      return doiLinkArray.map((doiLink, index) => {
-        const publicationTextArray = frontmatter["publication text array"];
-
-        const publicationText =
-          Array.isArray(publicationTextArray) &&
-          publicationTextArray.length > index
-            ? publicationTextArray[index]
-            : "Link";
-
-        return {
-          text: publicationText,
-          url: doiLink,
-        };
-      });
-    }
-  }
-
-  // Return null if conditions are not met
-  return null;
-}
