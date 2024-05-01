@@ -5,12 +5,20 @@ import { getCollection, getEntries } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.jsx";
-import CardsAndFiltersIsland from "../../components/projects/CardsAndFiltersIsland.jsx";
+import FilterMenu from "../../components/projects/FilterMenu";
+import ToggleFilterMenuBtn from "../../components/projects/ToggleFilterMenuBtn";
+import ProjectCount from "../../components/projects/ProjectCount";
+import CardContainer from "../../components/projects/CardContainer";
+import CardImage from "../../components/projects/CardImage";
+import CardContent from "../../components/projects/CardContent.astro";
+import Tag from "../../components/projects/Tag.astro";
 
 import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
 
 const baseUrl = import.meta.env.BASE_URL;
 
+//allEcosystems gets passes as "content" to the content cards
+//eveything else happening in here is to make tags for the filter menu and cards
 const allEcosystems = await getCollection("ecosystems");
 //For each ecosystem, return an array of all the related projects to the object allRelatedProjects.
 //This will be used to create the list of tags for the ecosystem filter menu.
@@ -28,6 +36,7 @@ const allRelatedProjects = await Promise.all(
   })
 );
 //allRelatedProjects is wrapped in an extra set of square brackets. This just removes them.
+//flattenedRelatedProjects is only used to create uniqueTags
 const flattenedRelatedProjects = allRelatedProjects.reduce(
   (acc, currentArray) => acc.concat(currentArray),
   []
@@ -44,11 +53,78 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
     heightClasses="h-80 py-20 2xl:pt-32"
     alignmentClasses="2xl:flex-col 2xl:items-start"
   />
-  <CardsAndFiltersIsland
-    client:load
-    uniqueTags={uniqueTags}
-    allContent={allEcosystems}
-    baseUrl={baseUrl}
-    contentType="ecosystems"
-  />
+  <section
+    class="px-6 lg:px-20 xl:px-32 py-6 md:py-12 lg:py-20 mx-auto max-w-6xl lg:max-w-none 2xl:w-11/12 md:grid grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-5 gap-4"
+  >
+    <div class="col-start-1 col-span-1">
+      <FilterMenu uniqueTags={uniqueTags} client:only="react" />
+    </div>
+    <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
+      <div class="md:hidden flex flex-col gap-6 items-end min-w-full">
+        <ToggleFilterMenuBtn uniqueTags={uniqueTags} client:only="react" />
+      </div>
+      <ProjectCount
+        allContent={allEcosystems}
+        contentType="ecosystems"
+        client:only="react"
+      />
+      <div
+        class="lg:grid grid-cols-2 3xl:grid-cols-3 4xl:grid-cols-4 auto-rows-max gap-4"
+      >
+        {
+          allEcosystems.map((content) => {
+            return (
+              <CardContainer
+                key={content.slug}
+                baseUrl={baseUrl}
+                url={`${baseUrl}/ecosystems/${content.slug}/`}
+                title={content.data.title}
+                authors={content.data["author names"]}
+                tagline={content.data.tagline}
+                imageSrc={content.data["image file"]}
+                imageAlt={content.data["image alt text"]}
+                tagsObj={content.data.tagsObj}
+                projectType={null}
+                client:only="react"
+              >
+                {content.data["image file"] ? (
+                  <img
+                    src={`${baseUrl}/project-images/${content.data["image file"]}`}
+                    class="w-full h-40 object-cover object-center"
+                    loading="lazy"
+                    slot="cardImage"
+                  />
+                ) : (
+                  <CardImage slot="cardImage" client:visible />
+                )}
+
+                <CardContent
+                  title={content.data.title}
+                  authors={content.data["author names"]}
+                  tagline={content.data.tagline}
+                  tagsObj={content.data.tagsObj}
+                  slot="cardContent"
+                />
+                <Fragment slot="tags">
+                  {Object.entries(content.data.tagsObj).map(
+                    ([tagCat, tags]) => {
+                      return tags.map((tag) => {
+                        return (
+                          <Tag
+                            tagCat={tagCat}
+                            tag={tag}
+                            contentType="ecosystems"
+                          />
+                        );
+                      });
+                    }
+                  )}
+                </Fragment>
+              </CardContainer>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>

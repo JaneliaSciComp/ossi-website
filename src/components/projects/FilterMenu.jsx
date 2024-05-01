@@ -24,6 +24,24 @@ export default function FilterMenu({ uniqueTags }) {
     return initialVisibility;
   });
 
+  // // On load, check for existing tags or projectType
+  // useEffect(() => {
+  //   // console.log("search param use effect fired");
+  //   const searchParams = new URLSearchParams(window.location.search);
+
+  //   // Check for 'tags' in the query string and update the selectedTags store
+  //   const tags = searchParams.getAll("tag");
+  //   if (tags.length) {
+  //     selectedTags.set(tags);
+  //   }
+
+  //   // Check for 'projectType' in the query string and update the selectedProjectType store
+  //   const projectType = searchParams.getAll("projectType"); // Gets the first 'projectType' value - need to
+  //   if (projectType.length) {
+  //     selectedProjectType.set(projectType);
+  //   }
+  // }, []);
+
   // Effect to update categoryVisibility when $selectedTags changes
   useEffect(() => {
     const prevVisibility = categoryVisibility;
@@ -101,11 +119,13 @@ export default function FilterMenu({ uniqueTags }) {
                             ? "selected"
                             : ""
                         }`}
-                        style={{
-                          ...($selectedTags.includes(individualTag) && {
-                            backgroundColor: getBackgroundColor(key),
-                          }),
-                        }}
+                        style={
+                          $selectedTags.includes(individualTag)
+                            ? {
+                                backgroundColor: getBackgroundColor(key),
+                              }
+                            : undefined
+                        }
                       >
                         {individualTag}
                       </div>

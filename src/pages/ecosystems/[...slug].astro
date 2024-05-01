@@ -1,18 +1,97 @@
 ---
-import { getCollection } from 'astro:content';
-import EcosystemLayout from '../../layouts/EcosystemLayout.astro';
+import { getCollection } from "astro:content";
+import { getEntries } from "astro:content";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContentListDisplay from "../../components/ContentListDisplay.astro";
+import Media from "../../components/projects/individual-project/Media.astro";
+import Tag from "../../components/projects/Tag.astro";
+
+import { extractUniqueTagsObject } from "../../utils/tagManipulation";
 
 export async function getStaticPaths() {
-  const ecosystems = await getCollection('ecosystems');
-  return ecosystems.map(ecosystem => ({
-    params: { slug: ecosystem.slug }, props: { ecosystem },
+  const ecosystems = await getCollection("ecosystems");
+  return ecosystems.map((ecosystem) => ({
+    params: { slug: ecosystem.slug },
+    props: { ecosystem },
   }));
 }
 
 const { ecosystem } = Astro.props;
+const frontmatter = ecosystem.data;
 const { Content } = await ecosystem.render();
+
+const relatedProjects = frontmatter["related projects"]
+  ? await getEntries(frontmatter["related projects"])
+  : null;
+const tagsObj = extractUniqueTagsObject(relatedProjects);
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<EcosystemLayout frontmatter={ecosystem.data}>
-  <Content/>
-</EcosystemLayout>
+<BaseLayout>
+  <div class="pt-24 pb-8 max-w-7xl mx-auto">
+    <a
+      class="self-start mx-6 border-b-2 text-sm transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer"
+      href={`${baseUrl}/projects`}
+    >
+      Ecosystems
+    </a>
+    <div class="flex flex-col lg:grid grid-cols-6">
+      <section class="row-start-1 row-span-1 col-span-4 pt-6 pb-8">
+        <h1
+          class="mx-6 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
+        >
+          {frontmatter.title}
+        </h1>
+        <p
+          class="mx-6 mt-6 md:mt-10 text-xl md:text-2xl text-muted dark:text-slate-400"
+        >
+          {frontmatter.tagline}
+        </p>
+      </section>
+
+      <div
+        class="px-6 py-12 lg:p-0 lg:pl-12 row-start-1 row-span-2 col-start-5 col-span-2 bg-primary lg:bg-page dark:bg-slate-900"
+      >
+        {
+          relatedProjects && (
+            <ContentListDisplay
+              title="Related projects"
+              information="Learn more about projects in this ecosystem"
+              content="projects"
+              subset={relatedProjects}
+            />
+          )
+        }
+      </div>
+
+      <div class="col-start-1 col-span-4">
+        <Media frontmatter={frontmatter} />
+        <div class="mx-6 my-6 flex flex-col gap-1">
+          <div class="pt-6 flex flex-wrap gap-2">
+            {
+              Object.entries(tagsObj).map(([tagCat, tags]) => {
+                return tags.map((tag) => {
+                  return (
+                    <Tag tagCat={tagCat} tag={tag} contentType="ecosystems" />
+                  );
+                });
+              })
+            }
+          </div>
+        </div>
+
+        <section
+          class="col-span-4 row-start-3 ml-6 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"
+        >
+          <div class="my-6 md:mt-10">
+            <div class="border-t dark:border-slate-700"></div>
+          </div>
+          <!-- This slot is where the content is rendered -->
+          <Content />
+        </section>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

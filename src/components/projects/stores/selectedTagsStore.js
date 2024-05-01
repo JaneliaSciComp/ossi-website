@@ -1,25 +1,24 @@
-import { atom } from "nanostores";
+import { atom, onMount } from "nanostores";
+import { updateSearchParamUrl } from "../../../utils/tagManipulation";
 
 export const selectedTags = atom([]);
 
-function updateTagsSearchParams(updatedTags) {
-  // update URL search params
+onMount(selectedTags, () => {
+  const currentTags = selectedTags.get();
+  let urlTags = [];
   if (typeof window !== "undefined") {
-    const currentUrl = new URL(window.location);
-    const searchParams = new URLSearchParams(currentUrl.search);
-
-    searchParams.delete("tag");
-
-    updatedTags.forEach((tag) => searchParams.append("tag", tag));
-
-    // Use history.pushState to update the URL without reloading the page
-    window.history.pushState({}, "", `${currentUrl.pathname}?${searchParams}`);
+    const searchParams = new URLSearchParams(window.location.search);
+    urlTags = searchParams.getAll("tag");
   }
-}
+  if ((currentTags.length === 0) & (urlTags.length > 0)) {
+    selectedTags.set(urlTags);
+  }
+});
 
 export function handleTagSelection(tag) {
   const prevTags = selectedTags.get();
   let updatedTags = [];
+  let currentUrl = "";
 
   if (prevTags.includes(tag)) {
     updatedTags = prevTags.filter((t) => t !== tag); // Remove tag if it's already selected
@@ -28,5 +27,12 @@ export function handleTagSelection(tag) {
   }
   selectedTags.set(updatedTags);
 
-  updateTagsSearchParams(updatedTags);
+  if (typeof window !== "undefined") {
+    currentUrl = new URL(window.location);
+  }
+
+  const updatedUrl = updateSearchParamUrl(currentUrl.href, updatedTags);
+
+  // Use history.pushState to update the URL without reloading the page
+  window.history.pushState({}, "", updatedUrl);
 }

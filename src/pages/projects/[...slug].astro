@@ -7,12 +7,11 @@ import Link from "../../components/Link.astro";
 import QuickLinks from "../../components/projects/individual-project/QuickLinks.astro";
 import ExternalLinks from "../../components/projects/individual-project/ExternalLinks.astro";
 import Media from "../../components/projects/individual-project/Media.astro";
+import Tag from "../../components/projects/Tag.astro";
 
 import {
   extractUniqueTagsObject,
   findLabInfo,
-  generatePublicationLinks,
-  getBackgroundColor,
 } from "../../utils/tagManipulation";
 
 import { getReadme } from "../../utils/githubApiHelper";
@@ -44,7 +43,6 @@ const relatedBlogPosts = frontmatter["related blog posts"]
 //And frontmatter = data
 const tagsObj = extractUniqueTagsObject({ data: frontmatter });
 const labInfoArray = findLabInfo(frontmatter["development team"]);
-const pubInfoArray = generatePublicationLinks(frontmatter);
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
@@ -94,7 +92,19 @@ const baseUrl = import.meta.env.BASE_URL;
             frontmatter["open source license"] && (
               <div class="flex flex-wrap mb-2 gap-3">
                 <p class="font-semibold">License:</p>
-                {frontmatter["open source license"]}
+                {frontmatter["open source license"].length === 1 ? (
+                  <span>{frontmatter["open source license"]}</span>
+                ) : (
+                  <div>
+                    {frontmatter["open source license"].map((license, index) =>
+                      index < frontmatter["open source license"].length - 1 ? (
+                        <span>{license}, </span>
+                      ) : (
+                        <span>{license}</span>
+                      )
+                    )}
+                  </div>
+                )}
               </div>
             )
           }
@@ -117,15 +127,10 @@ const baseUrl = import.meta.env.BASE_URL;
 
           <div class="pt-6 flex flex-wrap gap-2">
             {
-              Object.entries(tagsObj).map(([key, tags]) => {
+              Object.entries(tagsObj).map(([tagCat, tags]) => {
                 return tags.map((tag) => {
                   return (
-                    <span
-                      class="bg-primary text-white px-2 py-1 rounded-md text-sm"
-                      style={{ backgroundColor: getBackgroundColor(key) }}
-                    >
-                      {tag}
-                    </span>
+                    <Tag tagCat={tagCat} tag={tag} contentType="projects" />
                   );
                 });
               })
