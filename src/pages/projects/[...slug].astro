@@ -92,7 +92,19 @@ const baseUrl = import.meta.env.BASE_URL;
             frontmatter["open source license"] && (
               <div class="flex flex-wrap mb-2 gap-3">
                 <p class="font-semibold">License:</p>
-                {frontmatter["open source license"]}
+                {frontmatter["open source license"].length === 1 ? (
+                  <span>{frontmatter["open source license"]}</span>
+                ) : (
+                  <div>
+                    {frontmatter["open source license"].map((license, index) =>
+                      index < frontmatter["open source license"].length - 1 ? (
+                        <span>{license}, </span>
+                      ) : (
+                        <span>{license}</span>
+                      )
+                    )}
+                  </div>
+                )}
               </div>
             )
           }
