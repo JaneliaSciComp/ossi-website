@@ -108,7 +108,6 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
                 <Fragment slot="tags">
                   {Object.entries(content.data.tagsObj).map(
                     ([tagCat, tags]) => {
-                      // console.log(tags);
                       return tags.map((tag) => {
                         return (
                           <Tag
