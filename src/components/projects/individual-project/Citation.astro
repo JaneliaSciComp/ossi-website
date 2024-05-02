@@ -1,23 +1,14 @@
 ---
+import Link from "../../Link.astro";
 const { citationLink, citationText, githubLink } = Astro.props;
 ---
 
 {
   citationLink && citationText ? (
-    <a
-      class=" self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer"
-      href={citationLink}
-    >
-      {citationText}
-    </a>
+    <Link href={citationLink} text={citationText} />
   ) : citationText ? (
     <p>{citationText}</p>
   ) : (
-    <a
-      class="self-start border-b-2 transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer"
-      href={githubLink}
-    >
-      Cite the GitHub repository
-    </a>
+    <Link href={githubLink} text={"Cite the GitHub repository"} />
   )
 }

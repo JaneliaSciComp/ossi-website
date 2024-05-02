@@ -1,17 +1,11 @@
 ---
-import { getCollection } from "astro:content";
-import { getEntries } from "astro:content";
-
-import { Tabs } from "@mui/base/Tabs";
-import { TabsList } from "@mui/base/TabsList";
-import { TabPanel } from "@mui/base/TabPanel";
-import { Tab } from "@mui/base/Tab";
+import { getCollection, getEntries } from "astro:content";
+import { YouTube } from "astro-embed";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Link from "../../components/Link.astro";
 import QuickLinks from "../../components/projects/individual-project/QuickLinks.astro";
 import ExternalLinks from "../../components/projects/individual-project/ExternalLinks.astro";
-import Media from "../../components/projects/individual-project/Media.astro";
 import Tag from "../../components/projects/Tag.astro";
 import Readme from "../../components/projects/individual-project/Readme";
 import ProjectPageTabs from "../../components/projects/individual-project/Tabs";
@@ -25,7 +19,6 @@ const { project } = Astro.props;
 const frontmatter = project.data;
 const body = project.body;
 const { Content } = await project.render();
-let readmeHtml = {};
 // console.log(body.length, body.includes("provide an alternative description"));
 
 export async function getStaticPaths() {
@@ -49,120 +42,127 @@ const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout>
-  <div class="pt-24 pb-8 max-w-7xl mx-auto">
+  <div
+    class="flex flex-col lg:grid grid-cols-5 grid-rows-1 auto-rows-min pt-24 pb-8 max-w-7xl mx-auto"
+  >
     <a
-      class="self-start mx-6 border-b-2 text-sm transition ease-in duration-200 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer"
+      class="col-start-1 row-start-1 row-span-1 mx-6 text-sm text-primary hover:underline dark:text-slate-300 dark:border-slate-500 dark:hover:border-slate-800 cursor-pointer"
       href={`${baseUrl}/projects`}
     >
       Projects
     </a>
-    <div class="flex flex-col lg:grid grid-cols-6">
-      <section class="row-start-1 row-span-1 col-span-4 pt-6 pb-8">
-        <h1
-          class="mx-6 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
-        >
-          {frontmatter.title}
-        </h1>
-        <p
-          class="mx-6 mt-6 md:mt-10 text-xl md:text-2xl text-muted dark:text-slate-400"
-        >
-          {frontmatter.tagline}
-        </p>
-      </section>
+    <div class="col-start-1 col-span-3 row-start-2 row-span-1">
+      <h1
+        class="m-6 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
+      >
+        {frontmatter.title}
+      </h1>
+      <p
+        class="mx-6 mb-6 md:mt-10 text-xl md:text-2xl text-muted dark:text-slate-400"
+      >
+        {frontmatter.tagline}
+      </p>
+    </div>
 
+    <div
+      class="col-start-4 col-span-2 row-start-2 row-span-2 px-6 py-12 lg:p-0 lg:pl-12 bg-primary bg-opacity-20 lg:bg-page lg:bg-opacity-0"
+    >
       <QuickLinks frontmatter={frontmatter} />
-
-      <div class="col-start-1 col-span-4">
-        <Media frontmatter={frontmatter} />
-
-        <div class="mx-6 my-6 flex flex-col gap-1">
-          {
-            labInfoArray && (
-              <div class="flex flex-wrap mb-2 gap-3">
-                <p class="font-semibold">Development Team:</p>
-                {labInfoArray.map((labInfo) => {
-                  if (labInfo) {
-                    const { name, url } = labInfo;
-                    return <Link text={name} url={url} />;
-                  }
-                })}
-              </div>
-            )
-          }
-          {
-            frontmatter["open source license"] && (
-              <div class="flex flex-wrap mb-2 gap-3">
-                <p class="font-semibold">License:</p>
-                {/* if it exists, open source license can be a string or array of strings */}
-                {!Array.isArray(frontmatter["open source license"]) ||
-                frontmatter["open source license"].length === 1 ? (
-                  <span>{frontmatter["open source license"]}</span>
-                ) : (
-                  <div>
-                    {frontmatter["open source license"].map((license, index) =>
-                      index < frontmatter["open source license"].length - 1 ? (
-                        <span>{license}, </span>
-                      ) : (
-                        <span>{license}</span>
-                      )
-                    )}
-                  </div>
-                )}
-              </div>
-            )
-          }
-
-          {
-            relatedBlogPosts && (
-              <div class="flex flex-wrap mb-2 gap-3">
-                <p class="font-semibold">Related blog posts:</p>
-                {relatedBlogPosts.map((blog) => (
-                  <Link
-                    text={blog?.data?.title}
-                    url={`${baseUrl}/blog/${blog?.slug}`}
-                  />
-                ))}
-              </div>
-            )
-          }
-
-          <ExternalLinks frontmatter={frontmatter} />
-
-          <div class="pt-6 flex flex-wrap gap-2">
+    </div>
+    <div class="col-start-1 col-span-3 row-start-3">
+      {
+        frontmatter["youtube url"] && (
+          <div class=" flex flex-col items-center pt-6 mx-6 lg:pt-0 ">
+            <YouTube
+              id={frontmatter["youtube url"]}
+              title={frontmatter["youtube title"]}
+              class="w-full rounded-lg lg:self-start"
+            />
+          </div>
+        )
+      }
+      <div class="col-start-1 col-span-2 row-start-2 mx-6 pt-6">
+        <ProjectPageTabs client:load>
+          <div slot="overview">
             {
-              Object.entries(tagsObj).map(([tagCat, tags]) => {
-                return tags.map((tag) => {
-                  return (
-                    <Tag tagCat={tagCat} tag={tag} contentType="projects" />
-                  );
-                });
-              })
+              labInfoArray && (
+                <div class="flex items-center flex-wrap mb-2 gap-3">
+                  <p class="font-semibold">Development Team:</p>
+                  {labInfoArray.map((labInfo) => {
+                    if (labInfo) {
+                      const { name, url } = labInfo;
+                      return <Link href={url} text={name} />;
+                    }
+                  })}
+                </div>
+              )
             }
-          </div>
-        </div>
+            {
+              frontmatter["open source license"] && (
+                <div class="flex flex-wrap mb-2 gap-3">
+                  <p class="font-semibold">License:</p>
+                  {/* if it exists, open source license can be a string or array of strings */}
+                  {!Array.isArray(frontmatter["open source license"]) ||
+                  frontmatter["open source license"].length === 1 ? (
+                    <span>{frontmatter["open source license"]}</span>
+                  ) : (
+                    <div>
+                      {frontmatter["open source license"].map(
+                        (license, index) =>
+                          index <
+                          frontmatter["open source license"].length - 1 ? (
+                            <span>{license}, </span>
+                          ) : (
+                            <span>{license}</span>
+                          )
+                      )}
+                    </div>
+                  )}
+                </div>
+              )
+            }
 
-        <section
-          class="col-span-4 row-start-3 ml-6 prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"
-        >
-          <div class="my-6 md:mt-10">
-            <div class="border-t dark:border-slate-700"></div>
-          </div>
+            {
+              relatedBlogPosts && (
+                <div class="flex flex-wrap mb-2 gap-3">
+                  <p class="font-semibold">Related blog posts:</p>
+                  {relatedBlogPosts.map((blog) => (
+                    <Link
+                      text={blog?.data?.title}
+                      url={`${baseUrl}/blog/${blog?.slug}`}
+                    />
+                  ))}
+                </div>
+              )
+            }
 
-          <!-- This is where any custom description of the project gets rendered -->
-          <ProjectPageTabs client:load />
+            <ExternalLinks frontmatter={frontmatter} />
+
+            <div class="pt-6 flex flex-wrap gap-2">
+              {
+                Object.entries(tagsObj).map(([tagCat, tags]) => {
+                  return tags.map((tag) => {
+                    return (
+                      <Tag tagCat={tagCat} tag={tag} contentType="projects" />
+                    );
+                  });
+                })
+              }
+            </div>
+          </div>
           {
             body.length === 0 ||
             body.includes("provide an alternative description") ? (
               <Readme
                 githubLink={frontmatter["github link"]}
-                client:only="react"
+                slot="readme"
+                client:load
               />
             ) : (
-              <Content />
+              <Content slot="content" />
             )
           }
-          <!-- If no custom description in the Markdown file, the project's GitHub README file is used-->
-        </section>
+        </ProjectPageTabs>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ import { getReadme } from "../../../utils/githubApiHelper";
 import DOMPurify from "dompurify";
 
 export default function Readme({ githubLink }) {
-  const [readmeHtml, setReadmeHtml] = useState("");
+  const [readmeHtml, setReadmeHtml] = useState("<div></div>");
 
   useEffect(() => {
     async function fetchReadme() {
@@ -21,5 +21,10 @@ export default function Readme({ githubLink }) {
     fetchReadme();
   }, [githubLink]);
 
-  return <div dangerouslySetInnerHTML={{ __html: readmeHtml }} />;
+  return (
+    <div
+      dangerouslySetInnerHTML={{ __html: readmeHtml }}
+      className="min-h-full"
+    />
+  );
 }
