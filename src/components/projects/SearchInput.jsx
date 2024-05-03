@@ -1,7 +1,7 @@
 import { useStore } from "@nanostores/react";
 import { Input } from "../../../@/components/ui/input";
 import { Label } from "../../../@/components/ui/label";
-import { query } from "./stores/queryStore";
+import { query, handleQuery } from "./stores/queryStore";
 
 export default function SearchInput() {
   const $query = useStore(query);
@@ -14,7 +14,7 @@ export default function SearchInput() {
         id="search"
         placeholder="Keyword"
         value={$query}
-        onChange={(e) => query.set(e.target.value)}
+        onChange={(e) => handleQuery(e.target.value)}
       />
     </div>
   );
