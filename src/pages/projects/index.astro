@@ -81,13 +81,8 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
             return (
               <CardContainer
                 key={content.slug}
-                baseUrl={baseUrl}
                 url={`${baseUrl}/projects/${content.slug}/`}
                 title={content.data.title}
-                authors={content.data["author names"]}
-                tagline={content.data.tagline}
-                imageSrc={content.data["image file"]}
-                imageAlt={content.data["image alt text"]}
                 tagsObj={tagsObj}
                 projectType={content.data["project type"][0]}
                 client:only="react"

@@ -1,8 +1,6 @@
 import { atom, onMount } from "nanostores";
 import DOMPurify from "dompurify";
 
-export const query = atom([]);
-
 onMount(query, () => {
   const currentQuery = query.get();
   let urlQuery = [];

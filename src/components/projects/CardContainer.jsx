@@ -2,15 +2,18 @@ import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore";
 import { extractUniqueTagValueArray } from "../../utils/tagManipulation";
+import { $projectData } from "./stores/projectSearchResultsStore";
 
 export default function CardContainer({
   url,
+  title,
   tagsObj,
   projectType,
   tags,
   cardImage,
   cardContent,
 }) {
+  const projectData = useStore($projectData);
   const $selectedTags = useStore(selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
   const tagsArray = extractUniqueTagValueArray(tagsObj);
@@ -18,10 +21,12 @@ export default function CardContainer({
   //determine whether card is visible or not based on tag & project type selections
   const visible =
     ($selectedTags.length &&
-      !tagsArray.some((tag) => $selectedTags.includes(tag))) ||
-    ($selectedProjectType.length && !$selectedProjectType.includes(projectType))
-      ? "hidden"
-      : "relative";
+      tagsArray.some((tag) => $selectedTags.includes(tag))) ||
+    ($selectedProjectType.length &&
+      $selectedProjectType.includes(projectType)) ||
+    (projectData && projectData.some((project) => project.item.title === title))
+      ? "relative"
+      : "hidden";
 
   return (
     <div

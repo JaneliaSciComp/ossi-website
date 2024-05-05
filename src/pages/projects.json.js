@@ -1,4 +1,5 @@
 import { getCollection } from "astro:content";
+import Fuse from "fuse.js";
 
 async function getProjects() {
   const allProjects = (await getCollection("projects")).sort(
@@ -7,10 +8,19 @@ async function getProjects() {
   return allProjects.map((project) => ({
     title: project.data.title,
     tagline: project.data.tagline,
-    maintainer: project.data.maintainer,
+    "project type": project.data["project type"],
+    "OSSI proposal link": project.data["OSSI proposal link"],
     "github link": project.data["github link"],
+    "documentation link": project.data["documentation link"],
     "how to cite text": project.data["how to cite text"],
+    "how to cite link": project.data["how to cite link"],
+    "additional links array": project.data["additional links array"],
+    "additional links text array": project.data["additional links text array"],
     "related blog posts": project.data["related blog posts"],
+    "image file": project.data["image file"],
+    "image caption": project.data["image caption"],
+    "youtube url": project.data["youtube url"],
+    "youtube caption": project.data["youtube caption"],
     "development team": project.data["development team"],
     "programming language": project.data["programming language"],
     "open source license": project.data["open source license"],
@@ -25,8 +35,33 @@ async function getProjects() {
 
 // Note - "GET" must be all uppercase. Lowercase threw an error.
 export async function GET({}) {
-  return new Response(JSON.stringify(await getProjects()), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
+  const projects = await getProjects();
+  const projectsIndex = Fuse.createIndex(
+    [
+      "title",
+      "tagline",
+      "github link",
+      "how to cite text",
+      "related blog posts",
+      "development team",
+      "programming language",
+      "open source license",
+      "software type",
+      "use case",
+      "usage environment",
+      "software ecosystem",
+      "supported file types",
+      "body",
+    ],
+    projects
+  );
+  return new Response(
+    JSON.stringify(
+      { projects, index: projectsIndex.toJSON() },
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    )
+  );
 }

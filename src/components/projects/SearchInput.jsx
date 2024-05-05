@@ -1,11 +1,11 @@
 import { useStore } from "@nanostores/react";
 import { Input } from "../../../@/components/ui/input";
 import { Label } from "../../../@/components/ui/label";
-import { query, handleQuery } from "./stores/queryStore";
+import { $urlQuery, handleQuery } from "./stores/projectSearchResultsStore";
 
 export default function SearchInput() {
-  const $query = useStore(query);
-  console.log($query);
+  const urlQuery = useStore($urlQuery);
+  //   console.log("search input: ", $query);
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label htmlFor="search">Search</Label>
@@ -13,7 +13,7 @@ export default function SearchInput() {
         type="text"
         id="search"
         placeholder="Keyword"
-        value={$query}
+        value={urlQuery}
         onChange={(e) => handleQuery(e.target.value)}
       />
     </div>
