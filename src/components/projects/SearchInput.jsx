@@ -5,10 +5,17 @@ import { $urlQuery, handleQuery } from "./stores/queryStore";
 
 export default function SearchInput() {
   const urlQuery = useStore($urlQuery);
-  //   console.log("search input: ", $query);
+
   return (
-    <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Label htmlFor="search">Search</Label>
+    <div className="grid w-full max-w-sm items-center gap-1.5 md:pl-2 md:pr-6 mb-8">
+      <div className="flex items-center justify-between ">
+        <Label className="text-lg font-bold" htmlFor="search">
+          Search
+        </Label>
+        <button className="btn-reset" onClick={() => handleQuery("")}>
+          Reset
+        </button>
+      </div>
       <Input
         type="text"
         id="search"

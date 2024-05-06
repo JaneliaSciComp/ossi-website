@@ -1,5 +1,5 @@
 // Logger only necessary if you want to track the stores in devtools
-import { logger } from "@nanostores/logger";
+// import { logger } from "@nanostores/logger";
 
 //Required imports
 import { atom, onMount, computed } from "nanostores";
@@ -12,7 +12,7 @@ export const $projectsFuse = atom(null);
 // Fuse options
 const projectsOptions = {
   ignoreLocation: true,
-  threshold: 0.4,
+  threshold: 0.3,
   keys: [
     "title",
     "tagline",
@@ -48,16 +48,14 @@ export const $projectData = computed(
   (currentUrlQuery, currentFuseInstance) => {
     // Handle fuse search
     if (currentFuseInstance) {
-      console.log("currentUrlQuery: ", currentUrlQuery);
       const searchResults = currentFuseInstance.search(currentUrlQuery);
-      console.log("search results: ", searchResults);
       return searchResults;
     }
   }
 );
 
-// Log the data stores
-let destroy = logger({
-  projectData: $projectData,
-  projectsFuse: $projectsFuse,
-});
+// OPTIONAL: Log the data stores
+// let destroy = logger({
+//   projectData: $projectData,
+//   projectsFuse: $projectsFuse,
+// });

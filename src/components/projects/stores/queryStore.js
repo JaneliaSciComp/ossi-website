@@ -1,5 +1,5 @@
 // Logger only necessary if you want to track the stores in devtools
-import { logger } from "@nanostores/logger";
+// import { logger } from "@nanostores/logger";
 
 //Required imports
 import { atom, onMount } from "nanostores";
@@ -37,7 +37,7 @@ export function handleQuery(input) {
   window.history.pushState({}, "", url);
 }
 
-// Log the data stores
-let destroy = logger({
-  urlQuery: $urlQuery,
-});
+// OPTIONAL: Log the data stores
+// let destroy = logger({
+//   urlQuery: $urlQuery,
+// });

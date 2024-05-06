@@ -1,5 +1,5 @@
 // Logger only necessary if you want to track the stores in devtools
-import { logger } from "@nanostores/logger";
+// import { logger } from "@nanostores/logger";
 
 //Required imports
 import { atom, onMount, computed } from "nanostores";
@@ -12,7 +12,7 @@ export const $ecosystemsFuse = atom(null);
 // Fuse options
 const ecosystemsOptions = {
   ignoreLocation: true,
-  threshold: 0.4,
+  threshold: 0.3,
   keys: ["title", "tagline", "related projects", "tagsArray", "body"],
 };
 
@@ -44,8 +44,8 @@ export const $ecosystemData = computed(
   }
 );
 
-// Log the data stores
-let destroy = logger({
-  ecosystemsData: $ecosystemData,
-  ecosystemsFuse: $ecosystemsFuse,
-});
+// OPTIONAL: Log the data stores
+// let destroy = logger({
+//   ecosystemsData: $ecosystemData,
+//   ecosystemsFuse: $ecosystemsFuse,
+// });

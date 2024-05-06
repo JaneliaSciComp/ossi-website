@@ -42,7 +42,13 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
     class="px-6 lg:px-20 xl:px-32 py-6 md:py-12 lg:py-20 mx-auto max-w-6xl lg:max-w-none 2xl:w-11/12 md:grid grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-5 gap-4"
   >
     <div class="col-start-1 col-span-1">
+      <!-- <SearchInput client:load /> -->
       <SearchInput client:load />
+      <ToggleFilterMenuBtn
+        slot="toggleFilterMenuBtn"
+        uniqueTags={uniqueTags}
+        client:only="react"
+      />
       <FilterMenu
         uniqueTags={uniqueTags}
         slot="filterMenu"
@@ -57,11 +63,6 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
           <ResetProjectTypeBtn slot="resetProjectTypeBtn" client:load />
           <ProjectTypeDropdown slot="projecTypeDropdown" client:visible />
         </div>
-        <ToggleFilterMenuBtn
-          slot="toggleFilterMenuBtn"
-          uniqueTags={uniqueTags}
-          client:only="react"
-        />
       </div>
 
       <ProjectCount

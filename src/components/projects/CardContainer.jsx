@@ -32,7 +32,6 @@ export default function CardContainer({
       contentData = ecosystemData;
     }
   }
-  console.log("content data: ", contentData);
 
   const $selectedTags = useStore(selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
