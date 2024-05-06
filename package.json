@@ -25,7 +25,6 @@
     "@types/react-dom": "^18.2.18",
     "astro": "^4.2.4",
     "astro-embed": "^0.7.1",
-    "astro-fuse": "^0.0.7",
     "astro-icon": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
