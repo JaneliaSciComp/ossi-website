@@ -2,9 +2,14 @@ import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore.js";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore.js";
+import { $projectData, $urlQuery } from "./stores/projectSearchResultsStore.js";
 import { extractUniqueTagValueArray } from "../../utils/tagManipulation.js";
 
 export default function ProjectCount({ allContent, contentType }) {
+  const projectData = useStore($projectData);
+  const urlQuery = useStore($urlQuery);
+  console.log("url query in project count: ", urlQuery);
+  console.log("project data in project count: ", projectData);
   const $selectedTags = useStore(selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
   const [shownCardCount, setShownCardCount] = useState(allContent.length);
@@ -12,6 +17,15 @@ export default function ProjectCount({ allContent, contentType }) {
   // Calculate the count of shown contentCard components to display if selectedTags or projectType changes
   useEffect(() => {
     const filteredCount = allContent.filter((entry) => {
+      const isSearchMatch =
+        (urlQuery === "" &&
+          (projectData === null || projectData.length === 0)) ||
+        (projectData &&
+          projectData.some(
+            (project) => project.item.title === entry.data.title
+          ));
+      console.log("project count isSearchMatch:", isSearchMatch);
+
       //projects and ecosystems have their tags stored differently, and so need different
       //methods to create the tagsArray. Only do this step if there are any selectedTags
       let tagsArray = [];
@@ -32,11 +46,18 @@ export default function ProjectCount({ allContent, contentType }) {
         $selectedProjectType.includes(entry.data["project type"][0]) ||
         $selectedProjectType === null;
 
-      return hasMatchingTags && matchesProjectType;
+      return isSearchMatch && hasMatchingTags && matchesProjectType;
     }).length;
 
     setShownCardCount(filteredCount);
-  }, [$selectedTags, $selectedProjectType, allContent, contentType]);
+  }, [
+    $selectedTags,
+    $selectedProjectType,
+    projectData,
+    urlQuery,
+    allContent,
+    contentType,
+  ]);
 
   return (
     <p

@@ -40,7 +40,6 @@ export async function GET({}) {
     [
       "title",
       "tagline",
-      "github link",
       "how to cite text",
       "related blog posts",
       "development team",

@@ -69,7 +69,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
         slot="projectCount"
         allContent={allProjects}
         contentType="projects"
-        client:load
+        client:only="react"
       />
       <div
         class="lg:grid grid-cols-2 3xl:grid-cols-3 4xl:grid-cols-4 auto-rows-max gap-4"
@@ -85,6 +85,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
                 title={content.data.title}
                 tagsObj={tagsObj}
                 projectType={content.data["project type"][0]}
+                contentType="projects"
                 client:only="react"
               >
                 {content.data["image file"] ? (

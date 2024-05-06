@@ -4,16 +4,20 @@ import Fuse from "fuse.js";
 // Logger only necessary if you want to track the stores in devtools
 import { logger } from "@nanostores/logger";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 // Initialize the URL query and fuseInstance data stores
 export const $urlQuery = atom("");
 export const $fuseInstance = atom(null);
 
 // Fuse options
 const options = {
+  shouldSort: true,
+  ignoreLocation: true,
+  threshold: 0.3,
   keys: [
     "title",
     "tagline",
-    "github link",
     "how to cite text",
     "related blog posts",
     "development team",
@@ -38,7 +42,7 @@ onMount($urlQuery, () => {
     console.log("queryParams: ", queryParams);
   }
 
-  if (currentQueryStore.length === 0 && queryParams.length > 0) {
+  if (currentQueryStore.length === 0 && queryParams && queryParams.length > 0) {
     $urlQuery.set(queryParams);
   }
 });
