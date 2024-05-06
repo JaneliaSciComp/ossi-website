@@ -1,8 +1,11 @@
+import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore";
 import { extractUniqueTagValueArray } from "../../utils/tagManipulation";
-import { $projectData, $urlQuery } from "./stores/projectSearchResultsStore";
+import { $projectData } from "./stores/projectSearchResultsStore";
+import { $ecosystemData } from "./stores/ecosystemSearchResultsStore";
+import { $urlQuery } from "./stores/queryStore";
 
 export default function CardContainer({
   url,
@@ -14,32 +17,60 @@ export default function CardContainer({
   cardContent,
   contentType,
 }) {
+  const [visible, setVisible] = useState("relative");
   const urlQuery = useStore($urlQuery);
   const projectData = useStore($projectData);
-  // console.log("project data in card container: ", projectData);
+  const ecosystemData = useStore($ecosystemData);
+
+  let contentData = null;
+  if (contentType === "projects") {
+    if (projectData) {
+      contentData = projectData;
+    }
+  } else if (contentType === "ecosystems") {
+    if (ecosystemData) {
+      contentData = ecosystemData;
+    }
+  }
+  console.log("content data: ", contentData);
+
   const $selectedTags = useStore(selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
   const tagsArray = extractUniqueTagValueArray(tagsObj);
 
   //determine whether card is visible or not based on: search query, tag selections, project type selections
-  const isSearchMatch =
-    (urlQuery === "" && (projectData === null || projectData.length === 0)) ||
-    (projectData &&
-      projectData.some((project) => project.item.title === title));
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const isSearchMatch =
+        (urlQuery === "" &&
+          (contentData === null || contentData.length === 0)) ||
+        (contentData &&
+          contentData.some((content) => content.item.title === title));
 
-  const hasMatchingTags =
-    $selectedTags.length === 0 ||
-    tagsArray.some((tag) => $selectedTags.includes(tag));
-  const matchesProjectType =
-    $selectedProjectType.length === 0 ||
-    contentType === "ecosystems" ||
-    $selectedProjectType.includes(projectType) ||
-    $selectedProjectType === null;
+      const hasMatchingTags =
+        $selectedTags.length === 0 ||
+        tagsArray.some((tag) => $selectedTags.includes(tag));
+      const matchesProjectType =
+        $selectedProjectType.length === 0 ||
+        contentType === "ecosystems" ||
+        $selectedProjectType.includes(projectType) ||
+        $selectedProjectType === null;
 
-  const visible =
-    isSearchMatch && hasMatchingTags && matchesProjectType
-      ? "relative"
-      : "hidden";
+      const newVisibility =
+        isSearchMatch && hasMatchingTags && matchesProjectType
+          ? "relative"
+          : "hidden";
+
+      setVisible(newVisibility);
+    }
+  }, [
+    $urlQuery,
+    contentData,
+    $selectedProjectType,
+    $selectedTags,
+    contentType,
+    projectType,
+  ]);
 
   return (
     <div
