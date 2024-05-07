@@ -17,6 +17,7 @@ export default function SearchInput() {
         </button>
       </div>
       <Input
+        className="text-black"
         type="text"
         id="search"
         placeholder="Keyword"
