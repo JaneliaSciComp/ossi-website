@@ -69,7 +69,9 @@ const baseUrl = import.meta.env.BASE_URL;
     >
       <QuickLinks frontmatter={frontmatter} />
     </div>
-    <div class="col-start-1 col-span-3 row-start-3">
+    <div
+      class="col-start-1 col-span-3 row-start-3 mx-6 pt-6 flex flex-col justify-start"
+    >
       {
         frontmatter["youtube url"] && (
           <div class=" flex flex-col items-center pt-6 mx-6 lg:pt-0 ">
@@ -81,89 +83,85 @@ const baseUrl = import.meta.env.BASE_URL;
           </div>
         )
       }
-      <div class="col-start-1 col-span-2 row-start-2 mx-6 pt-6">
-        <ProjectPageTabs client:load>
-          <div slot="overview">
-            {
-              labInfoArray && (
-                <div class="flex items-center flex-wrap mb-2 gap-3">
-                  <p class="font-semibold">Development Team:</p>
-                  {labInfoArray.map((labInfo) => {
-                    if (labInfo) {
-                      const { name, url } = labInfo;
-                      return <Link href={url} text={name} />;
-                    }
-                  })}
-                </div>
-              )
-            }
-            {
-              frontmatter["open source license"] && (
-                <div class="flex flex-wrap mb-2 gap-3">
-                  <p class="font-semibold">License:</p>
-                  {/* if it exists, open source license can be a string or array of strings */}
-                  {!Array.isArray(frontmatter["open source license"]) ||
-                  frontmatter["open source license"].length === 1 ? (
-                    <span>{frontmatter["open source license"]}</span>
-                  ) : (
-                    <div>
-                      {frontmatter["open source license"].map(
-                        (license, index) =>
-                          index <
-                          frontmatter["open source license"].length - 1 ? (
-                            <span>{license}, </span>
-                          ) : (
-                            <span>{license}</span>
-                          )
-                      )}
-                    </div>
-                  )}
-                </div>
-              )
-            }
-
-            {
-              relatedBlogPosts && (
-                <div class="flex flex-wrap mb-2 gap-3">
-                  <p class="font-semibold">Related blog posts:</p>
-                  {relatedBlogPosts.map((blog) => (
-                    <Link
-                      text={blog?.data?.title}
-                      url={`${baseUrl}/blog/${blog?.slug}`}
-                    />
-                  ))}
-                </div>
-              )
-            }
-
-            <ExternalLinks frontmatter={frontmatter} />
-
-            <div class="pt-6 flex flex-wrap gap-2">
-              {
-                Object.entries(tagsObj).map(([tagCat, tags]) => {
-                  return tags.map((tag) => {
-                    return (
-                      <Tag tagCat={tagCat} tag={tag} contentType="projects" />
-                    );
-                  });
-                })
-              }
-            </div>
-          </div>
+      <ProjectPageTabs client:load>
+        <div slot="overview">
           {
-            body.length === 0 ||
-            body.includes("provide an alternative description") ? (
-              <Readme
-                githubLink={frontmatter["github link"]}
-                slot="readme"
-                client:load
-              />
-            ) : (
-              <Content slot="content" />
+            labInfoArray && (
+              <div class="flex items-center flex-wrap mb-2 gap-3">
+                <p class="font-semibold">Development Team:</p>
+                {labInfoArray.map((labInfo) => {
+                  if (labInfo) {
+                    const { name, url } = labInfo;
+                    return <Link href={url} text={name} />;
+                  }
+                })}
+              </div>
             )
           }
-        </ProjectPageTabs>
-      </div>
+          {
+            frontmatter["open source license"] && (
+              <div class="flex flex-wrap mb-2 gap-3">
+                <p class="font-semibold">License:</p>
+                {/* if it exists, open source license can be a string or array of strings */}
+                {!Array.isArray(frontmatter["open source license"]) ||
+                frontmatter["open source license"].length === 1 ? (
+                  <span>{frontmatter["open source license"]}</span>
+                ) : (
+                  <div>
+                    {frontmatter["open source license"].map((license, index) =>
+                      index < frontmatter["open source license"].length - 1 ? (
+                        <span>{license}, </span>
+                      ) : (
+                        <span>{license}</span>
+                      )
+                    )}
+                  </div>
+                )}
+              </div>
+            )
+          }
+
+          {
+            relatedBlogPosts && (
+              <div class="flex flex-wrap mb-2 gap-3">
+                <p class="font-semibold">Related blog posts:</p>
+                {relatedBlogPosts.map((blog) => (
+                  <Link
+                    text={blog?.data?.title}
+                    url={`${baseUrl}/blog/${blog?.slug}`}
+                  />
+                ))}
+              </div>
+            )
+          }
+
+          <ExternalLinks frontmatter={frontmatter} />
+
+          <div class="pt-6 flex flex-wrap gap-2">
+            {
+              Object.entries(tagsObj).map(([tagCat, tags]) => {
+                return tags.map((tag) => {
+                  return (
+                    <Tag tagCat={tagCat} tag={tag} contentType="projects" />
+                  );
+                });
+              })
+            }
+          </div>
+        </div>
+        {
+          body.length === 0 ||
+          body.includes("provide an alternative description") ? (
+            <Readme
+              githubLink={frontmatter["github link"]}
+              slot="readme"
+              client:load
+            />
+          ) : (
+            <Content slot="content" />
+          )
+        }
+      </ProjectPageTabs>
     </div>
   </div>
 </BaseLayout>
