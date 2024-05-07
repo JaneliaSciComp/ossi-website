@@ -8,7 +8,7 @@ import {
 export default function ProjectPageTabs({ overview, readme, content }) {
   const contentTabTitle = readme ? "GitHub README" : "Details";
   return (
-    <Tabs className="min-h-[325px]" defaultValue="overview">
+    <Tabs className="min-h-[325px] pt-6 lg:pt-0" defaultValue="overview">
       <TabsList className="p-0 rounded-none flex font-sans justify-around content-between w-full">
         <TabsTrigger
           value="overview"
