@@ -69,10 +69,10 @@ const baseUrl = import.meta.env.BASE_URL;
     >
       <QuickLinks frontmatter={frontmatter} />
     </div>
-    <div class="col-start-1 col-span-3 mx-6 pt-6">
+    <div class="col-start-1 col-span-3 mx-6">
       {
         frontmatter["youtube url"] && (
-          <div class="flex flex-col items-center pt-6 mx-6 lg:pt-0 ">
+          <div class="flex flex-col items-center pt-12 pb-6 lg:pt-0 lg:pb-4">
             <YouTube
               id={frontmatter["youtube url"]}
               title={frontmatter["youtube title"]}
