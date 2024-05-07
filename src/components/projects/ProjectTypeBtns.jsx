@@ -9,7 +9,7 @@ export default function ProjectTypeSelector() {
 
   return (
     <div className="hidden md:flex flex-col pb-6 max-w-5xl">
-      <div className="flex items-center justify-between 3xl:justify-start pt-2 pb-4 gap-4">
+      <div className="flex items-center justify-between 3xl:justify-start pb-4 gap-4">
         <h3 className="text-lg font-bold">Filter by OSSI funding status</h3>
         <button
           className="btn-reset"

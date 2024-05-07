@@ -1,27 +1,75 @@
+import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "./stores/selectedTagsStore";
 import { selectedProjectType } from "./stores/selectedProjectTypeStore";
 import { extractUniqueTagValueArray } from "../../utils/tagManipulation";
+import { $projectData } from "./stores/projectSearchResultsStore";
+import { $ecosystemData } from "./stores/ecosystemSearchResultsStore";
+import { $urlQuery } from "./stores/queryStore";
 
 export default function CardContainer({
   url,
+  title,
   tagsObj,
   projectType,
   tags,
   cardImage,
   cardContent,
+  contentType,
 }) {
+  const [visible, setVisible] = useState("relative");
+  const urlQuery = useStore($urlQuery);
+  const projectData = useStore($projectData);
+  const ecosystemData = useStore($ecosystemData);
+
+  let contentData = null;
+  if (contentType === "projects") {
+    if (projectData) {
+      contentData = projectData;
+    }
+  } else if (contentType === "ecosystems") {
+    if (ecosystemData) {
+      contentData = ecosystemData;
+    }
+  }
+
   const $selectedTags = useStore(selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
   const tagsArray = extractUniqueTagValueArray(tagsObj);
 
-  //determine whether card is visible or not based on tag & project type selections
-  const visible =
-    ($selectedTags.length &&
-      !tagsArray.some((tag) => $selectedTags.includes(tag))) ||
-    ($selectedProjectType.length && !$selectedProjectType.includes(projectType))
-      ? "hidden"
-      : "relative";
+  //determine whether card is visible or not based on: search query, tag selections, project type selections
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const isSearchMatch =
+        (urlQuery === "" &&
+          (contentData === null || contentData.length === 0)) ||
+        (contentData &&
+          contentData.some((content) => content.item.title === title));
+
+      const hasMatchingTags =
+        $selectedTags.length === 0 ||
+        tagsArray.some((tag) => $selectedTags.includes(tag));
+      const matchesProjectType =
+        $selectedProjectType.length === 0 ||
+        contentType === "ecosystems" ||
+        $selectedProjectType.includes(projectType) ||
+        $selectedProjectType === null;
+
+      const newVisibility =
+        isSearchMatch && hasMatchingTags && matchesProjectType
+          ? "relative"
+          : "hidden";
+
+      setVisible(newVisibility);
+    }
+  }, [
+    $urlQuery,
+    contentData,
+    $selectedProjectType,
+    $selectedTags,
+    contentType,
+    projectType,
+  ]);
 
   return (
     <div

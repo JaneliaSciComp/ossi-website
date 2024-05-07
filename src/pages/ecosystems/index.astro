@@ -11,6 +11,7 @@ import ProjectCount from "../../components/projects/ProjectCount";
 import CardContainer from "../../components/projects/CardContainer";
 import CardImage from "../../components/projects/CardImage";
 import CardContent from "../../components/projects/CardContent.astro";
+import SearchInput from "../../components/projects/SearchInput";
 import Tag from "../../components/projects/Tag.astro";
 
 import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
@@ -31,6 +32,7 @@ const allRelatedProjects = await Promise.all(
     //extracted from the relatedProjects subset of the project content collection.
     //This will be used to create the tags on each individual ecosystem card.
     ecosystem.data.tagsObj = extractUniqueTagsObject(relatedProjects);
+    console.log(ecosystem.data.tagsObj);
 
     return relatedProjects;
   })
@@ -57,6 +59,7 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
     class="px-6 lg:px-20 xl:px-32 py-6 md:py-12 lg:py-20 mx-auto max-w-6xl lg:max-w-none 2xl:w-11/12 md:grid grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-5 gap-4"
   >
     <div class="col-start-1 col-span-1">
+      <SearchInput client:load />
       <FilterMenu uniqueTags={uniqueTags} client:only="react" />
     </div>
     <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
@@ -76,15 +79,12 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
             return (
               <CardContainer
                 key={content.slug}
-                baseUrl={baseUrl}
                 url={`${baseUrl}/ecosystems/${content.slug}/`}
                 title={content.data.title}
-                authors={content.data["author names"]}
                 tagline={content.data.tagline}
-                imageSrc={content.data["image file"]}
-                imageAlt={content.data["image alt text"]}
                 tagsObj={content.data.tagsObj}
                 projectType={null}
+                contentType="ecosystems"
                 client:only="react"
               >
                 {content.data["image file"] ? (
