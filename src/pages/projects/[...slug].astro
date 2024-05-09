@@ -90,7 +90,7 @@ const baseUrl = import.meta.env.BASE_URL;
                 {labInfoArray.map((labInfo) => {
                   if (labInfo) {
                     const { name, url } = labInfo;
-                    return <Link href={url} text={name} />;
+                    return <Link url={url} text={name} />;
                   }
                 })}
               </div>

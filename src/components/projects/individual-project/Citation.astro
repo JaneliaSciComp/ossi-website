@@ -5,10 +5,10 @@ const { citationLink, citationText, githubLink } = Astro.props;
 
 {
   citationLink && citationText ? (
-    <Link href={citationLink} text={citationText} />
+    <Link url={citationLink} text={citationText} />
   ) : citationText ? (
     <p>{citationText}</p>
   ) : (
-    <Link href={githubLink} text={"Cite the GitHub repository"} />
+    <Link url={githubLink} text={"Cite the GitHub repository"} />
   )
 }
