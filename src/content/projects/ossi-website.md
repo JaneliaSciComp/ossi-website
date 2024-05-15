@@ -16,5 +16,5 @@ how to cite link: https://janeliascicomp.github.io/ossi-website/
 development team: [Scientific Computing Software]
 software type: [Website]
 programming language: [Javascript]
-open source license: [BSD-3 Clause]
+open source license: [BSD-3 Clause, test]
 ---
