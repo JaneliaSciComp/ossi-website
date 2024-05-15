@@ -33,6 +33,9 @@ export default function Hero({
       className={`bg-cover bg-no-repeat bg-center relative flex flex-col justify-end 2xl:justify-center not-prose ${heightClasses}`}
       style={style}
     >
+      <p className="text-xs text-white  dark:text-slate-300 absolute left-6 md:left-12 lg:left-20 xl:left-32 bottom-0 ">
+        {backgroundImg.alt}
+      </p>
       <div
         className={`flex flex-col 2xl:flex-row justify-between md:justify-around 2xl:items-center h-3/4 md:h-5/6 2xl:h-auto  2xl:w-11/12 ${alignmentClasses}`}
       >
@@ -59,9 +62,6 @@ export default function Hero({
           </div>
         )}
       </div>
-      <p className="text-xs text-white  dark:text-slate-300 absolute right-6 bottom-0">
-        {backgroundImg.alt}
-      </p>
     </section>
   );
 }
