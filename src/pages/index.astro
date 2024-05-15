@@ -16,12 +16,12 @@ const baseUrl = import.meta.env.BASE_URL;
     baseUrl={baseUrl}
     title={siteConfig.name}
     subtitle="Making scientific software user-friendly and developer-friendly"
-    heightClasses="h-screen max-h-screen"
+    heightClasses="h-[calc(100vh-74px)] h-[calc(100vh-88px)] min-h-[588px]"
   >
-    <Wrapper containerClass="max-w-5xl">
+    <Wrapper containerClass="max-w-5xl lg:px-16 xl:px-16">
       <div class="max-w-3xl rounded-md">
         <CallToAction
-          btnContainerClasses="max-w-none sm:max-w-none"
+          btnContainerClasses="max-w-none sm:max-w-none pb-2"
           actions={[
             {
               variant: "primary",
@@ -36,40 +36,16 @@ const baseUrl = import.meta.env.BASE_URL;
           ]}
         >
           <Fragment slot="content">
-            This website aims to catalogue software projects developed through the <b>Janelia Open Science Software Initiative</b> (OSSI), 
-            as well as other software developed by teams at Janelia Research Campus. 
+            This website aims to catalogue software projects developed through
+            the <b>Janelia Open Science Software Initiative</b> (OSSI), as well as
+            other software developed by teams at Janelia Research Campus.
           </Fragment>
         </CallToAction>
       </div>
     </Wrapper>
   </Hero>
 
-  <!-- <Wrapper containerClass="pt-16 pb-8 md:py-16">
-    <CallToAction
-      actions={[
-        {
-          variant: "primary",
-          text: "Learn more about OSSI",
-          href: `${baseUrl}/ossi`,
-          target: "_blank",
-        },
-      ]}
-    >
-      <Fragment slot="title">
-        Janelia Open Science Software Initiative (OSSI)
-      </Fragment>
-      <Fragment slot="content">
-        An important source of support for scientific software development and
-        maintenance at Janelia is the Open Science Software Initiative
-        (OSSI).
-      </Fragment>
-      <Fragment slot="bg">
-        <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
-      </Fragment>
-    </CallToAction>
-  </Wrapper> -->
-
-  <Wrapper containerClass="py-8 md:py-16">
+  <Wrapper containerClass="py-8 md:py-12">
     <ContentGridDisplay
       title=`${siteConfig.shortName} Software Blog`
       information=`The latest updates on ${siteConfig.shortName} software projects`
@@ -101,9 +77,9 @@ const baseUrl = import.meta.env.BASE_URL;
         >Janelians: add your software to this website!</Fragment
       >
       <Fragment slot="content">
-        We welcome contributions from current and former Janelians. You can add a page about your 
-        software project or write a blog post. 
-        Any software developed at Janelia (OSSI-funded or not) may be added to this website. 
+        We welcome contributions from current and former Janelians. You can add
+        a page about your software project or write a blog post. Any software
+        developed at Janelia (OSSI-funded or not) may be added to this website.
         Read the documentation on the site's GitHub repository to get started.
       </Fragment>
     </CallToAction>
