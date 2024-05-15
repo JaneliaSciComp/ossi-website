@@ -10,6 +10,8 @@ documentation link: https://imagej.net/plugins/bigstitcher/
 installation instructions link: https://imagej.net/plugins/bigstitcher/#download
 how to cite link: https://doi.org/10.1038/s41592-019-0501-0
 how to cite text: "Hörl, D., Rojas Rusak, F., Preusser, F. et al. BigStitcher: reconstructing high-resolution image datasets of cleared and expanded samples. Nature Methods 16, 870–874 (2019)."
+youtube url: https://www.youtube.com/watch?v=2nsz4mhsgyQ
+youtube caption: Towards reconstruction of peta-scale lightsheet microscopy datasets, by Dr. Stephan Preibisch (HHMI Janelia).
 development team: [Scientific Computing Software]
 programming language: [Java, Nextflow]
 open source license: [BSD-3 Clause]

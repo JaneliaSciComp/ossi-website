@@ -15,6 +15,8 @@ additional links text array: ["suite2p homepage"]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
+youtube url: https://www.youtube.com/watch?v=FpE8Jqv6o_w
+youtube caption: A description of Cellpose and Suite2p by Carsen Stringer, which is supported by the Open Science Software Initiative Project.
 development team: [Pachitariu Lab, Stringer Lab]
 programming language: [Python]
 open source license: [GPL-3.0]
