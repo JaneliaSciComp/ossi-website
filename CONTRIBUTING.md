@@ -23,63 +23,83 @@
 4. **Node.js (v18.14.1 or later) and npm** (comes installed with Node) installed on your local computer
    - Need to install Node? [Download it here](https://nodejs.org/en/download).
 
-Want to check if you have Git, Node, and npm installed, or to confirm that your installation worked? Use the below commands in the terminal. If the software is successfully installed, each command will return the corresponding software's version number to the terminal.
+<details>
+  <summary>Want to check if you have Git, Node, and npm installed, or to confirm that your installation worked?</summary>
+  
+<br/>Use the below commands in the terminal. If the software is successfully installed, each command will return the corresponding software's version number to the terminal.
 
 ```
 git -v
 node -v
 npm -v
 ```
+</details>
 
 ## Set-up
-
-#### Fork the OSSI website repository to create your own copy of the repository on your GitHub account.
-
-1.  On GitHub.com, naviagate to the [JaneliaSciComp/ossi-website](https://github.com/JaneliaSciComp/ossi-website) repository page.
-
-2.  In the upper-right corner of the page, click **Fork**.
+<details>
+ <summary> 
+   
+   #### Fork the OSSI website repository to create your own copy of the repository on your GitHub account.
+   
+ </summary>
+  
+  1.  On GitHub.com, naviagate to the [JaneliaSciComp/ossi-website](https://github.com/JaneliaSciComp/ossi-website) repository page.
+  
+  2.  In the upper-right corner of the page, click **Fork**.
     ![Fork button on the GitHub repository page](./public/readme-images/fork.png)
 
-3.  On the next page, you can keep the defaults and click **Create Fork** in the lower right. Or, optionally, you can change the repository name or description to be different than ossi-website, to further distinguish your copy from the original repository.
+  3.  On the next page, you can keep the defaults and click **Create Fork** in the lower right. Or, optionally, you can change the repository name or description to be different than ossi-website, to     further distinguish your copy from the original repository.
 
-#### Clone your forked repository, to make it available on your local computer.
+</details>
+<details>
+ <summary> 
+   
+   #### Clone your forked repository, to make it available on your local computer.
+   
+ </summary>
+  
+  1.  On the [JaneliaSciComp/ossi-website](https://github.com/JaneliaSciComp/ossi-website) repository page, above the list of files, click the green **Code** button.
 
-1.  On the [JaneliaSciComp/ossi-website](https://github.com/JaneliaSciComp/ossi-website) repository page, above the list of files, click the green **Code** button.
+  2.  In the dropdown that appears, select the **SSH** tab.
 
-2.  In the dropdown that appears, select the **SSH** tab.
-
-3.  Click the **Copy** icon found to the right of the SSH key.
+  3.  Click the **Copy** icon found to the right of the SSH key.
     ![Green code button and associated dropdown menu on the GitHub repository page](./public/readme-images/clone.png)
 
-**Note**: If you see an error like the below when attempting to copy the SSH key, please follow the instructions in [this tutorial](https://sbme-tutorials.github.io/2019/data-structures/notes/public_key.html) to create a public SSH key for your GitHub account.
+  **Note**: If you see an error like the below when attempting to copy the SSH key, please follow the instructions in [this tutorial](https://sbme-tutorials.github.io/2019/data-structures/notes/  public_key.html) to create a public SSH key for your GitHub account.
 ![Error message on GitHub.com indicating the account does not have a public SSH key](./public/readme-images/SSH-error.png)
 
-4.  Open a new terminal in your code editor.
+  4.  Open a new terminal in your code editor.
 
-5.  Change the current working directory to the location where you want the cloned directory, e.g.,:
+  5.  Change the current working directory to the location where you want the cloned directory, e.g.,:
 
 ```
 cd PATH/TO/DESIRED/LOCATION/HERE
 ```
 
-6.  Type `git clone` and then paste the SSH key you just copied. E.g.,:
+  6.  Type `git clone` and then paste the SSH key you just copied. E.g.,:
 
 ```
 git clone git@github.com:YOUR-USERNAME/YOUR-REPO-NAME.git
 ```
 
-7.  Hit enter to clone the repo onto your local computer. You should see output in the terminal like the below.
+  7.  Hit enter to clone the repo onto your local computer. You should see output in the terminal like the below.
     ![Sample terminal output after using the command to clone a GitHub repo](./public/readme-images/clone-2.png)
-
-#### Install the repository dependencies and start the local dev server to preview a local copy of the website.
-
-1.  In the terminal of the code editor, navigate to the directory you just created by typing `cd` and the name you gave your repository copy. For example, in the above image, the repository name is `copy-ossi-website`.
+    
+</details>
+<details open>
+<summary>
+  
+  #### Install the repository dependencies and start the local dev server to preview a local copy of the website.
+  
+</summary>
+  
+  1.  In the terminal of the code editor, navigate to your local directory with the cloned repo. 
 
 ```
-cd YOUR-REPOSITORY-NAME
+cd path/to/local/YOUR-REPOSITORY-NAME
 ```
 
-2.  Type the below two commands in the terminal - the first command directs npm to install dependencies specific to the repo and the second starts the local server and opens it automatically in your default web browswer.
+  2.  Type the below two commands in the terminal - the first command directs npm to install dependencies specific to the repo and the second starts the local server and opens it automatically in your default web browswer.
 
 ```
 npm install
@@ -87,12 +107,12 @@ npm run dev
 ```
 
 **Note:** If the local server does not automatically appear in your web browser, input `localhost:4321/ossi-website` into your preferred web browser to view the website.
+</details>
 
 ## Add a new project
 
-1. Use your code editor GUI to open the directory you just created to your local computer so that you can see all the files.
-
-1. Below is an abbreviated file tree showing key folders and files you'll find in your local copy of the repository. Open the `src/content/projects` folder. If a Markdown file for your project already exists in this folder - skip to [Edit a project](#edit-a-project)
+Below is an abbreviated file tree showing key folders and files you'll find in your local copy of the repository. 
+**If a Markdown file for your project already exists in `src/content/projects` - skip to [Edit a project](#edit-a-project).**
 
 ```text
 /
@@ -104,13 +124,13 @@ npm run dev
             └── _project-template.md
 ```
 
-3. Copy `/src/content/projects/_project-template.md` and paste a duplicate of the file into the same folder (`/src/content/projects/`). Rename the template file with your software project's title in **lowercase**, with dashes replacing spaces.
+1. Copy `/src/content/projects/_project-template.md` and paste a duplicate of the file into the same folder (`/src/content/projects/`). Rename the template file with your software project's title in **lowercase**, with dashes replacing spaces.
    - For example, if your software is called "Awesome Software", you would rename the file as `awesome-software.md`.
    - If your software is called "AwesomeSoftware", the file name would be `awesomesoftware.md`
 
 Open your project file to view its contents. At the top of the file are data sandwiched between triple-dashes (---). These data are collectively called **frontmatter** and are used by Astro to populate the webpage content for a project.
 
-4. **Start by editing the `title` field. The title value must match the name of your project file name with each dash converted to a space**, but it can have whatever casing you desire.
+2. **Start by editing the `title` field. The title value must match the name of your project file name with each dash converted to a space**, but it can have whatever casing you desire.
    - For example, if your project file is named `awesome-software.md`, your `title` entry can appear as:
      `title: Awesome Software` or
      `title: AWESOME SOFTWARE` or
@@ -123,7 +143,7 @@ At the top of your project file are data sandwiched between triple-dashes (---).
 
 ### Edit the frontmatter
 
-- Follow the guidance in the table below to fill out your project file's frontmatter. You can also refer to `/src/projects/_project-template.md` for further guidance and examples for each data field.
+- Follow the examples and guidance in `/src/projects/_project-template.md` to fill out your project file's frontmatter. Additional details are provided in a table below.
 
 - For each **required** field, you must provide a value or an error will be thrown when you try to view your project page on the local server.
 
@@ -131,7 +151,14 @@ At the top of your project file are data sandwiched between triple-dashes (---).
 
 - A formatting note for all fields - if you use a colon in your provided value, you must wrap the entire phrase in quotes. Similarly, if you need to use quotation marks in the value, use single quotes and then wrap the entire phrase in double quotes. Otherwise, quotes are optional.
 
-| Field name                       | Required or optional                                                                                      | How to complete                                                                                                                                                                                                                                                                                                              |
+<details>
+ <summary>
+
+#### Table with detailed guidance for project data fields
+   
+ </summary>
+  
+  | Field name                       | Required or optional                                                                                      | How to complete                                                                                                                                                                                                                                                                                                              |
 | :------------------------------- | :-------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `title`                          | Required                                                                                                  | Your project title.                                                                                                                                                                                                                                                                                                          |
 | `tagline`                        | Required                                                                                                  | One or two sentences describing your project.                                                                                                                                                                                                                                                                                |
@@ -159,44 +186,77 @@ At the top of your project file are data sandwiched between triple-dashes (---).
 | `software ecosystem`             | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                                                                                   |
 | `supported file types`           | Optional                                                                                                  | [Tag variable - see guidance](#guidance-for-tag-variables)                                                                                                                                                                                                                                                                   |
 
-### Guidance for "tag" variables
+</details>
+
+
+### Guidance for "tag" fields
 
 Tags are used to allow website visitors to filter displayed projects.
 
-- **Use only the tag categories (in blue below) and options (in orange below) provided in the project template.** If the spelling or capitalization is incorrect, you will be asked to go back and edit the your project file to ensure consistency across projects.
+- **Use only the tag categories and options provided in the project template.** If the spelling or capitalization is incorrect, you will be asked to go back and edit the your project file to ensure consistency across projects.
 - Delete any tag options provided in the project template that don't apply to your project. Keep relevant tags inside the square brackets, separated by commas.
 - If an entire tag category is not relevant to your project, delete or comment out the entire category and associated options.
   ![Sample tag categories and options from the project template](./public/readme-images/tags.png)
 - We strive to keep the tag categories and example options up-to-date in the project template, but the final reference for the currently-allowed tag categories and options can always be found [here](https://github.com/JaneliaSciComp/ossi-website/blob/main/.github/actions/validTagsList.json).
 
+<details>
+  <summary>
+
 #### If you feel there is an additional tag **option** required to describe your project
+    
+  </summary>
 
 - Go ahead and add the option(s) to your project file. In your pull request, please note you added the option and provide a brief explanation why. When you open your pull request, these new options will throw a warning for the website maintainer for review.
+</details>
+<details>
+  <summary>
 
 #### If you feel there is an additional tag **category** required to describe your project
+    
+  </summary>
 
 - _Do not add the new tag category to your project's template - this will prevent your project page from displaying in your local server._
 - Open a separate [pull request](#open-a-pull-request) listing the new tag category(ies) with a brief explanation of why you feel the addition is necessary.
+  
+</details>
+
+
+<details>
+  <summary>
 
 ### Optional - Edit the project description
-
+    
+  </summary>
 You are strongly encouraged to use your software project's GitHub README as it's description. This will minimize the amount of work required by the maintainer to keep the project description and details up-to-date.
 
 To use your project's GitHub README as the project description:
 
 1. Ensure your project is public on GitHub
-2. Delete all the text in your project's Markdown file following the closing triple dashes (---) on the frontmatter.
+2. If the template text is still in the Markdown file following the closing triple dashes (---) on the frontmatter - leave it. If you replaced this text with something else, delete everything below the triple dashes.
 
 If you would rather provide a custom project description, you can do so by typing it below the closing triple dashes on the frontmatter. You can use [Markdown syntax](https://www.markdownguide.org/basic-syntax/) to add hyperlinks, layout/text effects (e.g., headings, lists, **bold** or _italic_ text), etc.
+</details>
+
+<details>
+  <summary>
 
 ### Optional - Add an image
+    
+  </summary>
 
 1. Add your desired image to `/public/project-images/`, using a filename without spaces.
 2. Edit your project file to include a value for `image file` as outlined in the [table above](#edit-the-frontmatter).
 
+</details>
+
 ## Preview your project page and push your changes to GitHub
 
+<details open>
+  <summary>
+
 #### Preview your project page on the local dev server.
+    
+  </summary>
 
 1.  Make sure you've saved all your changes on your local computer.
 
@@ -208,9 +268,17 @@ If you would rather provide a custom project description, you can do so by typin
 localhost:4321/ossi-website/projects/<your-project-name>
 ```
 
-#### When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.
+</details>
 
-1.  Commit your project file locally by typing the following in your code editor's terminal. Modify the message on the commit (wrapped in double quotes) to indicate whether you are **adding** or **editing** your project.
+<details>
+<summary>
+
+#### When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.
+  
+</summary>
+
+
+1.  Commit your project file locally by typing the following in your code editor's terminal. 
 
 - Note: If you added an image file, you will also need to `git add public/project-images/YOUR-PROJECT-IMAGE-FILE`
 
@@ -224,8 +292,18 @@ git commit -m "Add YOUR PROJECT NAME"
 ```
 git push origin main
 ```
+  
+</details>
+
+
+
 
 ## Open a pull request
+
+<details>
+  <summary>
+Open a pull request to the main branch, keeping the defaults in place. Title the PR with your project name and whether you are adding or editing it. Optionally, add a description with any specific details or requests.
+  </summary>
 
 Navigate to your copy of the ossi-website repository on GitHub.com. Along the top navigation tabs:
 
@@ -254,14 +332,22 @@ The **Open pull request** page will open.
 
 6. Click the green **Create pull request** button to submit your pull request. **Note**: leave the option **Allow edits by maintainers** checked. This will allow the website maintainers to help edit your project file before completing the pull request, if needed.
    ![GitHub.com interface to set the title, description, and other details about a pull request. Also includes the button to submit the pull request](./public/readme-images/open-pr-3.png)
+</details>
 
-After you submit your pull request, an automated check will run to ensure your tag categories and options are valid. If the check fails, a comment will publish to your pull request, indicating where the problem is.
 
+
+After you submit your pull request, an automated check will run to ensure your tag categories and options are valid. 
+
+<details>
+  <summary>If the check fails, a comment will publish to your pull request, indicating where the problem is.</summary>
+  
 ![Comment on a GitHub pull request indicating that the project file has invalid tags](./public/readme-images/tag-validation-fail.png)
 
 To fix the error, return to your code editor and make the required changes to the file. Then follow the instructions to [commit and push your changes](#preview-your-project-page-and-push-your-changes-to-github). These changes will be added to the open pull request. Once there are no tag validation errors, a success comment will post to your pull request.
 
 ![Comment on a GitHub pull request indicating the modified project files have valid tags](./public/readme-images/tag-validation-success.png)
+
+</details>
 
 Your PR will be reviewed by the maintainers of the OSSI site. You may receive requests for changes before your PR is approved.
 
