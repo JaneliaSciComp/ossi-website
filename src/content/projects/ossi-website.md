@@ -15,6 +15,6 @@ how to cite link: https://janeliascicomp.github.io/ossi-website/
 # image alt text: Alt text is required if you upload an image file
 development team: [Scientific Computing Software]
 software type: [Website]
-programming language: [Javascript]
+programming language: [Javascript, Astro]
 open source license: [BSD-3 Clause, test]
 ---
