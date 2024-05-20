@@ -1,15 +1,16 @@
 ---
-title: Your project title
-tagline: "Project tagline. An aside: if you use a colon in this or any other field value, you must wrap the entire phrase in quotes. Otherwise, quotes are not required."
+title: Required. Your project title.
+tagline: "Required. 1-2 sentences that describe your project. An aside: if you use a colon in a field value, you must wrap the entire phrase in quotes. Otherwise, quotes are not required."
 maintainer: Name of the person responsible for maintaining this project page.
 maintainer contact info: Either a URL (e.g., GitHub repo issues link) or email in the format of mailto:email@example.com
+#project type - Required. Pick one of the three options - delete the other two.
 project type: [OSSI - current, OSSI - alumni, Other]
-OSSI proposal link: Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `../../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
-github link: Link to GitHub repository
-documentation link: Link to documentation - can be the same as the GitHub repo if the README is the documentation
-installation instructions link: Link to installation instructions - can be the same as the GitHub repo
-how to cite text: "The citation for your software - wrap in quotes to ensure colons are interpreted correctly. If your software doesn't have an associated published paper or DOI, leave this blank."
-how to cite link: "https://doi.org/example - wrap entire link in quotes. If a DOI is not available, leave this blank - your GitHub repo will be used as the default."
+OSSI proposal link: Required if your project is OSSI-funded. Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `../../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
+github link: Required. Link to GitHub repository
+documentation link: Required. Link to documentation - can be the same as the GitHub repo if the README is the documentation
+installation instructions link: Required. Link to installation instructions - can be the same as the GitHub repo
+how to cite text: "The citation for your software - wrap in quotes to ensure colons are interpreted correctly. If your software doesn't have an associated published paper or DOI, delete or comment-out this field to use your GitHub repo as the default."
+how to cite link: "https://doi.org/example - wrap entire link in quotes. If a DOI is not available, then delete or comment-out this field to use your GitHub repo as the default."
 additional links array:
   [
     Optional additional external links,
@@ -20,18 +21,19 @@ additional links array:
   ]
 additional links text array:
   [
-    The display text you wish to appear for each link provided above,
+    Optional. The display text you wish to appear for each link provided above,
     Display text for link 2,
     Display text for link 3,
     Display text for link 4,
     Etc.,
   ]
 related blog posts:
-  [Optional-file-name, Only-for-blog-posts-hosted-on-this-site]
-image file: ./optional-file-path.jpg
-image caption: Required if you upload an image file - this will dislay on the site
+  [Optional, Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
+image file: ./optional-file-path--only-one-file-currently-supported.jpg
+image caption: Required if you upload an image file
 youtube url: https://optional-youtube-url.com
-youtube caption: Required if you provide a youtube url - this will display on the site
+youtube caption: Required if you provide a youtube url
+#Optional "tag" fields. Select tags from the provided options - delete the options that are not applicable. If you feel another option is required to describe your project, add it and then note this in your pull request.
 development team:
   [
     Branson Lab,

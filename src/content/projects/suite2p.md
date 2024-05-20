@@ -1,8 +1,8 @@
 ---
 title: Suite2p
 tagline: Pipeline for processing two-photon calcium imaging data.
-maintainer: Stringer et al.
-maintainer contact info: https://github.com/MouseLand/suite2p/issues
+maintainer: Carsen String
+maintainer contact info: mailto:stringerc@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/suite2p_and_cellpose.pdf
 github link: https://github.com/MouseLand/suite2p
@@ -15,8 +15,8 @@ additional links text array: ["suite2p homepage"]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-youtube url: https://www.youtube.com/watch?v=FpE8Jqv6o_w
-youtube caption: A description of Cellpose and Suite2p by Carsen Stringer, which is supported by the Open Science Software Initiative Project.
+youtube url: https://www.youtube.com/watch?v=L0cX6V2wFUU
+youtube caption: Suite2p computational tutorial by Carsen Stringer, HHMI Janelia Research Campus
 development team: [Pachitariu Lab, Stringer Lab]
 programming language: [Python]
 open source license: [GPL-3.0]
@@ -30,4 +30,5 @@ use case:
   ]
 usage environment: [Google Colab, Local installation]
 software ecosystem: [Napari]
+# supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
 ---
