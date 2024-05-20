@@ -2,6 +2,7 @@
 
 ## Contents
 
+- [Quick reference](#quick-reference)
 - [Prerequesites](#prerequisites)
 - [Set-up](#set-up)
 - [Add a new project](#add-a-new-project)
@@ -13,6 +14,11 @@
   - [Requesting new tag categories or options](#requesting-new-tag-categories-or-options)
 - [Preview and push your changes to GitHub](#preview-your-project-page-and-push-your-changes-to-github)
 - [Open a pull request](#open-a-pull-request)
+
+## Quick reference
+
+The main steps of contributing to this repo. Read on or refer to specific sections, listed above, for additional details.
+![The main three steps for contributing to this repo - 1. fork and clone the repo, 2. add or edit a project following the project template, and 3. create a pull request against this repo's main branch](./public/readme-images/how-to-contribute-quick-reference.png)
 
 ## Prerequisites
 
@@ -33,9 +39,11 @@ git -v
 node -v
 npm -v
 ```
+
 </details>
 
 ## Set-up
+
 <details>
  <summary> 
    
@@ -48,7 +56,7 @@ npm -v
   2.  In the upper-right corner of the page, click **Fork**.
     ![Fork button on the GitHub repository page](./public/readme-images/fork.png)
 
-  3.  On the next page, you can keep the defaults and click **Create Fork** in the lower right. Or, optionally, you can change the repository name or description to be different than ossi-website, to     further distinguish your copy from the original repository.
+3.  On the next page, you can keep the defaults and click **Create Fork** in the lower right. Or, optionally, you can change the repository name or description to be different than ossi-website, to further distinguish your copy from the original repository.
 
 </details>
 <details>
@@ -60,31 +68,31 @@ npm -v
   
   1.  On the [JaneliaSciComp/ossi-website](https://github.com/JaneliaSciComp/ossi-website) repository page, above the list of files, click the green **Code** button.
 
-  2.  In the dropdown that appears, select the **SSH** tab.
+2.  In the dropdown that appears, select the **SSH** tab.
 
-  3.  Click the **Copy** icon found to the right of the SSH key.
+3.  Click the **Copy** icon found to the right of the SSH key.
     ![Green code button and associated dropdown menu on the GitHub repository page](./public/readme-images/clone.png)
 
-  **Note**: If you see an error like the below when attempting to copy the SSH key, please follow the instructions in [this tutorial](https://sbme-tutorials.github.io/2019/data-structures/notes/  public_key.html) to create a public SSH key for your GitHub account.
+**Note**: If you see an error like the below when attempting to copy the SSH key, please follow the instructions in [this tutorial](https://sbme-tutorials.github.io/2019/data-structures/notes/ public_key.html) to create a public SSH key for your GitHub account.
 ![Error message on GitHub.com indicating the account does not have a public SSH key](./public/readme-images/SSH-error.png)
 
-  4.  Open a new terminal in your code editor.
+4.  Open a new terminal in your code editor.
 
-  5.  Change the current working directory to the location where you want the cloned directory, e.g.,:
+5.  Change the current working directory to the location where you want the cloned directory, e.g.,:
 
 ```
 cd PATH/TO/DESIRED/LOCATION/HERE
 ```
 
-  6.  Type `git clone` and then paste the SSH key you just copied. E.g.,:
+6.  Type `git clone` and then paste the SSH key you just copied. E.g.,:
 
 ```
 git clone git@github.com:YOUR-USERNAME/YOUR-REPO-NAME.git
 ```
 
-  7.  Hit enter to clone the repo onto your local computer. You should see output in the terminal like the below.
+7.  Hit enter to clone the repo onto your local computer. You should see output in the terminal like the below.
     ![Sample terminal output after using the command to clone a GitHub repo](./public/readme-images/clone-2.png)
-    
+
 </details>
 <details open>
 <summary>
@@ -93,13 +101,13 @@ git clone git@github.com:YOUR-USERNAME/YOUR-REPO-NAME.git
   
 </summary>
   
-  1.  In the terminal of the code editor, navigate to your local directory with the cloned repo. 
+  1.  In the terminal of the code editor, navigate to your local directory with the cloned repo.
 
 ```
 cd path/to/local/YOUR-REPOSITORY-NAME
 ```
 
-  2.  Type the below two commands in the terminal - the first command directs npm to install dependencies specific to the repo and the second starts the local server and opens it automatically in your default web browswer.
+2.  Type the below two commands in the terminal - the first command directs npm to install dependencies specific to the repo and the second starts the local server and opens it automatically in your default web browswer.
 
 ```
 npm install
@@ -107,11 +115,12 @@ npm run dev
 ```
 
 **Note:** If the local server does not automatically appear in your web browser, input `localhost:4321/ossi-website` into your preferred web browser to view the website.
+
 </details>
 
 ## Add a new project
 
-Below is an abbreviated file tree showing key folders and files you'll find in your local copy of the repository. 
+Below is an abbreviated file tree showing key folders and files you'll find in your local copy of the repository.
 **If a Markdown file for your project already exists in `src/content/projects` - skip to [Edit a project](#edit-a-project).**
 
 ```text
@@ -155,7 +164,7 @@ At the top of your project file are data sandwiched between triple-dashes (---).
  <summary>
 
 #### Table with detailed guidance for project data fields
-   
+
  </summary>
   
   | Field name                       | Required or optional                                                                                      | How to complete                                                                                                                                                                                                                                                                                                              |
@@ -188,7 +197,6 @@ At the top of your project file are data sandwiched between triple-dashes (---).
 
 </details>
 
-
 ### Guidance for "tag" fields
 
 Tags are used to allow website visitors to filter displayed projects.
@@ -203,7 +211,7 @@ Tags are used to allow website visitors to filter displayed projects.
   <summary>
 
 #### If you feel there is an additional tag **option** required to describe your project
-    
+
   </summary>
 
 - Go ahead and add the option(s) to your project file. In your pull request, please note you added the option and provide a brief explanation why. When you open your pull request, these new options will throw a warning for the website maintainer for review.
@@ -212,20 +220,19 @@ Tags are used to allow website visitors to filter displayed projects.
   <summary>
 
 #### If you feel there is an additional tag **category** required to describe your project
-    
+
   </summary>
 
 - _Do not add the new tag category to your project's template - this will prevent your project page from displaying in your local server._
 - Open a separate [pull request](#open-a-pull-request) listing the new tag category(ies) with a brief explanation of why you feel the addition is necessary.
-  
-</details>
 
+</details>
 
 <details>
   <summary>
 
 ### Optional - Edit the project description
-    
+
   </summary>
 You are strongly encouraged to use your software project's GitHub README as it's description. This will minimize the amount of work required by the maintainer to keep the project description and details up-to-date.
 
@@ -235,13 +242,14 @@ To use your project's GitHub README as the project description:
 2. If the template text is still in the Markdown file following the closing triple dashes (---) on the frontmatter - leave it. If you replaced this text with something else, delete everything below the triple dashes.
 
 If you would rather provide a custom project description, you can do so by typing it below the closing triple dashes on the frontmatter. You can use [Markdown syntax](https://www.markdownguide.org/basic-syntax/) to add hyperlinks, layout/text effects (e.g., headings, lists, **bold** or _italic_ text), etc.
+
 </details>
 
 <details>
   <summary>
 
 ### Optional - Add an image
-    
+
   </summary>
 
 1. Add your desired image to `/public/project-images/`, using a filename without spaces.
@@ -255,7 +263,7 @@ If you would rather provide a custom project description, you can do so by typin
   <summary>
 
 #### Preview your project page on the local dev server.
-    
+
   </summary>
 
 1.  Make sure you've saved all your changes on your local computer.
@@ -274,11 +282,10 @@ localhost:4321/ossi-website/projects/<your-project-name>
 <summary>
 
 #### When you're done editing the project file and adding optional images, commit your changes and push them to GitHub.
-  
+
 </summary>
 
-
-1.  Commit your project file locally by typing the following in your code editor's terminal. 
+1.  Commit your project file locally by typing the following in your code editor's terminal.
 
 - Note: If you added an image file, you will also need to `git add public/project-images/YOUR-PROJECT-IMAGE-FILE`
 
@@ -292,11 +299,8 @@ git commit -m "Add YOUR PROJECT NAME"
 ```
 git push origin main
 ```
-  
+
 </details>
-
-
-
 
 ## Open a pull request
 
@@ -331,12 +335,10 @@ The **Open pull request** page will open.
 5. Add a title in the format of "Add YOUR PROJECT NAME" or "Edit YOUR PROJECT NAME", if needed. If you only made one commit, the **Add a title** text box should autopopulate as from your commit message. Optionally, you can add specific requests or explanations to the **Add a description** text box.
 
 6. Click the green **Create pull request** button to submit your pull request. **Note**: leave the option **Allow edits by maintainers** checked. This will allow the website maintainers to help edit your project file before completing the pull request, if needed.
-   ![GitHub.com interface to set the title, description, and other details about a pull request. Also includes the button to submit the pull request](./public/readme-images/open-pr-3.png)
+![GitHub.com interface to set the title, description, and other details about a pull request. Also includes the button to submit the pull request](./public/readme-images/open-pr-3.png)
 </details>
 
-
-
-After you submit your pull request, an automated check will run to ensure your tag categories and options are valid. 
+After you submit your pull request, an automated check will run to ensure your tag categories and options are valid.
 
 <details>
   <summary>If the check fails, a comment will publish to your pull request, indicating where the problem is.</summary>
