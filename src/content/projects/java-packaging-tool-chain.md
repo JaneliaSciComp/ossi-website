@@ -1,8 +1,8 @@
 ---
 title: Java packaging tool chain
 tagline: Develop an easy-to-use packaging system for Java applications.
-maintainer: Saalfeld et al.
-maintainer contact info: mailto:saalfelds@janelia.hhmi.org
+maintainer: Caleb Hulbert
+maintainer contact info: mailto:hulbertc@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/jvm_tool_deployment.pdf
 github link: "#"
@@ -10,6 +10,28 @@ documentation link: "#"
 installation instructions link: "#"
 # how to cite link:
 how to cite text: Software under development
+# additional links array:
+#   [
+#     Optional additional external links,
+#     For example - to a project hompage,
+#     External blog posts,
+#     Additional related publications,
+#     Etc.,
+#   ]
+# additional links text array:
+#   [
+#     Optional. The display text you wish to appear for each link provided above,
+#     Display text for link 2,
+#     Display text for link 3,
+#     Display text for link 4,
+#     Etc.,
+#   ]
+# related blog posts:
+#   [Optional, Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
+# image file: ./optional-file-path--only-one-file-currently-supported.jpg
+# image caption: Required if you upload an image file
+# youtube url: https://optional-youtube-url.com
+# youtube caption: Required if you provide a youtube url
 development team: [Saalfeld Lab, Scientific Computing Software]
 programming language: Java
 open source license: []
