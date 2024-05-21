@@ -19,6 +19,8 @@ additional links text array:
     Paintera Video Tutorial
   ]
 related blog posts: [ working-with-ossi-supported-projects ]
+image file: paintera.png
+image alt text: Paintera Logo
 youtube url: https://youtu.be/rNJotgwUYqc?si=ZqJh7chaYlPxcSEj
 youtube caption: Paintera for dense labeling of large 3D data
 development team: [ Saalfeld Lab ]
