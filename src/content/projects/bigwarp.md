@@ -21,8 +21,8 @@ how to cite text: "JA Bogovic, P Hanslovsky, A Wong, S Saalfeld, Robust registra
 #     Display text for link 2,
 #   ]
 # related blog posts: [Only-for-posts-hosted-on-this-site, Optional-file-name]
-# image file: ./optional-file-path.jpg
-# image alt text: Alt text is required if you upload an image file
+image file: bigwarp.png
+image alt text: A deformable transformation created and visualized with BigWarp.
 youtube url: https://www.youtube.com/watch?v=65jc9ViXhMk
 youtube caption: A description of BigWarp by John Bogovic from the Saalfeld lab, which is supported by the Open Science Software Initiative.
 development team: [Saalfeld Lab]
@@ -31,21 +31,19 @@ open source license: [GPL-2.0]
 software type: [Native application]
 use case:
   [
+    Image registration,
     Confocal light microscopy (LM),
     Correlative light EM (CLEM),
     Electron microscopy (EM),
     Expansion microscopy (ExM),
-    Image registration,
   ]
 usage environment: [Local installation]
-# software ecosystem:
-#   [
-#     BigDataViewer,
-#     Fiji,
-#     ImgLib2,
-#     Janelia Workstation,
-#     Java Virtual Machine,
-#     Napari,
-#   ]
-supported file types: [N5]
+software ecosystem:
+  [
+    BigDataViewer,
+    Fiji,
+    ImgLib2,
+    Java Virtual Machine,
+  ]
+supported file types: [HDF5, N5, TIFF, Zarr, Zeiss CZI]
 ---
