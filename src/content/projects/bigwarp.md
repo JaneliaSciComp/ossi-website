@@ -45,5 +45,5 @@ software ecosystem:
     ImgLib2,
     Java Virtual Machine,
   ]
-supported file types: [HDF5, N5, TIFF, Zarr, Zeiss CZI]
+supported file types: [HDF5, N5, TIFF, OME-Zarr, Zeiss CZI]
 ---
