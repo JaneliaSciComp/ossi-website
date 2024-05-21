@@ -79,6 +79,7 @@
     "Napari"
   ],
   "supported file types": [
+    "HDF5",
     "N5",
     "NWB",
     "OBJ",

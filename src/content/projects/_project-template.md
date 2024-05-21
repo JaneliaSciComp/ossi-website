@@ -110,7 +110,20 @@ software ecosystem:
     Java Virtual Machine,
     Napari,
   ]
-supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
+supported file types:
+  [
+    "HDF5",
+    "N5",
+    "NWB",
+    "OBJ",
+    "OME-Zarr",
+    "SWC",
+    "H5J",
+    "TIFF",
+    "Zeiss CZI",
+    "mpeg",
+    "avi",
+  ]
 ---
 
 To use your project's GitHub README as your project's description - delete all text below the triple dash (---) . Note - your GitHub repo must be public for this to work. This option is strongly encouraged - it will minimize the effort required on your part to keep your software information up to date on this site.
