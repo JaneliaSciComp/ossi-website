@@ -1,7 +1,7 @@
 ---
 title: Cellpose
 tagline: A generalist algorithm for cell and nucleus segmentation (v1.0) that can be optimized for your own data (v2.0) and perform image restoration (v3.0).
-maintainer: Carsen Stinger
+maintainer: Carsen Stringer
 preferred contact method: https://forum.image.sc/tag/cellpose
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/suite2p_and_cellpose.pdf
