@@ -2,7 +2,7 @@
 title: BigWarp
 tagline: Maintain and extend BigWarp (3D non-rigid registration for very large volumes).
 maintainer: John Bogovic
-maintainer contact info: mailto:bogovicj@janelia.hhmi.org
+maintainer contact info: https://forum.image.sc/tag/bigwarp
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/bigwarp.pdf
 github link: https://github.com/saalfeldlab/bigwarp

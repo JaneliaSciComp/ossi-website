@@ -1,15 +1,15 @@
 ---
 title: Required. Your project title.
 tagline: "Required. 1-2 sentences that describe your project. An aside: if you use a colon in a field value, you must wrap the entire phrase in quotes. Otherwise, quotes are not required."
-maintainer: Name of the person responsible for maintaining this project page.
-maintainer contact info: Either a URL (e.g., GitHub repo issues link) or email in the format of mailto:email@example.com
+maintainer: Required. Name of the person responsible for maintaining this project page. For internal use/reference - not posted to the website.
+preferred contact method: Required. Preferred way for users to reach out for help (e.g., a link to the GitHub repo's issues, Image.sc forum, or email in the format of mailto:email@example.com)
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [OSSI - current, OSSI - alumni, Other]
 OSSI proposal link: Required if your project is OSSI-funded. Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `../../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
 github link: Required. Link to GitHub repository
 documentation link: Required. Link to documentation - can be the same as the GitHub repo if the README is the documentation
 installation instructions link: Required. Link to installation instructions - can be the same as the GitHub repo
-how to cite text: "The citation for your software - wrap in quotes to ensure colons are interpreted correctly. If your software doesn't have an associated published paper or DOI, delete or comment-out this field to use your GitHub repo as the default."
+how to cite text: "If your software doesn't have an associated published paper or DOI, delete or comment-out this field to use your GitHub repo as the default. Otherwise, provide the citation for your software - wrap in quotes to ensure colons are interpreted correctly. "
 how to cite link: "https://doi.org/example - wrap entire link in quotes. If a DOI is not available, then delete or comment-out this field to use your GitHub repo as the default."
 additional links array:
   [
