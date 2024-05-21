@@ -2,7 +2,7 @@
 title: NeuronBridge
 tagline: A web application for easily and rapidly finding putative morphological matches between large data sets of neurons imaged using different modalities, namely electron microscopy (EM) and light microscopy (LM). Matches have been precomputed for all of Janelia's public EM/LM data sets, and are quick to look up by identifier. You can also upload your own data and match it against these public data sets.
 maintainer: NeuronBridge Team
-maintainer contact info: mailto:neuronbridge@janelia.hhmi.org
+preferred contact method: mailto:neuronbridge@janelia.hhmi.org
 project type: [Other]
 github link: https://github.com/JaneliaSciComp/neuronbridge
 documentation link: https://neuronbridge.janelia.org/help
@@ -19,11 +19,7 @@ programming language: [Javascript, Python, Java]
 open source license: [BSD-3 Clause]
 software type: [Service, Web application, Website]
 supported file types: [H5J, SWC]
-use case:
-  [
-    Confocal light microscopy (LM),
-    Electron microscopy (EM),
-  ]
+use case: [Confocal light microscopy (LM), Electron microscopy (EM)]
 usage environment: [Cloud, Web browser]
 software ecosystem: []
 ---

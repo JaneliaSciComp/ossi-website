@@ -2,7 +2,7 @@
 title: BigWarp
 tagline: Maintain and extend BigWarp (3D non-rigid registration for very large volumes).
 maintainer: John Bogovic
-maintainer contact info: https://forum.image.sc/tag/bigwarp
+preferred contact method: https://forum.image.sc/tag/bigwarp
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/bigwarp.pdf
 github link: https://github.com/saalfeldlab/bigwarp
@@ -38,12 +38,6 @@ use case:
     Expansion microscopy (ExM),
   ]
 usage environment: [Local installation]
-software ecosystem:
-  [
-    BigDataViewer,
-    Fiji,
-    ImgLib2,
-    Java Virtual Machine,
-  ]
+software ecosystem: [BigDataViewer, Fiji, ImgLib2, Java Virtual Machine]
 supported file types: [HDF5, N5, TIFF, OME-Zarr, Zeiss CZI]
 ---

@@ -2,7 +2,7 @@
 title: Paintera
 tagline: Maintain and extend Paintera (3D annotation software for very large volumes).
 maintainer: Caleb Hulbert
-maintainer contact info: mailto:hulbertc@janelia.hhmi.org
+preferred contact method: mailto:hulbertc@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/paintera.pdf
 github link: https://github.com/saalfeldlab/paintera
