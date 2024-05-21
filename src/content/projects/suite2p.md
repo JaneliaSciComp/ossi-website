@@ -1,8 +1,8 @@
 ---
 title: Suite2p
 tagline: Pipeline for processing two-photon calcium imaging data.
-maintainer: Carsen String
-maintainer contact info: mailto:stringerc@janelia.hhmi.org
+maintainer: Carsen Stringer
+preferred contact method: mailto:stringerc@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/suite2p_and_cellpose.pdf
 github link: https://github.com/MouseLand/suite2p

@@ -2,7 +2,7 @@
 title: Java packaging tool chain
 tagline: Develop an easy-to-use packaging system for Java applications.
 maintainer: Caleb Hulbert
-maintainer contact info: mailto:hulbertc@janelia.hhmi.org
+preferred contact method: mailto:hulbertc@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/jvm_tool_deployment.pdf
 github link: "#"

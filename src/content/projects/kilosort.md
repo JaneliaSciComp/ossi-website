@@ -2,7 +2,7 @@
 title: Kilosort
 tagline: Maintain and develop python version of Kilosort (electrophysiology data).
 maintainer: Carsen Stringer
-maintainer contact info: mailto:stringerc@janelia.hhmi.org
+preferred contact method: mailto:stringerc@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/kilosort.pdf
 github link: https://github.com/MouseLand/Kilosort

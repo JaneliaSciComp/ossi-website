@@ -2,7 +2,7 @@
 title: Entrypoints
 tagline: Support multiple entrypoint scripts in a container for use in containerized scientific tools.
 maintainer: Rokicki
-maintainer contact info: https://github.com/JaneliaSciComp/entrypoints/issues
+preferred contact method: https://github.com/JaneliaSciComp/entrypoints/issues
 project type: [Other]
 github link: https://github.com/JaneliaSciComp/entrypoints
 documentation link: https://github.com/JaneliaSciComp/entrypoints

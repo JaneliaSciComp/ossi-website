@@ -2,7 +2,7 @@
 title: Stitching-Spark
 tagline: Reconstructing large microscopy images from overlapping image tiles on a high-performance Spark cluster.
 maintainer: John Bogovic
-maintainer contact info: mailto:bogovicj@janelia.hhmi.org
+preferred contact method: mailto:bogovicj@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/petascale_lightsheet.pdf
 github link: https://github.com/saalfeldlab/stitching-spark
