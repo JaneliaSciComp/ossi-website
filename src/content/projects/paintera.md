@@ -29,6 +29,6 @@ open source license: GPL-2.0
 software type: [ Native application ]
 use case: [ Annotation, Visualization, Electron microscopy (EM) ]
 usage environment: [ Local installation ]
-software ecosystem: [ ImgLib2, BigDataViewer, N5 ]
+software ecosystem: [ ImgLib2, BigDataViewer ]
 supported file types: N5
 ---
