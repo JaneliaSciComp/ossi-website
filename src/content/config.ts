@@ -7,7 +7,6 @@ const projectsCollection = defineCollection({
     title: z.string(),
     tagline: z.string(),
     maintainer: z.string(),
-    "preferred contact method": z.string(),
     "project type": z.array(z.string()),
     "OSSI proposal link": z.string().optional(),
     "github link": z.string(),
@@ -15,6 +14,7 @@ const projectsCollection = defineCollection({
     "installation instructions link": z.string().optional(),
     "how to cite text": z.union([z.string(), z.undefined(), z.null()]),
     "how to cite link": z.union([z.string(), z.undefined(), z.null()]),
+    "preferred contact method": z.string().optional(),
     "additional links array": z.array(z.string()).optional(),
     "additional links text array": z.array(z.string()).optional(),
     "related blog posts": z.union([

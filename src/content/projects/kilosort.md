@@ -2,7 +2,6 @@
 title: Kilosort
 tagline: Maintain and develop python version of Kilosort (electrophysiology data).
 maintainer: Carsen Stringer
-preferred contact method: mailto:stringerc@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/kilosort.pdf
 github link: https://github.com/MouseLand/Kilosort
@@ -23,9 +22,9 @@ how to cite text: Pachitariu, M., Sridhar, S., Pennington, J., & Stringer, C. (2
 related blog posts: [working-with-ossi-supported-projects]
 # image file: ./optional-file-path.jpg
 # image alt text: Alt text is required if you upload an image file
-youtube url: https://www.youtube.com/watch?v=cmrAhhquC9E
-youtube caption: 2021 Lecture - Spike sorting with Kilosort - Marius Pachitariu (HHMI)
-development team: Pachitariu Lab
+youtube url: https://www.youtube.com/watch?v=LTSmoACr918
+youtube caption: Lecture on Kilosort by Marius Pachitariu at the 2023 UCL Neuropixels Course
+development team: [Pachitariu Lab, Stringer Lab]
 programming language: ["MATLAB", "Python"]
 open source license: GPL-2.0
 software type: Package
