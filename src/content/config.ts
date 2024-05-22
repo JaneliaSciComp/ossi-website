@@ -7,7 +7,7 @@ const projectsCollection = defineCollection({
     title: z.string(),
     tagline: z.string(),
     maintainer: z.string(),
-    "preferred contact method": z.string(),
+    "preferred contact method": z.string().optional(),
     "project type": z.array(z.string()),
     "OSSI proposal link": z.string().optional(),
     "github link": z.string(),

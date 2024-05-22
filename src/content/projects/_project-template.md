@@ -2,7 +2,7 @@
 title: Required. Your project title.
 tagline: "Required. 1-2 sentences that describe your project. An aside: if you use a colon in a field value, you must wrap the entire phrase in quotes. Otherwise, quotes are not required."
 maintainer: Required. Name of the person responsible for maintaining this project page. For internal use/reference - not posted to the website.
-preferred contact method: Required. Preferred way for users to reach out for help (e.g., a link to the GitHub repo's issues, Image.sc forum, or email in the format of mailto:email@example.com)
+preferred contact method: "Required if the preferred way for users to reach out for help is something other than creating an issue in the project's GitHub repo. Examples: link to Image.sc forum, or email in the format of mailto:email@example.com"
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [OSSI - current, OSSI - alumni, Other]
 OSSI proposal link: Required if your project is OSSI-funded. Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `../../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
