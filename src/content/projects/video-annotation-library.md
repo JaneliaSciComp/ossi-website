@@ -10,8 +10,8 @@ documentation link: https://github.com/JaneliaSciComp/videoAnnotation
 installation instructions link: https://github.com/JaneliaSciComp/videoAnnotation
 how to cite link: https://github.com/JaneliaSciComp/videoAnnotation
 how to cite text: Cite the software on GitHub
-image file: jacob-miller-ot5kWZkH97s-unsplash.jpg
-image alt text: Image that look like video annotation timeline
+image file: SCSW_Logo.png
+image alt text: Scientific Computing Software Logo
 development team: [Branson Lab, Scientific Computing Software]
 programming language: [Python, Javascript]
 open source license: [BSD-3 Clause]
@@ -36,17 +36,3 @@ We have developed a **general-purpose, extensible library for visualizing and an
 It enables new machine learning applications to biology time series data, as it allows developers
 to efficiently collect annotations. One can quickly and easily incorporate this library
 into a new application, and tailor it to the details of the application, allowing for efficient labeling.
-
-<hr/>
-<p>A test to see if html is rendered correctly and tailwind is applied</p>
-<div class="flex flex-row">
-  <div class="basis-1/3 bg-red-100">
-   01
-  </div>
-  <div class="basis-1/3 bg-green-100">
-  02
-  </div>
-  <div class="basis-1/3 bg-blue-100">
-  03
-  </div>
-</div>
