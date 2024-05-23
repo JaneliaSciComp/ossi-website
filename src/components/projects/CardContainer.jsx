@@ -22,6 +22,9 @@ export default function CardContainer({
   const urlQuery = useStore($urlQuery);
   const projectData = useStore($projectData);
   const ecosystemData = useStore($ecosystemData);
+  const $selectedTags = useStore(selectedTags);
+  const $selectedProjectType = useStore(selectedProjectType);
+  const tagsArray = extractUniqueTagValueArray(tagsObj);
 
   let contentData = null;
   if (contentType === "projects") {
@@ -33,10 +36,6 @@ export default function CardContainer({
       contentData = ecosystemData;
     }
   }
-
-  const $selectedTags = useStore(selectedTags);
-  const $selectedProjectType = useStore(selectedProjectType);
-  const tagsArray = extractUniqueTagValueArray(tagsObj);
 
   function findMatchingIndex(contentData, title) {
     if (!contentData) {
