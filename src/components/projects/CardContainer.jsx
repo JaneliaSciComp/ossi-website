@@ -52,7 +52,8 @@ export default function CardContainer({
   useEffect(() => {
     if (typeof window !== "undefined") {
       const matchingIndex = findMatchingIndex(contentData, title);
-      setOrder(matchingIndex);
+      const itemOrder = matchingIndex + 1;
+      setOrder(itemOrder);
 
       const isSearchMatch =
         (urlQuery === "" &&
