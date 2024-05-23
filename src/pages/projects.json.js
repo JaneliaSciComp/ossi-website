@@ -2,9 +2,7 @@ import { getCollection } from "astro:content";
 import Fuse from "fuse.js";
 
 async function getProjects() {
-  const allProjects = (await getCollection("projects")).sort(
-    (a, b) => a.data.title.valueOf() - b.data.title.valueOf()
-  );
+  const allProjects = await getCollection("projects");
   return allProjects.map((project) => ({
     title: project.data.title,
     tagline: project.data.tagline,
