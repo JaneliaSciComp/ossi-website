@@ -19,18 +19,9 @@ import ToggleFilterMenuBtn from "../../components/projects/ToggleFilterMenuBtn";
 
 import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
-  }
-  return array;
-}
-
 const baseUrl = import.meta.env.BASE_URL;
 const pageTitle = "OSSI-supported projects";
-let allProjects = await getCollection("projects");
-allProjects = shuffleArray(allProjects);
+const allProjects = await getCollection("projects");
 
 // uniqueTags is an object where keys = unique tag categories, values = unique tags within a category, both across allProjects. All lowercase.
 // used to populate the filter menu
@@ -85,7 +76,6 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
         {
           allProjects.map((content) => {
             const tagsObj = extractUniqueTagsObject(content);
-            // console.log("tagsObj", tagsObj);
             return (
               <CardContainer
                 key={content.slug}
@@ -94,6 +84,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
                 tagsObj={tagsObj}
                 projectType={content.data["project type"][0]}
                 contentType="projects"
+                maxLength={allProjects.length}
                 client:only="react"
               >
                 {content.data["image file"] ? (
@@ -116,7 +107,6 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
                 />
                 <Fragment slot="tags">
                   {Object.entries(tagsObj).map(([tagCat, tags]) => {
-                    // console.log(tags);
                     return tags.map((tag) => {
                       return (
                         <Tag tagCat={tagCat} tag={tag} contentType="projects" />

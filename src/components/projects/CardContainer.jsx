@@ -16,6 +16,7 @@ export default function CardContainer({
   cardImage,
   cardContent,
   contentType,
+  maxLength,
 }) {
   const [visible, setVisible] = useState("relative");
   const [order, setOrder] = useState(0);
@@ -41,18 +42,19 @@ export default function CardContainer({
     if (!contentData) {
       return -1;
     }
-
     const index = contentData.findIndex(
       (content) => content.item.title === title
     );
     return index;
   }
 
+  //set card order in the grid/flexbox (random if no search query; otherwise based on Fuse score) and
   //determine whether card is visible or not based on: search query, tag selections, project type selections
   useEffect(() => {
     if (typeof window !== "undefined") {
       const matchingIndex = findMatchingIndex(contentData, title);
-      const itemOrder = matchingIndex + 1;
+      const itemOrder =
+        urlQuery === "" ? Math.floor(Math.random() * maxLength) : matchingIndex;
       setOrder(itemOrder);
 
       const isSearchMatch =
