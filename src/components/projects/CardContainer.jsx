@@ -18,9 +18,13 @@ export default function CardContainer({
   contentType,
 }) {
   const [visible, setVisible] = useState("relative");
+  const [order, setOrder] = useState(0);
   const urlQuery = useStore($urlQuery);
   const projectData = useStore($projectData);
   const ecosystemData = useStore($ecosystemData);
+  const $selectedTags = useStore(selectedTags);
+  const $selectedProjectType = useStore(selectedProjectType);
+  const tagsArray = extractUniqueTagValueArray(tagsObj);
 
   let contentData = null;
   if (contentType === "projects") {
@@ -33,18 +37,27 @@ export default function CardContainer({
     }
   }
 
-  const $selectedTags = useStore(selectedTags);
-  const $selectedProjectType = useStore(selectedProjectType);
-  const tagsArray = extractUniqueTagValueArray(tagsObj);
+  function findMatchingIndex(contentData, title) {
+    if (!contentData) {
+      return -1;
+    }
+
+    const index = contentData.findIndex(
+      (content) => content.item.title === title
+    );
+    return index;
+  }
 
   //determine whether card is visible or not based on: search query, tag selections, project type selections
   useEffect(() => {
     if (typeof window !== "undefined") {
+      const matchingIndex = findMatchingIndex(contentData, title);
+      setOrder(matchingIndex);
+
       const isSearchMatch =
         (urlQuery === "" &&
           (contentData === null || contentData.length === 0)) ||
-        (contentData &&
-          contentData.some((content) => content.item.title === title));
+        (contentData && matchingIndex !== -1);
 
       const hasMatchingTags =
         $selectedTags.length === 0 ||
@@ -73,6 +86,7 @@ export default function CardContainer({
 
   return (
     <div
+      style={{ order }}
       className={`${visible} col-span-1 w-full h-full mx-auto mb-4 bg-white dark:bg-slate-900 rounded-md shadow-md overflow-hidden border-gray-200 dark:border-slate-800 border-2 hover:shadow-lg transition duration-300 transform hover:scale-105`}
     >
       <a href={url} className="absolute top-0 left-0 bottom-0 right-0"></a>
