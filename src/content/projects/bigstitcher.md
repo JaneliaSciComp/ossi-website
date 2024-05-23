@@ -2,7 +2,7 @@
 title: BigStitcher
 tagline: A software package that allows simple and efficient alignment of multi-tile and multi-angle image datasets, for example acquired by lightsheet, widefield or confocal microscopes.
 maintainer: Stephan Preibisch
-preferred contact method: mailto:preibischs@janelia.hhmi.org
+# preferred contact method: mailto:preibischs@janelia.hhmi.org
 project type: [OSSI - current]
 OSSI proposal link: ../../proposals/petascale_lightsheet.pdf
 github link: https://github.com/preibischlab/bigstitcher/
