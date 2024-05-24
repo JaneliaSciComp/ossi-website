@@ -4,6 +4,8 @@ tagline: "Required. 1-2 sentences that describe your project. An aside: if you u
 maintainer: Required. Name of the person responsible for maintaining this project page. For internal use/reference - not posted to the website.
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [OSSI - current, OSSI - alumni, Other]
+#OSSI project status - Required if your project is OSSI-funded. Pick one option.
+OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
 OSSI proposal link: Required if your project is OSSI-funded. Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `../../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
 github link: Required. Link to GitHub repository
 documentation link: Required. Link to documentation - can be the same as the GitHub repo if the README is the documentation
