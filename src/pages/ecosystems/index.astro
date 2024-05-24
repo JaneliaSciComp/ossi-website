@@ -32,7 +32,7 @@ const allRelatedProjects = await Promise.all(
     //extracted from the relatedProjects subset of the project content collection.
     //This will be used to create the tags on each individual ecosystem card.
     ecosystem.data.tagsObj = extractUniqueTagsObject(relatedProjects);
-    console.log(ecosystem.data.tagsObj);
+    // console.log(ecosystem.data.tagsObj);
 
     return relatedProjects;
   })

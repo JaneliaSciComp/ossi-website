@@ -23,7 +23,6 @@ const { Content } = await ecosystem.render();
 const relatedProjects = frontmatter["related projects"]
   ? await getEntries(frontmatter["related projects"])
   : null;
-console.log(relatedProjects);
 const tagsObj = extractUniqueTagsObject(relatedProjects);
 
 const baseUrl = import.meta.env.BASE_URL;
