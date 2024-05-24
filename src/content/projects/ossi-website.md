@@ -13,7 +13,7 @@ how to cite text: Cite the current deployment
 how to cite link: https://janeliascicomp.github.io/ossi-website/
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
-# image alt text: Alt text is required if you upload an image file
+# image caption: Alt text is required if you upload an image file
 development team: [Scientific Computing Software]
 software type: [Website]
 programming language: [Javascript]

@@ -13,7 +13,9 @@ how to cite link: https://doi.org/10.1038/s41592-022-01669-y
 how to cite text: "Ella Bahry, Laura Breimann, Marwan Zouinkhi, Leo Epstein, Klim Kolyvanov, Nicholas Mamrak, Benjamin King, Xi Long, Kyle I S Harrington, Timothée Lionnet & Stephan Preibisch Nature Methods 2022, doi: https://doi.org/10.1038/s41592-022-01669-y"
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
-# image alt text: Alt text is required if you upload an image file
+# image caption: Alt text is required if you upload an image file
+# youtube url: https://youtu.be/rNJotgwUYqc?si=ZqJh7chaYlPxcSEj
+# youtube caption: Paintera for dense labeling of large 3D data
 development team: [Scientific Computing Software]
 programming language: [Java]
 open source license: [GPL-2.0, GPL-3.0]

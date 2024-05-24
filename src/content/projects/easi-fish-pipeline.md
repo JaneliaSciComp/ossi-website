@@ -23,7 +23,7 @@ how to cite text: Wang Y, Eddison M, Fleishman G, Weigert M, Xu S, Wang T, Rokic
 #   ]
 #related blog posts: [Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
 image file: EASI-FISH.png
-image alt text: Data processed by the EASI-FISH pipeline
+image caption: Data processed by the EASI-FISH pipeline
 # youtube url: https://optional-youtube-url.com
 # youtube caption: Required if you provide a youtube url
 development team: [MultiFISH, Scientific Computing Software]

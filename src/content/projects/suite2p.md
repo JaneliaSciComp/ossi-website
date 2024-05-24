@@ -14,7 +14,7 @@ additional links array: [https://www.suite2p.org/]
 additional links text array: ["suite2p homepage"]
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
-# image alt text: Alt text is required if you upload an image file
+# image caption: Alt text is required if you upload an image file
 youtube url: https://www.youtube.com/watch?v=L0cX6V2wFUU
 youtube caption: Suite2p computational tutorial by Carsen Stringer, HHMI Janelia Research Campus
 development team: [Pachitariu Lab, Stringer Lab]

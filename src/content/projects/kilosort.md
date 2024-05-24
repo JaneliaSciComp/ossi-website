@@ -22,7 +22,7 @@ how to cite text: Pachitariu, M., Sridhar, S., Pennington, J., & Stringer, C. (2
 #   ]
 related blog posts: [working-with-ossi-supported-projects]
 # image file: ./optional-file-path.jpg
-# image alt text: Alt text is required if you upload an image file
+# image caption: Alt text is required if you upload an image file
 youtube url: https://www.youtube.com/watch?v=LTSmoACr918
 youtube caption: Lecture on Kilosort by Marius Pachitariu at the 2023 UCL Neuropixels Course
 development team: [Pachitariu Lab, Stringer Lab]

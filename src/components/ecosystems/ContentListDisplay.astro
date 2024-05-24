@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import Button from "./Button.astro";
-import Item from "./DisplayItem.astro";
+import Button from "../Button.astro";
+import Item from "../DisplayItem.astro";
 
 const {
   title,
@@ -10,23 +10,26 @@ const {
   linkUrl,
   information,
   subset,
+  id,
+  isDark = false,
+  classes = {},
   bg = await Astro.slots.render("bg"),
 } = Astro.props;
 
 const items = await getCollection(content);
 ---
 
-<>
-  <div class="flex flex-col gap-4 lg:gap-0 lg:justify-between lg:flex-row mb-8">
+<section class="max-w-5xl mx-auto px-6">
+  <div class="flex flex-col mb-8">
     {
       title && (
         <div class="md:max-w-sm">
           <h2
-            class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-4"
+            class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
             set:html={title}
           />
           {linkText && linkUrl && (
-            <Button variant="link" href={linkUrl} class="mb-4">
+            <Button variant="link" href={linkUrl}>
               {" "}
               {linkText} »
             </Button>
@@ -44,11 +47,11 @@ const items = await getCollection(content);
       )
     }
   </div>
-  <div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 -mb-6">
+  <div class="-mb-6">
     {
       subset
         ? subset.map((item) => <Item item={item} content={content} />)
         : items.map((item) => <Item item={item} content={content} />)
     }
   </div>
-</>
+</section>

@@ -12,9 +12,9 @@ installation instructions link: https://hortacloud.janelia.org/docs/administrati
 how to cite link: https://github.com/JaneliaSciComp/hortacloud
 # how to cite text:
 image file: HortaCloud.png
-image alt text: A screenshot of HortaCloud running in a web browser
+image caption: A screenshot of HortaCloud running in a web browser
 youtube url: https://www.youtube.com/watch?v=b8bPQblvEE0&list=PLfBkfxqisR_fJdKDsa6tzc7DA4e2hwUUz
-youtube alt text: This video shows HortaCloud in action, annotating neurons through large scale 3D microscopy imagery of a mouse brain.
+youtube caption: This video shows HortaCloud in action, annotating neurons through large scale 3D microscopy imagery of a mouse brain.
 development team: [MouseLight, Scientific Computing Software]
 programming language: [Java, Typescript]
 open source license: [BSD-3 Clause]

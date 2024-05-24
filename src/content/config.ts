@@ -88,7 +88,7 @@ const blogCollection = defineCollection({
       tagline: z.string().optional(),
       "author names": z.string(),
       "image file": image().optional(),
-      "image alt text": z.string().optional(),
+      "image caption": z.string().optional(),
       "related projects": z.union([
         z.array(reference("projects")),
         reference("projects"),

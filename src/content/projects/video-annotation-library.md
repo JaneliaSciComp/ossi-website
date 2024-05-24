@@ -12,7 +12,7 @@ installation instructions link: https://github.com/JaneliaSciComp/videoAnnotatio
 how to cite link: https://github.com/JaneliaSciComp/videoAnnotation
 how to cite text: Cite the software on GitHub
 image file: SCSW_Logo.png
-image alt text: Scientific Computing Software Logo
+image caption: Scientific Computing Software Logo
 development team: [Branson Lab, Scientific Computing Software]
 programming language: [Python, Javascript]
 open source license: [BSD-3 Clause]

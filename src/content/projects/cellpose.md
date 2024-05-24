@@ -14,7 +14,7 @@ additional links array: [https://forum.image.sc/tag/cellpose]
 additional links text array: [Cellpose on Image.sc]
 # related blog posts: [Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
 # image file: ./optional-file-path.jpg
-# image alt text: Alt text is required if you upload an image file
+# image caption: Alt text is required if you upload an image file
 youtube url: https://www.youtube.com/watch?v=7y9d4VIKiS8
 youtube caption: A description of Cellpose by Marius Pachitariu at the annual Janelia symposium in Jan 2020.
 development team: [Pachitariu Lab, Stringer Lab]

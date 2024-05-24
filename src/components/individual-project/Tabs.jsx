@@ -3,7 +3,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "../../../../@/components/ui/tabs";
+} from "../../../@/components/ui/tabs";
 
 export default function ProjectPageTabs({ overview, readme, content }) {
   const contentTabTitle = readme ? "GitHub README" : "Details";
