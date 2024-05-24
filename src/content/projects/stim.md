@@ -12,7 +12,9 @@ how to cite link: https://doi.org/10.1101/2021.12.07.471629
 how to cite text: "S. Preibisch, N. Karaiskos, N.Rajewsky, Image-based representation of massive spatial transcriptomics datasets, bioRxiv 2021.12.07.471629 (2021)."
 # related blog posts: [Optional-file-name]
 # image file: ./optional-file-path.jpg
-# image alt text: Alt text is required if you upload an image file
+# image caption: Alt text is required if you upload an image file
+# youtube url: https://youtu.be/rNJotgwUYqc?si=ZqJh7chaYlPxcSEj
+# youtube caption: Paintera for dense labeling of large 3D data
 development team: [Scientific Computing Software]
 programming language: [Java]
 open source license: [GPL-2.0, GPL-3.0]

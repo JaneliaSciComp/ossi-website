@@ -11,7 +11,7 @@ how to cite link: "https://doi.org/10.1186/s12859-024-05732-7"
 how to cite text: "Clements, J., Goina, C., Hubbard, P.M. et al. NeuronBridge: an intuitive web application for neuronal morphology search across large data sets. BMC Bioinformatics 25, 114 (2024)."
 #related blog posts: [Optional-file-name]
 image file: NeuronBridge.png
-image alt text: The NeuronBridge logo
+image caption: The NeuronBridge logo
 youtube url: "https://www.youtube.com/watch?v=Iw-w-O42ReE"
 youtube caption: "NeuronBridge and GAL4 Lines"
 development team: [Scientific Computing Software]

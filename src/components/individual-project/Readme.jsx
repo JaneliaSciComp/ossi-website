@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getReadme, getDefaultBranch } from "../../../utils/githubApiHelper";
+import { getReadme, getDefaultBranch } from "../../utils/githubApiHelper";
 import DOMPurify from "dompurify";
 
 export default function Readme({ githubLink }) {

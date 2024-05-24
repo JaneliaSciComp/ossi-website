@@ -14,8 +14,8 @@ how to cite text: Cite the current Github Release
 additional links array: [https://www.youtube.com/watch?v=ZDcK0aCLoRc]
 additional links text array: [Paintera Video Tutorial]
 related blog posts: [working-with-ossi-supported-projects]
-image file: paintera.png
-image alt text: Paintera Logo
+image file: ./paintera.png
+image caption: Paintera Logo
 youtube url: https://youtu.be/rNJotgwUYqc?si=ZqJh7chaYlPxcSEj
 youtube caption: Paintera for dense labeling of large 3D data
 development team: [Saalfeld Lab]

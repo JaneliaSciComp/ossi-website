@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
-import { selectedTags } from "./stores/selectedTagsStore";
-import { selectedProjectType } from "./stores/selectedProjectTypeStore";
+import { selectedTags } from "../../stores/selectedTagsStore";
+import { selectedProjectType } from "../../stores/selectedProjectTypeStore";
 import { extractUniqueTagValueArray } from "../../utils/tagManipulation";
-import { $projectData } from "./stores/projectSearchResultsStore";
-import { $ecosystemData } from "./stores/ecosystemSearchResultsStore";
-import { $urlQuery } from "./stores/queryStore";
+import { $projectData } from "../../stores/projectSearchResultsStore";
+import { $ecosystemData } from "../../stores/ecosystemSearchResultsStore";
+import { $urlQuery } from "../../stores/queryStore";
 
 export default function CardContainer({
   url,

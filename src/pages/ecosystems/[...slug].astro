@@ -3,7 +3,7 @@ import { getCollection, getEntries } from "astro:content";
 import { YouTube } from "astro-embed";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ContentListDisplay from "../../components/ContentListDisplay.astro";
+import ContentListDisplay from "../../components/ecosystems/ContentListDisplay.astro";
 import Tag from "../../components/projects/Tag.astro";
 
 import { extractUniqueTagsObject } from "../../utils/tagManipulation";
@@ -51,7 +51,7 @@ const baseUrl = import.meta.env.BASE_URL;
       </section>
 
       <div
-        class="px-6 py-12 lg:p-0 lg:pl-12 row-start-1 row-span-2 col-start-5 col-span-2 bg-primary lg:bg-page dark:bg-slate-900"
+        class="px-6 py-12 lg:p-0 lg:pl-12 row-start-1 row-span-2 col-start-5 col-span-2 bg-page"
       >
         {
           relatedProjects && (

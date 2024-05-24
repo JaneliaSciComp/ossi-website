@@ -22,8 +22,8 @@ how to cite text: "JA Bogovic, P Hanslovsky, A Wong, S Saalfeld, Robust registra
 #     Display text for link 2,
 #   ]
 # related blog posts: [Only-for-posts-hosted-on-this-site, Optional-file-name]
-image file: bigwarp.png
-image alt text: A deformable transformation created and visualized with BigWarp.
+image file: ./bigwarp.png
+image caption: A deformable transformation created and visualized with BigWarp.
 youtube url: https://www.youtube.com/watch?v=65jc9ViXhMk
 youtube caption: A description of BigWarp by John Bogovic from the Saalfeld lab, which is supported by the Open Science Software Initiative.
 development team: [Saalfeld Lab]
