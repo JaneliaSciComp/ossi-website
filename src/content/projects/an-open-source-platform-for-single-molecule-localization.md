@@ -4,6 +4,7 @@ tagline: Develop a user-friendly (napari) deep learning-based single-molecule de
 maintainer: Srini Turaga
 preferred contact method: mailto:turagas@janelia.hhmi.org
 project type: [OSSI - current]
+# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
 OSSI proposal link: ../../proposals/single_molecule_localization.pdf
 github link: https://github.com/TuragaLab/DECODE
 documentation link: https://decode.readthedocs.io/en/release-0.10/index.html

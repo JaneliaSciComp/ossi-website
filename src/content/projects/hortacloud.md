@@ -4,6 +4,7 @@ tagline: Large volume volumetric rendering and collaborative neuron annotation i
 maintainer: Rokicki et al.
 preferred contact method: https://github.com/JaneliaSciComp/hortacloud/issues
 project type: [OSSI - current]
+# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
 OSSI proposal link: ../../proposals/hortacloud.pdf
 github link: https://github.com/JaneliaSciComp/hortacloud
 documentation link: https://hortacloud.janelia.org/docs/

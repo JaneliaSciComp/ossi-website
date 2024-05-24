@@ -4,6 +4,7 @@ tagline: Precise, interactive, fast, and scalable FISH spot detection
 maintainer: Preibisch et al.
 # preferred contact method: https://github.com/PreibischLab/RS-FISH/issues
 project type: [OSSI - current]
+# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
 OSSI proposal link: ../../proposals/spatial_transcriptomics_tools.pdf
 github link: https://github.com/PreibischLab/RS-FISH
 documentation link: https://github.com/PreibischLab/RS-FISH

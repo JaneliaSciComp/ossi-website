@@ -4,6 +4,7 @@ tagline: Generates biology videos from high-level descriptions using Blender or 
 maintainer: Philip Hubbard
 preferred contact method: mailto:hubbardp@janelia.hhmi.org
 project type: [OSSI - current]
+# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
 OSSI proposal link: ../../proposals/neuvid.pdf
 github link: https://github.com/connectome-neuprint/neuVid
 documentation link: https://github.com/connectome-neuprint/neuVid/tree/master/documentation

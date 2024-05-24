@@ -4,6 +4,7 @@ tagline: Reconstructing large microscopy images from overlapping image tiles on 
 maintainer: John Bogovic
 preferred contact method: mailto:bogovicj@janelia.hhmi.org
 project type: [OSSI - current]
+# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
 OSSI proposal link: ../../proposals/petascale_lightsheet.pdf
 github link: https://github.com/saalfeldlab/stitching-spark
 documentation link: https://github.com/saalfeldlab/stitching-spark

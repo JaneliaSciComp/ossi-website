@@ -4,6 +4,7 @@ tagline: Maintain and extend BigWarp (3D non-rigid registration for very large v
 maintainer: John Bogovic
 preferred contact method: https://forum.image.sc/tag/bigwarp
 project type: [OSSI - current]
+# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
 OSSI proposal link: ../../proposals/bigwarp.pdf
 github link: https://github.com/saalfeldlab/bigwarp
 documentation link: https://imagej.net/plugins/bigwarp
