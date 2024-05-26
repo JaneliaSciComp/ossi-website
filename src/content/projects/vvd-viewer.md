@@ -11,21 +11,21 @@ documentation link: https://github.com/JaneliaSciComp/VVDViewer/wiki
 installation instructions link: https://github.com/JaneliaSciComp/VVDViewer?tab=readme-ov-file#building-vvdviewer
 how to cite link: https://doi.org/10.5281/zenodo.5841616
 how to cite text: https://doi.org/10.5281/zenodo.5841616
-# additional links array:
-#   [
-#     Optional additional external links,
-#     For example - to a project hompage,
-#   ]
-# additional links text array:
-#   [
-#     The display text you wish to appear for each link provided above,
-#     Display text for link 2,
-#   ]
+additional links array:
+   [
+     https://github.com/JaneliaSciComp/VVDViewer/releases/latest,
+     https://github.com/JaneliaSciComp/VVDViewer/wiki
+   ]
+additional links text array:
+   [
+     "Precompiled Binaries for Windows, Mac and Linux",
+     "Documentations"
+   ]
 # related blog posts: [Only-for-posts-hosted-on-this-site, Optional-file-name]
-# image file: ./optional-file-path.jpg
-# image caption: Alt text is required if you upload an image file
-# youtube url: https://optional-youtube-url.com
-# youtube caption: Required if you provide a youtube url - this will display on the site
+image file: ./VVDViewer.png
+image caption: VVDViewer GUIs
+youtube url: https://www.youtube.com/watch?v=3ExkzQMpjas
+youtube caption: Quick start video
 development team: [Scientific Computing Software]
 programming language: [C++]
 open source license: [BSD-3 Clause]
