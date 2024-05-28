@@ -4,7 +4,7 @@ tagline: Automated analysis pipeline for EASI-FISH spatial transcriptomics data
 maintainer: Cristian Goina
 preferred contact method: mailto:goinac@janelia.hhmi.org
 project type: [OSSI - current]
-# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
+OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/easifish_pipeline.pdf
 github link: https://github.com/JaneliaSciComp/multifish
 documentation link: https://janeliascicomp.github.io/multifish/

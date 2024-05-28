@@ -4,7 +4,7 @@ tagline: A framework for storing, (interactively) viewing, aligning, and process
 maintainer: Preibisch et al.
 # preferred contact method: https://github.com/PreibischLab/STIM/issues
 project type: [OSSI - current]
-# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
+OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/spatial_transcriptomics_tools.pdf
 github link: https://github.com/PreibischLab/STIM
 documentation link: https://github.com/PreibischLab/STIM/wiki
