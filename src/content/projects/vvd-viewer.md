@@ -12,15 +12,8 @@ installation instructions link: https://github.com/JaneliaSciComp/VVDViewer?tab=
 how to cite link: https://doi.org/10.5281/zenodo.5841616
 how to cite text: https://doi.org/10.5281/zenodo.5841616
 additional links array:
-   [
-     https://github.com/JaneliaSciComp/VVDViewer/releases/latest,
-     https://github.com/JaneliaSciComp/VVDViewer/wiki
-   ]
-additional links text array:
-   [
-     "Precompiled Binaries for Windows, Mac and Linux",
-     "Documentations"
-   ]
+  [https://github.com/JaneliaSciComp/VVDViewer/releases/latest]
+additional links text array: ["Precompiled Binaries for Windows, Mac and Linux"]
 # related blog posts: [Only-for-posts-hosted-on-this-site, Optional-file-name]
 image file: ./VVDViewer.png
 image caption: VVDViewer GUIs
