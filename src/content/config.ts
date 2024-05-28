@@ -28,6 +28,7 @@ const projectsCollection = defineCollection({
     "image caption": z.string().optional(),
     "youtube url": z.string().optional(),
     "youtube caption": z.string().optional(),
+    "youtube params": z.string().optional(),
     "development team": z.union([
       z.array(z.string()),
       z.string(),
