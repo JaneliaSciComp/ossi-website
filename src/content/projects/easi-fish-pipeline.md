@@ -24,8 +24,8 @@ how to cite text: Wang Y, Eddison M, Fleishman G, Weigert M, Xu S, Wang T, Rokic
 #related blog posts: [Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
 image file: EASI-FISH.png
 image caption: Data processed by the EASI-FISH pipeline
-# youtube url: https://optional-youtube-url.com
-# youtube caption: Required if you provide a youtube url
+youtube url: https://youtu.be/QP7ffG9d-do?t=50
+youtube caption: This video shows and explains the steps of the EASI-FISH pipe as well as a brief overview of the data input and output formats
 development team: [MultiFISH, Scientific Computing Software]
 programming language: [Nextflow, Python, Java, MATLAB]
 open source license: [BSD-3 Clause]
