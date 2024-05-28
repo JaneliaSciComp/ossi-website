@@ -35,6 +35,7 @@ image file: ./optional-file-path--only-one-file-currently-supported.jpg
 image caption: Required if you upload an image file
 youtube url: https://optional-youtube-url.com
 youtube caption: Required if you provide a youtube url
+youtube params: "Optional. Supports any YouTube params: https://developers.google.com/youtube/player_parameters#Parameters. See Astro Embed documentation for more guidance: https://astro-embed.netlify.app/components/youtube/#params"
 #Optional "tag" fields. Select tags from the provided options - delete the options that are not applicable. If you feel another option is required to describe your project, add it and then note this in your pull request.
 development team:
   [
