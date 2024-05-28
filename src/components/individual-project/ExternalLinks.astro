@@ -6,7 +6,7 @@ const { frontmatter } = Astro.props;
 {
   (frontmatter["OSSI proposal link"] ||
     frontmatter["additional links array"]) && (
-    <div class="flex flex-wrap mb-2 gap-3">
+    <div class="flex flex-wrap mb-2 gap-x-3">
       <p class="font-semibold mb-1">External links:</p>
 
       {frontmatter["OSSI proposal link"] && (
