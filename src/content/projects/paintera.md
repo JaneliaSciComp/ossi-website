@@ -4,7 +4,7 @@ tagline: Annotation and Visualization of Large 3D Datasets with Paintera
 maintainer: Caleb Hulbert
 preferred contact method: mailto:hulbertc@janelia.hhmi.org
 project type: [OSSI - current]
-# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
+OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/paintera.pdf
 github link: https://github.com/saalfeldlab/paintera
 documentation link: https://github.com/saalfeldlab/paintera
