@@ -4,7 +4,7 @@ tagline: Automated analysis pipeline for EASI-FISH spatial transcriptomics data
 maintainer: Cristian Goina
 preferred contact method: mailto:goinac@janelia.hhmi.org
 project type: [OSSI - current]
-# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
+OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/easifish_pipeline.pdf
 github link: https://github.com/JaneliaSciComp/multifish
 documentation link: https://janeliascicomp.github.io/multifish/
@@ -24,8 +24,9 @@ how to cite text: Wang Y, Eddison M, Fleishman G, Weigert M, Xu S, Wang T, Rokic
 #related blog posts: [Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
 image file: EASI-FISH.png
 image caption: Data processed by the EASI-FISH pipeline
-# youtube url: https://optional-youtube-url.com
-# youtube caption: Required if you provide a youtube url
+youtube url: https://youtu.be/QP7ffG9d-do
+youtube caption: This video mostly discusses tools to view and analyse the EASI-FISH data but it has a good overview of the pipeline steps and the data formats from 0:50" to 4':40".
+youtube params: start=50&end=280
 development team: [MultiFISH, Scientific Computing Software]
 programming language: [Nextflow, Python, Java, MATLAB]
 open source license: [BSD-3 Clause]

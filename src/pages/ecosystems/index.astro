@@ -96,7 +96,11 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
                     slot="cardImage"
                   />
                 ) : (
-                  <CardImage slot="cardImage" client:visible />
+                  <CardImage
+                    slot="cardImage"
+                    baseUrl={baseUrl}
+                    client:only="react"
+                  />
                 )}
 
                 <CardContent

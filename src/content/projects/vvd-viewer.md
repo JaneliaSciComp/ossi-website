@@ -4,7 +4,7 @@ tagline: Interactive 3D viewer/renderer for very large image volumes
 maintainer: Takashi Kawase
 preferred contact method: mailto:kawaset@janelia.hhmi.org
 project type: [OSSI - current]
-# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
+OSSI project status: [Maintenance]
 OSSI proposal link: ../../proposals/vvdviewer.pdf
 github link: https://github.com/JaneliaSciComp/VVDViewer
 documentation link: https://github.com/JaneliaSciComp/VVDViewer/wiki
