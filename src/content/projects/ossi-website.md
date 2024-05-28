@@ -4,7 +4,7 @@ tagline: A portfolio for projects supported by Open Science Software Initiative,
 maintainer: Allison Truhlar
 preferred contact method: https://github.com/JaneliaSciComp/ossi-website/issues
 project type: [OSSI - current]
-# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
+OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/ossi_website.pdf
 github link: https://github.com/JaneliaSciComp/ossi-website
 documentation link: https://github.com/JaneliaSciComp/ossi-website

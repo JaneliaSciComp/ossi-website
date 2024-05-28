@@ -4,7 +4,7 @@ tagline: Develop an easy-to-use packaging system for Java applications.
 maintainer: Caleb Hulbert
 preferred contact method: mailto:hulbertc@janelia.hhmi.org
 project type: [OSSI - current]
-# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
+OSSI project status: [Accepted]
 OSSI proposal link: ../../proposals/jvm_tool_deployment.pdf
 github link: "#"
 documentation link: "#"
