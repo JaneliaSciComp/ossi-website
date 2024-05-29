@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Maintenance]
 OSSI proposal link: ../../proposals/spatial_transcriptomics_tools.pdf
 github link: https://github.com/PreibischLab/RS-FISH
+additional links array: [https://github.com/PreibischLab/RS-FISH-Spark]
 documentation link: https://github.com/PreibischLab/RS-FISH
 installation instructions link: https://github.com/PreibischLab/RS-FISH?tab=readme-ov-file#download
 how to cite link: https://doi.org/10.1038/s41592-022-01669-y
@@ -19,9 +20,9 @@ how to cite text: "Ella Bahry, Laura Breimann, Marwan Zouinkhi, Leo Epstein, Kli
 development team: [Scientific Computing Software]
 programming language: [Java]
 open source license: [GPL-2.0, GPL-3.0]
-software type: [Command line application, Framework, Native application]
+software type: [Command line application, Framework, GUI application, Fiji plugin]
 use case: [Spatial transcriptomics, Sequence analysis]
-usage environment: [HPC cluster, Local installation]
-software ecosystem: [BigDataViewer, Fiji]
-supported file types: [N5]
+usage environment: [HPC cluster, Cloud, Local installation]
+software ecosystem: [BigDataViewer, ImgLib2, Spark, Fiji]
+supported file types: [Bioformats, ZARR, N5]
 ---
