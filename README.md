@@ -1,3 +1,5 @@
+**Note** - the development branch is primarily for adding back in "software ecosystems" (to be renamed "collections") and the "blog" (to be renamed "news") pages, as well as for adding additional features following the initial release of the website.
+
 # Janelia Open Science Software Initiative (OSSI) website
 
 ## Overview
