@@ -16,6 +16,13 @@ const baseUrl = import.meta.env.BASE_URL;
     <meta name="generator" content={Astro.generator} />
     <title>OSSI@Janelia</title>
     <CustomStyles />
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script
+      is:inline
+      src="https://cdn.usefathom.com/script.js"
+      data-site="IXJHIFAC"
+      defer></script>
+    <!-- / Fathom -->
   </head>
   <body class="text-default bg-page min-h-screen flex flex-col">
     <Header />
@@ -24,12 +31,8 @@ const baseUrl = import.meta.env.BASE_URL;
     <script>
       import "../scripts/navbarFunctions.js";
     </script>
-    <!-- Fathom - beautiful, simple website analytics -->
-    <script
-      is:inline
-      src="https://cdn.usefathom.com/script.js"
-      data-site="IXJHIFAC"
-      defer></script>
-    <!-- / Fathom -->
+    <script>
+      import "../scripts/fathomEvents.js";
+    </script>
   </body>
 </html>
