@@ -72,6 +72,7 @@ software type:
   [
     Command line application,
     Framework,
+    Graphical User Interface (GUI),
     Native application,
     Package,
     Service,
