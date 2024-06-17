@@ -76,7 +76,12 @@ const baseUrl = import.meta.env.BASE_URL;
             <YouTube
               id={frontmatter["youtube url"]}
               title={frontmatter["youtube title"]}
-              class="w-full rounded-lg lg:self-start"
+              class="embedded-yt w-full rounded-lg lg:self-start"
+              params={
+                frontmatter["youtube params"]
+                  ? frontmatter["youtube params"]
+                  : ""
+              }
             />
           </div>
         )

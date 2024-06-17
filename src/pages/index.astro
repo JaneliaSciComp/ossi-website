@@ -16,9 +16,9 @@ const baseUrl = import.meta.env.BASE_URL;
     baseUrl={baseUrl}
     title={siteConfig.name}
     subtitle="Making scientific software user-friendly and developer-friendly"
-    heightClasses="h-[calc(100vh-74px)] h-[calc(100vh-88px)] min-h-[588px]"
+    heightClasses="h-[calc(100vh-88px)] min-h-[588px]"
   >
-    <Wrapper containerClass="max-w-5xl lg:px-16 xl:px-16">
+    <Wrapper containerClass="max-w-5xl md:px-6 lg:px-12 xl:px-16">
       <div class="max-w-3xl rounded-md">
         <CallToAction
           btnContainerClasses="max-w-none sm:max-w-none pb-2"
@@ -45,7 +45,7 @@ const baseUrl = import.meta.env.BASE_URL;
     </Wrapper>
   </Hero>
 
-  <Wrapper containerClass="py-8 md:py-12">
+  <!-- <Wrapper containerClass="py-8 md:py-12">
     <ContentGridDisplay
       title=`${siteConfig.shortName} Software Blog`
       information=`The latest updates on ${siteConfig.shortName} software projects`
@@ -57,9 +57,9 @@ const baseUrl = import.meta.env.BASE_URL;
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
     </Fragment>
-  </Wrapper>
+  </Wrapper> -->
 
-  <Wrapper containerClass="py-8 md:py-16">
+  <Wrapper containerClass="py-8 md:py-12">
     <CallToAction
       actions={[
         {
@@ -85,7 +85,7 @@ const baseUrl = import.meta.env.BASE_URL;
     </CallToAction>
   </Wrapper>
 
-  <Wrapper containerClass="py-8 md:py-16">
+  <Wrapper containerClass="py-8 md:py-12">
     <ContributorList
       title="Recent website contributors"
       callToAction={{

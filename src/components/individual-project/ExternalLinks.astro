@@ -10,7 +10,7 @@ const { frontmatter } = Astro.props;
       <p class="font-semibold mb-1">External links:</p>
 
       {frontmatter["OSSI proposal link"] && (
-        <div class="mb-1">
+        <div class="mb-1 proposal-download">
           <Link
             text="OSSI funding proposal"
             url={frontmatter["OSSI proposal link"]}

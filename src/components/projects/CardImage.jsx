@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getRandomImage } from "../../utils/getRandomImage";
 
-export default function ContentCardImage() {
+export default function ContentCardImage({ baseUrl }) {
   const placeholderProjectImages = [
     "Bg0Geue-cY8",
     "f4pUuCc3M0g",
@@ -15,7 +15,7 @@ export default function ContentCardImage() {
 
   return (
     <img
-      src={`https://source.unsplash.com/${randomImage}`}
+      src={`${baseUrl}/project-images/${randomImage}-unsplash.jpg`}
       className="w-full h-40 object-cover object-center"
       loading="lazy"
     />

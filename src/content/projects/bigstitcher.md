@@ -4,7 +4,7 @@ tagline: A software package that allows simple and efficient alignment of multi-
 maintainer: Stephan Preibisch
 # preferred contact method: mailto:preibischs@janelia.hhmi.org
 project type: [OSSI - current]
-# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
+OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/petascale_lightsheet.pdf
 github link: https://github.com/preibischlab/bigstitcher/
 documentation link: https://imagej.net/plugins/bigstitcher/

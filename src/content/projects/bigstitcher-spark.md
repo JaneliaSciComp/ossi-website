@@ -4,8 +4,8 @@ tagline: Run compute-intense parts of BigStitcher distributed on your workstatio
 maintainer: Stephan Preibisch
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [OSSI - current]
-# OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
-# OSSI proposal link: Required if your project is OSSI-funded. Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `../../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
+OSSI project status: [Active Development]
+OSSI proposal link: ../../proposals/petascale_lightsheet.pdf
 github link: https://github.com/JaneliaSciComp/BigStitcher-Spark
 documentation link: https://github.com/JaneliaSciComp/BigStitcher-Spark?tab=readme-ov-file#readme
 installation instructions link: https://github.com/JaneliaSciComp/BigStitcher-Spark/?tab=readme-ov-file#install
