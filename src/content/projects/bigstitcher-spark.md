@@ -48,5 +48,5 @@ use case:
 usage environment: [Cloud, HPC cluster, Local installation]
 software ecosystem: [BigDataViewer, ImgLib2]
 supported file types:
-  ["N5", "ZARR", "HDF5", "TIFF", "Bioformats-suppported image types"]
+  ["N5", "ZARR", "HDF5", "TIFF", "Bioformats compatible formats"]
 ---

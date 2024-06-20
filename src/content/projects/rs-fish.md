@@ -25,5 +25,5 @@ software type:
 use case: [Spatial transcriptomics, Sequence analysis]
 usage environment: [HPC cluster, Cloud, Local installation]
 software ecosystem: [BigDataViewer, ImgLib2, Spark, Fiji]
-supported file types: [Bioformats, ZARR, N5]
+supported file types: [Bioformats compatible formats, ZARR, N5]
 ---

@@ -37,7 +37,9 @@
   ],
   "software type": [
     "Command line application",
+    "Fiji plugin",
     "Framework",
+    "GUI application",
     "Native application",
     "Package",
     "Service",
@@ -64,9 +66,7 @@
   ],
   "usage environment": [
     "Cloud",
-    "Fiji plugin",
     "Google Colab",
-    "GUI application",
     "HPC cluster",
     "Jupyter notebook",
     "Local installation",
@@ -96,7 +96,7 @@
     "SWC",
     "Text files",
     "TIFF",
-    "Zarr",
+    "ZARR",
     "Zeiss CZI"
   ]
 }

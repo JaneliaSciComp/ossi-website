@@ -71,7 +71,9 @@ open source license:
 software type:
   [
     Command line application,
+    Fiji plugin,
     Framework,
+    GUI application,
     Native application,
     Package,
     Service,
@@ -99,9 +101,7 @@ use case:
 usage environment:
   [
     Cloud,
-    Fiji plugin,
     Google Colab,
-    GUI application,
     HPC cluster,
     Jupyter notebook,
     Local installation,
@@ -132,7 +132,7 @@ supported file types:
     "SWC",
     "Text files",
     "TIFF",
-    "Zarr",
+    "ZARR",
     "Zeiss CZI",
   ]
 ---
