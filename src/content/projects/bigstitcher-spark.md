@@ -29,7 +29,7 @@ how to cite text: https://github.com/JaneliaSciComp/BigStitcher-Spark
 #   ]
 # related blog posts:
 #   [Optional, Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
-mage file: ./bigstitcher-spark-1.png
+image file: ./bigstitcher-spark-1.png
 image caption: Result of the distributed alignment of a multi-terabyte lightsheet microscopy dataset
 youtube url: https://www.youtube.com/watch?v=D3Y1Rv_69xI
 youtube caption: Reconstructing large light sheet datasets including first BigStitcher-Spark detailed HowTo
@@ -47,5 +47,6 @@ use case:
   ]
 usage environment: [Cloud, HPC cluster, Local installation]
 software ecosystem: [BigDataViewer, ImgLib2]
-supported file types: ["N5", "ZARR", "HDF5" "TIFF", "Bioformats-suppported image types"]
+supported file types:
+  ["N5", "ZARR", "HDF5", "TIFF", "Bioformats-suppported image types"]
 ---

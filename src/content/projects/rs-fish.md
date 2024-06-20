@@ -20,7 +20,8 @@ youtube caption: How To ... detect fluorescent spots in microscopy images using 
 development team: [Scientific Computing Software]
 programming language: [Java]
 open source license: [GPL-2.0, GPL-3.0]
-software type: [Command line application, Framework, GUI application, Fiji plugin]
+software type:
+  [Command line application, Framework, GUI application, Fiji plugin]
 use case: [Spatial transcriptomics, Sequence analysis]
 usage environment: [HPC cluster, Cloud, Local installation]
 software ecosystem: [BigDataViewer, ImgLib2, Spark, Fiji]
