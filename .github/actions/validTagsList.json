@@ -64,7 +64,9 @@
   ],
   "usage environment": [
     "Cloud",
+    "Fiji plugin",
     "Google Colab",
+    "GUI application",
     "HPC cluster",
     "Jupyter notebook",
     "Local installation",
@@ -77,19 +79,24 @@
     "ImgLib2",
     "Janelia Workstation",
     "Java Virtual Machine",
-    "Napari"
+    "Napari",
+    "Spark"
   ],
   "supported file types": [
+    "AnnData",
+    "avi",
+    "Bioformats compatible formats",
+    "H5J",
     "HDF5",
+    "mpeg",
     "N5",
     "NWB",
     "OBJ",
     "OME-Zarr",
     "SWC",
-    "H5J",
+    "Text files",
     "TIFF",
-    "Zeiss CZI",
-    "mpeg",
-    "avi"
+    "Zarr",
+    "Zeiss CZI"
   ]
 }

@@ -99,7 +99,9 @@ use case:
 usage environment:
   [
     Cloud,
+    Fiji plugin,
     Google Colab,
+    GUI application,
     HPC cluster,
     Jupyter notebook,
     Local installation,
@@ -113,20 +115,25 @@ software ecosystem:
     Janelia Workstation,
     Java Virtual Machine,
     Napari,
+    Spark,
   ]
 supported file types:
   [
+    "AnnData",
+    "avi",
+    "Bioformats compatible formats",
+    "H5J",
     "HDF5",
+    "mpeg",
     "N5",
     "NWB",
     "OBJ",
     "OME-Zarr",
     "SWC",
-    "H5J",
+    "Text files",
     "TIFF",
+    "Zarr",
     "Zeiss CZI",
-    "mpeg",
-    "avi",
   ]
 ---
 
