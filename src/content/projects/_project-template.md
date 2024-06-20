@@ -115,6 +115,7 @@ software ecosystem:
     Janelia Workstation,
     Java Virtual Machine,
     Napari,
+    PyTorch,
     Spark,
   ]
 supported file types:
