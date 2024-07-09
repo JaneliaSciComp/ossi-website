@@ -26,7 +26,7 @@ open source license: [GPL-3.0]
 software type: [
     Command line application,
     # Framework,
-    Graphical User Interface (GUI),
+    GUI application,
     # Native application,
     Package,
     # Service,
