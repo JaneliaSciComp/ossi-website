@@ -71,8 +71,9 @@ open source license:
 software type:
   [
     Command line application,
+    Fiji plugin,
     Framework,
-    Graphical User Interface (GUI),
+    GUI application,
     Native application,
     Package,
     Service,
@@ -114,20 +115,26 @@ software ecosystem:
     Janelia Workstation,
     Java Virtual Machine,
     Napari,
+    PyTorch,
+    Spark,
   ]
 supported file types:
   [
+    "AnnData",
+    "avi",
+    "Bioformats compatible formats",
+    "H5J",
     "HDF5",
+    "mpeg",
     "N5",
     "NWB",
     "OBJ",
     "OME-Zarr",
     "SWC",
-    "H5J",
+    "Text files",
     "TIFF",
+    "ZARR",
     "Zeiss CZI",
-    "mpeg",
-    "avi",
   ]
 ---
 

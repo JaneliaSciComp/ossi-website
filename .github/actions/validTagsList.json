@@ -37,8 +37,9 @@
   ],
   "software type": [
     "Command line application",
+    "Fiji plugin",
     "Framework",
-    "Graphical User Interface (GUI)",
+    "GUI application",
     "Native application",
     "Package",
     "Service",
@@ -78,19 +79,25 @@
     "ImgLib2",
     "Janelia Workstation",
     "Java Virtual Machine",
-    "Napari"
+    "Napari",
+    "PyTorch",
+    "Spark"
   ],
   "supported file types": [
+    "AnnData",
+    "avi",
+    "Bioformats compatible formats",
+    "H5J",
     "HDF5",
+    "mpeg",
     "N5",
     "NWB",
     "OBJ",
     "OME-Zarr",
     "SWC",
-    "H5J",
+    "Text files",
     "TIFF",
-    "Zeiss CZI",
-    "mpeg",
-    "avi"
+    "ZARR",
+    "Zeiss CZI"
   ]
 }
