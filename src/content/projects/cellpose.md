@@ -10,11 +10,15 @@ documentation link: https://cellpose.readthedocs.io/en/latest/
 installation instructions link: https://github.com/MouseLand/cellpose?tab=readme-ov-file#installation
 how to cite link: https://doi.org/10.1038/s41592-020-01018-x
 how to cite text: "Stringer, C., Wang, T., Michaelos, M., & Pachitariu, M. (2021). Cellpose: a generalist algorithm for cellular segmentation. Nature methods, 18(1), 100-106."
-additional links array: [https://forum.image.sc/tag/cellpose]
-additional links text array: [Cellpose on Image.sc]
+additional links array:
+  [
+    https://forum.image.sc/tag/cellpose,
+    https://www.janelia.org/news/new-tool-maps-boundaries-of-diverse-cells-in-microscope-images,
+  ]
+additional links text array: [Cellpose on Image.sc, News article]
 # related blog posts: [Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
-# image file: ./optional-file-path.jpg
-# image caption: Alt text is required if you upload an image file
+image file: ./cellpose.jpg
+image caption: The Cellpose algorithm outlining the boundaries of cells in various microscope images and the boundaries of other types of objects in images, including garlic bulbs and rocks.
 youtube url: https://www.youtube.com/watch?v=7y9d4VIKiS8
 youtube caption: A description of Cellpose by Marius Pachitariu at the annual Janelia symposium in Jan 2020.
 development team: [Pachitariu Lab, Stringer Lab]
