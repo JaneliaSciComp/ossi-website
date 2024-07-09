@@ -11,29 +11,30 @@ how to cite text: "Syeda, A., Zhong, L., Tung, R., Long, W., Pachitariu, M.*, & 
 how to cite link: https://doi.org/10.1038/s41593-023-01490-6
 additional links array:
   [
+    https://www.janelia.org/news/reading-the-mouse-mind-from-its-face-new-tool-decodes-neural-activity-using-facial-movements
     https://x.com/Atika_Ibrahim/status/1588885329951367168?s=20&t=AhE3vBTnCvW36QiTyhu0qQ,
   ]
-additional links text array: [Tweet thread introducing Facemap]
-# image file: ./optional-file-path--only-one-file-currently-supported.jpg
-# image caption: Required if you upload an image file
+additional links text array: [News article, Tweet thread introducing Facemap]
+image file: ./facemap.gif
+image caption: graphical user interface with mouse face video and tracked keypoints
 youtube url: https://www.youtube.com/watch?v=aO_kXkOuadg
 youtube caption: Atika Syeda describes how to use the Facemap GUI for tracking keypoints on the mouse face and predicting neural activity.
 #Optional "tag" fields. Select tags from the provided options - delete the options that are not applicable. If you feel another option is required to describe your project, add it and then note this in your pull request.
 development team: [Pachitariu Lab, Stringer Lab]
-programming language: [MATLAB, Python]
+programming language: [Python]
 open source license: [GPL-3.0]
 software type: [
-    # Command line application,
+    Command line application,
     # Framework,
     Graphical User Interface (GUI),
     # Native application,
-    # Package,
+    Package,
     # Service,
     # Web application,
     # Website,
   ]
-# use case:
-#   [
+use case:
+   [
 #     Annotation,
 #     Calcium imaging,
 #     Confocal light microscopy (LM),
@@ -44,17 +45,17 @@ software type: [
 #     Expansion microscopy (ExM),
 #     Image registration,
 #     Lightsheet fluorescence microscopy (LFSM),
-#     Neural recording,
+     Neural recording,
 #     Sequence analysis,
 #     Single-molecule localization microscopy (SMLM),
 #     Spatial transcriptomics,
 #     Tool packaging/distribution,
-#   ]
+   ]
 usage environment: [
     # Cloud,
-    # Google Colab,
+    Google Colab,
     # HPC cluster,
-    # Jupyter notebook,
+    Jupyter notebook,
     Local installation,
     # Web browser,
   ]
