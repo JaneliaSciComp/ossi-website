@@ -13,8 +13,8 @@ how to cite text: "Pachitariu, M., Stringer, C., Schröder, S., Dipoppa, M., Ros
 additional links array: [https://www.suite2p.org/]
 additional links text array: ["suite2p homepage"]
 # related blog posts: [Optional-file-name]
-# image file: ./optional-file-path.jpg
-# image caption: Alt text is required if you upload an image file
+image file: ./suite2p.gif
+image caption: The Suite2p GUI
 youtube url: https://www.youtube.com/watch?v=L0cX6V2wFUU
 youtube caption: Suite2p computational tutorial by Carsen Stringer, HHMI Janelia Research Campus
 development team: [Pachitariu Lab, Stringer Lab]

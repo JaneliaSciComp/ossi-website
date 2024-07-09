@@ -11,7 +11,7 @@ how to cite text: "Syeda, A., Zhong, L., Tung, R., Long, W., Pachitariu, M.*, & 
 how to cite link: https://doi.org/10.1038/s41593-023-01490-6
 additional links array:
   [
-    https://www.janelia.org/news/reading-the-mouse-mind-from-its-face-new-tool-decodes-neural-activity-using-facial-movements
+    https://www.janelia.org/news/reading-the-mouse-mind-from-its-face-new-tool-decodes-neural-activity-using-facial-movements,
     https://x.com/Atika_Ibrahim/status/1588885329951367168?s=20&t=AhE3vBTnCvW36QiTyhu0qQ,
   ]
 additional links text array: [News article, Tweet thread introducing Facemap]
