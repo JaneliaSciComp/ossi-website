@@ -5,8 +5,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://janeliascicomp.github.io",
-  base: "/ossi-website",
+  site: "https://ossi.janelia.org",
   integrations: [
     tailwind({
       applyBaseStyles: false,

@@ -2,8 +2,6 @@
 import { headerData } from "../data/navigation";
 import { siteConfig } from "../siteConfig";
 import ToggleTheme from "../components/ToggleTheme.astro";
-
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <header
@@ -14,7 +12,7 @@ const baseUrl = import.meta.env.BASE_URL;
   <div class="absolute inset-0 bg-white dark:bg-dark"></div>
 
   <div class="relative text-default p-3 md:px-6 w-full flex justify-between">
-    <a class="flex items-center" href={baseUrl}>
+    <a class="flex items-center" href="/">
       <span
         class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
       >

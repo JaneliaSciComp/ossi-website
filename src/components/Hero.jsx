@@ -4,7 +4,6 @@ import { heroImageFiles } from "../../public/hero-images/heroImageFiles.js";
 import { twMerge } from "tailwind-merge";
 
 export default function Hero({
-  baseUrl,
   title,
   subtitle,
   heightClasses,
@@ -25,7 +24,7 @@ export default function Hero({
     backgroundImage:
       backgroundImg === ""
         ? "none"
-        : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${baseUrl}/hero-images/${backgroundImg.file}')`,
+        : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero-images/${backgroundImg.file}')`,
     backgroundColor: backgroundImg === "" ? "#000" : "transparent",
   };
 

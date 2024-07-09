@@ -3,17 +3,13 @@ import { siteConfig } from "../siteConfig";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero";
 import CallToAction from "../components/CallToAction.astro";
-import ContentGridDisplay from "../components/ContentGridDisplay.astro";
 import ContributorList from "../components/ContributorList.astro";
 import Wrapper from "../components/Wrapper.astro";
-
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout>
   <Hero
     client:load
-    baseUrl={baseUrl}
     title={siteConfig.name}
     subtitle="Making scientific software user-friendly and developer-friendly"
     heightClasses="h-[calc(100vh-88px)] min-h-[588px]"
@@ -26,12 +22,12 @@ const baseUrl = import.meta.env.BASE_URL;
             {
               variant: "primary",
               text: `Explore software projects`,
-              href: `${baseUrl}/projects`,
+              href: `/projects`,
             },
             {
               variant: "",
               text: "Learn more about the OSSI",
-              href: `${baseUrl}/ossi`,
+              href: `/ossi`,
             },
           ]}
         >
@@ -51,7 +47,7 @@ const baseUrl = import.meta.env.BASE_URL;
       information=`The latest updates on ${siteConfig.shortName} software projects`
       content="blog"
       linkText="View all posts"
-      linkUrl={`${baseUrl}/blog`}
+      linkUrl={`/blog`}
     />
 
     <Fragment slot="bg">

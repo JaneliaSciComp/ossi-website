@@ -4,8 +4,7 @@ import { updateSearchParamUrl } from "../../utils/tagManipulation";
 
 const { tagCat, tag, contentType } = Astro.props;
 
-const baseUrl = import.meta.env.BASE_URL;
-const contentUrl = new URL(`..${baseUrl}/${contentType}`, Astro.url.origin);
+const contentUrl = new URL(`../${contentType}`, Astro.url.origin);
 const updatedUrl = updateSearchParamUrl(contentUrl.href, tag);
 
 const backgroundColor = getBackgroundColor(tagCat);

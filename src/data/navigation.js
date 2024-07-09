@@ -1,26 +1,24 @@
-const base = import.meta.env.BASE_URL;
-
 export const headerData = {
   links: [
     {
       text: "Home",
-      href: base,
+      href: "/",
     },
     {
       text: "Projects",
-      href: `${base}/projects`,
+      href: `/projects`,
     },
     // {
     //   text: "Ecosystems",
-    //   href: `${base}/ecosystems`,
+    //   href: `/ecosystems`,
     // },
     {
       text: "OSSI",
-      href: `${base}/ossi`,
+      href: `/ossi`,
     },
     // {
     //   text: "Blog",
-    //   href: `${base}/blog`,
+    //   href: `/blog`,
     // },
   ],
 };

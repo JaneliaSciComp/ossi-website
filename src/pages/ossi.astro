@@ -6,14 +6,11 @@ import TextBlock from "../components/TextBlock.astro";
 import Wrapper from "../components/Wrapper.astro";
 
 import ossiPhasesImg from "../assets/images/ossi_phases.png";
-
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout>
   <Hero
     client:load
-    baseUrl={baseUrl}
     title="Open Science Software Initiative"
     subtitle="The goal of OSSI is to support scientists at Janelia to create, extend, maintain and/or document user-friendly and developer-friendly open source software"
     heightClasses="h-96"

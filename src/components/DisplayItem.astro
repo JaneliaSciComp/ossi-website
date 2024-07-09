@@ -1,14 +1,13 @@
 ---
 import Image from "astro/components/Image.astro";
 const { item, content } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <article class="mb-8 pb-8 border-b dark:border-slate-700">
   {
     item.data["image file"] ? (
       <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6">
-        <a href={`${baseUrl}/${content}/${item.slug}`}>
+        <a href={`/${content}/${item.slug}`}>
           {/* Currently, images are embedded in the blog frontmatter, so Astro loads them as an Astro image obj */}
           {typeof item.data["image file"] === "object" ? (
             <Image
@@ -26,7 +25,7 @@ const baseUrl = import.meta.env.BASE_URL;
           ) : (
             // Images in the projects are stored in the public directory
             <img
-              src={`${baseUrl}/project-images/${item.data["image file"]}`}
+              src={`/project-images/${item.data["image file"]}`}
               alt={item.data["image caption"]}
               class="w-full md:h-full object-cover rounded shadow-lg bg-gray-400 dark:bg-slate-700"
               loading="lazy"
@@ -41,7 +40,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
   <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading">
     <a
-      href={`${baseUrl}/${content}/${item.slug}`}
+      href={`/${content}/${item.slug}`}
       class="hover:text-primary transition ease-in duration-200"
     >
       {item.data.title}
