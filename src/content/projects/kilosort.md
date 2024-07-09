@@ -25,7 +25,7 @@ programming language: ["MATLAB", "Python"]
 open source license: GPL-2.0
 software type: Package
 use case: [Neural recording, Electrophysiology]
-usage environment: [Local installation]
+usage environment: [Local installation, "Google Colab"]
 # software ecosystem: []
 # supported file types: []
 ---

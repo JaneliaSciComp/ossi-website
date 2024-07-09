@@ -21,13 +21,7 @@ development team: [Pachitariu Lab, Stringer Lab]
 programming language: [Python]
 open source license: [GPL-3.0]
 software type: [Package]
-use case:
-  [
-    Calcium imaging,
-    Confocal light microscopy (LM),
-    Electron microscopy (EM),
-    Expansion microscopy (ExM),
-  ]
+use case: [Calcium imaging, Neural recording]
 usage environment: [Google Colab, Local installation]
 software ecosystem: [Napari]
 # supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]
