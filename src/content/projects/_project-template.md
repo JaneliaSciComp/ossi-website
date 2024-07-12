@@ -93,6 +93,7 @@ use case:
     Image registration,
     Lightsheet fluorescence microscopy (LFSM),
     Neural recording,
+    Segmentation,
     Sequence analysis,
     Single-molecule localization microscopy (SMLM),
     Spatial transcriptomics,
@@ -117,6 +118,7 @@ software ecosystem:
     Napari,
     PyTorch,
     Spark,
+    Tensorflow,
   ]
 supported file types:
   [
@@ -133,6 +135,7 @@ supported file types:
     "SWC",
     "Text files",
     "TIFF",
+    "wav",
     "ZARR",
     "Zeiss CZI",
   ]

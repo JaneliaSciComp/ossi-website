@@ -58,6 +58,7 @@
     "Image registration",
     "Lightsheet fluorescence microscopy (LFSM)",
     "Neural recording",
+    "Segmentation",
     "Sequence analysis",
     "Single-molecule localization microscopy (SMLM)",
     "Spatial transcriptomics",
@@ -81,7 +82,8 @@
     "Java Virtual Machine",
     "Napari",
     "PyTorch",
-    "Spark"
+    "Spark",
+    "Tensorflow"
   ],
   "supported file types": [
     "AnnData",
@@ -97,6 +99,7 @@
     "SWC",
     "Text files",
     "TIFF",
+    "wav",
     "ZARR",
     "Zeiss CZI"
   ]
