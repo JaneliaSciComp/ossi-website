@@ -152,7 +152,7 @@ At the top of your project file are data sandwiched between triple-dashes (---).
 
 ### Edit the frontmatter
 
-- Follow the examples and guidance in `/src/projects/_project-template.md` to fill out your project file's frontmatter. Additional details are provided in a table below.
+- Follow the examples and guidance in `/src/content/projects/_project-template.md` to fill out your project file's frontmatter. Additional details are provided in a table below.
 
 - For each **required** field, you must provide a value or an error will be thrown when you try to view your project page on the local server.
 
