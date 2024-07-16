@@ -15,39 +15,14 @@ image caption: a recurrent neural network
 youtube url: https://www.youtube.com/watch?v=VWISCzC2kOs
 youtube caption: TrainSpikingNet talk at JuliaCon 2022
 #Optional "tag" fields. Select tags from the provided options - delete the options that are not applicable. If you feel another option is required to describe your project, add it and then note this in your pull request.
-development team:
-  [
-    Scientific Computing Software,
-  ]
-programming language:
-  [
-    Julia,
-  ]
-open source license:
-  [BSD-3 Clause]
-software type:
-  [
-    Command line application,
-  ]
-use case:
-  [
-    Calcium imaging,
-    Electrophysiology,
-    Modelling,
-    Neural recording,
-  ]
-usage environment:
-  [
-    HPC cluster,
-    Local installation,
-  ]
-software ecosystem:
-  [
-    CUDA,
-  ]
-supported file types:
-  [
-  ]
+development team: [Scientific Computing Software]
+programming language: [Julia]
+open source license: [BSD-3 Clause]
+software type: [Command line application]
+use case: [Calcium imaging, Electrophysiology, Modelling, Neural recording]
+usage environment: [HPC cluster, Local installation]
+software ecosystem: [CUDA]
+supported file types: []
 ---
 
 TrainSpikingNet uses recursive least squares to train fluctation-driven spiking
