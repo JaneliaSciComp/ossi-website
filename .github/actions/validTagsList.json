@@ -57,6 +57,7 @@
     "Expansion microscopy (ExM)",
     "Image registration",
     "Lightsheet fluorescence microscopy (LFSM)",
+    "Modelling",
     "Neural recording",
     "Segmentation",
     "Sequence analysis",
@@ -76,6 +77,7 @@
   "software ecosystem": [
     "BigDataViewer",
     "Blender",
+    "CUDA",
     "Fiji",
     "ImgLib2",
     "Janelia Workstation",
