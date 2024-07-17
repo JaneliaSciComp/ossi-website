@@ -6,6 +6,9 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 import scswLogo from "../assets/images/SCSW_Logo_white_background.png";
+
+const siteBaseURL = new URL(Astro.url);
+const ogImageUrl = new URL(scswLogo.src, siteBaseURL);
 ---
 
 <html lang="en">
@@ -19,7 +22,7 @@ import scswLogo from "../assets/images/SCSW_Logo_white_background.png";
       content="Janelia Open Science Software Intiative"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={scswLogo.src} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:url" content={Astro.url} />
     <title>OSSI@Janelia</title>
     <CustomStyles />
