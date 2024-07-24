@@ -45,7 +45,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
       <FilterMenu uniqueTags={uniqueTags} client:only="react" />
     </div>
     <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
-      <ProjectTypeBtns client:visible />
+      <ProjectTypeBtns client:only="react" />
       <div class="md:hidden flex flex-col gap-6 items-end min-w-full">
         <div class="flex gap-2 w-full">
           <h3 class="font-bold">Filter by OSSI funding status</h3>
