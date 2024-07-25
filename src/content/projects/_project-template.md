@@ -41,7 +41,9 @@ development team:
   [
     "Ahrens Lab",
     "Branson Lab",
+    "Cardona Lab",
     "Dudman Lab",
+    "Funke Lab",
     "Pachitariu Lab",
     "Preibisch Lab",
     "Saalfeld Lab",
@@ -68,7 +70,15 @@ programming language:
     "Typescript",
   ]
 open source license:
-  ["BSD-3 Clause", "BSD-2 Clause", "CC-by-0", "GPL-2.0", "GPL-3.0", "MIT"]
+  [
+    "APACHE",
+    "BSD-3 Clause",
+    "BSD-2 Clause",
+    "CC-by-0",
+    "GPL-2.0",
+    "GPL-3.0",
+    "MIT",
+  ]
 software type:
   [
     "Command line application",
