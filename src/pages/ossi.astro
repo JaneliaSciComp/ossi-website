@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import TextBlock from "../components/TextBlock.astro";
 import Wrapper from "../components/Wrapper.astro";
 
-import ossiPhasesImg from "../assets/images/ossi_phases.png";
+import ossiPhasesImg from "../assets/images/ossi_phases-black.png";
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
@@ -57,7 +57,7 @@ const baseUrl = import.meta.env.BASE_URL;
           href="https://www.janelia.org/node/45241"
           target="_blank"
           style={"color: var(--color-primary)"}
-          >Scientific Computing Software (SciComp)</a
+          >Scientific Computing Software (SciCompSoft)</a
         > created the <span style={"font-weight: bold"}
           >Open Science Software Initiative (OSSI)</span
         > to support Janelia researchers in their efforts to create impactful open
@@ -91,7 +91,7 @@ const baseUrl = import.meta.env.BASE_URL;
         such as critical bug fixes and dependency updates. A project may be moved back to 
         <b>Active Development</b> if additional features are needed and funding is available.
         If a project's usefulness to the open science community declines, it may be moved to 
-        a <b>Graceful End</b> statewhich signifies a closing of OSSI involvement with the project. 
+        a <b>Graceful End</b> state which signifies a closing of OSSI involvement with the project. 
         This may involve a hand-off or project archival. All of these lifecycle decisions are
         made in close collaboration with the project owners. 
       </Fragment>
@@ -104,13 +104,19 @@ const baseUrl = import.meta.env.BASE_URL;
     <TextBlock>
       <Fragment slot="subtitle">Details</Fragment>
       <Fragment slot="content">
-        The creation of OSSI was encouraged by the strong open science community
-        at Janelia. The specifics were finalized by Kristin Branson, Reed
-        George, Wyatt Korff, Stephan Preibisch, Konrad Rokicki, Stephan
-        Saalfeld, and Ron Vale. OSSI is funded through the Technology and Open
-        Science Center fund (SciComp internal funding) with strong support from
-        Wyatt Korff (project teams), Reed George (Scientific Operations), the
-        Saalfeld lab, and the executive director of Janelia (Ron Vale).
+        The creation of OSSI in 2022 was encouraged by the strong open science community at Janelia. 
+        The specifics were finalized by 
+        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/kristin-branson">Kristin Branson</a>, 
+        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/reed-george">Reed George</a>, 
+        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/wyatt-korff">Wyatt Korff</a>, 
+        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/stephan-preibisch">Stephan Preibisch</a>, 
+        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/konrad-rokicki">Konrad Rokicki</a>, 
+        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/stephan-saalfeld">Stephan Saalfeld</a>, and 
+        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/ronald-vale">Ron Vale</a>. 
+        
+        OSSI is funded through the Technology and Open Science Center fund (SciCompSoft internal funding) 
+        with strong support from Wyatt Korff (project teams), Reed George (Scientific Operations), 
+        the Saalfeld lab, and the executive director of Janelia (Ron Vale).
       </Fragment>
     </TextBlock>
   </Wrapper>
