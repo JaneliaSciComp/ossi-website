@@ -9,8 +9,7 @@ github link: https://github.com/Mohinta2892/catena
 documentation link: https://github.com/Mohinta2892/catena
 installation instructions link:  https://github.com/Mohinta2892/catena
 preferred contact method: mailto:sm2667@cam.ac.uk
-how to cite text: "Mohinta, S. (2022). Catena: Neuron Segmentation, Synapse Detection, Microtubule tracking and more... (Version 0.1) [Computer software]
-}"
+how to cite text: "Mohinta, S. (2022). Catena: Neuron Segmentation, Synapse Detection, Microtubule tracking and more... (Version 0.1) [Computer software]"
 development team:
   [
     "Cardona lab", "Funke lab",
