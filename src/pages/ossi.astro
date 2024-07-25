@@ -5,7 +5,8 @@ import Hero from "../components/Hero";
 import TextBlock from "../components/TextBlock.astro";
 import Wrapper from "../components/Wrapper.astro";
 
-import ossiPhasesImg from "../assets/images/ossi_phases-black.png";
+import ossiPhasesImgWhite from "../assets/images/ossi_phases-white.png";
+import ossiPhasesImgBlack from "../assets/images/ossi_phases-black.png";
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
@@ -79,27 +80,36 @@ const baseUrl = import.meta.env.BASE_URL;
         OSSI project proposals enter in a <b>Proposed</b> state and after being evaluated
         are either moved to <b>Accepted</b> state or rejected (see diagram below).
         Proposals for otherwise great projects may be rejected due of lack of funding,
-        or because they don't meet criteria for being considered ideal open science projects.
-        In such cases, Scientific Computing Software can still help develop the project
-        if alternative funding is identified. 
-        After moving to the <b>Accepted</b> state, Scientific Computing Software will attempt to 
-        find software developers to work on the project, either from within the department,
-        or by hiring contractors. Once developers are identified, the project will move to 
-        <b>Active Development</b>. During this phase, the goals of the project proposal will be 
-        iterated until completion. Once the proposal goals are achieved, the project will 
-        move to <b>Maintenance</b> state, which provides minimal ongoing support for the project
-        such as critical bug fixes and dependency updates. A project may be moved back to 
-        <b>Active Development</b> if additional features are needed and funding is available.
-        If a project's usefulness to the open science community declines, it may be moved to 
-        a <b>Graceful End</b> state which signifies a closing of OSSI involvement with the project. 
-        This may involve a hand-off or project archival. All of these lifecycle decisions are
-        made in close collaboration with the project owners. 
+        or because they don't meet criteria for being considered ideal open science
+        projects. In such cases, Scientific Computing Software can still help develop
+        the project if alternative funding is identified. After moving to the <b
+          >Accepted</b
+        > state, Scientific Computing Software will attempt to find software developers
+        to work on the project, either from within the department, or by hiring contractors.
+        Once developers are identified, the project will move to
+        <b>Active Development</b>. During this phase, the goals of the project
+        proposal will be iterated until completion. Once the proposal goals are
+        achieved, the project will move to <b>Maintenance</b> state, which provides
+        minimal ongoing support for the project such as critical bug fixes and dependency
+        updates. A project may be moved back to
+        <b>Active Development</b> if additional features are needed and funding is
+        available. If a project's usefulness to the open science community declines,
+        it may be moved to a <b>Graceful End</b> state which signifies a closing
+        of OSSI involvement with the project. This may involve a hand-off or project
+        archival. All of these lifecycle decisions are made in close collaboration
+        with the project owners.
       </Fragment>
     </TextBlock>
     <div class="max-w-fit">
       <Image
-        src={ossiPhasesImg}
+        src={ossiPhasesImgWhite}
         alt="Phase diagram of OSSI projects. Projects move linearly from 'proposed' to 'accepted' to 'active development.' From there, projects cycle between 'active development' and 'maintenance.' The final phase is 'graceful end.'"
+        class="hidden dark:block"
+      />
+      <Image
+        src={ossiPhasesImgBlack}
+        alt="Phase diagram of OSSI projects. Projects move linearly from 'proposed' to 'accepted' to 'active development.' From there, projects cycle between 'active development' and 'maintenance.' The final phase is 'graceful end.'"
+        class="block dark:hidden"
       />
       <p class="self-start italic pb-4">
         The phases of an OSSI-funded project.
@@ -109,19 +119,42 @@ const baseUrl = import.meta.env.BASE_URL;
     <TextBlock>
       <Fragment slot="subtitle">Details</Fragment>
       <Fragment slot="content">
-        The creation of OSSI in 2022 was encouraged by the strong open science community at Janelia. 
-        The specifics were finalized by 
-        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/kristin-branson">Kristin Branson</a>,
-        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/reed-george">Reed George</a>,
-        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/wyatt-korff">Wyatt Korff</a>,
-        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/stephan-preibisch">Stephan Preibisch</a>,
-        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/konrad-rokicki">Konrad Rokicki</a>,
-        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/stephan-saalfeld">Stephan Saalfeld</a>, and
-        <a style={"color: var(--color-primary)"} href="https://www.janelia.org/people/ronald-vale">Ron Vale</a>.
-        
-        OSSI is funded through the Technology and Open Science Center fund (SciCompSoft internal funding) 
-        with strong support from Wyatt Korff (project teams), Reed George (Scientific Operations), 
-        the Saalfeld lab, and the executive director of Janelia (Ron Vale).
+        The creation of OSSI in 2022 was encouraged by the strong open science
+        community at Janelia. The specifics were finalized by
+        <a
+          style={"color: var(--color-primary)"}
+          href="https://www.janelia.org/people/kristin-branson"
+          >Kristin Branson</a
+        >,
+        <a
+          style={"color: var(--color-primary)"}
+          href="https://www.janelia.org/people/reed-george">Reed George</a
+        >,
+        <a
+          style={"color: var(--color-primary)"}
+          href="https://www.janelia.org/people/wyatt-korff">Wyatt Korff</a
+        >,
+        <a
+          style={"color: var(--color-primary)"}
+          href="https://www.janelia.org/people/stephan-preibisch"
+          >Stephan Preibisch</a
+        >,
+        <a
+          style={"color: var(--color-primary)"}
+          href="https://www.janelia.org/people/konrad-rokicki">Konrad Rokicki</a
+        >,
+        <a
+          style={"color: var(--color-primary)"}
+          href="https://www.janelia.org/people/stephan-saalfeld"
+          >Stephan Saalfeld</a
+        >, and
+        <a
+          style={"color: var(--color-primary)"}
+          href="https://www.janelia.org/people/ronald-vale">Ron Vale</a
+        >. OSSI is funded through the Technology and Open Science Center fund
+        (SciCompSoft internal funding) with strong support from Wyatt Korff
+        (project teams), Reed George (Scientific Operations), the Saalfeld lab,
+        and the executive director of Janelia (Ron Vale).
       </Fragment>
     </TextBlock>
   </Wrapper>
