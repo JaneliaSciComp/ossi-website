@@ -29,8 +29,6 @@ use case:
   [
     "Electron microscopy (EM)",
     "Segmentation", 
-    "Detection",
-    "Classification",
     "Tool packaging/distribution",
     "Visualization",
   ]
