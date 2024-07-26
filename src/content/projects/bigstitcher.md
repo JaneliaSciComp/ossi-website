@@ -28,5 +28,6 @@ use case:
   ]
 usage environment: [Local installation]
 software ecosystem: [Fiji, BigDataViewer, ImgLib2]
-supported file types: [N5, HDF5, ZARR, TIFF, Bioformats compatible formats, Zeiss CZI]
+supported file types:
+  [N5, HDF5, ZARR, TIFF, Bioformats compatible formats, Zeiss CZI]
 ---
