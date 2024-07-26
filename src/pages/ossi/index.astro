@@ -1,14 +1,13 @@
 ---
 import Image from "astro/components/Image.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero";
-import TextBlock from "../components/TextBlock.astro";
-import Wrapper from "../components/Wrapper.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero";
+import TextBlock from "../../components/TextBlock.astro";
+import Wrapper from "../../components/Wrapper.astro";
+import Link from "../../components/Link.astro";
 
-import ossiPhasesImgWhite from "../assets/images/ossi_phases-white.png";
-import ossiPhasesImgBlack from "../assets/images/ossi_phases-black.png";
-
-const baseUrl = import.meta.env.BASE_URL;
+import ossiPhasesImgWhite from "../../assets/images/ossi_phases-white.png";
+import ossiPhasesImgBlack from "../../assets/images/ossi_phases-black.png";
 ---
 
 <BaseLayout>
@@ -26,6 +25,7 @@ const baseUrl = import.meta.env.BASE_URL;
       <Fragment slot="title"
         >About the Janelia Open Science Software Initiative (OSSI)</Fragment
       >
+
       <Fragment slot="content">
         Open-source code and software are immensely important to progress in all
         areas of science. Sharing code allows the same analyses to be performed
@@ -65,6 +65,7 @@ const baseUrl = import.meta.env.BASE_URL;
         source software.
       </Fragment>
     </TextBlock>
+
     <TextBlock>
       <Fragment slot="subtitle">Call for projects</Fragment>
       <Fragment slot="content">
@@ -72,8 +73,20 @@ const baseUrl = import.meta.env.BASE_URL;
         Janelia. The aim of a proposal should generally be to develop, maintain
         and/or document developer-friendly, user-friendly code that promises to
         have a significant impact on the community.
+        <!-- <br />
+        <br />
+        <a style={"color: var(--color-primary)"} href="/ossi/proposals"
+          >View successful proposals</a
+        ><br /> -->
       </Fragment>
     </TextBlock>
+    <div class="self-start pb-4 sm:pb-8">
+      <Link
+        url="/ossi/proposals"
+        text="View successful proposals"
+        textClasses="md:leading-normal 2xl:leading-relaxed text-base sm:text-lg md:text-xl 2xl:text-2xl dark:text-slate-200"
+      />
+    </div>
     <TextBlock>
       <Fragment slot="subtitle">OSSI Project Lifecycle</Fragment>
       <Fragment slot="content">
