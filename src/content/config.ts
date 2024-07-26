@@ -80,6 +80,19 @@ const projectsCollection = defineCollection({
   }),
 });
 
+// Proposals frontmatter
+const proposalCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    "OSSI proposal link": z.string(),
+    title: z.string(),
+    authors: z.string(),
+    projects: z
+      .union([z.array(reference("projects")), reference("projects")])
+      .optional(),
+  }),
+});
+
 // Blogs frontmatter
 const blogCollection = defineCollection({
   type: "content",
@@ -117,6 +130,7 @@ const ecosystemsCollection = defineCollection({
 // Export all content frontmatter configurations
 export const collections = {
   projects: projectsCollection,
+  proposals: proposalCollection,
   blog: blogCollection,
   ecosystems: ecosystemsCollection,
 };
