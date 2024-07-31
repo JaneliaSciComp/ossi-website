@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { TbMinus, TbPlus, TbX } from "react-icons/tb";
-import { isFilterMenuVisible } from "../../stores/isFilterMenuVisibleStore.js";
+import {
+  isFilterMenuVisible,
+  toggleVisibility,
+} from "../../stores/isFilterMenuVisibleStore.js";
 import {
   selectedTags,
   handleTagSelection,
@@ -55,7 +58,7 @@ export default function FilterMenu({ uniqueTags }) {
     >
       <button
         className="md:hidden self-end m-2 btn-secondary rounded-full"
-        onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
+        onClick={() => toggleVisibility}
       >
         <TbX />
       </button>
