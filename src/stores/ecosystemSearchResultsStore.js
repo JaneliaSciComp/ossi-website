@@ -6,8 +6,6 @@ import { atom, onMount, computed } from "nanostores";
 import Fuse from "fuse.js";
 import { $urlQuery } from "./queryStore";
 
-const baseUrl = import.meta.env.BASE_URL;
-
 // Initialize fuse instance for ecosystems data
 export const $ecosystemsFuse = atom(null);
 
@@ -20,7 +18,7 @@ const ecosystemsOptions = {
 
 onMount($ecosystemsFuse, async () => {
   try {
-    const response = await fetch(`${baseUrl}/ecosystems.json`);
+    const response = await fetch(`/ecosystems.json`);
     const { ecosystems, index } = await response.json();
     const parsedIndex = Fuse.parseIndex(index);
     const newFuseInstance = new Fuse(

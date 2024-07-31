@@ -2,7 +2,9 @@
   "development team": [
     "Ahrens Lab",
     "Branson Lab",
+    "Cardona Lab",
     "Dudman Lab",
+    "Funke Lab",
     "Pachitariu Lab",
     "Preibisch Lab",
     "Saalfeld Lab",
@@ -28,6 +30,7 @@
     "Typescript"
   ],
   "open source license": [
+    "APACHE",
     "BSD-3 Clause",
     "BSD-2 Clause",
     "CC-by-0",
@@ -37,7 +40,9 @@
   ],
   "software type": [
     "Command line application",
+    "Fiji plugin",
     "Framework",
+    "GUI application",
     "Native application",
     "Package",
     "Service",
@@ -55,7 +60,9 @@
     "Expansion microscopy (ExM)",
     "Image registration",
     "Lightsheet fluorescence microscopy (LFSM)",
+    "Modelling",
     "Neural recording",
+    "Segmentation",
     "Sequence analysis",
     "Single-molecule localization microscopy (SMLM)",
     "Spatial transcriptomics",
@@ -73,23 +80,32 @@
   "software ecosystem": [
     "BigDataViewer",
     "Blender",
+    "CUDA",
     "Fiji",
     "ImgLib2",
     "Janelia Workstation",
     "Java Virtual Machine",
-    "Napari"
+    "Napari",
+    "PyTorch",
+    "Spark",
+    "Tensorflow"
   ],
   "supported file types": [
+    "AnnData",
+    "avi",
+    "Bioformats compatible formats",
+    "H5J",
     "HDF5",
+    "mpeg",
     "N5",
     "NWB",
     "OBJ",
     "OME-Zarr",
     "SWC",
-    "H5J",
+    "Text files",
     "TIFF",
-    "Zeiss CZI",
-    "mpeg",
-    "avi"
+    "wav",
+    "ZARR",
+    "Zeiss CZI"
   ]
 }

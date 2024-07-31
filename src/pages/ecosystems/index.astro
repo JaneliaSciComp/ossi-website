@@ -16,8 +16,6 @@ import Tag from "../../components/projects/Tag.astro";
 
 import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
 
-const baseUrl = import.meta.env.BASE_URL;
-
 //allEcosystems gets passes as "content" to the content cards
 //eveything else happening in here is to make tags for the filter menu and cards
 const allEcosystems = await getCollection("ecosystems");
@@ -49,7 +47,6 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
 <BaseLayout>
   <Hero
     client:load
-    baseUrl={baseUrl}
     title="Software Ecosystems"
     subtitle="Multiple programs that work together to form a computational ecosystem"
     heightClasses="h-80"
@@ -80,7 +77,7 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
             return (
               <CardContainer
                 key={content.slug}
-                url={`${baseUrl}/ecosystems/${content.slug}/`}
+                url={`/ecosystems/${content.slug}/`}
                 title={content.data.title}
                 tagline={content.data.tagline}
                 tagsObj={content.data.tagsObj}
@@ -90,17 +87,13 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
               >
                 {content.data["image file"] ? (
                   <img
-                    src={`${baseUrl}/project-images/${content.data["image file"]}`}
+                    src={`/project-images/${content.data["image file"]}`}
                     class="w-full h-40 object-cover object-center"
                     loading="lazy"
                     slot="cardImage"
                   />
                 ) : (
-                  <CardImage
-                    slot="cardImage"
-                    baseUrl={baseUrl}
-                    client:only="react"
-                  />
+                  <CardImage slot="cardImage" client:only="react" />
                 )}
 
                 <CardContent

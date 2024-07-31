@@ -5,17 +5,36 @@ import CustomStyles from "../styles/CustomStyles.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const baseUrl = import.meta.env.BASE_URL;
+const siteBaseURL = new URL(Astro.url);
+const ogImageUrl = new URL("/SCSW_Logo_white_background.png", siteBaseURL);
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.ico`} />
+    <link rel="icon" type="image/svg+xml" href={`/favicon.ico`} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      property="og:title"
+      content="Janelia Open Science Software Intiative"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageUrl.toString()} />
+    <meta property="og:url" content={Astro.url} />
+    <meta
+      property="og:description"
+      content="A catalogue of software projects developed through the Janelia Open Science Software Initiative (OSSI), as well as other software developed by teams at Janelia Research Campus. "
+    />
     <title>OSSI@Janelia</title>
     <CustomStyles />
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script
+      is:inline
+      src="https://cdn.usefathom.com/script.js"
+      data-site="IXJHIFAC"
+      defer></script>
+    <!-- / Fathom -->
   </head>
   <body class="text-default bg-page min-h-screen flex flex-col">
     <Header />
@@ -23,6 +42,9 @@ const baseUrl = import.meta.env.BASE_URL;
     <Footer />
     <script>
       import "../scripts/navbarFunctions.js";
+    </script>
+    <script>
+      import "../scripts/fathomEvents.js";
     </script>
   </body>
 </html>

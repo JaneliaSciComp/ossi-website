@@ -1,27 +1,25 @@
-const base = import.meta.env.BASE_URL;
-
 export const headerData = {
   links: [
     {
       text: "Home",
-      href: base,
+      href: "/",
     },
     {
       text: "Projects",
-      href: `${base}/projects`,
+      href: `/projects`,
     },
-    {
-      text: "Ecosystems",
-      href: `${base}/ecosystems`,
-    },
+    // {
+    //   text: "Ecosystems",
+    //   href: `/ecosystems`,
+    // },
     {
       text: "OSSI",
-      href: `${base}/ossi`,
+      href: `/ossi`,
     },
-    {
-      text: "Blog",
-      href: `${base}/blog`,
-    },
+    // {
+    //   text: "Blog",
+    //   href: `/blog`,
+    // },
   ],
 };
 
@@ -33,13 +31,21 @@ export const footerData = {
       href: "https://www.hhmi.org/privacy-policy",
     },
     {
-      text: "This site is open source! Contribute on GitHub.",
+      text: "View the source code on GitHub",
       href: "https://github.com/JaneliaSciComp/ossi-website",
     },
   ],
   socialLinks: [
-    { ariaLabel: "Email", icon: "tabler:mail", href: "#" },
-    { ariaLabel: "X", icon: "tabler:brand-x", href: "#" },
+    {
+      ariaLabel: "Email",
+      icon: "tabler:mail",
+      href: "mailto:janeliawebsupport@janelia.hhmi.org",
+    },
+    {
+      ariaLabel: "YouTube",
+      icon: "tabler:brand-youtube",
+      href: "https://www.youtube.com/@JaneliaSciComp",
+    },
     {
       ariaLabel: "Github",
       icon: "tabler:brand-github",

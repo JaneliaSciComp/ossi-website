@@ -13,21 +13,15 @@ how to cite text: "Pachitariu, M., Stringer, C., Schröder, S., Dipoppa, M., Ros
 additional links array: [https://www.suite2p.org/]
 additional links text array: ["suite2p homepage"]
 # related blog posts: [Optional-file-name]
-# image file: ./optional-file-path.jpg
-# image caption: Alt text is required if you upload an image file
+image file: ./suite2p.gif
+image caption: The Suite2p GUI
 youtube url: https://www.youtube.com/watch?v=L0cX6V2wFUU
 youtube caption: Suite2p computational tutorial by Carsen Stringer, HHMI Janelia Research Campus
 development team: [Pachitariu Lab, Stringer Lab]
 programming language: [Python]
 open source license: [GPL-3.0]
 software type: [Package]
-use case:
-  [
-    Calcium imaging,
-    Confocal light microscopy (LM),
-    Electron microscopy (EM),
-    Expansion microscopy (ExM),
-  ]
+use case: [Calcium imaging, Neural recording]
 usage environment: [Google Colab, Local installation]
 software ecosystem: [Napari]
 # supported file types: [N5, NWB, OME-Zarr, SWC, TIFF, Zeiss CZI, mpeg, avi]

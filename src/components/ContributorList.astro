@@ -17,7 +17,7 @@ import {
 } from "../utils/githubApiHelper";
 
 const authToken = import.meta.env.OSSI_SITE_TOKEN;
-const numberOfRecentContributors = 12;
+const numberOfRecentContributors = 8;
 let contributors;
 
 // make call to GitHub API only if authToken present
@@ -53,7 +53,7 @@ if (authToken) {
   </div>
 
   <div class="w-full lg:w-1/2 px-0">
-    <ul class="grid grid-cols-4 grid-rows-3 gap-2">
+    <ul class="grid grid-cols-4 grid-rows-2 gap-2">
       {
         Array.from({ length: numberOfRecentContributors }).map((_, index) => {
           const contributor =

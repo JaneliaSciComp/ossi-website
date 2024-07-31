@@ -31,6 +31,7 @@ export function getBackgroundColor(key) {
 
 // Takes in a content collection object (e.g., projects or ecosystems) and returns an object of only the unique tag keys and unique tag values within each key
 // All returned keys and tags are lowercase
+// Keys are in the order set by validTagsList. Tags are in alphabetical order
 // Used to create the tag categories and tag option list in the filter menu
 export function extractUniqueTagsObject(contentCollectionObj) {
   const uniqueTags = {};
@@ -74,6 +75,10 @@ export function extractUniqueTagsObject(contentCollectionObj) {
         }
       }
     });
+  });
+  // Alphabetize the values in the array within each key
+  Object.keys(uniqueTags).forEach((key) => {
+    uniqueTags[key].sort();
   });
   return uniqueTags;
 }

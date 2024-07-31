@@ -6,8 +6,6 @@ import { atom, onMount, computed } from "nanostores";
 import Fuse from "fuse.js";
 import { $urlQuery } from "./queryStore";
 
-const baseUrl = import.meta.env.BASE_URL;
-
 // Initialize fuse instance for projects data
 export const $projectsFuse = atom(null);
 
@@ -35,7 +33,7 @@ const projectsOptions = {
 
 onMount($projectsFuse, async () => {
   try {
-    const response = await fetch(`${baseUrl}/projects.json`);
+    const response = await fetch(`/projects.json`);
     const { projects, index } = await response.json();
     const parsedIndex = Fuse.parseIndex(index);
     const newFuseInstance = new Fuse(projects, projectsOptions, parsedIndex);
