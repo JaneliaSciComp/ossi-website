@@ -1,6 +1,6 @@
 ---
 title: Spatial Transcriptomics as Images Project (STIM)
-tagline: A framework for storing, (interactively) viewing, amd aligning spatial transcriptomics data.
+tagline: A framework for storing, (interactively) viewing, and aligning spatial transcriptomics data.
 maintainer: Preibisch, Innerberger et al.
 preferred contact method: https://github.com/PreibischLab/STIM/issues
 project type: [OSSI - current]
