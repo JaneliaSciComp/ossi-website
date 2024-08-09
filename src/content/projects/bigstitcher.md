@@ -13,8 +13,9 @@ how to cite link: https://doi.org/10.1038/s41592-019-0501-0
 how to cite text: "D. Hörl, F. Rojas Rusak, F. Preusser, P. Tillberg P, N. Randel, R.K. Chhetri, A. Cardona, P.J. Keller, H. Harz, H. Leonhardt, M. Treier & S. Preibisch, Nature Methods 16, 870–874 (2019)."
 image file: ./bigstitcher-1.png
 image caption: Example of a cleared, tiled mouse brain acquisitions stitched with BigStitcher
-youtube url: https://www.youtube.com/watch?v=kz9p2xtPfTA&list=PLNZz8lLDpAeVOeAmQWMrKGOeB3vv28yJE&index=7
+youtube url: https://www.youtube.com/watch?v=kz9p2xtPfTA
 youtube caption: BigStitcher YouTube HowTo Channel.
+youtube params: listtype=Playlist&list=PLNZz8lLDpAeVOeAmQWMrKGOeB3vv28yJE&pp=iAQB
 development team: [Scientific Computing Software]
 programming language: [Java]
 open source license: [BSD-3 Clause]
