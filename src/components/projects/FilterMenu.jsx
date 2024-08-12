@@ -124,10 +124,7 @@ export default function FilterMenu({ uniqueTags }) {
       </div>
 
       <div className="flex self-center gap-4 py-4">
-        <button
-          className="btn-primary md:hidden"
-          onClick={() => isFilterMenuVisible.set(!$isFilterMenuVisible)}
-        >
+        <button className="btn-primary md:hidden" onClick={toggleVisibility}>
           View projects
         </button>
         {/* This reset button is visible on small screens */}

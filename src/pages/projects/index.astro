@@ -41,7 +41,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
   >
     <div class="col-start-1 col-span-1">
       <SearchInput client:load />
-      <ToggleFilterMenuBtn uniqueTags={uniqueTags} client:only="react" />
+      <ToggleFilterMenuBtn client:only="react" />
       <FilterMenu uniqueTags={uniqueTags} client:only="react" />
     </div>
     <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
