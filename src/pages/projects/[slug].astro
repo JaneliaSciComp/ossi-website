@@ -1,0 +1,165 @@
+---
+import { getCollection, getEntries } from "astro:content";
+import { YouTube } from "astro-embed";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Link from "../../components/Link.astro";
+import QuickLinks from "../../components/individual-project/QuickLinks.astro";
+import ExternalLinks from "../../components/individual-project/ExternalLinks.astro";
+import Tag from "../../components/projects/Tag.astro";
+import Readme from "../../components/individual-project/Readme";
+import ProjectPageTabs from "../../components/individual-project/Tabs";
+
+import {
+  extractUniqueTagsObject,
+  findLabInfo,
+} from "../../utils/tagManipulation";
+
+const { project } = Astro.props;
+const frontmatter = project.data;
+const body = project.body;
+const { Content } = await project.render();
+// console.log(body.length, body.includes("provide an alternative description"));
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const relatedBlogPosts = frontmatter["related blog posts"]
+  ? await getEntries(frontmatter["related blog posts"])
+  : null;
+
+//Have to set data: frontmatter b/c the function expects an obj in the format {data: {key: value}}
+//And frontmatter = data
+const tagsObj = extractUniqueTagsObject({ data: frontmatter });
+const labInfoArray = findLabInfo(frontmatter["development team"]);
+---
+
+<BaseLayout>
+  <div
+    class="grow lg:grid grid-cols-5 auto-rows-min pt-24 pb-8 max-w-7xl mx-auto"
+  >
+    <a
+      class="col-start-1 row-start-1 mx-6 text-sm text-primary hover:underline dark:text-slate-300 dark:border-slate-500 dark:hover:border-slate-800 cursor-pointer"
+      href={`/projects`}
+    >
+      Projects
+    </a>
+    <div class="col-start-1 col-span-3 row-start-2">
+      <h1
+        class="m-6 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
+      >
+        {frontmatter.title}
+      </h1>
+      <p
+        class="mx-6 mb-6 md:mt-10 text-xl md:text-2xl text-muted dark:text-slate-400"
+      >
+        {frontmatter.tagline}
+      </p>
+    </div>
+
+    <div
+      class="col-start-4 col-span-2 row-start-2 row-span-2 px-6 py-12 lg:p-0 lg:pl-12 bg-primary bg-opacity-20 lg:bg-page lg:bg-opacity-0"
+    >
+      <QuickLinks frontmatter={frontmatter} />
+    </div>
+    <div class="col-start-1 col-span-3 mx-6">
+      {
+        frontmatter["youtube url"] && (
+          <div class="flex flex-col items-center pt-12 pb-6 lg:pt-0 lg:pb-4">
+            <YouTube
+              id={frontmatter["youtube url"]}
+              title={frontmatter["youtube title"]}
+              class="embedded-yt w-full rounded-lg lg:self-start"
+              params={
+                frontmatter["youtube params"]
+                  ? frontmatter["youtube params"]
+                  : ""
+              }
+            />
+          </div>
+        )
+      }
+      <ProjectPageTabs client:load>
+        <div slot="overview">
+          {
+            labInfoArray && (
+              <div class="flex items-center flex-wrap mb-2 gap-3">
+                <p class="font-semibold">Development Team:</p>
+                {labInfoArray.map((labInfo) => {
+                  if (labInfo) {
+                    const { name, url } = labInfo;
+                    return <Link url={url} text={name} />;
+                  }
+                })}
+              </div>
+            )
+          }
+          {
+            frontmatter["open source license"] && (
+              <div class="flex flex-wrap mb-2 gap-3">
+                <p class="font-semibold">License:</p>
+                {/* if it exists, open source license can be a string or array of strings */}
+                {!Array.isArray(frontmatter["open source license"]) ||
+                frontmatter["open source license"].length === 1 ? (
+                  <span>{frontmatter["open source license"]}</span>
+                ) : (
+                  <div>
+                    {frontmatter["open source license"].map((license, index) =>
+                      index < frontmatter["open source license"].length - 1 ? (
+                        <span>{license}, </span>
+                      ) : (
+                        <span>{license}</span>
+                      )
+                    )}
+                  </div>
+                )}
+              </div>
+            )
+          }
+
+          {
+            relatedBlogPosts && (
+              <div class="flex flex-wrap mb-2 gap-3">
+                <p class="font-semibold">Related blog posts:</p>
+                {relatedBlogPosts.map((blog) => (
+                  <Link text={blog?.data?.title} url={`/blog/${blog?.slug}`} />
+                ))}
+              </div>
+            )
+          }
+
+          <ExternalLinks frontmatter={frontmatter} />
+
+          <div class="pt-6 flex flex-wrap gap-2">
+            {
+              Object.entries(tagsObj).map(([tagCat, tags]) => {
+                return tags.map((tag) => {
+                  return (
+                    <Tag tagCat={tagCat} tag={tag} contentType="projects" />
+                  );
+                });
+              })
+            }
+          </div>
+        </div>
+        {
+          body.length === 0 ||
+          body.includes("provide an alternative description") ? (
+            <Readme
+              githubLink={frontmatter["github link"]}
+              slot="readme"
+              client:load
+            />
+          ) : (
+            <Content slot="content" />
+          )
+        }
+      </ProjectPageTabs>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,6 +1,18 @@
-import { atom } from "nanostores";
+import { atom, onMount } from "nanostores";
 
 export const selectedProjectType = atom([]);
+
+onMount(selectedProjectType, () => {
+  const currentProjectType = selectedProjectType.get();
+  let urlProjectType = [];
+  if (typeof window !== "undefined") {
+    const searchParams = new URLSearchParams(window.location.search);
+    urlProjectType = searchParams.getAll("projectType");
+  }
+  if ((currentProjectType.length === 0) & (urlProjectType.length > 0)) {
+    selectedProjectType.set(urlProjectType);
+  }
+});
 
 function updateProjectTypeSearchParams(updatedProjectType) {
   // update URL search params

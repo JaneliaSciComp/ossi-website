@@ -40,31 +40,20 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
     class="px-6 lg:px-20 xl:px-32 py-6 md:py-12 lg:py-20 w-full max-w-6xl lg:max-w-none 2xl:w-11/12 md:grid grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-5 gap-4"
   >
     <div class="col-start-1 col-span-1">
-      <!-- <SearchInput client:load /> -->
       <SearchInput client:load />
-      <ToggleFilterMenuBtn
-        slot="toggleFilterMenuBtn"
-        uniqueTags={uniqueTags}
-        client:only="react"
-      />
-      <FilterMenu
-        uniqueTags={uniqueTags}
-        slot="filterMenu"
-        client:only="react"
-      />
+      <ToggleFilterMenuBtn client:only="react" />
+      <FilterMenu uniqueTags={uniqueTags} client:only="react" />
     </div>
     <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
-      <ProjectTypeBtns slot="projectTypeBtns" client:visible />
+      <ProjectTypeBtns client:only="react" />
       <div class="md:hidden flex flex-col gap-6 items-end min-w-full">
         <div class="flex gap-2 w-full">
           <h3 class="font-bold">Filter by OSSI funding status</h3>
-          <ResetProjectTypeBtn slot="resetProjectTypeBtn" client:load />
-          <ProjectTypeDropdown slot="projecTypeDropdown" client:visible />
+          <ResetProjectTypeBtn client:load />
+          <ProjectTypeDropdown client:visible />
         </div>
       </div>
-
       <ProjectCount
-        slot="projectCount"
         allContent={allProjects}
         contentType="projects"
         client:only="react"
