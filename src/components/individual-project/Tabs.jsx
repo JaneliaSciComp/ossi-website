@@ -36,12 +36,12 @@ export default function ProjectPageTabs({ overview, readme, content }) {
           {contentTabTitle}
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="overview" className="w-full h-full pt-6 ">
+      <TabsContent value="overview" className="min-w-full min-h-full pt-6 ">
         {overview}
       </TabsContent>
       <TabsContent
         value="details"
-        className="w-full min-h-full pt-6 prose prose-sm lg:prose-md dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"
+        className="min-w-full min-h-full pt-6 prose prose-sm lg:prose-md dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg"
       >
         {readme}
         {content}
