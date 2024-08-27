@@ -1,10 +1,10 @@
-import { Badge } from "../ui/badge";
+import { Badge } from "@components/ui/badge";
 import { useStore } from "@nanostores/react";
-import { selectedTags } from "../../stores/selectedTagsStore";
+import { selectedTags } from "@stores/selectedTagsStore";
 import {
   isFilterMenuVisible,
   toggleVisibility,
-} from "../../stores/isFilterMenuVisibleStore";
+} from "@stores/isFilterMenuVisibleStore";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
 
 export default function ToggleFilterMenuBtn() {

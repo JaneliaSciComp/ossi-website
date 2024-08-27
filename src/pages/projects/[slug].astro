@@ -2,18 +2,15 @@
 import { getCollection, getEntries } from "astro:content";
 import { YouTube } from "astro-embed";
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Link from "../../components/Link.astro";
-import QuickLinks from "../../components/individual-project/QuickLinks.astro";
-import ExternalLinks from "../../components/individual-project/ExternalLinks.astro";
-import Tag from "../../components/projects/Tag.astro";
-import Readme from "../../components/individual-project/Readme";
-import ProjectPageTabs from "../../components/individual-project/Tabs";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Link from "@components/Link.astro";
+import QuickLinks from "@components/individual-project/QuickLinks.astro";
+import ExternalLinks from "@components/individual-project/ExternalLinks.astro";
+import Tag from "@components/projects/Tag.astro";
+import Readme from "@components/individual-project/Readme";
+import ProjectPageTabs from "@components/individual-project/Tabs";
 
-import {
-  extractUniqueTagsObject,
-  findLabInfo,
-} from "../../utils/tagManipulation";
+import { extractUniqueTagsObject, findLabInfo } from "@utils/tagManipulation";
 
 // Implementation of Astro getStaticPaths() function, required for dynamic routes
 // Defines all paths at build time, in this case, for individual projects in the "projects" content collection

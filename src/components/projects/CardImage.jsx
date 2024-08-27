@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getRandomImage } from "../../utils/getRandomImage";
+import { getRandomImage } from "@utils/getRandomImage";
 
 export default function ContentCardImage() {
   const placeholderProjectImages = [

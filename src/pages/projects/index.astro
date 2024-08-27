@@ -1,23 +1,23 @@
 ---
-import "../../styles/tailwind.css";
+import "@styles/tailwind.css";
 import { siteConfig } from "../../siteConfig";
 import { getCollection } from "astro:content";
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Hero from "../../components/Hero.jsx";
-import CardContainer from "../../components/projects/CardContainer";
-import CardContent from "../../components/projects/CardContent.astro";
-import CardImage from "../../components/projects/CardImage";
-import FilterMenu from "../../components/projects/FilterMenu";
-import ResetProjectTypeBtn from "../../components/projects/ResetProjectTypeBtn";
-import ProjectCount from "../../components/projects/ProjectCount";
-import ProjectTypeBtns from "../../components/projects/ProjectTypeBtns";
-import ProjectTypeDropdown from "../../components/projects/ProjectTypeDropdown";
-import SearchInput from "../../components/projects/SearchInput";
-import Tag from "../../components/projects/Tag.astro";
-import ToggleFilterMenuBtn from "../../components/projects/ToggleFilterMenuBtn";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/Hero.jsx";
+import CardContainer from "@components/projects/CardContainer";
+import CardContent from "@components/projects/CardContent.astro";
+import CardImage from "@components/projects/CardImage";
+import FilterMenu from "@components/projects/FilterMenu";
+import ResetProjectTypeBtn from "@components/projects/ResetProjectTypeBtn";
+import ProjectCount from "@components/projects/ProjectCount";
+import ProjectTypeBtns from "@components/projects/ProjectTypeBtns";
+import ProjectTypeDropdown from "@components/projects/ProjectTypeDropdown";
+import SearchInput from "@components/projects/SearchInput";
+import Tag from "@components/projects/Tag.astro";
+import ToggleFilterMenuBtn from "@components/projects/ToggleFilterMenuBtn";
 
-import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
+import { extractUniqueTagsObject } from "@utils/tagManipulation.js";
 
 const pageTitle = "OSSI-supported projects";
 const allProjects = await getCollection("projects");

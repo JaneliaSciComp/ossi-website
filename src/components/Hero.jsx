@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getRandomImage } from "../utils/getRandomImage";
-import { heroImageFiles } from "../../public/hero-images/heroImageFiles.js";
+import { getRandomImage } from "@utils/getRandomImage";
+import heroImageFiles from "@data/heroImageFiles.json";
 import { twMerge } from "tailwind-merge";
 
 export default function Hero({

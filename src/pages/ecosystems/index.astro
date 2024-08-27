@@ -1,20 +1,20 @@
 ---
-import "../../styles/tailwind.css";
+import "@styles/tailwind.css";
 
 import { getCollection, getEntries } from "astro:content";
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Hero from "../../components/Hero.jsx";
-import FilterMenu from "../../components/projects/FilterMenu";
-import ToggleFilterMenuBtn from "../../components/projects/ToggleFilterMenuBtn";
-import ProjectCount from "../../components/projects/ProjectCount";
-import CardContainer from "../../components/projects/CardContainer";
-import CardImage from "../../components/projects/CardImage";
-import CardContent from "../../components/projects/CardContent.astro";
-import SearchInput from "../../components/projects/SearchInput";
-import Tag from "../../components/projects/Tag.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/Hero.jsx";
+import FilterMenu from "@components/projects/FilterMenu";
+import ToggleFilterMenuBtn from "@components/projects/ToggleFilterMenuBtn";
+import ProjectCount from "@components/projects/ProjectCount";
+import CardContainer from "@components/projects/CardContainer";
+import CardImage from "@components/projects/CardImage";
+import CardContent from "@components/projects/CardContent.astro";
+import SearchInput from "@components/projects/SearchInput";
+import Tag from "@components/projects/Tag.astro";
 
-import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
+import { extractUniqueTagsObject } from "@utils/tagManipulation.js";
 
 //allEcosystems gets passes as "content" to the content cards
 //eveything else happening in here is to make tags for the filter menu and cards

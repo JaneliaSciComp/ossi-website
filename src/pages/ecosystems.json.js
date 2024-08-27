@@ -4,7 +4,7 @@ import Fuse from "fuse.js";
 import {
   extractUniqueTagsObject,
   extractUniqueTagValueArray,
-} from "../utils/tagManipulation";
+} from "@utils/tagManipulation";
 
 async function getEcosystems() {
   const allEcosystems = (await getCollection("ecosystems")).sort(

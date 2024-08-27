@@ -1,9 +1,9 @@
 ---
-import "../styles/tailwind.css";
-import CustomStyles from "../styles/CustomStyles.astro";
+import "@styles/tailwind.css";
+import CustomStyles from "@styles/CustomStyles.astro";
 
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 
 const siteBaseURL = new URL(Astro.url);
 const ogImageUrl = new URL("/SCSW_Logo_white_background.png", siteBaseURL);

@@ -2,11 +2,11 @@
 import { getCollection, getEntries } from "astro:content";
 import { YouTube } from "astro-embed";
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import ContentListDisplay from "../../components/ecosystems/ContentListDisplay.astro";
-import Tag from "../../components/projects/Tag.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ContentListDisplay from "@components/ecosystems/ContentListDisplay.astro";
+import Tag from "@components/projects/Tag.astro";
 
-import { extractUniqueTagsObject } from "../../utils/tagManipulation";
+import { extractUniqueTagsObject } from "@utils/tagManipulation";
 
 export async function getStaticPaths() {
   const ecosystems = await getCollection("ecosystems");

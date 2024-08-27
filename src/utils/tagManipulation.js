@@ -1,6 +1,6 @@
 import validTagsList from "../../.github/actions/validTagsList.json";
 import possibleTagColors from "./tagColors.json";
-import { allLabNamesAndUrls } from "../data/labNamesUrls";
+import { allLabNamesAndUrls } from "@data/labNamesUrls";
 
 // Used in the filter menu to add/remove params
 // Used when clicking on a tag to remove all params and add only the one clicked

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
-import { selectedTags } from "../../stores/selectedTagsStore.js";
-import { selectedProjectType } from "../../stores/selectedProjectTypeStore.js";
-import { $urlQuery } from "../../stores/queryStore.js";
-import { $projectData } from "../../stores/projectSearchResultsStore.js";
-import { $ecosystemData } from "../../stores/ecosystemSearchResultsStore.js";
-import { extractUniqueTagValueArray } from "../../utils/tagManipulation.js";
+import { selectedTags } from "@stores/selectedTagsStore.js";
+import { selectedProjectType } from "@stores/selectedProjectTypeStore.js";
+import { $urlQuery } from "@stores/queryStore.js";
+import { $projectData } from "@stores/projectSearchResultsStore.js";
+import { $ecosystemData } from "@stores/ecosystemSearchResultsStore.js";
+import { extractUniqueTagValueArray } from "@utils/tagManipulation.js";
 
 export default function ProjectCount({ allContent, contentType }) {
   const urlQuery = useStore($urlQuery);

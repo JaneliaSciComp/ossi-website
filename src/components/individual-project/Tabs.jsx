@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 
 export default function ProjectPageTabs({ overview, readme, content }) {
   const contentTabTitle = readme ? "GitHub README" : "Details";

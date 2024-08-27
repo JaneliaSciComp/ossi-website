@@ -1,7 +1,7 @@
 import { useStore } from "@nanostores/react";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
-import { $urlQuery, handleQuery } from "../../stores/queryStore";
+import { Input } from "@components/ui/input";
+import { Label } from "@components/ui/label";
+import { $urlQuery, handleQuery } from "@stores/queryStore";
 
 export default function SearchInput() {
   const urlQuery = useStore($urlQuery);

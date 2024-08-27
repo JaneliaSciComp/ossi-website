@@ -1,7 +1,7 @@
 import {
   selectedProjectType,
   handleProjectTypeButton,
-} from "../../stores/selectedProjectTypeStore.js";
+} from "@stores/selectedProjectTypeStore.js";
 import { useStore } from "@nanostores/react";
 
 export default function ProjectTypeSelector() {
