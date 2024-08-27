@@ -15,12 +15,8 @@ import {
   findLabInfo,
 } from "../../utils/tagManipulation";
 
-const { project } = Astro.props;
-const frontmatter = project.data;
-const body = project.body;
-const { Content } = await project.render();
-// console.log(body.length, body.includes("provide an alternative description"));
-
+// Implementation of Astro getStaticPaths() function, required for dynamic routes
+// Defines all paths at build time, in this case, for individual projects in the "projects" content collection
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((project) => ({
@@ -28,6 +24,11 @@ export async function getStaticPaths() {
     props: { project },
   }));
 }
+
+const { project } = Astro.props;
+const frontmatter = project.data;
+const body = project.body;
+const { Content } = await project.render();
 
 const relatedBlogPosts = frontmatter["related blog posts"]
   ? await getEntries(frontmatter["related blog posts"])
