@@ -1,5 +1,5 @@
 import { atom, onMount } from "nanostores";
-import { updateSearchParamUrl } from "../utils/tagManipulation";
+import { updateSearchParamUrl } from "@utils/updateTagUrlParams";
 
 export const selectedTags = atom([]);
 

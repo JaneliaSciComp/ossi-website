@@ -6,7 +6,7 @@ import {
   toggleVisibility,
 } from "@stores/isFilterMenuVisibleStore.js";
 import { selectedTags, handleTagSelection } from "@stores/selectedTagsStore.js";
-import { getBackgroundColor } from "@utils/tagManipulation.js";
+import { getBackgroundColor } from "@utils/getTagBgColor";
 
 const OMIT_TAG_CATEGORIES = ["software ecosystem", "supported file types"];
 

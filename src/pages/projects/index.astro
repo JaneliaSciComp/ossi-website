@@ -17,7 +17,7 @@ import SearchInput from "@components/projects/SearchInput";
 import Tag from "@components/projects/Tag.astro";
 import ToggleFilterMenuBtn from "@components/projects/ToggleFilterMenuBtn";
 
-import { extractUniqueTagsObject } from "@utils/tagManipulation.js";
+import { extractUniqueTagsObject } from "@utils/extractUniqueTags";
 
 const pageTitle = "OSSI-supported projects";
 const allProjects = await getCollection("projects");

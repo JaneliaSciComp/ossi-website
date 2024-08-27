@@ -5,7 +5,7 @@ import { selectedProjectType } from "@stores/selectedProjectTypeStore.js";
 import { $urlQuery } from "@stores/queryStore.js";
 import { $projectData } from "@stores/projectSearchResultsStore.js";
 import { $ecosystemData } from "@stores/ecosystemSearchResultsStore.js";
-import { extractUniqueTagValueArray } from "@utils/tagManipulation.js";
+import { extractUniqueTagValueArray } from "@utils/extractUniqueTags.js";
 
 export default function ProjectCount({ allContent, contentType }) {
   const urlQuery = useStore($urlQuery);

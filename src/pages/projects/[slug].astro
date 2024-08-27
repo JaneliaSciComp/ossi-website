@@ -10,7 +10,8 @@ import Tag from "@components/projects/Tag.astro";
 import Readme from "@components/individual-project/Readme";
 import ProjectPageTabs from "@components/individual-project/Tabs";
 
-import { extractUniqueTagsObject, findLabInfo } from "@utils/tagManipulation";
+import { extractUniqueTagsObject } from "@utils/extractUniqueTags";
+import { findLabInfo } from "@utils/getLabUrl";
 
 // Implementation of Astro getStaticPaths() function, required for dynamic routes
 // Defines all paths at build time, in this case, for individual projects in the "projects" content collection

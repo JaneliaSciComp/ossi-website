@@ -6,7 +6,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import ContentListDisplay from "@components/ecosystems/ContentListDisplay.astro";
 import Tag from "@components/projects/Tag.astro";
 
-import { extractUniqueTagsObject } from "@utils/tagManipulation";
+import { extractUniqueTagsObject } from "@utils/extractUniqueTags";
 
 export async function getStaticPaths() {
   const ecosystems = await getCollection("ecosystems");
