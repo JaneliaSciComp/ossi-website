@@ -4,6 +4,8 @@ import { footerData } from "../data/navigation";
 import { Icon } from "astro-icon/components";
 import janeliaLogoBlack from "../assets/images/HHMI_Janelia_Logo-Black.png";
 import janeliaLogoWhite from "../assets/images/HHMI_Janelia_Logo-White.png";
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer
@@ -96,7 +98,7 @@ import janeliaLogoWhite from "../assets/images/HHMI_Janelia_Logo-White.png";
       }
 
       <div class="text-sm mr-4 dark:text-slate-400">
-        <Fragment set:html={footerData.footNote} />
+        © {currentYear} Howard Hughes Medical Institute
       </div>
     </div>
   </div>
