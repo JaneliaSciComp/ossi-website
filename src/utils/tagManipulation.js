@@ -21,7 +21,7 @@ export function updateSearchParamUrl(urlStringToUpdate, tagInput) {
 
 // Used for assigning tag background colors in the filter menu
 export function getBackgroundColor(key) {
-  const index = tagKeyNames.indexOf(key);
+  const index = Object.keys(validTagsList).indexOf(key);
   // Use the index to return the color at the same index in possibleTagColors
   // If the index is not found (-1), return a default color
   return index >= 0 ? possibleTagColors[index] : "#6ebebd";
@@ -33,12 +33,14 @@ export function getBackgroundColor(key) {
 // Keys are in the order set by validTagsList. Tags are in alphabetical order
 // Used to create the tag categories and tag option list in the filter menu
 export function extractUniqueTagsObject(contentCollection) {
-    const uniqueTags = {};
-    const validTagKeys = Object.keys(validTagsList);
+  const uniqueTags = {};
+  const validTagKeys = Object.keys(validTagsList);
 
   // For each key, determine the union of all unique values associated with it
   // (across all content items), excluding keys which aren't in validTagsList.
-  contentCollection = Array.isArray(contentCollection) ? contentCollection : [contentCollection];
+  contentCollection = Array.isArray(contentCollection)
+    ? contentCollection
+    : [contentCollection];
   contentCollection.forEach((contentItem) => {
     Object.entries(contentItem.data).forEach(([key, tagValues]) => {
       if (!validTagKeys.includes(key) || !tagValues || !tagValues.length) {
