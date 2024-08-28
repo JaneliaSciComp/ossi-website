@@ -21,7 +21,7 @@ const {
     content={content}
   />
   {
-    actions && (
+    actions ? (
       <div class={`grid grid-cols-2 gap-4 w-full ${btnContainerClasses}`}>
         {Array.isArray(actions) ? (
           actions.map((action) => (
@@ -34,7 +34,7 @@ const {
           <Fragment set:html={actions} />
         )}
       </div>
-    )
+    ) : null
   }
-  {btn && <slot name="btn" set:html={btn} />}
+  {btn ? <slot name="btn" set:html={btn} /> : null}
 </div>

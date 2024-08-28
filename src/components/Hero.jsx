@@ -43,25 +43,25 @@ export default function Hero({
         )}
       >
         <div>
-          {title && (
+          {title ? (
             <h1 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-200">
               {title}
             </h1>
-          )}
+          ) : null}
 
-          {subtitle && (
+          {subtitle ? (
             <p className="text-lg sm:text-xl lg:text-2xl  text-white dark:text-slate-300">
               {subtitle}
             </p>
-          )}
+          ) : null}
         </div>
-        {children && (
+        {children ? (
           <div
             className={`max-w-3xl bg-blue-50 dark:bg-slate-900 bg-opacity-90 mb-4 md:mb-0 py-3 sm:py-6 lg:py-8 w-auto rounded-2xl`}
           >
             {children}
           </div>
-        )}
+        ) : null}
         <p
           className={twMerge(
             "absolute bottom-0 max-auto text-xs text-white dark:text-slate-300",

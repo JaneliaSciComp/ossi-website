@@ -1,12 +1,12 @@
 ---
 import { getCollection, getEntries } from "astro:content";
-import { YouTube } from "astro-embed";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ContentListDisplay from "@components/ecosystems/ContentListDisplay.astro";
 import Tag from "@components/projects/Tag.astro";
+import Youtube from "@components/individual-project/Youtube.astro";
 
-import { extractUniqueTagsObject } from "@utils/getTags
+import { getTagKeysAndValues } from "@utils/getTags";
 
 export async function getStaticPaths() {
   const ecosystems = await getCollection("ecosystems");
@@ -23,7 +23,7 @@ const { Content } = await ecosystem.render();
 const relatedProjects = frontmatter["related projects"]
   ? await getEntries(frontmatter["related projects"])
   : null;
-const tagsObj = extractUniqueTagsObject(relatedProjects);
+const tagsObj = getTagKeysAndValues(relatedProjects);
 ---
 
 <BaseLayout>
@@ -51,30 +51,20 @@ const tagsObj = extractUniqueTagsObject(relatedProjects);
       <div
         class="px-6 py-12 lg:p-0 lg:pl-12 row-start-1 row-span-2 col-start-5 col-span-2 bg-page"
       >
-        {
-          relatedProjects && (
-            <ContentListDisplay
-              title="Related projects"
-              information="Learn more about projects in this ecosystem"
-              content="projects"
-              subset={relatedProjects}
-            />
-          )
-        }
+        <ContentListDisplay
+          title="Related projects"
+          information="Learn more about projects in this ecosystem"
+          content="projects"
+          subset={relatedProjects}
+        />
       </div>
 
       <div class="col-start-1 col-span-4">
-        {
-          frontmatter["youtube url"] && (
-            <div class=" flex flex-col items-center pt-6 mx-6 lg:pt-0 ">
-              <YouTube
-                id={frontmatter["youtube url"]}
-                title={frontmatter["youtube title"]}
-                class="w-full rounded-lg lg:self-start"
-              />
-            </div>
-          )
-        }
+        <Youtube
+          url={frontmatter["youtube url"]}
+          title={frontmatter["youtube title"]}
+          params={frontmatter["youtube params"]}
+        />
         <div class="mx-6 my-6 flex flex-col gap-1">
           <div class="pt-6 flex flex-wrap gap-2">
             {
