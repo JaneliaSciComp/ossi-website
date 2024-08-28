@@ -1,0 +1,19 @@
+---
+import Link from "@components/Link.astro";
+
+const { team } = Astro.props;
+---
+
+{
+  team ? (
+    <div class="flex items-center flex-wrap mb-2 gap-3">
+      <p class="font-semibold">Development Team:</p>
+      {team.map((entry) => {
+        if (entry) {
+          const { name, url } = entry;
+          return <Link url={url} text={name} />;
+        }
+      })}
+    </div>
+  ) : null
+}

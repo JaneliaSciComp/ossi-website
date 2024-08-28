@@ -1,0 +1,25 @@
+---
+const { license } = Astro.props;
+---
+
+{
+  license ? (
+    <div class="flex flex-wrap mb-2 gap-3">
+      <p class="font-semibold">License:</p>
+      {/* if it exists, open source license can be a string or array of strings */}
+      {!Array.isArray(license) || license.length === 1 ? (
+        <span>{license}</span>
+      ) : (
+        <div>
+          {license.map((entry, index) =>
+            index < license.length - 1 ? (
+              <span>{entry}, </span>
+            ) : (
+              <span>{entry}</span>
+            )
+          )}
+        </div>
+      )}
+    </div>
+  ) : null
+}
