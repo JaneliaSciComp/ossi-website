@@ -9,7 +9,7 @@ const WrapperTag = as;
 <WrapperTag class="relative not-prose" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
     <slot name="bg">
-      {bg && <Fragment set:html={bg} />}
+      {bg ? <Fragment set:html={bg} /> : null}
     </slot>
   </div>
   <div

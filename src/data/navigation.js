@@ -52,5 +52,4 @@ export const footerData = {
       href: "https://github.com/JaneliaSciComp",
     },
   ],
-  footNote: "© 2024 Howard Hughes Medical Institute",
 };

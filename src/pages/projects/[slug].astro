@@ -1,26 +1,22 @@
 ---
 import { getCollection, getEntries } from "astro:content";
-import { YouTube } from "astro-embed";
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Link from "../../components/Link.astro";
-import QuickLinks from "../../components/individual-project/QuickLinks.astro";
-import ExternalLinks from "../../components/individual-project/ExternalLinks.astro";
-import Tag from "../../components/projects/Tag.astro";
-import Readme from "../../components/individual-project/Readme";
-import ProjectPageTabs from "../../components/individual-project/Tabs";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import QuickLinks from "@components/individual-project/QuickLinks.astro";
+import Youtube from "@components/individual-project/Youtube.astro";
+import DevelopmentTeam from "@components/individual-project/DevelopmentTeam.astro";
+import ProjectPageTabs from "@components/individual-project/Tabs";
+import License from "@components/individual-project/License.astro";
+import ExternalLinks from "@components/individual-project/ExternalLinks.astro";
+import Tag from "@components/projects/Tag.astro";
+import Readme from "@components/individual-project/Readme";
 
-import {
-  extractUniqueTagsObject,
-  findLabInfo,
-} from "../../utils/tagManipulation";
+import { getTagKeysAndValues } from "@utils/getTags";
+import { findLabInfo } from "@utils/getLabUrl";
+import RelatedPosts from "@components/individual-project/RelatedPosts.astro";
 
-const { project } = Astro.props;
-const frontmatter = project.data;
-const body = project.body;
-const { Content } = await project.render();
-// console.log(body.length, body.includes("provide an alternative description"));
-
+// Implementation of Astro getStaticPaths() function, required for dynamic routes
+// Defines all paths at build time, in this case, for individual projects in the "projects" content collection
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((project) => ({
@@ -29,13 +25,18 @@ export async function getStaticPaths() {
   }));
 }
 
+const { project } = Astro.props;
+const frontmatter = project.data;
+const body = project.body;
+const { Content } = await project.render();
+
 const relatedBlogPosts = frontmatter["related blog posts"]
   ? await getEntries(frontmatter["related blog posts"])
   : null;
 
 //Have to set data: frontmatter b/c the function expects an obj in the format {data: {key: value}}
 //And frontmatter = data
-const tagsObj = extractUniqueTagsObject({ data: frontmatter });
+const tagsObj = getTagKeysAndValues({ data: frontmatter });
 const labInfoArray = findLabInfo(frontmatter["development team"]);
 ---
 
@@ -68,73 +69,17 @@ const labInfoArray = findLabInfo(frontmatter["development team"]);
       <QuickLinks frontmatter={frontmatter} />
     </div>
     <div class="col-start-1 col-span-3 mx-6">
-      {
-        frontmatter["youtube url"] && (
-          <div class="flex flex-col items-center pt-12 pb-6 lg:pt-0 lg:pb-4">
-            <YouTube
-              id={frontmatter["youtube url"]}
-              title={frontmatter["youtube title"]}
-              class="embedded-yt w-full rounded-lg lg:self-start"
-              params={
-                frontmatter["youtube params"]
-                  ? frontmatter["youtube params"]
-                  : ""
-              }
-            />
-          </div>
-        )
-      }
+      <Youtube
+        url={frontmatter["youtube url"]}
+        title={frontmatter["youtube title"]}
+        params={frontmatter["youtube params"]}
+      />
       <ProjectPageTabs client:load>
         <div slot="overview">
-          {
-            labInfoArray && (
-              <div class="flex items-center flex-wrap mb-2 gap-3">
-                <p class="font-semibold">Development Team:</p>
-                {labInfoArray.map((labInfo) => {
-                  if (labInfo) {
-                    const { name, url } = labInfo;
-                    return <Link url={url} text={name} />;
-                  }
-                })}
-              </div>
-            )
-          }
-          {
-            frontmatter["open source license"] && (
-              <div class="flex flex-wrap mb-2 gap-3">
-                <p class="font-semibold">License:</p>
-                {/* if it exists, open source license can be a string or array of strings */}
-                {!Array.isArray(frontmatter["open source license"]) ||
-                frontmatter["open source license"].length === 1 ? (
-                  <span>{frontmatter["open source license"]}</span>
-                ) : (
-                  <div>
-                    {frontmatter["open source license"].map((license, index) =>
-                      index < frontmatter["open source license"].length - 1 ? (
-                        <span>{license}, </span>
-                      ) : (
-                        <span>{license}</span>
-                      )
-                    )}
-                  </div>
-                )}
-              </div>
-            )
-          }
-
-          {
-            relatedBlogPosts && (
-              <div class="flex flex-wrap mb-2 gap-3">
-                <p class="font-semibold">Related blog posts:</p>
-                {relatedBlogPosts.map((blog) => (
-                  <Link text={blog?.data?.title} url={`/blog/${blog?.slug}`} />
-                ))}
-              </div>
-            )
-          }
-
+          <DevelopmentTeam team={labInfoArray} />
+          <License license={frontmatter["open source license"]} />
+          <RelatedPosts posts={relatedBlogPosts} />
           <ExternalLinks frontmatter={frontmatter} />
-
           <div class="pt-6 flex flex-wrap gap-2">
             {
               Object.entries(tagsObj).map(([tagCat, tags]) => {
@@ -147,6 +92,7 @@ const labInfoArray = findLabInfo(frontmatter["development team"]);
             }
           </div>
         </div>
+
         {
           body.length === 0 ||
           body.includes("provide an alternative description") ? (

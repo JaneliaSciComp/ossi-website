@@ -7,7 +7,7 @@ import { TbSelector } from "react-icons/tb";
 import {
   selectedProjectType,
   handleProjectTypeDropdown,
-} from "../../stores/selectedProjectTypeStore.js";
+} from "@stores/selectedProjectTypeStore.js";
 import { useStore } from "@nanostores/react";
 
 const getOptionColorClasses = ({ selected, highlighted, disabled }) => {
