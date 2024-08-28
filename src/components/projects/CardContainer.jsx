@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "@stores/selectedTagsStore";
 import { selectedProjectType } from "@stores/selectedProjectTypeStore";
-import { extractUniqueTagValueArray } from "@utils/extractUniqueTags";
+import { getTagValues } from "@utils/getTags";
 import { $projectData } from "@stores/projectSearchResultsStore";
 import { $ecosystemData } from "@stores/ecosystemSearchResultsStore";
 import { $urlQuery } from "@stores/queryStore";
@@ -25,7 +25,7 @@ export default function CardContainer({
   const ecosystemData = useStore($ecosystemData);
   const $selectedTags = useStore(selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
-  const tagsArray = extractUniqueTagValueArray(tagsObj);
+  const tagsArray = getTagValues(tagsObj);
 
   let contentData = null;
   if (contentType === "projects") {

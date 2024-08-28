@@ -1,11 +1,10 @@
 import validTagsList from "../../.github/actions/validTagsList.json";
 
-// Takes in a content collection object (e.g., projects or ecosystems) and returns
-// an object of only the unique tag keys and unique tag values within each key
-// All returned keys and tags are lowercase
+// Takes in an object or array of objects (e.g., the project content collection)
+// and returns an object of only the unique tag keys and values within each key.
+// All returned keys and tags are lowercase.
 // Keys are in the order set by validTagsList. Tags are in alphabetical order
-// Used to create the tag categories and tag option list in the filter menu
-export function extractUniqueTagsObject(contentCollection) {
+export function getTagKeysAndValues(contentCollection) {
   const uniqueTags = {};
   const validTagKeys = Object.keys(validTagsList);
   // For each key, determine the union of all unique values associated with it
@@ -34,22 +33,18 @@ export function extractUniqueTagsObject(contentCollection) {
   return uniqueTags;
 }
 
-// Takes in a single project object and returns an array of that project's tag values
-// Used to populate the tags on the invididual project cards
-export function extractUniqueTagValueArray(projectData) {
-  const uniqueTagsObj = {};
-
+// Takes in a single project object and returns an array of the tag values ONLY
+// i.e., removes the tag categories
+export function getTagValues(projectData) {
+  const uniqueTags = {};
+  const tagKeyNames = Object.keys(validTagsList);
   Object.entries(projectData).forEach(([key, value]) => {
-    // If the current projectData key is a value in the tagKeyNames array, and the key has some associated value, add to uniqueTagsObj
-    const tagKeyNames = Object.keys(validTagsList);
-    const isTagKey = tagKeyNames.some((tagKeyName) => tagKeyName === key);
-    if (isTagKey) {
-      if (value) {
-        uniqueTagsObj[key] = value;
-      }
+    if (!tagKeyNames.includes(key) || !value) {
+      return;
     }
+    uniqueTags[key] = value;
   });
 
-  const tagValuesArray = Object.values(uniqueTagsObj).flat();
-  return tagValuesArray;
+  const tagValues = Object.values(uniqueTags).flat();
+  return tagValues;
 }

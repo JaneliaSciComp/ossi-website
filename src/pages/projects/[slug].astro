@@ -10,7 +10,7 @@ import Tag from "@components/projects/Tag.astro";
 import Readme from "@components/individual-project/Readme";
 import ProjectPageTabs from "@components/individual-project/Tabs";
 
-import { extractUniqueTagsObject } from "@utils/extractUniqueTags";
+import { getTagKeysAndValues } from "@utils/getTags";
 import { findLabInfo } from "@utils/getLabUrl";
 
 // Implementation of Astro getStaticPaths() function, required for dynamic routes
@@ -34,7 +34,7 @@ const relatedBlogPosts = frontmatter["related blog posts"]
 
 //Have to set data: frontmatter b/c the function expects an obj in the format {data: {key: value}}
 //And frontmatter = data
-const tagsObj = extractUniqueTagsObject({ data: frontmatter });
+const tagsObj = getTagKeysAndValues({ data: frontmatter });
 const labInfoArray = findLabInfo(frontmatter["development team"]);
 ---
 

@@ -17,14 +17,14 @@ import SearchInput from "@components/projects/SearchInput";
 import Tag from "@components/projects/Tag.astro";
 import ToggleFilterMenuBtn from "@components/projects/ToggleFilterMenuBtn";
 
-import { extractUniqueTagsObject } from "@utils/extractUniqueTags";
+import { getTagKeysAndValues } from "@utils/getTags";
 
 const pageTitle = "OSSI-supported projects";
 const allProjects = await getCollection("projects");
 
 // uniqueTags is an object where keys = unique tag categories, values = unique tags within a category, both across allProjects. All lowercase.
 // used to populate the filter menu
-const uniqueTags = extractUniqueTagsObject(allProjects);
+const uniqueTags = getTagKeysAndValues(allProjects);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -63,7 +63,7 @@ const uniqueTags = extractUniqueTagsObject(allProjects);
       >
         {
           allProjects.map((content) => {
-            const tagsObj = extractUniqueTagsObject(content);
+            const tagsObj = getTagKeysAndValues(content);
             return (
               <CardContainer
                 key={content.slug}

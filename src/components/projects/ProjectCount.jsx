@@ -5,7 +5,7 @@ import { selectedProjectType } from "@stores/selectedProjectTypeStore.js";
 import { $urlQuery } from "@stores/queryStore.js";
 import { $projectData } from "@stores/projectSearchResultsStore.js";
 import { $ecosystemData } from "@stores/ecosystemSearchResultsStore.js";
-import { extractUniqueTagValueArray } from "@utils/extractUniqueTags.js";
+import { getTagValues } from "@utils/getTags.js";
 
 export default function ProjectCount({ allContent, contentType }) {
   const urlQuery = useStore($urlQuery);
@@ -44,9 +44,9 @@ export default function ProjectCount({ allContent, contentType }) {
         //methods to create the tagsArray. Only do this step if there are any selectedTags
         let tagsArray = [];
         if (contentType === "projects") {
-          tagsArray = extractUniqueTagValueArray(entry.data);
+          tagsArray = getTagValues(entry.data);
         } else if (contentType === "ecosystems") {
-          tagsArray = extractUniqueTagValueArray(entry.data.tagsObj);
+          tagsArray = getTagValues(entry.data.tagsObj);
         }
         //we are only interested in projects/ecosystems with both matching tags to selectedTags (or if there are no selectedTags)
         //AND (in the case of projects only, ie., contentType === ecosystems will always be true)
