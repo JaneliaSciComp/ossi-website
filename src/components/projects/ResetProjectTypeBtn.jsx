@@ -1,4 +1,4 @@
-import { handleProjectTypeDropdown } from "../../stores/selectedProjectTypeStore";
+import { handleProjectTypeDropdown } from "@stores/selectedProjectTypeStore";
 
 export default function ResetProjectTypeBtn() {
   return (

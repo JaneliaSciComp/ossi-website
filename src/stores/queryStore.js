@@ -5,7 +5,7 @@
 import { atom, onMount } from "nanostores";
 import DOMPurify from "dompurify";
 
-// Initialize the URL query and fuseInstance data stores
+// Initialize the URL query data store
 export const $urlQuery = atom("");
 
 onMount($urlQuery, () => {

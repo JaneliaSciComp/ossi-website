@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import BlogImage from "./BlogImage.astro";
 
 const { post } = Astro.props;
 ---
@@ -7,30 +7,11 @@ const { post } = Astro.props;
 <article
   class={`max-w-md mx-auto md:max-w-none flex flex-col md:grid gap-6 md:gap-8 ${post.data["image file"] ? "md:grid-cols-2" : ""} dark:bg-slate-900`}
 >
-  {
-    post.data["image file"] && (
-      <a
-        class="relative block group"
-        href={`/blog/${post.slug}` ?? "javascript:void(0)"}
-      >
-        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
-          {post.data["image file"] && (
-            <Image
-              src={post.data["image file"]}
-              class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-              widths={[400, 900]}
-              width={900}
-              sizes="(max-width: 900px) 400px, 900px"
-              alt={post.data["image caption"]}
-              aspectRatio="16:9"
-              loading="lazy"
-              decoding="async"
-            />
-          )}
-        </div>
-      </a>
-    )
-  }
+  <BlogImage
+    imgFile={post.data["image file"]}
+    slug={post.slug}
+    caption={post.data["image caption"]}
+  />
   <div class="p-4">
     <header>
       <!-- <div class="mb-1">
@@ -52,11 +33,11 @@ const { post } = Astro.props;
     </header>
 
     {
-      post.data.tagline && (
+      post.data.tagline ? (
         <p class="flex-grow text-muted dark:text-slate-400 text-lg">
           {post.data.tagline}
         </p>
-      )
+      ) : null
     }
   </div>
 </article>

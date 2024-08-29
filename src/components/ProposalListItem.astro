@@ -1,6 +1,6 @@
 ---
 import { getEntries } from "astro:content";
-import Link from "./Link.astro";
+import Link from "@components/Link.astro";
 import { TbFileTypePdf } from "react-icons/tb";
 const { proposal } = Astro.props;
 const relatedProjects = await getEntries(proposal.data.projects);

@@ -50,7 +50,6 @@ export const $projectData = computed(
     // Handle fuse search
     if (currentFuseInstance) {
       const searchResults = currentFuseInstance.search(currentUrlQuery);
-      console.log(searchResults);
       return searchResults;
     }
   }

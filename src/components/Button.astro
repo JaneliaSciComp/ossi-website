@@ -25,5 +25,5 @@ const variants = {
   {...rest}
 >
   <Fragment set:html={text} />
-  {icon && <Icon name={icon} class="w-5 h-5  inline-block" />}
+  {icon ? <Icon name={icon} class="w-5 h-5  inline-block" /> : null}
 </a>

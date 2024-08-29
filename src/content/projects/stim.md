@@ -1,6 +1,6 @@
 ---
 title: Spatial Transcriptomics as Images Project (STIM)
-tagline: A framework for storing, (interactively) viewing, amd aligning spatial transcriptomics data.
+tagline: A framework for storing, (interactively) viewing, and aligning spatial transcriptomics data.
 maintainer: Preibisch, Innerberger et al.
 preferred contact method: https://github.com/PreibischLab/STIM/issues
 project type: [OSSI - current]
@@ -17,7 +17,7 @@ youtube url: https://www.youtube.com/watch?v=GhsKgM-go18
 youtube caption: STIM - Interactive alignment of spatial transcriptomics slices (e.g. Visium)
 development team: [Scientific Computing Software]
 programming language: [Java]
-open source license: [GPL-2.0, GPL-3.0]
+open source license: [GPL-3.0]
 software type: [Command line application, Framework, Native application]
 use case: [Spatial transcriptomics, Sequence analysis]
 usage environment: [Local installation]

@@ -21,7 +21,7 @@ try {
     <div class="flex flex-col gap-1 mr-8">
       <h3 class="font-bold mb-1">Get started</h3>
       {
-        frontmatter["github link"] && (
+        frontmatter["github link"] ? (
           <a
             class="self-start flex items-center gap-1 transition ease-in duration-200 hover:text-primary dark:text-slate-300 dark:hover:text-accent cursor-pointer"
             href={frontmatter["github link"]}
@@ -32,11 +32,11 @@ try {
             />
             Source code
           </a>
-        )
+        ) : null
       }
 
       {
-        frontmatter["documentation link"] && (
+        frontmatter["documentation link"] ? (
           <a
             class="self-start flex items-center gap-1 transition ease-in duration-200 hover:text-primary dark:text-slate-300 dark:hover:text-accent cursor-pointer"
             href={frontmatter["documentation link"]}
@@ -47,11 +47,11 @@ try {
             />
             Documentation
           </a>
-        )
+        ) : null
       }
 
       {
-        frontmatter["installation instructions link"] && (
+        frontmatter["installation instructions link"] ? (
           <a
             class="self-start flex items-center gap-1 transition ease-in duration-200 hover:text-primary dark:text-slate-300 dark:hover:text-accent cursor-pointer"
             href={frontmatter["installation instructions link"]}
@@ -62,30 +62,30 @@ try {
             />
             How to install
           </a>
-        )
+        ) : null
       }
     </div>
     <div class="flex flex-col gap-1 mr-8 md:mr-12">
       <h3 class="font-bold mb-1">Get help</h3>
       {
-        githubIssueLink && (
+        githubIssueLink ? (
           <a
             class="self-start btn rounded-md p-2 font-normal"
             href={githubIssueLink}
           >
             Open an issue on GitHub
           </a>
-        )
+        ) : null
       }
       {
-        frontmatter["preferred contact method"] && (
+        frontmatter["preferred contact method"] ? (
           <a
             class="self-start btn rounded-md p-2 font-normal"
             href={frontmatter["preferred contact method"]}
           >
             Reach out with a question
           </a>
-        )
+        ) : null
       }
     </div>
     <div class="flex flex-col gap-1">

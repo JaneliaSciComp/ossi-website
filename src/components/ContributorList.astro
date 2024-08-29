@@ -14,7 +14,7 @@ const {
 import {
   getContributors,
   getMostRecentContributors,
-} from "../utils/githubApiHelper";
+} from "@utils/githubApiHelper";
 
 const authToken = import.meta.env.OSSI_SITE_TOKEN;
 const numberOfRecentContributors = 8;
@@ -41,13 +41,9 @@ if (authToken) {
       {
         typeof callToAction === "string" ? (
           <Fragment set:html={callToAction} />
-        ) : (
-          callToAction &&
-          callToAction.text &&
-          callToAction.href && (
-            <Button variant="link" {...callToAction} class="mb-12 w-auto" />
-          )
-        )
+        ) : callToAction && callToAction.text && callToAction.href ? (
+          <Button variant="link" {...callToAction} class="mb-12 w-auto" />
+        ) : null
       }
     </div>
   </div>
