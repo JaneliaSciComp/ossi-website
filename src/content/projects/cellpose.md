@@ -8,6 +8,12 @@ OSSI proposal link: ../../proposals/suite2p_and_cellpose.pdf
 github link: https://github.com/MouseLand/cellpose
 documentation link: https://cellpose.readthedocs.io/en/latest/
 installation instructions link: https://github.com/MouseLand/cellpose?tab=readme-ov-file#installation
+doi array:
+  [
+    10.1038/s41592-020-01018-x,
+    10.1038/s41592-022-01663-4,
+    10.1101/2024.02.10.579780,
+  ]
 how to cite link: https://doi.org/10.1038/s41592-020-01018-x
 how to cite text: "Stringer, C., Wang, T., Michaelos, M., & Pachitariu, M. (2021). Cellpose: a generalist algorithm for cellular segmentation. Nature methods, 18(1), 100-106."
 additional links array:
