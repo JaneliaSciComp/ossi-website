@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getReadme, getDefaultBranch } from "@utils/githubApiHelper";
 import DOMPurify from "dompurify";
 
