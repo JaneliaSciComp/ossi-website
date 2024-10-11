@@ -2,7 +2,7 @@
 title: BigStream
 tagline: Flexible and powerful image registration tools for small and big data (TB+) alike. Stitching, subject-to-atlas, multi-modal, in vivo to ex vivo, and motion correction. 100% Python, can be run from Jupyter notebooks, including full access to workstation or adaptable distributed resources.
 maintainer: Greg M. Fleishman
-preferred contact method: fleishmang@janelia.hhmi.org
+preferred contact method: mailto:fleishmang@janelia.hhmi.org
 project type: [Other]
 OSSI proposal link: ""
 github link: https://github.com/JaneliaSciComp/bigstream
