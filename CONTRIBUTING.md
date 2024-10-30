@@ -114,7 +114,7 @@ npm install
 npm run dev
 ```
 
-**Note:** If the local server does not automatically appear in your web browser, input `localhost:4321/ossi-website` into your preferred web browser to view the website.
+**Note:** If the local server does not automatically appear in your web browser, input `localhost:4321` into your preferred web browser to view the website.
 
 </details>
 
@@ -275,7 +275,7 @@ If you would rather provide a custom project description, you can do so by typin
 3.  Navigate in your web browser to:
 
 ```
-localhost:4321/ossi-website/projects/<your-project-name>
+localhost:4321/projects/<your-project-name>
 ```
 
 </details>
