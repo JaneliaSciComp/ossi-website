@@ -73,7 +73,7 @@ npm -v
 3.  Click the **Copy** icon found to the right of the SSH key.
     ![Green code button and associated dropdown menu on the GitHub repository page](./public/readme-images/clone.png)
 
-**Note**: If you see an error like the below when attempting to copy the SSH key, please follow the instructions in [this tutorial](https://sbme-tutorials.github.io/2019/data-structures/notes/ public_key.html) to create a public SSH key for your GitHub account.
+**Note**: If you see an error like the below when attempting to copy the SSH key, please follow the GitHub instructions to [generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add the SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 ![Error message on GitHub.com indicating the account does not have a public SSH key](./public/readme-images/SSH-error.png)
 
 4.  Open a new terminal in your code editor.
