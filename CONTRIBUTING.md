@@ -18,7 +18,7 @@
 ## Quick reference
 
 The main steps of contributing to this repo. Read on or refer to specific sections, listed above, for additional details.
-![The main three steps for contributing to this repo - 1. fork and clone the repo, 2. add or edit a project following the project template, and 3. create a pull request against this repo's main branch](./public/readme-images/how-to-contribute-quick-reference.png)
+![The main three steps for contributing to this repo - 1. fork and clone the repo, 2. add or edit a project following the project template, and 3. create a pull request against this repo's main branch](./public/readme-images/quick-ref-contributing-to-ossi-site.png)
 
 ## Prerequisites
 
