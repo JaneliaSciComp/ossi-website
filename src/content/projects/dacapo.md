@@ -1,7 +1,7 @@
 ---
 title: DaCapo
 tagline: "A framework for easy application of established machine learning techniques on large, multi-dimensional images."
-maintainer: Jeff Rhodes
+maintainer: Jeff Rhoades
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [OSSI - current]
 #OSSI project status - Required if your project is OSSI-funded. Pick one option.
