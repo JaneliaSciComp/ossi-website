@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
-module.exports = {
+import defaultTheme from "tailwindcss/defaultTheme.js";
+import { default as typographyPlugin } from "@tailwindcss/typography";
+
+export default {
   darkMode: ["class"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   prefix: "",
@@ -83,5 +85,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typographyPlugin],
 };
