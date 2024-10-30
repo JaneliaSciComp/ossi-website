@@ -21,10 +21,10 @@ additional links text array:
   [
     "Open Organelle, a project that has extensively used DaCapo to manage a large massive amount of data and models",
   ]
-related blog posts:
-  [Optional, Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
-image file: ../../project-images/dacapo_diagram.png
-image caption: Required if you upload an image file
+# related blog posts:
+#   [Optional, Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
+image file: ./dacapo_icon.png
+image caption: The DaCapo logo
 # youtube url: https://optional-youtube-url.com
 # youtube caption: Required if you provide a youtube url
 # youtube params: "Optional. Supports any YouTube params: https://developers.google.com/youtube/player_parameters#Parameters. See Astro Embed documentation for more guidance: https://astro-embed.netlify.app/components/youtube/#params"
