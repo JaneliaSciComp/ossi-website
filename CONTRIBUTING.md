@@ -114,7 +114,11 @@ npm install
 npm run dev
 ```
 
-**Note:** If the local server does not automatically appear in your web browser, input `localhost:4321` into your preferred web browser to view the website.
+**Notes:**
+
+- If the local server does not automatically appear in your web browser, input `localhost:4321` into your preferred web browser to view the website.
+- Navigating to `localhost:4321` before the local server has started will result in an error page. You can tell the local server has started when you see a message in your terminal that looks something like this:
+  ![Terminal message consisting of a green box that reads "astro" in black text, followed by the astro version number in green text, then grey and white text theat reads "ready in 317 ms."](./public/readme-images/astro-ready.png)
 
 </details>
 
