@@ -2,9 +2,7 @@
 title: DaCapo
 tagline: "A framework for easy application of established machine learning techniques on large, multi-dimensional images."
 maintainer: Jeff Rhoades
-#project type - Required. Pick one of the three options - delete the other two.
 project type: [OSSI - current]
-#OSSI project status - Required if your project is OSSI-funded. Pick one option.
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/dacapo.pdf
 github link: https://github.com/janelia-cellmap/dacapo
@@ -19,16 +17,10 @@ additional links array:
   ]
 additional links text array:
   [
-    "Open Organelle, a project that has extensively used DaCapo to manage a large massive amount of data and models",
+    "Open Organelle, a project that has used DaCapo for semantic and instance segmentations.",
   ]
-# related blog posts:
-#   [Optional, Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
 image file: ./dacapo_icon.png
 image caption: The DaCapo logo
-# youtube url: https://optional-youtube-url.com
-# youtube caption: Required if you provide a youtube url
-# youtube params: "Optional. Supports any YouTube params: https://developers.google.com/youtube/player_parameters#Parameters. See Astro Embed documentation for more guidance: https://astro-embed.netlify.app/components/youtube/#params"
-#Optional "tag" fields. Select tags from the provided options - delete the options that are not applicable. If you feel another option is required to describe your project, add it and then note this in your pull request.
 development team:
   [
     "Funke Lab",
