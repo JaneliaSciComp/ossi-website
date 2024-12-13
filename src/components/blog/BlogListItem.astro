@@ -9,7 +9,7 @@ const { post } = Astro.props;
 >
   <BlogImage
     imgFile={post.data["image file"]}
-    slug={post.slug}
+    id={post.id}
     caption={post.data["image caption"]}
   />
   <div class="p-4">
@@ -25,7 +25,7 @@ const { post } = Astro.props;
       >
         <a
           class="hover:text-primary dark:hover:text-primary transition ease-in duration-200"
-          href={`/blog/${post.slug}`}
+          href={`/blog/${post.id}`}
         >
           {post.data.title}
         </a>

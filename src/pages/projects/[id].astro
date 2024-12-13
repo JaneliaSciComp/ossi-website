@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntries } from "astro:content";
+import { getCollection, getEntries, render } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import QuickLinks from "@components/individual-project/QuickLinks.astro";
@@ -14,13 +14,14 @@ import Readme from "@components/individual-project/Readme";
 import { getTagKeysAndValues } from "@utils/getTags";
 import { findLabInfo } from "@utils/getLabUrl";
 import RelatedPosts from "@components/individual-project/RelatedPosts.astro";
+import { undefined } from "astro:schema";
 
 // Implementation of Astro getStaticPaths() function, required for dynamic routes
 // Defines all paths at build time, in this case, for individual projects in the "projects" content collection
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((project) => ({
-    params: { slug: project.slug },
+    params: { id: project.id },
     props: { project },
   }));
 }
@@ -28,7 +29,7 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const frontmatter = project.data;
 const body = project.body;
-const { Content } = await project.render();
+const { Content } = await render(project);
 
 const relatedBlogPosts = frontmatter["related blog posts"]
   ? await getEntries(frontmatter["related blog posts"])
@@ -94,7 +95,7 @@ const labInfoArray = findLabInfo(frontmatter["development team"]);
         </div>
 
         {
-          body.length === 0 ||
+          body === undefined ||
           body.includes("provide an alternative description") ? (
             <Readme
               githubLink={frontmatter["github link"]}

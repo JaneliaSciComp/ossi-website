@@ -33,9 +33,9 @@ const relatedProjects = await getEntries(proposal.data.projects);
       {
         relatedProjects.map((project) => {
           if (project) {
-            const slug = project.slug;
+            const id = project.id;
             const title = project.data.title;
-            return <Link url={`/projects/${slug}`} text={title} />;
+            return <Link url={`/projects/${id}`} text={title} />;
           }
         })
       }

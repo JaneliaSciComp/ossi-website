@@ -57,14 +57,7 @@ export default function Readme({ githubLink }) {
       }
     }
 
-    async function fetchRateLimit() {
-      const data = await getRateLimit();
-      setRateLimit(data);
-    }
-
-    // Call the fetch functions
     fetchReadme();
-    fetchRateLimit();
   }, [githubLink]);
 
   return (

@@ -1,14 +1,14 @@
 ---
 import { Image } from "astro:assets";
 
-const { imgFile, slug, caption } = Astro.props;
+const { imgFile, id, caption } = Astro.props;
 ---
 
 {
   imgFile ? (
     <a
       class="relative block group"
-      href={`/blog/${slug}` ?? "javascript:void(0)"}
+      href={`/blog/${id}` ?? "javascript:void(0)"}
     >
       <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
         <Image
