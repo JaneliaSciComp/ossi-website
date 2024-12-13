@@ -1,8 +1,9 @@
 import { z, defineCollection, reference } from "astro:content";
+import { glob } from "astro/loaders";
 
 // Projects frontmatter
 const projectsCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
     tagline: z.string(),
@@ -82,7 +83,7 @@ const projectsCollection = defineCollection({
 
 // Proposals frontmatter
 const proposalCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/proposals" }),
   schema: z.object({
     "OSSI proposal link": z.string(),
     title: z.string(),
@@ -95,7 +96,7 @@ const proposalCollection = defineCollection({
 
 // Blogs frontmatter
 const blogCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -114,7 +115,7 @@ const blogCollection = defineCollection({
 
 //Ecosystems frontmatter
 const ecosystemsCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/ecosystems" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),

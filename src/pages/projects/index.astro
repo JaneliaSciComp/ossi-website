@@ -66,8 +66,8 @@ const uniqueTags = getTagKeysAndValues(allProjects);
             const tagsObj = getTagKeysAndValues(content);
             return (
               <CardContainer
-                key={content.slug}
-                url={`/projects/${content.slug}/`}
+                key={content.id}
+                url={`/projects/${content.id}/`}
                 title={content.data.title}
                 tagsObj={tagsObj}
                 projectType={content.data["project type"][0]}

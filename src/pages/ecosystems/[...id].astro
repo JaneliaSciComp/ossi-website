@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntries } from "astro:content";
+import { getCollection, getEntries, render } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ContentListDisplay from "@components/ecosystems/ContentListDisplay.astro";
@@ -11,14 +11,14 @@ import { getTagKeysAndValues } from "@utils/getTags";
 export async function getStaticPaths() {
   const ecosystems = await getCollection("ecosystems");
   return ecosystems.map((ecosystem) => ({
-    params: { slug: ecosystem.slug },
+    params: { id: ecosystem.id },
     props: { ecosystem },
   }));
 }
 
 const { ecosystem } = Astro.props;
 const frontmatter = ecosystem.data;
-const { Content } = await ecosystem.render();
+const { Content } = await render(ecosystem);
 
 const relatedProjects = frontmatter["related projects"]
   ? await getEntries(frontmatter["related projects"])

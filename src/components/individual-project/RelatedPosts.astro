@@ -9,7 +9,7 @@ const { posts } = Astro.props;
     <div class="flex flex-wrap mb-2 gap-3">
       <p class="font-semibold">Related blog posts:</p>
       {posts.map((post) => (
-        <Link text={post?.data?.title} url={`/blog/${post?.slug}`} />
+        <Link text={post?.data?.title} url={`/blog/${post?.id}`} />
       ))}
     </div>
   ) : null

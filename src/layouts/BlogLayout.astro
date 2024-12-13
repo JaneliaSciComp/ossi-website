@@ -83,7 +83,7 @@ const relatedProjects = frontmatter["related projects"]
                 {relatedProjects.map((project) => (
                   <Link
                     text={project.data.title}
-                    url={`/projects/${project.slug}`}
+                    url={`/projects/${project.id}`}
                   />
                 ))}
               </div>

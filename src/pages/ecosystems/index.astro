@@ -76,8 +76,8 @@ const uniqueTags = getTagKeysAndValues(flattenedRelatedProjects);
           allEcosystems.map((content) => {
             return (
               <CardContainer
-                key={content.slug}
-                url={`/ecosystems/${content.slug}/`}
+                key={content.id}
+                url={`/ecosystems/${content.id}/`}
                 title={content.data.title}
                 tagline={content.data.tagline}
                 tagsObj={content.data.tagsObj}
