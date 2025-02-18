@@ -18,7 +18,7 @@
 ## Quick reference
 
 The main steps of contributing to this repo. Read on or refer to specific sections, listed above, for additional details.
-![The main three steps for contributing to this repo - 1. fork and clone the repo, 2. add or edit a project following the project template, and 3. create a pull request against this repo's main branch](./public/readme-images/how-to-contribute-quick-reference.png)
+![The main three steps for contributing to this repo - 1. fork and clone the repo, 2. add or edit a project following the project template, and 3. create a pull request against this repo's main branch](./public/readme-images/quick-ref-contributing-to-ossi-site.png)
 
 ## Prerequisites
 
@@ -73,7 +73,7 @@ npm -v
 3.  Click the **Copy** icon found to the right of the SSH key.
     ![Green code button and associated dropdown menu on the GitHub repository page](./public/readme-images/clone.png)
 
-**Note**: If you see an error like the below when attempting to copy the SSH key, please follow the instructions in [this tutorial](https://sbme-tutorials.github.io/2019/data-structures/notes/ public_key.html) to create a public SSH key for your GitHub account.
+**Note**: If you see an error like the below when attempting to copy the SSH key, please follow the GitHub instructions to [generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add the SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 ![Error message on GitHub.com indicating the account does not have a public SSH key](./public/readme-images/SSH-error.png)
 
 4.  Open a new terminal in your code editor.
@@ -114,7 +114,11 @@ npm install
 npm run dev
 ```
 
-**Note:** If the local server does not automatically appear in your web browser, input `localhost:4321/ossi-website` into your preferred web browser to view the website.
+**Notes:**
+
+- If the local server does not automatically appear in your web browser, input `localhost:4321` into your preferred web browser to view the website.
+- Navigating to `localhost:4321` before the local server has started will result in an error page. You can tell the local server has started when you see a message in your terminal that looks something like this:
+  ![Terminal message consisting of a green box that reads "astro" in black text, followed by the astro version number in green text, then grey and white text theat reads "ready in 317 ms."](./public/readme-images/astro-ready.png)
 
 </details>
 
@@ -275,7 +279,7 @@ If you would rather provide a custom project description, you can do so by typin
 3.  Navigate in your web browser to:
 
 ```
-localhost:4321/ossi-website/projects/<your-project-name>
+localhost:4321/projects/<your-project-name>
 ```
 
 </details>

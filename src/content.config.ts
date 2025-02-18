@@ -1,8 +1,9 @@
 import { z, defineCollection, reference } from "astro:content";
+import { glob } from "astro/loaders";
 
 // Projects frontmatter
 const projectsCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
     tagline: z.string(),
@@ -80,9 +81,22 @@ const projectsCollection = defineCollection({
   }),
 });
 
+// Proposals frontmatter
+const proposalCollection = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/proposals" }),
+  schema: z.object({
+    "OSSI proposal link": z.string(),
+    title: z.string(),
+    authors: z.string(),
+    projects: z
+      .union([z.array(reference("projects")), reference("projects")])
+      .optional(),
+  }),
+});
+
 // Blogs frontmatter
 const blogCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -101,7 +115,7 @@ const blogCollection = defineCollection({
 
 //Ecosystems frontmatter
 const ecosystemsCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/ecosystems" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -117,6 +131,7 @@ const ecosystemsCollection = defineCollection({
 // Export all content frontmatter configurations
 export const collections = {
   projects: projectsCollection,
+  proposals: proposalCollection,
   blog: blogCollection,
   ecosystems: ecosystemsCollection,
 };

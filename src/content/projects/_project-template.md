@@ -41,10 +41,13 @@ development team:
   [
     "Ahrens Lab",
     "Branson Lab",
+    "Cardona Lab",
     "Dudman Lab",
+    "Funke Lab",
     "Pachitariu Lab",
     "Preibisch Lab",
     "Saalfeld Lab",
+    "Shroff Lab",
     "Stringer Lab",
     "Turaga Lab",
     "CellMap",
@@ -68,7 +71,16 @@ programming language:
     "Typescript",
   ]
 open source license:
-  ["BSD-3 Clause", "BSD-2 Clause", "CC-by-0", "GPL-2.0", "GPL-3.0", "MIT"]
+  [
+    "APACHE",
+    "BSD-3 Clause",
+    "BSD-2 Clause",
+    "CC-by-0",
+    "CC-by-4",
+    "GPL-2.0",
+    "GPL-3.0",
+    "MIT",
+  ]
 software type:
   [
     "Command line application",
@@ -86,11 +98,14 @@ use case:
     "Annotation",
     "Calcium imaging",
     "Confocal light microscopy (LM)",
+    "Connectomics",
     "Containerization",
     "Correlative light EM (CLEM)",
+    "Data service",
     "Electron microscopy (EM)",
     "Electrophysiology",
     "Expansion microscopy (ExM)",
+    "Fluorescence microscopy",
     "Image registration",
     "Lightsheet fluorescence microscopy (LFSM)",
     "Modelling",
@@ -121,6 +136,7 @@ software ecosystem:
     "Janelia Workstation",
     "Java Virtual Machine",
     "Napari",
+    "Neuroglancer",
     "PyTorch",
     "Spark",
     "Tensorflow",
@@ -134,6 +150,7 @@ supported file types:
     "HDF5",
     "mpeg",
     "N5",
+    "Neuroglancer precomputed",
     "NWB",
     "OBJ",
     "OME-Zarr",

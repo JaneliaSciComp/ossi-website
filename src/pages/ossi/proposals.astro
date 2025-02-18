@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Headline from "@components//blog/BlogHeadline.astro";
+import ProposalListItem from "@components/ProposalListItem.astro";
+
+const proposals = await getCollection("proposals");
+---
+
+<BaseLayout>
+  <section class="px-6 pt-28 mx-auto max-w-4xl">
+    <Headline subtitle="View proposals for past and current OSSI projects.">
+      OSSI Proposals
+    </Headline>
+    <ul>
+      {
+        proposals.map((proposal) => {
+          return <ProposalListItem proposal={proposal} />;
+        })
+      }
+    </ul>
+  </section>
+</BaseLayout>

@@ -1,10 +1,7 @@
 import { getCollection, getEntries } from "astro:content";
 import Fuse from "fuse.js";
 
-import {
-  extractUniqueTagsObject,
-  extractUniqueTagValueArray,
-} from "../utils/tagManipulation";
+import { getTagKeysAndValues, getTagValues } from "@utils/getTags";
 
 async function getEcosystems() {
   const allEcosystems = (await getCollection("ecosystems")).sort(
@@ -16,8 +13,8 @@ async function getEcosystems() {
       ecosystem.data["related projects"]
     );
 
-    const tagsObj = extractUniqueTagsObject(relatedProjects);
-    const tagsArray = extractUniqueTagValueArray(tagsObj);
+    const tagsObj = getTagKeysAndValues(relatedProjects);
+    const tagsArray = getTagValues(tagsObj);
 
     const ecosystemObj = {
       title: ecosystem.data.title,

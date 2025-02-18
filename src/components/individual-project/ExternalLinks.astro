@@ -1,5 +1,5 @@
 ---
-import Link from "../Link.astro";
+import Link from "@components/Link.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -9,17 +9,17 @@ const { frontmatter } = Astro.props;
     <div class="flex flex-wrap mb-2 gap-x-3">
       <p class="font-semibold mb-1">External links:</p>
 
-      {frontmatter["OSSI proposal link"] && (
+      {frontmatter["OSSI proposal link"] ? (
         <div class="mb-1 proposal-download">
           <Link
             text="OSSI funding proposal"
             url={frontmatter["OSSI proposal link"]}
           />
         </div>
-      )}
+      ) : null}
 
-      {frontmatter["additional links array"] &&
-        (frontmatter["additional links array"].length === 1 ? (
+      {frontmatter["additional links array"] ? (
+        frontmatter["additional links array"].length === 1 ? (
           <div class="mb-1">
             <Link
               text={frontmatter["additional links text array"]}
@@ -35,7 +35,8 @@ const { frontmatter } = Astro.props;
               />
             </div>
           ))
-        ))}
+        )
+      ) : null}
     </div>
   )
 }

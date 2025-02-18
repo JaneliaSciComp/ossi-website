@@ -1,0 +1,44 @@
+---
+import { getEntries } from "astro:content";
+import Link from "@components/Link.astro";
+import { TbFileTypePdf } from "react-icons/tb";
+const { proposal } = Astro.props;
+const relatedProjects = await getEntries(proposal.data.projects);
+---
+
+<li
+  class={`max-w-3xl mx-auto md:max-w-none flex flex-col md:grid gap-6 md:gap-8 dark:bg-slate-900`}
+>
+  <div class="py-4">
+    <div
+      class="text-lg md:text-xl font-bold leading-tight mb-2 font-heading dark:text-slate-300"
+    >
+      <a
+        class="flex gap-2 items-center hover:text-primary dark:hover:text-primary transition ease-in duration-200"
+        href={proposal.data["OSSI proposal link"]}
+        target="_blank"
+      >
+        <TbFileTypePdf className="min-w-6 h-auto" />
+        {proposal.data.title}
+      </a>
+    </div>
+
+    <p
+      class="text-base md:text-lg flex-grow text-muted mb-2 dark:text-slate-400"
+    >
+      {proposal.data.authors}
+    </p>
+    <div class="flex items-center flex-wrap mb-2 gap-x-3">
+      <p class="text-base font-semibold">Funded projects:</p>
+      {
+        relatedProjects.map((project) => {
+          if (project) {
+            const id = project.id;
+            const title = project.data.title;
+            return <Link url={`/projects/${id}`} text={title} />;
+          }
+        })
+      }
+    </div>
+  </div>
+</li>

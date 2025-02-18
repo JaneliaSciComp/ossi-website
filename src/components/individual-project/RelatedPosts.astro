@@ -1,0 +1,16 @@
+---
+import Link from "@components/Link.astro";
+
+const { posts } = Astro.props;
+---
+
+{
+  posts ? (
+    <div class="flex flex-wrap mb-2 gap-3">
+      <p class="font-semibold">Related blog posts:</p>
+      {posts.map((post) => (
+        <Link text={post?.data?.title} url={`/blog/${post?.id}`} />
+      ))}
+    </div>
+  ) : null
+}

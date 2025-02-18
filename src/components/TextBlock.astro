@@ -8,34 +8,34 @@ const {
 ---
 
 {
-  (title || subtitle || tagline || content) && (
+  (
     <div>
-      {tagline && (
+      {tagline ? (
         <p
           class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
           set:html={tagline}
         />
-      )}
-      {title && (
+      ) : null}
+      {title ? (
         <h2
           class="font-bold leading-normal tracking-tighter font-heading text-2xl sm:text-3xl lg:text-4xl md:pb-8 mb-4"
           set:html={title}
         />
-      )}
+      ) : null}
 
-      {subtitle && (
+      {subtitle ? (
         <p
           class="sm:mb-8 text-xl text-muted dark:text-slate-400 mt-4 2xl:text-3xl"
           set:html={subtitle}
         />
-      )}
+      ) : null}
 
-      {content && (
+      {content ? (
         <p
           class="md:leading-normal 2xl:leading-relaxed pb-4 sm:pb-8 text-base sm:text-lg md:text-xl 2xl:text-2xl dark:text-slate-200"
           set:html={content}
         />
-      )}
+      ) : null}
     </div>
   )
 }

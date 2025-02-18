@@ -1,0 +1,18 @@
+---
+import { YouTube } from "astro-embed";
+
+const { url, title, params } = Astro.props;
+---
+
+{
+  url ? (
+    <div class="flex flex-col items-center pt-12 pb-6 lg:pt-0 lg:pb-4">
+      <YouTube
+        id={url}
+        title={title}
+        class="embedded-yt w-full rounded-lg lg:self-start"
+        params={params ? params : ""}
+      />
+    </div>
+  ) : null
+}

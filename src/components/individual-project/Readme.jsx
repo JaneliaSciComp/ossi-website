@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getReadme, getDefaultBranch } from "../../utils/githubApiHelper";
+import { getReadme, getDefaultBranch } from "@utils/githubApiHelper";
 import DOMPurify from "dompurify";
 
 export default function Readme({ githubLink }) {
@@ -57,14 +57,7 @@ export default function Readme({ githubLink }) {
       }
     }
 
-    async function fetchRateLimit() {
-      const data = await getRateLimit();
-      setRateLimit(data);
-    }
-
-    // Call the fetch functions
     fetchReadme();
-    fetchRateLimit();
   }, [githubLink]);
 
   return (

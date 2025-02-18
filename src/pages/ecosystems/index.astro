@@ -1,20 +1,20 @@
 ---
-import "../../styles/tailwind.css";
+import "@styles/tailwind.css";
 
 import { getCollection, getEntries } from "astro:content";
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Hero from "../../components/Hero.jsx";
-import FilterMenu from "../../components/projects/FilterMenu";
-import ToggleFilterMenuBtn from "../../components/projects/ToggleFilterMenuBtn";
-import ProjectCount from "../../components/projects/ProjectCount";
-import CardContainer from "../../components/projects/CardContainer";
-import CardImage from "../../components/projects/CardImage";
-import CardContent from "../../components/projects/CardContent.astro";
-import SearchInput from "../../components/projects/SearchInput";
-import Tag from "../../components/projects/Tag.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/Hero.jsx";
+import FilterMenu from "@components/projects/FilterMenu";
+import ToggleFilterMenuBtn from "@components/projects/ToggleFilterMenuBtn";
+import ProjectCount from "@components/projects/ProjectCount";
+import CardContainer from "@components/projects/CardContainer";
+import CardImage from "@components/projects/CardImage";
+import CardContent from "@components/projects/CardContent.astro";
+import SearchInput from "@components/projects/SearchInput";
+import Tag from "@components/projects/Tag.astro";
 
-import { extractUniqueTagsObject } from "../../utils/tagManipulation.js";
+import { getTagKeysAndValues } from "@utils/getTags";
 
 //allEcosystems gets passes as "content" to the content cards
 //eveything else happening in here is to make tags for the filter menu and cards
@@ -29,7 +29,7 @@ const allRelatedProjects = await Promise.all(
     //Also for each ecosystem within allEcosystems, add a property ecosystem.data.tagsObj that consists of the unique tags
     //extracted from the relatedProjects subset of the project content collection.
     //This will be used to create the tags on each individual ecosystem card.
-    ecosystem.data.tagsObj = extractUniqueTagsObject(relatedProjects);
+    ecosystem.data.tagsObj = getTagKeysAndValues(relatedProjects);
     // console.log(ecosystem.data.tagsObj);
 
     return relatedProjects;
@@ -41,7 +41,7 @@ const flattenedRelatedProjects = allRelatedProjects.reduce(
   (acc, currentArray) => acc.concat(currentArray),
   []
 );
-const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
+const uniqueTags = getTagKeysAndValues(flattenedRelatedProjects);
 ---
 
 <BaseLayout>
@@ -76,8 +76,8 @@ const uniqueTags = extractUniqueTagsObject(flattenedRelatedProjects);
           allEcosystems.map((content) => {
             return (
               <CardContainer
-                key={content.slug}
-                url={`/ecosystems/${content.slug}/`}
+                key={content.id}
+                url={`/ecosystems/${content.id}/`}
                 title={content.data.title}
                 tagline={content.data.tagline}
                 tagsObj={content.data.tagsObj}
