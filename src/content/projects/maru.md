@@ -1,7 +1,7 @@
 ---
 title: Maru
 tagline: Maru is an opinionated command-line interface for quickly and easily containerizing scientific applications.
-maintainer: Rokicki
+maintainer: Konrad Rokicki
 preferred contact method: https://github.com/JaneliaSciComp/maru/issues
 project type: [Other]
 github link: https://github.com/JaneliaSciComp/maru
@@ -12,5 +12,7 @@ how to cite text: Cite the software on GitHub
 development team: [Scientific Computing Software]
 programming language: [Go]
 open source license: [BSD-3 Clause]
-use case: [Containerization]
+software type: [Command line application]
+use case: [Infrastructure]
+usage environment: [Local installation]
 ---
