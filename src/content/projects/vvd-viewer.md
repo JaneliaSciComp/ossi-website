@@ -31,5 +31,5 @@ use case:
     Annotation,
   ]
 usage environment: [Local installation]
-supported file types: [N5, Zarr, OME-Zarr, SWC, TIFF, Zeiss CZI]
+supported file types: [N5, ZARR, OME-Zarr, SWC, TIFF, Zeiss CZI]
 ---
