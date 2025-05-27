@@ -8,8 +8,8 @@ OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/spatial_transcriptomics_tools.pdf
 github link: https://github.com/PreibischLab/STIM
 documentation link: https://github.com/PreibischLab/STIM/wiki
-how to cite link: https://doi.org/10.1101/2021.12.07.471629
-how to cite text: "S. Preibisch, N. Karaiskos, N.Rajewsky, Image-based representation of massive spatial transcriptomics datasets, bioRxiv 2021.12.07.471629 (2021)."
+how to cite link: https://doi.org/10.1016/j.cels.2025.101264
+how to cite text: "S. Preibisch, N. Karaiskos, N.Rajewsky, Scalable image-based visualization and alignment of spatial transcriptomics datasets. Cell Systems, Vol. 16, No. 5 (2025)."
 # related blog posts: [Optional-file-name]
 image file: ./stim-1.png
 image caption: 3D rendering of THE SlideSeq multi-layer sequence-based transcriptomics dataset (calm-2, ptgds, mbp)
