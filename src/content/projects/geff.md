@@ -23,7 +23,7 @@ additional links text array:
     The Java implementation of the GEFF specification.,
     A github organization for open source tracking tools maintained by the community.,
   ]
-image file: ./Downloads/GEFF_HorizontalLogo_RGB.png
+image file: ./GEFF_HorizontalLogo_RGB.png
 image caption: GEFF logo
 # youtube url: https://optional-youtube-url.com
 # youtube caption: Required if you provide a youtube url
