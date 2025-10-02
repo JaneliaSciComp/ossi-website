@@ -98,7 +98,6 @@ use case:
     "Calcium imaging",
     "Confocal light microscopy (LM)",
     "Connectomics",
-    "Containerization",
     "Correlative light EM (CLEM)",
     "Data service",
     "Electron microscopy (EM)",
