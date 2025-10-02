@@ -19,7 +19,7 @@ additional links array:
   ]
 additional links text array:
   [
-    A github organization for open source tracking tools maintained by the community.,
+    A GitHub organization for open source tracking tools maintained by the community.
   ]
 image file: ./traccuracy-image.png
 image caption: A schematic of a ground truth tracking graph matched with a prediction showing the types of errors that can happen.
@@ -59,7 +59,3 @@ usage environment:
 #   [
 #   ]
 ---
-
-To use your project's GitHub README as your project's description - delete all text below the triple dash (---) . Note - your GitHub repo must be public for this to work. This option is strongly encouraged - it will minimize the effort required on your part to keep your software information up to date on this site.
-
-If you wish to provide an alternative description, you can write it here. Separate each paragraph with a blank line. If desired, use [Markdown syntax](https://www.markdownguide.org/basic-syntax/) to add hyperlinks, layout/text effects (e.g., headings, lists, **bold** or _italic_ text), etc.
