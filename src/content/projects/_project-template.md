@@ -29,8 +29,6 @@ additional links text array:
     Display text for link 4,
     Etc.,
   ]
-related blog posts:
-  [Optional, Only-for-blog-posts-hosted-on-this-site, Optional-file-name]
 image file: ./optional-file-path--only-one-file-currently-supported.jpg
 image caption: Required if you upload an image file
 youtube url: https://optional-youtube-url.com
@@ -44,6 +42,7 @@ development team:
     "Cardona Lab",
     "Dudman Lab",
     "Funke Lab",
+    "Live Image Tracking Tools",
     "Pachitariu Lab",
     "Preibisch Lab",
     "Saalfeld Lab",
@@ -99,7 +98,6 @@ use case:
     "Calcium imaging",
     "Confocal light microscopy (LM)",
     "Connectomics",
-    "Containerization",
     "Correlative light EM (CLEM)",
     "Data service",
     "Electron microscopy (EM)",
@@ -115,6 +113,7 @@ use case:
     "Single-molecule localization microscopy (SMLM)",
     "Spatial transcriptomics",
     "Tool packaging/distribution",
+    "Tracking",
     "Visualization",
   ]
 usage environment:
