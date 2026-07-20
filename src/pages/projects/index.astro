@@ -25,6 +25,11 @@ const allProjects = await getCollection("projects");
 // uniqueTags is an object where keys = unique tag categories, values = unique tags within a category, both across allProjects. All lowercase.
 // used to populate the filter menu
 const uniqueTags = getTagKeysAndValues(allProjects);
+
+// all project titles sorted alphabetically; used to position cards when the "Alphabetical" sort is selected
+const sortedTitles = allProjects
+  .map((content) => content.data.title)
+  .sort((a, b) => a.localeCompare(b));
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -73,6 +78,7 @@ const uniqueTags = getTagKeysAndValues(allProjects);
                 projectType={content.data["project type"][0]}
                 contentType="projects"
                 maxLength={allProjects.length}
+                sortedTitles={sortedTitles}
                 client:only="react"
               >
                 {content.data["image file"] ? (
