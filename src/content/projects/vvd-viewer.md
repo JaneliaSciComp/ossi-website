@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Maintenance]
 OSSI proposal link: ../../proposals/vvdviewer.pdf
 github link: https://github.com/JaneliaSciComp/VVDViewer
+update_date: 2026-07-15
 documentation link: https://github.com/JaneliaSciComp/VVDViewer/wiki
 installation instructions link: https://github.com/JaneliaSciComp/VVDViewer?tab=readme-ov-file#building-vvdviewer
 how to cite link: https://doi.org/10.5281/zenodo.5841616

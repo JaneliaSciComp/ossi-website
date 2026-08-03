@@ -8,6 +8,7 @@ project type: [OSSI - current, OSSI - alumni, Other]
 OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
 OSSI proposal link: Required if your project is OSSI-funded. Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `../../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
 github link: Required. Link to GitHub repository
+#update_date - Do not set this manually. It is automatically populated by a scheduled GitHub Action from the repository's most recent push date, and used to power the "Last updated" sort option.
 documentation link: Required. Link to documentation - can be the same as the GitHub repo if the README is the documentation
 installation instructions link: Required. Link to installation instructions - can be the same as the GitHub repo
 preferred contact method: "Creates the link for the 'Reach out for help' button on the project page. Encouraged if there is a preferred way for users to reach out for help other than creating an issue in the project's GitHub repo. Examples: link to Image.sc forum, or an email in the format of mailto:email@example.com."

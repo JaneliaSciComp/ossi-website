@@ -5,6 +5,7 @@ maintainer: Carsen Stringer
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [Other]
 github link: https://github.com/mouseland/rastermap
+update_date: 2025-04-04
 documentation link: https://github.com/mouseland/rastermap?tab=readme-ov-file#rastermap
 installation instructions link: https://github.com/mouseland/rastermap?tab=readme-ov-file#installation
 # preferred contact method: "Creates the link for the 'Reach out for help' button on the project page. Encouraged if there is a preferred way for users to reach out for help other than creating an issue in the project's GitHub repo. Examples: link to Image.sc forum, or an email in the format of mailto:email@example.com."

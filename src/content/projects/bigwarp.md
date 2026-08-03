@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Accepted]
 OSSI proposal link: ../../proposals/bigwarp.pdf
 github link: https://github.com/saalfeldlab/bigwarp
+update_date: 2026-07-29
 documentation link: https://imagej.net/plugins/bigwarp
 installation instructions link: https://imagej.net/plugins/bigwarp#installation
 how to cite link: https://doi.org/10.1109/ISBI.2016.7493463

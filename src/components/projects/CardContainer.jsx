@@ -18,7 +18,7 @@ export default function CardContainer({
   cardContent,
   contentType,
   maxLength,
-  sortedTitles,
+  sortedTitlesMap,
 }) {
   const [visible, setVisible] = useState("relative");
   const [order, setOrder] = useState(0);
@@ -59,8 +59,8 @@ export default function CardContainer({
       let itemOrder;
       if (urlQuery !== "") {
         itemOrder = matchingIndex;
-      } else if ($selectedSort === "alphabetical" && sortedTitles) {
-        itemOrder = sortedTitles.indexOf(title);
+      } else if (sortedTitlesMap && sortedTitlesMap[$selectedSort]) {
+        itemOrder = sortedTitlesMap[$selectedSort].indexOf(title);
       } else {
         itemOrder = Math.floor(Math.random() * maxLength);
       }

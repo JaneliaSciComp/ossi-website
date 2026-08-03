@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/ossi_website.pdf
 github link: https://github.com/JaneliaSciComp/ossi-website
+update_date: 2026-03-25
 documentation link: https://github.com/JaneliaSciComp/ossi-website
 installation instructions link: https://github.com/JaneliaSciComp/ossi-website?tab=readme-ov-file#how-to-addedit-your-software-project
 how to cite text: Cite the current deployment

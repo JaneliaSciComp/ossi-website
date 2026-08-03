@@ -5,6 +5,7 @@ maintainer: ben arthur
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [Other]
 github link: https://github.com/JaneliaSciComp/SongExplorer
+update_date: 2026-04-10
 documentation link: https://github.com/JaneliaSciComp/SongExplorer?tab=readme-ov-file#table-of-contents
 installation instructions link: https://github.com/JaneliaSciComp/SongExplorer?tab=readme-ov-file#installation
 preferred contact method: mailto:arthurb@hhmi.org

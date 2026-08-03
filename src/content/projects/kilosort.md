@@ -6,6 +6,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/kilosort.pdf
 github link: https://github.com/MouseLand/Kilosort
+update_date: 2026-04-27
 documentation link: https://kilosort.readthedocs.io/en/latest/
 installation instructions link: https://github.com/MouseLand/Kilosort?tab=readme-ov-file#installation
 how to cite link: https://doi.org/10.1101/061481

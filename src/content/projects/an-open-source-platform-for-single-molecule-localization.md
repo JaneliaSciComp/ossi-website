@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Accepted]
 OSSI proposal link: ../../proposals/single_molecule_localization.pdf
 github link: https://github.com/TuragaLab/DECODE
+update_date: 2023-06-22
 documentation link: https://decode.readthedocs.io/
 installation instructions link: https://github.com/TuragaLab/DECODE?tab=readme-ov-file#local-installation
 how to cite link: https://doi.org/10.1038/s41592-021-01236-x

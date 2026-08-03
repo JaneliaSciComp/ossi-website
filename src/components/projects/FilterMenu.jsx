@@ -136,6 +136,34 @@ export default function FilterMenu({ uniqueTags }) {
                 Alphabetical (A&ndash;Z)
               </div>
             </li>
+            <li
+              className="w-full flex cursor-pointer"
+              onClick={() => handleSortSelection("updated-newest")}
+            >
+              <div
+                className={`ml-2 self-start my-1 ${
+                  $selectedSort === "updated-newest"
+                    ? "selected bg-primary"
+                    : ""
+                }`}
+              >
+                Last updated (newest first)
+              </div>
+            </li>
+            <li
+              className="w-full flex cursor-pointer"
+              onClick={() => handleSortSelection("updated-oldest")}
+            >
+              <div
+                className={`ml-2 self-start my-1 ${
+                  $selectedSort === "updated-oldest"
+                    ? "selected bg-primary"
+                    : ""
+                }`}
+              >
+                Last updated (oldest first)
+              </div>
+            </li>
           </ul>
         </div>
       </div>
