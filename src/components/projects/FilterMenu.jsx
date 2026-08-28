@@ -122,7 +122,8 @@ export default function FilterMenu({ uniqueTags }) {
         )}
 
         <div className="mb-4">
-          <h3 className="font-bold border-b-2 py-2">Sort by</h3>
+          <h3 className="text-lg font-bold ">Sort by</h3>
+
           <ul className="flex flex-col flex-nowrap">
             <li
               className="w-full flex cursor-pointer"
