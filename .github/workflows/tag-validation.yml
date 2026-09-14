@@ -12,27 +12,27 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: Checkout PR
-        if: ${{ github.event.pull_request.number }}
+      # Checkout the base branch so all scripts run from trusted code.
+      # Only the changed markdown files are taken from the PR.
+      - name: Checkout base
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: refs/pull/${{ github.event.pull_request.number }}/merge
 
-      - name: Get all changed markdown files
+      - name: Get changed markdown files from PR
         id: changed-markdown-files
-        uses: tj-actions/changed-files@v44
-        with:
-          files: |
-            **.md
-            **.mdx
-          files_ignore: |
-            _project-template.md
-            tagsList.md
-            README.md
-            CONTRIBUTING.md
-            LICENSE-3-clause-BSD.md
-            LICENSE-MIT.md
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          git fetch --no-tags origin "pull/${PR_NUMBER}/merge"
+          # Merge commit's first parent is the base branch tip.
+          changed=$(git diff --name-only --diff-filter=AM FETCH_HEAD^1 FETCH_HEAD -- '*.md' '*.mdx' \
+            | grep -v -E '(^|/)(_project-template\.md|tagsList\.md|README\.md|CONTRIBUTING\.md|LICENSE-3-clause-BSD\.md|LICENSE-MIT\.md)$' || true)
+          if [ -n "$changed" ]; then
+            echo "$changed" | xargs git checkout FETCH_HEAD --
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "any_changed=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "all_changed_files=$(echo $changed | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
 
       - name: List all changed files markdown files
         if: steps.changed-markdown-files.outputs.any_changed == 'true'
