@@ -11,6 +11,6 @@
   "license": "BSD-3 Clause",
   "dependencies": {
     "@octokit/graphql": "^8.1.1",
-    "yaml": "^2.4.1"
+    "yaml": "^2.8.3"
   }
 }
