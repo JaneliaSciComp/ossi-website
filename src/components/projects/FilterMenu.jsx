@@ -51,7 +51,7 @@ export default function FilterMenu({ uniqueTags }) {
     <div
       className={`${
         $isFilterMenuVisible ? "flex translate-x-0" : "translate-x-full"
-      }  bg-page z-40 md:z-auto fixed md:static  md:translate-x-0 top-0 right-0  transition-transform duration-500 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 md:pl-0 `}
+      }  bg-page z-40 md:z-auto fixed md:static  md:translate-x-0 top-0 right-0  transition-transform duration-500 w-full h-[100dvh] md:h-auto md:max-h-full flex-col px-4 md:pl-0 md:mb-4`}
     >
       <button
         className="md:hidden z-50 my-4 self-end btn-secondary rounded-full"
@@ -60,8 +60,7 @@ export default function FilterMenu({ uniqueTags }) {
         <TbX />
       </button>
       <div className="overflow-y-scroll md:overflow-hidden px-2">
-        {/* This h3 and button are visible only on medium and larger screen sizes */}
-        <div className="hidden md:flex items-center justify-between pt-2 pb-4">
+        <div className="flex items-center justify-between pt-2 md:pt-0 pb-4">
           <h3 className="text-lg font-bold ">Filter by tag</h3>
           <button
             className="btn-reset"
@@ -120,15 +119,11 @@ export default function FilterMenu({ uniqueTags }) {
         )}
       </div>
 
-      <div className="flex self-center gap-4 py-4">
-        <button className="btn-primary md:hidden" onClick={toggleVisibility}>
+      <div className="md:hidden flex self-center gap-4 py-4">
+        <button className="btn-primary" onClick={toggleVisibility}>
           View projects
         </button>
-        {/* This reset button is visible on small screens */}
-        <button
-          className="btn md:hidden"
-          onClick={() => handleTagSelection(null)}
-        >
+        <button className="btn" onClick={() => handleTagSelection(null)}>
           Reset
         </button>
       </div>
