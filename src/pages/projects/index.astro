@@ -25,6 +25,29 @@ const allProjects = await getCollection("projects");
 // uniqueTags is an object where keys = unique tag categories, values = unique tags within a category, both across allProjects. All lowercase.
 // used to populate the filter menu
 const uniqueTags = getTagKeysAndValues(allProjects);
+
+// all project titles sorted alphabetically; used to position cards when the "Alphabetical" sort is selected
+const sortedTitles = allProjects
+  .map((content) => content.data.title)
+  .sort((a, b) => a.localeCompare(b));
+
+// project titles sorted by update_date, oldest-to-newest; projects with no
+// known update_date are left at the end regardless of sort direction
+const undatedTitles = allProjects
+  .filter((content) => !content.data.update_date)
+  .map((content) => content.data.title);
+const titlesByUpdateDateAsc = allProjects
+  .filter((content) => content.data.update_date)
+  .sort((a, b) => a.data.update_date - b.data.update_date)
+  .map((content) => content.data.title);
+
+// maps each selectable "sort by" key to its pre-sorted array of titles;
+// consumed by CardContainer to position each card via CSS order
+const sortedTitlesMap = {
+  alphabetical: sortedTitles,
+  "updated-newest": [...titlesByUpdateDateAsc].reverse().concat(undatedTitles),
+  "updated-oldest": [...titlesByUpdateDateAsc, ...undatedTitles],
+};
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -73,6 +96,7 @@ const uniqueTags = getTagKeysAndValues(allProjects);
                 projectType={content.data["project type"][0]}
                 contentType="projects"
                 maxLength={allProjects.length}
+                sortedTitlesMap={sortedTitlesMap}
                 client:only="react"
               >
                 {content.data["image file"] ? (

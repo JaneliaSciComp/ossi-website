@@ -4,6 +4,7 @@ tagline: Software for analyzing phase diversity data for adaptive optics
 maintainer: Magdalena Schneider
 project type: [Other]
 github link: https://github.com/ceej640/PhaseDiversity
+update_date: 2025-02-25
 documentation link: https://github.com/ceej640/PhaseDiversity?tab=readme-ov-file#phase-diversity-wavefront-sensing-for-microscopy
 installation instructions link: https://github.com/ceej640/PhaseDiversity#Installation
 how to cite text: "Cite the corresponding paper: Johnson et al., Optica (2024)"

@@ -8,6 +8,7 @@ project type: [Other]
 # OSSI project status: [Proposed, Accepted, Active Development, Maintenance]
 # OSSI proposal link: Required if your project is OSSI-funded. Preferred - upload the proposal as a PDF to `public/proposals` and provide the link in the format `../../proposals/PROPOSAL.pdf`. Other option - URL to the externally hosted proposal.
 github link: https://github.com/live-image-tracking-tools/traccuracy
+update_date: 2026-07-27
 documentation link: https://traccuracy.readthedocs.io/en/latest/
 installation instructions link: https://traccuracy.readthedocs.io/en/latest/#installation
 # preferred contact method: "Creates the link for the 'Reach out for help' button on the project page. Encouraged if there is a preferred way for users to reach out for help other than creating an issue in the project's GitHub repo. Examples: link to Image.sc forum, or an email in the format of mailto:email@example.com."

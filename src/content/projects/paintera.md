@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/paintera.pdf
 github link: https://github.com/saalfeldlab/paintera
+update_date: 2026-07-30
 documentation link: https://github.com/saalfeldlab/paintera
 installation instructions link: https://github.com/saalfeldlab/paintera?tab=readme-ov-file#installation-and-usage
 how to cite link: https://zenodo.org/doi/10.5281/zenodo.3351562

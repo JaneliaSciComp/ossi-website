@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { selectedTags } from "@stores/selectedTagsStore";
 import { selectedProjectType } from "@stores/selectedProjectTypeStore";
+import { selectedSort } from "@stores/selectedSortStore";
 import { getTagValues } from "@utils/getTags";
 import { $projectData } from "@stores/projectSearchResultsStore";
 import { $ecosystemData } from "@stores/ecosystemSearchResultsStore";
@@ -17,6 +18,7 @@ export default function CardContainer({
   cardContent,
   contentType,
   maxLength,
+  sortedTitlesMap,
 }) {
   const [visible, setVisible] = useState("relative");
   const [order, setOrder] = useState(0);
@@ -25,6 +27,7 @@ export default function CardContainer({
   const ecosystemData = useStore($ecosystemData);
   const $selectedTags = useStore(selectedTags);
   const $selectedProjectType = useStore(selectedProjectType);
+  const $selectedSort = useStore(selectedSort);
   const tagsArray = getTagValues(tagsObj);
 
   let contentData = null;
@@ -53,8 +56,14 @@ export default function CardContainer({
   useEffect(() => {
     if (typeof window !== "undefined") {
       const matchingIndex = findMatchingIndex(contentData, title);
-      const itemOrder =
-        urlQuery === "" ? Math.floor(Math.random() * maxLength) : matchingIndex;
+      let itemOrder;
+      if (urlQuery !== "") {
+        itemOrder = matchingIndex;
+      } else if (sortedTitlesMap && sortedTitlesMap[$selectedSort]) {
+        itemOrder = sortedTitlesMap[$selectedSort].indexOf(title);
+      } else {
+        itemOrder = Math.floor(Math.random() * maxLength);
+      }
       setOrder(itemOrder);
 
       const isSearchMatch =
@@ -83,6 +92,7 @@ export default function CardContainer({
     contentData,
     $selectedProjectType,
     $selectedTags,
+    $selectedSort,
     contentType,
     projectType,
   ]);

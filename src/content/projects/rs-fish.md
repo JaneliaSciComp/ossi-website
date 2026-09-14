@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Maintenance]
 OSSI proposal link: ../../proposals/spatial_transcriptomics_tools.pdf
 github link: https://github.com/PreibischLab/RS-FISH
+update_date: 2025-02-04
 additional links array: [https://github.com/PreibischLab/RS-FISH-Spark]
 documentation link: https://github.com/PreibischLab/RS-FISH
 installation instructions link: https://github.com/PreibischLab/RS-FISH?tab=readme-ov-file#download

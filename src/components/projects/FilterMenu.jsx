@@ -6,12 +6,14 @@ import {
   toggleVisibility,
 } from "@stores/isFilterMenuVisibleStore.js";
 import { selectedTags, handleTagSelection } from "@stores/selectedTagsStore.js";
+import { selectedSort, handleSortSelection } from "@stores/selectedSortStore.js";
 import { getBackgroundColor } from "@utils/getTagBgColor";
 
 const OMIT_TAG_CATEGORIES = ["software ecosystem", "supported file types"];
 
 export default function FilterMenu({ uniqueTags }) {
   const $selectedTags = useStore(selectedTags);
+  const $selectedSort = useStore(selectedSort);
   //used to manage state for the close ("x") button on the small screen filter menu
   const $isFilterMenuVisible = useStore(isFilterMenuVisible);
 
@@ -118,6 +120,53 @@ export default function FilterMenu({ uniqueTags }) {
             </div>
           )
         )}
+
+        <div className="mb-4">
+          <h3 className="text-lg font-bold ">Sort by</h3>
+
+          <ul className="flex flex-col flex-nowrap">
+            <li
+              className="w-full flex cursor-pointer"
+              onClick={() => handleSortSelection("alphabetical")}
+            >
+              <div
+                className={`ml-2 self-start my-1 ${
+                  $selectedSort === "alphabetical" ? "selected bg-primary" : ""
+                }`}
+              >
+                Alphabetical (A&ndash;Z)
+              </div>
+            </li>
+            <li
+              className="w-full flex cursor-pointer"
+              onClick={() => handleSortSelection("updated-newest")}
+            >
+              <div
+                className={`ml-2 self-start my-1 ${
+                  $selectedSort === "updated-newest"
+                    ? "selected bg-primary"
+                    : ""
+                }`}
+              >
+                Last updated (newest first)
+              </div>
+            </li>
+            <li
+              className="w-full flex cursor-pointer"
+              onClick={() => handleSortSelection("updated-oldest")}
+            >
+              <div
+                className={`ml-2 self-start my-1 ${
+                  $selectedSort === "updated-oldest"
+                    ? "selected bg-primary"
+                    : ""
+                }`}
+              >
+                Last updated (oldest first)
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="flex self-center gap-4 py-4">

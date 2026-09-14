@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Maintenance]
 OSSI proposal link: ../../proposals/neuvid.pdf
 github link: https://github.com/connectome-neuprint/neuVid
+update_date: 2026-03-22
 documentation link: https://github.com/connectome-neuprint/neuVid/tree/master/documentation
 installation instructions link: https://github.com/connectome-neuprint/neuVid?tab=readme-ov-file#usage-with-neuprint
 how to cite text: "Philip M. Hubbard, The newVid video generation system, https://zenodo.org/records/10805089"

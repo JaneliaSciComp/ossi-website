@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Maintenance]
 OSSI proposal link: ../../proposals/hortacloud.pdf
 github link: https://github.com/JaneliaSciComp/hortacloud
+update_date: 2026-07-15
 documentation link: https://hortacloud.janelia.org/docs/
 installation instructions link: https://hortacloud.janelia.org/docs/administration/aws/
 how to cite link: https://github.com/JaneliaSciComp/hortacloud

@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/easifish_pipeline.pdf
 github link: https://github.com/JaneliaSciComp/multifish
+update_date: 2026-04-15
 documentation link: https://janeliascicomp.github.io/multifish/
 installation instructions link: https://janeliascicomp.github.io/multifish/QuickStart.html
 how to cite link: https://doi.org/10.1016/j.cell.2021.11.024
