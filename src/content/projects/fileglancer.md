@@ -29,7 +29,7 @@ installation instructions link: https://github.com/JaneliaSciComp/fileglancer#in
 #     Display text for link 4,
 #     Etc.,
 #   ]
-image file: ./fileglancer.jpg
+image file: ./fileglancer.png
 image caption: Screenshot of the Fileglancer landing page
 # youtube url: https://optional-youtube-url.com
 # youtube caption: Required if you provide a youtube url
