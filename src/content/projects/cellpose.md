@@ -6,6 +6,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/suite2p_and_cellpose.pdf
 github link: https://github.com/MouseLand/cellpose
+update_date: 2026-06-14
 documentation link: https://cellpose.readthedocs.io/en/latest/
 installation instructions link: https://github.com/MouseLand/cellpose?tab=readme-ov-file#installation
 how to cite link: https://doi.org/10.1038/s41592-020-01018-x

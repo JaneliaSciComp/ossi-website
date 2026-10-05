@@ -5,6 +5,7 @@ maintainer: Carsen Stringer
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [Other]
 github link: https://github.com/MouseLand/facemap
+update_date: 2026-01-26
 documentation link: https://facemap.readthedocs.io/en/latest/index.html
 installation instructions link: https://facemap.readthedocs.io/en/latest/installation.html
 how to cite text: "Syeda, A., Zhong, L., Tung, R., Long, W., Pachitariu, M.*, & Stringer, C.* (2024). Facemap: a framework for modeling neural activity based on orofacial tracking. Nature Neuroscience, 27(1), 187-195."

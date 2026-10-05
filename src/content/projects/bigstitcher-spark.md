@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/petascale_lightsheet.pdf
 github link: https://github.com/JaneliaSciComp/BigStitcher-Spark
+update_date: 2026-08-01
 documentation link: https://github.com/JaneliaSciComp/BigStitcher-Spark?tab=readme-ov-file#readme
 installation instructions link: https://github.com/JaneliaSciComp/BigStitcher-Spark/?tab=readme-ov-file#install
 preferred contact method: https://github.com/JaneliaSciComp/BigStitcher-Spark/issues

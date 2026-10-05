@@ -12,6 +12,7 @@ const projectsCollection = defineCollection({
     "OSSI project status": z.array(z.string()).optional(),
     "OSSI proposal link": z.string().optional(),
     "github link": z.string(),
+    update_date: z.coerce.date().optional(),
     "documentation link": z.string(),
     "installation instructions link": z.string().optional(),
     "how to cite text": z.union([z.string(), z.undefined(), z.null()]),

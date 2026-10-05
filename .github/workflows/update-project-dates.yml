@@ -1,0 +1,48 @@
+name: Update project last-updated dates
+
+# Refreshes the update_date frontmatter field on every project .md file from
+# each project's GitHub repository pushedAt timestamp, so the site's
+# "Last updated" sort stays current without manual upkeep.
+on:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-dates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: .github/actions/package-lock.json
+
+      - name: Install npm dependencies
+        run: npm ci
+        working-directory: .github/actions
+
+      - name: Fetch and update project dates
+        run: node update-project-dates.js
+        working-directory: .github/actions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/content/projects .github/actions/repo-dates.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update project last-updated dates"
+            git push
+          fi

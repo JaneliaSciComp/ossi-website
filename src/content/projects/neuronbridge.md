@@ -5,6 +5,7 @@ maintainer: Konrad Rokicki
 preferred contact method: mailto:neuronbridge@janelia.hhmi.org
 project type: [Other]
 github link: https://github.com/JaneliaSciComp/neuronbridge
+update_date: 2026-07-27
 documentation link: https://neuronbridge.janelia.org/help
 installation instructions link: https://github.com/JaneliaSciComp/neuronbridge/blob/master/docs/Development.md
 how to cite link: "https://doi.org/10.1186/s12859-024-05732-7"

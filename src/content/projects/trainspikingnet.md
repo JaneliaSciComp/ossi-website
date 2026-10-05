@@ -5,6 +5,7 @@ maintainer: ben arthur
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [Other]
 github link: https://github.com/SpikingNetwork/TrainSpikingNet.jl
+update_date: 2024-08-29
 documentation link: https://github.com/SpikingNetwork/TrainSpikingNet.jl?tab=readme-ov-file
 installation instructions link: https://github.com/SpikingNetwork/TrainSpikingNet.jl?tab=readme-ov-file#installation
 preferred contact method: mailto:arthurb@hhmi.org

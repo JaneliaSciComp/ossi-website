@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/petascale_lightsheet.pdf
 github link: https://github.com/preibischlab/bigstitcher/
+update_date: 2026-07-03
 documentation link: https://imagej.net/plugins/bigstitcher/
 installation instructions link: https://imagej.net/plugins/bigstitcher/#download
 how to cite link: https://doi.org/10.1038/s41592-019-0501-0

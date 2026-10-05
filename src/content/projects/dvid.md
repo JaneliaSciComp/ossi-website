@@ -4,6 +4,7 @@ tagline: A dataservice for branched versioning of a variety of data types includ
 maintainer: Bill Katz
 project type: [Other]
 github link: https://github.com/janelia-flyem/dvid
+update_date: 2026-07-25
 documentation link: https://github.com/janelia-flyem/dvid/blob/master/README.md
 installation instructions link: https://github.com/janelia-flyem/dvid/blob/master/README.md#installation
 how to cite link: "https://doi.org/10.3389/fncir.2019.00005"

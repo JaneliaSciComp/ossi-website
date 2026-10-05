@@ -5,6 +5,7 @@ maintainer: Konrad Rokicki
 preferred contact method: https://github.com/JaneliaSciComp/zarrcade/issues
 project type: [Other]
 github link: https://github.com/JaneliaSciComp/zarrcade
+update_date: 2026-07-07
 documentation link: https://github.com/JaneliaSciComp/zarrcade
 installation instructions link: https://github.com/JaneliaSciComp/zarrcade?tab=readme-ov-file#getting-started
 how to cite link: https://github.com/JaneliaSciComp/zarrcade

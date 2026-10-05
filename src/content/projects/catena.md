@@ -6,6 +6,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/catena.pdf
 github link: https://github.com/Mohinta2892/catena
+update_date: 2026-05-18
 documentation link: https://github.com/Mohinta2892/catena
 installation instructions link: https://github.com/Mohinta2892/catena
 preferred contact method: mailto:sm2667@cam.ac.uk

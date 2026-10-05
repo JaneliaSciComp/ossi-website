@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Accepted]
 OSSI proposal link: ../../proposals/petascale_lightsheet.pdf
 github link: https://github.com/saalfeldlab/stitching-spark
+update_date: 2023-10-17
 documentation link: https://github.com/saalfeldlab/stitching-spark
 installation instructions link: https://github.com/saalfeldlab/stitching-spark?tab=readme-ov-file#usage
 how to cite link: https://doi.org/10.1126/science.aau8302

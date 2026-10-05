@@ -24,7 +24,7 @@ export default function ToggleFilterMenuBtn() {
       >
         {numFilters}
       </Badge>
-      <p className="text-sm">Filter by tag</p>
+      <p className="text-sm whitespace-nowrap">Filter by tag</p>
       <TbAdjustmentsHorizontal className="w-5 h-5 inline-block" />
     </button>
   );

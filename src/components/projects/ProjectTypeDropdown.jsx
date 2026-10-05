@@ -31,7 +31,7 @@ const getOptionColorClasses = ({ selected, highlighted, disabled }) => {
   return classes;
 };
 
-const Option = React.forwardRef((props, ref) => {
+export const Option = React.forwardRef((props, ref) => {
   return (
     <BaseOption
       ref={ref}
@@ -97,7 +97,7 @@ const resolveSlotProps = (fn, args) =>
   typeof fn === "function" ? fn(args) : fn;
 
 // I added the prop "multiple" to allow for multiple selections
-const Select = React.forwardRef(function CustomSelect(props, ref) {
+export const Select = React.forwardRef(function CustomSelect(props, ref) {
   return (
     <BaseSelect
       ref={ref}

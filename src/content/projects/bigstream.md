@@ -6,6 +6,7 @@ preferred contact method: mailto:fleishmang@janelia.hhmi.org
 project type: [Other]
 OSSI proposal link: ""
 github link: https://github.com/JaneliaSciComp/bigstream
+update_date: 2026-07-30
 documentation link: https://github.com/JaneliaSciComp/bigstream
 installation instructions link: https://github.com/JaneliaSciComp/bigstream
 how to cite text: "Wang Y, Eddison M, Fleishman G, Weigert M, Xu S, Wang T, Rokicki K, Goina C, Henry FE, Lemire AL, Schmidt U, Yang H, Svoboda K, Myers EW, Saalfeld S, Korff W, Sternson SM, Tillberg PW. EASI-FISH for thick tissue defines lateral hypothalamus spatio-molecular organization. Cell. 2021 Dec 22;184(26):6361-6377.e24. doi: 10.1016/j.cell.2021.11.024. Epub 2021 Dec 6. PMID: 34875226."

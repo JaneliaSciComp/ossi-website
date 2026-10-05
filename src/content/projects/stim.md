@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/spatial_transcriptomics_tools.pdf
 github link: https://github.com/PreibischLab/STIM
+update_date: 2025-05-27
 documentation link: https://github.com/PreibischLab/STIM/wiki
 how to cite link: https://doi.org/10.1016/j.cels.2025.101264
 how to cite text: "S. Preibisch, N. Karaiskos, N.Rajewsky, Scalable image-based visualization and alignment of spatial transcriptomics datasets. Cell Systems, Vol. 16, No. 5 (2025)."

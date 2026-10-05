@@ -6,6 +6,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/suite2p_and_cellpose.pdf
 github link: https://github.com/MouseLand/suite2p
+update_date: 2026-07-01
 documentation link: https://suite2p.readthedocs.io/en/latest/
 installation instructions link: https://github.com/MouseLand/suite2p?tab=readme-ov-file#local-installation
 how to cite link: https://doi.org/10.1101/061507

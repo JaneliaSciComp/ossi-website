@@ -5,6 +5,7 @@ maintainer: ben arthur
 #project type - Required. Pick one of the three options - delete the other two.
 project type: [Other]
 github link: https://github.com/JaneliaSciComp/NIDAQ.jl
+update_date: 2026-02-08
 documentation link: https://github.com/JaneliaSciComp/NIDAQ.jl?tab=readme-ov-file#national-instruments-data-acquisition-interface
 installation instructions link: https://github.com/JaneliaSciComp/NIDAQ.jl?tab=readme-ov-file#installation
 preferred contact method: mailto:arthurb@hhmi.org

@@ -6,6 +6,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/dacapo.pdf
 github link: https://github.com/janelia-cellmap/dacapo
+update_date: 2026-04-24
 documentation link: https://janelia-cellmap.github.io/dacapo/
 installation instructions link: https://janelia-cellmap.github.io/dacapo/install.html
 preferred contact method: mailto:rhoadesj@janelia.hhmi.org

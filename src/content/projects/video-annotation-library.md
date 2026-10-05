@@ -7,6 +7,7 @@ project type: [OSSI - current]
 OSSI project status: [Active Development]
 OSSI proposal link: ../../proposals/video_annotation_library.pdf
 github link: https://github.com/JaneliaSciComp/videoAnnotation
+update_date: 2026-07-28
 documentation link: https://github.com/JaneliaSciComp/videoAnnotation
 installation instructions link: https://github.com/JaneliaSciComp/videoAnnotation
 how to cite link: https://github.com/JaneliaSciComp/videoAnnotation

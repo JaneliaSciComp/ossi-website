@@ -5,6 +5,7 @@ maintainer: Konrad Rokicki
 preferred contact method: https://github.com/JaneliaSciComp/maru/issues
 project type: [Other]
 github link: https://github.com/JaneliaSciComp/maru
+update_date: 2021-08-31
 documentation link: https://github.com/JaneliaSciComp/maru
 installation instructions link: https://github.com/JaneliaSciComp/maru?tab=readme-ov-file#get-maru
 how to cite link: https://github.com/JaneliaSciComp/maru
