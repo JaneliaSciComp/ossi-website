@@ -3,7 +3,6 @@ import { siteConfig } from "../siteConfig";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Hero from "@components/Hero";
 import CallToAction from "@components/CallToAction.astro";
-import ContributorList from "@components/ContributorList.astro";
 import Wrapper from "@components/Wrapper.astro";
 ---
 
@@ -79,19 +78,5 @@ import Wrapper from "@components/Wrapper.astro";
         Read the documentation on the site's GitHub repository to get started.
       </Fragment>
     </CallToAction>
-  </Wrapper>
-
-  <Wrapper containerClass="py-8 md:py-12">
-    <ContributorList
-      title="Recent website contributors"
-      callToAction={{
-        text: "See all contributors »",
-        href: "https://github.com/JaneliaSciComp/ossi-website/graphs/contributors",
-        target: "_blank",
-      }}
-    />
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
-    </Fragment>
   </Wrapper>
 </BaseLayout>
