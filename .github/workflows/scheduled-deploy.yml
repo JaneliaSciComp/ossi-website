@@ -1,0 +1,29 @@
+name: Scheduled deploy
+
+# Rebuilds the site weekly so the "Last updated" sort picks up new commits in
+# project repos. Kept separate from deploy-to-github-pages.yml because GitHub
+# disables scheduled workflows after 60 days without repo activity; if that
+# happens here, deploys on push to main keep working.
+on:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Trigger deploy
+        run: gh workflow run deploy-to-github-pages.yml
+
+      # Re-enabling an already-enabled workflow resets the 60-day inactivity
+      # timer, so this schedule survives long stretches without commits.
+      - name: Keep schedule alive
+        if: always()
+        run: gh workflow enable scheduled-deploy.yml

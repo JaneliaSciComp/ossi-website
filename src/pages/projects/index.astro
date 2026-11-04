@@ -19,6 +19,7 @@ import Tag from "@components/projects/Tag.astro";
 import ToggleFilterMenuBtn from "@components/projects/ToggleFilterMenuBtn";
 
 import { getTagKeysAndValues } from "@utils/getTags";
+import { getRepoUpdateDates } from "@utils/githubApiHelper";
 
 const pageTitle = "OSSI-supported projects";
 const allProjects = await getCollection("projects");
@@ -32,14 +33,21 @@ const sortedTitles = allProjects
   .map((content) => content.data.title)
   .sort((a, b) => a.localeCompare(b));
 
-// project titles sorted by update_date, oldest-to-newest; projects with no
-// known update_date are left at the end regardless of sort direction
+// last push to each project's repo, keyed by "github link";
+// fetched at build time, so dates refresh on every deploy
+const repoDates = await getRepoUpdateDates(
+  allProjects.map((content) => content.data["github link"])
+);
+const updateDateOf = (content) => repoDates[content.data["github link"]];
+
+// project titles sorted by last update, oldest-to-newest; projects with no
+// known update date are left at the end regardless of sort direction
 const undatedTitles = allProjects
-  .filter((content) => !content.data.update_date)
+  .filter((content) => !updateDateOf(content))
   .map((content) => content.data.title);
 const titlesByUpdateDateAsc = allProjects
-  .filter((content) => content.data.update_date)
-  .sort((a, b) => a.data.update_date - b.data.update_date)
+  .filter((content) => updateDateOf(content))
+  .sort((a, b) => updateDateOf(a) - updateDateOf(b))
   .map((content) => content.data.title);
 
 // maps each selectable "sort by" key to its pre-sorted array of titles;
@@ -92,7 +100,7 @@ const sortedTitlesMap = {
         {
           allProjects.map((content) => {
             const tagsObj = getTagKeysAndValues(content);
-            const title=content.data.title;
+            const title = content.data.title;
             const sortOrder = {
               alphabetical: sortedTitlesMap.alphabetical.indexOf(title),
               "updated-newest": sortedTitlesMap["updated-newest"].indexOf(title),
