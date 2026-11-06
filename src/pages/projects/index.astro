@@ -14,10 +14,12 @@ import ProjectCount from "@components/projects/ProjectCount";
 import ProjectTypeBtns from "@components/projects/ProjectTypeBtns";
 import ProjectTypeDropdown from "@components/projects/ProjectTypeDropdown";
 import SearchInput from "@components/projects/SearchInput";
+import SortMenu from "@components/projects/SortMenu";
 import Tag from "@components/projects/Tag.astro";
 import ToggleFilterMenuBtn from "@components/projects/ToggleFilterMenuBtn";
 
 import { getTagKeysAndValues } from "@utils/getTags";
+import { getRepoUpdateDates } from "@utils/githubApiHelper";
 
 const pageTitle = "OSSI-supported projects";
 const allProjects = await getCollection("projects");
@@ -25,6 +27,36 @@ const allProjects = await getCollection("projects");
 // uniqueTags is an object where keys = unique tag categories, values = unique tags within a category, both across allProjects. All lowercase.
 // used to populate the filter menu
 const uniqueTags = getTagKeysAndValues(allProjects);
+
+// all project titles sorted alphabetically; used to position cards when the "Alphabetical" sort is selected
+const sortedTitles = allProjects
+  .map((content) => content.data.title)
+  .sort((a, b) => a.localeCompare(b));
+
+// last push to each project's repo, keyed by "github link";
+// fetched at build time, so dates refresh on every deploy
+const repoDates = await getRepoUpdateDates(
+  allProjects.map((content) => content.data["github link"])
+);
+const updateDateOf = (content) => repoDates[content.data["github link"]];
+
+// project titles sorted by last update, oldest-to-newest; projects with no
+// known update date are left at the end regardless of sort direction
+const undatedTitles = allProjects
+  .filter((content) => !updateDateOf(content))
+  .map((content) => content.data.title);
+const titlesByUpdateDateAsc = allProjects
+  .filter((content) => updateDateOf(content))
+  .sort((a, b) => updateDateOf(a) - updateDateOf(b))
+  .map((content) => content.data.title);
+
+// maps each selectable "sort by" key to its pre-sorted array of titles;
+// consumed by CardContainer to position each card via CSS order
+const sortedTitlesMap = {
+  alphabetical: sortedTitles,
+  "updated-newest": [...titlesByUpdateDateAsc].reverse().concat(undatedTitles),
+  "updated-oldest": [...titlesByUpdateDateAsc, ...undatedTitles],
+};
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -41,8 +73,12 @@ const uniqueTags = getTagKeysAndValues(allProjects);
   >
     <div class="col-start-1 col-span-1">
       <SearchInput client:load />
-      <ToggleFilterMenuBtn client:only="react" />
       <FilterMenu uniqueTags={uniqueTags} client:only="react" />
+      <!-- small screens: filter button + sort select share a row; md+: unwrapped -->
+      <div class="flex items-center gap-4 md:contents">
+        <ToggleFilterMenuBtn client:only="react" />
+        <SortMenu client:only="react" />
+      </div>
     </div>
     <div class="col-start-2 col-span-2 3xl:col-span-3 4xl:col-span-4">
       <ProjectTypeBtns client:only="react" />
@@ -59,11 +95,17 @@ const uniqueTags = getTagKeysAndValues(allProjects);
         client:only="react"
       />
       <div
-        class="lg:grid grid-cols-2 3xl:grid-cols-3 4xl:grid-cols-4 auto-rows-max gap-4"
+        class="grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3 4xl:grid-cols-4 auto-rows-max gap-4"
       >
         {
           allProjects.map((content) => {
             const tagsObj = getTagKeysAndValues(content);
+            const title = content.data.title;
+            const sortOrder = {
+              alphabetical: sortedTitlesMap.alphabetical.indexOf(title),
+              "updated-newest": sortedTitlesMap["updated-newest"].indexOf(title),
+              "updated-oldest": sortedTitlesMap["updated-oldest"].indexOf(title),
+            };
             return (
               <CardContainer
                 key={content.id}
@@ -73,6 +115,7 @@ const uniqueTags = getTagKeysAndValues(allProjects);
                 projectType={content.data["project type"][0]}
                 contentType="projects"
                 maxLength={allProjects.length}
+                sortOrder={sortOrder}
                 client:only="react"
               >
                 {content.data["image file"] ? (

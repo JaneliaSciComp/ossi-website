@@ -54,3 +54,68 @@ export async function getReadme(githubUrl) {
     return null; // Return null or appropriate error response
   }
 }
+
+// fetches each repo's pushedAt (last push to any branch) in one batched
+// GraphQL query; returns { [githubUrl]: Date }
+export async function getRepoUpdateDates(githubUrls) {
+  if (!authToken) {
+    console.warn("No OSSI_SITE_TOKEN set; skipping repo update dates.");
+    return {};
+  }
+
+  const repos = [...new Set(githubUrls)].flatMap((githubUrl) => {
+    const parts = URL.canParse(githubUrl)
+      ? new URL(githubUrl).pathname.split("/").filter(Boolean)
+      : [];
+    if (parts.length < 2) {
+      console.warn(`Could not parse owner/repo from ${githubUrl}`);
+      return [];
+    }
+    return [
+      { githubUrl, owner: parts[0], repo: parts[1].replace(/\.git$/, "") },
+    ];
+  });
+  // an empty selection set is a GraphQL syntax error, not an empty result
+  if (repos.length === 0) return {};
+
+  const variableDefs = repos.flatMap((_, i) => [
+    `$owner${i}: String!`,
+    `$name${i}: String!`,
+  ]);
+  const queryParts = repos.map(
+    (_, i) =>
+      `r${i}: repository(owner: $owner${i}, name: $name${i}) { pushedAt }`,
+  );
+  const variables = Object.fromEntries(
+    repos.flatMap((r, i) => [
+      [`owner${i}`, r.owner],
+      [`name${i}`, r.repo],
+    ]),
+  );
+  const query = `query(${variableDefs.join(", ")}) {\n${queryParts.join("\n")}\n}`;
+
+  let result;
+  try {
+    result = await octokit.graphql(query, variables);
+  } catch (error) {
+    // a renamed, deleted, or private repo nulls its entry and adds an error,
+    // but the data for every other repo is still on error.data
+    if (!error.data) {
+      // fail the build so the last good deploy, and its dates, stay live
+      throw new Error(`Failed to fetch repo update dates: ${error.message}`);
+    }
+    console.warn("GraphQL returned partial data:", error.message);
+    result = error.data;
+  }
+
+  const dates = {};
+  repos.forEach((r, i) => {
+    const pushedAt = result[`r${i}`]?.pushedAt;
+    if (pushedAt) {
+      dates[r.githubUrl] = new Date(pushedAt);
+    } else {
+      console.warn(`No update date found for ${r.owner}/${r.repo}`);
+    }
+  });
+  return dates;
+}
